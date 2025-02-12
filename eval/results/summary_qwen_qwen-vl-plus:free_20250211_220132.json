@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "complex_arithmetic",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 1.0,
+    "total_examples": 2,
+    "timestamp": "2025-02-11T22:01:32.050985",
+    "config": {
+      "size": 2,
+      "seed": 42
+    }
+  }
+]

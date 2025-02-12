@@ -1,0 +1,1068 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "complex_arithmetic",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.9255173915591481,
+      "total_examples": 50,
+      "timestamp": "2025-02-11T22:05:00.669967",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Add the complex numbers: (-10.0 - 2.0i) + (-3.0 - 3.0i)",
+        "expected_answer": "-13.0 - 5.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we add the real parts and imaginary parts separately:\n1. Real parts: -10.0 + (-3.0) = -13.0\n2. Imaginary parts: -2.0i + (-3.0i) = -5.0i\n3. Combining the results: -13.0 - 5.0i\n</reasoning>\n<answer>-13.0 - 5.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -10.0,
+            -2.0
+          ],
+          "num2": [
+            -3.0,
+            -3.0
+          ],
+          "operation": "+",
+          "result": [
+            -13,
+            -5
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-1.0 - 6.0i) + (4.0 + 1.0i)",
+        "expected_answer": "3.0 - 5.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we add the real parts and imaginary parts separately:\n\n1. Real parts: -1.0 + 4.0 = 3.0\n2. Imaginary parts: -6.0i + 1.0i = -5.0i\n\nCombining the results: 3.0 - 5.0i\n</reasoning>\n<answer>3.0 - 5.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -1.0,
+            -6.0
+          ],
+          "num2": [
+            4.0,
+            1.0
+          ],
+          "operation": "+",
+          "result": [
+            3,
+            -5
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-7.0 - 79.0i) \u00f7 (-7.0 - 5.0i)",
+        "expected_answer": "6.0 + 7.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll multiply both numerator and denominator by the complex conjugate of the denominator. This eliminates the imaginary part in the denominator.\n\n1) The denominator's complex conjugate is (-7.0 + 5.0i)\n\n2) Multiply both top and bottom by (-7.0 + 5.0i):\n   (-7.0 - 79.0i)(-7.0 + 5.0i)\n   --------------------------------\n   (-7.0 - 5.0i)(-7.0 + 5.0i)\n\n3) For the denominator:\n   (-7.0 - 5.0i)(-7.0 + 5.0i) = 49.0 + 25.0 = 74.0\n\n4) For the numerator:\n   (-7.0 - 79.0i)(-7.0 + 5.0i)\n   = 49.0 + (-7.0)(-79.0i) + 5.0i(-7.0) + 5.0i(-79.0i)\n   = 49.0 + 553.0i - 35.0i - 395.0\n   = -346.0 + 518.0i\n\n5) Therefore:\n   -346.0 + 518.0i\n   ----------------\n        74.0\n\n6) Simplifying:\n   = -4.675676... + 7.0i\n</reasoning>\n<answer>-4.68 + 7.0i</answer>",
+        "score": 2.30003758698791e-05,
+        "metadata": {
+          "num1": [
+            -7.0,
+            -79.0
+          ],
+          "num2": [
+            -7.0,
+            -5.0
+          ],
+          "operation": "/",
+          "result": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (3.0 + 5.0i) \u00d7 (-2.0 - 8.0i)",
+        "expected_answer": "34.0 - 34.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, I'll use the FOIL method and combine like terms:\n1. First: (3.0) \u00d7 (-2.0) = -6.0\n2. Outer: (3.0) \u00d7 (-8.0i) = -24.0i\n3. Inner: (5.0i) \u00d7 (-2.0) = -10.0i\n4. Last: (5.0i) \u00d7 (-8.0i) = -40.0i2 (note: i2 = -1)\n\nNow combine terms:\n* Real parts: -6.0 + 40.0 = 34.0 (because -40.0i2 = 40.0)\n* Imaginary parts: -24.0i - 10.0i = -34.0i\n\nThe result is the sum of real and imaginary parts.\n</reasoning>\n<answer>34.0 - 34.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            3.0,
+            5.0
+          ],
+          "num2": [
+            -2.0,
+            -8.0
+          ],
+          "operation": "*",
+          "result": [
+            34,
+            -34
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (2.0 - 9.0i) + (8.0 + 8.0i)",
+        "expected_answer": "10.0 - 1.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we add the real parts and imaginary parts separately:\n1. Real parts: 2.0 + 8.0 = 10.0\n2. Imaginary parts: (-9.0i) + (8.0i) = -1.0i\n3. Combine the results: 10.0 - 1.0i\n</reasoning>\n<answer>10.0 - 1.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            2.0,
+            -9.0
+          ],
+          "num2": [
+            8.0,
+            8.0
+          ],
+          "operation": "+",
+          "result": [
+            10,
+            -1
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-8.0 + 3.0i) \u00d7 (7.0 + 4.0i)",
+        "expected_answer": "-68.0 - 11.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, I'll use the FOIL method and combine like terms:\n1) First terms: (-8.0)(7.0) = -56.0\n2) Outer terms: (-8.0)(4.0i) = -32.0i\n3) Inner terms: (3.0i)(7.0) = 21.0i\n4) Last terms: (3.0i)(4.0i) = 12.0i2 = -12.0 (since i2 = -1)\n\nNow combine like terms:\n* Real parts: -56.0 + (-12.0) = -68.0\n* Imaginary parts: -32.0i + 21.0i = -11.0i\n\nThe result is the sum of the real and imaginary parts.\n</reasoning>\n<answer>-68.0 - 11.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -8.0,
+            3.0
+          ],
+          "num2": [
+            7.0,
+            4.0
+          ],
+          "operation": "*",
+          "result": [
+            -68,
+            -11
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-6.0 + 7.0i) \u00d7 (7.0 - 1.0i)",
+        "expected_answer": "-35.0 + 55.0i",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method for complex numbers multiplication:\n(a + bi)(c + di) = (ac - bd) + (ad + bc)i\n\nLet a = -6.0, b = 7.0, c = 7.0, and d = -1.0\n\n1) First part (real part) = ac - bd\n   = (-6.0 \u00d7 7.0) - (7.0 \u00d7 -1.0)\n   = -42.0 - (-7.0)\n   = -42.0 + 7.0\n   = -35.0\n\n2) Second part (imaginary part) = ad + bc\n   = (-6.0 \u00d7 -1.0) + (7.0 \u00d7 7.0)\n   = 6.0 + 49.0\n   = 55.0\n\nTherefore, (-6.0 + 7.0i) \u00d7 (7.0 - 1.0i) = -35.0 + 55.0i\n</reasoning>\n<answer>-35.0 + 55.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -6.0,
+            7.0
+          ],
+          "num2": [
+            7.0,
+            -1.0
+          ],
+          "operation": "*",
+          "result": [
+            -35,
+            55
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (1.0 + 3.0i) + (-7.00)",
+        "expected_answer": "-6.0 + 3.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we need to:\n1. Identify the real and imaginary parts\n   * First number: 1.0 + 3.0i\n     - Real part: 1.0\n     - Imaginary part: 3.0i\n   * Second number: -7.00\n     - Real part: -7.00\n     - Imaginary part: 0i\n2. Add the real parts: 1.0 + (-7.00) = -6.00\n3. Add the imaginary parts: 3.0i + 0i = 3.0i\n4. Combine the results: -6.00 + 3.0i\n</reasoning>\n<answer>-6.00 + 3.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            1.0,
+            3.0
+          ],
+          "num2": [
+            -7.0,
+            0.0
+          ],
+          "operation": "+",
+          "result": [
+            -6,
+            3
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-17.0 + 16.0i) \u00f7 (10.0 - 3.0i)",
+        "expected_answer": "-2.0 + 1.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll follow these steps:\n1) Multiply numerator and denominator by the complex conjugate of the denominator to eliminate the imaginary part in denominator\n2) The complex conjugate of (10.0 - 3.0i) is (10.0 + 3.0i)\n3) (-17.0 + 16.0i)(10.0 + 3.0i) \u00f7 [(10.0 - 3.0i)(10.0 + 3.0i)]\n\nFor numerator:\n(-17.0 \u00d7 10.0) + (-17.0 \u00d7 3.0i) + (16.0i \u00d7 10.0) + (16.0i \u00d7 3.0i)\n= -170.0 - 51.0i + 160.0i + 48.0\n= (-170.0 + 48.0) + (160.0 - 51.0)i\n= -122.0 + 109.0i\n\nFor denominator:\n(10.0)2 + (3.0)2\n= 100.0 + 9.0\n= 109.0\n\nFinal division:\n(-122.0 + 109.0i) \u00f7 109.0\n= -1.119 + 1.0i\n</reasoning>\n<answer>-1.119 + 1.0i</answer>",
+        "score": 0.41436833609224244,
+        "metadata": {
+          "num1": [
+            -17.0,
+            16.0
+          ],
+          "num2": [
+            10.0,
+            -3.0
+          ],
+          "operation": "/",
+          "result": [
+            -2,
+            1
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (6.0 + 7.0i) - (-5.0 - 3.0i)",
+        "expected_answer": "11.0 + 10.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real parts and imaginary parts separately.\n\nGiven: (6.0 + 7.0i) - (-5.0 - 3.0i)\n\n1) First, identify real and imaginary parts:\n   First number: 6.0 (real) and 7.0i (imaginary)\n   Second number: -5.0 (real) and -3.0i (imaginary)\n\n2) Remember: Subtracting a negative is the same as adding\n   (6.0 + 7.0i) - (-5.0 - 3.0i) = (6.0 + 7.0i) + (5.0 + 3.0i)\n\n3) Now add real parts: 6.0 + 5.0 = 11.0\n   Add imaginary parts: 7.0i + 3.0i = 10.0i\n</reasoning>\n<answer>11.0 + 10.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            6.0,
+            7.0
+          ],
+          "num2": [
+            -5.0,
+            -3.0
+          ],
+          "operation": "-",
+          "result": [
+            11,
+            10
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-9.0 + 6.0i) \u00d7 (5.0 + 1.0i)",
+        "expected_answer": "-51.0 + 21.0i",
+        "model_answer": "<reasoning>\nLet's solve this step by step using the FOIL method for complex number multiplication:\n(a + bi)(c + di) = (ac - bd) + (ad + bc)i\n\nHere, \na = -9.0\nb = 6.0\nc = 5.0\nd = 1.0\n\n1) First multiply the real parts (ac):\n(-9.0)(5.0) = -45.0\n\n2) Multiply the imaginary parts (bd):\n(6.0)(1.0) = 6.0\nNote: When multiplying imaginary parts, i \u00d7 i = -1\n\n3) Multiply outer terms (ad):\n(-9.0)(1.0) = -9.0\n\n4) Multiply inner terms (bc):\n(6.0)(5.0) = 30.0\n\n5) Combine the real parts:\nac - bd = -45.0 - 6.0 = -51.0\n\n6) Combine the imaginary parts:\n(ad + bc)i = (-9.0 + 30.0)i = 21.0i\n</reasoning>\n<answer>-51.0 + 21.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -9.0,
+            6.0
+          ],
+          "num2": [
+            5.0,
+            1.0
+          ],
+          "operation": "*",
+          "result": [
+            -51,
+            21
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (4.0 + 6.0i) - (5.0 + 6.0i)",
+        "expected_answer": "-1.00",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we:\n1. Subtract the real parts: 4.0 - 5.0 = -1.0\n2. Subtract the imaginary parts: 6.0i - 6.0i = 0i\n3. Combine the results keeping 'i' with imaginary part: -1.0 + 0i\n4. Since the imaginary part is 0, we can simplify to just -1.0\n</reasoning>\n<answer>-1.0</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            4.0,
+            6.0
+          ],
+          "num2": [
+            5.0,
+            6.0
+          ],
+          "operation": "-",
+          "result": [
+            -1,
+            0
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (4.0 + 7.0i) - (-1.0 + 5.0i)",
+        "expected_answer": "5.0 + 2.0i",
+        "model_answer": "<reasoning>\nTo subtract complex numbers, we subtract the real parts and imaginary parts separately.\n\n(a + bi) - (c + di) = (a - c) + (b - d)i\n\nFor (4.0 + 7.0i) - (-1.0 + 5.0i):\n1. Real part: 4.0 - (-1.0) = 4.0 + 1.0 = 5.0\n2. Imaginary part: 7.0i - 5.0i = 2.0i\n\nCombining the results: 5.0 + 2.0i\n</reasoning>\n<answer>5.0 + 2.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            4.0,
+            7.0
+          ],
+          "num2": [
+            -1.0,
+            5.0
+          ],
+          "operation": "-",
+          "result": [
+            5,
+            2
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-4.0 - 6.0i) + (-1.0 - 8.0i)",
+        "expected_answer": "-5.0 - 14.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we add the real parts and imaginary parts separately:\n\n1. Real parts: -4.0 + (-1.0) = -5.0\n2. Imaginary parts: -6.0i + (-8.0i) = -14.0i\n\nCombining the results: -5.0 - 14.0i\n</reasoning>\n<answer>-5.0 - 14.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -4.0,
+            -6.0
+          ],
+          "num2": [
+            -1.0,
+            -8.0
+          ],
+          "operation": "+",
+          "result": [
+            -5,
+            -14
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (5.0 + 10.0i) + (6.0 - 1.0i)",
+        "expected_answer": "11.0 + 9.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we:\n1. Add the real parts together: 5.0 + 6.0 = 11.0\n2. Add the imaginary parts together: 10.0i + (-1.0i) = 9.0i\n3. Combine the results: real part + imaginary part\n</reasoning>\n<answer>11.0 + 9.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            5.0,
+            10.0
+          ],
+          "num2": [
+            6.0,
+            -1.0
+          ],
+          "operation": "+",
+          "result": [
+            11,
+            9
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (1.0 + 8.0i) + (9.0 - 10.0i)",
+        "expected_answer": "10.0 - 2.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we add the real parts together and the imaginary parts together separately.\n\nFor (1.0 + 8.0i) + (9.0 - 10.0i):\n1. Real parts: 1.0 + 9.0 = 10.0\n2. Imaginary parts: 8.0i + (-10.0i) = -2.0i\n\nCombining the results: 10.0 - 2.0i\n</reasoning>\n<answer>10.0 - 2.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            1.0,
+            8.0
+          ],
+          "num2": [
+            9.0,
+            -10.0
+          ],
+          "operation": "+",
+          "result": [
+            10,
+            -2
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (-4.0 + 10.0i) - (-4.0 - 9.0i)",
+        "expected_answer": "19.00i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real parts and imaginary parts separately.\n\nGiven: (-4.0 + 10.0i) - (-4.0 - 9.0i)\n\n1) First, distribute the negative sign to the second complex number:\n   (-4.0 + 10.0i) + (4.0 + 9.0i)\n\n2) Now group real parts and imaginary parts:\n   Real parts: -4.0 + 4.0\n   Imaginary parts: 10.0i + 9.0i\n\n3) Simplify:\n   Real parts: -4.0 + 4.0 = 0\n   Imaginary parts: 10.0i + 9.0i = 19.0i\n</reasoning>\n<answer>0 + 19.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -4.0,
+            10.0
+          ],
+          "num2": [
+            -4.0,
+            -9.0
+          ],
+          "operation": "-",
+          "result": [
+            0,
+            19
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (-8.0 + 10.0i) - (4.0 - 10.0i)",
+        "expected_answer": "-12.0 + 20.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real parts and imaginary parts separately:\n(-8.0 + 10.0i) - (4.0 - 10.0i)\n\nFor real parts: -8.0 - 4.0 = -12.0\nFor imaginary parts: 10.0i - (-10.0i) = 10.0i + 10.0i = 20.0i\n\nCombining the results: -12.0 + 20.0i\n</reasoning>\n<answer>-12.0 + 20.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -8.0,
+            10.0
+          ],
+          "num2": [
+            4.0,
+            -10.0
+          ],
+          "operation": "-",
+          "result": [
+            -12,
+            20
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-1.0 + 8.0i) \u00d7 (-6.0 - 2.0i)",
+        "expected_answer": "22.0 - 46.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, I'll use the FOIL method:\n1) First terms: (-1.0)\u00d7(-6.0) = 6.0\n2) Outer terms: (-1.0)\u00d7(-2.0i) = 2.0i\n3) Inner terms: (8.0i)\u00d7(-6.0) = -48.0i\n4) Last terms: (8.0i)\u00d7(-2.0i) = -16.0i2 = -16.0\u00d7(-1) = 16.0\n\nNow combine like terms:\n* Real parts: 6.0 + 16.0 = 22.0\n* Imaginary parts: 2.0i - 48.0i = -46.0i\n\nTherefore, (-1.0 + 8.0i)(-6.0 - 2.0i) = 22.0 - 46.0i\n</reasoning>\n<answer>22.0 - 46.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -1.0,
+            8.0
+          ],
+          "num2": [
+            -6.0,
+            -2.0
+          ],
+          "operation": "*",
+          "result": [
+            22,
+            -46
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (20.0 - 28.0i) \u00f7 (-4.00)",
+        "expected_answer": "-5.0 + 7.0i",
+        "model_answer": "<reasoning>\nWhen dividing a complex number by a real number, we divide both the real and imaginary parts by the real number:\n\n(20.0 - 28.0i) \u00f7 (-4.00)\n= (20.0 \u00f7 -4.00) + ((-28.0 \u00f7 -4.00)i)\n= -5.0 + 7.0i\n</reasoning>\n<answer>-5.0 + 7.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            20.0,
+            -28.0
+          ],
+          "num2": [
+            -4.0,
+            0.0
+          ],
+          "operation": "/",
+          "result": [
+            -5,
+            7
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (-8.0 - 3.0i) - (4.0 - 1.0i)",
+        "expected_answer": "-12.0 - 2.0i",
+        "model_answer": "<reasoning>\nTo subtract complex numbers, I need to:\n1. Subtract the real parts: -8.0 - 4.0\n2. Subtract the imaginary parts: -3.0i - (-1.0i)\n\nFor the real part:\n-8.0 - 4.0 = -12.0\n\nFor the imaginary part:\n-3.0i - (-1.0i) = -3.0i + 1.0i = -2.0i\n\nCombining the results:\n(-12.0) + (-2.0i)\n</reasoning>\n<answer>-12.0 - 2.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -8.0,
+            -3.0
+          ],
+          "num2": [
+            4.0,
+            -1.0
+          ],
+          "operation": "-",
+          "result": [
+            -12,
+            -2
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-3.0 + 22.0i) \u00f7 (-2.0 + 5.0i)",
+        "expected_answer": "4.0 - 1.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll use the following steps:\n1) When dividing complex numbers, multiply both numerator and denominator by the complex conjugate of the denominator\n2) The complex conjugate of (-2 + 5i) is (-2 - 5i)\n3) (-3 + 22i) \u00d7 (-2 - 5i) \u00f7 [(-2 + 5i) \u00d7 (-2 - 5i)]\n\nFor numerator: (-3 + 22i)(-2 - 5i)\n= 6 + 15i - 44i - 110i2\n= 6 - 29i + 110 (since i2 = -1)\n= 116 - 29i\n\nFor denominator: (-2 + 5i)(-2 - 5i)\n= 4 + 10i - 10i - 25i2\n= 4 - 25(-1)\n= 29\n\nTherefore, (-3 + 22i) \u00f7 (-2 + 5i) = (116 - 29i) \u00f7 29\n= 4 - i\n</reasoning>\n<answer>4 - i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -3.0,
+            22.0
+          ],
+          "num2": [
+            -2.0,
+            5.0
+          ],
+          "operation": "/",
+          "result": [
+            4,
+            -1
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-83.0 + 76.0i) \u00f7 (9.0 + 2.0i)",
+        "expected_answer": "-7.0 + 10.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, we need to multiply both numerator and denominator by the complex conjugate of the denominator. This eliminates the imaginary part in the denominator.\n\n1) The complex conjugate of (9.0 + 2.0i) is (9.0 - 2.0i)\n\n2) (-83.0 + 76.0i) \u00d7 (9.0 - 2.0i)\n   --------------------------------\n   (9.0 + 2.0i) \u00d7 (9.0 - 2.0i)\n\n3) First, let's solve the denominator:\n   (9.0 + 2.0i)(9.0 - 2.0i) = 9.02 + 2.02 = 81 + 4 = 85\n\n4) Now the numerator:\n   (-83.0 + 76.0i)(9.0 - 2.0i)\n   = -83.0(9.0) - (-83.0)(2.0i) + 76.0i(9.0) - 76.0i(2.0i)\n   = -747.0 + 166.0i + 684.0i + 152.0\n   = -595.0 + 850.0i\n\n5) Therefore:\n   (-595.0 + 850.0i) \u00f7 85\n   = -7.0 + 10.0i\n</reasoning>\n<answer>-7.0 + 10.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -83.0,
+            76.0
+          ],
+          "num2": [
+            9.0,
+            2.0
+          ],
+          "operation": "/",
+          "result": [
+            -7,
+            10
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-9.0 - 3.0i) \u00f7 (6.0 - 3.0i)",
+        "expected_answer": "-1.0 - 1.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll multiply both numerator and denominator by the complex conjugate of the denominator. This eliminates the imaginary part in the denominator.\n\n1) The complex conjugate of (6.0 - 3.0i) is (6.0 + 3.0i)\n\n2) (-9.0 - 3.0i) \u00d7 (6.0 + 3.0i)\n   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n   (6.0 - 3.0i) \u00d7 (6.0 + 3.0i)\n\n3) Let's solve the numerator:\n   (-9.0 \u00d7 6.0) + (-9.0 \u00d7 3.0i) + (-3.0i \u00d7 6.0) + (-3.0i \u00d7 3.0i)\n   = -54.0 - 27.0i - 18.0i + (-9.0)\n   = -63.0 - 45.0i\n\n4) Let's solve the denominator:\n   (6.0 \u00d7 6.0) + (6.0 \u00d7 3.0i) + (-3.0i \u00d7 6.0) + (-3.0i \u00d7 3.0i)\n   = 36.0 + 18.0i - 18.0i + 9.0\n   = 45.0\n\n5) So our division becomes: (-63.0 - 45.0i) \u00f7 45.0\n   = -1.4 - 1.0i\n</reasoning>\n<answer>-1.4 - 1.0i</answer>",
+        "score": 0.6703200460356393,
+        "metadata": {
+          "num1": [
+            -9.0,
+            -3.0
+          ],
+          "num2": [
+            6.0,
+            -3.0
+          ],
+          "operation": "/",
+          "result": [
+            -1,
+            -1
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-1.0 + 3.0i) + (-3.0 + 4.0i)",
+        "expected_answer": "-4.0 + 7.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we add the real parts and imaginary parts separately:\n1. Real parts: (-1.0) + (-3.0) = -4.0\n2. Imaginary parts: (3.0i) + (4.0i) = 7.0i\n3. Combining the results: -4.0 + 7.0i\n</reasoning>\n<answer>-4.0 + 7.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -1.0,
+            3.0
+          ],
+          "num2": [
+            -3.0,
+            4.0
+          ],
+          "operation": "+",
+          "result": [
+            -4,
+            7
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-7.0 + 3.0i) + (4.0 + 3.0i)",
+        "expected_answer": "-3.0 + 6.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we add the real parts and imaginary parts separately:\n1. Real parts: -7.0 + 4.0 = -3.0\n2. Imaginary parts: 3.0i + 3.0i = 6.0i\n3. Combining the results: -3.0 + 6.0i\n</reasoning>\n<answer>-3.0 + 6.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -7.0,
+            3.0
+          ],
+          "num2": [
+            4.0,
+            3.0
+          ],
+          "operation": "+",
+          "result": [
+            -3,
+            6
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (110.0 - 15.0i) \u00f7 (9.0 + 8.0i)",
+        "expected_answer": "6.0 - 7.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I need to:\n1) Multiply numerator and denominator by the complex conjugate of the denominator\n2) This will eliminate the imaginary part in the denominator\n3) Let's solve step by step:\n\n(110.0 - 15.0i) \u00d7 (9.0 - 8.0i) \u00f7 [(9.0 + 8.0i)(9.0 - 8.0i)]\n\nFirst, multiply the numerator terms:\n* 110.0 \u00d7 9.0 = 990.0\n* 110.0 \u00d7 (-8.0i) = -880.0i\n* -15.0i \u00d7 9.0 = -135.0i\n* -15.0i \u00d7 (-8.0i) = 120.0\n\nDenominator:\n* (9.0 + 8.0i)(9.0 - 8.0i) = 9.02 + 8.02 = 81.0 + 64.0 = 145.0\n\nCombining like terms in numerator:\n990.0 - 880.0i - 135.0i + 120.0 = 1110.0 - 1015.0i\n\nFinal division:\nReal part = 1110.0/145.0 = 7.655172413793103\nImaginary part = -1015.0/145.0 = -7.0\n</reasoning>\n<answer>7.655172413793103 - 7.0i</answer>",
+        "score": 0.19105911163939587,
+        "metadata": {
+          "num1": [
+            110.0,
+            -15.0
+          ],
+          "num2": [
+            9.0,
+            8.0
+          ],
+          "operation": "/",
+          "result": [
+            6,
+            -7
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-7.0 - 5.0i) + (-8.0 + 9.0i)",
+        "expected_answer": "-15.0 + 4.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we add the real parts together and the imaginary parts together separately.\n\nFor (-7.0 - 5.0i) + (-8.0 + 9.0i):\n\nReal parts: -7.0 + (-8.0) = -15.0\nImaginary parts: -5.0i + 9.0i = 4.0i\n\nCombining the results: -15.0 + 4.0i\n</reasoning>\n<answer>-15.0 + 4.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -7.0,
+            -5.0
+          ],
+          "num2": [
+            -8.0,
+            9.0
+          ],
+          "operation": "+",
+          "result": [
+            -15,
+            4
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-1.0 + 4.0i) + (4.0 - 6.0i)",
+        "expected_answer": "3.0 - 2.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we add the real parts together and the imaginary parts together separately.\n\nFor (-1.0 + 4.0i) + (4.0 - 6.0i):\n1. Real parts: -1.0 + 4.0 = 3.0\n2. Imaginary parts: 4.0i + (-6.0i) = -2.0i\n\nCombining the results: 3.0 - 2.0i\n</reasoning>\n<answer>3.0 - 2.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -1.0,
+            4.0
+          ],
+          "num2": [
+            4.0,
+            -6.0
+          ],
+          "operation": "+",
+          "result": [
+            3,
+            -2
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (6.0 + 9.0i) \u00d7 (-10.0 - 2.0i)",
+        "expected_answer": "-42.0 - 102.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, I'll use the distributive property and the fact that i2 = -1.\n\nLet's break it down:\n(6.0 + 9.0i) \u00d7 (-10.0 - 2.0i)\n\n1) First multiply each term:\n   * 6.0 \u00d7 (-10.0) = -60.0\n   * 6.0 \u00d7 (-2.0i) = -12.0i\n   * 9.0i \u00d7 (-10.0) = -90.0i\n   * 9.0i \u00d7 (-2.0i) = -18.0i2 = 18.0 (since i2 = -1)\n\n2) Now add all terms:\n   -60.0 - 12.0i - 90.0i + 18.0\n   = (-60.0 + 18.0) + (-12.0i - 90.0i)\n   = -42.0 - 102.0i\n</reasoning>\n<answer>-42.0 - 102.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            6.0,
+            9.0
+          ],
+          "num2": [
+            -10.0,
+            -2.0
+          ],
+          "operation": "*",
+          "result": [
+            -42,
+            -102
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (9.0 - 5.0i) + (1.0 + 7.0i)",
+        "expected_answer": "10.0 + 2.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we:\n1. Add the real parts together\n2. Add the imaginary parts together\n\nFor (9.0 - 5.0i) + (1.0 + 7.0i):\n* Real parts: 9.0 + 1.0 = 10.0\n* Imaginary parts: -5.0i + 7.0i = 2.0i\n\nCombining the results: 10.0 + 2.0i\n</reasoning>\n<answer>10.0 + 2.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            9.0,
+            -5.0
+          ],
+          "num2": [
+            1.0,
+            7.0
+          ],
+          "operation": "+",
+          "result": [
+            10,
+            2
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-7.0 + 6.0i) \u00d7 (5.0 + 8.0i)",
+        "expected_answer": "-83.0 - 26.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, I'll use the FOIL method and combine like terms:\n(a + bi)(c + di) = (ac - bd) + (ad + bc)i\n\nLet's identify the parts:\nFirst number: a = -7.0, b = 6.0\nSecond number: c = 5.0, d = 8.0\n\nNow multiply:\n1) Real part (ac - bd):\n   (-7.0 \u00d7 5.0) - (6.0 \u00d7 8.0)\n   = -35.0 - 48.0\n   = -83.0\n\n2) Imaginary part (ad + bc):\n   (-7.0 \u00d7 8.0) + (6.0 \u00d7 5.0)\n   = -56.0 + 30.0\n   = -26.0\n\nTherefore, (-7.0 + 6.0i)(5.0 + 8.0i) = -83.0 - 26.0i\n</reasoning>\n<answer>-83.0 - 26.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -7.0,
+            6.0
+          ],
+          "num2": [
+            5.0,
+            8.0
+          ],
+          "operation": "*",
+          "result": [
+            -83,
+            -26
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-7.00i) + (-1.0 - 5.0i)",
+        "expected_answer": "-1.0 - 12.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we:\n1. Add the real parts together\n2. Add the imaginary parts together\n\nBreaking this down:\n* First number: -7.00i (real part = 0, imaginary part = -7.00)\n* Second number: -1.0 - 5.0i (real part = -1.0, imaginary part = -5.0)\n\nReal parts: 0 + (-1.0) = -1.0\nImaginary parts: (-7.00) + (-5.0) = -12.0i\n\nCombining the results: -1.0 - 12.0i\n</reasoning>\n<answer>-1.0 - 12.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            0.0,
+            -7.0
+          ],
+          "num2": [
+            -1.0,
+            -5.0
+          ],
+          "operation": "+",
+          "result": [
+            -1,
+            -12
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (59.0 - 60.0i) \u00f7 (4.0 - 9.0i)",
+        "expected_answer": "8.0 + 3.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I need to multiply both numerator and denominator by the complex conjugate of the denominator. This eliminates the imaginary part in the denominator.\n\n1) The complex conjugate of (4.0 - 9.0i) is (4.0 + 9.0i)\n\n2) (59.0 - 60.0i) \u00d7 (4.0 + 9.0i)\n   --------------------------------\n   (4.0 - 9.0i) \u00d7 (4.0 + 9.0i)\n\n3) For the denominator:\n   (4.0 - 9.0i)(4.0 + 9.0i) = 4.02 + 9.02 = 16 + 81 = 97\n\n4) For the numerator:\n   (59.0 - 60.0i)(4.0 + 9.0i)\n   = 59.0(4.0) + 59.0(9.0i) - 60.0i(4.0) - 60.0i(9.0i)\n   = 236 + 531i - 240i + 540\n   = 776 + 291i\n\n5) Therefore:\n   776 + 291i\n   ----------\n      97\n\n6) Simplifying:\n   776/97 + (291/97)i \u2248 8 + 3i\n</reasoning>\n<answer>8 + 3i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            59.0,
+            -60.0
+          ],
+          "num2": [
+            4.0,
+            -9.0
+          ],
+          "operation": "/",
+          "result": [
+            8,
+            3
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (4.0 + 2.0i) \u00d7 (-4.0 - 1.0i)",
+        "expected_answer": "-14.0 - 12.0i",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method for multiplying complex numbers (a + bi)(c + di):\n1) First terms: (4.0)(-4.0) = -16.0\n2) Outer terms: (4.0)(-1.0i) = -4.0i\n3) Inner terms: (2.0i)(-4.0) = -8.0i\n4) Last terms: (2.0i)(-1.0i) = -2.0i2 (and since i2 = -1, this becomes +2.0)\n\nNow combine like terms:\n* Real part: -16.0 + 2.0 = -14.0\n* Imaginary part: -4.0i - 8.0i = -12.0i\n\nTherefore, (4.0 + 2.0i)(-4.0 - 1.0i) = -14.0 - 12.0i\n</reasoning>\n<answer>-14.0 - 12.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            4.0,
+            2.0
+          ],
+          "num2": [
+            -4.0,
+            -1.0
+          ],
+          "operation": "*",
+          "result": [
+            -14,
+            -12
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-4.00i) \u00d7 (-3.0 - 4.0i)",
+        "expected_answer": "-16.0 + 12.0i",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n1) First form: (-4i)(a + bi) where a = -3 and b = -4\n2) When multiplying complex numbers, distribute the first number:\n   (-4i)(-3) + (-4i)(-4i)\n3) Simplify:\n   * (-4i)(-3) = 12i\n   * (-4i)(-4i) = 16i2 (since i2 = -1)\n   * 16i2 = 16(-1) = -16\n4) Combine like terms:\n   12i - 16\n</reasoning>\n<answer>-16 + 12i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            0.0,
+            -4.0
+          ],
+          "num2": [
+            -3.0,
+            -4.0
+          ],
+          "operation": "*",
+          "result": [
+            -16,
+            12
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (-7.0 - 1.0i) - (-2.0 + 3.0i)",
+        "expected_answer": "-5.0 - 4.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real and imaginary parts separately:\n(-7.0 - 1.0i) - (-2.0 + 3.0i)\n\nFor real part: -7.0 - (-2.0) = -7.0 + 2.0 = -5.0\nFor imaginary part: -1.0i - (3.0i) = -1.0i - 3.0i = -4.0i\n\nCombining real and imaginary parts: -5.0 - 4.0i\n</reasoning>\n<answer>-5.0 - 4.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -7.0,
+            -1.0
+          ],
+          "num2": [
+            -2.0,
+            3.0
+          ],
+          "operation": "-",
+          "result": [
+            -5,
+            -4
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (4.0 + 1.0i) - (9.0 - 5.0i)",
+        "expected_answer": "-5.0 + 6.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers:\n1. We subtract the real parts: 4.0 - 9.0 = -5.0\n2. We subtract the imaginary parts: 1.0i - (-5.0i)\n   * Note: subtracting a negative is the same as adding\n   * So, 1.0i + 5.0i = 6.0i\n3. Combine the results: -5.0 + 6.0i\n</reasoning>\n<answer>-5.0 + 6.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            4.0,
+            1.0
+          ],
+          "num2": [
+            9.0,
+            -5.0
+          ],
+          "operation": "-",
+          "result": [
+            -5,
+            6
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (2.0 + 7.0i) \u00d7 (3.0 + 1.0i)",
+        "expected_answer": "-1.0 + 23.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, I'll use the FOIL method:\n1) First terms: 2.0 \u00d7 3.0 = 6.0\n2) Outer terms: 2.0 \u00d7 1.0i = 2.0i\n3) Inner terms: 7.0i \u00d7 3.0 = 21.0i\n4) Last terms: 7.0i \u00d7 1.0i = 7.0i2 = -7.0 (since i2 = -1)\n\nNow combine like terms:\n* Real parts: 6.0 + (-7.0) = -1.0\n* Imaginary parts: 2.0i + 21.0i = 23.0i\n\nThe final result is the sum of real and imaginary parts.\n</reasoning>\n<answer>-1.0 + 23.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            2.0,
+            7.0
+          ],
+          "num2": [
+            3.0,
+            1.0
+          ],
+          "operation": "*",
+          "result": [
+            -1,
+            23
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-14.0 + 49.0i) \u00f7 (7.0 + 2.0i)",
+        "expected_answer": "7.00i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll multiply both numerator and denominator by the complex conjugate of the denominator to eliminate complex numbers in the denominator:\n\n(-14.0 + 49.0i) \u00d7 (7.0 - 2.0i)\n-------------------------\n(7.0 + 2.0i) \u00d7 (7.0 - 2.0i)\n\nDenominator: (7.0 + 2.0i)(7.0 - 2.0i) = 7.02 + 2.02 = 49 + 4 = 53\n\nNumerator: (-14.0 + 49.0i)(7.0 - 2.0i)\n= -14.0(7.0) + 14.0(2.0i) + 49.0i(7.0) - 49.0i(2.0i)\n= -98.0 + 28.0i + 343.0i + 98.0\n= 0 + 371.0i\n\nFinal division:\n0 + 371.0i\n-----------\n    53\n\n= 0 + 7i\n</reasoning>\n<answer>7i</answer>",
+        "score": 9.908381426207316e-05,
+        "metadata": {
+          "num1": [
+            -14.0,
+            49.0
+          ],
+          "num2": [
+            7.0,
+            2.0
+          ],
+          "operation": "/",
+          "result": [
+            0,
+            7
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (5.0 + 6.0i) - (-1.0 - 5.0i)",
+        "expected_answer": "6.0 + 11.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real parts and imaginary parts separately.\n\n(5.0 + 6.0i) - (-1.0 - 5.0i)\n= [5.0 - (-1.0)] + [6.0i - (-5.0i)]\n= 5.0 + 1.0 + 6.0i + 5.0i\n= 6.0 + 11.0i\n</reasoning>\n<answer>6.0 + 11.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            5.0,
+            6.0
+          ],
+          "num2": [
+            -1.0,
+            -5.0
+          ],
+          "operation": "-",
+          "result": [
+            6,
+            11
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (-8.0 + 56.0i) \u00f7 (-6.0 + 2.0i)",
+        "expected_answer": "4.0 - 8.0i",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll:\n1) Multiply numerator and denominator by the complex conjugate of the denominator\n2) This makes the denominator a real number\n3) Then simplify\n\n(-8.0 + 56.0i) \u00f7 (-6.0 + 2.0i) = [(-8.0 + 56.0i)(-6.0 - 2.0i)] \u00f7 [(-6.0 + 2.0i)(-6.0 - 2.0i)]\n\nFor denominator:\n(-6.0 + 2.0i)(-6.0 - 2.0i) = 36.0 + 12.0i - 12.0i - 4i2 = 36.0 + 4.0 = 40.0\n\nFor numerator:\n(-8.0 + 56.0i)(-6.0 - 2.0i)\n= 48.0 + 16.0i - 336.0i - 112.0i2\n= 48.0 - 320.0i + 112.0\n= 160.0 - 320.0i\n\nFinal division:\n(160.0 - 320.0i) \u00f7 40.0 = 4.0 - 8.0i\n</reasoning>\n<answer>4.0 - 8.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -8.0,
+            56.0
+          ],
+          "num2": [
+            -6.0,
+            2.0
+          ],
+          "operation": "/",
+          "result": [
+            4,
+            -8
+          ]
+        }
+      },
+      {
+        "question": "Multiply the complex numbers: (-9.0 + 5.0i) \u00d7 (-10.0 + 6.0i)",
+        "expected_answer": "60.0 - 104.0i",
+        "model_answer": "<reasoning>\nTo multiply complex numbers, we use the FOIL method and follow these steps:\n1) First terms: (-9.0)(-10.0) = 90.0\n2) Outer terms: (-9.0)(6.0i) = -54.0i\n3) Inner terms: (5.0i)(-10.0) = -50.0i\n4) Last terms: (5.0i)(6.0i) = 30.0i2 = -30.0 (since i2 = -1)\n\nNow combine like terms:\n* Real parts: 90.0 + (-30.0) = 60.0\n* Imaginary parts: -54.0i + (-50.0i) = -104.0i\n\nTherefore, (-9.0 + 5.0i)(-10.0 + 6.0i) = 60.0 - 104.0i\n</reasoning>\n<answer>60.0 - 104.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -9.0,
+            5.0
+          ],
+          "num2": [
+            -10.0,
+            6.0
+          ],
+          "operation": "*",
+          "result": [
+            60,
+            -104
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (9.0 - 7.0i) - (-4.00i)",
+        "expected_answer": "9.0 - 3.0i",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, recall that when subtracting complex numbers, we subtract the real parts and subtract the imaginary parts.\n\n2) The first complex number is 9.0 - 7.0i\n   The second complex number is -4.00i\n\n3) When subtracting -4.00i, it's the same as adding 4.00i\n   (because subtracting a negative is the same as adding)\n\n4) Now we can align real and imaginary parts:\n   9.0 - 7.0i + 4.00i\n\n5) The real part remains unchanged: 9.0\n   The imaginary parts combine: -7.0i + 4.00i = -3.00i\n</reasoning>\n<answer>9.0 - 3.00i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            9.0,
+            -7.0
+          ],
+          "num2": [
+            0.0,
+            -4.0
+          ],
+          "operation": "-",
+          "result": [
+            9,
+            -3
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (7.00) + (-10.0 - 8.0i)",
+        "expected_answer": "-3.0 - 8.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we:\n1. Add the real parts together: 7.00 + (-10.0) = -3.0\n2. Add the imaginary parts together: 0 + (-8.0i) = -8.0i\n   (Note that the first number 7.00 has no imaginary part, so it's like adding 0i)\n3. Combine the real and imaginary parts: -3.0 - 8.0i\n</reasoning>\n<answer>-3.0 - 8.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            7.0,
+            0.0
+          ],
+          "num2": [
+            -10.0,
+            -8.0
+          ],
+          "operation": "+",
+          "result": [
+            -3,
+            -8
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (-4.0 + 7.0i) - (-7.0 - 2.0i)",
+        "expected_answer": "3.0 + 9.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real and imaginary parts separately.\n\nGiven: (-4.0 + 7.0i) - (-7.0 - 2.0i)\n\n1) First, let's rewrite this by distributing the negative sign to the second term:\n   (-4.0 + 7.0i) + (7.0 + 2.0i)\n\n2) Now we can group real parts and imaginary parts:\n   Real parts: -4.0 + 7.0\n   Imaginary parts: 7.0i + 2.0i\n\n3) Simplify:\n   Real: -4.0 + 7.0 = 3.0\n   Imaginary: 7.0i + 2.0i = 9.0i\n\n4) Combine the results:\n   3.0 + 9.0i\n</reasoning>\n<answer>3.0 + 9.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -4.0,
+            7.0
+          ],
+          "num2": [
+            -7.0,
+            -2.0
+          ],
+          "operation": "-",
+          "result": [
+            3,
+            9
+          ]
+        }
+      },
+      {
+        "question": "Divide the complex numbers: (20.0 - 40.0i) \u00f7 (-5.0 + 10.0i)",
+        "expected_answer": "-4.00",
+        "model_answer": "<reasoning>\nTo divide complex numbers, I'll follow these steps:\n1) When dividing complex numbers, we multiply both numerator and denominator by the complex conjugate of the denominator. This makes the denominator a real number.\n2) The complex conjugate of (-5.0 + 10.0i) is (-5.0 - 10.0i)\n\n(20.0 - 40.0i) \u00d7 (-5.0 - 10.0i)\n--------------------------\n(-5.0 + 10.0i) \u00d7 (-5.0 - 10.0i)\n\n3) Let's solve the denominator first:\n(-5.0 + 10.0i)(-5.0 - 10.0i) = 25.0 + 50.0i - 50.0i - 100.0i2 = 25.0 + 100.0 = 125.0\n\n4) Now the numerator:\n(20.0 - 40.0i)(-5.0 - 10.0i) = -100.0 - 200.0i + 200.0i + 400.0i2 = -100.0 - 400.0 = -500.0\n\n5) Therefore:\n(-500.0)/125.0 = -4.0\n</reasoning>\n<answer>-4.0</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            20.0,
+            -40.0
+          ],
+          "num2": [
+            -5.0,
+            10.0
+          ],
+          "operation": "/",
+          "result": [
+            -4,
+            0
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (9.0 - 2.0i) + (-6.0 + 1.0i)",
+        "expected_answer": "3.0 - 1.0i",
+        "model_answer": "<reasoning>\nWhen adding complex numbers, we add the real parts together and the imaginary parts together separately.\n\nLet's break it down:\n1. Real parts: 9.0 + (-6.0) = 3.0\n2. Imaginary parts: -2.0i + 1.0i = -1.0i\n\nThen combine the results keeping the real and imaginary parts separated by the appropriate sign.\n</reasoning>\n<answer>3.0 - 1.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            9.0,
+            -2.0
+          ],
+          "num2": [
+            -6.0,
+            1.0
+          ],
+          "operation": "+",
+          "result": [
+            3,
+            -1
+          ]
+        }
+      },
+      {
+        "question": "Subtract the complex numbers: (-8.0 + 5.0i) - (8.0 + 8.0i)",
+        "expected_answer": "-16.0 - 3.0i",
+        "model_answer": "<reasoning>\nWhen subtracting complex numbers, we subtract the real parts and imaginary parts separately.\n\nGiven: (-8.0 + 5.0i) - (8.0 + 8.0i)\n\n1) For real parts: -8.0 - 8.0 = -16.0\n2) For imaginary parts: 5.0i - 8.0i = -3.0i\n\nCombining the results: -16.0 - 3.0i\n</reasoning>\n<answer>-16.0 - 3.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -8.0,
+            5.0
+          ],
+          "num2": [
+            8.0,
+            8.0
+          ],
+          "operation": "-",
+          "result": [
+            -16,
+            -3
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (8.0 - 5.0i) + (-5.0 + 2.0i)",
+        "expected_answer": "3.0 - 3.0i",
+        "model_answer": "<reasoning>\nTo add complex numbers, we add the real parts and imaginary parts separately:\n1. Real parts: 8.0 + (-5.0) = 3.0\n2. Imaginary parts: -5.0i + 2.0i = -3.0i\n\nWhen we combine them, we get: 3.0 - 3.0i\n</reasoning>\n<answer>3.0 - 3.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            8.0,
+            -5.0
+          ],
+          "num2": [
+            -5.0,
+            2.0
+          ],
+          "operation": "+",
+          "result": [
+            3,
+            -3
+          ]
+        }
+      }
+    ]
+  }
+]

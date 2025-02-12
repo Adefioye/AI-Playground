@@ -1,0 +1,668 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "intermediate_integration",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.7909999999999999,
+      "total_examples": 50,
+      "timestamp": "2025-02-11T23:44:16.306296",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Find the indefinite integral: \u222b -3*exp(3*x + 9) dx",
+        "expected_answer": "-exp(3*x + 9) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, notice that we have a constant -3 multiplied by exp(3*x + 9)\n\n2) The exponential function exp(3*x + 9) can be rewritten as exp(3*x)*exp(9)\n   This is because of the properties of exponentials: exp(a+b) = exp(a)*exp(b)\n\n3) exp(9) is just a constant, so exp(9) and -3 can be treated as one constant\n   -3*exp(9) is just some constant, let's keep it as -3*exp(9)\n\n4) Now we're essentially integrating: -3*exp(9)*exp(3*x)\n\n5) For exp(3*x), the integral rule is: \u222bexp(ax)dx = (1/a)*exp(ax) + C\n\n6) Therefore: \u222b-3*exp(9)*exp(3*x)dx = -3*exp(9)*(1/3)*exp(3*x) + C\n                                    = -exp(9)*exp(3*x) + C\n                                    = -exp(3*x + 9) + C\n\n</reasoning>\n<answer>-exp(3*x + 9) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-3*exp(3*x + 9)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "exponential",
+          "expected_answer_expression": "-exp(3*x + 9)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -6*sin(2*X + 10)*cos(2*X + 10)**4 dx",
+        "expected_answer": "3*cos(2*X + 10)**5/5 + C",
+        "model_answer": "<reasoning>Let's solve this step by step:\n\n1) First, notice this is a product of sin(2*X + 10) and cos(2*X + 10)**4\n\n2) Let's use the substitution method:\n   Let u = cos(2*X + 10)\n   Then du = -2*sin(2*X + 10)dx\n   Therefore, sin(2*X + 10)dx = -du/2\n\n3) Rewriting the integral:\n   \u222b -6*sin(2*X + 10)*cos(2*X + 10)**4 dx\n   = \u222b -6*cos(2*X + 10)**4 * (-du/2)\n   = 3*\u222b u**4 du\n\n4) Now we can integrate u**4:\n   3*\u222b u**4 du = 3*(u**5/5) + C\n\n5) Substitute back u = cos(2*X + 10):\n   3*(cos(2*X + 10)**5/5) + C</reasoning>\n<answer>3*(cos(2*X + 10)**5/5) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-6*sin(2*X + 10)*cos(2*X + 10)**4",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "trigonometric",
+          "expected_answer_expression": "3*cos(2*X + 10)**5/5"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 2*asin(x) dx",
+        "expected_answer": "2*Integral(asin(x), x) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's recall the integral of arcsin(x):\n   \u222b asin(x) dx = x*asin(x) + sqrt(1-x**2) + C\n\n2) For this problem, we have 2*asin(x), so we can factor out the 2:\n   2*\u222b asin(x) dx = 2*(x*asin(x) + sqrt(1-x**2)) + C\n\n3) Distribute the 2:\n   = 2*x*asin(x) + 2*sqrt(1-x**2) + C\n\nTherefore, the indefinite integral of 2*asin(x) is:\n</reasoning>\n\n<answer>2*x*asin(x) + 2*sqrt(1-x**2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*asin(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "log_inverse_trig",
+          "expected_answer_expression": "2*Integral(asin(x), x)"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -2*X**3*sin(X) dx",
+        "expected_answer": "2*X**3*cos(X) - 6*X**2*sin(X) - 12*X*cos(X) + 12*sin(X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts.\nLet u = -2*X**3 and dv = sin(X)dx\n\nThen du = -6*X**2 dx and v = -cos(X)\n\nFirst application of integration by parts:\n\u222b(-2*X**3*sin(X))dx = -2*X**3*(-cos(X)) - \u222b(-6*X**2*(-cos(X)))dx\n= 2*X**3*cos(X) + 6\u222bX**2*cos(X)dx\n\nNow for \u222bX**2*cos(X)dx:\nLet u = X**2 and dv = cos(X)dx\nThen du = 2*X dx and v = sin(X)\n\n\u222bX**2*cos(X)dx = X**2*sin(X) - \u222b(2*X*sin(X))dx\n\nFor \u222b(2*X*sin(X))dx:\nLet u = 2*X and dv = sin(X)dx\nThen du = 2dx and v = -cos(X)\n\n\u222b(2*X*sin(X))dx = -2*X*cos(X) + \u222b(2*cos(X))dx\n= -2*X*cos(X) + 2*sin(X)\n\nPutting it all back together:\n\u222bX**2*cos(X)dx = X**2*sin(X) - (-2*X*cos(X) + 2*sin(X))\n= X**2*sin(X) + 2*X*cos(X) - 2*sin(X)\n\nFinally:\n\u222b(-2*X**3*sin(X))dx = 2*X**3*cos(X) + 6*(X**2*sin(X) + 2*X*cos(X) - 2*sin(X))\n= 2*X**3*cos(X) + 6*X**2*sin(X) + 12*X*cos(X) - 12*sin(X) + C\n</reasoning>\n<answer>2*X**3*cos(X) + 6*X**2*sin(X) + 12*X*cos(X) - 12*sin(X) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-2*X**3*sin(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "repeated_parts",
+          "expected_answer_expression": "2*X**3*cos(X) - 6*X**2*sin(X) - 12*X*cos(X) + 12*sin(X)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 3*(10*X + 10)**4 dx",
+        "expected_answer": "6000*X**5 + 30000*X**4 + 60000*X**3 + 60000*X**2 + 30000*X + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's identify that we have a function of the form \u222b 3*(10*X + 10)**4 dx\n\n2) Let's factor out constants:\n   = 3 * \u222b (10*X + 10)**4 dx\n\n3) Let's use substitution method:\n   Let u = 10*X + 10\n   du = 10 dx\n   dx = du/10\n\n4) Rewriting integral:\n   = 3 * \u222b u**4 * (1/10) du\n   = (3/10) * \u222b u**4 du\n\n5) Integrate u**4:\n   = (3/10) * (u**5/5) + C\n\n6) Substitute back 10*X + 10 for u:\n   = (3/10) * ((10*X + 10)**5/5) + C\n   = (3/50) * (10*X + 10)**5 + C\n\n</reasoning>\n<answer>(3/50)*(10*X + 10)**5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "3*(10*X + 10)**4",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "linear",
+          "expected_answer_expression": "6000*X**5 + 30000*X**4 + 60000*X**3 + 60000*X**2 + 30000*X"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -2*x**3*exp(x) dx",
+        "expected_answer": "(-2*x**3 + 6*x**2 - 12*x + 12)*exp(x) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts.\nLet u = -2*x**3 and dv = exp(x)dx\n\nThen du = -6*x**2 dx and v = exp(x)\n\nUsing the formula \u222bu dv = uv - \u222bv du:\n\n\u222b(-2*x**3*exp(x))dx = -2*x**3*exp(x) - \u222bexp(x)*(-6*x**2)dx\n= -2*x**3*exp(x) + 6\u222bx**2*exp(x)dx\n\nNow for \u222bx**2*exp(x)dx, let's use integration by parts again:\nLet u = x**2 and dv = exp(x)dx\nThen du = 2*x dx and v = exp(x)\n\n\u222bx**2*exp(x)dx = x**2*exp(x) - \u222b2*x*exp(x)dx\n\nFor \u222b2*x*exp(x)dx:\nLet u = 2*x and dv = exp(x)dx\nThen du = 2dx and v = exp(x)\n\n\u222b2*x*exp(x)dx = 2*x*exp(x) - \u222b2*exp(x)dx\n= 2*x*exp(x) - 2*exp(x)\n\nPutting it all back together:\n\u222bx**2*exp(x)dx = x**2*exp(x) - (2*x*exp(x) - 2*exp(x))\n= x**2*exp(x) - 2*x*exp(x) + 2*exp(x)\n\nTherefore, the final answer is:\n-2*x**3*exp(x) + 6*(x**2*exp(x) - 2*x*exp(x) + 2*exp(x)) + C\n= -2*x**3*exp(x) + 6*x**2*exp(x) - 12*x*exp(x) + 12*exp(x) + C\n</reasoning>\n<answer>-2*x**3*exp(x) + 6*x**2*exp(x) - 12*x*exp(x) + 12*exp(x) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-2*x**3*exp(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "repeated_parts",
+          "expected_answer_expression": "(-2*x**3 + 6*x**2 - 12*x + 12)*exp(x)"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -sin(x)*cos(x) dx",
+        "expected_answer": "-sin(x)**2/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, recognize that this is the product of -sin(x) and cos(x)\n\n2) We can rewrite this using the double angle formula:\n   -sin(x)*cos(x) = -(1/2)*sin(2*x)\n\n3) Now our integral becomes:\n   \u222b -(1/2)*sin(2*x) dx\n\n4) To integrate sin(2*x), we know that:\n   \u222b sin(ax) dx = -(1/a)*cos(ax) + C\n\n5) Therefore:\n   \u222b -(1/2)*sin(2*x) dx = -(1/2)*[-(1/2)*cos(2*x)] + C\n                         = (1/4)*cos(2*x) + C\n</reasoning>\n<answer>(1/4)*cos(2*x) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-sin(x)*cos(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "cyclic",
+          "expected_answer_expression": "-sin(x)**2/2"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -18*sqrt(6*X + 1) dx",
+        "expected_answer": "-2*(6*X + 1)**(3/2) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's identify that we have \u222b -18*sqrt(6*X + 1) dx\n   This is of the form \u222b a*sqrt(bx + c) dx, where a=-18, b=6, and c=1\n\n2) For integrals of this form, we use the formula:\n   \u222b sqrt(ax + b) dx = (2/3)*(ax + b)**(3/2)/a + C\n\n3) In our case:\n   - The expression inside sqrt is (6*X + 1)\n   - We have -18 outside\n   - So: -18 * \u222b sqrt(6*X + 1) dx\n   = -18 * (2/3)*(6*X + 1)**(3/2)/6 + C\n   = -6*(6*X + 1)**(3/2) + C\n\n4) This can be simplified to:\n   -6*(6*X + 1)**(3/2) + C\n</reasoning>\n<answer>-6*(6*X + 1)**(3/2) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-18*sqrt(6*X + 1)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "radical",
+          "expected_answer_expression": "-2*(6*X + 1)**(3/2)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -sin(X)*cos(X) dx",
+        "expected_answer": "-sin(X)**2/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, recognize that this is the product of -sin(X) and cos(X)\n\n2) One way to solve this is to use the following identity:\n   sin(X)*cos(X) = (1/2)*sin(2*X)\n\n3) Therefore, -sin(X)*cos(X) = -(1/2)*sin(2*X)\n\n4) Now we can integrate:\n   \u222b -sin(X)*cos(X) dx = \u222b -(1/2)*sin(2*X) dx\n\n5) The integral of sin(2*X) is -cos(2*X)/(2)\n\n6) Therefore:\n   \u222b -(1/2)*sin(2*X) dx = -(1/2)*(-cos(2*X)/2) + C\n                         = (1/4)*cos(2*X) + C\n\n</reasoning>\n<answer>(1/4)*cos(2*X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-sin(X)*cos(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "cyclic",
+          "expected_answer_expression": "-sin(X)**2/2"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -21*sin(7*x + 9)**3*cos(7*x + 9) dx",
+        "expected_answer": "-3*sin(7*x + 9)**4/4 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) Let's first recognize this is a function where we can use substitution method\n   Let u = sin(7*x + 9)\n   Then du = 7*cos(7*x + 9)dx\n   Therefore, cos(7*x + 9)dx = du/7\n\n2) Rewriting the integral in terms of u:\n   \u222b -21*u**3*cos(7*x + 9) dx\n   = \u222b -21*u**3*(du/7)\n   = -3*u**4 + C\n\n3) Now substitute back sin(7*x + 9) for u:\n   = -3*[sin(7*x + 9)]**4 + C\n\n</reasoning>\n<answer>-3*sin(7*x + 9)**4 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-21*sin(7*x + 9)**3*cos(7*x + 9)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "trigonometric",
+          "expected_answer_expression": "-3*sin(7*x + 9)**4/4"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b x**3*cos(x) dx",
+        "expected_answer": "x**3*sin(x) + 3*x**2*cos(x) - 6*x*sin(x) - 6*cos(x) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts: \u222bu*dv = u*v - \u222bv*du\n\nLet u = x**3 and dv = cos(x)dx\nThen du = 3*x**2*dx and v = sin(x)\n\nFirst iteration:\n\u222bx**3*cos(x)dx = x**3*sin(x) - \u222b3*x**2*sin(x)dx\n\nFor the remaining integral, let's use integration by parts again:\nLet u = x**2 and dv = sin(x)dx\nThen du = 2*x*dx and v = -cos(x)\n\n\u222b3*x**2*sin(x)dx = -3*x**2*cos(x) - \u222b(-3*2*x*cos(x))dx\n= -3*x**2*cos(x) + 6\u222bx*cos(x)dx\n\nFor the last integral:\nLet u = x and dv = cos(x)dx\nThen du = dx and v = sin(x)\n\n6\u222bx*cos(x)dx = 6*x*sin(x) - 6\u222bsin(x)dx\n= 6*x*sin(x) + 6*cos(x)\n\nPutting it all together:\nx**3*sin(x) - (-3*x**2*cos(x) + 6*x*sin(x) + 6*cos(x)) + C\n= x**3*sin(x) + 3*x**2*cos(x) - 6*x*sin(x) - 6*cos(x) + C\n</reasoning>\n<answer>x**3*sin(x) + 3*x**2*cos(x) - 6*x*sin(x) - 6*cos(x) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "x**3*cos(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "repeated_parts",
+          "expected_answer_expression": "x**3*sin(x) + 3*x**2*cos(x) - 6*x*sin(x) - 6*cos(x)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 8*sqrt(1 - 8*X) dx",
+        "expected_answer": "-2*(1 - 8*X)**(3/2)/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) Let's use substitution method (u-substitution)\n   Let u = 1 - 8*X\n   du = -8*dx\n   dx = -du/8\n\n2) The integral becomes:\n   \u222b 8*sqrt(1 - 8*X) dx = \u222b 8*sqrt(u) * (-du/8)\n   = -\u222b sqrt(u) du\n\n3) We know that \u222b sqrt(u) du = (2/3)*u**(3/2) + C\n\n4) Therefore:\n   -\u222b sqrt(u) du = -(2/3)*u**(3/2) + C\n   = -(2/3)*(1 - 8*X)**(3/2) + C\n\n5) This is our final answer. No need to substitute back as u = 1 - 8*X is already substituted.\n</reasoning>\n<answer>-(2/3)*(1 - 8*X)**(3/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "8*sqrt(1 - 8*X)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "radical",
+          "expected_answer_expression": "-2*(1 - 8*X)**(3/2)/3"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b (42*X - 24)*exp(-7*X**2 + 8*X - 10) dx",
+        "expected_answer": "-3*exp(-7*X**2 + 8*X - 10) + C",
+        "model_answer": "<reasoning>\nLet's solve this using the following steps:\n\n1) First, let's identify that this is a product of a linear function (42*X - 24) and an exponential function exp(-7*X**2 + 8*X - 10)\n\n2) Let's use substitution method:\n   Let u = -7*X**2 + 8*X - 10\n   Then du = (-14*X + 8)dx\n   \n3) We need to express (42*X - 24)dx in terms of du:\n   (-14*X + 8)dx = du\n   dx = du/(-14*X + 8)\n   \n4) Therefore, 42*X - 24 = -3*(-14*X + 8) + 0\n   This means (42*X - 24)dx = -3du\n\n5) The integral becomes:\n   \u222b(42*X - 24)exp(-7*X**2 + 8*X - 10)dx = -3\u222bexp(u)du\n\n6) Solving:\n   -3\u222bexp(u)du = -3*exp(u) + C\n   = -3*exp(-7*X**2 + 8*X - 10) + C\n\n</reasoning>\n<answer>-3*exp(-7*X**2 + 8*X - 10) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "(42*X - 24)*exp(-7*X**2 + 8*X - 10)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "exponential",
+          "expected_answer_expression": "-3*exp(-7*X**2 + 8*X - 10)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 9*sin(3*x - 2)*cos(3*x - 2)**3 dx",
+        "expected_answer": "-3*cos(3*x - 2)**4/4 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's recognize that this involves sin(3*x-2) and cos(3*x-2)**3\n\n2) Let's make a substitution to simplify:\n   Let u = 3*x - 2\n   Then du/dx = 3\n   dx = du/3\n\n3) The integral becomes:\n   \u222b 9*sin(u)*cos(u)**3 du * (1/3)\n   = 3\u222b sin(u)*cos(u)**3 du\n\n4) We can solve this using a power reduction formula:\n   cos(u)**3 = cos(u)*(cos(u)**2)\n   cos(u)**2 = (1 + cos(2*u))/2\n\n5) Therefore:\n   cos(u)**3 = cos(u)*((1 + cos(2*u))/2)\n   = (cos(u) + cos(u)*cos(2*u))/2\n\n6) Our integral is now:\n   3\u222b sin(u)*((cos(u) + cos(u)*cos(2*u))/2) du\n   = (3/2)\u222b [sin(u)*cos(u) + sin(u)*cos(u)*cos(2*u)] du\n\n7) For the first part:\n   sin(u)*cos(u) = (1/2)sin(2*u)\n\n8) The integral becomes:\n   (3/2)\u222b [(1/2)sin(2*u) + sin(u)*cos(u)*cos(2*u)] du\n   = (3/4)\u222b sin(2*u) du + (3/2)\u222b sin(u)*cos(u)*cos(2*u) du\n\n9) The first part integrates to:\n   (3/4)*(-cos(2*u)/2)\n   = -(3/8)cos(2*u)\n\n10) After more trigonometric manipulation and integration:\n    The final result in terms of u is:\n    -(3/8)cos(2*u) - (3/8)cos(4*u) + C\n\n11) Substituting back u = 3*x - 2:\n    -(3/8)cos(2*(3*x - 2)) - (3/8)cos(4*(3*x - 2)) + C\n</reasoning>\n<answer>-(3/8)*cos(6*x - 4) - (3/8)*cos(12*x - 8) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "9*sin(3*x - 2)*cos(3*x - 2)**3",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "trigonometric",
+          "expected_answer_expression": "-3*cos(3*x - 2)**4/4"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b (30 - 12*X)*exp(2*X**2 - 10*X + 6) dx",
+        "expected_answer": "-3*exp(2*X**2 - 10*X + 6) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts:\n\n1) First, let's identify u and dv:\n   Let u = 30 - 12*X\n   dv = exp(2*X**2 - 10*X + 6) dx\n\n2) We need to find du:\n   du = -12 dx\n\n3) To find v, we need to recognize that exp(2*X**2 - 10*X + 6) is the derivative of something:\n   The inside of exp is (2*X**2 - 10*X + 6)\n   When we take derivative of v, it should give us exp(2*X**2 - 10*X + 6)\n   \n4) Looking at the derivative:\n   If v = (1/2)*exp(2*X**2 - 10*X + 6)\n   Then dv = exp(2*X**2 - 10*X + 6) dx\n\n5) Using integration by parts formula: \u222bu dv = uv - \u222bv du\n\n6) Substituting:\n   \u222b(30 - 12*X)*exp(2*X**2 - 10*X + 6) dx \n   = (30 - 12*X)*(1/2)*exp(2*X**2 - 10*X + 6) - \u222b(-12)*(1/2)*exp(2*X**2 - 10*X + 6) dx\n   = (30 - 12*X)*(1/2)*exp(2*X**2 - 10*X + 6) + 6*exp(2*X**2 - 10*X + 6) + C\n\n7) Simplifying:\n   = ((30 - 12*X)/2 + 6)*exp(2*X**2 - 10*X + 6) + C\n   = (15 - 6*X + 6)*exp(2*X**2 - 10*X + 6) + C\n   = (21 - 6*X)*exp(2*X**2 - 10*X + 6) + C\n</reasoning>\n<answer>(21 - 6*X)*exp(2*X**2 - 10*X + 6) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "(30 - 12*X)*exp(2*X**2 - 10*X + 6)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "exponential",
+          "expected_answer_expression": "-3*exp(2*X**2 - 10*X + 6)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -2*(4*X - 9)**3 dx",
+        "expected_answer": "-32*X**4 + 288*X**3 - 972*X**2 + 1458*X + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's use u-substitution\n   Let u = 4*X - 9\n   Then du = 4dx\n   dx = du/4\n\n2) The integral becomes:\n   \u222b -2*(u)**3 * (1/4)du\n   = (-1/2)*\u222b u**3 du\n\n3) Integrate u**3:\n   (-1/2)*(u**4/4) + C\n   = (-1/8)*u**4 + C\n\n4) Substitute back 4*X - 9 for u:\n   = (-1/8)*(4*X - 9)**4 + C\n\n5) This is our final answer. Note that the original expression had -2*(4*X - 9)**3, and after integration, we got (-1/8)*(4*X - 9)**4.\n</reasoning>\n<answer>(-1/8)*(4*X - 9)**4 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-2*(4*X - 9)**3",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "linear",
+          "expected_answer_expression": "-32*X**4 + 288*X**3 - 972*X**2 + 1458*X"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -16*sin(8*x - 6)**3*cos(8*x - 6) dx",
+        "expected_answer": "-sin(8*x - 6)**4/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) This integral has the form \u222bsin3(u)*cos(u)du where u = 8x - 6\n\n2) First, let's make a substitution:\n   Let u = 8x - 6\n   Then du = 8dx\n   dx = du/8\n\n3) The integral becomes:\n   \u222b-16*sin3(u)*cos(u)*(1/8)du\n   = -2\u222bsin3(u)*cos(u)du\n\n4) For integrals of the form \u222bsin^n(u)*cos(u)du, we can use the substitution:\n   Let v = sin(u)\n   Then dv = cos(u)du\n\n5) So our integral becomes:\n   -2\u222bv3dv\n   = -2*(v4/4) + C\n   = -(v4/2) + C\n\n6) Substituting back u = 8x - 6:\n   = -(sin(8x - 6)4/2) + C\n\n</reasoning>\n<answer>-(sin(8*x - 6)**4/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-16*sin(8*x - 6)**3*cos(8*x - 6)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "trigonometric",
+          "expected_answer_expression": "-sin(8*x - 6)**4/2"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 9*sqrt(3*x - 1) dx",
+        "expected_answer": "2*(3*x - 1)**(3/2) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's handle the square root by setting u = 3*x - 1\n   This means dx = du/3\n\n2) The integral becomes:\n   \u222b 9*sqrt(u) * (1/3)du = 3*\u222b sqrt(u) du\n\n3) The antiderivative of sqrt(u) is:\n   \u222b sqrt(u) du = (2/3)*u**(3/2) + C\n\n4) Therefore:\n   3*\u222b sqrt(u) du = 3*(2/3)*u**(3/2) + C\n   = 2*u**(3/2) + C\n\n5) Now substitute back u = 3*x - 1:\n   = 2*(3*x - 1)**(3/2) + C\n\nThis is our final answer with C being the constant of integration.\n</reasoning>\n<answer>2*(3*x - 1)**(3/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "9*sqrt(3*x - 1)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "radical",
+          "expected_answer_expression": "2*(3*x - 1)**(3/2)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -2*asin(X) dx",
+        "expected_answer": "-2*Integral(asin(X), X) + C",
+        "model_answer": "<reasoning>\nTo find the antiderivative of -2*asin(X), I'll follow these steps:\n\n1) The integral of asin(X) has a known form:\n   \u222b asin(X) dx = X*asin(X) + \u221a(1-X**2) + C\n\n2) Since we have -2*asin(X), we multiply the entire result by -2:\n   -2 * [X*asin(X) + \u221a(1-X**2)] + C\n\n3) Distributing the -2:\n   -2*X*asin(X) - 2*\u221a(1-X**2) + C\n\nThis is our final antiderivative.\n</reasoning>\n<answer>-2*X*asin(X) - 2*\u221a(1-X**2) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-2*asin(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "log_inverse_trig",
+          "expected_answer_expression": "-2*Integral(asin(X), X)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 2*asin(2*x) dx",
+        "expected_answer": "2*Integral(asin(2*x), x) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) To find the antiderivative of arcsin(2x), we can use integration by parts:\n   Let u = asin(2x) and dv = 2dx\n   Then du = 2/sqrt(1-(2x)**2) dx and v = 2x\n\n2) Using the formula \u222bu dv = uv - \u222bv du:\n   \u222b2*asin(2x) dx = 2x*asin(2x) - \u222b2x * 2/sqrt(1-(2x)**2) dx\n   = 2x*asin(2x) - \u222b4x/sqrt(1-4x**2) dx\n\n3) For the remaining integral, let's substitute:\n   Let w = 1-4x**2\n   dw = -8x dx\n   dx = -dw/(8x)\n\n4) The integral becomes:\n   2x*asin(2x) + (1/2)\u222b1/sqrt(w) dw\n   = 2x*asin(2x) + (1/2)*2*sqrt(w) + C\n   = 2x*asin(2x) + sqrt(1-4x**2) + C\n\n</reasoning>\n<answer>2*x*asin(2*x) + sqrt(1-4*x**2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*asin(2*x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "log_inverse_trig",
+          "expected_answer_expression": "2*Integral(asin(2*x), x)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -6*sin(6*x - 9)*cos(6*x - 9)**2 dx",
+        "expected_answer": "cos(6*x - 9)**3/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's look at the form. We have: -6*sin(6*x - 9)*cos(6*x - 9)**2\n\n2) Let's use the substitution method:\n   Let u = 6*x - 9\n   du/dx = 6\n   dx = du/6\n\n3) The integral becomes:\n   \u222b -6*sin(u)*cos(u)**2 * (1/6) du\n   = -1 * \u222b sin(u)*cos(u)**2 du\n\n4) We can use the power reduction formula for cos(u):\n   cos(u)**2 = (1 + cos(2*u))/2\n\n5) So our integral is:\n   -1 * \u222b sin(u) * ((1 + cos(2*u))/2) du\n   = -(1/2) * \u222b sin(u) du - (1/2) * \u222b sin(u)*cos(2*u) du\n\n6) The first part is simple:\n   -(1/2) * \u222b sin(u) du = (1/2)*cos(u)\n\n7) For the second part, using the formula sin(u)*cos(2*u) = (1/2)(sin(3*u) - sin(u)):\n   -(1/2) * \u222b sin(u)*cos(2*u) du\n   = -(1/2) * (1/2) * \u222b (sin(3*u) - sin(u)) du\n   = -(1/4) * (-cos(3*u)/3 + cos(u))\n\n8) Combining the parts and substituting back u = 6*x - 9:\n   (1/2)*cos(6*x - 9) + (1/12)*cos(3*(6*x - 9)) - (1/4)*cos(6*x - 9)\n   = (1/12)*cos(18*x - 27) + (1/4)*cos(6*x - 9)\n\n9) Don't forget to add the constant of integration, C.\n</reasoning>\n<answer>(1/12)*cos(18*x - 27) + (1/4)*cos(6*x - 9) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-6*sin(6*x - 9)*cos(6*x - 9)**2",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "trigonometric",
+          "expected_answer_expression": "cos(6*x - 9)**3/3"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 2*exp(X)*cos(X) dx",
+        "expected_answer": "exp(X)*sin(X) + exp(X)*cos(X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts method.\nLet u = exp(X) and dv = 2*cos(X)dx\n\nThen du = exp(X)dx and v = 2*sin(X)\n\nFirst application of integration by parts:\n\u222b 2*exp(X)*cos(X) dx = 2*exp(X)*sin(X) - \u222b 2*exp(X)*sin(X) dx\n\nNow for the remaining integral, let's use integration by parts again:\nLet u = exp(X) and dv = 2*sin(X)dx\nThen du = exp(X)dx and v = -2*cos(X)\n\n\u222b 2*exp(X)*sin(X) dx = -2*exp(X)*cos(X) + \u222b 2*exp(X)*cos(X) dx\n\nSubstituting back:\n\u222b 2*exp(X)*cos(X) dx = 2*exp(X)*sin(X) - [-2*exp(X)*cos(X) + \u222b 2*exp(X)*cos(X) dx]\n\u222b 2*exp(X)*cos(X) dx = 2*exp(X)*sin(X) + 2*exp(X)*cos(X) - \u222b 2*exp(X)*cos(X) dx\n\nLet I = \u222b 2*exp(X)*cos(X) dx\nThen: I = 2*exp(X)*sin(X) + 2*exp(X)*cos(X) - I\n\n2I = 2*exp(X)*sin(X) + 2*exp(X)*cos(X)\nI = exp(X)*sin(X) + exp(X)*cos(X) + C\n</reasoning>\n<answer>exp(X)*sin(X) + exp(X)*cos(X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*exp(X)*cos(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "cyclic",
+          "expected_answer_expression": "exp(X)*sin(X) + exp(X)*cos(X)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 2*x**3*sin(x) dx",
+        "expected_answer": "-2*x**3*cos(x) + 6*x**2*sin(x) + 12*x*cos(x) - 12*sin(x) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts formula: \u222bu dv = uv - \u222bv du\n\nLet u = 2*x**3 and dv = sin(x)dx\nThen du = 6*x**2 dx and v = -cos(x)\n\nFirst iteration:\n\u222b2*x**3*sin(x)dx = -2*x**3*cos(x) - \u222b(-cos(x))*6*x**2dx\n= -2*x**3*cos(x) + 6\u222bx**2*cos(x)dx\n\nNow for \u222bx**2*cos(x)dx, let's use integration by parts again:\nLet u = x**2 and dv = cos(x)dx\nThen du = 2*x dx and v = sin(x)\n\n\u222bx**2*cos(x)dx = x**2*sin(x) - \u222b2*x*sin(x)dx\n\nFor \u222b2*x*sin(x)dx:\nLet u = 2*x and dv = sin(x)dx\nThen du = 2dx and v = -cos(x)\n\n\u222b2*x*sin(x)dx = -2*x*cos(x) + \u222b2*cos(x)dx\n= -2*x*cos(x) + 2*sin(x)\n\nPutting it all back together:\n\u222bx**2*cos(x)dx = x**2*sin(x) + 2*x*cos(x) - 2*sin(x)\n\nTherefore:\n\u222b2*x**3*sin(x)dx = -2*x**3*cos(x) + 6*(x**2*sin(x) + 2*x*cos(x) - 2*sin(x)) + C\n= -2*x**3*cos(x) + 6*x**2*sin(x) + 12*x*cos(x) - 12*sin(x) + C\n</reasoning>\n<answer>-2*x**3*cos(x) + 6*x**2*sin(x) + 12*x*cos(x) - 12*sin(x) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*x**3*sin(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "repeated_parts",
+          "expected_answer_expression": "-2*x**3*cos(x) + 6*x**2*sin(x) + 12*x*cos(x) - 12*sin(x)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -sin(X)*cos(X) dx",
+        "expected_answer": "-sin(X)**2/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, recognize that this is a product of sine and cosine\n2) We can use the fact that sin(X)*cos(X) = (1/2)*sin(2*X)\n3) Therefore, -sin(X)*cos(X) = -(1/2)*sin(2*X)\n4) Now we integrate: \u222b -(1/2)*sin(2*X) dx\n5) The integral of sin(2*X) is -cos(2*X)/2\n6) Therefore, \u222b -(1/2)*sin(2*X) dx = -(1/2)*(-cos(2*X)/2) + C\n7) Simplify: (1/4)*cos(2*X) + C\n\nThe antiderivative contains a constant of integration (C)\n</reasoning>\n<answer>(1/4)*cos(2*X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-sin(X)*cos(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "cyclic",
+          "expected_answer_expression": "-sin(X)**2/2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 24*sqrt(8*X - 5) dx",
+        "expected_answer": "2*(8*X - 5)**(3/2) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's simplify inside the square root:\n   \u222b 24*sqrt(8*X - 5) dx\n   \n2) Let's make a substitution to simplify:\n   Let u = 8*X - 5\n   du = 8 dx\n   dx = du/8\n\n3) Rewrite the integral:\n   24 * \u222b sqrt(u) * (1/8) du\n   = 3 * \u222b sqrt(u) du\n\n4) We know that: \u222b sqrt(u) du = (2/3) * u**(3/2) + C\n\n5) Substitute back:\n   3 * (2/3) * (8*X - 5)**(3/2) + C\n   = 2 * (8*X - 5)**(3/2) + C\n\n</reasoning>\n<answer>2*(8*X - 5)**(3/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "24*sqrt(8*X - 5)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "radical",
+          "expected_answer_expression": "2*(8*X - 5)**(3/2)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 14*sqrt(-7*x - 10) dx",
+        "expected_answer": "-4*(-7*x - 10)**(3/2)/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) Let's make a substitution to simplify the square root:\n   Let u = -7*x - 10\n   du = -7 dx\n   dx = -1/7 du\n\n2) The integral becomes:\n   \u222b 14*sqrt(u) * (-1/7 du)\n   = -2*\u222b sqrt(u) du\n\n3) The integral of sqrt(u) is:\n   \u222b sqrt(u) du = (2/3)*u**(3/2) + C\n\n4) Therefore:\n   -2*\u222b sqrt(u) du = -2*(2/3)*u**(3/2) + C\n   = -(4/3)*u**(3/2) + C\n\n5) Substitute back u = -7*x - 10:\n   = -(4/3)*(-7*x - 10)**(3/2) + C\n\n</reasoning>\n<answer>-(4/3)*(-7*x - 10)**(3/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "14*sqrt(-7*x - 10)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "radical",
+          "expected_answer_expression": "-4*(-7*x - 10)**(3/2)/3"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -2*asin(2*x) dx",
+        "expected_answer": "-2*Integral(asin(2*x), x) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) We need to find the antiderivative of -2*asin(2*x)\n\n2) For arcsin(ax), the integral formula is:\n   \u222b arcsin(ax) dx = x*arcsin(ax) + (1/a)*sqrt(1-(ax)**2) + C\n\n3) In our case:\n   * We have -2*asin(2*x)\n   * a = 2\n   * We need to multiply the formula by -2\n\n4) Applying the formula:\n   -2 * [x*arcsin(2*x) + (1/2)*sqrt(1-(2x)**2) + C]\n\n5) Simplifying:\n   -2*x*arcsin(2*x) - sqrt(1-4*x**2) + C\n\nNote: The constant of integration -2C can be written as just C since C is arbitrary.\n</reasoning>\n<answer>-2*x*arcsin(2*x) - sqrt(1-4*x**2) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-2*asin(2*x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "log_inverse_trig",
+          "expected_answer_expression": "-2*Integral(asin(2*x), x)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 18*sin(6*x + 8)**4*cos(6*x + 8) dx",
+        "expected_answer": "3*sin(6*x + 8)**5/5 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) This is a integral of the form \u222bsin^n(u)*cos(u) du, where:\n   - u = 6*x + 8\n   - n = 4\n   - There's also a constant multiplier 18\n\n2) For integrals of this form, we can use the substitution:\n   let y = sin(u)\n   dy/dx = cos(u)*du/dx\n   \n3) In our case:\n   let y = sin(6*x + 8)\n   dy = cos(6*x + 8)*6 dx\n   dx = dy/(6*cos(6*x + 8))\n\n4) Original integral becomes:\n   18*\u222bsin(6*x + 8)**4*cos(6*x + 8) dx\n   = 18*\u222by**4*(1/6) dy\n   = 3*\u222by**4 dy\n\n5) Integrate:\n   3*\u222by**4 dy = 3*(y**5/5) + C\n   = 3*(sin(6*x + 8)**5/5) + C\n\n6) Therefore:\n   \u222b18*sin(6*x + 8)**4*cos(6*x + 8) dx = 3*sin(6*x + 8)**5/5 + C</reasoning>\n<answer>3*sin(6*x + 8)**5/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "18*sin(6*x + 8)**4*cos(6*x + 8)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "trigonometric",
+          "expected_answer_expression": "3*sin(6*x + 8)**5/5"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -3*sqrt(-3*X - 2) dx",
+        "expected_answer": "2*(-3*X - 2)**(3/2)/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's identify the structure: we're integrating -3*sqrt(-3*X - 2)\n\n2) Let's make a substitution to simplify:\n   Let u = -3*X - 2\n   du = -3 dx\n   dx = -1/3 du\n\n3) The integral becomes:\n   -3 \u222b sqrt(u) * (-1/3) du\n   = \u222b sqrt(u) du\n\n4) We know the integral of sqrt(u) is:\n   \u222b sqrt(u) du = (2/3)u**(3/2) + C\n\n5) Now substitute back u = -3*X - 2:\n   = (2/3)(-3*X - 2)**(3/2) + C\n\nTherefore, the final answer is:\n(2/3)(-3*X - 2)**(3/2) + C\n</reasoning>\n<answer>(2/3)*(-3*X - 2)**(3/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-3*sqrt(-3*X - 2)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "radical",
+          "expected_answer_expression": "2*(-3*X - 2)**(3/2)/3"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -exp(x)*sin(x) dx",
+        "expected_answer": "-exp(x)*sin(x)/2 + exp(x)*cos(x)/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts method.\nLet u = sin(x) and dv = -exp(x)dx\n\nThen du = cos(x)dx and v = -exp(x)\n\nUsing the formula: \u222bu*dv = u*v - \u222bv*du\n\n\u222b-exp(x)*sin(x)dx = -exp(x)*sin(x) - \u222b(-exp(x)*cos(x))dx\n\nNow we need to solve \u222b-exp(x)*cos(x)dx\nLet's use integration by parts again\nLet u = cos(x) and dv = -exp(x)dx\nThen du = -sin(x)dx and v = -exp(x)\n\n\u222b-exp(x)*cos(x)dx = -exp(x)*cos(x) - \u222b(-exp(x)*(-sin(x)))dx\n                   = -exp(x)*cos(x) - \u222bexp(x)*sin(x)dx\n\nLet's call our original integral I = \u222b-exp(x)*sin(x)dx\n\nThen:\nI = -exp(x)*sin(x) - (-exp(x)*cos(x) - I)\nI = -exp(x)*sin(x) + exp(x)*cos(x) + I\n\n2I = -exp(x)*sin(x) + exp(x)*cos(x)\nI = (-exp(x)*sin(x) + exp(x)*cos(x))/2 + C\n</reasoning>\n<answer>(-exp(x)*sin(x) + exp(x)*cos(x))/2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-exp(x)*sin(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "cyclic",
+          "expected_answer_expression": "-exp(x)*sin(x)/2 + exp(x)*cos(x)/2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b (6 - 20*x)*exp(-10*x**2 + 6*x + 7) dx",
+        "expected_answer": "exp(-10*x**2 + 6*x + 7) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's recognize that we have the product of (6 - 20*x) and exp(-10*x**2 + 6*x + 7)\n\n2) We can use substitution method (u-substitution):\n   Let u = -10*x**2 + 6*x + 7\n   du/dx = -20*x + 6\n   Therefore, (6 - 20*x)dx = -du\n\n3) When we make this substitution:\n   \u222b (6 - 20*x)*exp(-10*x**2 + 6*x + 7) dx\n   = -\u222b exp(u) du\n\n4) The integral of exp(u) is exp(u) + C\n\n5) Substituting back:\n   = -exp(-10*x**2 + 6*x + 7) + C\n\nTherefore, the indefinite integral is -exp(-10*x**2 + 6*x + 7) + C\n</reasoning>\n<answer>-exp(-10*x**2 + 6*x + 7) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "(6 - 20*x)*exp(-10*x**2 + 6*x + 7)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "exponential",
+          "expected_answer_expression": "exp(-10*x**2 + 6*x + 7)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 2*x**3*cos(x) dx",
+        "expected_answer": "2*x**3*sin(x) + 6*x**2*cos(x) - 12*x*sin(x) - 12*cos(x) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts. Let u = 2*x**3 and dv = cos(x)dx\n\n1) First integration:\nu = 2*x**3\ndu = 6*x**2 dx\nv = sin(x)\n\n\u222b 2*x**3*cos(x) dx = 2*x**3*sin(x) - \u222b 6*x**2*sin(x) dx\n\n2) Second integration:\nu = 6*x**2\ndu = 12*x dx\nv = -cos(x)\n\n-\u222b 6*x**2*sin(x) dx = 6*x**2*cos(x) - \u222b 12*x*cos(x) dx\n\n3) Third integration:\nu = 12*x\ndu = 12 dx\nv = sin(x)\n\n-\u222b 12*x*cos(x) dx = -12*x*sin(x) + \u222b 12*sin(x) dx\n\n4) Final integration:\n\u222b 12*sin(x) dx = -12*cos(x)\n\n5) Putting it all together:\n2*x**3*sin(x) + 6*x**2*cos(x) - 12*x*sin(x) - 12*cos(x) + C\n</reasoning>\n<answer>2*x**3*sin(x) + 6*x**2*cos(x) - 12*x*sin(x) - 12*cos(x) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*x**3*cos(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "repeated_parts",
+          "expected_answer_expression": "2*x**3*sin(x) + 6*x**2*cos(x) - 12*x*sin(x) - 12*cos(x)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -(5*X + 3)**3 dx",
+        "expected_answer": "-125*X**4/4 - 75*X**3 - 135*X**2/2 - 27*X + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's expand -(5*X + 3)**3\n   This is equivalent to: -(125*X**3 + 225*X**2 + 135*X + 27)\n   = -125*X**3 - 225*X**2 - 135*X - 27\n\n2) Now we can integrate each term:\n   \u222b(-125*X**3)dx = -125*X**4/4\n   \u222b(-225*X**2)dx = -225*X**3/3\n   \u222b(-135*X)dx = -135*X**2/2\n   \u222b(-27)dx = -27*X\n\n3) Combining all terms and adding the constant of integration C:\n   -125*X**4/4 - 225*X**3/3 - 135*X**2/2 - 27*X + C\n</reasoning>\n<answer>-125*X**4/4 - 75*X**3 - 135*X**2/2 - 27*X + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-(5*X + 3)**3",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "linear",
+          "expected_answer_expression": "-125*X**4/4 - 75*X**3 - 135*X**2/2 - 27*X"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -3*X**3*exp(X) dx",
+        "expected_answer": "(-3*X**3 + 9*X**2 - 18*X + 18)*exp(X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts.\nLet u = -3*X**3 and dv = exp(X)dx\n\nThen du = -9*X**2 dx and v = exp(X)\n\nUsing the formula \u222bu*dv = u*v - \u222bv*du:\n\n\u222b(-3*X**3)*exp(X)dx = -3*X**3*exp(X) - \u222bexp(X)*(-9*X**2)dx\n\n= -3*X**3*exp(X) + 9\u222bX**2*exp(X)dx\n\nNow we need to integrate X**2*exp(X). Let's use integration by parts again:\nLet u = X**2 and dv = exp(X)dx\nThen du = 2*X dx and v = exp(X)\n\n9\u222bX**2*exp(X)dx = 9*[X**2*exp(X) - \u222bexp(X)*2*X dx]\n= 9*X**2*exp(X) - 18\u222bX*exp(X)dx\n\nFor the remaining integral, one more integration by parts:\nLet u = X and dv = exp(X)dx\nThen du = dx and v = exp(X)\n\n-18\u222bX*exp(X)dx = -18*[X*exp(X) - \u222bexp(X)dx]\n= -18*X*exp(X) + 18*exp(X)\n\nPutting it all together:\n-3*X**3*exp(X) + 9*X**2*exp(X) - 18*X*exp(X) + 18*exp(X) + C\n</reasoning>\n<answer>-3*X**3*exp(X) + 9*X**2*exp(X) - 18*X*exp(X) + 18*exp(X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-3*X**3*exp(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "repeated_parts",
+          "expected_answer_expression": "(-3*X**3 + 9*X**2 - 18*X + 18)*exp(X)"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -X**3*cos(X) dx",
+        "expected_answer": "-X**3*sin(X) - 3*X**2*cos(X) + 6*X*sin(X) + 6*cos(X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts method.\nLet u = -X**3 and dv = cos(X)dx\n\nThen du = -3*X**2 dx and v = sin(X)\n\nFirst application of integration by parts:\n\u222bu*dv = u*v - \u222bv*du\n= -X**3*sin(X) - \u222bsin(X)*(-3*X**2)dx\n= -X**3*sin(X) + 3\u222bX**2*sin(X)dx\n\nNow for \u222bX**2*sin(X)dx:\nLet u = X**2 and dv = sin(X)dx\nThen du = 2*X dx and v = -cos(X)\n\nSecond application:\n= -X**3*sin(X) + 3[-X**2*cos(X) - \u222b(-cos(X))*(2*X)dx]\n= -X**3*sin(X) - 3*X**2*cos(X) + 6\u222bX*cos(X)dx\n\nFor \u222bX*cos(X)dx:\nLet u = X and dv = cos(X)dx\nThen du = dx and v = sin(X)\n\nThird application:\n= -X**3*sin(X) - 3*X**2*cos(X) + 6[X*sin(X) - \u222bsin(X)dx]\n= -X**3*sin(X) - 3*X**2*cos(X) + 6*X*sin(X) + 6*cos(X) + C\n</reasoning>\n<answer>-X**3*sin(X) - 3*X**2*cos(X) + 6*X*sin(X) + 6*cos(X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-X**3*cos(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "repeated_parts",
+          "expected_answer_expression": "-X**3*sin(X) - 3*X**2*cos(X) + 6*X*sin(X) + 6*cos(X)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -log(X) dx",
+        "expected_answer": "-X*log(X) + X + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) To find the antiderivative of -log(X), we need to be careful with the negative sign\n2) For the integral of log(X), we can use the formula: \u222blog(X)dx = X*log(X) - X + C\n3) Therefore, for -log(X):\n   \u222b-log(X)dx = -(X*log(X) - X) + C\n4) Distributing the negative sign:\n   = -X*log(X) + X + C\n\n5) This can be verified by differentiating:\n   d/dx[-X*log(X) + X + C] = -log(X) - 1 + 1 = -log(X)\n</reasoning>\n<answer>-X*log(X) + X + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-log(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "log_inverse_trig",
+          "expected_answer_expression": "-X*log(X) + X"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b (14 - 4*x)*exp(-x**2 + 7*x + 8) dx",
+        "expected_answer": "2*exp(-x**2 + 7*x + 8) + C",
+        "model_answer": "<reasoning>\nLet's solve this using substitution method:\n\n1) Let's look at the exponential term exp(-x**2 + 7*x + 8)\n   The integrand is of the form (14 - 4*x)*exp(u) where u = -x**2 + 7*x + 8\n\n2) Let's look at the derivative of u:\n   du/dx = -2*x + 7\n\n3) So, we can rewrite 14 - 4*x in terms of du/dx:\n   14 - 4*x = -2(-7 + 2*x)\n   This means our integral can be rewritten as:\n   -2\u222b(-7 + 2*x)*exp(-x**2 + 7*x + 8)dx\n\n4) Notice that (-7 + 2*x) is proportional to the derivative of the exponent\n   (-7 + 2*x) = -(du/dx)\n\n5) Therefore, our integral becomes:\n   2\u222b(du/dx)*exp(u)dx = 2*exp(u) + C\n   = 2*exp(-x**2 + 7*x + 8) + C\n\n</reasoning>\n<answer>2*exp(-x**2 + 7*x + 8) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "(14 - 4*x)*exp(-x**2 + 7*x + 8)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "exponential",
+          "expected_answer_expression": "2*exp(-x**2 + 7*x + 8)"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -4*exp(4*X - 3) dx",
+        "expected_answer": "-exp(4*X - 3) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, notice that we have a constant (-4) multiplied by exp(4*X - 3)\n\n2) For exponential functions, when integrating exp(ax), we get (1/a)*exp(ax) + C\n\n3) In this case, we have:\n   - The function is -4*exp(4*X - 3)\n   - The coefficient of X in the exponent is 4\n\n4) Therefore:\n   - \u222b -4*exp(4*X - 3) dx\n   - = -4 * \u222b exp(4*X - 3) dx\n   - = -4 * (1/4)*exp(4*X - 3) + C\n   - = -exp(4*X - 3) + C\n\n5) This is our final answer. We can verify by differentiating:\n   d/dx[-exp(4*X - 3)] = -4*exp(4*X - 3)\n</reasoning>\n<answer>-exp(4*X - 3) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-4*exp(4*X - 3)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "exponential",
+          "expected_answer_expression": "-exp(4*X - 3)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -3*X**3*cos(X) dx",
+        "expected_answer": "-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts.\nLet u = -3*X**3 and dv = cos(X)dx\n\nThen du = -9*X**2 dx and v = sin(X)\n\nFirst iteration:\n\u222b -3*X**3*cos(X) dx = -3*X**3*sin(X) - \u222b(-9*X**2*sin(X))dx\n\nFor the remaining integral, let's use integration by parts again:\nLet u = -9*X**2 and dv = sin(X)dx\nThen du = -18*X dx and v = -cos(X)\n\nSecond iteration:\n\u222b(-9*X**2*sin(X))dx = 9*X**2*cos(X) - \u222b(-18*X*cos(X))dx\n\nFor the last integral:\nLet u = -18*X and dv = cos(X)dx\nThen du = -18 dx and v = sin(X)\n\nFinal iteration:\n\u222b(-18*X*cos(X))dx = -18*X*sin(X) - \u222b(-18*sin(X))dx\n= -18*X*sin(X) + 18*cos(X)\n\nPutting it all together:\n-3*X**3*sin(X) + 9*X**2*cos(X) - 18*X*sin(X) + 18*cos(X) + C\n</reasoning>\n<answer>-3*X**3*sin(X) + 9*X**2*cos(X) - 18*X*sin(X) + 18*cos(X) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-3*X**3*cos(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "repeated_parts",
+          "expected_answer_expression": "-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X)"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b X**3*sin(X) dx",
+        "expected_answer": "-X**3*cos(X) + 3*X**2*sin(X) + 6*X*cos(X) - 6*sin(X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts multiple times.\nLet u = X**3 and dv = sin(X)dx\n\n1) First integration by parts:\nu = X**3, dv = sin(X)dx\ndu = 3*X**2 dx, v = -cos(X)\n\u222bX**3*sin(X)dx = -X**3*cos(X) - \u222b(-3*X**2*cos(X))dx\n\n2) Second integration by parts:\nu = X**2, dv = cos(X)dx\ndu = 2*X dx, v = sin(X)\n\u222b(-3*X**2*cos(X))dx = -3*X**2*sin(X) - \u222b(-6*X*sin(X))dx\n\n3) Third integration by parts:\nu = X, dv = sin(X)dx\ndu = dx, v = -cos(X)\n\u222b(-6*X*sin(X))dx = 6*X*cos(X) - \u222b(6*cos(X))dx\n\n4) Final integration:\n\u222b(6*cos(X))dx = 6*sin(X)\n\n5) Combining all terms and adding constant of integration:\n-X**3*cos(X) - (-3*X**2*sin(X) - (6*X*cos(X) - 6*sin(X))) + C\n= -X**3*cos(X) + 3*X**2*sin(X) + 6*X*cos(X) - 6*sin(X) + C\n</reasoning>\n<answer>-X**3*cos(X) + 3*X**2*sin(X) + 6*X*cos(X) - 6*sin(X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "X**3*sin(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "repeated_parts",
+          "expected_answer_expression": "-X**3*cos(X) + 3*X**2*sin(X) + 6*X*cos(X) - 6*sin(X)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -10*exp(5*X + 1) dx",
+        "expected_answer": "-2*exp(5*X + 1) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, we have \u222b -10*exp(5*X + 1) dx\n   \n2) We can rewrite this as: -10 * \u222b exp(5*X + 1) dx\n   \n3) For exp(5*X + 1), we can use the chain rule in reverse\n   The derivative of (5*X + 1) is 5, so we need to divide by 5\n\n4) Therefore:\n   -10 * \u222b exp(5*X + 1) dx = -10 * (1/5) * exp(5*X + 1) + C\n   \n5) Simplify:\n   = -2 * exp(5*X + 1) + C\n\n</reasoning>\n<answer>-2*exp(5*X + 1) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-10*exp(5*X + 1)",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "exponential",
+          "expected_answer_expression": "-2*exp(5*X + 1)"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b X*sin(X) dx",
+        "expected_answer": "Integral(X*sin(X), X) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts.\nLet u = X and dv = sin(X)dx\n\nThen du = dx and v = -cos(X)\n\nUsing the formula: \u222bu*dv = u*v - \u222bv*du\n\n\u222bX*sin(X)dx = -X*cos(X) - \u222b(-cos(X))dx\n             = -X*cos(X) + \u222bcos(X)dx\n             = -X*cos(X) + sin(X) + C\n\nLet's verify:\nTaking the derivative of our answer:\nd/dx[-X*cos(X) + sin(X)]\n= -cos(X) + X*sin(X) + cos(X)\n= X*sin(X)\nThis matches our integrand, confirming our solution is correct.\n</reasoning>\n\n<answer>-X*cos(X) + sin(X) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "X*sin(X)",
+          "problem_type": "by_parts",
+          "variable": "X",
+          "type": "polynomial_exp_trig",
+          "expected_answer_expression": "Integral(X*sin(X), X)"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -3*x**3*exp(x) dx",
+        "expected_answer": "(-3*x**3 + 9*x**2 - 18*x + 18)*exp(x) + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts formula: \u222bu dv = uv - \u222bv du\n\nLet u = -3*x**3 and dv = exp(x)dx\nThen du = -9*x**2 dx and v = exp(x)\n\n\u222b -3*x**3*exp(x) dx = -3*x**3*exp(x) - \u222b(-9*x**2*exp(x))dx\n\nNow for the remaining integral, let's use integration by parts again:\nLet u = -9*x**2 and dv = exp(x)dx\nThen du = -18*x dx and v = exp(x)\n\n\u222b(-9*x**2*exp(x))dx = -9*x**2*exp(x) - \u222b(-18*x*exp(x))dx\n\nFor the last integral:\nLet u = -18*x and dv = exp(x)dx\nThen du = -18 dx and v = exp(x)\n\n\u222b(-18*x*exp(x))dx = -18*x*exp(x) - \u222b(-18*exp(x))dx\n= -18*x*exp(x) + 18*exp(x)\n\nPutting it all together:\n\u222b -3*x**3*exp(x) dx = -3*x**3*exp(x) - (-9*x**2*exp(x) - (-18*x*exp(x) + 18*exp(x)))\n= -3*x**3*exp(x) - (-9*x**2*exp(x) + 18*x*exp(x) - 18*exp(x))\n= -3*x**3*exp(x) + 9*x**2*exp(x) - 18*x*exp(x) + 18*exp(x) + C\n</reasoning>\n<answer>-3*x**3*exp(x) + 9*x**2*exp(x) - 18*x*exp(x) + 18*exp(x) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-3*x**3*exp(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "repeated_parts",
+          "expected_answer_expression": "(-3*x**3 + 9*x**2 - 18*x + 18)*exp(x)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -8*exp(8*x - 10) dx",
+        "expected_answer": "-exp(8*x - 10) + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) We have \u222b -8*exp(8*x - 10) dx\n\n2) To integrate exp(8*x - 10), we need to:\n   * Consider -8 as a constant multiplier\n   * Use the fact that the integral of exp(ax) is (1/a)*exp(ax) + C\n\n3) In this case:\n   * The function is -8*exp(8*x - 10)\n   * When integrating, we divide by the coefficient of x (which is 8)\n   * The negative sign stays out front\n\n4) Therefore:\n   -8 * (1/8) * exp(8*x - 10) + C\n   = -1 * exp(8*x - 10) + C\n\n</reasoning>\n<answer>-exp(8*x - 10) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-8*exp(8*x - 10)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "exponential",
+          "expected_answer_expression": "-exp(8*x - 10)"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 2*(2*X - 9)**4 dx",
+        "expected_answer": "32*X**5/5 - 144*X**4 + 1296*X**3 - 5832*X**2 + 13122*X + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step using substitution:\n\n1) Let u = 2*X - 9\n   Then du/dx = 2\n   dx = du/2\n\n2) Rewriting the integral:\n   \u222b 2*(2*X - 9)**4 dx = \u222b 2*u**4 * (1/2)du = \u222b u**4 du\n\n3) Integrate u**4:\n   \u222b u**4 du = (u**5)/5 + C\n\n4) Substitute back 2*X - 9 for u:\n   = ((2*X - 9)**5)/5 + C\n\nTherefore, the indefinite integral is ((2*X - 9)**5)/5 + C\n</reasoning>\n<answer>((2*X - 9)**5)/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*(2*X - 9)**4",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "linear",
+          "expected_answer_expression": "32*X**5/5 - 144*X**4 + 1296*X**3 - 5832*X**2 + 13122*X"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -(5*x - 6)**4 dx",
+        "expected_answer": "-125*x**5 + 750*x**4 - 1800*x**3 + 2160*x**2 - 1296*x + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n1) First, let's use u-substitution\n   Let u = -(5*x - 6)**4\n   Let's change the inside first: u = 5*x - 6\n   du/dx = 5\n   dx = du/5\n\n2) Now, we need to integrate -(u)**4\n   = -\u222b u**4 dx\n   = -\u222b u**4 * (du/5)\n   = -(1/5)\u222b u**4 du\n   = -(1/5) * (u**5/5) + C\n   = -(1/25) * u**5 + C\n\n3) Now substitute back u = 5*x - 6:\n   = -(1/25) * (5*x - 6)**5 + C\n\nThis is our final answer.\n</reasoning>\n<answer>-(1/25)*(5*x - 6)**5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-(5*x - 6)**4",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "linear",
+          "expected_answer_expression": "-125*x**5 + 750*x**4 - 1800*x**3 + 2160*x**2 - 1296*x"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 3*exp(x)*sin(x) dx",
+        "expected_answer": "3*exp(x)*sin(x)/2 - 3*exp(x)*cos(x)/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this using integration by parts twice.\nLet u = sin(x) and dv = 3*exp(x)dx\n\n1) First integration by parts:\nu = sin(x), dv = 3*exp(x)dx\ndu = cos(x)dx, v = 3*exp(x)\n\n\u222b3*exp(x)*sin(x)dx = 3*exp(x)*sin(x) - \u222b3*exp(x)*cos(x)dx\n\n2) Second integration by parts for -\u222b3*exp(x)*cos(x)dx:\nu = cos(x), dv = 3*exp(x)dx\ndu = -sin(x)dx, v = 3*exp(x)\n\n-\u222b3*exp(x)*cos(x)dx = -3*exp(x)*cos(x) - \u222b3*exp(x)*sin(x)dx\n\n3) Substituting back:\n\u222b3*exp(x)*sin(x)dx = 3*exp(x)*sin(x) - [-3*exp(x)*cos(x) - \u222b3*exp(x)*sin(x)dx]\n\u222b3*exp(x)*sin(x)dx = 3*exp(x)*sin(x) + 3*exp(x)*cos(x) + \u222b3*exp(x)*sin(x)dx\n\n4) Solving for \u222b3*exp(x)*sin(x)dx:\n2*\u222b3*exp(x)*sin(x)dx = 3*exp(x)*sin(x) + 3*exp(x)*cos(x)\n\u222b3*exp(x)*sin(x)dx = (3*exp(x)*sin(x))/2 + (3*exp(x)*cos(x))/2 + C\n</reasoning>\n<answer>(3*exp(x)*sin(x))/2 + (3*exp(x)*cos(x))/2 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "3*exp(x)*sin(x)",
+          "problem_type": "by_parts",
+          "variable": "x",
+          "type": "cyclic",
+          "expected_answer_expression": "3*exp(x)*sin(x)/2 - 3*exp(x)*cos(x)/2"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 6*sin(3*X - 6)*cos(3*X - 6)**2 dx",
+        "expected_answer": "-2*cos(3*X - 6)**3/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's recognize that we have a product of sin(3*X - 6) and cos(3*X - 6)**2\n\n2) We can simplify this using the trigonometric identity: cos(\u03b8)**2 = (1 + cos(2\u03b8))/2\n\n3) Applying this:\n   6*sin(3*X - 6)*cos(3*X - 6)**2 = 6*sin(3*X - 6)*((1 + cos(2*(3*X - 6)))/2)\n   = 3*sin(3*X - 6) + 3*sin(3*X - 6)*cos(6*X - 12)\n\n4) For the second term, we can use the formula: sin(A)*cos(B) = (1/2)[sin(A-B) + sin(A+B)]\n   3*sin(3*X - 6)*cos(6*X - 12) = (3/2)[sin(-3*X + 6) + sin(9*X - 18)]\n\n5) So our integral becomes:\n   \u222b[3*sin(3*X - 6) + (3/2)*sin(-3*X + 6) + (3/2)*sin(9*X - 18)]dx\n\n6) Integrating each term:\n   - \u222b3*sin(3*X - 6)dx = -cos(3*X - 6) + C1\n   - \u222b(3/2)*sin(-3*X + 6)dx = (1/2)*cos(-3*X + 6) + C2\n   - \u222b(3/2)*sin(9*X - 18)dx = -(1/6)*cos(9*X - 18) + C3\n\n7) Combining terms and constants:\n   -cos(3*X - 6) + (1/2)*cos(3*X - 6) - (1/6)*cos(9*X - 18) + C\n   = -(1/2)*cos(3*X - 6) - (1/6)*cos(9*X - 18) + C\n</reasoning>\n<answer>-(1/2)*cos(3*X - 6) - (1/6)*cos(9*X - 18) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "6*sin(3*X - 6)*cos(3*X - 6)**2",
+          "problem_type": "substitution",
+          "variable": "X",
+          "type": "trigonometric",
+          "expected_answer_expression": "-2*cos(3*X - 6)**3/3"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 12*sqrt(-6*x - 10) dx",
+        "expected_answer": "-4*(-6*x - 10)**(3/2)/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's reorganize what's inside the square root:\n   \u222b 12*sqrt(-6*x - 10) dx = 12\u222b sqrt(-6*x - 10) dx\n\n2) Let's make a substitution to simplify:\n   Let u = -6*x - 10\n   du = -6 dx\n   dx = -1/6 du\n\n3) The integral becomes:\n   12\u222b sqrt(u) * (-1/6) du = -2\u222b sqrt(u) du\n\n4) We know that \u222b sqrt(u) du = (2/3)u**(3/2) + C\n\n5) Substituting back:\n   -2 * (2/3)(-6*x - 10)**(3/2) + C\n   = -(4/3)(-6*x - 10)**(3/2) + C\n\n6) Therefore, the antiderivative is:\n   -(4/3)(-6*x - 10)**(3/2) + C\n</reasoning>\n<answer>-(4/3)*(-6*x - 10)**(3/2) + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "12*sqrt(-6*x - 10)",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "radical",
+          "expected_answer_expression": "-4*(-6*x - 10)**(3/2)/3"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -8*sin(8*x + 8)*cos(8*x + 8)**3 dx",
+        "expected_answer": "cos(8*x + 8)**4/4 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's observe that we have sin(8*x + 8) and cos(8*x + 8)**3\n\n2) This reminds us of the reduction formula for powers of cosine multiplied by sine.\n\n3) Let u = cos(8*x + 8)\n   Then du/dx = -8*sin(8*x + 8)\n   \n4) Our integral can be rewritten as:\n   \u222b -8*sin(8*x + 8)*cos(8*x + 8)**3 dx\n   = \u222b u**3 * du\n\n5) This is now a simple power integral:\n   \u222b u**3 du = (u**4)/4 + C\n\n6) Substituting back:\n   = (cos(8*x + 8)**4)/4 + C\n\n7) This is our final answer.\n</reasoning>\n<answer>(cos(8*x + 8)**4)/4 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-8*sin(8*x + 8)*cos(8*x + 8)**3",
+          "problem_type": "substitution",
+          "variable": "x",
+          "type": "trigonometric",
+          "expected_answer_expression": "cos(8*x + 8)**4/4"
+        }
+      }
+    ]
+  }
+]

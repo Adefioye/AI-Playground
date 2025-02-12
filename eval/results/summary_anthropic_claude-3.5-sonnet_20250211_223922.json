@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "intermediate_integration",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.071,
+    "total_examples": 50,
+    "timestamp": "2025-02-11T22:39:22.967555",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

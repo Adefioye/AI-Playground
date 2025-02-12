@@ -1,0 +1,15 @@
+[
+  {
+    "dataset_name": "leg_counting",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.40599999999999997,
+    "total_examples": 10,
+    "timestamp": "2025-02-11T21:42:15.862676",
+    "config": {
+      "min_animals": 3,
+      "max_animals": 8,
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

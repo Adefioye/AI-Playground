@@ -1,0 +1,60 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "complex_arithmetic",
+      "model": "qwen/qwen-vl-plus:free",
+      "size": 2,
+      "average_score": 1.0,
+      "total_examples": 2,
+      "timestamp": "2025-02-11T22:01:32.050985",
+      "config": {
+        "size": 2,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Add the complex numbers: (-10.0 - 2.0i) + (-3.0 - 3.0i)",
+        "expected_answer": "-13.0 - 5.0i",
+        "model_answer": "<reasoning>To add complex numbers, we add the real parts and the imaginary parts separately. For the given complex numbers, the real parts are -10.0 and -3.0, and the imaginary parts are -2.0 and -3.0. Adding the real parts gives -13.0, and adding the imaginary parts gives -5.0. Therefore, the sum of the complex numbers is -13.0 - 5.0i.</reasoning>\n<answer>-13.0 - 5.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -10.0,
+            -2.0
+          ],
+          "num2": [
+            -3.0,
+            -3.0
+          ],
+          "operation": "+",
+          "result": [
+            -13,
+            -5
+          ]
+        }
+      },
+      {
+        "question": "Add the complex numbers: (-1.0 - 6.0i) + (4.0 + 1.0i)",
+        "expected_answer": "3.0 - 5.0i",
+        "model_answer": "<reasoning>To add complex numbers, we add the real parts and the imaginary parts separately. For the given complex numbers, the real parts are -1.0 and 4.0, and the imaginary parts are -6.0 and 1.0. Adding the real parts gives us 3.0, and adding the imaginary parts gives us -5.0. Therefore, the sum of the complex numbers is 3.0 - 5.0i.</reasoning>\n<answer>3.0 - 5.0i</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num1": [
+            -1.0,
+            -6.0
+          ],
+          "num2": [
+            4.0,
+            1.0
+          ],
+          "operation": "+",
+          "result": [
+            3,
+            -5
+          ]
+        }
+      }
+    ]
+  }
+]

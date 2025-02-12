@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "complex_arithmetic",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.9255173915591481,
+    "total_examples": 50,
+    "timestamp": "2025-02-11T22:05:00.669967",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

@@ -49,13 +49,6 @@ class AsyncOpenRouterEvaluator:
             with the answer. The reasoning process and answer are enclosed within <reasoning> </reasoning> and
             <answer> </answer> tags, respectively, i.e., <reasoning> reasoning process here </reasoning>
             <answer> answer here </answer>.
-            
-
-            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems
-            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2
-            ## 2. Always use * when doing all sorts of multiplcation in your reasoning tag. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C]
-            ## 3. Always output just the answer in the answer tag, For example, Don't ouput answer tag in this format, <answer>∫x3cos(x)dx = x3sin(x) + 3x2cos(x) - 6xsin(x) - 6cos(x) + C</answer>, that is <answer> question = answer </answer>, Output this instead <answer> answer </answer>
-            
             """
         messages = [
             {"role": "system", "content": R1_STYLE_SYSTEM_PROMPT},
@@ -70,6 +63,8 @@ class AsyncOpenRouterEvaluator:
                     completion = await self.client.chat.completions.create(
                         extra_headers=self.extra_headers, model=self.model, messages=messages
                     )
+                    # This help to prevent " 'NoneType' object is not subscriptable " error
+                    # if completion.choices is not None:
                     return completion.choices[0].message.content
                 except Exception as e:
                     print(f"Error calling OpenRouter API: {str(e)}")
@@ -79,7 +74,9 @@ class AsyncOpenRouterEvaluator:
     async def process_single_question(self, entry: Dict, dataset) -> Dict:
         """Process a single question and return the result."""
         response = await self.get_model_response(entry["question"])
+        print(f"Response: {response}")
         extracted_answer = await self.extract_xml_answer(response)
+        print(f"Quesion: {entry['question']}\n")
         print(f"Response: {response}\n")
         print(f"Expected Answer: {entry['answer']}\n")
         print(f"Extracted Answer: {extracted_answer}\n")

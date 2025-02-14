@@ -1,0 +1,1296 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "number_sorting",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 1.0,
+      "total_examples": 50,
+      "timestamp": "2025-02-13T00:15:37.640991",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Sort these numbers in ascending order: 48, -51, -72, -80\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-80', '-72', '-51', '48']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First identify the smallest number: -80\n2. Then the next smallest: -72\n3. Then: -51\n4. Finally: 48\n\nSo from smallest to largest: -80, -72, -51, 48</reasoning>\n\n<answer>['-80', '-72', '-51', '48']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "48",
+            "-51",
+            "-72",
+            "-80"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-80",
+            "-72",
+            "-51",
+            "48"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 39.2, -71.2, -7.5\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-71.2', '-7.5', '39.2']",
+        "model_answer": "<reasoning>\nLet me arrange these numbers from smallest to largest:\n1. First, identify the smallest number: -71.2\n2. Then the next smallest: -7.5\n3. Finally, the largest: 39.2\n\nSo the order is: -71.2, -7.5, 39.2\n\nNow, I'll format this as a list with strings in square brackets as requested.\n</reasoning>\n\n<answer>['-71.2', '-7.5', '39.2']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "39.2",
+            "-71.2",
+            "-7.5"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-71.2",
+            "-7.5",
+            "39.2"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 8.39, 72.41, -64.67, -54.97, -94.18, -76.67, -98.24, -68.66, 2.74\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['72.41', '8.39', '2.74', '-54.97', '-64.67', '-68.66', '-76.67', '-94.18', '-98.24']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers: 8.39, 72.41, -64.67, -54.97, -94.18, -76.67, -98.24, -68.66, 2.74\n2. Arrange them from highest to lowest:\n   72.41 (highest)\n   8.39\n   2.74\n   -54.97\n   -64.67\n   -68.66\n   -76.67\n   -94.18\n   -98.24 (lowest)\n3. Convert them to strings and put them in a list\n</reasoning>\n<answer>['72.41', '8.39', '2.74', '-54.97', '-64.67', '-68.66', '-76.67', '-94.18', '-98.24']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "8.39",
+            "72.41",
+            "-64.67",
+            "-54.97",
+            "-94.18",
+            "-76.67",
+            "-98.24",
+            "-68.66",
+            "2.74"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "72.41",
+            "8.39",
+            "2.74",
+            "-54.97",
+            "-64.67",
+            "-68.66",
+            "-76.67",
+            "-94.18",
+            "-98.24"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -2.4, -83.6, -32.3, -85.5, -97.8, -43.2, -76.5\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-2.4', '-32.3', '-43.2', '-76.5', '-83.6', '-85.5', '-97.8']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order (from largest to smallest), I'll:\n1. First, identify the given numbers: -2.4, -83.6, -32.3, -85.5, -97.8, -43.2, -76.5\n2. Compare each number and arrange from largest (closest to positive) to smallest (most negative)\n3. Order: -2.4 > -32.3 > -43.2 > -76.5 > -83.6 > -85.5 > -97.8\n4. Convert each number to a string and place in square brackets\n</reasoning>\n<answer>['-2.4', '-32.3', '-43.2', '-76.5', '-83.6', '-85.5', '-97.8']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-2.4",
+            "-83.6",
+            "-32.3",
+            "-85.5",
+            "-97.8",
+            "-43.2",
+            "-76.5"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "-2.4",
+            "-32.3",
+            "-43.2",
+            "-76.5",
+            "-83.6",
+            "-85.5",
+            "-97.8"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -92.0, 17.4, 77.5, 26.9\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-92.0', '17.4', '26.9', '77.5']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order:\n1. First, I'll list all numbers: -92.0, 17.4, 77.5, 26.9\n2. Compare each number starting with the smallest:\n   * -92.0 is the smallest\n   * 17.4 is next\n   * 26.9 follows\n   * 77.5 is the largest\n3. So the order is: -92.0, 17.4,.26.9, 77.5\n4. Now I'll format it as requested with strings in square brackets\n</reasoning>\n<answer>['-92.0', '17.4', '26.9', '77.5']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-92.0",
+            "17.4",
+            "77.5",
+            "26.9"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-92.0",
+            "17.4",
+            "26.9",
+            "77.5"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -14, -9, -31, 2, -22, -92, -16, -95\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-95', '-92', '-31', '-22', '-16', '-14', '-9', '2']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. First list out all numbers: -14, -9, -31, 2, -22, -92, -16, -95\n2. Compare each number and arrange from smallest to largest:\n   -95 is smallest\n   -92 is next\n   -31 follows\n   -22 comes after\n   -16 is next\n   -14 follows\n   -9 comes after\n   2 is largest\n3. Convert each number to a string and place in square brackets\n</reasoning>\n<answer>['-95', '-92', '-31', '-22', '-16', '-14', '-9', '2']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-14",
+            "-9",
+            "-31",
+            "2",
+            "-22",
+            "-92",
+            "-16",
+            "-95"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-95",
+            "-92",
+            "-31",
+            "-22",
+            "-16",
+            "-14",
+            "-9",
+            "2"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 11, 7, 59, 1, 43, -13, -69, 61\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-69', '-13', '1', '7', '11', '43', '59', '61']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. First identify all numbers: 11, 7, 59, 1, 43, -13, -69, 61\n2. Find the smallest number first (-69) and work my way up\n3. Order: -69 < -13 < 1 < 7 < 11 < 43 < 59 < 61\n4. Convert each number to a string\n5. Place them in a list with square brackets and separate with commas\n</reasoning>\n<answer>['-69', '-13', '1', '7', '11', '43', '59', '61']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "11",
+            "7",
+            "59",
+            "1",
+            "43",
+            "-13",
+            "-69",
+            "61"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-69",
+            "-13",
+            "1",
+            "7",
+            "11",
+            "43",
+            "59",
+            "61"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -17.4, -77.9, 50.4, 2.3\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-77.9', '-17.4', '2.3', '50.4']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers: -17.4, -77.9, 50.4, 2.3\n2. Identify the smallest number: -77.9\n3. Then the next smallest: -17.4\n4. Then: 2.3\n5. Finally: 50.4\n\nSo the order from smallest to largest is: -77.9, -17.4, 2.3, 50.4\nNow I'll convert these numbers to strings and put them in a list format.\n</reasoning>\n\n<answer>['-77.9', '-17.4', '2.3', '50.4']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-17.4",
+            "-77.9",
+            "50.4",
+            "2.3"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-77.9",
+            "-17.4",
+            "2.3",
+            "50.4"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -27.2, 78.2, 38.5, 53.4, -34.0, 7.7, -55.1, 11.3, 86.1, -30.6\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-55.1', '-34.0', '-30.6', '-27.2', '7.7', '11.3', '38.5', '53.4', '78.2', '86.1']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First arrange them from smallest to largest\n2. The smallest number is -55.1\n3. Going up: -55.1, -34.0, -30.6, -27.2, 7.7, 11.3, 38.5, 53.4, 78.2, 86.1\n4. Convert each number to a string and place them in a list with square brackets\n</reasoning>\n<answer>['-55.1', '-34.0', '-30.6', '-27.2', '7.7', '11.3', '38.5', '53.4', '78.2', '86.1']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-27.2",
+            "78.2",
+            "38.5",
+            "53.4",
+            "-34.0",
+            "7.7",
+            "-55.1",
+            "11.3",
+            "86.1",
+            "-30.6"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-55.1",
+            "-34.0",
+            "-30.6",
+            "-27.2",
+            "7.7",
+            "11.3",
+            "38.5",
+            "53.4",
+            "78.2",
+            "86.1"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 10.46, -50.78, 98.72, 66.52, -48.83, 73.45\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['98.72', '73.45', '66.52', '10.46', '-48.83', '-50.78']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I will:\n1. First list all numbers: 10.46, -50.78, 98.72, 66.52, -48.83, 73.45\n2. Compare them from largest to smallest:\n   98.72 (largest)\n   73.45\n   66.52\n   10.46\n   -48.83\n   -50.78 (smallest)\n3. Convert each number to a string and place them in a list with square brackets\n</reasoning>\n<answer>['98.72', '73.45', '66.52', '10.46', '-48.83', '-50.78']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "10.46",
+            "-50.78",
+            "98.72",
+            "66.52",
+            "-48.83",
+            "73.45"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "98.72",
+            "73.45",
+            "66.52",
+            "10.46",
+            "-48.83",
+            "-50.78"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 76, 3, 71, -26, -93, -72, 96\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['96', '76', '71', '3', '-26', '-72', '-93']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll:\n1. First arrange them from largest to smallest\n2. 96 is the largest number\n3. Then 76, 71\n4. Then 3\n5. Then the negative numbers: -26, -72, -93\n6. Finally, convert each number to a string and put them in a list\n\n96 > 76 > 71 > 3 > -26 > -72 > -93\n</reasoning>\n<answer>['96', '76', '71', '3', '-26', '-72', '-93']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "76",
+            "3",
+            "71",
+            "-26",
+            "-93",
+            "-72",
+            "96"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "96",
+            "76",
+            "71",
+            "3",
+            "-26",
+            "-72",
+            "-93"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 0.4, -3.5, 43.6, -27.9, -9.1, -93.8\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-93.8', '-27.9', '-9.1', '-3.5', '0.4', '43.6']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. First list all numbers: 0.4, -3.5, 43.6, -27.9, -9.1, -93.8\n2. Find the smallest number first: -93.8 is the smallest\n3. Continue finding the next smallest: -27.9 is next\n4. Then: -9.1\n5. Then: -3.5\n6. Then: 0.4\n7. Finally: 43.6 is the largest\n\nSo the order from smallest to largest is: -93.8, -27.9, -9.1, -3.5, 0.4, 43.6\nNow I'll format this as a list with strings as requested.\n</reasoning>\n\n<answer>['-93.8', '-27.9', '-9.1', '-3.5', '0.4', '43.6']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "0.4",
+            "-3.5",
+            "43.6",
+            "-27.9",
+            "-9.1",
+            "-93.8"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-93.8",
+            "-27.9",
+            "-9.1",
+            "-3.5",
+            "0.4",
+            "43.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 11.2, -3.4, 91.8, -23.9, -10.7\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['91.8', '11.2', '-3.4', '-10.7', '-23.9']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers: 11.2, -3.4, 91.8, -23.9, -10.7\n2. Compare them from largest to smallest:\n   * 91.8 is the largest\n   * 11.2 is next\n   * -3.4 is next\n   * -10.7 is next\n   * -23.9 is the smallest\n3. Create a list with the numbers as strings in descending order\n</reasoning>\n<answer>['91.8', '11.2', '-3.4', '-10.7', '-23.9']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "11.2",
+            "-3.4",
+            "91.8",
+            "-23.9",
+            "-10.7"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "91.8",
+            "11.2",
+            "-3.4",
+            "-10.7",
+            "-23.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -70, 48, 68, 49\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['68', '49', '48', '-70']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll arrange them from the largest to the smallest:\n1. First, identify the largest number: 68\n2. Then the next largest: 49\n3. Then: 48\n4. Finally, the smallest: -70\n\nSo the order is: 68, 49, 48, -70\nNow I'll format this as a list with strings.</reasoning>\n\n<answer>['68', '49', '48', '-70']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-70",
+            "48",
+            "68",
+            "49"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "68",
+            "49",
+            "48",
+            "-70"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 30.6, -39.8, 8.5\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['30.6', '8.5', '-39.8']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from highest to lowest.\n\nGiven numbers: 30.6, -39.8, 8.5\n\nComparing the numbers:\n30.6 is the highest\n8.5 is the second highest\n-39.8 is the lowest\n\nTherefore, the order should be: 30.6, 8.5, -39.8\nConverting these numbers to strings and putting them in a list.\n</reasoning>\n<answer>['30.6', '8.5', '-39.8']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "30.6",
+            "-39.8",
+            "8.5"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "30.6",
+            "8.5",
+            "-39.8"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 17.9, -96.1, 2.8\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['17.9', '2.8', '-96.1']",
+        "model_answer": "<reasoning>\nTo sort the numbers in descending order (highest to lowest), I'll:\n1. First list out all numbers: 17.9, -96.1, 2.8\n2. Identify the highest number: 17.9\n3. Then the next highest: 2.8\n4. Finally the lowest: -96.1\n5. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n<answer>['17.9', '2.8', '-96.1']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "17.9",
+            "-96.1",
+            "2.8"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "17.9",
+            "2.8",
+            "-96.1"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 48, 96, -60, -62, -19, 89\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['96', '89', '48', '-19', '-60', '-62']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers: 48, 96, -60, -62, -19, 89\n2. Compare them from highest to lowest:\n   96 is highest\n   89 is next\n   48 follows\n   -19 is next\n   -60 follows\n   -62 is lowest\n3. Now arrange them in descending order: 96, 89, 48, -19, -60, -62\n4. Convert to required format with strings in square brackets\n</reasoning>\n<answer>['96', '89', '48', '-19', '-60', '-62']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "48",
+            "96",
+            "-60",
+            "-62",
+            "-19",
+            "89"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "96",
+            "89",
+            "48",
+            "-19",
+            "-60",
+            "-62"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 87, 89, -95, 69, 43, 36\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-95', '36', '43', '69', '87', '89']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order:\n1. First, I'll identify the smallest number: -95\n2. Then continue finding the next smallest number:\n   -95, 36, 43, 69, 87, 89\n3. Now I need to convert each number to a string and put them in square brackets</reasoning>\n\n<answer>['-95', '36', '43', '69', '87', '89']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "87",
+            "89",
+            "-95",
+            "69",
+            "43",
+            "36"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-95",
+            "36",
+            "43",
+            "69",
+            "87",
+            "89"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 15.6, -46.9, 61.6, -6.6, -33.5, 79.4, 58.5\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-46.9', '-33.5', '-6.6', '15.6', '58.5', '61.6', '79.4']",
+        "model_answer": "<reasoning>\nLet me organize these numbers from lowest to highest:\n1. First, identify the negative numbers: -46.9, -6.6, -33.5\n2. Then, identify the positive numbers: 15.6, 61.6, 79.4, 58.5\n3. Arranging them all from lowest to highest:\n   -46.9 (lowest)\n   -33.5\n   -6.6\n   15.6\n   58.5\n   61.6\n   79.4 (highest)\n4. Convert each number to a string and put them in square brackets\n</reasoning>\n<answer>['-46.9', '-33.5', '-6.6', '15.6', '58.5', '61.6', '79.4']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "15.6",
+            "-46.9",
+            "61.6",
+            "-6.6",
+            "-33.5",
+            "79.4",
+            "58.5"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-46.9",
+            "-33.5",
+            "-6.6",
+            "15.6",
+            "58.5",
+            "61.6",
+            "79.4"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 11, 62, -36, -36, 39, -3, -28, -19, -34, -66\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-66', '-36', '-36', '-34', '-28', '-19', '-3', '11', '39', '62']",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll identify the smallest number and work my way up\n2. Looking at all negative numbers first: -66, -36, -36, -34, -28, -19, -3\n3. Then the positive numbers: 11, 39, 62\n4. Putting them in order from smallest to largest:\n   -66, -36, -36, -34, -28, -19, -3, 11, 39, 62\n5. Now I'll convert each number to a string and put them in square brackets\n</reasoning>\n<answer>['-66', '-36', '-36', '-34', '-28', '-19', '-3', '11', '39', '62']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "11",
+            "62",
+            "-36",
+            "-36",
+            "39",
+            "-3",
+            "-28",
+            "-19",
+            "-34",
+            "-66"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-66",
+            "-36",
+            "-36",
+            "-34",
+            "-28",
+            "-19",
+            "-3",
+            "11",
+            "39",
+            "62"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 94, -52, -7, 80, -29\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-52', '-29', '-7', '80', '94']",
+        "model_answer": "<reasoning>\nLet me sort these numbers from smallest to largest:\n1. First, identify the negative numbers: -52, -7, -29\n2. Then, identify the positive numbers: 94, 80\n3. Arranging from smallest to largest:\n   -52 (smallest)\n   -29\n   -7\n   80\n   94 (largest)\n4. Convert each number to a string and put them in a list with square brackets.\n</reasoning>\n<answer>['-52', '-29', '-7', '80', '94']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "94",
+            "-52",
+            "-7",
+            "80",
+            "-29"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-52",
+            "-29",
+            "-7",
+            "80",
+            "94"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -41.2, 81.9, -3.1, -82.6, 50.0, -84.9, -59.5, -85.2, 25.6, 68.5\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-85.2', '-84.9', '-82.6', '-59.5', '-41.2', '-3.1', '25.6', '50.0', '68.5', '81.9']",
+        "model_answer": "<reasoning>\nTo sort the numbers in ascending order, I will:\n1. First list all numbers: -41.2, 81.9, -3.1, -82.6, 50.0, -84.9, -59.5, -85.2, 25.6, 68.5\n2. Arrange them from smallest to largest:\n   -85.2 (smallest)\n   -84.9\n   -82.6\n   -59.5\n   -41.2\n   -3.1\n   25.6\n   50.0\n   68.5\n   81.9 (largest)\n3. Convert them to strings and put them in a list with square brackets\n</reasoning>\n<answer>['-85.2', '-84.9', '-82.6', '-59.5', '-41.2', '-3.1', '25.6', '50.0', '68.5', '81.9']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-41.2",
+            "81.9",
+            "-3.1",
+            "-82.6",
+            "50.0",
+            "-84.9",
+            "-59.5",
+            "-85.2",
+            "25.6",
+            "68.5"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-85.2",
+            "-84.9",
+            "-82.6",
+            "-59.5",
+            "-41.2",
+            "-3.1",
+            "25.6",
+            "50.0",
+            "68.5",
+            "81.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 26, -19, 84, -97, 98, 41, 61, 61, -60, 64\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-97', '-60', '-19', '26', '41', '61', '61', '64', '84', '98']",
+        "model_answer": "<reasoning>\nTo sort the numbers in ascending order, I will:\n1. First list out all numbers: 26, -19, 84, -97, 98, 41, 61, 61, -60, 64\n2. Arrange them from smallest to largest: -97, -60, -19, 26, 41, 61, 61, 64, 84, 98\n3. Convert each number to a string and put them in square brackets\n</reasoning>\n<answer>['-97', '-60', '-19', '26', '41', '61', '61', '64', '84', '98']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "26",
+            "-19",
+            "84",
+            "-97",
+            "98",
+            "41",
+            "61",
+            "61",
+            "-60",
+            "64"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-97",
+            "-60",
+            "-19",
+            "26",
+            "41",
+            "61",
+            "61",
+            "64",
+            "84",
+            "98"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -42.5, 68.9, -11.2, 5.7, 10.3, -32.2, 27.9, 80.0, -85.6\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['80.0', '68.9', '27.9', '10.3', '5.7', '-11.2', '-32.2', '-42.5', '-85.6']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll:\n1. First identify the highest number, then the second highest, and so on\n2. Convert all numbers to strings before putting them in the list\n3. Put them in square brackets separated by commas\n\nLooking at the numbers:\n80.0 is the highest\n68.9 is second highest\n27.9 is third\n10.3 follows\n5.7 comes next\n-11.2 is next\n-32.2 follows\n-42.5 is next\n-85.6 is the lowest\n\nConverting them to strings and putting them in order from highest to lowest.\n</reasoning>\n<answer>['80.0', '68.9', '27.9', '10.3', '5.7', '-11.2', '-32.2', '-42.5', '-85.6']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-42.5",
+            "68.9",
+            "-11.2",
+            "5.7",
+            "10.3",
+            "-32.2",
+            "27.9",
+            "80.0",
+            "-85.6"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "80.0",
+            "68.9",
+            "27.9",
+            "10.3",
+            "5.7",
+            "-11.2",
+            "-32.2",
+            "-42.5",
+            "-85.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -13.1, -50.8, -10.9, -48.8\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-50.8', '-48.8', '-13.1', '-10.9']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers: -13.1, -50.8, -10.9, -48.8\n2. Compare them from smallest (most negative) to largest:\n   -50.8 is the smallest\n   -48.8 is next\n   -13.1 comes after\n   -10.9 is the largest\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n\n<answer>['-50.8', '-48.8', '-13.1', '-10.9']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-13.1",
+            "-50.8",
+            "-10.9",
+            "-48.8"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-50.8",
+            "-48.8",
+            "-13.1",
+            "-10.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 53, 94, -17, 89\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['94', '89', '53', '-17']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order:\n1. First, let me list all numbers: 53, 94, -17, 89\n2. Compare each number to find the highest to lowest:\n   - 94 is the highest\n   - 89 is second\n   - 53 is third\n   - -17 is the lowest\n3. Arrange them from highest to lowest\n4. Convert each number to a string and put them in a list format\n</reasoning>\n<answer>['94', '89', '53', '-17']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "53",
+            "94",
+            "-17",
+            "89"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "94",
+            "89",
+            "53",
+            "-17"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 49.48, 81.63, -77.80, 15.95, -13.63, -46.90, 72.08, -34.12, 94.73, -27.75\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-77.80', '-46.90', '-34.12', '-27.75', '-13.63', '15.95', '49.48', '72.08', '81.63', '94.73']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. First identify all negative numbers: -77.80, -46.90, -34.12, -27.75, -13.63\n2. Then arrange positive numbers: 15.95, 49.48, 72.08, 81.63, 94.73\n3. Combine them in order from smallest to largest\n4. Convert each number to a string and place them in a list with square brackets\n</reasoning>\n<answer>['-77.80', '-46.90', '-34.12', '-27.75', '-13.63', '15.95', '49.48', '72.08', '81.63', '94.73']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "49.48",
+            "81.63",
+            "-77.80",
+            "15.95",
+            "-13.63",
+            "-46.90",
+            "72.08",
+            "-34.12",
+            "94.73",
+            "-27.75"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-77.80",
+            "-46.90",
+            "-34.12",
+            "-27.75",
+            "-13.63",
+            "15.95",
+            "49.48",
+            "72.08",
+            "81.63",
+            "94.73"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 60, -87, -31\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['60', '-31', '-87']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order (from largest to smallest), I will:\n1. First identify the largest number: 60\n2. Then the second largest: -31\n3. Finally the smallest: -87\n\nSo the order should be: 60, -31, -87\n\nNow I'll format this as a list with strings as requested.\n</reasoning>\n<answer>['60', '-31', '-87']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "60",
+            "-87",
+            "-31"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "60",
+            "-31",
+            "-87"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 40.6, -10.0, -35.6, -78.6\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-78.6', '-35.6', '-10.0', '40.6']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. List all numbers: 40.6, -10.0, -35.6, -78.6\n2. Find the smallest to largest:\n   * -78.6 is smallest\n   * -35.6 is next\n   * -10.0 is next\n   * 40.6 is largest\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n<answer>['-78.6', '-35.6', '-10.0', '40.6']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "40.6",
+            "-10.0",
+            "-35.6",
+            "-78.6"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-78.6",
+            "-35.6",
+            "-10.0",
+            "40.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 24.01, -98.30, 96.57, 64.43, 99.80, -47.33, -60.10, -89.05\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-98.30', '-89.05', '-60.10', '-47.33', '24.01', '64.43', '96.57', '99.80']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers:\n24.01, -98.30, 96.57, 64.43, 99.80, -47.33, -60.10, -89.05\n\n2. Arrange from smallest (most negative) to largest:\n-98.30 (smallest)\n-89.05\n-60.10\n-47.33\n24.01\n64.43\n96.57\n99.80 (largest)\n\n3. Convert each number to a string and put them in a list with square brackets.\n</reasoning>\n<answer>['-98.30', '-89.05', '-60.10', '-47.33', '24.01', '64.43', '96.57', '99.80']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "24.01",
+            "-98.30",
+            "96.57",
+            "64.43",
+            "99.80",
+            "-47.33",
+            "-60.10",
+            "-89.05"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-98.30",
+            "-89.05",
+            "-60.10",
+            "-47.33",
+            "24.01",
+            "64.43",
+            "96.57",
+            "99.80"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 47.67, -62.75, 39.78, 23.96\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['47.67', '39.78', '23.96', '-62.75']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I will:\n1. First write out all numbers: 47.67, -62.75, 39.78, 23.96\n2. Compare each number and arrange from largest to smallest:\n   47.67 is the largest\n   39.78 is second\n   23.96 is third\n   -62.75 is the smallest\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n<answer>['47.67', '39.78', '23.96', '-62.75']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "47.67",
+            "-62.75",
+            "39.78",
+            "23.96"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "47.67",
+            "39.78",
+            "23.96",
+            "-62.75"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 0, 13, -8, 17, -3, 4, -60\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-60', '-8', '-3', '0', '4', '13', '17']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers: 0, 13, -8, 17, -3, 4, -60\n2. Identify the smallest number first: -60\n3. Then continue from smallest to largest:\n   -60, -8, -3, 0, 4, 13, 17\n4. Convert each number to a string and put them in a list format with square brackets\n</reasoning>\n<answer>['-60', '-8', '-3', '0', '4', '13', '17']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "0",
+            "13",
+            "-8",
+            "17",
+            "-3",
+            "4",
+            "-60"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-60",
+            "-8",
+            "-3",
+            "0",
+            "4",
+            "13",
+            "17"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -75.9, -38.2, 75.1, 86.7\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['86.7', '75.1', '-38.2', '-75.9']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll:\n1. First arrange them from highest to lowest value\n2. The highest number is 86.7\n3. The next highest is 75.1\n4. Then comes -38.2\n5. Finally, -75.9\n6. Now I'll create a list with these numbers as strings within square brackets\n</reasoning>\n<answer>['86.7', '75.1', '-38.2', '-75.9']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-75.9",
+            "-38.2",
+            "75.1",
+            "86.7"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "86.7",
+            "75.1",
+            "-38.2",
+            "-75.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -12.68, -91.67, 53.53, 34.69, 34.17, -5.47, 34.55, 76.50, 38.40, -30.87\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['76.50', '53.53', '38.40', '34.69', '34.55', '34.17', '-5.47', '-12.68', '-30.87', '-91.67']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers:\n-12.68, -91.67, 53.53, 34.69, 34.17, -5.47, 34.55, 76.50, 38.40, -30.87\n\n2. Arrange them from highest to lowest:\n76.50 (highest)\n53.53\n38.40\n34.69\n34.55\n34.17\n-5.47\n-12.68\n-30.87\n-91.67 (lowest)\n\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n\n<answer>['76.50', '53.53', '38.40', '34.69', '34.55', '34.17', '-5.47', '-12.68', '-30.87', '-91.67']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-12.68",
+            "-91.67",
+            "53.53",
+            "34.69",
+            "34.17",
+            "-5.47",
+            "34.55",
+            "76.50",
+            "38.40",
+            "-30.87"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "76.50",
+            "53.53",
+            "38.40",
+            "34.69",
+            "34.55",
+            "34.17",
+            "-5.47",
+            "-12.68",
+            "-30.87",
+            "-91.67"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 90.0, -60.0, -40.6, -16.4, -52.5, -39.7, 68.2, -2.1\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-60.0', '-52.5', '-40.6', '-39.7', '-16.4', '-2.1', '68.2', '90.0']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers: 90.0, -60.0, -40.6, -16.4, -52.5, -39.7, 68.2, -2.1\n2. Order them from smallest to largest:\n   -60.0 is the smallest\n   -52.5 comes next\n   -40.6 follows\n   -39.7 is next\n   -16.4 comes after\n   -2.1 follows\n   68.2 is second to last\n   90.0 is the largest\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n<answer>['-60.0', '-52.5', '-40.6', '-39.7', '-16.4', '-2.1', '68.2', '90.0']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "90.0",
+            "-60.0",
+            "-40.6",
+            "-16.4",
+            "-52.5",
+            "-39.7",
+            "68.2",
+            "-2.1"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-60.0",
+            "-52.5",
+            "-40.6",
+            "-39.7",
+            "-16.4",
+            "-2.1",
+            "68.2",
+            "90.0"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -60.5, -61.4, 87.9, -41.5, 90.6, 99.9, -52.4\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-61.4', '-60.5', '-52.4', '-41.5', '87.9', '90.6', '99.9']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers: -60.5, -61.4, 87.9, -41.5, 90.6, 99.9, -52.4\n2. Compare them from smallest to largest:\n   -61.4 is the smallest\n   -60.5 comes next\n   -52.4 follows\n   -41.5 is next\n   87.9 comes after positive numbers start\n   90.6 follows\n   99.9 is the largest\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n<answer>['-61.4', '-60.5', '-52.4', '-41.5', '87.9', '90.6', '99.9']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-60.5",
+            "-61.4",
+            "87.9",
+            "-41.5",
+            "90.6",
+            "99.9",
+            "-52.4"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-61.4",
+            "-60.5",
+            "-52.4",
+            "-41.5",
+            "87.9",
+            "90.6",
+            "99.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -40, 33, 74, 49, 80, 31\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['80', '74', '49', '33', '31', '-40']",
+        "model_answer": "<reasoning>\nTo sort the numbers in descending order, I will:\n1. First identify all numbers: -40, 33, 74, 49, 80, 31\n2. Arrange them from highest to lowest: 80 > 74 > 49 > 33 > 31 > -40\n3. Convert each number to a string and put them in a list format with square brackets\n</reasoning>\n<answer>['80', '74', '49', '33', '31', '-40']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-40",
+            "33",
+            "74",
+            "49",
+            "80",
+            "31"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "80",
+            "74",
+            "49",
+            "33",
+            "31",
+            "-40"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -30.1, -67.4, -50.8, 38.5, -69.0\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['38.5', '-30.1', '-50.8', '-67.4', '-69.0']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order (highest to lowest), I'll:\n1. First identify all numbers: 38.5, -30.1, -50.8, -67.4, -69.0\n2. Arrange them from highest to lowest:\n   38.5 (highest)\n   -30.1\n   -50.8\n   -67.4\n   -69.0 (lowest)\n3. Convert each number to a string and place them in a list with square brackets\n</reasoning>\n<answer>['38.5', '-30.1', '-50.8', '-67.4', '-69.0']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-30.1",
+            "-67.4",
+            "-50.8",
+            "38.5",
+            "-69.0"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "38.5",
+            "-30.1",
+            "-50.8",
+            "-67.4",
+            "-69.0"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 8.4, 41.6, 91.7, -26.2, 6.6, -25.1, 10.0\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['91.7', '41.6', '10.0', '8.4', '6.6', '-25.1', '-26.2']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers: 8.4, 41.6, 91.7, -26.2, 6.6, -25.1, 10.0\n2. Compare them from largest to smallest:\n   91.7 is largest\n   41.6 is second\n   10.0 is third\n   8.4 is fourth\n   6.6 is fifth\n   -25.1 is sixth\n   -26.2 is smallest\n3. Arrange them in descending order\n4. Convert each number to a string and put them in a list\n</reasoning>\n<answer>['91.7', '41.6', '10.0', '8.4', '6.6', '-25.1', '-26.2']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "8.4",
+            "41.6",
+            "91.7",
+            "-26.2",
+            "6.6",
+            "-25.1",
+            "10.0"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "91.7",
+            "41.6",
+            "10.0",
+            "8.4",
+            "6.6",
+            "-25.1",
+            "-26.2"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 11.6, -23.2, 66.9, -68.1, -9.9, 52.6, 21.2, 81.2, -42.3, -28.4\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['81.2', '66.9', '52.6', '21.2', '11.6', '-9.9', '-23.2', '-28.4', '-42.3', '-68.1']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll first arrange them from highest to lowest:\n81.2 (highest)\n66.9\n52.6\n21.2\n11.6\n-9.9\n-23.2\n-28.4\n-42.3\n-68.1 (lowest)\n\nNow I'll put them in a list format with strings as requested.\n</reasoning>\n<answer>['81.2', '66.9', '52.6', '21.2', '11.6', '-9.9', '-23.2', '-28.4', '-42.3', '-68.1']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "11.6",
+            "-23.2",
+            "66.9",
+            "-68.1",
+            "-9.9",
+            "52.6",
+            "21.2",
+            "81.2",
+            "-42.3",
+            "-28.4"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "81.2",
+            "66.9",
+            "52.6",
+            "21.2",
+            "11.6",
+            "-9.9",
+            "-23.2",
+            "-28.4",
+            "-42.3",
+            "-68.1"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 96.7, -41.6, 64.9, -64.1, -66.6\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['96.7', '64.9', '-41.6', '-64.1', '-66.6']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers: 96.7, -41.6, 64.9, -64.1, -66.6\n2. Compare them from highest to lowest:\n   * 96.7 is the highest\n   * 64.9 is second highest\n   * -41.6 is third\n   * -64.1 is fourth\n   * -66.6 is lowest\n3. Format them as a list of strings in square brackets\n</reasoning>\n<answer>['96.7', '64.9', '-41.6', '-64.1', '-66.6']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "96.7",
+            "-41.6",
+            "64.9",
+            "-64.1",
+            "-66.6"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "96.7",
+            "64.9",
+            "-41.6",
+            "-64.1",
+            "-66.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -82.3, -24.3, -90.2, 30.0, -62.2, -38.2, 63.7, -89.1, -69.3, -39.7\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-90.2', '-89.1', '-82.3', '-69.3', '-62.2', '-39.7', '-38.2', '-24.3', '30.0', '63.7']",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll identify all numbers and arrange them from smallest to largest:\n   -90.2 (smallest)\n   -89.1\n   -82.3\n   -69.3\n   -62.2\n   -39.7\n   -38.2\n   -24.3\n   30.0\n   63.7 (largest)\n\n2. Now, I'll create a list with these numbers as strings, enclosed in square brackets.\n</reasoning>\n<answer>['-90.2', '-89.1', '-82.3', '-69.3', '-62.2', '-39.7', '-38.2', '-24.3', '30.0', '63.7']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-82.3",
+            "-24.3",
+            "-90.2",
+            "30.0",
+            "-62.2",
+            "-38.2",
+            "63.7",
+            "-89.1",
+            "-69.3",
+            "-39.7"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-90.2",
+            "-89.1",
+            "-82.3",
+            "-69.3",
+            "-62.2",
+            "-39.7",
+            "-38.2",
+            "-24.3",
+            "30.0",
+            "63.7"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -2, 4, 32, 67, -8, 71, 51\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['71', '67', '51', '32', '4', '-2', '-8']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll:\n1. First identify all numbers: -2, 4, 32, 67, -8, 71, 51\n2. Arrange them from highest to lowest: 71 > 67 > 51 > 32 > 4 > -2 > -8\n3. Put them in a list with each number as a string\n</reasoning>\n<answer>['71', '67', '51', '32', '4', '-2', '-8']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-2",
+            "4",
+            "32",
+            "67",
+            "-8",
+            "71",
+            "51"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "71",
+            "67",
+            "51",
+            "32",
+            "4",
+            "-2",
+            "-8"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 23.01, -78.58, 81.04, -61.58, -7.76, 54.25\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['81.04', '54.25', '23.01', '-7.76', '-61.58', '-78.58']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I will:\n1. First list all numbers: 23.01, -78.58, 81.04, -61.58, -7.76, 54.25\n2. Compare them to arrange from largest to smallest:\n   81.04 is the largest\n   54.25 is second\n   23.01 is third\n   -7.76 is fourth\n   -61.58 is fifth\n   -78.58 is smallest\n3. Convert each number to a string and put them in square brackets\n</reasoning>\n<answer>['81.04', '54.25', '23.01', '-7.76', '-61.58', '-78.58']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "23.01",
+            "-78.58",
+            "81.04",
+            "-61.58",
+            "-7.76",
+            "54.25"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "81.04",
+            "54.25",
+            "23.01",
+            "-7.76",
+            "-61.58",
+            "-78.58"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 67.55, -36.50, -97.60\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-97.60', '-36.50', '67.55']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. First list all numbers: 67.55, -36.50, -97.60\n2. Find the smallest number: -97.60 is smallest\n3. Then next smallest: -36.50\n4. Finally largest: 67.55\n5. Order them: -97.60, -36.50, 67.55\n6. Convert to strings and put in list format as requested\n</reasoning>\n<answer>['-97.60', '-36.50', '67.55']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "67.55",
+            "-36.50",
+            "-97.60"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-97.60",
+            "-36.50",
+            "67.55"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -62.16, 67.82, 8.11, -43.83, -32.91\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['67.82', '8.11', '-32.91', '-43.83', '-62.16']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order, I'll:\n1. First list all numbers: -62.16, 67.82, 8.11, -43.83, -32.91\n2. Compare them from largest to smallest:\n   67.82 (largest)\n   8.11\n   -32.91\n   -43.83\n   -62.16 (smallest)\n3. Convert each number to a string and put them in a list with square brackets\n</reasoning>\n<answer>['67.82', '8.11', '-32.91', '-43.83', '-62.16']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-62.16",
+            "67.82",
+            "8.11",
+            "-43.83",
+            "-32.91"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "67.82",
+            "8.11",
+            "-32.91",
+            "-43.83",
+            "-62.16"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -33, -63, -97, 54, -98, -32, -7, -55, 90\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['-98', '-97', '-63', '-55', '-33', '-32', '-7', '54', '90']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. First list all numbers: -33, -63, -97, 54, -98, -32, -7, -55, 90\n2. Sort from smallest to largest: -98, -97, -63, -55, -33, -32, -7, 54, 90\n3. Convert each number to a string and put them in a list format with square brackets\n</reasoning>\n<answer>['-98', '-97', '-63', '-55', '-33', '-32', '-7', '54', '90']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-33",
+            "-63",
+            "-97",
+            "54",
+            "-98",
+            "-32",
+            "-7",
+            "-55",
+            "90"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-98",
+            "-97",
+            "-63",
+            "-55",
+            "-33",
+            "-32",
+            "-7",
+            "54",
+            "90"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 40.65, -48.24, -31.14, -87.06\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['40.65', '-31.14', '-48.24', '-87.06']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order:\n1. First, I'll arrange the numbers from highest to lowest:\n   40.65 (highest)\n   -31.14\n   -48.24\n   -87.06 (lowest)\n\n2. Following the instructions:\n   - I'll put these numbers in a list\n   - Convert each number to a string\n   - Enclose them in square brackets with quotes\n</reasoning>\n<answer>['40.65', '-31.14', '-48.24', '-87.06']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "40.65",
+            "-48.24",
+            "-31.14",
+            "-87.06"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "40.65",
+            "-31.14",
+            "-48.24",
+            "-87.06"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -81.46, 31.90, 17.23, 26.88, -29.03, -9.75\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['31.90', '26.88', '17.23', '-9.75', '-29.03', '-81.46']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I'll:\n1. First arrange them from highest to lowest\n2. Convert each number to a string\n3. Put them in a list format\n\n31.90 is the highest\n26.88 is second\n17.23 is third\n-9.75 is fourth\n-29.03 is fifth\n-81.46 is lowest\n\nNow I'll convert each number to a string and put them in a list.\n</reasoning>\n<answer>['31.90', '26.88', '17.23', '-9.75', '-29.03', '-81.46']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-81.46",
+            "31.90",
+            "17.23",
+            "26.88",
+            "-29.03",
+            "-9.75"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "31.90",
+            "26.88",
+            "17.23",
+            "-9.75",
+            "-29.03",
+            "-81.46"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -65.53, 36.76, -67.73, 89.84\n        \n\n\n        Please follow the instruction below:\n        # 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n        # 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n        ",
+        "expected_answer": "['89.84', '36.76', '-65.53', '-67.73']",
+        "model_answer": "<reasoning>\nTo sort these numbers in descending order (from highest to lowest), I will:\n1. First list all numbers: -65.53, 36.76, -67.73, 89.84\n2. Compare them to find the highest to lowest:\n   * 89.84 is the highest\n   * 36.76 is second\n   * -65.53 is third\n   * -67.73 is the lowest\n3. Convert each number to a string and place them in a list with square brackets\n</reasoning>\n\n<answer>['89.84', '36.76', '-65.53', '-67.73']</answer>",
+        "score": 1.0,
+        "metadata": {
+          "original_numbers": [
+            "-65.53",
+            "36.76",
+            "-67.73",
+            "89.84"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "89.84",
+            "36.76",
+            "-65.53",
+            "-67.73"
+          ]
+        }
+      }
+    ]
+  }
+]

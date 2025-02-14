@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "binary_matrix",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.406,
+    "total_examples": 50,
+    "timestamp": "2025-02-12T23:25:20.818466",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

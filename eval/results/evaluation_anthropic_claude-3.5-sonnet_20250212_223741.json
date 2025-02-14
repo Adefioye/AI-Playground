@@ -1,0 +1,568 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "polynomial_multiplication",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.9612,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T22:37:41.916872",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Calculate the following: (65*x - 72)*(105*x - 125)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "6825*x**2 - 15685*x + 9000",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's use FOIL method to multiply these binomials:\n   (65*x - 72) * (105*x - 125)\n\n2) Multiply each term:\n   * First terms: (65*x)*(105*x) = 6825*x**2\n   * Outer terms: (65*x)*(-125) = -8125*x\n   * Inner terms: (-72)*(105*x) = -7560*x\n   * Last terms: (-72)*(-125) = 9000\n\n3) Combine like terms:\n   * x**2 terms: 6825*x**2\n   * x terms: -8125*x - 7560*x = -15685*x\n   * constant terms: 9000\n\n4) Therefore, the expression becomes:\n   6825*x**2 - 15685*x + 9000\n</reasoning>\n\n<answer>6825*x**2 - 15685*x + 9000</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(65*x - 72)*(105*x - 125)",
+          "single_variable": true,
+          "result": "6825*x**2 - 15685*x + 9000"
+        }
+      },
+      {
+        "question": "Calculate the following: (-9*x**2 - 28*x)*(86*x**2 - 2*x - 13)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-774*x**4 - 2390*x**3 + 173*x**2 + 364*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method for multiplying polynomials:\n\n1) First, let's identify our terms:\n   First expression: (-9*x**2 - 28*x)\n   Second expression: (86*x**2 - 2*x - 13)\n\n2) Now multiply each term of first expression with each term of second expression:\n\n   (-9*x**2)*(86*x**2) = -774*x**4\n   (-9*x**2)*(-2*x) = 18*x**3\n   (-9*x**2)*(-13) = 117*x**2\n   \n   (-28*x)*(86*x**2) = -2408*x**3\n   (-28*x)*(-2*x) = 56*x**2\n   (-28*x)*(-13) = 364*x\n\n3) Now combine like terms:\n   -774*x**4 terms\n   (18 - 2408)*x**3 = -2390*x**3 terms\n   (117 + 56)*x**2 = 173*x**2 terms\n   364*x terms\n\n4) Final result: -774*x**4 - 2390*x**3 + 173*x**2 + 364*x\n</reasoning>\n<answer>-774*x**4 - 2390*x**3 + 173*x**2 + 364*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-9*x**2 - 28*x)*(86*x**2 - 2*x - 13)",
+          "single_variable": true,
+          "result": "-774*x**4 - 2390*x**3 + 173*x**2 + 364*x"
+        }
+      },
+      {
+        "question": "Calculate the following: (43 - 91*x)*(3*x**2 - 10*x)*(71*x**3 - 2*x - 29)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-19383*x**6 + 73769*x**5 - 29984*x**4 + 5839*x**3 - 29271*x**2 + 12470*x",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) We have three factors to multiply:\n   - Factor 1: (43 - 91*x)\n   - Factor 2: (3*x**2 - 10*x)\n   - Factor 3: (71*x**3 - 2*x - 29)\n\n2) Using the distributive property, we need to multiply all terms in all brackets.\n   This will result in many terms of different degrees.\n\n3) Let's organize by multiplying step by step:\n   First, multiply Factor 1 and Factor 2:\n   (43 - 91*x)(3*x**2 - 10*x)\n   = 129*x**2 - 430*x - 273*x**3 + 910*x**2\n\n4) Combining like terms from step 3:\n   = -273*x**3 + 1039*x**2 - 430*x\n\n5) Now multiply this result by Factor 3:\n   (-273*x**3 + 1039*x**2 - 430*x)(71*x**3 - 2*x - 29)\n\n6) This multiplication will give us terms from x**6 down to x:\n   - (-273*x**3)(71*x**3) = -19383*x**6\n   - (-273*x**3)(-2*x) = 546*x**4\n   - (-273*x**3)(-29) = 7917*x**3\n   - (1039*x**2)(71*x**3) = 73769*x**5\n   - (1039*x**2)(-2*x) = -2078*x**3\n   - (1039*x**2)(-29) = -30131*x**2\n   - (-430*x)(71*x**3) = -30530*x**4\n   - (-430*x)(-2*x) = 860*x**2\n   - (-430*x)(-29) = 12470*x\n\n7) Combining like terms:\n   = -19383*x**6 + 73769*x**5 + (-30530*x**4 + 546*x**4) + (7917*x**3 - 2078*x**3) + (-30131*x**2 + 860*x**2) + 12470*x\n   = -19383*x**6 + 73769*x**5 - 29984*x**4 + 5839*x**3 - 29271*x**2 + 12470*x\n</reasoning>\n<answer>-19383*x**6 + 73769*x**5 - 29984*x**4 + 5839*x**3 - 29271*x**2 + 12470*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(43 - 91*x)*(3*x**2 - 10*x)*(71*x**3 - 2*x - 29)",
+          "single_variable": true,
+          "result": "-19383*x**6 + 73769*x**5 - 29984*x**4 + 5839*x**3 - 29271*x**2 + 12470*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: (3 - 18*x)*(80 - 38*x)*(-39*x**2 - 10*x - 15)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-26676*x**4 + 53766*x**3 - 4080*x**2 + 20910*x - 3600",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's identify the structure. This is a product of three terms:\n   (3 - 18*x)*(80 - 38*x)*(-39*x**2 - 10*x - 15)\n\n2) Let's expand the first two terms (3 - 18*x)*(80 - 38*x):\n   = 3*80 - 3*38*x - 18*x*80 + 18*x*38*x\n   = 240 - 114*x - 1440*x + 684*x**2\n   = 684*x**2 - 1554*x + 240\n\n3) Now we multiply this result by the third term (-39*x**2 - 10*x - 15):\n   (684*x**2 - 1554*x + 240)*(-39*x**2 - 10*x - 15)\n\n4) Using FOIL method:\n   = -39*x**2*(684*x**2) - 39*x**2*(-1554*x) - 39*x**2*(240)\n   + -10*x*(684*x**2) - 10*x*(-1554*x) - 10*x*(240)\n   + -15*(684*x**2) - 15*(-1554*x) - 15*(240)\n\n5) Simplifying:\n   = -26676*x**4 + 60606*x**3 - 9360*x**2\n   + -6840*x**3 + 15540*x**2 - 2400*x\n   + -10260*x**2 + 23310*x - 3600\n\n6) Combining like terms:\n   = -26676*x**4 + 53766*x**3 - 4080*x**2 + 20910*x - 3600\n</reasoning>\n<answer>-26676*x**4 + 53766*x**3 - 4080*x**2 + 20910*x - 3600</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(3 - 18*x)*(80 - 38*x)*(-39*x**2 - 10*x - 15)",
+          "single_variable": true,
+          "result": "-26676*x**4 + 53766*x**3 - 4080*x**2 + 20910*x - 3600"
+        }
+      },
+      {
+        "question": "Simplify this expression: 106*x**2*(41*x + 63)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "4346*x**3 + 6678*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute 106*x**2 to each term inside the parentheses:\n   106*x**2*(41*x + 63)\n   = 106*x**2*41*x + 106*x**2*63\n\n2) Now, let's combine like terms:\n   = 4346*x**3 + 6678*x**2\n   (since 106*41 = 4346 and 106*63 = 6678)\n\n3) Now the expression is in standard form with descending powers of x\n</reasoning>\n\n<answer>4346*x**3 + 6678*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "106*x**2*(41*x + 63)",
+          "single_variable": true,
+          "result": "4346*x**3 + 6678*x**2"
+        }
+      },
+      {
+        "question": "Calculate the following: 8832*x**2*(67*x**2 + 57*x + 97)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "591744*x**4 + 503424*x**3 + 856704*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute 8832*x**2 to each term inside the parentheses:\n   8832*x**2 * (67*x**2 + 57*x + 97)\n   = 8832*x**2 * 67*x**2 + 8832*x**2 * 57*x + 8832*x**2 * 97\n\n2) Now let's simplify each term:\n   * First term: 8832*x**2 * 67*x**2 = (8832*67)*x**4 = 591744*x**4\n   * Second term: 8832*x**2 * 57*x = (8832*57)*x**3 = 503424*x**3\n   * Third term: 8832*x**2 * 97 = (8832*97)*x**2 = 856704*x**2\n\n3) Combining all terms:\n   591744*x**4 + 503424*x**3 + 856704*x**2\n</reasoning>\n<answer>591744*x**4 + 503424*x**3 + 856704*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "8832*x**2*(67*x**2 + 57*x + 97)",
+          "single_variable": true,
+          "result": "591744*x**4 + 503424*x**3 + 856704*x**2"
+        }
+      },
+      {
+        "question": "Simplify this expression: -83*x**3*(-9*x - 84)*(90*x**2 + 22)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "67230*x**6 + 627480*x**5 + 16434*x**4 + 153384*x**3",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's multiply -83*x**3 by (-9*x - 84)\n   * -83*x**3 * (-9*x) = 747*x**4\n   * -83*x**3 * (-84) = 6972*x**3\n\n2) Now we multiply these terms by (90*x**2 + 22)\n   * 747*x**4 * 90*x**2 = 67230*x**6\n   * 747*x**4 * 22 = 16434*x**4\n   * 6972*x**3 * 90*x**2 = 627480*x**5\n   * 6972*x**3 * 22 = 153384*x**3\n\n3) Combining like terms:\n   * Terms with x**6: 67230*x**6\n   * Terms with x**5: 627480*x**5\n   * Terms with x**4: 16434*x**4\n   * Terms with x**3: 153384*x**3\n\n4) Therefore, the simplified expression is:\n   67230*x**6 + 627480*x**5 + 16434*x**4 + 153384*x**3\n</reasoning>\n<answer>67230*x**6 + 627480*x**5 + 16434*x**4 + 153384*x**3</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-83*x**3*(-9*x - 84)*(90*x**2 + 22)",
+          "single_variable": true,
+          "result": "67230*x**6 + 627480*x**5 + 16434*x**4 + 153384*x**3"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-78*x - 16)*(97*x**2 + 98*x + 7)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-7566*x**3 - 9196*x**2 - 2114*x - 112",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL (First, Outer, Inner, Last) method to multiply these polynomials:\n\n1) First, let's identify the terms:\n   First polynomial: (-78*x - 16)\n   Second polynomial: (97*x**2 + 98*x + 7)\n\n2) Multiply each term of the first polynomial by each term of the second:\n\n   (-78*x)*(97*x**2) = -7566*x**3\n   (-78*x)*(98*x) = -7644*x**2\n   (-78*x)*(7) = -546*x\n\n   (-16)*(97*x**2) = -1552*x**2\n   (-16)*(98*x) = -1568*x\n   (-16)*(7) = -112\n\n3) Combine like terms:\n   Terms with x**3: -7566*x**3\n   Terms with x**2: -7644*x**2 - 1552*x**2 = -9196*x**2\n   Terms with x: -546*x - 1568*x = -2114*x\n   Constants: -112\n</reasoning>\n<answer>-7566*x**3 - 9196*x**2 - 2114*x - 112</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-78*x - 16)*(97*x**2 + 98*x + 7)",
+          "single_variable": true,
+          "result": "-7566*x**3 - 9196*x**2 - 2114*x - 112"
+        }
+      },
+      {
+        "question": "Simplify this expression: 133*x*(-132*x**2 - 41)*(45*x**3 - 45*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-790020*x**6 + 544635*x**4 + 245385*x**2",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's look at the last factor (45*x**3 - 45*x)\n   This can be factored as: 45*x*(x**2 - 1)\n   Further factoring: 45*x*(x+1)*(x-1)\n\n2) Looking at (-132*x**2 - 41)\n   This can't be factored further\n\n3) Now multiply all terms:\n   133*x * (-132*x**2 - 41) * 45*x*(x+1)*(x-1)\n\n4) Let's multiply coefficients:\n   133 * (-132) * 45 = -791,010\n\n5) Collect x terms:\n   x * x**2 * x = x**4\n\n6) Final expression:\n   -791,010*x**4*(x+1)*(x-1)*(-1 - 41/(132*x**2))\n</reasoning>\n<answer>-791,010*x**4*(x+1)*(x-1)*(-1 - 41/(132*x**2))</answer>",
+        "score": 0.01,
+        "metadata": {
+          "polynomial_expr": "133*x*(-132*x**2 - 41)*(45*x**3 - 45*x)",
+          "single_variable": true,
+          "result": "-790020*x**6 + 544635*x**4 + 245385*x**2"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-35*x**2 - x)*(-71*x**3 + 182*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "2485*x**5 + 71*x**4 - 6370*x**3 - 182*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's use the distributive property to multiply these expressions:\n   (-35*x**2 - x) * (-71*x**3 + 182*x)\n\n2) We need to multiply each term in the first bracket by each term in the second bracket:\n   (-35*x**2)*(-71*x**3) + (-35*x**2)*(182*x) + (-x)*(-71*x**3) + (-x)*(182*x)\n\n3) Let's solve each term:\n   * (-35*x**2)*(-71*x**3) = 2485*x**5 (negative * negative = positive)\n   * (-35*x**2)*(182*x) = -6370*x**3\n   * (-x)*(-71*x**3) = 71*x**4\n   * (-x)*(182*x) = -182*x**2\n\n4) Now combine all terms:\n   2485*x**5 - 6370*x**3 + 71*x**4 - 182*x**2\n\n5) Arrange in descending order of exponents:\n   2485*x**5 + 71*x**4 - 6370*x**3 - 182*x**2\n</reasoning>\n<answer>2485*x**5 + 71*x**4 - 6370*x**3 - 182*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-35*x**2 - x)*(-71*x**3 + 182*x)",
+          "single_variable": true,
+          "result": "2485*x**5 + 71*x**4 - 6370*x**3 - 182*x**2"
+        }
+      },
+      {
+        "question": "Simplify this expression: 224400*x**4\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "224400*x**4",
+        "model_answer": "<reasoning>\nTo simplify 224400*x**4, I just need to keep the coefficient and the variable with its power as they are, since:\n1. The coefficient 224400 cannot be simplified further\n2. x**4 is already in its simplest form\n3. The multiplication between the coefficient and x**4 is already properly denoted with *\n\nNo further simplification is possible for this expression.\n</reasoning>\n\n<answer>224400*x**4</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "224400*x**4",
+          "single_variable": true,
+          "result": "224400*x**4"
+        }
+      },
+      {
+        "question": "Calculate the following: (54 - 47*x**2)*(37*x**2 + 5*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-1739*x**4 - 235*x**3 + 1998*x**2 + 270*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's identify the two parts being multiplied:\n   - Part 1: (54 - 47*x**2)\n   - Part 2: (37*x**2 + 5*x)\n\n2) Let's use the distributive property to multiply these parts:\n   (54 - 47*x**2)*(37*x**2 + 5*x)\n   = 54*(37*x**2 + 5*x) - 47*x**2*(37*x**2 + 5*x)\n\n3) Let's distribute 54:\n   54*(37*x**2) + 54*(5*x)\n   = 1998*x**2 + 270*x\n\n4) Let's distribute -47*x**2:\n   -47*x**2*(37*x**2) - 47*x**2*(5*x)\n   = -1739*x**4 - 235*x**3\n\n5) Now combine all terms:\n   1998*x**2 + 270*x - 1739*x**4 - 235*x**3\n\n6) Rearrange in descending order of exponents:\n   -1739*x**4 - 235*x**3 + 1998*x**2 + 270*x\n</reasoning>\n<answer>-1739*x**4 - 235*x**3 + 1998*x**2 + 270*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(54 - 47*x**2)*(37*x**2 + 5*x)",
+          "single_variable": true,
+          "result": "-1739*x**4 - 235*x**3 + 1998*x**2 + 270*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: (35 - 32*x)*(-49*x**2 + 119*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "1568*x**3 - 5523*x**2 + 4165*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute (35 - 32*x) to (-49*x**2 + 119*x)\n\n   (35)*(-49*x**2 + 119*x) + (-32*x)*(-49*x**2 + 119*x)\n\n2) Let's solve the first part: 35*(-49*x**2 + 119*x)\n   = -1715*x**2 + 4165*x\n\n3) Let's solve the second part: (-32*x)*(-49*x**2 + 119*x)\n   = 32*x*(49*x**2 - 119*x)\n   = 1568*x**3 - 3808*x**2\n\n4) Now combine like terms:\n   -1715*x**2 + 4165*x + 1568*x**3 - 3808*x**2\n   = 1568*x**3 + (-1715*x**2 - 3808*x**2) + 4165*x\n   = 1568*x**3 - 5523*x**2 + 4165*x\n\n</reasoning>\n<answer>1568*x**3 - 5523*x**2 + 4165*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(35 - 32*x)*(-49*x**2 + 119*x)",
+          "single_variable": true,
+          "result": "1568*x**3 - 5523*x**2 + 4165*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: -2884*x**4\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-2884*x**4",
+        "model_answer": "<reasoning>\nThis expression is already quite simple, as it just contains:\n- A coefficient: -2884\n- A variable x raised to the power of 4 (already written as x**4)\n\nThe only thing we need to do is to ensure we keep the multiplication symbol * between the coefficient and the variable term, following the given instructions.\n\nTherefore, -2884*x**4 is already in its simplest form, with the * explicitly shown between the coefficient and variable term.\n</reasoning>\n\n<answer>-2884*x**4</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-2884*x**4",
+          "single_variable": true,
+          "result": "-2884*x**4"
+        }
+      },
+      {
+        "question": "Simplify this expression: (7*x - 72)*(74*x**2 - 9*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "518*x**3 - 5391*x**2 + 648*x",
+        "model_answer": "<reasoning>\nLet's solve this step by step using the distributive property:\n\n1) Let's first identify our terms:\n   First bracket: (7*x - 72)\n   Second bracket: (74*x**2 - 9*x)\n\n2) We need to multiply each term in the first bracket by each term in the second bracket:\n   (7*x)*(74*x**2) = 518*x**3\n   (7*x)*(-9*x) = -63*x**2\n   (-72)*(74*x**2) = -5328*x**2\n   (-72)*(-9*x) = 648*x\n\n3) Now combine like terms:\n   * x**3 terms: 518*x**3\n   * x**2 terms: -63*x**2 - 5328*x**2 = -5391*x**2\n   * x terms: 648*x\n</reasoning>\n<answer>518*x**3 - 5391*x**2 + 648*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(7*x - 72)*(74*x**2 - 9*x)",
+          "single_variable": true,
+          "result": "518*x**3 - 5391*x**2 + 648*x"
+        }
+      },
+      {
+        "question": "Calculate the following: (7 - 128*x**2)*(-49*x**3 + 14*x**2)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "6272*x**5 - 1792*x**4 - 343*x**3 + 98*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's use the distributive property to multiply these expressions:\n   (7 - 128*x**2) * (-49*x**3 + 14*x**2)\n\n2) First term: 7 * (-49*x**3 + 14*x**2)\n   = -343*x**3 + 98*x**2\n\n3) Second term: -128*x**2 * (-49*x**3 + 14*x**2)\n   = 6272*x**5 - 1792*x**4\n\n4) Now combine all terms:\n   (-343*x**3 + 98*x**2) + (6272*x**5 - 1792*x**4)\n   \n5) Arranging in descending order of exponents:\n   6272*x**5 - 1792*x**4 - 343*x**3 + 98*x**2\n\n</reasoning>\n<answer>6272*x**5 - 1792*x**4 - 343*x**3 + 98*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(7 - 128*x**2)*(-49*x**3 + 14*x**2)",
+          "single_variable": true,
+          "result": "6272*x**5 - 1792*x**4 - 343*x**3 + 98*x**2"
+        }
+      },
+      {
+        "question": "Calculate the following: (-58*x - 8)*(-63*x**3 - 97)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "3654*x**4 + 504*x**3 + 5626*x + 776",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the distributive property and FOIL method:\n\n1) First, let's distribute (-58*x - 8) to both terms in the second bracket:\n   * (-58*x)*(-63*x**3) + (-58*x)*(-97)\n   * (-8)*(-63*x**3) + (-8)*(-97)\n\n2) Let's solve each term:\n   * (-58*x)*(-63*x**3) = 3654*x**4 (negative * negative = positive)\n   * (-58*x)*(-97) = 5626*x (negative * negative = positive)\n   * (-8)*(-63*x**3) = 504*x**3 (negative * negative = positive)\n   * (-8)*(-97) = 776 (negative * negative = positive)\n\n3) Combining like terms:\n   * 3654*x**4 + 504*x**3 + 5626*x + 776\n\n4) This is our final answer as these terms cannot be combined further since they have different powers of x.\n</reasoning>\n<answer>3654*x**4 + 504*x**3 + 5626*x + 776</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-58*x - 8)*(-63*x**3 - 97)",
+          "single_variable": true,
+          "result": "3654*x**4 + 504*x**3 + 5626*x + 776"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-7*x - 15)*(127*x - 132)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-889*x**2 - 981*x + 1980",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method to multiply these binomials:\n\n(-7*x - 15) * (127*x - 132)\n\n1) First terms: (-7*x)(127*x) = -889*x**2\n2) Outer terms: (-7*x)(-132) = 924*x\n3) Inner terms: (-15)(127*x) = -1905*x\n4) Last terms: (-15)(-132) = 1980\n\nNow combining all terms:\n-889*x**2 + 924*x - 1905*x + 1980\n\nCombining like terms:\n-889*x**2 + (-1905+924)*x + 1980\n-889*x**2 - 981*x + 1980\n</reasoning>\n\n<answer>-889*x**2 - 981*x + 1980</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-7*x - 15)*(127*x - 132)",
+          "single_variable": true,
+          "result": "-889*x**2 - 981*x + 1980"
+        }
+      },
+      {
+        "question": "Simplify this expression: -8*x*(40*x**3 - 87*x)*(-62*x**2 + 6*x + 55)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "19840*x**6 - 1920*x**5 - 60752*x**4 + 4176*x**3 + 38280*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's organize it:\n   -8*x*(40*x**3 - 87*x)*(-62*x**2 + 6*x + 55)\n\n2) Let's multiply -8*x with (40*x**3 - 87*x):\n   = (-320*x**4 + 696*x**2)*(-62*x**2 + 6*x + 55)\n\n3) Now we need to multiply this by (-62*x**2 + 6*x + 55)\n   Using FOIL method:\n   (-320*x**4)*(-62*x**2) = 19840*x**6\n   (-320*x**4)*(6*x) = -1920*x**5\n   (-320*x**4)*(55) = -17600*x**4\n   (696*x**2)*(-62*x**2) = -43152*x**4\n   (696*x**2)*(6*x) = 4176*x**3\n   (696*x**2)*(55) = 38280*x**2\n\n4) Combining like terms:\n   19840*x**6 - 1920*x**5 - 17600*x**4 - 43152*x**4 + 4176*x**3 + 38280*x**2\n\n5) Further simplifying:\n   19840*x**6 - 1920*x**5 - 60752*x**4 + 4176*x**3 + 38280*x**2\n</reasoning>\n<answer>19840*x**6 - 1920*x**5 - 60752*x**4 + 4176*x**3 + 38280*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-8*x*(40*x**3 - 87*x)*(-62*x**2 + 6*x + 55)",
+          "single_variable": true,
+          "result": "19840*x**6 - 1920*x**5 - 60752*x**4 + 4176*x**3 + 38280*x**2"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-82*x - 23)*(-64*x - 4)*(54*x**2 + 41*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "283392*x**4 + 312368*x**3 + 78768*x**2 + 3772*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's identify what we have:\n   * First term: (-82*x - 23)\n   * Second term: (-64*x - 4)\n   * Third term: (54*x**2 + 41*x)\n\n2) Let's multiply these terms using FOIL method:\n   First multiply (-82*x - 23)*(-64*x - 4):\n   * (-82*x)*(-64*x) = 5248*x**2\n   * (-82*x)*(-4) = 328*x\n   * (-23)*(-64*x) = 1472*x\n   * (-23)*(-4) = 92\n   = 5248*x**2 + 1800*x + 92\n\n3) Now multiply this result by (54*x**2 + 41*x):\n   * (5248*x**2)*(54*x**2) = 283392*x**4\n   * (5248*x**2)*(41*x) = 215168*x**3\n   * (1800*x)*(54*x**2) = 97200*x**3\n   * (1800*x)*(41*x) = 73800*x**2\n   * (92)*(54*x**2) = 4968*x**2\n   * (92)*(41*x) = 3772*x\n\n4) Combining like terms:\n   * x**4 terms: 283392*x**4\n   * x**3 terms: 215168*x**3 + 97200*x**3 = 312368*x**3\n   * x**2 terms: 73800*x**2 + 4968*x**2 = 78768*x**2\n   * x terms: 3772*x\n</reasoning>\n<answer>283392*x**4 + 312368*x**3 + 78768*x**2 + 3772*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-82*x - 23)*(-64*x - 4)*(54*x**2 + 41*x)",
+          "single_variable": true,
+          "result": "283392*x**4 + 312368*x**3 + 78768*x**2 + 3772*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: -6*x*(34*x + 22)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-204*x**2 - 132*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's use the distributive property to multiply -6*x with each term inside the parentheses:\n   -6*x*(34*x + 22)\n   = -6*x*34*x - 6*x*22\n\n2) Let's simplify the first term: \n   -6*x*34*x = -204*x**2\n   \n3) Simplify the second term:\n   -6*x*22 = -132*x\n\n4) Now combine the terms:\n   -204*x**2 - 132*x\n</reasoning>\n\n<answer>-204*x**2 - 132*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-6*x*(34*x + 22)",
+          "single_variable": true,
+          "result": "-204*x**2 - 132*x"
+        }
+      },
+      {
+        "question": "Calculate the following: (68*x + 40)*(-85*x**2 - 181*x)*(61*x**3 + 77*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-352580*x**6 - 958188*x**5 - 886700*x**4 - 1209516*x**3 - 557480*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's break this into three parts:\n   A = (68*x + 40)\n   B = (-85*x**2 - 181*x)\n   C = (61*x**3 + 77*x)\n\n2) Now multiply A and B first:\n   (68*x + 40)*(-85*x**2 - 181*x)\n   = -85*68*x**3 - 181*68*x**2 - 85*40*x**2 - 181*40*x\n   = -5780*x**3 - 12308*x**2 - 3400*x**2 - 7240*x\n   = -5780*x**3 - 15708*x**2 - 7240*x\n\n3) Now multiply this result by C:\n   (-5780*x**3 - 15708*x**2 - 7240*x)*(61*x**3 + 77*x)\n   \n4) Distribute:\n   -5780*x**3 * 61*x**3 = -352580*x**6\n   -5780*x**3 * 77*x = -445060*x**4\n   -15708*x**2 * 61*x**3 = -958188*x**5\n   -15708*x**2 * 77*x = -1209516*x**3\n   -7240*x * 61*x**3 = -441640*x**4\n   -7240*x * 77*x = -557480*x**2\n\n5) Combine like terms:\n   -352580*x**6 - 958188*x**5 - 886700*x**4 - 1209516*x**3 - 557480*x**2\n</reasoning>\n<answer>-352580*x**6 - 958188*x**5 - 886700*x**4 - 1209516*x**3 - 557480*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(68*x + 40)*(-85*x**2 - 181*x)*(61*x**3 + 77*x)",
+          "single_variable": true,
+          "result": "-352580*x**6 - 958188*x**5 - 886700*x**4 - 1209516*x**3 - 557480*x**2"
+        }
+      },
+      {
+        "question": "Calculate the following: -61*x*(6 - 23*x**3)*(116*x + 126)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "162748*x**5 + 176778*x**4 - 42456*x**2 - 46116*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step, using the distributive property and making sure to use * for multiplication:\n\n1) Let's first organize the expression:\n   -61*x*(6 - 23*x**3)*(116*x + 126)\n\n2) First, let's expand (6 - 23*x**3):\n   -61*x*(6 - 23*x**3)*(116*x + 126)\n   = -61*x*(6 - 23*x**3)*(116*x + 126)\n\n3) Now, let's expand (116*x + 126):\n   = -61*x*(6 - 23*x**3)*(116*x + 126)\n   = -61*x*(6*(116*x + 126) - 23*x**3*(116*x + 126))\n\n4) Let's expand further:\n   = -61*x*(696*x + 756 - 2668*x**4 - 2898*x**3)\n\n5) Distributing -61*x:\n   = -61*x*(696*x + 756 - 2668*x**4 - 2898*x**3)\n   = -42456*x**2 - 46116*x + 162748*x**5 + 176778*x**4\n\n6) Rearranging terms in descending order of exponents:\n   = 162748*x**5 + 176778*x**4 - 42456*x**2 - 46116*x\n</reasoning>\n<answer>162748*x**5 + 176778*x**4 - 42456*x**2 - 46116*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-61*x*(6 - 23*x**3)*(116*x + 126)",
+          "single_variable": true,
+          "result": "162748*x**5 + 176778*x**4 - 42456*x**2 - 46116*x"
+        }
+      },
+      {
+        "question": "Calculate the following: (1144 - 3168*x**2)*(21*x**3 - 16*x**2 - 27)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-66528*x**5 + 50688*x**4 + 24024*x**3 + 67232*x**2 - 30888",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method to multiply these polynomials:\n\n1) First let me identify the two expressions:\n   * First expression: (1144 - 3168*x**2)\n   * Second expression: (21*x**3 - 16*x**2 - 27)\n\n2) Now multiply each term of first expression with each term of second expression:\n\n   1144 * (21*x**3 - 16*x**2 - 27)\n   = 1144*21*x**3 - 1144*16*x**2 - 1144*27\n   = 24024*x**3 - 18304*x**2 - 30888\n\n   -3168*x**2 * (21*x**3 - 16*x**2 - 27)\n   = -3168*21*x**5 + 3168*16*x**4 + 3168*27*x**2\n   = -66528*x**5 + 50688*x**4 + 85536*x**2\n\n3) Combining like terms:\n   -66528*x**5 + 50688*x**4 + 24024*x**3 + 67232*x**2 - 30888\n</reasoning>\n<answer>-66528*x**5 + 50688*x**4 + 24024*x**3 + 67232*x**2 - 30888</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(1144 - 3168*x**2)*(21*x**3 - 16*x**2 - 27)",
+          "single_variable": true,
+          "result": "-66528*x**5 + 50688*x**4 + 24024*x**3 + 67232*x**2 - 30888"
+        }
+      },
+      {
+        "question": "Calculate the following: (-92*x**3 - 22)*(-38*x**2 - 64*x - 72)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "3496*x**5 + 5888*x**4 + 6624*x**3 + 836*x**2 + 1408*x + 1584",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method to multiply these polynomials:\n\n1) First polynomial: (-92*x**3 - 22)\n2) Second polynomial: (-38*x**2 - 64*x - 72)\n\nLet's multiply each term of the first polynomial with each term of the second:\n\nFor -92*x**3:\n* (-92*x**3)*(-38*x**2) = 3496*x**5\n* (-92*x**3)*(-64*x) = 5888*x**4\n* (-92*x**3)*(-72) = 6624*x**3\n\nFor -22:\n* (-22)*(-38*x**2) = 836*x**2\n* (-22)*(-64*x) = 1408*x\n* (-22)*(-72) = 1584\n\nNow, let's combine like terms:\n* x**5 terms: 3496*x**5\n* x**4 terms: 5888*x**4\n* x**3 terms: 6624*x**3\n* x**2 terms: 836*x**2\n* x terms: 1408*x\n* constant terms: 1584\n</reasoning>\n<answer>3496*x**5 + 5888*x**4 + 6624*x**3 + 836*x**2 + 1408*x + 1584</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-92*x**3 - 22)*(-38*x**2 - 64*x - 72)",
+          "single_variable": true,
+          "result": "3496*x**5 + 5888*x**4 + 6624*x**3 + 836*x**2 + 1408*x + 1584"
+        }
+      },
+      {
+        "question": "Simplify this expression: 16*x*(-37*x - 37)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-592*x**2 - 592*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute 16*x to both terms inside the parentheses\n   16*x*(-37*x - 37)\n   = 16*x*(-37*x) + 16*x*(-37)\n\n2) Let's multiply the numbers and variables:\n   = -592*x**2 - 592*x\n\n3) The terms are now simplified and in standard form (descending powers of x)\n   No further simplification is needed\n</reasoning>\n<answer>-592*x**2 - 592*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "16*x*(-37*x - 37)",
+          "single_variable": true,
+          "result": "-592*x**2 - 592*x"
+        }
+      },
+      {
+        "question": "Calculate the following: 6*x*(-100*x**3 + 68*x)*(10*x**3 - 71*x - 87)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-6000*x**7 + 46680*x**5 + 52200*x**4 - 28968*x**3 - 35496*x**2",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) First, let's identify the structure: \n   It's a product of three terms:\n   - 6*x\n   - (-100*x**3 + 68*x)\n   - (10*x**3 - 71*x - 87)\n\n2) Let's multiply (-100*x**3 + 68*x) and (10*x**3 - 71*x - 87):\n   Using FOIL method:\n   - (-100*x**3)(10*x**3) = -1000*x**6\n   - (-100*x**3)(-71*x) = 7100*x**4\n   - (-100*x**3)(-87) = 8700*x**3\n   - (68*x)(10*x**3) = 680*x**4\n   - (68*x)(-71*x) = -4828*x**2\n   - (68*x)(-87) = -5916*x\n\n3) Combining like terms:\n   -1000*x**6 + (7100+680)*x**4 + 8700*x**3 + (-4828)*x**2 + (-5916)*x\n   = -1000*x**6 + 7780*x**4 + 8700*x**3 - 4828*x**2 - 5916*x\n\n4) Now multiply everything by 6*x:\n   6*x*(-1000*x**6 + 7780*x**4 + 8700*x**3 - 4828*x**2 - 5916*x)\n   = -6000*x**7 + 46680*x**5 + 52200*x**4 - 28968*x**3 - 35496*x**2\n</reasoning>\n<answer>-6000*x**7 + 46680*x**5 + 52200*x**4 - 28968*x**3 - 35496*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "6*x*(-100*x**3 + 68*x)*(10*x**3 - 71*x - 87)",
+          "single_variable": true,
+          "result": "-6000*x**7 + 46680*x**5 + 52200*x**4 - 28968*x**3 - 35496*x**2"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-78*x - 71)*(21*x**2 - 94*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-1638*x**3 + 5841*x**2 + 6674*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's use the distributive property to multiply these expressions:\n   (-78*x - 71) * (21*x**2 - 94*x)\n\n2) We need to multiply each term in the first bracket by each term in the second bracket:\n   (-78*x)*(21*x**2) + (-78*x)*(-94*x) + (-71)*(21*x**2) + (-71)*(-94*x)\n\n3) Let's solve each term:\n   * (-78*x)*(21*x**2) = -1638*x**3\n   * (-78*x)*(-94*x) = 7332*x**2\n   * (-71)*(21*x**2) = -1491*x**2\n   * (-71)*(-94*x) = 6674*x\n\n4) Now combine like terms:\n   * x**3 terms: -1638*x**3\n   * x**2 terms: 7332*x**2 - 1491*x**2 = 5841*x**2\n   * x terms: 6674*x\n</reasoning>\n<answer>-1638*x**3 + 5841*x**2 + 6674*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-78*x - 71)*(21*x**2 - 94*x)",
+          "single_variable": true,
+          "result": "-1638*x**3 + 5841*x**2 + 6674*x"
+        }
+      },
+      {
+        "question": "Calculate the following: (-84*x**2 + 41*x)*(42*x**2 + 107*x + 92)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-3528*x**4 - 7266*x**3 - 3341*x**2 + 3772*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method:\n\n1) First, let's distribute (-84*x**2 + 41*x) to each term in (42*x**2 + 107*x + 92)\n\n(-84*x**2)*(42*x**2) = -3528*x**4\n(-84*x**2)*(107*x) = -8988*x**3\n(-84*x**2)*(92) = -7728*x**2\n\n(41*x)*(42*x**2) = 1722*x**3\n(41*x)*(107*x) = 4387*x**2\n(41*x)*(92) = 3772*x\n\n2) Now, let's group like terms:\n\nx**4 terms: -3528*x**4\n\nx**3 terms: -8988*x**3 + 1722*x**3 = -7266*x**3\n\nx**2 terms: -7728*x**2 + 4387*x**2 = -3341*x**2\n\nx terms: 3772*x\n</reasoning>\n<answer>-3528*x**4 - 7266*x**3 - 3341*x**2 + 3772*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-84*x**2 + 41*x)*(42*x**2 + 107*x + 92)",
+          "single_variable": true,
+          "result": "-3528*x**4 - 7266*x**3 - 3341*x**2 + 3772*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: -150*x*(41*x**3 - 5*x**2 - 75*x)*(97*x**3 - 66*x**2 + 25*x - 34)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-596550*x**7 + 478650*x**6 + 888000*x**5 - 514650*x**4 + 255750*x**3 - 382500*x**2",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) First, let's identify the structure:\n   -150*x * (41*x**3 - 5*x**2 - 75*x) * (97*x**3 - 66*x**2 + 25*x - 34)\n\n2) Let's factor out x from the first parenthesis:\n   (41*x**3 - 5*x**2 - 75*x) = x*(41*x**2 - 5*x - 75)\n\n3) Now, we have:\n   -150*x * [x*(41*x**2 - 5*x - 75)] * (97*x**3 - 66*x**2 + 25*x - 34)\n\n4) Combining the x terms at the beginning:\n   -150*x**2 * (41*x**2 - 5*x - 75) * (97*x**3 - 66*x**2 + 25*x - 34)\n\n5) The final expression will be -150 multiplied by:\n   x**2 * (41*x**2 - 5*x - 75) * (97*x**3 - 66*x**2 + 25*x - 34)\n</reasoning>\n\n<answer>\n-150*x**2*(41*x**2 - 5*x - 75)*(97*x**3 - 66*x**2 + 25*x - 34)\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-150*x*(41*x**3 - 5*x**2 - 75*x)*(97*x**3 - 66*x**2 + 25*x - 34)",
+          "single_variable": true,
+          "result": "-596550*x**7 + 478650*x**6 + 888000*x**5 - 514650*x**4 + 255750*x**3 - 382500*x**2"
+        }
+      },
+      {
+        "question": "Calculate the following: (89*x + 1)*(40*x**3 + 107*x**2 + 88*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "3560*x**4 + 9563*x**3 + 7939*x**2 + 88*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's organize what we have:\n   (89*x + 1) * (40*x**3 + 107*x**2 + 88*x)\n\n2) This is a product of two expressions. We need to multiply each term of the first bracket by each term of the second bracket (FOIL method).\n\n3) First bracket: (89*x + 1)\n   Second bracket: (40*x**3 + 107*x**2 + 88*x)\n\n4) Let's multiply:\n   (89*x)(40*x**3) = 3560*x**4\n   (89*x)(107*x**2) = 9523*x**3\n   (89*x)(88*x) = 7832*x**2\n   \n   (1)(40*x**3) = 40*x**3\n   (1)(107*x**2) = 107*x**2\n   (1)(88*x) = 88*x\n\n5) Now add all terms:\n   3560*x**4 + 9523*x**3 + 7832*x**2 + 40*x**3 + 107*x**2 + 88*x\n\n6) Combine like terms:\n   3560*x**4 + (9523 + 40)*x**3 + (7832 + 107)*x**2 + 88*x\n   = 3560*x**4 + 9563*x**3 + 7939*x**2 + 88*x\n</reasoning>\n<answer>3560*x**4 + 9563*x**3 + 7939*x**2 + 88*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(89*x + 1)*(40*x**3 + 107*x**2 + 88*x)",
+          "single_variable": true,
+          "result": "3560*x**4 + 9563*x**3 + 7939*x**2 + 88*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-39*x - 65)*(34*x**2 + 26)*(46*x**2 + 64*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-60996*x**5 - 186524*x**4 - 188084*x**3 - 142636*x**2 - 108160*x",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) Let's first label the three factors:\n   A = (-39*x - 65)\n   B = (34*x**2 + 26)\n   C = (46*x**2 + 64*x)\n\n2) Let's multiply A * B first:\n   (-39*x - 65) * (34*x**2 + 26)\n   = -39*x * 34*x**2 - 39*x * 26 - 65 * 34*x**2 - 65 * 26\n   = -1326*x**3 - 1014*x - 2210*x**2 - 1690\n\n3) Let's call this intermediate result D:\n   D = -1326*x**3 - 2210*x**2 - 1014*x - 1690\n\n4) Now multiply D * C:\n   (-1326*x**3 - 2210*x**2 - 1014*x - 1690) * (46*x**2 + 64*x)\n   \n   = -1326*x**3 * 46*x**2 - 1326*x**3 * 64*x\n   - 2210*x**2 * 46*x**2 - 2210*x**2 * 64*x\n   - 1014*x * 46*x**2 - 1014*x * 64*x\n   - 1690 * 46*x**2 - 1690 * 64*x\n\n5) Combining like terms:\n   = -60996*x**5 - 84864*x**4\n   - 101660*x**4 - 141440*x**3\n   - 46644*x**3 - 64896*x**2\n   - 77740*x**2 - 108160*x\n</reasoning>\n<answer>-60996*x**5 - 186524*x**4 - 188084*x**3 - 142636*x**2 - 108160*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-39*x - 65)*(34*x**2 + 26)*(46*x**2 + 64*x)",
+          "single_variable": true,
+          "result": "-60996*x**5 - 186524*x**4 - 188084*x**3 - 142636*x**2 - 108160*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-22*x**2 + x)*(24*x**2 - 28*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-528*x**4 + 640*x**3 - 28*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's use distributive property to multiply these expressions:\n   (-22*x**2 + x) * (24*x**2 - 28*x)\n\n2) We'll multiply each term of the first bracket by each term of the second bracket:\n   (-22*x**2)*(24*x**2) + (-22*x**2)*(-28*x) + (x)*(24*x**2) + (x)*(-28*x)\n\n3) Let's solve each term:\n   * (-22*x**2)*(24*x**2) = -528*x**4\n   * (-22*x**2)*(-28*x) = 616*x**3\n   * (x)*(24*x**2) = 24*x**3\n   * (x)*(-28*x) = -28*x**2\n\n4) Now combine like terms:\n   -528*x**4 + 616*x**3 + 24*x**3 - 28*x**2\n   \n5) Further combine like terms:\n   -528*x**4 + 640*x**3 - 28*x**2\n</reasoning>\n<answer>-528*x**4 + 640*x**3 - 28*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-22*x**2 + x)*(24*x**2 - 28*x)",
+          "single_variable": true,
+          "result": "-528*x**4 + 640*x**3 - 28*x**2"
+        }
+      },
+      {
+        "question": "Simplify this expression: (70*x**2 + 60*x)*(181*x**3 + 61)*(11*x**3 - 121*x**2 - 86)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "139370*x**8 - 1413610*x**7 - 1314060*x**6 - 1042650*x**5 - 1410370*x**4 - 442860*x**3 - 367220*x**2 - 314760*x",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) Let's label the three factors to make it easier:\n   A = (70*x**2 + 60*x)\n   B = (181*x**3 + 61)\n   C = (11*x**3 - 121*x**2 - 86)\n\n2) When multiplying these three expressions, we'll get many terms due to distribution.\n   First, let's distribute A and B:\n\n   (70*x**2 + 60*x)*(181*x**3 + 61)\n   = 70*x**2*181*x**3 + 70*x**2*61 + 60*x*181*x**3 + 60*x*61\n   = 12670*x**5 + 4270*x**2 + 10860*x**4 + 3660*x\n\n3) Let's call this intermediate result D:\n   D = 12670*x**5 + 10860*x**4 + 4270*x**2 + 3660*x\n\n4) Now multiply D by C (11*x**3 - 121*x**2 - 86):\n\n   For 12670*x**5:\n   * 12670*x**5*11*x**3 = 139370*x**8\n   * 12670*x**5*(-121*x**2) = -1533070*x**7\n   * 12670*x**5*(-86) = -1089620*x**5\n\n   For 10860*x**4:\n   * 10860*x**4*11*x**3 = 119460*x**7\n   * 10860*x**4*(-121*x**2) = -1314060*x**6\n   * 10860*x**4*(-86) = -933960*x**4\n\n   For 4270*x**2:\n   * 4270*x**2*11*x**3 = 46970*x**5\n   * 4270*x**2*(-121*x**2) = -516670*x**4\n   * 4270*x**2*(-86) = -367220*x**2\n\n   For 3660*x:\n   * 3660*x*11*x**3 = 40260*x**4\n   * 3660*x*(-121*x**2) = -442860*x**3\n   * 3660*x*(-86) = -314760*x\n\n5) Combining like terms:\n   * x**8: 139370\n   * x**7: -1533070 + 119460 = -1413610\n   * x**6: -1314060\n   * x**5: -1089620 + 46970 = -1042650\n   * x**4: -933960 - 516670 + 40260 = -1410370\n   * x**3: -442860\n   * x**2: -367220\n   * x: -314760\n</reasoning>\n<answer>139370*x**8 - 1413610*x**7 - 1314060*x**6 - 1042650*x**5 - 1410370*x**4 - 442860*x**3 - 367220*x**2 - 314760*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(70*x**2 + 60*x)*(181*x**3 + 61)*(11*x**3 - 121*x**2 - 86)",
+          "single_variable": true,
+          "result": "139370*x**8 - 1413610*x**7 - 1314060*x**6 - 1042650*x**5 - 1410370*x**4 - 442860*x**3 - 367220*x**2 - 314760*x"
+        }
+      },
+      {
+        "question": "Calculate the following: (78 - 85*x**3)*(43*x**2 - 30)*(-7*x**2 + 97*x - 31)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "25585*x**7 - 354535*x**6 + 95455*x**5 + 223872*x**4 + 246288*x**3 - 87594*x**2 - 226980*x + 72540",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) Let's identify the three factors:\n   * Factor 1: (78 - 85*x**3)\n   * Factor 2: (43*x**2 - 30)\n   * Factor 3: (-7*x**2 + 97*x - 31)\n\n2) When multiplying these factors, we need to distribute all terms:\n   * First term will be of degree 7 (3+2+2)\n   * Let's organize by multiplying first two factors:\n\n3) (78 - 85*x**3)*(43*x**2 - 30)\n   = (78*43*x**2 - 78*30) - (85*x**3*43*x**2 - 85*x**3*30)\n   = (3354*x**2 - 2340) - (3655*x**5 - 2550*x**3)\n\n4) Now multiply this result by (-7*x**2 + 97*x - 31)\n\n5) The final result will be:\n   * (3354*x**2 - 2340)*(-7*x**2 + 97*x - 31) \n   - (3655*x**5 - 2550*x**3)*(-7*x**2 + 97*x - 31)\n\n6) Distributing further:\n   * -23478*x**4 + 325338*x**3 - 103974*x**2\n   + 16380*x**2 - 226980*x + 72540\n   + 25585*x**7 - 354535*x**6 + 113305*x**5\n   - 17850*x**5 + 247350*x**4 - 79050*x**3\n\n7) Combining like terms:\n   * 25585*x**7 \n   - 354535*x**6 \n   + (113305-17850)*x**5 \n   + (247350-23478)*x**4 \n   + (325338-79050)*x**3 \n   + (16380-103974)*x**2 \n   - 226980*x \n   + 72540\n</reasoning>\n<answer>\n25585*x**7 - 354535*x**6 + 95455*x**5 + 223872*x**4 + 246288*x**3 - 87594*x**2 - 226980*x + 72540\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(78 - 85*x**3)*(43*x**2 - 30)*(-7*x**2 + 97*x - 31)",
+          "single_variable": true,
+          "result": "25585*x**7 - 354535*x**6 + 95455*x**5 + 223872*x**4 + 246288*x**3 - 87594*x**2 - 226980*x + 72540"
+        }
+      },
+      {
+        "question": "Simplify this expression: (25*x**2 - 15)*(71*x**2 - 69)*(-36*x**3 - 39*x - 50)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-63900*x**7 + 31215*x**5 - 88750*x**4 + 71550*x**3 + 139500*x**2 - 40365*x - 51750",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's use the distributive property to multiply these polynomials.\nFirst, let's identify each part:\n- A = (25*x**2 - 15)\n- B = (71*x**2 - 69)\n- C = (-36*x**3 - 39*x - 50)\n\n2) First multiply A and B:\n(25*x**2 - 15)*(71*x**2 - 69)\n= 25*71*x**4 - 25*69*x**2 - 15*71*x**2 + 15*69\n= 1775*x**4 - 1725*x**2 - 1065*x**2 + 1035\n= 1775*x**4 - 2790*x**2 + 1035\n\n3) Now multiply this result by C:\n(1775*x**4 - 2790*x**2 + 1035)*(-36*x**3 - 39*x - 50)\n\n4) Distribute:\n- 1775*x**4*(-36*x**3) = -63900*x**7\n- 1775*x**4*(-39*x) = -69225*x**5\n- 1775*x**4*(-50) = -88750*x**4\n- (-2790*x**2)*(-36*x**3) = 100440*x**5\n- (-2790*x**2)*(-39*x) = 108810*x**3\n- (-2790*x**2)*(-50) = 139500*x**2\n- 1035*(-36*x**3) = -37260*x**3\n- 1035*(-39*x) = -40365*x\n- 1035*(-50) = -51750\n\n5) Combining like terms:\n- x**7: -63900*x**7\n- x**5: (-69225 + 100440)*x**5 = 31215*x**5\n- x**4: -88750*x**4\n- x**3: (108810 - 37260)*x**3 = 71550*x**3\n- x**2: 139500*x**2\n- x: -40365*x\n- constant: -51750\n</reasoning>\n<answer>-63900*x**7 + 31215*x**5 - 88750*x**4 + 71550*x**3 + 139500*x**2 - 40365*x - 51750</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(25*x**2 - 15)*(71*x**2 - 69)*(-36*x**3 - 39*x - 50)",
+          "single_variable": true,
+          "result": "-63900*x**7 + 31215*x**5 - 88750*x**4 + 71550*x**3 + 139500*x**2 - 40365*x - 51750"
+        }
+      },
+      {
+        "question": "Simplify this expression: -164*x*(-14*x**3 - 81)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "2296*x**4 + 13284*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll distribute -164*x with (-14*x**3 - 81)\n   * -164*x * (-14*x**3) and -164*x * (-81)\n\n2) For the first term:\n   * -164*x * (-14*x**3)\n   * (-164)*(-14)*x*x**3\n   * 2296*x**4\n\n3) For the second term:\n   * -164*x * (-81)\n   * (-164)*(-81)*x\n   * 13284*x\n\n4) Now combine the terms:\n   * 2296*x**4 + 13284*x\n\n</reasoning>\n<answer>2296*x**4 + 13284*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-164*x*(-14*x**3 - 81)",
+          "single_variable": true,
+          "result": "2296*x**4 + 13284*x"
+        }
+      },
+      {
+        "question": "Calculate the following: -145*x*(-120*x**2 - 9)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "17400*x**3 + 1305*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute -145*x to (-120*x**2 - 9)\n\n2) -145*x * (-120*x**2) = 17400*x**3 \n   (because negative * negative = positive)\n\n3) -145*x * (-9) = 1305*x\n   (because negative * negative = positive)\n\n4) Now combine the terms:\n   17400*x**3 + 1305*x\n\n5) This is our final answer as it cannot be simplified further.\n</reasoning>\n<answer>17400*x**3 + 1305*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-145*x*(-120*x**2 - 9)",
+          "single_variable": true,
+          "result": "17400*x**3 + 1305*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: 37*x**3*(-30*x - 103)*(-x**2 + 148*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "1110*x**6 - 160469*x**5 - 564028*x**4",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's group the terms: \n   37*x**3 * (-30*x - 103) * (-x**2 + 148*x)\n\n2) Let's first multiply 37*x**3 by (-30*x - 103):\n   * 37*x**3 * (-30*x) = -1110*x**4\n   * 37*x**3 * (-103) = -3811*x**3\n   So, 37*x**3 * (-30*x - 103) = -1110*x**4 - 3811*x**3\n\n3) Now multiply this result by (-x**2 + 148*x):\n   * (-1110*x**4) * (-x**2) = 1110*x**6\n   * (-1110*x**4) * (148*x) = -164280*x**5\n   * (-3811*x**3) * (-x**2) = 3811*x**5\n   * (-3811*x**3) * (148*x) = -563028*x**4\n\n4) Collecting like terms:\n   * x**6 terms: 1110*x**6\n   * x**5 terms: (-164280 + 3811)*x**5 = -160469*x**5\n   * x**4 terms: -563028*x**4\n</reasoning>\n<answer>1110*x**6 - 160469*x**5 - 563028*x**4</answer>",
+        "score": 0.05,
+        "metadata": {
+          "polynomial_expr": "37*x**3*(-30*x - 103)*(-x**2 + 148*x)",
+          "single_variable": true,
+          "result": "1110*x**6 - 160469*x**5 - 564028*x**4"
+        }
+      },
+      {
+        "question": "Calculate the following: (-200*x**2 - 58)*(-88*x**2 - 10*x)*(55*x**2 - 119*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "968000*x**6 - 1984400*x**5 + 42720*x**4 - 575476*x**3 - 69020*x**2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll distribute the terms:\n   (-200*x**2 - 58) * (-88*x**2 - 10*x) * (55*x**2 - 119*x)\n\n2) Let's multiply the first two brackets first:\n   (-200*x**2 - 58) * (-88*x**2 - 10*x)\n   = 17600*x**4 + 2000*x**3 + 5104*x**2 + 580*x\n\n3) Now multiply this result by the third bracket (55*x**2 - 119*x):\n   (17600*x**4 + 2000*x**3 + 5104*x**2 + 580*x) * (55*x**2 - 119*x)\n\n4) Distributing:\n   * 17600*x**4 * 55*x**2 = 968000*x**6\n   * 17600*x**4 * (-119*x) = -2094400*x**5\n   * 2000*x**3 * 55*x**2 = 110000*x**5\n   * 2000*x**3 * (-119*x) = -238000*x**4\n   * 5104*x**2 * 55*x**2 = 280720*x**4\n   * 5104*x**2 * (-119*x) = -607376*x**3\n   * 580*x * 55*x**2 = 31900*x**3\n   * 580*x * (-119*x) = -69020*x**2\n\n5) Combining like terms:\n   * x**6: 968000\n   * x**5: -2094400 + 110000 = -1984400\n   * x**4: -238000 + 280720 = 42720\n   * x**3: -607376 + 31900 = -575476\n   * x**2: -69020\n\nTherefore, the final result is:\n968000*x**6 - 1984400*x**5 + 42720*x**4 - 575476*x**3 - 69020*x**2\n</reasoning>\n<answer>968000*x**6 - 1984400*x**5 + 42720*x**4 - 575476*x**3 - 69020*x**2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-200*x**2 - 58)*(-88*x**2 - 10*x)*(55*x**2 - 119*x)",
+          "single_variable": true,
+          "result": "968000*x**6 - 1984400*x**5 + 42720*x**4 - 575476*x**3 - 69020*x**2"
+        }
+      },
+      {
+        "question": "Calculate the following: (42 - 62*x**3)*(-88*x**2 + 98*x - 69)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "5456*x**5 - 6076*x**4 + 4278*x**3 - 3696*x**2 + 4116*x - 2898",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the FOIL method to multiply these polynomials:\n\n1) First polynomial: (42 - 62*x**3)\n2) Second polynomial: (-88*x**2 + 98*x - 69)\n\nLet's distribute each term of the first polynomial with each term of the second:\n\n42 * (-88*x**2):\n= -3696*x**2\n\n42 * (98*x):\n= 4116*x\n\n42 * (-69):\n= -2898\n\n(-62*x**3) * (-88*x**2):\n= 5456*x**5\n\n(-62*x**3) * (98*x):\n= -6076*x**4\n\n(-62*x**3) * (-69):\n= 4278*x**3\n\nNow, combine like terms:\n5456*x**5 - 6076*x**4 + 4278*x**3 - 3696*x**2 + 4116*x - 2898\n</reasoning>\n<answer>5456*x**5 - 6076*x**4 + 4278*x**3 - 3696*x**2 + 4116*x - 2898</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(42 - 62*x**3)*(-88*x**2 + 98*x - 69)",
+          "single_variable": true,
+          "result": "5456*x**5 - 6076*x**4 + 4278*x**3 - 3696*x**2 + 4116*x - 2898"
+        }
+      },
+      {
+        "question": "Calculate the following: (13 - 53*x)*(-49*x**2 - 84)*(-54*x**3 + 77*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-140238*x**6 + 34398*x**5 - 40439*x**4 + 9919*x**3 + 342804*x**2 - 84084*x",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) Let's first identify the three main parts being multiplied:\n   - (13 - 53*x)\n   - (-49*x**2 - 84)\n   - (-54*x**3 + 77*x)\n\n2) Let's multiply the first two parts:\n   (13 - 53*x) * (-49*x**2 - 84)\n   = 13*(-49*x**2 - 84) - 53*x*(-49*x**2 - 84)\n   = -637*x**2 - 1092 + 2597*x**3 + 4452*x\n\n3) Now multiply this result by the third part (-54*x**3 + 77*x):\n   (-637*x**2 - 1092 + 2597*x**3 + 4452*x) * (-54*x**3 + 77*x)\n\n4) Let's multiply term by term:\n   - 2597*x**3 * (-54*x**3) = -140238*x**6\n   - 2597*x**3 * 77*x = 199969*x**4\n   - (-637*x**2) * (-54*x**3) = 34398*x**5\n   - (-637*x**2) * 77*x = -49049*x**3\n   - 4452*x * (-54*x**3) = -240408*x**4\n   - 4452*x * 77*x = 342804*x**2\n   - (-1092) * (-54*x**3) = 58968*x**3\n   - (-1092) * 77*x = -84084*x\n\n5) Collecting like terms:\n   -140238*x**6 + 34398*x**5 + (199969*x**4 - 240408*x**4) + (58968*x**3 - 49049*x**3) + 342804*x**2 - 84084*x\n</reasoning>\n<answer>-140238*x**6 + 34398*x**5 - 40439*x**4 + 9919*x**3 + 342804*x**2 - 84084*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(13 - 53*x)*(-49*x**2 - 84)*(-54*x**3 + 77*x)",
+          "single_variable": true,
+          "result": "-140238*x**6 + 34398*x**5 - 40439*x**4 + 9919*x**3 + 342804*x**2 - 84084*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: (21*x + 71)*(-3*x**2 - 18*x)*(-160*x**3 - 29*x**2)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "10080*x**6 + 96387*x**5 + 221619*x**4 + 37062*x**3",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) First, let's identify the three factors:\n   * (21*x + 71)\n   * (-3*x**2 - 18*x)\n   * (-160*x**3 - 29*x**2)\n\n2) Let's distribute (-3*x**2 - 18*x) * (-160*x**3 - 29*x**2):\n   * (-3*x**2)*(-160*x**3) = 480*x**5\n   * (-3*x**2)*(-29*x**2) = 87*x**4\n   * (-18*x)*(-160*x**3) = 2880*x**4\n   * (-18*x)*(-29*x**2) = 522*x**3\n\n   This gives us: 480*x**5 + 2967*x**4 + 522*x**3\n\n3) Now multiply this result by (21*x + 71):\n   * (21*x)*(480*x**5) = 10080*x**6\n   * (21*x)*(2967*x**4) = 62307*x**5\n   * (21*x)*(522*x**3) = 10962*x**4\n   * (71)*(480*x**5) = 34080*x**5\n   * (71)*(2967*x**4) = 210657*x**4\n   * (71)*(522*x**3) = 37062*x**3\n\n4) Combine like terms:\n   * x**6: 10080*x**6\n   * x**5: 62307*x**5 + 34080*x**5 = 96387*x**5\n   * x**4: 10962*x**4 + 210657*x**4 = 221619*x**4\n   * x**3: 37062*x**3\n</reasoning>\n<answer>10080*x**6 + 96387*x**5 + 221619*x**4 + 37062*x**3</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(21*x + 71)*(-3*x**2 - 18*x)*(-160*x**3 - 29*x**2)",
+          "single_variable": true,
+          "result": "10080*x**6 + 96387*x**5 + 221619*x**4 + 37062*x**3"
+        }
+      },
+      {
+        "question": "Simplify this expression: -77*x**3*(-29*x**3 + 45*x**2 - 88*x + 99)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "2233*x**6 - 3465*x**5 + 6776*x**4 - 7623*x**3",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute -77*x**3 to each term inside the parentheses:\n   -77*x**3*(-29*x**3 + 45*x**2 - 88*x + 99)\n   = -77*x**3*(-29*x**3) + -77*x**3*(45*x**2) + -77*x**3*(-88*x) + -77*x**3*(99)\n\n2) Now let's simplify each term:\n   * -77*x**3*(-29*x**3) = 2233*x**6 (because negative * negative = positive)\n   * -77*x**3*(45*x**2) = -3465*x**5\n   * -77*x**3*(-88*x) = 6776*x**4\n   * -77*x**3*(99) = -7623*x**3\n\n3) Combining all terms:\n   2233*x**6 - 3465*x**5 + 6776*x**4 - 7623*x**3\n</reasoning>\n<answer>2233*x**6 - 3465*x**5 + 6776*x**4 - 7623*x**3</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-77*x**3*(-29*x**3 + 45*x**2 - 88*x + 99)",
+          "single_variable": true,
+          "result": "2233*x**6 - 3465*x**5 + 6776*x**4 - 7623*x**3"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-69*x - 98)*(91*x**3 + 12)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-6279*x**4 - 8918*x**3 - 828*x - 1176",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the distributive property:\n\n1) Let's multiply these two expressions:\n   (-69*x - 98) * (91*x**3 + 12)\n\n2) We need to multiply each term of the first expression by each term of the second expression:\n   \n   First term: (-69*x)*(91*x**3) = -6279*x**4\n   Second term: (-69*x)*(12) = -828*x\n   Third term: (-98)*(91*x**3) = -8918*x**3\n   Fourth term: (-98)*(12) = -1176\n\n3) Now add all terms:\n   -6279*x**4 - 828*x - 8918*x**3 - 1176\n\n4) Arranging terms in descending order of exponents:\n   -6279*x**4 - 8918*x**3 - 828*x - 1176\n</reasoning>\n\n<answer>-6279*x**4 - 8918*x**3 - 828*x - 1176</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-69*x - 98)*(91*x**3 + 12)",
+          "single_variable": true,
+          "result": "-6279*x**4 - 8918*x**3 - 828*x - 1176"
+        }
+      },
+      {
+        "question": "Simplify this expression: (36*x**3 + 83)*(-36*x**2 + 66*x - 78)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-1296*x**5 + 2376*x**4 - 2808*x**3 - 2988*x**2 + 5478*x - 6474",
+        "model_answer": "<reasoning>\nLet me multiply these expressions step by step:\n\n1) First, let's distribute (36*x**3 + 83) to each term in (-36*x**2 + 66*x - 78)\n\nFor 36*x**3 * (-36*x**2):\n* 36*x**3 * (-36*x**2) = -1296*x**5\n\nFor 36*x**3 * (66*x):\n* 36*x**3 * 66*x = 2376*x**4\n\nFor 36*x**3 * (-78):\n* 36*x**3 * (-78) = -2808*x**3\n\nFor 83 * (-36*x**2):\n* 83 * (-36*x**2) = -2988*x**2\n\nFor 83 * (66*x):\n* 83 * 66*x = 5478*x\n\nFor 83 * (-78):\n* 83 * (-78) = -6474\n\n2) Now combine like terms:\n* x**5 terms: -1296*x**5\n* x**4 terms: 2376*x**4\n* x**3 terms: -2808*x**3\n* x**2 terms: -2988*x**2\n* x terms: 5478*x\n* constant terms: -6474\n</reasoning>\n<answer>-1296*x**5 + 2376*x**4 - 2808*x**3 - 2988*x**2 + 5478*x - 6474</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(36*x**3 + 83)*(-36*x**2 + 66*x - 78)",
+          "single_variable": true,
+          "result": "-1296*x**5 + 2376*x**4 - 2808*x**3 - 2988*x**2 + 5478*x - 6474"
+        }
+      },
+      {
+        "question": "Simplify this expression: (-78*x - 53)*(68*x - 86)*(-21*x**2 - 44*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "111384*x**4 + 168192*x**3 - 232294*x**2 - 200552*x",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) Let's first identify the three factors:\n   * Factor 1: (-78*x - 53)\n   * Factor 2: (68*x - 86)\n   * Factor 3: (-21*x**2 - 44*x)\n\n2) First, multiply Factor 1 and Factor 2:\n   (-78*x - 53)*(68*x - 86)\n   = -78*x*(68*x) - (-78*x*86) - 53*(68*x) + (-53*(-86))\n   = -5304*x**2 + 6708*x - 3604*x + 4558\n   = -5304*x**2 + 3104*x + 4558\n\n3) Now multiply this result by Factor 3:\n   (-5304*x**2 + 3104*x + 4558)*(-21*x**2 - 44*x)\n   \n4) Distribute:\n   * (-5304*x**2)*(-21*x**2) = 111384*x**4\n   * (-5304*x**2)*(-44*x) = 233376*x**3\n   * (3104*x)*(-21*x**2) = -65184*x**3\n   * (3104*x)*(-44*x) = -136576*x**2\n   * 4558*(-21*x**2) = -95718*x**2\n   * 4558*(-44*x) = -200552*x\n\n5) Combine like terms:\n   * x**4 terms: 111384*x**4\n   * x**3 terms: 233376*x**3 - 65184*x**3 = 168192*x**3\n   * x**2 terms: -136576*x**2 - 95718*x**2 = -232294*x**2\n   * x terms: -200552*x\n</reasoning>\n<answer>111384*x**4 + 168192*x**3 - 232294*x**2 - 200552*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(-78*x - 53)*(68*x - 86)*(-21*x**2 - 44*x)",
+          "single_variable": true,
+          "result": "111384*x**4 + 168192*x**3 - 232294*x**2 - 200552*x"
+        }
+      },
+      {
+        "question": "Simplify this expression: -61*x**3*(-9*x**3 - 142*x**2 - 27*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "549*x**6 + 8662*x**5 + 1647*x**4",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's distribute -61*x**3 to each term inside the parentheses:\n   -61*x**3*(-9*x**3 - 142*x**2 - 27*x)\n   = -61*x**3*(-9*x**3) - 61*x**3*(-142*x**2) - 61*x**3*(-27*x)\n\n2) Simplify each term:\n   - First term: -61*x**3*(-9*x**3) = 549*x**6\n   - Second term: -61*x**3*(-142*x**2) = 8662*x**5\n   - Third term: -61*x**3*(-27*x) = 1647*x**4\n\n3) Combine all terms:\n   549*x**6 + 8662*x**5 + 1647*x**4\n</reasoning>\n<answer>549*x**6 + 8662*x**5 + 1647*x**4</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "-61*x**3*(-9*x**3 - 142*x**2 - 27*x)",
+          "single_variable": true,
+          "result": "549*x**6 + 8662*x**5 + 1647*x**4"
+        }
+      },
+      {
+        "question": "Calculate the following: 125*x**3*(-82*x**2 - 94*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "-10250*x**5 - 11750*x**4",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll distribute 125*x**3 to each term inside the parentheses:\n   125*x**3*(-82*x**2 - 94*x)\n   = 125*x**3*(-82*x**2) + 125*x**3*(-94*x)\n\n2) Simplify each term:\n   = -125*82*x**5 + -125*94*x**4\n   = -10250*x**5 + -11750*x**4\n\n3) Combining like terms (though there aren't any in this case):\n   The answer is: -10250*x**5 - 11750*x**4\n</reasoning>\n<answer>-10250*x**5 - 11750*x**4</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "125*x**3*(-82*x**2 - 94*x)",
+          "single_variable": true,
+          "result": "-10250*x**5 - 11750*x**4"
+        }
+      },
+      {
+        "question": "Simplify this expression: (78*x**2 - 91)*(52*x**3 - 96*x)\n        \n\n\n        In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n        ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n        ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps and even in reporting answers. \n        ",
+        "expected_answer": "4056*x**5 - 12220*x**3 + 8736*x",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Let's use the distributive property to multiply these expressions:\n   (78*x**2 - 91)*(52*x**3 - 96*x)\n\n2) We'll multiply each term of the first bracket by each term of the second bracket:\n   * (78*x**2)*(52*x**3) = 4056*x**5\n   * (78*x**2)*(-96*x) = -7488*x**3\n   * (-91)*(52*x**3) = -4732*x**3\n   * (-91)*(-96*x) = 8736*x\n\n3) Now, combining like terms:\n   * The x**5 terms: 4056*x**5\n   * The x**3 terms: -7488*x**3 - 4732*x**3 = -12220*x**3\n   * The x terms: 8736*x\n\n4) Therefore, when we add all terms:\n   4056*x**5 - 12220*x**3 + 8736*x\n</reasoning>\n<answer>4056*x**5 - 12220*x**3 + 8736*x</answer>",
+        "score": 1.0,
+        "metadata": {
+          "polynomial_expr": "(78*x**2 - 91)*(52*x**3 - 96*x)",
+          "single_variable": true,
+          "result": "4056*x**5 - 12220*x**3 + 8736*x"
+        }
+      }
+    ]
+  }
+]

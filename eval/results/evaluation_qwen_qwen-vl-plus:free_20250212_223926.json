@@ -1,0 +1,118 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "simple_equations",
+      "model": "qwen/qwen-vl-plus:free",
+      "size": 10,
+      "average_score": 0.702,
+      "total_examples": 10,
+      "timestamp": "2025-02-12T22:39:26.926039",
+      "config": {
+        "size": 10,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Determine the value of u that satisfies: 32*u + 4 = 580",
+        "expected_answer": "18",
+        "model_answer": "<reasoning>To find the value of u, we need to isolate u on one side of the equation. We can do this by first subtracting 4 from both sides of the equation, which gives us 32*u = 576. Then, we divide both sides by 32 to solve for u, resulting in u = 18.</reasoning>\n<answer>18</answer>",
+        "score": 1.0,
+        "metadata": {
+          "equation": "32*u + 4 = 580",
+          "variable": "u"
+        }
+      },
+      {
+        "question": "Solve for b: 82080*b = 1067040",
+        "expected_answer": "13",
+        "model_answer": "<reasoning>To solve for b, we divide both sides of the equation by 82080: b = 1067040 / 82080. Performing the division gives us b = 13.</reasoning>\n<answer>13</answer>",
+        "score": 1.0,
+        "metadata": {
+          "equation": "82080*b = 1067040",
+          "variable": "b"
+        }
+      },
+      {
+        "question": "Determine the value of n that satisfies: 29*n - 5 = 430",
+        "expected_answer": "15",
+        "model_answer": "<reasoning>To find the value of n, we need to isolate n on one side of the equation. We can do this by adding 5 to both sides of the equation and then dividing both sides by 29. So, 29*n - 5 + 5 = 430 + 5, which simplifies to 29*n = 435. Then, 29*n / 29 = 435 / 29, which simplifies to n = 15.</reasoning>\n<answer>15</answer>",
+        "score": 1.0,
+        "metadata": {
+          "equation": "29*n - 5 = 430",
+          "variable": "n"
+        }
+      },
+      {
+        "question": "Find the value of i in the equation: 44*i + 74 = 2802",
+        "expected_answer": "62",
+        "model_answer": "<reasoning>To find the value of i, we need to isolate i on one side of the equation. We can do this by subtracting 74 from both sides of the equation, which gives us 44*i = 2728. Then, we divide both sides by 44 to solve for i, which gives us i = 2728/44. Simplifying this, we get i = 62.</reasoning>\n<answer>62</answer>",
+        "score": 1.0,
+        "metadata": {
+          "equation": "44*i + 74 = 2802",
+          "variable": "i"
+        }
+      },
+      {
+        "question": "Determine the value of c that satisfies: 6232*c + 76 = 467476",
+        "expected_answer": "75",
+        "model_answer": "<reasoning>To find the value of c, we need to isolate c on one side of the equation. We can do this by subtracting 76 from both sides of the equation and then dividing both sides by 6232. So, 6232*c + 76 - 76 = 467476 - 76, which simplifies to 6232*c = 467400. Then, c = 467400 / 6232. Let's calculate the value of c.</reasoning>\n<answer>c = 75</answer>",
+        "score": 0.5,
+        "metadata": {
+          "equation": "6232*c + 76 = 467476",
+          "variable": "c"
+        }
+      },
+      {
+        "question": "Determine the value of l that satisfies: 56 - 74*l = -2386",
+        "expected_answer": "33",
+        "model_answer": "<reasoning>To find the value of l that satisfies the equation 56 - 74*l = -2386, we can start by isolating the term with the variable l. We do this by subtracting 56 from both sides of the equation, which gives us -74*l = -2386 - 56. Simplifying the right side, we get -74*l = -2442. To solve for l, we divide both sides of the equation by -74, which gives us l = -2442 / -74. Simplifying this, we find that l = 33.</reasoning>\n<answer>33</answer>",
+        "score": 1.0,
+        "metadata": {
+          "equation": "56 - 74*l = -2386",
+          "variable": "l"
+        }
+      },
+      {
+        "question": "Solve for r: 39*r + 1224 = 4812",
+        "expected_answer": "92",
+        "model_answer": "<reasoning>To solve for r, we first subtract 1224 from both sides of the equation: 39*r = 4812 - 1224. Then, we divide both sides by 39 to isolate r: r = (4812 - 1224) / 39. Simplifying the right side gives us r = 12.</reasoning>\n<answer>12</answer>",
+        "score": 0.01,
+        "metadata": {
+          "equation": "39*r + 1224 = 4812",
+          "variable": "r"
+        }
+      },
+      {
+        "question": "Determine the value of c that satisfies: 4488*c = 26928",
+        "expected_answer": "6",
+        "model_answer": "<reasoning>To find the value of c, we need to isolate c on one side of the equation. We can do this by dividing both sides of the equation by 4488. So, c = 26928 / 4488.</reasoning>\n<answer>c = 6</answer>",
+        "score": 0.5,
+        "metadata": {
+          "equation": "4488*c = 26928",
+          "variable": "c"
+        }
+      },
+      {
+        "question": "Solve for p: 61*p - 35 = 4174",
+        "expected_answer": "69",
+        "model_answer": "<reasoning>To solve for p, we first add 35 to both sides of the equation to isolate the term with p on one side: 61p - 35 + 35 = 4174 + 35, which simplifies to 61p = 4209. Then, we divide both sides by 61 to solve for p: 61p / 61 = 4209 / 61, which simplifies to p = 69.</reasoning>\n<answer>69</answer>",
+        "score": 1.0,
+        "metadata": {
+          "equation": "61*p - 35 = 4174",
+          "variable": "p"
+        }
+      },
+      {
+        "question": "Determine the value of h that satisfies: 44730 - 1530*h = -92970",
+        "expected_answer": "90",
+        "model_answer": "<reasoning>To find the value of h, we need to isolate h on one side of the equation. We can do this by first adding 1530*h to both sides of the equation to get 44730 = -92970 + 1530*h. Then, we can subtract -92970 from both sides to get 44730 + 92970 = 1530*h. Finally, we can divide both sides by 1530 to get h = (44730 + 92970) / 1530.</reasoning>\n<answer>100</answer>",
+        "score": 0.01,
+        "metadata": {
+          "equation": "44730 - 1530*h = -92970",
+          "variable": "h"
+        }
+      }
+    ]
+  }
+]

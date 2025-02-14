@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "base_conversion",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.601,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T23:08:29.616654",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

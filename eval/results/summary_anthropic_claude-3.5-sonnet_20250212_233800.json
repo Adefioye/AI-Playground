@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "caesar_cipher",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.4852,
+    "total_examples": 50,
+    "timestamp": "2025-02-12T23:38:00.649780",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

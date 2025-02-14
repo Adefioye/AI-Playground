@@ -1,0 +1,568 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "simple_integration",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.753,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T22:49:20.331099",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Find the indefinite integral: \u222b 70*x**6 + 12*x**2/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "10*x**7 + 4*x**3/5 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For 70*x**6:\n   * The power rule states: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * \u222b70*x**6 dx = 70 * \u222bx**6 dx = 70 * (x**7/7)\n   * = 10*x**7\n\n2) For 12*x**2/5:\n   * \u222b(12*x**2/5) dx = (12/5) * \u222bx**2 dx\n   * = (12/5) * (x**3/3)\n   * = 4*x**3/5\n\n3) Combining the terms and adding the constant of integration:\n   * 10*x**7 + 4*x**3/5 + C\n</reasoning>\n<answer>10*x**7 + 4*x**3/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "70*x**6 + 12*x**2/5",
+          "variable": "x",
+          "expected_answer_expression": "10*x**7 + 4*x**3/5"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 49*x**6/10 + 48*x**5 - 4*x - 10/9 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "7*x**7/10 + 8*x**6 - 2*x**2 - 10*x/9 + C",
+        "model_answer": "<reasoning>\nLet's solve this indefinite integral term by term:\n\n1) For 49*x**6/10:\n   \u222b 49*x**6/10 dx = (49/10) * \u222bx**6 dx = (49/10) * (x**7/7) = 7*x**7/10\n\n2) For 48*x**5:\n   \u222b 48*x**5 dx = 48 * \u222bx**5 dx = 48 * (x**6/6) = 8*x**6\n\n3) For -4*x:\n   \u222b -4*x dx = -4 * \u222bx dx = -4 * (x**2/2) = -2*x**2\n\n4) For -10/9:\n   \u222b -10/9 dx = (-10/9) * x\n\nRemember to add the constant of integration C.\n\nCombining all terms:\n7*x**7/10 + 8*x**6 - 2*x**2 - (10/9)*x + C\n</reasoning>\n\n<answer>7*x**7/10 + 8*x**6 - 2*x**2 - (10/9)*x + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "49*x**6/10 + 48*x**5 - 4*x - 10/9",
+          "variable": "x",
+          "expected_answer_expression": "7*x**7/10 + 8*x**6 - 2*x**2 - 10*x/9"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -28*X**3 + 8*X dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*X**4 + 4*X**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -28*X**3 dx:\n   * The power rule states: \u222b x**n dx = (x**(n+1))/(n+1) + C\n   * Here we have -28*X**3, so:\n   * -28 * \u222b X**3 dx = -28 * (X**4/4) = -7*X**4\n\n2) For \u222b 8*X dx:\n   * Using the power rule again:\n   * 8 * \u222b X dx = 8 * (X**2/2) = 4*X**2\n\n3) Combining the terms and adding the constant of integration:\n   * -7*X**4 + 4*X**2 + C\n\n</reasoning>\n<answer>-7*X**4 + 4*X**2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-28*X**3 + 8*X",
+          "variable": "X",
+          "expected_answer_expression": "-7*X**4 + 4*X**2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 16*X**7 + 7*X**6 - 5*X**4/3 + 10*X dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "2*X**8 + X**7 - X**5/3 + 5*X**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term using the power rule:\n\n1) For 16*X**7:\n   \u222b 16*X**7 dx = 16 * (X**8)/8 = 2*X**8\n\n2) For 7*X**6:\n   \u222b 7*X**6 dx = 7 * (X**7)/7 = X**7\n\n3) For -5*X**4/3:\n   \u222b (-5*X**4/3) dx = (-5/3) * (X**5)/5 = -X**5/3\n\n4) For 10*X:\n   \u222b 10*X dx = 10 * (X**2)/2 = 5*X**2\n\nNow add all terms and include the constant of integration C:\n2*X**8 + X**7 - X**5/3 + 5*X**2 + C\n</reasoning>\n<answer>2*X**8 + X**7 - X**5/3 + 5*X**2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "16*X**7 + 7*X**6 - 5*X**4/3 + 10*X",
+          "variable": "X",
+          "expected_answer_expression": "2*X**8 + X**7 - X**5/3 + 5*X**2"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 100*x**9 + 63*x**8 - 56*x**7/3 + 12*x**5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "10*x**10 + 7*x**9 - 7*x**8/3 + 2*x**6 + C",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the power rule of integration:\n\n1) For \u222b 100*x**9 dx:\n   * Power increases by 1: x**9 \u2192 x**10\n   * Divide by new power: 100/(10) = 10\n   * Result: 10*x**10\n\n2) For \u222b 63*x**8 dx:\n   * Power increases by 1: x**8 \u2192 x**9\n   * Divide by new power: 63/9 = 7\n   * Result: 7*x**9\n\n3) For \u222b -56*x**7/3 dx:\n   * Power increases by 1: x**7 \u2192 x**8\n   * Divide by new power: (-56/3)/8 = -7/3\n   * Result: -7*x**8/3\n\n4) For \u222b 12*x**5 dx:\n   * Power increases by 1: x**5 \u2192 x**6\n   * Divide by new power: 12/6 = 2\n   * Result: 2*x**6\n\nAdding all terms and including the constant of integration C:\n</reasoning>\n<answer>\n10*x**10 + 7*x**9 - 7*x**8/3 + 2*x**6 + C\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "100*x**9 + 63*x**8 - 56*x**7/3 + 12*x**5",
+          "variable": "x",
+          "expected_answer_expression": "10*x**10 + 7*x**9 - 7*x**8/3 + 2*x**6"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -8*X**9 + 49*X**6/10 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-4*X**10/5 + 7*X**7/10 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -8*X**9 dx:\n   * Using the power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * \u222b -8*X**9 dx = -8 * \u222bX**9 dx\n   * = -8 * (X**10)/10\n   * = -8*X**10/10\n   * = -4*X**10/5\n\n2) For \u222b 49*X**6/10 dx:\n   * \u222b 49*X**6/10 dx = (49/10) * \u222bX**6 dx\n   * = (49/10) * (X**7)/7\n   * = 49*X**7/70\n\n3) Combining the terms and adding the constant of integration:\n   * -4*X**10/5 + 49*X**7/70 + C\n</reasoning>\n<answer>-4*X**10/5 + 49*X**7/70 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-8*X**9 + 49*X**6/10",
+          "variable": "X",
+          "expected_answer_expression": "-4*X**10/5 + 7*X**7/10"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 81*X**8 + 16*X**7 + 14*X**6/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "9*X**9 + 2*X**8 + 2*X**7/5 + C",
+        "model_answer": "<reasoning>\nLet's solve this antiderivative term by term using the power rule:\n\n1) For 81*X**8:\n   * Increase exponent by 1: X**9\n   * Divide by new exponent: 81*X**9/9 = 9*X**9\n\n2) For 16*X**7:\n   * Increase exponent by 1: X**8\n   * Divide by new exponent: 16*X**8/8 = 2*X**8\n\n3) For 14*X**6/5:\n   * Increase exponent by 1: X**7\n   * Divide by new exponent: (14*X**7)/(5*7) = 2*X**7/5\n\n4) Add all terms and include the constant of integration C\n</reasoning>\n<answer>9*X**9 + 2*X**8 + 2*X**7/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "81*X**8 + 16*X**7 + 14*X**6/5",
+          "variable": "X",
+          "expected_answer_expression": "9*X**9 + 2*X**8 + 2*X**7/5"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 99*x**8 - 15*x**2 + 1 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "11*x**9 - 5*x**3 + x + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term using the power rule:\n\n1) For 99*x**8:\n   \u222b 99*x**8 dx = 99 * (x**9)/9 = 11*x**9\n\n2) For -15*x**2:\n   \u222b -15*x**2 dx = -15 * (x**3)/3 = -5*x**3\n\n3) For 1:\n   \u222b 1 dx = x\n\n4) Adding all terms and including the constant of integration C:\n   11*x**9 - 5*x**3 + x + C\n</reasoning>\n\n<answer>11*x**9 - 5*x**3 + x + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "99*x**8 - 15*x**2 + 1",
+          "variable": "x",
+          "expected_answer_expression": "11*x**9 - 5*x**3 + x"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 48*X**5/5 + 18*X/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "8*X**6/5 + 9*X**2/5 + C",
+        "model_answer": "<reasoning>\nLet's solve this indefinite integral step by step:\n\n1) For \u222b 48*X**5/5 dx:\n   * We can split this as (48/5) * \u222bX**5 dx\n   * The integral of X**n is X**(n+1)/(n+1)\n   * So, \u222bX**5 dx = X**6/6\n   * Therefore, (48/5) * \u222bX**5 dx = (48/5) * (X**6/6) = 8*X**6\n\n2) For \u222b 18*X/5 dx:\n   * We can split this as (18/5) * \u222bX dx\n   * The integral of X is X**2/2\n   * Therefore, (18/5) * \u222bX dx = (18/5) * (X**2/2) = 1.8*X**2\n\n3) Adding the parts together and including the constant of integration C:\n   8*X**6 + 1.8*X**2 + C\n</reasoning>\n<answer>8*X**6 + 1.8*X**2 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "48*X**5/5 + 18*X/5",
+          "variable": "X",
+          "expected_answer_expression": "8*X**6/5 + 9*X**2/5"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -216*x**8/5 + 35*x**6/8 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-24*x**9/5 + 5*x**7/8 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -216*x**8/5 dx:\n   * Using the power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * Here, coefficient = -216/5 and power = 8\n   * So, (-216/5) * \u222bx**8 dx = (-216/5) * (x**9/9)\n   * = -24*x**9\n\n2) For \u222b 35*x**6/8 dx:\n   * Coefficient = 35/8 and power = 6\n   * (35/8) * \u222bx**6 dx = (35/8) * (x**7/7)\n   * = 5*x**7\n\n3) Combining both terms and adding the constant of integration:\n   -24*x**9 + 5*x**7 + C\n\n</reasoning>\n<answer>-24*x**9 + 5*x**7 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-216*x**8/5 + 35*x**6/8",
+          "variable": "x",
+          "expected_answer_expression": "-24*x**9/5 + 5*x**7/8"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 1 - 21*X**2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*X**3 + X + C",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) Break down the integral into two parts:\n   \u222b(1 - 21*X**2)dx = \u222b1 dx - \u222b21*X**2 dx\n\n2) First part: \u222b1 dx\n   * The antiderivative of 1 is X\n\n3) Second part: -\u222b21*X**2 dx\n   * Bring out the constant: -21*\u222bX**2 dx\n   * The antiderivative of X**2 is (X**3)/3\n   * Therefore: -21*(X**3)/3 = -7*X**3\n\n4) Combining the parts and adding the constant of integration C:\n   X - 7*X**3 + C\n</reasoning>\n<answer>X - 7*X**3 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "1 - 21*X**2",
+          "variable": "X",
+          "expected_answer_expression": "-7*X**3 + X"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 24*x**7/5 + 32*x**3 - 3/2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "3*x**8/5 + 8*x**4 - 3*x/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For 24*x**7/5:\n   * Using power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * \u222b24*x**7/5 dx = 24*\u222bx**7/5 dx = 24*(x**12/5)/(12/5) = 10*x**12/5\n\n2) For 32*x**3:\n   * Using power rule again: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * \u222b32*x**3 dx = 32*\u222bx**3 dx = 32*(x**4)/4 = 8*x**4\n\n3) For -3/2:\n   * \u222b-3/2 dx = -3/2*x\n\n4) Combine all terms and add constant of integration C\n</reasoning>\n<answer>10*x**12/5 + 8*x**4 - 3/2*x + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "24*x**7/5 + 32*x**3 - 3/2",
+          "variable": "x",
+          "expected_answer_expression": "3*x**8/5 + 8*x**4 - 3*x/2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -8*x**7 + 146*x**6/9 - 54*x**5 + 9*x**2/2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-x**8 + 146*x**7/63 - 9*x**6 + 3*x**3/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term using the power rule: \u222bx^n dx = (x^(n+1))/(n+1) + C\n\n1) For -8*x**7:\n   \u222b(-8*x**7)dx = -8 * \u222bx**7 dx = -8 * (x**8)/8 = -x**8\n\n2) For 146*x**6/9:\n   \u222b(146*x**6/9)dx = (146/9) * \u222bx**6 dx = (146/9) * (x**7)/7 = (146*x**7)/(63)\n\n3) For -54*x**5:\n   \u222b(-54*x**5)dx = -54 * \u222bx**5 dx = -54 * (x**6)/6 = -9*x**6\n\n4) For 9*x**2/2:\n   \u222b(9*x**2/2)dx = (9/2) * \u222bx**2 dx = (9/2) * (x**3)/3 = (3*x**3)/2\n\nNow add all terms and include the constant of integration C.\n</reasoning>\n<answer>\n-x**8 + (146*x**7)/(63) - 9*x**6 + (3*x**3)/2 + C\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-8*x**7 + 146*x**6/9 - 54*x**5 + 9*x**2/2",
+          "variable": "x",
+          "expected_answer_expression": "-x**8 + 146*x**7/63 - 9*x**6 + 3*x**3/2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -16*x**7 - 21*x**5/5 + 10*x dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-2*x**8 - 7*x**6/10 + 5*x**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this indefinite integral step by step:\n\n1) For \u222b -16*x**7 dx:\n   * Using the power rule: \u222bx^n dx = (x^(n+1))/(n+1) + C\n   * \u222b -16*x**7 dx = -16*x**8/8 = -2*x**8\n\n2) For \u222b -21*x**5/5 dx:\n   * Using the power rule again\n   * \u222b -21*x**5/5 dx = (-21/5)*x**6/6 = -7*x**6/10\n\n3) For \u222b 10*x dx:\n   * Using the power rule one more time\n   * \u222b 10*x dx = 10*x**2/2 = 5*x**2\n\n4) Combining all terms and adding the constant of integration C:\n   -2*x**8 - 7*x**6/10 + 5*x**2 + C\n</reasoning>\n<answer>-2*x**8 - 7*x**6/10 + 5*x**2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-16*x**7 - 21*x**5/5 + 10*x",
+          "variable": "x",
+          "expected_answer_expression": "-2*x**8 - 7*x**6/10 + 5*x**2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 10*x**4 + 214*x**3/5 + 6*x/5 + 7 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "2*x**5 + 107*x**4/10 + 3*x**2/5 + 7*x + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For 10*x**4:\n   \u222b 10*x**4 dx = 10 * \u222b x**4 dx = 10 * (x**5/5) = 2*x**5\n\n2) For 214*x**3/5:\n   \u222b (214*x**3/5) dx = (214/5) * \u222b x**3 dx = (214/5) * (x**4/4) = 214*x**4/20\n\n3) For 6*x/5:\n   \u222b (6*x/5) dx = (6/5) * \u222b x dx = (6/5) * (x**2/2) = 3*x**2/5\n\n4) For 7:\n   \u222b 7 dx = 7*x\n\nNow add all terms and include the constant of integration C:\n2*x**5 + 214*x**4/20 + 3*x**2/5 + 7*x + C\n</reasoning>\n\n<answer>2*x**5 + 214*x**4/20 + 3*x**2/5 + 7*x + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "10*x**4 + 214*x**3/5 + 6*x/5 + 7",
+          "variable": "x",
+          "expected_answer_expression": "2*x**5 + 107*x**4/10 + 3*x**2/5 + 7*x"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -185*x**9/2 - 36*x**8 + 49*x**6/6 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-37*x**10/4 - 4*x**9 + 7*x**7/6 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For -185*x**9/2:\n   * The power rule states: \u222bx^n dx = (x^(n+1))/(n+1) + C\n   * \u222b(-185*x**9/2) dx = -185* \u222b(x**9/2) dx\n   * = -185 * (x**(11/2))/(11/2)\n   * = -185 * (2/11) * x**(11/2)\n   * = -370/11 * x**(11/2)\n\n2) For -36*x**8:\n   * \u222b(-36*x**8) dx = -36 * (x**9)/9\n   * = -4 * x**9\n\n3) For 49*x**6/6:\n   * \u222b(49*x**6/6) dx = (49/6) * (x**7)/7\n   * = 7 * x**7\n\nAdding all terms and including the constant of integration:\n</reasoning>\n<answer>\n-370/11 * x**(11/2) - 4*x**9 + 7*x**7 + C\n</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-185*x**9/2 - 36*x**8 + 49*x**6/6",
+          "variable": "x",
+          "expected_answer_expression": "-37*x**10/4 - 4*x**9 + 7*x**7/6"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -25*x**4/7 - 4*x**3 + 10*x/3 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-5*x**5/7 - x**4 + 5*x**2/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral step by step:\n\n1) For -25*x**4/7:\n   * The power rule states: \u222bx^n dx = (x^(n+1))/(n+1) + C\n   * \u222b-25*x**4/7 dx = (-25/7) * \u222bx**4 dx\n   * = (-25/7) * (x**5/5)\n   * = -5*x**5/7\n\n2) For -4*x**3:\n   * \u222b-4*x**3 dx = -4 * \u222bx**3 dx\n   * = -4 * (x**4/4)\n   * = -x**4\n\n3) For 10*x/3:\n   * \u222b10*x/3 dx = (10/3) * \u222bx dx\n   * = (10/3) * (x**2/2)\n   * = 5*x**2/3\n\n4) Combining all terms and adding constant of integration C:\n   * -5*x**5/7 - x**4 + 5*x**2/3 + C\n</reasoning>\n<answer>-5*x**5/7 - x**4 + 5*x**2/3 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-25*x**4/7 - 4*x**3 + 10*x/3",
+          "variable": "x",
+          "expected_answer_expression": "-5*x**5/7 - x**4 + 5*x**2/3"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -56*x**6 + 15*x**4/2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-8*x**7 + 3*x**5/2 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral step by step:\n\n1) We have two terms to integrate: -56*x**6 and 15*x**4/2\n\n2) For the first term -56*x**6:\n   * The power rule states: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * So, \u222b-56*x**6 dx = -56*\u222bx**6 dx = -56*(x**7/7)\n   * = -8*x**7\n\n3) For the second term 15*x**4/2:\n   * Using the same power rule\n   * \u222b15*x**4/2 dx = (15/2)*\u222bx**4 dx = (15/2)*(x**5/5)\n   * = 1.5*x**5\n\n4) Adding the terms and including the constant of integration C:\n   -8*x**7 + 1.5*x**5 + C\n</reasoning>\n<answer>-8*x**7 + 1.5*x**5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-56*x**6 + 15*x**4/2",
+          "variable": "x",
+          "expected_answer_expression": "-8*x**7 + 3*x**5/2"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -20*X**3 + 21*X**2 + 2*X/7 + 7 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-5*X**4 + 7*X**3 + X**2/7 + 7*X + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -20*X**3 dx:\n   * Increase power by 1 and divide by new power\n   * -20*X**3 becomes (-20/4)*X**4 = -5*X**4\n\n2) For \u222b 21*X**2 dx:\n   * Increase power by 1 and divide by new power\n   * 21*X**2 becomes (21/3)*X**3 = 7*X**3\n\n3) For \u222b 2*X/7 dx:\n   * Increase power by 1 and divide by new power\n   * (2/7)*X becomes (2/14)*X**2 = X**2/7\n\n4) For \u222b 7 dx:\n   * Integrate constant\n   * 7*X\n\n5) Don't forget to add the constant of integration C\n\n6) Combine all terms:\n   -5*X**4 + 7*X**3 + X**2/7 + 7*X + C\n</reasoning>\n<answer>-5*X**4 + 7*X**3 + X**2/7 + 7*X + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-20*X**3 + 21*X**2 + 2*X/7 + 7",
+          "variable": "X",
+          "expected_answer_expression": "-5*X**4 + 7*X**3 + X**2/7 + 7*X"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -56*X**7 - 48*X**5 - 30*X**4 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*X**8 - 8*X**6 - 6*X**5 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral step by step:\n\n1) For \u222b -56*X**7 dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * -56*\u222bX**7 dx = -56*(X**8/8) = -7*X**8\n\n2) For \u222b -48*X**5 dx:\n   * Using power rule again\n   * -48*\u222bX**5 dx = -48*(X**6/6) = -8*X**6\n\n3) For \u222b -30*X**4 dx:\n   * Using power rule one more time\n   * -30*\u222bX**4 dx = -30*(X**5/5) = -6*X**5\n\n4) Combining all terms and adding the constant of integration C:\n   * [-7*X**8 - 8*X**6 - 6*X**5 + C]\n\n</reasoning>\n<answer>-7*X**8 - 8*X**6 - 6*X**5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-56*X**7 - 48*X**5 - 30*X**4",
+          "variable": "X",
+          "expected_answer_expression": "-7*X**8 - 8*X**6 - 6*X**5"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -40*x**4 + 27*x**2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-8*x**5 + 9*x**3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -40*x**4 dx:\n   * The power rule states: \u222b x**n dx = (x**(n+1))/(n+1) + C\n   * Here we have -40*x**4, so:\n   * \u222b -40*x**4 dx = -40 * (x**5)/5 = -8*x**5\n\n2) For \u222b 27*x**2 dx:\n   * Using the power rule again:\n   * \u222b 27*x**2 dx = 27 * (x**3)/3 = 9*x**3\n\n3) Combining the terms and adding the constant of integration C:\n   * -8*x**5 + 9*x**3 + C\n</reasoning>\n<answer>-8*x**5 + 9*x**3 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-40*x**4 + 27*x**2",
+          "variable": "x",
+          "expected_answer_expression": "-8*x**5 + 9*x**3"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 55*X**9 + 18*X**5 - 8*X**3 - 8*X/3 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "11*X**10/2 + 3*X**6 - 2*X**4 - 4*X**2/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step using the power rule for integration:\nFor \u222bx^n dx = (x^(n+1))/(n+1) + C\n\n1) For 55*X**9:\n   \u222b55*X**9 dx = 55\u222bX**9 dx = 55*(X**10/10) = 5.5*X**10\n\n2) For 18*X**5:\n   \u222b18*X**5 dx = 18\u222bX**5 dx = 18*(X**6/6) = 3*X**6\n\n3) For -8*X**3:\n   \u222b-8*X**3 dx = -8\u222bX**3 dx = -8*(X**4/4) = -2*X**4\n\n4) For -8*X/3:\n   \u222b-8*X/3 dx = (-8/3)\u222bX dx = (-8/3)*(X**2/2) = -4*X**2/3\n\nNow add all terms and include the constant of integration C\n</reasoning>\n<answer>5.5*X**10 + 3*X**6 - 2*X**4 - 4*X**2/3 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "55*X**9 + 18*X**5 - 8*X**3 - 8*X/3",
+          "variable": "X",
+          "expected_answer_expression": "11*X**10/2 + 3*X**6 - 2*X**4 - 4*X**2/3"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -2*X**3/5 - 6*X dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-X**4/10 - 3*X**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) We have two terms to integrate: -2*X**3/5 and -6*X\n\n2) For the first term (-2*X**3/5):\n   * To integrate X**3, we increase the power by 1 and divide by the new power\n   * So, \u222b(-2*X**3/5)dx = (-2/5) * (X**4/4) = -X**4/10\n\n3) For the second term (-6*X):\n   * To integrate X, we increase the power by 1 and divide by the new power\n   * So, \u222b(-6*X)dx = -6 * (X**2/2) = -3*X**2\n\n4) Adding the terms and the constant of integration:\n   -X**4/10 - 3*X**2 + C\n</reasoning>\n<answer>-X**4/10 - 3*X**2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-2*X**3/5 - 6*X",
+          "variable": "X",
+          "expected_answer_expression": "-X**4/10 - 3*X**2"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 80*X**9 - 376*X**7/5 + 21*X**6/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "8*X**10 - 47*X**8/5 + 3*X**7/5 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b 80*X**9 dx:\n   * Increase power by 1 and divide by new power\n   * (80*X**10)/10 = 8*X**10\n\n2) For \u222b -376*X**7/5 dx:\n   * Increase power by 1 and divide by new power\n   * (-376*X**8/5)/8 = -47*X**8/5\n\n3) For \u222b 21*X**6/5 dx:\n   * Increase power by 1 and divide by new power\n   * (21*X**7/5)/7 = 3*X**7/5\n\n4) Combine all terms and add constant of integration C\n</reasoning>\n<answer>8*X**10 - 47*X**8/5 + 3*X**7/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "80*X**9 - 376*X**7/5 + 21*X**6/5",
+          "variable": "X",
+          "expected_answer_expression": "8*X**10 - 47*X**8/5 + 3*X**7/5"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 12*x**5 - 8*x**4 - 24*x**2 + 1 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "2*x**6 - 8*x**5/5 - 8*x**3 + x + C",
+        "model_answer": "<reasoning>\nTo find the antiderivative, I'll integrate each term one by one using the power rule:\nFor a term x^n, the integral is (x^(n+1))/(n+1)\n\n1) For 12*x**5:\n   \u222b 12*x**5 dx = 12 * (x**6)/6 = 2*x**6\n\n2) For -8*x**4:\n   \u222b -8*x**4 dx = -8 * (x**5)/5 = -(8/5)*x**5\n\n3) For -24*x**2:\n   \u222b -24*x**2 dx = -24 * (x**3)/3 = -8*x**3\n\n4) For 1:\n   \u222b 1 dx = x\n\n5) Don't forget to add the constant of integration C\n\nAdding all terms together:\n2*x**6 - (8/5)*x**5 - 8*x**3 + x + C\n</reasoning>\n<answer>2*x**6 - (8/5)*x**5 - 8*x**3 + x + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "12*x**5 - 8*x**4 - 24*x**2 + 1",
+          "variable": "x",
+          "expected_answer_expression": "2*x**6 - 8*x**5/5 - 8*x**3 + x"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 2/3 - 35*x**4/9 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*x**5/9 + 2*x/3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b 2/3 dx:\n   * This is a constant integration\n   * \u222b 2/3 dx = (2/3)*x\n\n2) For \u222b -35*x**4/9 dx:\n   * Using the power rule: \u222b x**n dx = (x**(n+1))/(n+1)\n   * \u222b -35*x**4/9 dx = (-35/9) * \u222b x**4 dx\n   * = (-35/9) * (x**5/5)\n   * = -7*x**5/9\n\n3) Combining the terms and adding the constant of integration:\n   * (2/3)*x - 7*x**5/9 + C\n\n</reasoning>\n<answer>(2/3)*x - 7*x**5/9 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2/3 - 35*x**4/9",
+          "variable": "x",
+          "expected_answer_expression": "-7*x**5/9 + 2*x/3"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -56*X**7 + 6*X**5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*X**8 + X**6 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -56*X**7 dx:\n   * The power rule states: \u222b x^n dx = (x^(n+1))/(n+1) + C\n   * For -56*X**7: n = 7\n   * Therefore: -56 * \u222b X**7 dx = -56 * (X**8/8)\n   * = -7*X**8\n\n2) For \u222b 6*X**5 dx:\n   * Using power rule again with n = 5\n   * 6 * \u222b X**5 dx = 6 * (X**6/6)\n   * = X**6\n\n3) Combining the terms and adding the constant of integration:\n   -7*X**8 + X**6 + C\n</reasoning>\n<answer>-7*X**8 + X**6 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-56*X**7 + 6*X**5",
+          "variable": "X",
+          "expected_answer_expression": "-7*X**8 + X**6"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -20*x**9 - 28*x**7/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-2*x**10 - 7*x**8/10 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -20*x**9 dx:\n   * Using the power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * For -20*x**9: \u222b-20*x**9 dx = -20*(x**10)/10 = -2*x**10\n\n2) For \u222b -28*x**7/5 dx:\n   * Again using the power rule\n   * \u222b-28*x**7/5 dx = (-28/5)*(x**8)/8 = -7*x**8/10\n\n3) Combining the terms and adding constant of integration:\n   = -2*x**10 - 7*x**8/10 + C\n\n</reasoning>\n<answer>\n-2*x**10 - 7*x**8/10 + C\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-20*x**9 - 28*x**7/5",
+          "variable": "x",
+          "expected_answer_expression": "-2*x**10 - 7*x**8/10"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 2*x**5 - 40*x**3 - 4*x/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "x**6/3 - 10*x**4 - 2*x**2/5 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b 2*x**5 dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * Result: (2*x**6)/6 = (x**6)/3\n\n2) For \u222b -40*x**3 dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * Result: (-40*x**4)/4 = -10*x**4\n\n3) For \u222b -4*x/5 dx:\n   * This is equivalent to \u222b (-4/5)*x dx\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * Result: (-4/5)*(x**2)/2 = -2*x**2/5\n\n4) Combining all terms and adding the constant of integration C:\n   * (x**6)/3 - 10*x**4 - 2*x**2/5 + C\n</reasoning>\n\n<answer>(x**6)/3 - 10*x**4 - 2*x**2/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "2*x**5 - 40*x**3 - 4*x/5",
+          "variable": "x",
+          "expected_answer_expression": "x**6/3 - 10*x**4 - 2*x**2/5"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 5*X**4 + 9 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "X**5 + 9*X + C",
+        "model_answer": "<reasoning>\nLet's solve this integral step by step:\n\n1) We have \u222b(5*X**4 + 9)dx\n   We can split this into two parts: \u222b5*X**4 dx + \u222b9 dx\n\n2) For \u222b5*X**4 dx:\n   * The power rule states: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * Here, n = 4\n   * So, \u222b5*X**4 dx = 5*\u222bX**4 dx = 5*(X**5)/5 = X**5\n\n3) For \u222b9 dx:\n   * The integral of a constant is: \u222ba dx = a*x + C\n   * So, \u222b9 dx = 9*X\n\n4) Combining the results and adding the constant of integration C:\n   * X**5 + 9*X + C\n</reasoning>\n<answer>X**5 + 9*X + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "5*X**4 + 9",
+          "variable": "X",
+          "expected_answer_expression": "X**5 + 9*X"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -6*x**5 - 28*x**3 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-x**6 - 7*x**4 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -6*x**5 dx:\n   * The power rule states: \u222b x**n dx = (x**(n+1))/(n+1) + C\n   * For -6*x**5: n = 5\n   * \u222b -6*x**5 dx = -6 * (x**6)/6 = -x**6\n\n2) For \u222b -28*x**3 dx:\n   * Using power rule again with n = 3\n   * \u222b -28*x**3 dx = -28 * (x**4)/4 = -7*x**4\n\n3) Combining the terms and adding the constant of integration:\n   * -x**6 - 7*x**4 + C\n</reasoning>\n<answer>-x**6 - 7*x**4 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-6*x**5 - 28*x**3",
+          "variable": "x",
+          "expected_answer_expression": "-x**6 - 7*x**4"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 81*X**8/8 + 10*X**4 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "9*X**9/8 + 2*X**5 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b 81*X**8/8 dx:\n   * Using the power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * Here we have 81/8 * X**8\n   * So it becomes: (81/8) * (X**9)/9\n   * Simplifying: 9*X**9\n\n2) For \u222b 10*X**4 dx:\n   * Using the power rule again\n   * \u222b 10*X**4 dx = 10 * (X**5)/5\n   * Simplifying: 2*X**5\n\n3) Adding both parts and including the constant of integration C:\n   9*X**9 + 2*X**5 + C\n</reasoning>\n<answer>9*X**9 + 2*X**5 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "81*X**8/8 + 10*X**4",
+          "variable": "X",
+          "expected_answer_expression": "9*X**9/8 + 2*X**5"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -64*x**7/3 + 15*x**4/2 - 12*x**3 + 15*x**2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-8*x**8/3 + 3*x**5/2 - 3*x**4 + 5*x**3 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For -64*x**7/3:\n   \u222b(-64*x**7/3)dx = -64/3 * \u222bx**7 dx = -64/3 * (x**8/8) = -8*x**8/3\n\n2) For 15*x**4/2:\n   \u222b(15*x**4/2)dx = 15/2 * \u222bx**4 dx = 15/2 * (x**5/5) = 3*x**5/2\n\n3) For -12*x**3:\n   \u222b(-12*x**3)dx = -12 * \u222bx**3 dx = -12 * (x**4/4) = -3*x**4\n\n4) For 15*x**2:\n   \u222b(15*x**2)dx = 15 * \u222bx**2 dx = 15 * (x**3/3) = 5*x**3\n\nAdd all terms and include the constant of integration C:\n(-8*x**8/3 + 3*x**5/2 - 3*x**4 + 5*x**3 + C)\n</reasoning>\n\n<answer>-8*x**8/3 + 3*x**5/2 - 3*x**4 + 5*x**3 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-64*x**7/3 + 15*x**4/2 - 12*x**3 + 15*x**2",
+          "variable": "x",
+          "expected_answer_expression": "-8*x**8/3 + 3*x**5/2 - 3*x**4 + 5*x**3"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -20*X**9/3 - 36*X**7 - 7*X**6/8 + 12*X**3 - 12*X dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-2*X**10/3 - 9*X**8/2 - X**7/8 + 3*X**4 - 6*X**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step using the power rule for integration:\n\n1) For -20*X**9/3:\n   \u222b(-20*X**9/3)dx = (-20/3)*\u222bX**9 dx = (-20/3)*(X**10/10) = -2*X**10/3\n\n2) For -36*X**7:\n   \u222b(-36*X**7)dx = -36*\u222bX**7 dx = -36*(X**8/8) = -9*X**8/2\n\n3) For -7*X**6/8:\n   \u222b(-7*X**6/8)dx = (-7/8)*\u222bX**6 dx = (-7/8)*(X**7/7) = -X**7/8\n\n4) For 12*X**3:\n   \u222b(12*X**3)dx = 12*\u222bX**3 dx = 12*(X**4/4) = 3*X**4\n\n5) For -12*X:\n   \u222b(-12*X)dx = -12*\u222bX dx = -12*(X**2/2) = -6*X**2\n\nNow add all terms and include the constant of integration C:\n</reasoning>\n<answer>\n-2*X**10/3 - 9*X**8/2 - X**7/8 + 3*X**4 - 6*X**2 + C\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-20*X**9/3 - 36*X**7 - 7*X**6/8 + 12*X**3 - 12*X",
+          "variable": "X",
+          "expected_answer_expression": "-2*X**10/3 - 9*X**8/2 - X**7/8 + 3*X**4 - 6*X**2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -70*X**9 + 54*X**8 - 12*X**5/5 - 25*X**4 - 1 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*X**10 + 6*X**9 - 2*X**6/5 - 5*X**5 - X + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term using the power rule:\n\n1) For -70*X**9:\n   \u222b -70*X**9 dx = -70*X**10/10 = -7*X**10\n\n2) For 54*X**8:\n   \u222b 54*X**8 dx = 54*X**9/9 = 6*X**9\n\n3) For -12*X**5/5:\n   \u222b -12*X**5/5 dx = (-12/5)*X**6/6 = -2*X**6\n\n4) For -25*X**4:\n   \u222b -25*X**4 dx = -25*X**5/5 = -5*X**5\n\n5) For -1:\n   \u222b -1 dx = -X\n\nAdding all terms and including the constant of integration C:\n-7*X**10 + 6*X**9 - 2*X**6 - 5*X**5 - X + C\n</reasoning>\n\n<answer>-7*X**10 + 6*X**9 - 2*X**6 - 5*X**5 - X + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-70*X**9 + 54*X**8 - 12*X**5/5 - 25*X**4 - 1",
+          "variable": "X",
+          "expected_answer_expression": "-7*X**10 + 6*X**9 - 2*X**6/5 - 5*X**5 - X"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 10*X**9 + 81*X**8 + 16*X**3 + 12*X**2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "X**10 + 9*X**9 + 4*X**4 + 4*X**3 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term using the power rule:\n\n1) For 10*X**9:\n   \u222b 10*X**9 dx = 10*\u222b X**9 dx = 10*(X**10/10) = X**10\n\n2) For 81*X**8:\n   \u222b 81*X**8 dx = 81*\u222b X**8 dx = 81*(X**9/9) = 9*X**9\n\n3) For 16*X**3:\n   \u222b 16*X**3 dx = 16*\u222b X**3 dx = 16*(X**4/4) = 4*X**4\n\n4) For 12*X**2:\n   \u222b 12*X**2 dx = 12*\u222b X**2 dx = 12*(X**3/3) = 4*X**3\n\nNow add all terms and include the constant of integration C:\n</reasoning>\n\n<answer>X**10 + 9*X**9 + 4*X**4 + 4*X**3 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "10*X**9 + 81*X**8 + 16*X**3 + 12*X**2",
+          "variable": "X",
+          "expected_answer_expression": "X**10 + 9*X**9 + 4*X**4 + 4*X**3"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 56*x**6/5 + 7/6 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "8*x**7/5 + 7*x/6 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral step by step:\n\n1) For \u222b 56*x**6/5 dx:\n   * Using power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * Here, we have 56*x**6/5\n   * Integrating: 56 * \u222bx**6/5 dx = 56 * (x**(11/5))/(11/5)\n   * = 56 * (5/11) * x**(11/5)\n   * = (280/11) * x**(11/5)\n\n2) For \u222b 7/6 dx:\n   * This is a constant\n   * \u222b constant dx = constant*x + C\n   * = (7/6)*x\n\n3) Combining both parts and adding the constant of integration:\n   = (280/11) * x**(11/5) + (7/6)*x + C\n\n</reasoning>\n<answer>\n(280/11) * x**(11/5) + (7/6)*x + C\n</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "56*x**6/5 + 7/6",
+          "variable": "x",
+          "expected_answer_expression": "8*x**7/5 + 7*x/6"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b -72*x**7 + 12*x**5 - 4*x**3 - 14*x dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-9*x**8 + 2*x**6 - x**4 - 7*x**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step using the power rule for integration:\n1) For -72*x**7:\n   * Increase power by 1 and divide by new power\n   * -72*x**7 \u2192 (-72/(7+1))*x**8 = -9*x**8\n\n2) For 12*x**5:\n   * Increase power by 1 and divide by new power\n   * 12*x**5 \u2192 (12/(5+1))*x**6 = 2*x**6\n\n3) For -4*x**3:\n   * Increase power by 1 and divide by new power\n   * -4*x**3 \u2192 (-4/(3+1))*x**4 = -1*x**4\n\n4) For -14*x:\n   * Increase power by 1 and divide by new power\n   * -14*x \u2192 (-14/(1+1))*x**2 = -7*x**2\n\n5) Add C for the constant of integration\n\nCombining all terms:\n</reasoning>\n<answer>-9*x**8 + 2*x**6 - x**4 - 7*x**2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-72*x**7 + 12*x**5 - 4*x**3 - 14*x",
+          "variable": "x",
+          "expected_answer_expression": "-9*x**8 + 2*x**6 - x**4 - 7*x**2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -54*X**8/7 + 24*X**7 + 63*X**6/2 - 24*X**5 + 28*X**3 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-6*X**9/7 + 3*X**8 + 9*X**7/2 - 4*X**6 + 7*X**4 + C",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the power rule of integration:\n\n1) For -54*X**8/7:\n   \u222b(-54*X**8/7)dx = (-54/7)*\u222bX**8 dx = (-54/7)*(X**9/9) = -6*X**9/7\n\n2) For 24*X**7:\n   \u222b(24*X**7)dx = 24*\u222bX**7 dx = 24*(X**8/8) = 3*X**8\n\n3) For 63*X**6/2:\n   \u222b(63*X**6/2)dx = (63/2)*\u222bX**6 dx = (63/2)*(X**7/7) = (9*X**7)/2\n\n4) For -24*X**5:\n   \u222b(-24*X**5)dx = -24*\u222bX**5 dx = -24*(X**6/6) = -4*X**6\n\n5) For 28*X**3:\n   \u222b(28*X**3)dx = 28*\u222bX**3 dx = 28*(X**4/4) = 7*X**4\n\n6) Add all terms and include the constant of integration C\n</reasoning>\n<answer>\n-6*X**9/7 + 3*X**8 + 9*X**7/2 - 4*X**6 + 7*X**4 + C\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-54*X**8/7 + 24*X**7 + 63*X**6/2 - 24*X**5 + 28*X**3",
+          "variable": "X",
+          "expected_answer_expression": "-6*X**9/7 + 3*X**8 + 9*X**7/2 - 4*X**6 + 7*X**4"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 30*X**4 + 46*X**2/3 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "6*X**5 + 46*X**3/9 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) First term: \u222b 30*X**4 dx\n   * For X**n, the integral formula is: \u222b X**n dx = (X**(n+1))/(n+1) + C\n   * Here, n = 4\n   * So, \u222b 30*X**4 dx = 30 * (X**5)/5 = 6*X**5\n\n2) Second term: \u222b 46*X**2/3 dx\n   * Using the same formula\n   * Here, n = 2/3\n   * \u222b 46*X**2/3 dx = 46 * (X**(2/3 + 1))/(2/3 + 1)\n   * = 46 * (X**(5/3))/(5/3)\n   * = 46 * (3/5) * X**(5/3)\n   * = 27.6*X**(5/3)\n\n3) Combining terms and adding the constant of integration:\n   6*X**5 + 27.6*X**(5/3) + C\n</reasoning>\n\n<answer>6*X**5 + 27.6*X**(5/3) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "30*X**4 + 46*X**2/3",
+          "variable": "X",
+          "expected_answer_expression": "6*X**5 + 46*X**3/9"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 45*x**8 + 520*x**7/9 + 15*x**4/4 - 16*x dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "5*x**9 + 65*x**8/9 + 3*x**5/4 - 8*x**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For 45*x**8:\n   * Using power rule: \u222bx**n dx = (x**(n+1))/(n+1)\n   * \u222b45*x**8 dx = 45*(x**9)/9 = 5*x**9\n\n2) For 520*x**7/9:\n   * \u222b(520*x**7/9) dx = (520/9)*(x**8)/8 = 65*x**8\n\n3) For 15*x**4/4:\n   * \u222b(15*x**4/4) dx = (15/4)*(x**5)/5 = 3*x**5/4\n\n4) For -16*x:\n   * \u222b-16*x dx = -16*(x**2)/2 = -8*x**2\n\n5) Add all terms and include constant of integration C:\n   * 5*x**9 + 65*x**8 + 3*x**5/4 - 8*x**2 + C\n</reasoning>\n<answer>5*x**9 + 65*x**8 + 3*x**5/4 - 8*x**2 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "45*x**8 + 520*x**7/9 + 15*x**4/4 - 16*x",
+          "variable": "x",
+          "expected_answer_expression": "5*x**9 + 65*x**8/9 + 3*x**5/4 - 8*x**2"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b 70*X**6/3 + 10*X**3 + 24*X**2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "10*X**7/3 + 5*X**4/2 + 8*X**3 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral step by step:\n\n1) First, let's separate the terms:\n   \u222b (70*X**6/3 + 10*X**3 + 24*X**2) dx\n   = \u222b (70/3)*X**6 dx + \u222b 10*X**3 dx + \u222b 24*X**2 dx\n\n2) For each term, we add 1 to the exponent and divide by the new exponent:\n\n   For (70/3)*X**6:\n   * Add 1 to exponent: 6 + 1 = 7\n   * (70/3) * (X**7/7)\n   = (10*X**7)\n\n   For 10*X**3:\n   * Add 1 to exponent: 3 + 1 = 4\n   * 10 * (X**4/4)\n   = (5*X**4/2)\n\n   For 24*X**2:\n   * Add 1 to exponent: 2 + 1 = 3\n   * 24 * (X**3/3)\n   = 8*X**3\n\n3) Add all terms and include the constant of integration C\n</reasoning>\n<answer>10*X**7 + 5*X**4/2 + 8*X**3 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "70*X**6/3 + 10*X**3 + 24*X**2",
+          "variable": "X",
+          "expected_answer_expression": "10*X**7/3 + 5*X**4/2 + 8*X**3"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 33*X**5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "11*X**6/2 + C",
+        "model_answer": "<reasoning>\nTo solve this indefinite integral, I'll follow these steps:\n\n1) The integral is \u222b 33*X**5 dx\n\n2) To integrate X**n, we:\n   * Add 1 to the exponent\n   * Divide by the new exponent\n\n3) For 33*X**5:\n   * New exponent = 5 + 1 = 6\n   * Divide by 6\n   * 33/6 = 5.5\n\n4) Therefore, \n   \u222b 33*X**5 dx = 5.5*X**6 + C\n\nRemember to add the constant of integration C.\n</reasoning>\n\n<answer>5.5*X**6 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "33*X**5",
+          "variable": "X",
+          "expected_answer_expression": "11*X**6/2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 63*x**8 - 32*x**7/5 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "7*x**9 - 4*x**8/5 + C",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For indefinite integrals, we add 1 to the power and divide by the new power.\n\n2) For the first term (63*x**8):\n   * Add 1 to power: x**8 becomes x**9\n   * Divide by new power: 63/(9) = 7\n   * Result: 7*x**9\n\n3) For the second term (-32*x**7/5):\n   * Add 1 to power: x**7 becomes x**8\n   * Divide by new power: (-32/5)/(8) = -4/5\n   * Result: -4*x**8/5\n\n4) Don't forget to add the constant of integration (C)\n</reasoning>\n<answer>7*x**9 - 4*x**8/5 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "63*x**8 - 32*x**7/5",
+          "variable": "x",
+          "expected_answer_expression": "7*x**9 - 4*x**8/5"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -18*x**8 - 21*x**6/2 + 20*x**3 - 6*x dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-2*x**9 - 3*x**7/2 + 5*x**4 - 3*x**2 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b -18*x**8 dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * -18*x**8 \u2192 (-18/(8+1))*x**9 = -2*x**9\n\n2) For \u222b -21*x**6/2 dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * (-21/2)*x**6 \u2192 (-21/2)/(6+1)*x**7 = -3*x**7\n\n3) For \u222b 20*x**3 dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * 20*x**3 \u2192 (20/4)*x**4 = 5*x**4\n\n4) For \u222b -6*x dx:\n   * Using power rule: increase exponent by 1 and divide by new exponent\n   * -6*x \u2192 (-6/2)*x**2 = -3*x**2\n\n5) Add all terms and include the constant of integration C\n</reasoning>\n<answer>-2*x**9 - 3*x**7 + 5*x**4 - 3*x**2 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-18*x**8 - 21*x**6/2 + 20*x**3 - 6*x",
+          "variable": "x",
+          "expected_answer_expression": "-2*x**9 - 3*x**7/2 + 5*x**4 - 3*x**2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b 24*x**8 - 30*x**5 - 6 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "8*x**9/3 - 5*x**6 - 6*x + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b 24*x**8 dx:\n   * Using power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * \u222b 24*x**8 dx = 24 * (x**9)/9 = (24/9)*x**9\n\n2) For \u222b -30*x**5 dx:\n   * Using power rule again\n   * \u222b -30*x**5 dx = -30 * (x**6)/6 = -5*x**6\n\n3) For \u222b -6 dx:\n   * The integral of a constant is the constant times x\n   * \u222b -6 dx = -6*x\n\n4) Combining all terms and adding the constant of integration C:\n   * (24/9)*x**9 - 5*x**6 - 6*x + C\n</reasoning>\n<answer>(24/9)*x**9 - 5*x**6 - 6*x + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "24*x**8 - 30*x**5 - 6",
+          "variable": "x",
+          "expected_answer_expression": "8*x**9/3 - 5*x**6 - 6*x"
+        }
+      },
+      {
+        "question": "Calculate the antiderivative: \u222b 9*X**8/4 + 4*X**3/3 - 30*X**2 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "X**9/4 + X**4/3 - 10*X**3 + C",
+        "model_answer": "<reasoning>\nLet's solve this step by step:\n\n1) For \u222b 9*X**8/4 dx:\n   * Add 1 to the power and divide by the new power\n   * New power = 8 + 1 = 9\n   * (9/4) * (X**9/9) = X**9\n\n2) For \u222b 4*X**3/3 dx:\n   * Add 1 to the power and divide by the new power\n   * New power = 3 + 1 = 4\n   * (4/3) * (X**4/4) = X**4/3\n\n3) For \u222b -30*X**2 dx:\n   * Add 1 to the power and divide by the new power\n   * New power = 2 + 1 = 3\n   * -30 * (X**3/3) = -10*X**3\n\n4) Add all terms and include the constant of integration C\n</reasoning>\n<answer>X**9 + X**4/3 - 10*X**3 + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "9*X**8/4 + 4*X**3/3 - 30*X**2",
+          "variable": "X",
+          "expected_answer_expression": "X**9/4 + X**4/3 - 10*X**3"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -20*x**4/7 - 42*x**2 + 12*x dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-4*x**5/7 - 14*x**3 + 6*x**2 + C",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For \u222b -20*x**4/7 dx:\n   * To integrate x**4, increase power by 1 and divide by new power\n   * -20/7 * \u222bx**4 dx = -20/7 * (x**5/5)\n   * = -4*x**5/7\n\n2) For \u222b -42*x**2 dx:\n   * To integrate x**2, increase power by 1 and divide by new power\n   * -42 * \u222bx**2 dx = -42 * (x**3/3)\n   * = -14*x**3\n\n3) For \u222b 12*x dx:\n   * To integrate x, increase power by 1 and divide by new power\n   * 12 * \u222bx dx = 12 * (x**2/2)\n   * = 6*x**2\n\n4) Combine all terms and add constant of integration C:\n   -4*x**5/7 - 14*x**3 + 6*x**2 + C\n</reasoning>\n<answer>-4*x**5/7 - 14*x**3 + 6*x**2 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-20*x**4/7 - 42*x**2 + 12*x",
+          "variable": "x",
+          "expected_answer_expression": "-4*x**5/7 - 14*x**3 + 6*x**2"
+        }
+      },
+      {
+        "question": "Evaluate the indefinite integral: \u222b -8*x**7 + 10*x**5/3 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-x**8 + 5*x**6/9 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For -8*x**7:\n   * Using the power rule: \u222bx**n dx = x**(n+1)/(n+1) + C\n   * \u222b-8*x**7 dx = -8 * \u222bx**7 dx = -8 * x**8/8 = -x**8\n\n2) For 10*x**5/3:\n   * \u222b10*x**5/3 dx = 10 * \u222bx**5/3 dx\n   * Using power rule: = 10 * x**(8/3)/(8/3)\n   * = 10 * (3/8) * x**(8/3)\n   * = (15/4) * x**(8/3)\n\n3) Combining the terms and adding the constant of integration:\n   -x**8 + (15/4)*x**(8/3) + C\n</reasoning>\n<answer>-x**8 + (15/4)*x**(8/3) + C</answer>",
+        "score": 0.05,
+        "metadata": {
+          "integrand": "-8*x**7 + 10*x**5/3",
+          "variable": "x",
+          "expected_answer_expression": "-x**8 + 5*x**6/9"
+        }
+      },
+      {
+        "question": "Find the indefinite integral: \u222b -56*x**7 + 4*x**3/9 dx\n            \n\n\n            In addition, When doing calculation, Use the following instructions together with your mathematical ingenuity to solve the integral problems\n            ## 1. Use ** instead ^ to represent powers. For example 7*X**2 instead of 7*X^2.\n            ## 2. Always use * when doing all sorts of multiplcation in your reasoning steps. For example Use [-3*X**3*sin(X) - 9*X**2*cos(X) + 18*X*sin(X) + 18*cos(X) + C] instead of [-3x3sin(x) - 9x2cos(x) + 18xsin(x) + 18cos(x) + C].\n        ",
+        "expected_answer": "-7*x**8 + x**4/9 + C",
+        "model_answer": "<reasoning>\nLet's solve this integral term by term:\n\n1) For -56*x**7:\n   * Using power rule: \u222bx**n dx = (x**(n+1))/(n+1) + C\n   * \u222b-56*x**7 dx = -56 * \u222bx**7 dx = -56 * (x**8)/8 = -7*x**8\n\n2) For 4*x**3/9:\n   * \u222b4*x**3/9 dx = (4/9) * \u222bx**3 dx = (4/9) * (x**4)/4 = x**4/9\n\n3) Combining the terms and adding the constant of integration C:\n   -7*x**8 + x**4/9 + C\n</reasoning>\n<answer>-7*x**8 + x**4/9 + C</answer>",
+        "score": 1.0,
+        "metadata": {
+          "integrand": "-56*x**7 + 4*x**3/9",
+          "variable": "x",
+          "expected_answer_expression": "-7*x**8 + x**4/9"
+        }
+      }
+    ]
+  }
+]

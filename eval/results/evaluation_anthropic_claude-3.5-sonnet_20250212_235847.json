@@ -1,0 +1,1790 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "letter_jumble",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.26739999999999997,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T23:58:47.706939",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Unscramble these words: ew hsall eb ebla ot puodrce",
+        "expected_answer": "we shall be able to produce",
+        "model_answer": "<reasoning>\nLet me break this down word by word:\n1. \"ew\" - swap 'e' and 'w' = \"we\"\n2. \"hsall\" - looking at common words, this could be \"shall\"\n3. \"eb\" - swap letters = \"be\"\n4. \"ebla\" - common 4-letter word with these letters = \"able\"\n5. \"ot\" - swap letters = \"to\"\n6. \"puodrce\" - looking at the letters and common words = \"produce\"\n\nPutting it all together in proper order.\n</reasoning>\n<answer>we shall be able to produce</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "corruption_level": 0.12000860417813355,
+          "scrambled_words": [
+            "ew",
+            "hsall",
+            "eb",
+            "ebla",
+            "ot",
+            "puodrce"
+          ],
+          "original_words": [
+            "we",
+            "shall",
+            "be",
+            "able",
+            "to",
+            "produce"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ni oiurnalmsj Well Cahs",
+        "expected_answer": "in journalism Well Cash",
+        "model_answer": "<reasoning>\nLet me analyze these scrambled words:\n1. \"ni\" - Looking at this short word, if I swap the letters, I get \"in\"\n2. \"oiurnalmsj\" - This is a longer word. Looking for common word patterns and rearranging the letters: j-o-u-r-n-a-l-i-s-m\n3. \"Well Cahs\" - These appear to be two words. Looking at \"Cahs\", rearranging to a common word: \"Cash\"\n\"Well\" is already correctly spelled.\n\nSo when putting them all together in a logical order: \"in journalism Cash Well\"\nThis still doesn't sound quite right. \"Well\" and \"Cash\" are likely a person's name, and in English, we typically write names as \"Cash Well\"\n</reasoning>\n\n<answer>in journalism Cash Well</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 4,
+          "corruption_level": 0.3288673442377109,
+          "scrambled_words": [
+            "ni",
+            "oiurnalmsj",
+            "Well",
+            "Cahs"
+          ],
+          "original_words": [
+            "in",
+            "journalism",
+            "Well",
+            "Cash"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: dear rchAdbali keep no nSice yrstyedae atnhks ot oyu rheet si a gain fo sucrbbisesr rM",
+        "expected_answer": "dear Archibald keep on Since yesterday thanks to you there is a gain of subscribers Mr",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the word patterns and common English words:\n- \"dear\" is already correct\n- \"rchAdbali\" looks like a name with mixed caps -> \"Archibald\"\n- \"keep\" is already correct\n- \"no\" is already correct\n- \"nSice\" with mixed caps -> \"Since\"\n- \"yrstyedae\" -> \"yesterday\"\n- \"atnhks\" -> \"thanks\"\n- \"ot\" -> \"to\"\n- \"oyu\" -> \"you\"\n- \"rheet\" -> \"there\"\n- \"si\" -> \"is\"\n- \"a\" is correct\n- \"gain\" -> \"gain\"\n- \"fo\" -> \"of\"\n- \"sucrbbisesr\" -> \"subscribers\"\n- \"rM\" -> \"Mr\"\n\n2. Now arranging these words in a logical sentence structure, considering grammar and context.\n</reasoning>\n<answer>Dear Mr Archibald, Since yesterday thanks to you there is a gain of no subscribers</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 16,
+          "corruption_level": 0.516016391169858,
+          "scrambled_words": [
+            "dear",
+            "rchAdbali",
+            "keep",
+            "no",
+            "nSice",
+            "yrstyedae",
+            "atnhks",
+            "ot",
+            "oyu",
+            "rheet",
+            "si",
+            "a",
+            "gain",
+            "fo",
+            "sucrbbisesr",
+            "rM"
+          ],
+          "original_words": [
+            "dear",
+            "Archibald",
+            "keep",
+            "on",
+            "Since",
+            "yesterday",
+            "thanks",
+            "to",
+            "you",
+            "there",
+            "is",
+            "a",
+            "gain",
+            "of",
+            "subscribers",
+            "Mr"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: asdenutrnds ohw a amn stduetai sa mSiht si msut eb tesbe",
+        "expected_answer": "understands how a man situated as Smith is must be beset",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll look for common word patterns and lengths\n2. Looking at the first word \"asdenutrnds\" - it has the common \"nds\" ending - likely \"understands\"\n3. \"ohw\" is a three-letter word - likely \"who\"\n4. \"a\" stays as \"a\"\n5. \"amn\" is likely \"man\"\n6. \"stduetai\" - looking at letter combinations - likely \"situated\"\n7. \"sa\" is likely \"as\"\n8. \"mSiht\" has a capital S - must be \"Smith\"\n9. \"si\" is likely \"is\"\n10. \"msut\" is likely \"must\"\n11. \"eb\" is \"be\"\n12. \"tesbe\" - rearranging letters - \"beset\"\n\nPutting it all together in proper English word order: \"understands who a man situated as Smith is must be beset\"\n</reasoning>\n<answer>understands who a man situated as Smith is must be beset</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 11,
+          "corruption_level": 0.4341529517652285,
+          "scrambled_words": [
+            "asdenutrnds",
+            "ohw",
+            "a",
+            "amn",
+            "stduetai",
+            "sa",
+            "mSiht",
+            "si",
+            "msut",
+            "eb",
+            "tesbe"
+          ],
+          "original_words": [
+            "understands",
+            "how",
+            "a",
+            "man",
+            "situated",
+            "as",
+            "Smith",
+            "is",
+            "must",
+            "be",
+            "beset"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ni eht nognimr a atelb",
+        "expected_answer": "in the morning a table",
+        "model_answer": "<reasoning>\nLet me break this down by looking for common English word patterns:\n1. First word 'ni' -> looking backwards = 'in'\n2. Second word 'eht' -> backwards = 'the'\n3. Third word 'nognimr' -> looking for common word endings/beginnings, this appears to be 'morning' with letters mixed up\n4. Last two words 'a atelb' -> 'a' is already correct, 'atelb' backwards with some rearrangement looks like 'table'\n\nPutting it all together in proper English syntax: \"in the morning a table\"\n</reasoning>\n<answer>in the morning a table</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.41999551677681035,
+          "scrambled_words": [
+            "ni",
+            "eht",
+            "nognimr",
+            "a",
+            "atelb"
+          ],
+          "original_words": [
+            "in",
+            "the",
+            "morning",
+            "a",
+            "table"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: electconir wokr ro proug fo sorkw no tifferend temrs htan aer est rofth ni",
+        "expected_answer": "electronic work or group of works on different terms than are set forth in",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at common English words and patterns\n2. Breaking into smaller chunks\n3. Looking for familiar word endings and beginnings\n4. Identifying the most logical sequence\n\nWorking backwards:\n- \"electconir\" \u2192 \"electronic\"\n- \"wokr\" \u2192 \"work\"\n- \"ro\" \u2192 \"or\"\n- \"proug\" \u2192 \"group\"\n- \"fo\" \u2192 \"of\"\n- \"sorkw\" \u2192 \"works\"\n- \"no\" \u2192 \"on\"\n- \"tifferend\" \u2192 \"different\"\n- \"temrs\" \u2192 \"terms\"\n- \"htan\" \u2192 \"than\"\n- \"aer\" \u2192 \"are\"\n- \"est\" \u2192 \"set\"\n- \"rofth\" \u2192 \"forth\"\n- \"ni\" \u2192 \"in\"\n\nWhen arranged logically, it forms a coherent phrase.\n</reasoning>\n<answer>electronic work or group of works on different terms than are set forth in</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 14,
+          "corruption_level": 0.15002014297357943,
+          "scrambled_words": [
+            "electconir",
+            "wokr",
+            "ro",
+            "proug",
+            "fo",
+            "sorkw",
+            "no",
+            "tifferend",
+            "temrs",
+            "htan",
+            "aer",
+            "est",
+            "rofth",
+            "ni"
+          ],
+          "original_words": [
+            "electronic",
+            "work",
+            "or",
+            "group",
+            "of",
+            "works",
+            "on",
+            "different",
+            "terms",
+            "than",
+            "are",
+            "set",
+            "forth",
+            "in"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: na eontnsixe craih nheT nouchigt a kbon eh hbtalsiseed tomumnicacion whti teh Clnrtae Concert Hall nhcwee ruo grtaeest sned tuo",
+        "expected_answer": "an extension chair Then touching a knob he established communication with the Central Concert Hall whence our greatest send out",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll look for common English words:\n- \"na\" -> \"an\"\n- \"eontnsixe\" looks like \"extension\"\n- \"craih\" -> \"chair\"\n- \"nheT\" -> \"Then\"\n- \"nouchigt\" -> \"touching\"\n- \"kbon\" -> \"knob\"\n- \"eh\" -> \"he\"\n- \"hbtalsiseed\" -> \"established\"\n- \"tomumnicacion\" -> \"communication\"\n- \"whti\" -> \"with\"\n- \"teh\" -> \"the\"\n- \"Clnrtae\" -> \"Central\"\n- \"nhcwee\" -> \"whence\"\n- \"ruo\" -> \"our\"\n- \"grtaeest\" -> \"greatest\"\n- \"sned\" -> \"send\"\n- \"tuo\" -> \"out\"\n\n2. Now, arranging these words in a way that makes grammatical sense.\n</reasoning>\n\n<answer>An extension chair Then touching a knob he established communication with the Central Concert Hall whence our greatest send out</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 20,
+          "corruption_level": 0.3523628898375718,
+          "scrambled_words": [
+            "na",
+            "eontnsixe",
+            "craih",
+            "nheT",
+            "nouchigt",
+            "a",
+            "kbon",
+            "eh",
+            "hbtalsiseed",
+            "tomumnicacion",
+            "whti",
+            "teh",
+            "Clnrtae",
+            "Concert",
+            "Hall",
+            "nhcwee",
+            "ruo",
+            "grtaeest",
+            "sned",
+            "tuo"
+          ],
+          "original_words": [
+            "an",
+            "extension",
+            "chair",
+            "Then",
+            "touching",
+            "a",
+            "knob",
+            "he",
+            "established",
+            "communication",
+            "with",
+            "the",
+            "Central",
+            "Concert",
+            "Hall",
+            "whence",
+            "our",
+            "greatest",
+            "send",
+            "out"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: fo noircalustji wrok wsa onw",
+        "expected_answer": "of journalistic work was now",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. Looking at the words and their lengths:\n   - \"fo\" (2 letters)\n   - \"noircalustji\" (12 letters)\n   - \"wrok\" (4 letters)\n   - \"wsa\" (3 letters)\n   - \"onw\" (3 letters)\n\n2. Common patterns:\n   - \"fo\" is likely \"of\"\n   - \"wrok\" looks like \"work\"\n   - \"wsa\" could be \"was\"\n   - \"onw\" looks like \"won\"\n   - \"noircalustji\" is the longest - looking at the letters, it could be \"journalistic\"\n\n3. Putting it in a logical sentence order:\n   The words should form a coherent phrase about journalistic work winning something.\n</reasoning>\n<answer>journalistic work was won</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.37546391137387036,
+          "scrambled_words": [
+            "fo",
+            "noircalustji",
+            "wrok",
+            "wsa",
+            "onw"
+          ],
+          "original_words": [
+            "of",
+            "journalistic",
+            "work",
+            "was",
+            "now"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: yma seu hist koeoB orf elyanr any ppuoers chus sa oitrcean fo evrtaiidve roswk retsorp psmoenrracfe dan erchrase",
+        "expected_answer": "may use this eBook for nearly any purpose such as creation of derivative works reports performances and research",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the pattern of letters and common English words\n2. 'yma' is likely 'may'\n3. 'seu' rearranges to 'use'\n4. 'hist' is clearly 'this'\n5. 'koeoB' has a capital B, suggesting 'Book'\n6. 'orf' is 'for'\n7. 'elyanr' becomes 'nearly'\n8. 'ppuoers' rearranges to 'purpose'\n9. 'chus' is 'such'\n10. 'sa' is 'as'\n11. 'oitrcean' becomes 'creation'\n12. 'fo' is 'of'\n13. 'evrtaiidve' unscrambles to 'derivative'\n14. 'roswk' is 'works'\n15. 'retsorp' becomes 'posters'\n16. 'psmoenrracfe' unscrambles to 'performance'\n17. 'dan' is 'and'\n18. 'erchrase' becomes 'research'\n\nNow putting it all together in proper order...\n</reasoning>\n<answer>May use this Book for nearly any purpose such as creation of derivative works posters performance and research</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 18,
+          "corruption_level": 0.7845563069949968,
+          "scrambled_words": [
+            "yma",
+            "seu",
+            "hist",
+            "koeoB",
+            "orf",
+            "elyanr",
+            "any",
+            "ppuoers",
+            "chus",
+            "sa",
+            "oitrcean",
+            "fo",
+            "evrtaiidve",
+            "roswk",
+            "retsorp",
+            "psmoenrracfe",
+            "dan",
+            "erchrase"
+          ],
+          "original_words": [
+            "may",
+            "use",
+            "this",
+            "eBook",
+            "for",
+            "nearly",
+            "any",
+            "purpose",
+            "such",
+            "as",
+            "creation",
+            "of",
+            "derivative",
+            "works",
+            "reports",
+            "performances",
+            "and",
+            "research"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: tkhin thne reeakdrm rM hSimt lsuyngim that fi one docul",
+        "expected_answer": "think then remarked Mr Smith musingly that if one could",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll look for common words and patterns\n2. 'tkhin' looks like 'think'\n3. 'thne' is likely 'then'\n4. 'reeakdrm' contains 'remark' or 'remarked'\n5. 'rM' is obviously 'Mr'\n6. 'hSimt' is 'Smith'\n7. 'lsuyngim' appears to be 'musingly'\n8. 'fi' is 'if'\n9. 'one' stays as 'one'\n10. 'docul' is 'could'\n\nNow putting it all in order to make a sensible phrase:\n\"think then remarked Mr Smith musingly if one could\"\n</reasoning>\n<answer>think then remarked Mr Smith musingly if one could</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 10,
+          "corruption_level": 0.7707922786605893,
+          "scrambled_words": [
+            "tkhin",
+            "thne",
+            "reeakdrm",
+            "rM",
+            "hSimt",
+            "lsuyngim",
+            "that",
+            "fi",
+            "one",
+            "docul"
+          ],
+          "original_words": [
+            "think",
+            "then",
+            "remarked",
+            "Mr",
+            "Smith",
+            "musingly",
+            "that",
+            "if",
+            "one",
+            "could"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: regulitang iharitces dna charitable donatnois ni all ttases fo eht Utined",
+        "expected_answer": "regulating charities and charitable donations in all states of the United",
+        "model_answer": "<reasoning>\nLet me break this down word by word:\n1. regulitang -> looks like \"regulating\"\n2. iharitces -> rearranging letters gives \"charities\"\n3. dna -> simple word \"and\"\n4. charitable -> already correct\n5. donatnois -> rearranging gives \"donations\"\n6. ni -> simple word \"in\"\n7. all -> already correct\n8. ttases -> rearranging gives \"states\"\n9. fo -> simple word \"of\"\n10. eht -> simple word \"the\"\n11. Utined -> rearranging gives \"United\"\n\nNow putting it all together in proper order...\n</reasoning>\n<answer>Regulating charities and charitable donations in all states of the United</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 11,
+          "corruption_level": 0.14361812400836593,
+          "scrambled_words": [
+            "regulitang",
+            "iharitces",
+            "dna",
+            "charitable",
+            "donatnois",
+            "ni",
+            "all",
+            "ttases",
+            "fo",
+            "eht",
+            "Utined"
+          ],
+          "original_words": [
+            "regulating",
+            "charities",
+            "and",
+            "charitable",
+            "donations",
+            "in",
+            "all",
+            "states",
+            "of",
+            "the",
+            "United"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: tohfr ni thsi mganreeet volitaes teh lwa fo hte",
+        "expected_answer": "forth in this agreement violates the law of the",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, let's look at each word individually and try common letter patterns\n2. \"tohfr\" -> looking at common English words, this is likely \"forth\"\n3. \"ni\" -> simple two-letter word, probably \"in\"\n4. \"thsi\" -> common word with these letters is \"this\"\n5. \"mganreeet\" -> looking at double 'e', likely \"agreement\"\n6. \"volitaes\" -> rearranging with common word endings, this is \"violates\"\n7. \"teh\" -> common three-letter word, this is \"the\"\n8. \"lwa\" -> common three-letter word, this is \"law\"\n9. \"fo\" -> simple two-letter word, this is \"of\"\n10. Reading the unscrambled words in sequence: \"forth in this agreement violates the law of the\"\n</reasoning>\n<answer>Forth in this agreement violates the law of the</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 9,
+          "corruption_level": 0.4651897758368476,
+          "scrambled_words": [
+            "tohfr",
+            "ni",
+            "thsi",
+            "mganreeet",
+            "volitaes",
+            "teh",
+            "lwa",
+            "fo",
+            "hte"
+          ],
+          "original_words": [
+            "forth",
+            "in",
+            "this",
+            "agreement",
+            "violates",
+            "the",
+            "law",
+            "of",
+            "the"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: Faithnubr saw fdfconei adn ldia ni a",
+        "expected_answer": "Faithburn was coffined and laid in a",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the words, they seem to form a sentence\n2. \"Faithnubr\" - contains \"fun\" and \"hair\" - must be \"hairbrush\"\n3. \"saw\" is already unscrambled\n4. \"fdfconei\" - looking at common words and patterns - must be \"confined\"\n5. \"adn\" - common word pattern - must be \"and\"\n6. \"ldia\" - four letter word - must be \"laid\"\n7. \"ni\" - two letter word - must be \"in\"\n8. \"a\" is already unscrambled\nPutting it all together in proper sentence structure...\n</reasoning>\n<answer>Hairbrush was confined and laid in a</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 7,
+          "corruption_level": 0.45115014050048674,
+          "scrambled_words": [
+            "Faithnubr",
+            "saw",
+            "fdfconei",
+            "adn",
+            "ldia",
+            "ni",
+            "a"
+          ],
+          "original_words": [
+            "Faithburn",
+            "was",
+            "coffined",
+            "and",
+            "laid",
+            "in",
+            "a"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: etxenivse ni eth wdrol cegishtrnt",
+        "expected_answer": "extensive in the world stretching",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. Looking at the words individually\n2. 'etxenivse' - Words ending in 'ive' are common -> looks like 'extensive'\n3. 'ni' - Short word, common word 'in'\n4. 'eth' - Another short word, likely 'the'\n5. 'wdrol' - Contains 'rl' and 'w' -> likely 'world'\n6. 'cegishtrnt' - Long word with 'st' -> looks like 'strongest'\n7. Putting it together in proper English syntax\n</reasoning>\n<answer>extensive in the world strongest</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.8903065618910405,
+          "scrambled_words": [
+            "etxenivse",
+            "ni",
+            "eth",
+            "wdrol",
+            "cegishtrnt"
+          ],
+          "original_words": [
+            "extensive",
+            "in",
+            "the",
+            "world",
+            "stretching"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ogr denato ceStion reneGal Infomration Atoub erojPct eutGnberg electronci wkros orPfessor Mhciael S aHrt saw eht ortginaior fo eht Ptojecr",
+        "expected_answer": "org donate Section General Information About Project Gutenberg electronic works Professor Michael S Hart was the originator of the Project",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the capitalization patterns and common words\n2. Some words are clearly recognizable:\n   - \"ogr\" \u2192 \"org\"\n   - \"Infomration\" \u2192 \"Information\"\n   - \"electronci\" \u2192 \"electronic\"\n   - \"wkros\" \u2192 \"works\"\n   - \"Ptojecr\" \u2192 \"Project\"\n3. \"denato\" looks like it should be \"donate\"\n4. \"ceStion\" \u2192 \"Section\"\n5. \"reneGal\" \u2192 \"General\"\n6. \"Atoub\" \u2192 \"About\"\n7. \"erojPct eutGnberg\" \u2192 \"Project Gutenberg\"\n8. \"orPfessor Mhciael S aHrt\" \u2192 \"Professor Michael S Hart\"\n9. Looking at common sentence structure, these words form a title or heading\n\n</reasoning>\n<answer>org donate Section General Information About Project Gutenberg electronic works Professor Michael S Hart was the originator of the Project</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 20,
+          "corruption_level": 0.10919710084004333,
+          "scrambled_words": [
+            "ogr",
+            "denato",
+            "ceStion",
+            "reneGal",
+            "Infomration",
+            "Atoub",
+            "erojPct",
+            "eutGnberg",
+            "electronci",
+            "wkros",
+            "orPfessor",
+            "Mhciael",
+            "S",
+            "aHrt",
+            "saw",
+            "eht",
+            "ortginaior",
+            "fo",
+            "eht",
+            "Ptojecr"
+          ],
+          "original_words": [
+            "org",
+            "donate",
+            "Section",
+            "General",
+            "Information",
+            "About",
+            "Project",
+            "Gutenberg",
+            "electronic",
+            "works",
+            "Professor",
+            "Michael",
+            "S",
+            "Hart",
+            "was",
+            "the",
+            "originator",
+            "of",
+            "the",
+            "Project"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: wuold btu piceutr ot",
+        "expected_answer": "would but picture to",
+        "model_answer": "<reasoning>\nLet me look at each scrambled word and try to rearrange the letters into common English words:\n\n1. \"wuold\" -> By rearranging, it looks like \"would\"\n2. \"btu\" -> Common 3-letter word... must be \"but\"\n3. \"piceutr\" -> Contains \"picture\"\n4. \"ot\" -> Simple two-letter word, must be \"to\"\n\nWhen put together in a logical order, these words likely form the phrase \"would but picture to\"\n</reasoning>\n\n<answer>The unscrambled words are:\nwould\nbut\npicture\nto</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 4,
+          "corruption_level": 0.39420177095941566,
+          "scrambled_words": [
+            "wuold",
+            "btu",
+            "piceutr",
+            "ot"
+          ],
+          "original_words": [
+            "would",
+            "but",
+            "picture",
+            "to"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: hcolera teh yewlol feevr ttah eht rllbigeeents migth spdear",
+        "expected_answer": "cholera the yellow fever that the belligerents might spread",
+        "model_answer": "<reasoning>\nLet me break this down word by word:\n1. \"hcolera\" -> letters are: h,c,o,l,e,r,a -> \"cholera\"\n2. \"teh\" -> letters are: t,e,h -> \"the\"\n3. \"yewlol\" -> letters are: y,e,w,l,o,l -> \"yellow\"\n4. \"feevr\" -> letters are: f,e,e,v,r -> \"fever\"\n5. \"ttah\" -> letters are: t,t,a,h -> \"that\"\n6. \"eht\" -> letters are: e,h,t -> \"the\"\n7. \"rllbigeeents\" -> letters are: r,l,l,b,i,g,e,e,e,n,t,s -> \"belligerents\"\n8. \"migth\" -> letters are: m,i,g,t,h -> \"might\"\n9. \"spdear\" -> letters are: s,p,d,e,a,r -> \"spread\"\n\nNow putting it all together in a sentence that makes sense...\n</reasoning>\n<answer>cholera the yellow fever that the belligerents might spread</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 9,
+          "corruption_level": 0.26457919918486406,
+          "scrambled_words": [
+            "hcolera",
+            "teh",
+            "yewlol",
+            "feevr",
+            "ttah",
+            "eht",
+            "rllbigeeents",
+            "migth",
+            "spdear"
+          ],
+          "original_words": [
+            "cholera",
+            "the",
+            "yellow",
+            "fever",
+            "that",
+            "the",
+            "belligerents",
+            "might",
+            "spread"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: eDfects suhc sa btu nto ldmitei ot itcomplene iuaccnrate ro",
+        "expected_answer": "Defects such as but not limited to incomplete inaccurate or",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the pattern of letters and common English words:\n- \"eDfects\" \u2192 \"Defects\"\n- \"suhc\" \u2192 \"such\"\n- \"sa\" \u2192 \"as\"\n- \"btu\" \u2192 \"but\"\n- \"nto\" \u2192 \"not\"\n- \"ldmitei\" \u2192 \"limited\"\n- \"ot\" \u2192 \"to\"\n- \"itcomplene\" \u2192 \"incomplete\"\n- \"iuaccnrate\" \u2192 \"inaccurate\"\n- \"ro\" \u2192 \"or\"\n\n2. When arranged properly, these words form a common legal or formal phrase used to introduce examples or limitations.\n</reasoning>\n\n<answer>Defects such as but not limited to incomplete inaccurate or</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 10,
+          "corruption_level": 0.16768744547748737,
+          "scrambled_words": [
+            "eDfects",
+            "suhc",
+            "sa",
+            "btu",
+            "nto",
+            "ldmitei",
+            "ot",
+            "itcomplene",
+            "iuaccnrate",
+            "ro"
+          ],
+          "original_words": [
+            "Defects",
+            "such",
+            "as",
+            "but",
+            "not",
+            "limited",
+            "to",
+            "incomplete",
+            "inaccurate",
+            "or"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: borke ni rM mSith ntruing ot a sdcone ncseitist tpOilac cniesce defcetive",
+        "expected_answer": "broke in Mr Smith turning to a second scientist Optical science defective",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the pattern of words and their lengths\n2. Identifying common English words\n3. \"borke\" could be \"broke\"\n4. \"ni\" is clearly \"in\"\n5. \"rM\" is obviously \"Mr\"\n6. \"mSith\" is \"Smith\"\n7. \"ntruing\" has \"ing\" ending - must be \"turning\"\n8. \"sdcone\" looks like \"second\"\n9. \"ncseitist\" contains \"scientist\"\n10. \"tpOilac\" has a capital O - must be \"Optical\"\n11. \"cniesce\" looks like \"science\"\n12. \"defcetive\" is \"detective\"\n\nNow, arranging these words in a logical sentence order...\n</reasoning>\n<answer>Broke in Mr Smith turning to a second scientist Optical science detective</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 12,
+          "corruption_level": 0.3267366860983245,
+          "scrambled_words": [
+            "borke",
+            "ni",
+            "rM",
+            "mSith",
+            "ntruing",
+            "ot",
+            "a",
+            "sdcone",
+            "ncseitist",
+            "tpOilac",
+            "cniesce",
+            "defcetive"
+          ],
+          "original_words": [
+            "broke",
+            "in",
+            "Mr",
+            "Smith",
+            "turning",
+            "to",
+            "a",
+            "second",
+            "scientist",
+            "Optical",
+            "science",
+            "defective"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: taht I uowld od inythang os pnratuiotic eW ta eomh tnihk taht yuor pelpoe muts won eb setad",
+        "expected_answer": "that I would do anything so unpatriotic We at home think that your people must now be sated",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll look for common English words:\n- \"taht\" is clearly \"that\"\n- \"uowld\" is \"would\"\n- \"od\" is \"do\"\n- \"eW\" is \"We\"\n- \"ta\" is \"at\"\n- \"eomh\" is \"home\"\n- \"tnihk\" is \"think\"\n- \"yuor\" is \"your\"\n- \"pelpoe\" is \"people\"\n- \"eb\" is \"be\"\n- \"setad\" is \"dated\"\n- \"inythang\" is \"anything\"\n- \"os\" is \"so\"\n- \"pnratuiotic\" is \"patriotic\"\n\n2. Now, looking at the pattern and grammar of English sentences, this appears to be:\n\"We at home think that your people must now be dated that I would do anything so patriotic\"\n</reasoning>\n<answer>We at home think that your people must now be dated that I would do anything so patriotic</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 18,
+          "corruption_level": 0.24536415074283913,
+          "scrambled_words": [
+            "taht",
+            "I",
+            "uowld",
+            "od",
+            "inythang",
+            "os",
+            "pnratuiotic",
+            "eW",
+            "ta",
+            "eomh",
+            "tnihk",
+            "taht",
+            "yuor",
+            "pelpoe",
+            "muts",
+            "won",
+            "eb",
+            "setad"
+          ],
+          "original_words": [
+            "that",
+            "I",
+            "would",
+            "do",
+            "anything",
+            "so",
+            "unpatriotic",
+            "We",
+            "at",
+            "home",
+            "think",
+            "that",
+            "your",
+            "people",
+            "must",
+            "now",
+            "be",
+            "sated"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: dhsi Fro lkie lla aewlthy oflk ni uor",
+        "expected_answer": "dish For like all wealthy folk in our",
+        "model_answer": "<reasoning>\nLet me analyze these scrambled words one by one:\n1. \"dhsi\" -> looks like \"this\"\n2. \"Fro\" -> \"For\"\n3. \"lkie\" -> \"like\"\n4. \"lla\" -> \"all\"\n5. \"aewlthy\" -> \"wealthy\"\n6. \"oflk\" -> \"folk\"\n7. \"ni\" -> \"in\"\n8. \"uor\" -> \"our\"\n\nNow, arranging these words in a way that makes a coherent sentence. Since it starts with \"this\" and has words like \"wealthy\" and \"folk,\" it's likely describing something about wealthy people.\n\nThe most logical arrangement would be: \"This For all like wealthy folk in our\"\nAdding proper spacing and adjusting \"For\" to lowercase: \"This for all like wealthy folk in our\"\n</reasoning>\n<answer>This for all like wealthy folk in our</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 8,
+          "corruption_level": 0.15212342125552247,
+          "scrambled_words": [
+            "dhsi",
+            "Fro",
+            "lkie",
+            "lla",
+            "aewlthy",
+            "oflk",
+            "ni",
+            "uor"
+          ],
+          "original_words": [
+            "dish",
+            "For",
+            "like",
+            "all",
+            "wealthy",
+            "folk",
+            "in",
+            "our"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ym omclrucatau wrsko ta aNagria Fro rM htimS ahs boiatend a lease fo hte arget sflla fo",
+        "expected_answer": "my accumulator works at Niagara For Mr Smith has obtained a lease of the great falls of",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at common English words and patterns\n2. \"ym\" is likely \"my\"\n3. \"omclrucatau\" seems complex - looking at length and letters, it's \"camculator\"\n4. \"wrsko\" is \"works\"\n5. \"ta\" is \"at\"\n6. \"aNagria\" is \"Niagara\"\n7. \"Fro\" is \"For\"\n8. \"rM\" is \"Mr\"\n9. \"htimS\" is \"Smith\"\n10. \"ahs\" is \"has\"\n11. \"boiatend\" is \"obtained\"\n12. \"lease\" is already correct\n13. \"fo\" is \"of\"\n14. \"hte\" is \"the\"\n15. \"arget\" is \"great\"\n16. \"sflla\" is \"falls\"\n\nNow arranging in proper order...\n</reasoning>\n<answer>My calculator works at Niagara For Mr Smith has obtained a lease of the great falls of</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 17,
+          "corruption_level": 0.45538336809926316,
+          "scrambled_words": [
+            "ym",
+            "omclrucatau",
+            "wrsko",
+            "ta",
+            "aNagria",
+            "Fro",
+            "rM",
+            "htimS",
+            "ahs",
+            "boiatend",
+            "a",
+            "lease",
+            "fo",
+            "hte",
+            "arget",
+            "sflla",
+            "fo"
+          ],
+          "original_words": [
+            "my",
+            "accumulator",
+            "works",
+            "at",
+            "Niagara",
+            "For",
+            "Mr",
+            "Smith",
+            "has",
+            "obtained",
+            "a",
+            "lease",
+            "of",
+            "the",
+            "great",
+            "falls",
+            "of"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: lulf Prcjeot Guetnberg eicLnse tusm rppeaa yeominrntlp wreneveh yna pocy fo a trojecP Gutenbreg wkro yna wkro no",
+        "expected_answer": "full Project Gutenberg License must appear prominently whenever any copy of a Project Gutenberg work any work on",
+        "model_answer": "<reasoning>\nLet me analyze this step by step:\n1. Looking at the words, I can see these are from some kind of license text\n2. Some obvious words:\n   - \"lulf\" -> \"full\"\n   - \"Prcjeot\" -> \"Project\"\n   - \"Guetnberg\" -> \"Gutenberg\"\n   - \"eicLnse\" -> \"License\"\n   - \"tusm\" -> \"must\"\n   - \"rppeaa\" -> \"appear\"\n   - \"yeominrntlp\" -> \"prominently\"\n   - \"wreneveh\" -> \"whenever\"\n   - \"yna\" -> \"any\"\n   - \"pocy\" -> \"copy\"\n   - \"fo\" -> \"of\"\n   - \"trojecP\" -> \"Project\"\n   - \"wkro\" -> \"work\"\n   - \"no\" -> \"on\"\n\n3. Arranging them in proper order based on English grammar and context of Project Gutenberg license\n</reasoning>\n\n<answer>Full Project Gutenberg License must appear prominently whenever any copy of a Project Gutenberg work on</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 18,
+          "corruption_level": 0.19988079446684745,
+          "scrambled_words": [
+            "lulf",
+            "Prcjeot",
+            "Guetnberg",
+            "eicLnse",
+            "tusm",
+            "rppeaa",
+            "yeominrntlp",
+            "wreneveh",
+            "yna",
+            "pocy",
+            "fo",
+            "a",
+            "trojecP",
+            "Gutenbreg",
+            "wkro",
+            "yna",
+            "wkro",
+            "no"
+          ],
+          "original_words": [
+            "full",
+            "Project",
+            "Gutenberg",
+            "License",
+            "must",
+            "appear",
+            "prominently",
+            "whenever",
+            "any",
+            "copy",
+            "of",
+            "a",
+            "Project",
+            "Gutenberg",
+            "work",
+            "any",
+            "work",
+            "on"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: fsee ot mete nad eekp pu wtih shete risueremqnte eW od nto sclioti donotiasn ni iocaltons",
+        "expected_answer": "fees to meet and keep up with these requirements We do not solicit donations in locations",
+        "model_answer": "<reasoning>\nLet me break this down word by word by trying to rearrange the letters to form meaningful words:\n1. fsee -> fees\n2. ot -> to\n3. mete -> meet\n4. nad -> and\n5. eekp -> keep\n6. pu -> up\n7. wtih -> with\n8. shete -> these\n9. risueremqnte -> requirements\n10. eW -> We\n11. od -> do\n12. nto -> not\n13. sclioti -> solicit\n14. donotiasn -> donations\n15. ni -> in\n16. iocaltons -> locations\n\nNow, putting these words together in a logical sentence order.\n</reasoning>\n<answer>fees to meet and keep up with these requirements We do not solicit donations in locations</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 16,
+          "corruption_level": 0.33107557468235593,
+          "scrambled_words": [
+            "fsee",
+            "ot",
+            "mete",
+            "nad",
+            "eekp",
+            "pu",
+            "wtih",
+            "shete",
+            "risueremqnte",
+            "eW",
+            "od",
+            "nto",
+            "sclioti",
+            "donotiasn",
+            "ni",
+            "iocaltons"
+          ],
+          "original_words": [
+            "fees",
+            "to",
+            "meet",
+            "and",
+            "keep",
+            "up",
+            "with",
+            "these",
+            "requirements",
+            "We",
+            "do",
+            "not",
+            "solicit",
+            "donations",
+            "in",
+            "locations"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: whti a miosnwe Wrehe haev",
+        "expected_answer": "with a winsome Where have",
+        "model_answer": "<reasoning>\nLet me analyze these scrambled words one by one:\n1. \"whti\" -> looking at common English words, rearranging the letters: \"with\"\n2. \"a\" -> already unscrambled\n3. \"miosnwe\" -> looking at the letters and common words: \"someone\"\n4. \"Wrehe\" -> capital W suggests it's the first word, common word: \"Where\"\n5. \"haev\" -> common English word: \"have\"\n\nNow putting them in a logical sentence order: \"Where have\" should start the question, followed by the other words.\n</reasoning>\n<answer>Where have someone with a</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.34958915969483706,
+          "scrambled_words": [
+            "whti",
+            "a",
+            "miosnwe",
+            "Wrehe",
+            "haev"
+          ],
+          "original_words": [
+            "with",
+            "a",
+            "winsome",
+            "Where",
+            "have"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: cypo ti giev ti away",
+        "expected_answer": "copy it give it away",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. First, I'll separate each scrambled word:\n   - cypo\n   - ti\n   - giev \n   - ti\n   - away\n\n2. Looking at each word:\n   - \"cypo\" -> common word \"copy\"\n   - \"ti\" -> simple reversal \"it\"\n   - \"giev\" -> rearrange to \"give\"\n   - \"ti\" -> again \"it\"\n   - \"away\" -> already correct\n\n3. When I put these words in order, it forms a common phrase: \"copy it, give it away\"\n</reasoning>\n<answer>Copy it, give it away</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.19287465671301326,
+          "scrambled_words": [
+            "cypo",
+            "ti",
+            "giev",
+            "ti",
+            "away"
+          ],
+          "original_words": [
+            "copy",
+            "it",
+            "give",
+            "it",
+            "away"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ePctrjo gbeunteGr Lieratry hAvcrie ndotnaFiou heT Pjtoecr rGtegenbu rLieyrta Acrhive Fndtoiuaon si a nno ritofp c eicuotnlaad",
+        "expected_answer": "Project Gutenberg Literary Archive Foundation The Project Gutenberg Literary Archive Foundation is a non profit c educational",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I notice that these appear to be words related to \"Project Gutenberg\"\n2. Looking at the capitalization patterns and word lengths\n3. I can see \"The\" is one of the words\n4. \"Project Gutenberg Literary Archive Foundation\" appears twice in the scrambled text\n5. The last few words appear to be \"is a non profit educational\"\n6. Let me arrange them in proper order considering grammar and meaning\n</reasoning>\n<answer>\nThe Project Gutenberg Literary Archive Foundation is a non profit educational\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 17,
+          "corruption_level": 0.8526431065177724,
+          "scrambled_words": [
+            "ePctrjo",
+            "gbeunteGr",
+            "Lieratry",
+            "hAvcrie",
+            "ndotnaFiou",
+            "heT",
+            "Pjtoecr",
+            "rGtegenbu",
+            "rLieyrta",
+            "Acrhive",
+            "Fndtoiuaon",
+            "si",
+            "a",
+            "nno",
+            "ritofp",
+            "c",
+            "eicuotnlaad"
+          ],
+          "original_words": [
+            "Project",
+            "Gutenberg",
+            "Literary",
+            "Archive",
+            "Foundation",
+            "The",
+            "Project",
+            "Gutenberg",
+            "Literary",
+            "Archive",
+            "Foundation",
+            "is",
+            "a",
+            "non",
+            "profit",
+            "c",
+            "educational"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: definytiveli settdel Ttah greta",
+        "expected_answer": "definitively settled That great",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. Looking at the first word \"definytiveli\" - checking common word patterns and letter combinations, this appears to be \"definitely\"\n2. \"settdel\" - rearranging the letters, this looks like \"settled\"\n3. \"Ttah\" - simple swap of the first letter, this is \"That\"\n4. \"greta\" - looking at four-letter words and common combinations, this appears to be \"great\"\n\nWhen putting these words together in a logical sentence structure, it becomes: \"That definitely settled great\"\n</reasoning>\n<answer>That definitely settled great</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 4,
+          "corruption_level": 0.17666984678144335,
+          "scrambled_words": [
+            "definytiveli",
+            "settdel",
+            "Ttah",
+            "greta"
+          ],
+          "original_words": [
+            "definitively",
+            "settled",
+            "That",
+            "great"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ntcoain Dtfeecs scuh sa ubt ton",
+        "expected_answer": "contain Defects such as but not",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the first word \"ntcoain\" - looking for common word patterns and letter combinations:\n   - \"ain\" often appears at the end\n   - \"con\" is a common prefix\n   \u2192 \"contain\"\n\n2. \"Dtfeecs\":\n   - \"ect\" is a common combination\n   - rearranging letters\n   \u2192 \"defects\"\n\n3. \"scuh\":\n   - looking at common 4-letter words\n   - \"such\" is a common word\n\n4. \"sa\":\n   - two-letter word\n   - common words are \"as, at, am\"\n   - in this context, \"as\" makes sense\n\n5. \"ubt\":\n   - three-letter word\n   - common words are \"but, the, and\"\n   - \"but\" fits here\n\n6. \"ton\":\n   - three-letter word\n   - rearranging letters\n   \u2192 \"not\"\n\n7. Putting it all together in proper English sentence structure:\n   \"contain defects such as but not\"\n</reasoning>\n<answer>contain defects such as but not</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 6,
+          "corruption_level": 0.3352632326069428,
+          "scrambled_words": [
+            "ntcoain",
+            "Dtfeecs",
+            "scuh",
+            "sa",
+            "ubt",
+            "ton"
+          ],
+          "original_words": [
+            "contain",
+            "Defects",
+            "such",
+            "as",
+            "but",
+            "not"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: Verne ordRatce s neot eht Year saw frits upblidhes ni teh rbFyuare p",
+        "expected_answer": "Verne Redactor s note the Year was first published in the February p",
+        "model_answer": "<reasoning>\nLet me break this down by trying to identify common English words and patterns:\n1. \"Verne\" is already a proper name (Jules Verne)\n2. \"ordRatce\" looking at common words, this could be \"Crater\" or \"Create\"\n3. \"s\" could be \"is\"\n4. \"neot\" looking at it backwards: \"tone\"\n5. \"eht\" backwards is \"the\"\n6. \"Year\" is already correct\n7. \"saw\" backwards is \"was\"\n8. \"frits\" is clearly \"first\"\n9. \"upblidhes\" rearranging letters: \"published\"\n10. \"ni\" backwards is \"in\"\n11. \"teh\" is \"the\"\n12. \"rbFyuare\" is \"February\"\n13. \"p\" could be part of another word that's cut off, likely \"published\"\n\nNow putting it all in order and making it sensible: \"Verne's Crater of the Year was first published in the February...\"\n</reasoning>\n<answer>Verne's Crater of the Year was first published in the February</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 13,
+          "corruption_level": 0.5067691720725863,
+          "scrambled_words": [
+            "Verne",
+            "ordRatce",
+            "s",
+            "neot",
+            "eht",
+            "Year",
+            "saw",
+            "frits",
+            "upblidhes",
+            "ni",
+            "teh",
+            "rbFyuare",
+            "p"
+          ],
+          "original_words": [
+            "Verne",
+            "Redactor",
+            "s",
+            "note",
+            "the",
+            "Year",
+            "was",
+            "first",
+            "published",
+            "in",
+            "the",
+            "February",
+            "p"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: peasss ot the ipcetnoer cebahrm",
+        "expected_answer": "passes to the reception chamber",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. \"peasss\" - looking at double 's' and 'a', common word would be \"passes\"\n2. \"ot\" - simple reversal of \"to\"\n3. \"ipcetnoer\" - looking for common word patterns... \"reception\"\n4. \"cebahrm\" - rearranging letters... \"chamber\"\n\nPutting these words in proper order, making a logical sentence:\n\"passes to the reception chamber\"\n</reasoning>\n<answer>passes to the reception chamber</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.7257673895022984,
+          "scrambled_words": [
+            "peasss",
+            "ot",
+            "the",
+            "ipcetnoer",
+            "cebahrm"
+          ],
+          "original_words": [
+            "passes",
+            "to",
+            "the",
+            "reception",
+            "chamber"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: IIPLMED INCLNDIUG TUB NTO LIMIDET OT AWRRANTIES FO NERCHAMTABILTIY RO FITENSS",
+        "expected_answer": "IMPLIED INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS",
+        "model_answer": "<reasoning>\nLet me break this down by looking at each scrambled word and identify common English words that could be formed:\n\n1. IIPLMED -> IMPLIED (switching letters around)\n2. INCLNDIUG -> INCLUDING (rearranging letters)\n3. TUB -> BUT (simple switch)\n4. NTO -> NOT (simple switch)\n5. LIMIDET -> LIMITED (rearranging letters)\n6. OT -> TO (simple switch)\n7. AWRRANTIES -> WARRANTIES (rearranging letters)\n8. FO -> OF (simple switch)\n9. NERCHAMTABILTIY -> MERCHANTABILITY (rearranging letters)\n10. RO -> OR (simple switch)\n11. FITENSS -> FITNESS (rearranging letters)\n\nThis appears to be legal terminology often found in contracts or terms of service.\n</reasoning>\n<answer>IMPLIED INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 11,
+          "corruption_level": 0.19776838721120615,
+          "scrambled_words": [
+            "IIPLMED",
+            "INCLNDIUG",
+            "TUB",
+            "NTO",
+            "LIMIDET",
+            "OT",
+            "AWRRANTIES",
+            "FO",
+            "NERCHAMTABILTIY",
+            "RO",
+            "FITENSS"
+          ],
+          "original_words": [
+            "IMPLIED",
+            "INCLUDING",
+            "BUT",
+            "NOT",
+            "LIMITED",
+            "TO",
+            "WARRANTIES",
+            "OF",
+            "MERCHANTABILITY",
+            "OR",
+            "FITNESS"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: yb iosnelptCro emti ouy neam sYe oodG yb tneh rfo a tetlli hielw idas rM mtSih sa eh ervdees",
+        "expected_answer": "by Centropolis time you mean Yes Good by then for a little while said Mr Smith as he severed",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll separate the scrambled words\n2. Then look for common English words and patterns\n3. Looking at small words first like \"by\" and \"as\"\n4. Finding familiar endings and common word combinations\n5. Working through each word until a coherent sentence forms\n\nBreaking it down:\nyb = by\niosnelptCro = Completely\nemti = time\nouy = you\nneam = mean\nsYe = Yes\noodG = Good\nyb = by\ntneh = then\nrfo = for\na = a\ntetlli = little\nhielw = while\nidas = said\nrM = Mr\nmtSih = Smith\nsa = as\neh = he\nervdees = served\n\nNow arranging in a logical sentence order...\n</reasoning>\n<answer>\"By Completion time you mean Yes Good by then for a little while said Mr Smith as he served\"</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 19,
+          "corruption_level": 0.7938086874104189,
+          "scrambled_words": [
+            "yb",
+            "iosnelptCro",
+            "emti",
+            "ouy",
+            "neam",
+            "sYe",
+            "oodG",
+            "yb",
+            "tneh",
+            "rfo",
+            "a",
+            "tetlli",
+            "hielw",
+            "idas",
+            "rM",
+            "mtSih",
+            "sa",
+            "eh",
+            "ervdees"
+          ],
+          "original_words": [
+            "by",
+            "Centropolis",
+            "time",
+            "you",
+            "mean",
+            "Yes",
+            "Good",
+            "by",
+            "then",
+            "for",
+            "a",
+            "little",
+            "while",
+            "said",
+            "Mr",
+            "Smith",
+            "as",
+            "he",
+            "severed"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: rotfh ni tish egerenatm uoy mtus nboati msrpsoeiin ni wigtnir ormf teh ePjorct nureetGgb Leritary hrAcevi aoundonFti",
+        "expected_answer": "forth in this agreement you must obtain permission in writing from the Project Gutenberg Literary Archive Foundation",
+        "model_answer": "<reasoning>\nLet me break this down by looking for common English word patterns and trying different combinations:\n1. First word \"rotfh\" -> looks like \"forth\"\n2. \"ni\" is clearly \"in\"\n3. \"tish\" -> \"this\"\n4. \"egerenatm\" -> looking at length and common letters, this is \"agreement\"\n5. \"uoy\" backwards is \"you\"\n6. \"mtus\" -> \"must\"\n7. \"nboati\" -> \"obtain\"\n8. \"msrpsoeiin\" -> looking at double letters and length, this is \"permission\"\n9. \"ni\" again is \"in\"\n10. \"wigtnir\" -> \"writing\"\n11. \"ormf\" -> \"from\"\n12. \"teh\" -> \"the\"\n13. \"ePjorct\" -> \"Project\"\n14. \"nureetGgb\" -> \"Gutenberg\"\n15. \"Leritary\" -> \"Literary\"\n16. \"hrAcevi\" -> \"Archive\"\n17. \"aoundonFti\" -> \"Foundation\"\n</reasoning>\n<answer>Forth in this agreement you must obtain permission in writing from the Project Gutenberg Literary Archive Foundation</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 17,
+          "corruption_level": 0.5678386773861621,
+          "scrambled_words": [
+            "rotfh",
+            "ni",
+            "tish",
+            "egerenatm",
+            "uoy",
+            "mtus",
+            "nboati",
+            "msrpsoeiin",
+            "ni",
+            "wigtnir",
+            "ormf",
+            "teh",
+            "ePjorct",
+            "nureetGgb",
+            "Leritary",
+            "hrAcevi",
+            "aoundonFti"
+          ],
+          "original_words": [
+            "forth",
+            "in",
+            "this",
+            "agreement",
+            "you",
+            "must",
+            "obtain",
+            "permission",
+            "in",
+            "writing",
+            "from",
+            "the",
+            "Project",
+            "Gutenberg",
+            "Literary",
+            "Archive",
+            "Foundation"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: tinUed Sattes nad oyu rae dotecal ni teh dniUet States ew od ton cmali",
+        "expected_answer": "United States and you are located in the United States we do not claim",
+        "model_answer": "<reasoning>\nLet me analyze these scrambled words one by one:\n1. \"tinUed\" -> \"United\"\n2. \"Sattes\" -> \"States\"\n3. \"nad\" -> \"and\"\n4. \"oyu\" -> \"you\"\n5. \"rae\" -> \"are\"\n6. \"dotecal\" -> \"located\"\n7. \"ni\" -> \"in\"\n8. \"teh\" -> \"the\"\n9. \"dniUet\" -> \"United\"\n10. \"States\" -> \"States\"\n11. \"ew\" -> \"we\"\n12. \"od\" -> \"do\"\n13. \"ton\" -> \"not\"\n14. \"cmali\" -> \"claim\"\n\nNow putting it all together in proper order...\n</reasoning>\n\n<answer>United States and you are located in the United States we do not claim</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 14,
+          "corruption_level": 0.4706062194716062,
+          "scrambled_words": [
+            "tinUed",
+            "Sattes",
+            "nad",
+            "oyu",
+            "rae",
+            "dotecal",
+            "ni",
+            "teh",
+            "dniUet",
+            "States",
+            "ew",
+            "od",
+            "ton",
+            "cmali"
+          ],
+          "original_words": [
+            "United",
+            "States",
+            "and",
+            "you",
+            "are",
+            "located",
+            "in",
+            "the",
+            "United",
+            "States",
+            "we",
+            "do",
+            "not",
+            "claim"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: osrts fo deshsi sa a idrvea astorsnemt si aswyal ni rsaeinesd",
+        "expected_answer": "sorts of dishes as a varied assortment is always in readiness",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. Looking at word patterns and common English structures\n2. \"osrts\" -> likely \"sorts\"\n3. \"fo\" is clearly \"of\"\n4. \"deshsi\" -> \"dishes\"\n5. \"sa\" -> \"as\"\n6. \"a\" stays \"a\"\n7. \"idrvea\" -> looks like \"varied\"\n8. \"astorsnemt\" -> rearranging letters suggests \"assortment\"\n9. \"si\" -> \"is\"\n10. \"aswyal\" -> \"always\"\n11. \"ni\" -> \"in\"\n12. \"rsaeinesd\" -> \"readiness\"\n\nNow putting it all together in a way that makes a grammatically correct sentence.\n</reasoning>\n<answer>sorts of dishes as a varied assortment is always in readiness</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 11,
+          "corruption_level": 0.36072491525002914,
+          "scrambled_words": [
+            "osrts",
+            "fo",
+            "deshsi",
+            "sa",
+            "a",
+            "idrvea",
+            "astorsnemt",
+            "si",
+            "aswyal",
+            "ni",
+            "rsaeinesd"
+          ],
+          "original_words": [
+            "sorts",
+            "of",
+            "dishes",
+            "as",
+            "a",
+            "varied",
+            "assortment",
+            "is",
+            "always",
+            "in",
+            "readiness"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: grastn ot calrels enO realidy undersnatds woh a nam",
+        "expected_answer": "grants to callers One readily understands how a man",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the words, I need to rearrange each scrambled word individually\n2. \"grastn\" \u2192 looking for common English words, this is \"STRANGE\"\n3. \"ot\" \u2192 simple two-letter word is \"TO\"\n4. \"calrels\" \u2192 rearranging letters gives \"RECALLS\"\n5. \"enO\" \u2192 capitalized first letter suggests this is \"ONE\"\n6. \"realidy\" \u2192 rearranging gives \"READILY\"\n7. \"undersnatds\" \u2192 clear scramble of \"UNDERSTANDS\"\n8. \"woh\" \u2192 common three-letter word is \"HOW\"\n9. \"a\" \u2192 stays as \"A\"\n10. \"nam\" \u2192 common three-letter word is \"MAN\"\n\nNow putting it all together in proper order to make a sensible sentence...\n</reasoning>\n<answer>Strange to recall one readily understands how a man</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 9,
+          "corruption_level": 0.176818354727107,
+          "scrambled_words": [
+            "grastn",
+            "ot",
+            "calrels",
+            "enO",
+            "realidy",
+            "undersnatds",
+            "woh",
+            "a",
+            "nam"
+          ],
+          "original_words": [
+            "grants",
+            "to",
+            "callers",
+            "One",
+            "readily",
+            "understands",
+            "how",
+            "a",
+            "man"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: omon ouabt eacf hA teher s oimenshtg",
+        "expected_answer": "moon about face Ah there s something",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, let's separate all the scrambled words:\n   - omon\n   - ouabt\n   - eacf\n   - hA\n   - teher\n   - s\n   - oimenshtg\n\n2. Looking for common English words:\n   - \"omon\" could be \"moon\"\n   - \"ouabt\" rearranges to \"about\"\n   - \"eacf\" becomes \"face\"\n   - \"hA\" is simply \"Ah\"\n   - \"teher\" is \"there\"\n   - \"s\" is just \"s\"\n   - \"oimenshtg\" rearranges to \"something\"\n\n3. Now putting them in a logical order that makes a proper sentence\n</reasoning>\n\n<answer>Ah, there's something about moon face</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 7,
+          "corruption_level": 0.4500026008457616,
+          "scrambled_words": [
+            "omon",
+            "ouabt",
+            "eacf",
+            "hA",
+            "teher",
+            "s",
+            "oimenshtg"
+          ],
+          "original_words": [
+            "moon",
+            "about",
+            "face",
+            "Ah",
+            "there",
+            "s",
+            "something"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: wlil eb eknild ot eht rPojtce Guerngetb Lsceine fro lal osrkw",
+        "expected_answer": "will be linked to the Project Gutenberg License for all works",
+        "model_answer": "<reasoning>\nLet me break this down by looking at each scrambled word and rearranging the letters to form meaningful words:\n- \"wlil\" \u2192 \"will\"\n- \"eb\" \u2192 \"be\"\n- \"eknild\" \u2192 \"linked\"\n- \"ot\" \u2192 \"to\"\n- \"eht\" \u2192 \"the\"\n- \"rPojtce\" \u2192 \"Project\"\n- \"Guerngetb\" \u2192 \"Gutenberg\"\n- \"Lsciene\" \u2192 \"License\"\n- \"fro\" \u2192 \"for\"\n- \"lal\" \u2192 \"all\"\n- \"osrkw\" \u2192 \"works\"\n\nNow putting these words together in the same order to form a coherent sentence.\n</reasoning>\n<answer>will be linked to the Project Gutenberg License for all works</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 11,
+          "corruption_level": 0.4151524635667001,
+          "scrambled_words": [
+            "wlil",
+            "eb",
+            "eknild",
+            "ot",
+            "eht",
+            "rPojtce",
+            "Guerngetb",
+            "Lsceine",
+            "fro",
+            "lal",
+            "osrkw"
+          ],
+          "original_words": [
+            "will",
+            "be",
+            "linked",
+            "to",
+            "the",
+            "Project",
+            "Gutenberg",
+            "License",
+            "for",
+            "all",
+            "works"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: insrgi cseldrea het nma ot eb adde deaD lemsaicx reevy eon eteprns sYe sawnesr rD iisklnW aedd And how",
+        "expected_answer": "rising declares the man to be dead Dead exclaims every one present Yes answers Dr Wilkins dead And how",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the pattern and common words, this appears to be a sentence\n2. Let me identify common words first:\n   - \"het\" = \"the\"\n   - \"ot\" = \"to\"\n   - \"eb\" = \"be\"\n   - \"eno\" = \"one\"\n   - \"rD\" = \"Dr\"\n3. Some words are already correct: \"And\" \"how\"\n4. Breaking down the remaining scrambled words:\n   - \"insrgi\" = \"rising\"\n   - \"cseldrea\" = \"declared\"\n   - \"nma\" = \"man\"\n   - \"adde\" = \"dead\"\n   - \"deaD\" = \"Dead\"\n   - \"lemsaicx\" = \"exclaims\"\n   - \"eteprns\" = \"present\"\n   - \"sYe\" = \"Yes\"\n   - \"sawnesr\" = \"answers\"\n   - \"iisklnW\" = \"Wilkins\"\n   - \"aedd\" = \"dead\"\n5. Putting it together in a logical sentence\n</reasoning>\n<answer>Rising declares the man to be dead Dead exclaims every one present Yes answers Dr Wilkins dead And how</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 19,
+          "corruption_level": 0.7716980543928428,
+          "scrambled_words": [
+            "insrgi",
+            "cseldrea",
+            "het",
+            "nma",
+            "ot",
+            "eb",
+            "adde",
+            "deaD",
+            "lemsaicx",
+            "reevy",
+            "eon",
+            "eteprns",
+            "sYe",
+            "sawnesr",
+            "rD",
+            "iisklnW",
+            "aedd",
+            "And",
+            "how"
+          ],
+          "original_words": [
+            "rising",
+            "declares",
+            "the",
+            "man",
+            "to",
+            "be",
+            "dead",
+            "Dead",
+            "exclaims",
+            "every",
+            "one",
+            "present",
+            "Yes",
+            "answers",
+            "Dr",
+            "Wilkins",
+            "dead",
+            "And",
+            "how"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: s wlas The Foodnitaun s nbsisuse ofefci",
+        "expected_answer": "s laws The Foundation s business office",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the words, I notice 'The' is already correct\n2. 'wlas' - looking at common 4-letter words, this is likely 'laws'\n3. 'Foodnitaun' - this is a longer word, breaking it down:\n   - 'Found' is visible within it\n   - 'foundation' is the complete word\n4. 'nbsisuse' - looking at common business-related words:\n   - This appears to be 'business'\n5. 'ofefci' - commonly paired with business:\n   - This is 'office'\n6. Putting it all together in proper English sentence structure\n</reasoning>\n<answer>The laws of business foundation</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 7,
+          "corruption_level": 0.7155163257711966,
+          "scrambled_words": [
+            "s",
+            "wlas",
+            "The",
+            "Foodnitaun",
+            "s",
+            "nbsisuse",
+            "ofefci"
+          ],
+          "original_words": [
+            "s",
+            "laws",
+            "The",
+            "Foundation",
+            "s",
+            "business",
+            "office"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: impncloete enrctaiuca ro cpturor tada nrcstiaripton rerrso a horiypgct ro tehro autellcletin reorppty tefmeninirgn a dteecivef ro degamda",
+        "expected_answer": "incomplete inaccurate or corrupt data transcription errors a copyright or other intellectual property infringement a defective or damaged",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll look for common word endings and patterns\n2. Look for familiar words that might make sense together\n3. Since these appear to be multiple words, I'll try to separate them\n4. The words seem to be related to technical or legal terminology\n5. After trying different combinations, these words appear to form a sentence about data or information\n\nBreaking it down:\n- impncloete -> incomplete\n- enrctaiuca -> inaccurate\n- ro -> or\n- cpturor -> corrupt\n- tada -> data\n- nrcstiaripton -> transcription\n- rerrso -> errors\n- a -> a\n- horiypgct -> copyright\n- ro -> or\n- tehro -> other\n- autellcletin -> intellectual\n- reorppty -> property\n- tefmeninirgn -> infringement\n- a -> a\n- dteecivef -> defective\n- ro -> or\n- degamad -> damaged\n</reasoning>\n\n<answer>incomplete inaccurate or corrupt data transcription errors a copyright or other intellectual property infringement a defective or damaged</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 18,
+          "corruption_level": 0.7750348857448341,
+          "scrambled_words": [
+            "impncloete",
+            "enrctaiuca",
+            "ro",
+            "cpturor",
+            "tada",
+            "nrcstiaripton",
+            "rerrso",
+            "a",
+            "horiypgct",
+            "ro",
+            "tehro",
+            "autellcletin",
+            "reorppty",
+            "tefmeninirgn",
+            "a",
+            "dteecivef",
+            "ro",
+            "degamda"
+          ],
+          "original_words": [
+            "incomplete",
+            "inaccurate",
+            "or",
+            "corrupt",
+            "data",
+            "transcription",
+            "errors",
+            "a",
+            "copyright",
+            "or",
+            "other",
+            "intellectual",
+            "property",
+            "infringement",
+            "a",
+            "defective",
+            "or",
+            "damaged"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: fo tehes aosrbb dan oscnende the invgil crofe odninaetc ni eth sun",
+        "expected_answer": "of these absorb and condense the living force contained in the sun",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. I'll look at each scrambled word and try to make sense of them:\n- \"fo\" \u2192 \"of\"\n- \"tehes\" \u2192 \"these\"\n- \"aosrbb\" \u2192 \"absorb\"\n- \"dan\" \u2192 \"and\"\n- \"oscnende\" \u2192 \"condense\"\n- \"eth\" \u2192 \"the\"\n- \"invgil\" \u2192 \"living\"\n- \"crofe\" \u2192 \"force\"\n- \"odninaetc\" \u2192 \"contained\"\n- \"ni\" \u2192 \"in\"\n- \"sun\" \u2192 \"sun\"\n\n2. Now arranging these words in proper order to make a meaningful sentence.\nThe sentence structure appears to be about absorbing and condensing something from the sun.\n</reasoning>\n\n<answer>Of these absorb and condense the living force contained in the sun</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 12,
+          "corruption_level": 0.831249432414197,
+          "scrambled_words": [
+            "fo",
+            "tehes",
+            "aosrbb",
+            "dan",
+            "oscnende",
+            "the",
+            "invgil",
+            "crofe",
+            "odninaetc",
+            "ni",
+            "eth",
+            "sun"
+          ],
+          "original_words": [
+            "of",
+            "these",
+            "absorb",
+            "and",
+            "condense",
+            "the",
+            "living",
+            "force",
+            "contained",
+            "in",
+            "the",
+            "sun"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: tiglkna ngonouripcn a anem hsi neam tizFr hTe lgidefthlu",
+        "expected_answer": "talking pronouncing a name his name Fritz The delightful",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll separate each scrambled word\n- tiglkna\n- ngonouripcn\n- a\n- anem\n- hsi\n- neam\n- tizFr\n- hTe\n- lgidefthlu\n\n2. Looking for common words and patterns:\n- \"a\" is already unscrambled\n- \"hTe\" is clearly \"The\"\n- \"anem\" appears twice, likely \"name\"\n- \"hsi\" is \"his\"\n- \"tizFr\" has a capital F, must be \"Fritz\"\n- \"tiglkna\" has \"talk\" in it = \"talking\"\n- \"ngonouripcn\" has \"pronounc\" in it = \"pronouncing\"\n- \"lgidefthlu\" = \"delightful\"\n\n3. Putting it in logical order, making a sentence about pronouncing someone's name\n</reasoning>\n\n<answer>Talking about pronouncing a name his name Fritz The delightful</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 9,
+          "corruption_level": 0.6610451854172503,
+          "scrambled_words": [
+            "tiglkna",
+            "ngonouripcn",
+            "a",
+            "anem",
+            "hsi",
+            "neam",
+            "tizFr",
+            "hTe",
+            "lgidefthlu"
+          ],
+          "original_words": [
+            "talking",
+            "pronouncing",
+            "a",
+            "name",
+            "his",
+            "name",
+            "Fritz",
+            "The",
+            "delightful"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: shTi gveienn eyrV",
+        "expected_answer": "This evening Very",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. We have three scrambled words: \"shTi\" \"gveienn\" \"eyrV\"\n2. Looking at \"shTi\":\n   - Common word pattern shows it's \"This\"\n3. Looking at \"gveienn\":\n   - Contains \"ing\" pattern at the end\n   - Rearranging letters gives \"evening\"\n4. Looking at \"eyrV\":\n   - Capital V suggests it starts with V\n   - Rearranging gives \"Very\"\n5. Given the common sentence structure and capitalization, \"This evening Very\" should be \"This Very evening\"\n</reasoning>\n<answer>This Very evening</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 3,
+          "corruption_level": 0.54496028326596,
+          "scrambled_words": [
+            "shTi",
+            "gveienn",
+            "eyrV"
+          ],
+          "original_words": [
+            "This",
+            "evening",
+            "Very"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: tish norginm was tno giragdn fo gbeilsnss",
+        "expected_answer": "this morning was not niggard of blessings",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. Looking at the words and their patterns:\n- \"tish\" \u2192 looks like \"this\"\n- \"norginm\" \u2192 \"morning\" (contains ing)\n- \"was\" \u2192 already correct\n- \"tno\" \u2192 \"not\"\n- \"giragdn\" \u2192 \"bragging\" or \"dragging\"\n- \"fo\" \u2192 \"of\"\n- \"gbeilsnss\" \u2192 \"blessings\" (contains ings)\n\n2. Testing these words in different combinations and looking for grammatical sense.\n3. When arranged properly, it should form a coherent sentence.\n4. The pattern suggests: \"This morning was not dragging of blessings\"\n</reasoning>\n<answer>This morning was not bragging of blessings</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 7,
+          "corruption_level": 0.6903320562194306,
+          "scrambled_words": [
+            "tish",
+            "norginm",
+            "was",
+            "tno",
+            "giragdn",
+            "fo",
+            "gbeilsnss"
+          ],
+          "original_words": [
+            "this",
+            "morning",
+            "was",
+            "not",
+            "niggard",
+            "of",
+            "blessings"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: for het hewol wrlod doucl eb eye sisnwsete fo het necfeorrmpa a petorrer mwehaelin eikl",
+        "expected_answer": "for the whole world could be eye witnesses of the performance a reporter meanwhile like",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. First, I'll group similar words and look for common patterns\n2. \"het\" appears twice - likely \"the\"\n3. \"wrlod\" - rearranging letters - looks like \"world\"\n4. \"hewol\" - contains \"whole\"\n5. \"eye\" is already a word\n6. \"sisnwsete\" - looking at double letters - \"witnesses\"\n7. \"necfeorrmpa\" - contains \"performance\"\n8. \"mwehaelin\" - looks like a name - \"meanwhile\"\n9. \"eikl\" - simple word - \"like\"\n10. Now arranging them in a sensible sentence structure\n\nThe words make a quote about witnesses to a performance.\n</reasoning>\n<answer>\n\"For the whole world could be witnesses of the performance meanwhile like\"</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 15,
+          "corruption_level": 0.8789781879753564,
+          "scrambled_words": [
+            "for",
+            "het",
+            "hewol",
+            "wrlod",
+            "doucl",
+            "eb",
+            "eye",
+            "sisnwsete",
+            "fo",
+            "het",
+            "necfeorrmpa",
+            "a",
+            "petorrer",
+            "mwehaelin",
+            "eikl"
+          ],
+          "original_words": [
+            "for",
+            "the",
+            "whole",
+            "world",
+            "could",
+            "be",
+            "eye",
+            "witnesses",
+            "of",
+            "the",
+            "performance",
+            "a",
+            "reporter",
+            "meanwhile",
+            "like"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: na troenivn egendni aatipcl nigaa",
+        "expected_answer": "an inventor needing capital again",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at the scrambled words, I notice they make up a phrase\n2. Let me analyze each word:\n   - \"na\" \u2192 likely \"an\"\n   - \"troenivn\" \u2192 looking for common word patterns... \"invention\"\n   - \"egendni\" \u2192 rearranging letters... \"engine\"\n   - \"aatipcl\" \u2192 looking for technical term... \"optical\"\n   - \"nigaa\" \u2192 common word ending... \"again\"\n3. When putting these words together in proper English syntax, \"an\" typically goes before a word starting with a vowel\n4. The phrase appears to be technical in nature\n</reasoning>\n<answer>an invention engine optical gain</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.7142622030186819,
+          "scrambled_words": [
+            "na",
+            "troenivn",
+            "egendni",
+            "aatipcl",
+            "nigaa"
+          ],
+          "original_words": [
+            "an",
+            "inventor",
+            "needing",
+            "capital",
+            "again"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: F Seom atsest od not awlol iidseacmlrs fo nearitc",
+        "expected_answer": "F Some states do not allow disclaimers of certain",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll separate each scrambled word:\n   F | Seom | atsest | od | not | awlol | iidseacmlrs | fo | nearitc\n\n2. Now let's unscramble each word:\n   F \u2192 F\n   Seom \u2192 Some\n   atsest \u2192 states\n   od \u2192 do\n   not \u2192 not\n   awlol \u2192 allow\n   iidseacmlrs \u2192 disclaimers\n   fo \u2192 of\n   nearitc \u2192 certain\n\n3. Now putting them in proper order to make a coherent sentence\n</reasoning>\n<answer>Some states do not allow disclaimers of certain</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 9,
+          "corruption_level": 0.6708776002686824,
+          "scrambled_words": [
+            "F",
+            "Seom",
+            "atsest",
+            "od",
+            "not",
+            "awlol",
+            "iidseacmlrs",
+            "fo",
+            "nearitc"
+          ],
+          "original_words": [
+            "F",
+            "Some",
+            "states",
+            "do",
+            "not",
+            "allow",
+            "disclaimers",
+            "of",
+            "certain"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: teh osppeiot dsie hwo wnsko",
+        "expected_answer": "the opposite side who knows",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. Looking at each scrambled word:\n   - \"teh\" \u2192 common word \"the\"\n   - \"osppeiot\" \u2192 looking at double letters and length, likely \"opposite\"\n   - \"dsie\" \u2192 rearranging letters gives \"side\"\n   - \"hwo\" \u2192 common word \"who\"\n   - \"wnsko\" \u2192 looking at common word endings, likely \"knows\"\n2. Now putting them in proper English sentence order:\n   The opposite side who knows\nThis appears to be a phrase meaning \"the opposite side knows\"\n</reasoning>\n<answer>The opposite side who knows</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.5724881718896287,
+          "scrambled_words": [
+            "teh",
+            "osppeiot",
+            "dsie",
+            "hwo",
+            "wnsko"
+          ],
+          "original_words": [
+            "the",
+            "opposite",
+            "side",
+            "who",
+            "knows"
+          ]
+        }
+      }
+    ]
+  }
+]

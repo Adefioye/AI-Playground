@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "polynomial_equations",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.020195709603630575,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T22:21:56.999065",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

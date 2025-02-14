@@ -1,0 +1,3272 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "group_anagrams",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.8812000000000001,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T23:47:30.457492",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"tinglers\", \"argonon\", \"ditas\", \"palinodist\", \"merocyte\", \"conterminal\", \"canny\", \"nancy\", \"outasight\", \"autosight\", \"oversauciness\", \"applauders\", \"suprapedal\"]\n",
+        "expected_answer": "[[\"applauders\", \"suprapedal\"], [\"argonon\"], [\"autosight\", \"outasight\"], [\"canny\", \"nancy\"], [\"conterminal\"], [\"ditas\"], [\"merocyte\"], [\"oversauciness\"], [\"palinodist\"], [\"tinglers\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a strategy to identify anagrams:\n   - Sort the letters of each word\n   - Words that have the same sorted letters are anagrams\n\n2) Let me sort each word's letters:\n   - tinglers \u2192 egilnrst\n   - argonon \u2192 agnnoor\n   - ditas \u2192 adist\n   - palinodist \u2192 adiilnopst\n   - merocyte \u2192 ceemorty\n   - conterminal \u2192 aceilmnnort\n   - canny \u2192 acnny\n   - nancy \u2192 acnny\n   - outasight \u2192 aghiosstu\n   - autosight \u2192 aghiosstu\n   - oversauciness \u2192 aceeinorsssuv\n   - applauders \u2192 aadelpprsu\n   - suprapedal \u2192 aadelpprsu\n\n3) Now grouping words with identical sorted letters:\n   - [canny, nancy] (acnny)\n   - [outasight, autosight] (aghiosstu)\n   - [applauders, suprapedal] (aadelpprsu)\n   - All other words have no anagrams in the list\n</reasoning>\n<answer>\n[\n    [\"tinglers\"], \n    [\"argonon\"], \n    [\"ditas\"], \n    [\"palinodist\"], \n    [\"merocyte\"], \n    [\"conterminal\"], \n    [\"canny\", \"nancy\"], \n    [\"outasight\", \"autosight\"], \n    [\"oversauciness\"], \n    [\"applauders\", \"suprapedal\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "tinglers",
+            "argonon",
+            "ditas",
+            "palinodist",
+            "merocyte",
+            "conterminal",
+            "canny",
+            "nancy",
+            "outasight",
+            "autosight",
+            "oversauciness",
+            "applauders",
+            "suprapedal"
+          ],
+          "solution": [
+            [
+              "applauders",
+              "suprapedal"
+            ],
+            [
+              "argonon"
+            ],
+            [
+              "autosight",
+              "outasight"
+            ],
+            [
+              "canny",
+              "nancy"
+            ],
+            [
+              "conterminal"
+            ],
+            [
+              "ditas"
+            ],
+            [
+              "merocyte"
+            ],
+            [
+              "oversauciness"
+            ],
+            [
+              "palinodist"
+            ],
+            [
+              "tinglers"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"regear\", \"escrod\", \"coders\", \"decors\", \"credos\", \"scored\", \"semitaur\", \"muriates\", \"peripterous\", \"zanies\", \"expatiater\", \"wooled\", \"meningomyelocele\", \"myelomeningocele\", \"vainest\", \"natives\", \"naivest\", \"preludes\", \"repulsed\"]\n",
+        "expected_answer": "[[\"coders\", \"credos\", \"decors\", \"escrod\", \"scored\"], [\"expatiater\"], [\"meningomyelocele\", \"myelomeningocele\"], [\"muriates\", \"semitaur\"], [\"naivest\", \"natives\", \"vainest\"], [\"peripterous\"], [\"preludes\", \"repulsed\"], [\"regear\"], [\"wooled\"], [\"zanies\"]]",
+        "model_answer": "<reasoning>\nTo solve this, I'll follow these steps:\n1. For each word, I'll sort its letters alphabetically to create a key\n2. Words that are anagrams will have the same sorted letters\n3. I'll use this key to group the words together\n\nLet's sort each word:\n- regear -> aegerr\n- escrod, coders, decors, credos, scored -> cderos\n- semitaur, muriates -> aeimrstu\n- peripterous -> eeioprrst\n- zanies -> aeinsz\n- expatiater -> aeeeiprtx\n- wooled -> deloow\n- meningomyelocele, myelomeningocele -> eeegllmmnnoocey\n- vainest, natives, naivest -> aeinstv\n- preludes, repulsed -> deelprsu\n\nNow I can group words that share the same sorted letters.\n</reasoning>\n<answer>[\n    [\"regear\"],\n    [\"escrod\", \"coders\", \"decors\", \"credos\", \"scored\"],\n    [\"semitaur\", \"muriates\"],\n    [\"peripterous\"],\n    [\"zanies\"],\n    [\"expatiater\"],\n    [\"wooled\"],\n    [\"meningomyelocele\", \"myelomeningocele\"],\n    [\"vainest\", \"natives\", \"naivest\"],\n    [\"preludes\", \"repulsed\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "regear",
+            "escrod",
+            "coders",
+            "decors",
+            "credos",
+            "scored",
+            "semitaur",
+            "muriates",
+            "peripterous",
+            "zanies",
+            "expatiater",
+            "wooled",
+            "meningomyelocele",
+            "myelomeningocele",
+            "vainest",
+            "natives",
+            "naivest",
+            "preludes",
+            "repulsed"
+          ],
+          "solution": [
+            [
+              "coders",
+              "credos",
+              "decors",
+              "escrod",
+              "scored"
+            ],
+            [
+              "expatiater"
+            ],
+            [
+              "meningomyelocele",
+              "myelomeningocele"
+            ],
+            [
+              "muriates",
+              "semitaur"
+            ],
+            [
+              "naivest",
+              "natives",
+              "vainest"
+            ],
+            [
+              "peripterous"
+            ],
+            [
+              "preludes",
+              "repulsed"
+            ],
+            [
+              "regear"
+            ],
+            [
+              "wooled"
+            ],
+            [
+              "zanies"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"eagerest\", \"granitite\", \"helium\", \"nizam\", \"nazim\", \"striplings\", \"slipstring\", \"rearrest\", \"arrester\", \"bf\", \"tadpolism\", \"canun\", \"cunan\", \"isotonic\"]\n",
+        "expected_answer": "[[\"arrester\", \"rearrest\"], [\"bf\"], [\"canun\", \"cunan\"], [\"eagerest\"], [\"granitite\"], [\"helium\"], [\"isotonic\"], [\"nazim\", \"nizam\"], [\"slipstring\", \"striplings\"], [\"tadpolism\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll sort each word's letters alphabetically to create a key. Words that are anagrams will have the same key.\n\n2) Let me go through each word:\n- \"eagerest\" -> \"aeegrst\"\n- \"granitite\" -> \"aegiinrtt\"\n- \"helium\" -> \"ehilmu\"\n- \"nizam\" -> \"aimnz\"\n- \"nazim\" -> \"aimnz\"\n- \"striplings\" -> \"giilnprst\"\n- \"slipstring\" -> \"giilnprst\"\n- \"rearrest\" -> \"aeerrst\"\n- \"arrester\" -> \"aeerrst\"\n- \"bf\" -> \"bf\"\n- \"tadpolism\" -> \"adilmopst\"\n- \"canun\" -> \"acnnu\"\n- \"cunan\" -> \"acnnu\"\n- \"isotonic\" -> \"ciinoost\"\n\n3) Grouping words with the same sorted letters:\n- \"aimnz\": [\"nizam\", \"nazim\"]\n- \"giilnprst\": [\"striplings\", \"slipstring\"]\n- \"aeerrst\": [\"rearrest\", \"arrester\"]\n- \"acnnu\": [\"canun\", \"cunan\"]\n\n4) Words without anagrams:\n- \"eagerest\"\n- \"granitite\"\n- \"helium\"\n- \"bf\"\n- \"tadpolism\"\n- \"isotonic\"\n</reasoning>\n<answer>\n[[\"nizam\", \"nazim\"], \n[\"striplings\", \"slipstring\"], \n[\"rearrest\", \"arrester\"], \n[\"canun\", \"cunan\"], \n[\"eagerest\"], \n[\"granitite\"], \n[\"helium\"], \n[\"bf\"], \n[\"tadpolism\"], \n[\"isotonic\"]]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "eagerest",
+            "granitite",
+            "helium",
+            "nizam",
+            "nazim",
+            "striplings",
+            "slipstring",
+            "rearrest",
+            "arrester",
+            "bf",
+            "tadpolism",
+            "canun",
+            "cunan",
+            "isotonic"
+          ],
+          "solution": [
+            [
+              "arrester",
+              "rearrest"
+            ],
+            [
+              "bf"
+            ],
+            [
+              "canun",
+              "cunan"
+            ],
+            [
+              "eagerest"
+            ],
+            [
+              "granitite"
+            ],
+            [
+              "helium"
+            ],
+            [
+              "isotonic"
+            ],
+            [
+              "nazim",
+              "nizam"
+            ],
+            [
+              "slipstring",
+              "striplings"
+            ],
+            [
+              "tadpolism"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"cinques\", \"eldern\", \"lender\", \"fp\", \"cohere\", \"choree\", \"canaling\", \"reconverts\", \"dawny\", \"adaption\", \"implicate\", \"ampelitic\", \"footnotes\", \"footstone\"]\n",
+        "expected_answer": "[[\"adaption\"], [\"ampelitic\", \"implicate\"], [\"canaling\"], [\"choree\", \"cohere\"], [\"cinques\"], [\"dawny\"], [\"eldern\", \"lender\"], [\"footnotes\", \"footstone\"], [\"fp\"], [\"reconverts\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll sort the letters of each word alphabetically to create a key. Words that are anagrams will have the same key.\n\n2) Going through each word:\n- cinques -> ceinqsu\n- eldern -> deelnr\n- lender -> deelnr (matches with eldern)\n- fp -> fp\n- cohere -> ceehor\n- choree -> ceehor (matches with cohere)\n- canaling -> aacgilnn\n- reconverts -> ceenorstv\n- dawny -> adnwy\n- adaption -> adinopt\n- implicate -> aceiilmpt\n- ampelitic -> aceiilmpt (matches with implicate)\n- footnotes -> efnoostt\n- footstone -> efnoostt (matches with footnotes)\n\n3) Grouping words with the same sorted letters:\n- \"eldern\" and \"lender\" are anagrams\n- \"cohere\" and \"choree\" are anagrams\n- \"implicate\" and \"ampelitic\" are anagrams\n- \"footnotes\" and \"footstone\" are anagrams\n- The rest have no anagrams in the list\n</reasoning>\n<answer>[\n    [\"eldern\", \"lender\"],\n    [\"cohere\", \"choree\"],\n    [\"implicate\", \"ampelitic\"],\n    [\"footnotes\", \"footstone\"],\n    [\"cinques\"],\n    [\"fp\"],\n    [\"canaling\"],\n    [\"reconverts\"],\n    [\"dawny\"],\n    [\"adaption\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "cinques",
+            "eldern",
+            "lender",
+            "fp",
+            "cohere",
+            "choree",
+            "canaling",
+            "reconverts",
+            "dawny",
+            "adaption",
+            "implicate",
+            "ampelitic",
+            "footnotes",
+            "footstone"
+          ],
+          "solution": [
+            [
+              "adaption"
+            ],
+            [
+              "ampelitic",
+              "implicate"
+            ],
+            [
+              "canaling"
+            ],
+            [
+              "choree",
+              "cohere"
+            ],
+            [
+              "cinques"
+            ],
+            [
+              "dawny"
+            ],
+            [
+              "eldern",
+              "lender"
+            ],
+            [
+              "footnotes",
+              "footstone"
+            ],
+            [
+              "fp"
+            ],
+            [
+              "reconverts"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"tawny\", \"anathem\", \"drapers\", \"sparred\", \"meath\", \"thema\", \"interplead\", \"peridental\", \"sentries\", \"interess\", \"zits\", \"sitz\", \"taruma\", \"trauma\", \"carnac\", \"sylvite\", \"levyist\"]\n",
+        "expected_answer": "[[\"anathem\"], [\"carnac\"], [\"drapers\", \"sparred\"], [\"interess\", \"sentries\"], [\"interplead\", \"peridental\"], [\"levyist\", \"sylvite\"], [\"meath\", \"thema\"], [\"sitz\", \"zits\"], [\"taruma\", \"trauma\"], [\"tawny\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Going through each word:\n   - \"tawny\" -> \"antwy\"\n   - \"anathem\", \"meath\", \"thema\" -> \"aahemt\"\n   - \"drapers\", \"sparred\" -> \"adeprrs\"\n   - \"interplead\", \"peridental\" -> \"adeilnprt\"\n   - \"sentries\", \"interess\" -> \"einrsst\"\n   - \"zits\", \"sitz\" -> \"istz\"\n   - \"taruma\", \"trauma\" -> \"aamrtu\"\n   - \"carnac\" -> \"aacnr\"\n   - \"sylvite\", \"levyist\" -> \"eilstvy\"\n\n3) Now I can group words that share the same sorted letters together.\n</reasoning>\n\n<answer>\n[\n    [\"tawny\"],\n    [\"anathem\", \"meath\", \"thema\"],\n    [\"drapers\", \"sparred\"],\n    [\"interplead\", \"peridental\"],\n    [\"sentries\", \"interess\"],\n    [\"zits\", \"sitz\"],\n    [\"taruma\", \"trauma\"],\n    [\"carnac\"],\n    [\"sylvite\", \"levyist\"]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "tawny",
+            "anathem",
+            "drapers",
+            "sparred",
+            "meath",
+            "thema",
+            "interplead",
+            "peridental",
+            "sentries",
+            "interess",
+            "zits",
+            "sitz",
+            "taruma",
+            "trauma",
+            "carnac",
+            "sylvite",
+            "levyist"
+          ],
+          "solution": [
+            [
+              "anathem"
+            ],
+            [
+              "carnac"
+            ],
+            [
+              "drapers",
+              "sparred"
+            ],
+            [
+              "interess",
+              "sentries"
+            ],
+            [
+              "interplead",
+              "peridental"
+            ],
+            [
+              "levyist",
+              "sylvite"
+            ],
+            [
+              "meath",
+              "thema"
+            ],
+            [
+              "sitz",
+              "zits"
+            ],
+            [
+              "taruma",
+              "trauma"
+            ],
+            [
+              "tawny"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"delves\", \"devels\", \"alumin\", \"theodicean\", \"holdership\", \"shipholder\", \"esteems\", \"mestees\", \"semiprivate\", \"imperatives\", \"seduced\", \"depeche\", \"cheeped\", \"slinge\", \"glinse\", \"disuse\"]\n",
+        "expected_answer": "[[\"alumin\"], [\"cheeped\", \"depeche\"], [\"delves\", \"devels\"], [\"disuse\"], [\"esteems\", \"mestees\"], [\"glinse\", \"slinge\"], [\"holdership\", \"shipholder\"], [\"imperatives\", \"semiprivate\"], [\"seduced\"], [\"theodicean\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll sort the letters of each word to create a key. Words that are anagrams will have the same key.\n   For example:\n   - \"delves\" -> \"delsv\"\n   - \"devels\" -> \"delsv\"\n   These have the same key, so they're anagrams.\n\n2) Going through each word:\n   - \"delves\", \"devels\" -> \"delsv\"\n   - \"alumin\" -> \"ailmnu\"\n   - \"theodicean\" -> \"acdehinot\"\n   - \"holdership\", \"shipholder\" -> \"dehiloprsh\"\n   - \"esteems\", \"mestees\" -> \"eemsst\"\n   - \"semiprivate\", \"imperatives\" -> \"aeeimnprstv\"\n   - \"seduced\", \"depeche\", \"cheeped\" -> \"cdeeep\"\n   - \"slinge\", \"glinse\" -> \"eglins\"\n   - \"disuse\" -> \"deissu\"\n\n3) Grouping words with the same sorted letters together.\n\n</reasoning>\n<answer>\n[\n    [\"delves\", \"devels\"],\n    [\"alumin\"],\n    [\"theodicean\"],\n    [\"holdership\", \"shipholder\"],\n    [\"esteems\", \"mestees\"],\n    [\"semiprivate\", \"imperatives\"],\n    [\"seduced\", \"depeche\", \"cheeped\"],\n    [\"slinge\", \"glinse\"],\n    [\"disuse\"]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "delves",
+            "devels",
+            "alumin",
+            "theodicean",
+            "holdership",
+            "shipholder",
+            "esteems",
+            "mestees",
+            "semiprivate",
+            "imperatives",
+            "seduced",
+            "depeche",
+            "cheeped",
+            "slinge",
+            "glinse",
+            "disuse"
+          ],
+          "solution": [
+            [
+              "alumin"
+            ],
+            [
+              "cheeped",
+              "depeche"
+            ],
+            [
+              "delves",
+              "devels"
+            ],
+            [
+              "disuse"
+            ],
+            [
+              "esteems",
+              "mestees"
+            ],
+            [
+              "glinse",
+              "slinge"
+            ],
+            [
+              "holdership",
+              "shipholder"
+            ],
+            [
+              "imperatives",
+              "semiprivate"
+            ],
+            [
+              "seduced"
+            ],
+            [
+              "theodicean"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"hydrocharis\", \"hydrorachis\", \"pc\", \"atlantis\", \"shoreless\", \"nonenergic\", \"theraean\", \"contoid\", \"premating\", \"tampering\", \"ungrieved\", \"sonable\", \"eslabon\"]\n",
+        "expected_answer": "[[\"atlantis\"], [\"contoid\"], [\"eslabon\", \"sonable\"], [\"hydrocharis\", \"hydrorachis\"], [\"nonenergic\"], [\"pc\"], [\"premating\", \"tampering\"], [\"shoreless\"], [\"theraean\"], [\"ungrieved\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to create a way to identify anagrams. The best way is to sort the letters of each word, as anagrams will have the same sorted sequence of letters.\n\n2) Let me sort each word's letters:\n- hydrocharis \u2192 \"acdhhiorrs\"\n- hydrorachis \u2192 \"acdhhiorrs\"\n- pc \u2192 \"cp\"\n- atlantis \u2192 \"aailnstt\"\n- shoreless \u2192 \"ehlorsss\"\n- nonenergic \u2192 \"ceeginnor\"\n- theraean \u2192 \"aaehnrt\"\n- contoid \u2192 \"cdinoot\"\n- premating \u2192 \"aegimnprt\"\n- tampering \u2192 \"aegimnprt\"\n- ungrieved \u2192 \"deginruv\"\n- sonable \u2192 \"abelnos\"\n- eslabon \u2192 \"abelnos\"\n\n3) Now grouping words with the same sorted letters:\n- \"hydrocharis\" and \"hydrorachis\" share \"acdhhiorrs\"\n- \"premating\" and \"tampering\" share \"aegimnprt\"\n- \"sonable\" and \"eslabon\" share \"abelnos\"\n- All other words have unique sorted letters\n\n4) Therefore, these are the groups of anagrams:\n</reasoning>\n<answer>\n[\n    [\"hydrocharis\", \"hydrorachis\"],\n    [\"pc\"],\n    [\"atlantis\"],\n    [\"shoreless\"],\n    [\"nonenergic\"],\n    [\"theraean\"],\n    [\"contoid\"],\n    [\"premating\", \"tampering\"],\n    [\"ungrieved\"],\n    [\"sonable\", \"eslabon\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "hydrocharis",
+            "hydrorachis",
+            "pc",
+            "atlantis",
+            "shoreless",
+            "nonenergic",
+            "theraean",
+            "contoid",
+            "premating",
+            "tampering",
+            "ungrieved",
+            "sonable",
+            "eslabon"
+          ],
+          "solution": [
+            [
+              "atlantis"
+            ],
+            [
+              "contoid"
+            ],
+            [
+              "eslabon",
+              "sonable"
+            ],
+            [
+              "hydrocharis",
+              "hydrorachis"
+            ],
+            [
+              "nonenergic"
+            ],
+            [
+              "pc"
+            ],
+            [
+              "premating",
+              "tampering"
+            ],
+            [
+              "shoreless"
+            ],
+            [
+              "theraean"
+            ],
+            [
+              "ungrieved"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"melanorrhea\", \"seed\", \"eductions\", \"tangerine\", \"argentine\", \"cruelest\", \"patienter\", \"pertinate\", \"pernettia\", \"hostlers\", \"holsters\", \"mgal\", \"glam\", \"racists\", \"sacrist\", \"ela\", \"lea\", \"ale\"]\n",
+        "expected_answer": "[[\"ale\", \"ela\", \"lea\"], [\"argentine\", \"tangerine\"], [\"cruelest\"], [\"eductions\"], [\"glam\", \"mgal\"], [\"holsters\", \"hostlers\"], [\"melanorrhea\"], [\"patienter\", \"pernettia\", \"pertinate\"], [\"racists\", \"sacrist\"], [\"seed\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need a way to identify anagrams. Two words are anagrams if they have the same letters. \n   I can sort the letters of each word to create a key.\n\n2) Let me sort each word's letters and group them:\n\nmelanorrhea -> aaehlmnnorr\nseed -> dees\neductions -> cdeinostu\ntangerine -> aeeginrtn\nargentine -> aeeginrtn\ncruelest -> ceersltu\npatienter -> aeeinprtt\npertinate -> aeeinprtt\npernettia -> aeeinprtt\nhostlers -> ehlorssst\nholsters -> ehlorssst\nmgal -> aglm\nglam -> aglm\nracists -> acirssst\nsacrist -> acirssst\nela -> ael\nlea -> ael\nale -> ael\n\n3) Now grouping words with the same sorted letters:\n\n- aaehlmnnorr: [melanorrhea]\n- dees: [seed]\n- cdeinostu: [eductions]\n- aeeginrtn: [tangerine, argentine]\n- ceersltu: [cruelest]\n- aeeinprtt: [patienter, pertinate, pernettia]\n- ehlorssst: [hostlers, holsters]\n- aglm: [mgal, glam]\n- acirssst: [racists, sacrist]\n- ael: [ela, lea, ale]\n</reasoning>\n<answer>\n[\n    [\"melanorrhea\"],\n    [\"seed\"],\n    [\"eductions\"],\n    [\"tangerine\", \"argentine\"],\n    [\"cruelest\"],\n    [\"patienter\", \"pertinate\", \"pernettia\"],\n    [\"hostlers\", \"holsters\"],\n    [\"mgal\", \"glam\"],\n    [\"racists\", \"sacrist\"],\n    [\"ela\", \"lea\", \"ale\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "melanorrhea",
+            "seed",
+            "eductions",
+            "tangerine",
+            "argentine",
+            "cruelest",
+            "patienter",
+            "pertinate",
+            "pernettia",
+            "hostlers",
+            "holsters",
+            "mgal",
+            "glam",
+            "racists",
+            "sacrist",
+            "ela",
+            "lea",
+            "ale"
+          ],
+          "solution": [
+            [
+              "ale",
+              "ela",
+              "lea"
+            ],
+            [
+              "argentine",
+              "tangerine"
+            ],
+            [
+              "cruelest"
+            ],
+            [
+              "eductions"
+            ],
+            [
+              "glam",
+              "mgal"
+            ],
+            [
+              "holsters",
+              "hostlers"
+            ],
+            [
+              "melanorrhea"
+            ],
+            [
+              "patienter",
+              "pernettia",
+              "pertinate"
+            ],
+            [
+              "racists",
+              "sacrist"
+            ],
+            [
+              "seed"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"garments\", \"margents\", \"shouted\", \"isochron\", \"dexes\", \"lilts\", \"tills\", \"thine\", \"celative\", \"velicate\", \"muratorian\", \"mortuarian\", \"freest\", \"tepary\", \"tapery\", \"petary\"]\n",
+        "expected_answer": "[[\"celative\", \"velicate\"], [\"dexes\"], [\"freest\"], [\"garments\", \"margents\"], [\"isochron\"], [\"lilts\", \"tills\"], [\"mortuarian\", \"muratorian\"], [\"petary\", \"tapery\", \"tepary\"], [\"shouted\"], [\"thine\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, for each word, I'll sort its letters alphabetically. Words that are anagrams will have the same sorted sequence.\n\n2) Let me sort each word:\n   - garments -> aegmnrst (Group 1)\n   - margents -> aegmnrst (Group 1)\n   - shouted -> dehostu (Group 2)\n   - isochron -> chinoors (Group 3)\n   - dexes -> deesx (Group 4)\n   - lilts -> illst (Group 5)\n   - tills -> illst (Group 5)\n   - thine -> ehint (Group 6)\n   - celative -> aceeiltv (Group 7)\n   - velicate -> aceeiltv (Group 7)\n   - muratorian -> aimnortru (Group 8)\n   - mortuarian -> aimnortru (Group 8)\n   - freest -> eefrst (Group 9)\n   - tepary -> aeprt (Group 10)\n   - tapery -> aeprt (Group 10)\n   - petary -> aeprt (Group 10)\n\n3) Now I can group the words with the same sorted letters together.\n</reasoning>\n\n<answer>\n[\n    [\"garments\", \"margents\"],\n    [\"shouted\"],\n    [\"isochron\"],\n    [\"dexes\"],\n    [\"lilts\", \"tills\"],\n    [\"thine\"],\n    [\"celative\", \"velicate\"],\n    [\"muratorian\", \"mortuarian\"],\n    [\"freest\"],\n    [\"tepary\", \"tapery\", \"petary\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "garments",
+            "margents",
+            "shouted",
+            "isochron",
+            "dexes",
+            "lilts",
+            "tills",
+            "thine",
+            "celative",
+            "velicate",
+            "muratorian",
+            "mortuarian",
+            "freest",
+            "tepary",
+            "tapery",
+            "petary"
+          ],
+          "solution": [
+            [
+              "celative",
+              "velicate"
+            ],
+            [
+              "dexes"
+            ],
+            [
+              "freest"
+            ],
+            [
+              "garments",
+              "margents"
+            ],
+            [
+              "isochron"
+            ],
+            [
+              "lilts",
+              "tills"
+            ],
+            [
+              "mortuarian",
+              "muratorian"
+            ],
+            [
+              "petary",
+              "tapery",
+              "tepary"
+            ],
+            [
+              "shouted"
+            ],
+            [
+              "thine"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"synoetic\", \"cytosine\", \"citoyens\", \"surbases\", \"rubasses\", \"seeings\", \"genesis\", \"histrionics\", \"beagle\", \"belage\", \"glebae\", \"spec\", \"psec\", \"resene\", \"reseen\", \"crany\", \"unhairer\", \"hists\"]\n",
+        "expected_answer": "[[\"beagle\", \"belage\", \"glebae\"], [\"citoyens\", \"cytosine\", \"synoetic\"], [\"crany\"], [\"genesis\", \"seeings\"], [\"histrionics\"], [\"hists\"], [\"psec\", \"spec\"], [\"reseen\", \"resene\"], [\"rubasses\", \"surbases\"], [\"unhairer\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a method to identify anagrams: sort the letters of each word. Words that are anagrams will have the same sorted sequence of letters.\n\n2) Let me sort each word's letters:\n   - synoetic -> ceinosty\n   - cytosine -> ceinosty\n   - citoyens -> ceinosty\n   - surbases -> abersssu\n   - rubasses -> abersssu\n   - seeings -> eeginss\n   - genesis -> eeginss\n   - histrionics -> (unique)\n   - beagle -> abegl\n   - belage -> abegl\n   - glebae -> abegl\n   - spec -> ceps\n   - psec -> ceps\n   - resene -> eenrs\n   - reseen -> eenrs\n   - crany -> (unique)\n   - unhairer -> (unique)\n   - hists -> (unique)\n\n3) Now I'll group words that have the same sorted letters:\n   - ceinosty: synoetic, cytosine, citoyens\n   - abersssu: surbases, rubasses\n   - eeginss: seeings, genesis\n   - abegl: beagle, belage, glebae\n   - ceps: spec, psec\n   - eenrs: resene, reseen\n   - Singles: histrionics, crany, unhairer, hists\n</reasoning>\n<answer>[\n    [\"synoetic\", \"cytosine\", \"citoyens\"],\n    [\"surbases\", \"rubasses\"],\n    [\"seeings\", \"genesis\"],\n    [\"beagle\", \"belage\", \"glebae\"],\n    [\"spec\", \"psec\"],\n    [\"resene\", \"reseen\"],\n    [\"histrionics\"],\n    [\"crany\"],\n    [\"unhairer\"],\n    [\"hists\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "synoetic",
+            "cytosine",
+            "citoyens",
+            "surbases",
+            "rubasses",
+            "seeings",
+            "genesis",
+            "histrionics",
+            "beagle",
+            "belage",
+            "glebae",
+            "spec",
+            "psec",
+            "resene",
+            "reseen",
+            "crany",
+            "unhairer",
+            "hists"
+          ],
+          "solution": [
+            [
+              "beagle",
+              "belage",
+              "glebae"
+            ],
+            [
+              "citoyens",
+              "cytosine",
+              "synoetic"
+            ],
+            [
+              "crany"
+            ],
+            [
+              "genesis",
+              "seeings"
+            ],
+            [
+              "histrionics"
+            ],
+            [
+              "hists"
+            ],
+            [
+              "psec",
+              "spec"
+            ],
+            [
+              "reseen",
+              "resene"
+            ],
+            [
+              "rubasses",
+              "surbases"
+            ],
+            [
+              "unhairer"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"chronophotography\", \"alypin\", \"pialyn\", \"subtruncated\", \"unsubtracted\", \"prosecutory\", \"orycteropus\", \"glistened\", \"fondu\", \"shyster\", \"thyrses\", \"gliadin\", \"dialing\", \"dup\", \"afterdeath\", \"fathearted\"]\n",
+        "expected_answer": "[[\"afterdeath\", \"fathearted\"], [\"alypin\", \"pialyn\"], [\"chronophotography\"], [\"dialing\", \"gliadin\"], [\"dup\"], [\"fondu\"], [\"glistened\"], [\"orycteropus\", \"prosecutory\"], [\"shyster\", \"thyrses\"], [\"subtruncated\", \"unsubtracted\"]]",
+        "model_answer": "<reasoning>\nTo solve this, I'll follow these steps:\n1. For each word, I'll sort its letters alphabetically to create a key\n2. Words that are anagrams will have the same sorted letters\n3. I'll use this key to group the words together\n\nLet's process each word:\n- chronophotography -> acghhnoooprpty\n- alypin -> ailnpy\n- pialyn -> ailnpy\n- subtruncated -> abcdnrsstuu\n- unsubtracted -> abcdnrsstuu\n- prosecutory -> cooprstuxy\n- orycteropus -> ceooprsrtu\n- glistened -> degilnst\n- fondu -> dfnou\n- shyster -> ehrsty\n- thyrses -> ehrsty\n- gliadin -> agiilnd\n- dialing -> agiilnd\n- dup -> dpu\n- afterdeath -> adefhrtst\n- fathearted -> adefhrtst\n\nNow grouping words with the same sorted letters:\n1. \"alypin\" and \"pialyn\"\n2. \"subtruncated\" and \"unsubtracted\"\n3. \"shyster\" and \"thyrses\"\n4. \"gliadin\" and \"dialing\"\n5. \"afterdeath\" and \"fathearted\"\nThe rest are standalone words with no anagrams in the list.\n</reasoning>\n<answer>\n[\n    [\"chronophotography\"],\n    [\"alypin\", \"pialyn\"],\n    [\"subtruncated\", \"unsubtracted\"],\n    [\"prosecutory\"],\n    [\"orycteropus\"],\n    [\"glistened\"],\n    [\"fondu\"],\n    [\"shyster\", \"thyrses\"],\n    [\"gliadin\", \"dialing\"],\n    [\"dup\"],\n    [\"afterdeath\", \"fathearted\"]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "chronophotography",
+            "alypin",
+            "pialyn",
+            "subtruncated",
+            "unsubtracted",
+            "prosecutory",
+            "orycteropus",
+            "glistened",
+            "fondu",
+            "shyster",
+            "thyrses",
+            "gliadin",
+            "dialing",
+            "dup",
+            "afterdeath",
+            "fathearted"
+          ],
+          "solution": [
+            [
+              "afterdeath",
+              "fathearted"
+            ],
+            [
+              "alypin",
+              "pialyn"
+            ],
+            [
+              "chronophotography"
+            ],
+            [
+              "dialing",
+              "gliadin"
+            ],
+            [
+              "dup"
+            ],
+            [
+              "fondu"
+            ],
+            [
+              "glistened"
+            ],
+            [
+              "orycteropus",
+              "prosecutory"
+            ],
+            [
+              "shyster",
+              "thyrses"
+            ],
+            [
+              "subtruncated",
+              "unsubtracted"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"ursuk\", \"kurus\", \"sewed\", \"tethers\", \"thester\", \"calibers\", \"theine\", \"greatened\", \"noneffusiveness\", \"fluorated\", \"romana\", \"ramona\", \"grapery\", \"parergy\"]\n",
+        "expected_answer": "[[\"calibers\"], [\"fluorated\"], [\"grapery\", \"parergy\"], [\"greatened\"], [\"kurus\", \"ursuk\"], [\"noneffusiveness\"], [\"ramona\", \"romana\"], [\"sewed\"], [\"tethers\", \"thester\"], [\"theine\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll sort the letters of each word alphabetically to create a key. Words that are anagrams will have the same key.\n\n\"ursuk\" -> \"krsuu\"\n\"kurus\" -> \"krsuu\"\n\"sewed\" -> \"deesw\"\n\"tethers\" -> \"eehrst\"\n\"thester\" -> \"eehrst\"\n\"calibers\" -> \"bceilrs\"\n\"theine\" -> \"eehint\"\n\"greatened\" -> \"adeegnrt\"\n\"noneffusiveness\" -> \"eefffnnossuv\"\n\"fluorated\" -> \"adeflort\"\n\"romana\" -> \"aamnor\"\n\"ramona\" -> \"aamnor\"\n\"grapery\" -> \"aegprry\"\n\"parergy\" -> \"aegprry\"\n\n2) Now I can group words that share the same sorted key:\n- \"ursuk\", \"kurus\" share \"krsuu\"\n- \"tethers\", \"thester\" share \"eehrst\"\n- \"romana\", \"ramona\" share \"aamnor\"\n- \"grapery\", \"parergy\" share \"aegprry\"\n- The rest have unique keys\n\n3) Therefore, the groups will be:\n[[\"ursuk\", \"kurus\"], [\"tethers\", \"thester\"], [\"romana\", \"ramona\"], [\"grapery\", \"parergy\"], [\"sewed\"], [\"calibers\"], [\"theine\"], [\"greatened\"], [\"noneffusiveness\"], [\"fluorated\"]]\n</reasoning>\n\n<answer>[[\"ursuk\", \"kurus\"], [\"tethers\", \"thester\"], [\"romana\", \"ramona\"], [\"grapery\", \"parergy\"], [\"sewed\"], [\"calibers\"], [\"theine\"], [\"greatened\"], [\"noneffusiveness\"], [\"fluorated\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "ursuk",
+            "kurus",
+            "sewed",
+            "tethers",
+            "thester",
+            "calibers",
+            "theine",
+            "greatened",
+            "noneffusiveness",
+            "fluorated",
+            "romana",
+            "ramona",
+            "grapery",
+            "parergy"
+          ],
+          "solution": [
+            [
+              "calibers"
+            ],
+            [
+              "fluorated"
+            ],
+            [
+              "grapery",
+              "parergy"
+            ],
+            [
+              "greatened"
+            ],
+            [
+              "kurus",
+              "ursuk"
+            ],
+            [
+              "noneffusiveness"
+            ],
+            [
+              "ramona",
+              "romana"
+            ],
+            [
+              "sewed"
+            ],
+            [
+              "tethers",
+              "thester"
+            ],
+            [
+              "theine"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"vestural\", \"vaulters\", \"saunter\", \"entireties\", \"ophis\", \"hopis\", \"reconform\", \"conformer\", \"fm\", \"mf\", \"terebinthina\", \"terebinthian\", \"softie\", \"gride\", \"camaca\", \"macaca\"]\n",
+        "expected_answer": "[[\"camaca\", \"macaca\"], [\"conformer\", \"reconform\"], [\"entireties\"], [\"fm\", \"mf\"], [\"gride\"], [\"hopis\", \"ophis\"], [\"saunter\"], [\"softie\"], [\"terebinthian\", \"terebinthina\"], [\"vaulters\", \"vestural\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a strategy to identify anagrams:\n   - Sort the letters of each word\n   - Words that have the same sorted letters are anagrams\n\n2) Let me sort the letters of each word:\n   - vestural \u2192 elrstuv\n   - vaulters \u2192 aelrstuv\n   - saunter \u2192 aenrstu\n   - entireties \u2192 eeiinrst\n   - ophis \u2192 hiops\n   - hopis \u2192 hiops\n   - reconform \u2192 cefmnnoor\n   - conformer \u2192 cefmnnoor\n   - fm \u2192 fm\n   - mf \u2192 fm\n   - terebinthina \u2192 abehinrtet\n   - terebinthian \u2192 abehinrtet\n   - softie \u2192 efiost\n   - gride \u2192 degir\n   - camaca \u2192 aaaccm\n   - macaca \u2192 aaaccm\n\n3) Now grouping words with same sorted letters:\n   - \"vestural\", \"vaulters\" (elrstuv)\n   - \"ophis\", \"hopis\" (hiops)\n   - \"reconform\", \"conformer\" (cefmnnoor)\n   - \"fm\", \"mf\" (fm)\n   - \"terebinthina\", \"terebinthian\" (abehinrtet)\n   - \"camaca\", \"macaca\" (aaaccm)\n   \n4) Words without anagrams:\n   - \"saunter\"\n   - \"entireties\"\n   - \"softie\"\n   - \"gride\"\n</reasoning>\n<answer>\n[\n    [\"vestural\", \"vaulters\"],\n    [\"saunter\"],\n    [\"entireties\"],\n    [\"ophis\", \"hopis\"],\n    [\"reconform\", \"conformer\"],\n    [\"fm\", \"mf\"],\n    [\"terebinthina\", \"terebinthian\"],\n    [\"softie\"],\n    [\"gride\"],\n    [\"camaca\", \"macaca\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "vestural",
+            "vaulters",
+            "saunter",
+            "entireties",
+            "ophis",
+            "hopis",
+            "reconform",
+            "conformer",
+            "fm",
+            "mf",
+            "terebinthina",
+            "terebinthian",
+            "softie",
+            "gride",
+            "camaca",
+            "macaca"
+          ],
+          "solution": [
+            [
+              "camaca",
+              "macaca"
+            ],
+            [
+              "conformer",
+              "reconform"
+            ],
+            [
+              "entireties"
+            ],
+            [
+              "fm",
+              "mf"
+            ],
+            [
+              "gride"
+            ],
+            [
+              "hopis",
+              "ophis"
+            ],
+            [
+              "saunter"
+            ],
+            [
+              "softie"
+            ],
+            [
+              "terebinthian",
+              "terebinthina"
+            ],
+            [
+              "vaulters",
+              "vestural"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"anthologise\", \"buffoon\", \"bouffon\", \"basaltine\", \"stainable\", \"balanites\", \"placation\", \"pactional\", \"pactolian\", \"contrive\", \"scarificator\", \"anemopsis\", \"parkee\", \"peaker\", \"blacklist\", \"stickball\", \"recontests\"]\n",
+        "expected_answer": "[[\"anemopsis\"], [\"anthologise\"], [\"balanites\", \"basaltine\", \"stainable\"], [\"blacklist\", \"stickball\"], [\"bouffon\", \"buffoon\"], [\"contrive\"], [\"pactional\", \"pactolian\", \"placation\"], [\"parkee\", \"peaker\"], [\"recontests\"], [\"scarificator\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters alphabetically. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word:\n- anthologise -> aeghilnost\n- buffoon -> bffnoou\n- bouffon -> bffnoou\n- basaltine -> aabeilnst\n- stainable -> aabeilnst\n- balanites -> aabeilnst\n- placation -> aacilnopt\n- pactional -> aacilnopt\n- pactolian -> aacilnopt\n- contrive -> ceinortv\n- scarificator -> aacfiiorsrt\n- anemopsis -> aeimnopss\n- parkee -> aeekpr\n- peaker -> aeekpr\n- blacklist -> abckillst\n- stickball -> abckillst\n- recontests -> cenorsstt\n\n3) Now I can group words with the same sorted letters:\n- [buffoon, bouffon] have same sorted letters\n- [basaltine, stainable, balanites] have same sorted letters\n- [placation, pactional, pactolian] have same sorted letters\n- [parkee, peaker] have same sorted letters\n- [blacklist, stickball] have same sorted letters\n- [anthologise], [contrive], [scarificator], [anemopsis], [recontests] are alone\n</reasoning>\n<answer>\n[\n    [\"anthologise\"],\n    [\"buffoon\", \"bouffon\"],\n    [\"basaltine\", \"stainable\", \"balanites\"],\n    [\"placation\", \"pactional\", \"pactolian\"],\n    [\"contrive\"],\n    [\"scarificator\"],\n    [\"anemopsis\"],\n    [\"parkee\", \"peaker\"],\n    [\"blacklist\", \"stickball\"],\n    [\"recontests\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "anthologise",
+            "buffoon",
+            "bouffon",
+            "basaltine",
+            "stainable",
+            "balanites",
+            "placation",
+            "pactional",
+            "pactolian",
+            "contrive",
+            "scarificator",
+            "anemopsis",
+            "parkee",
+            "peaker",
+            "blacklist",
+            "stickball",
+            "recontests"
+          ],
+          "solution": [
+            [
+              "anemopsis"
+            ],
+            [
+              "anthologise"
+            ],
+            [
+              "balanites",
+              "basaltine",
+              "stainable"
+            ],
+            [
+              "blacklist",
+              "stickball"
+            ],
+            [
+              "bouffon",
+              "buffoon"
+            ],
+            [
+              "contrive"
+            ],
+            [
+              "pactional",
+              "pactolian",
+              "placation"
+            ],
+            [
+              "parkee",
+              "peaker"
+            ],
+            [
+              "recontests"
+            ],
+            [
+              "scarificator"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"scrutable\", \"huffs\", \"shuff\", \"crea\", \"acre\", \"acer\", \"feudalism\", \"surlier\", \"grips\", \"sprig\", \"prigs\", \"constrainers\", \"petrolist\", \"maholtine\", \"goyle\"]\n",
+        "expected_answer": "[[\"acer\", \"acre\", \"crea\"], [\"constrainers\"], [\"feudalism\"], [\"goyle\"], [\"grips\", \"prigs\", \"sprig\"], [\"huffs\", \"shuff\"], [\"maholtine\"], [\"petrolist\"], [\"scrutable\"], [\"surlier\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, for each word, I'll sort its letters alphabetically. Words that are anagrams will have the same sorted sequence.\n\n2) Let me sort and group them:\n   - scrutable -> abcelrstu\n   - huffs -> ffhsu\n   - shuff -> ffhsu\n   - crea -> acer\n   - acre -> acer\n   - acer -> acer\n   - feudalism -> adefilmsu\n   - surlier -> eilrrsu\n   - grips -> giprs\n   - sprig -> giprs\n   - prigs -> giprs\n   - constrainers -> aceinnrrsst\n   - petrolist -> eiloprstt\n   - maholtine -> aehilmnot\n   - goyle -> egloy\n\n3) Grouping words with the same sorted letters:\n   - acer: [\"crea\", \"acre\", \"acer\"]\n   - ffhsu: [\"huffs\", \"shuff\"]\n   - giprs: [\"grips\", \"sprig\", \"prigs\"]\n   \n4) The remaining words have no anagrams in the list:\n   [\"scrutable\", \"feudalism\", \"surlier\", \"constrainers\", \"petrolist\", \"maholtine\", \"goyle\"]\n</reasoning>\n<answer>\n[\n    [\"crea\", \"acre\", \"acer\"],\n    [\"huffs\", \"shuff\"],\n    [\"grips\", \"sprig\", \"prigs\"],\n    [\"scrutable\"],\n    [\"feudalism\"],\n    [\"surlier\"],\n    [\"constrainers\"],\n    [\"petrolist\"],\n    [\"maholtine\"],\n    [\"goyle\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "scrutable",
+            "huffs",
+            "shuff",
+            "crea",
+            "acre",
+            "acer",
+            "feudalism",
+            "surlier",
+            "grips",
+            "sprig",
+            "prigs",
+            "constrainers",
+            "petrolist",
+            "maholtine",
+            "goyle"
+          ],
+          "solution": [
+            [
+              "acer",
+              "acre",
+              "crea"
+            ],
+            [
+              "constrainers"
+            ],
+            [
+              "feudalism"
+            ],
+            [
+              "goyle"
+            ],
+            [
+              "grips",
+              "prigs",
+              "sprig"
+            ],
+            [
+              "huffs",
+              "shuff"
+            ],
+            [
+              "maholtine"
+            ],
+            [
+              "petrolist"
+            ],
+            [
+              "scrutable"
+            ],
+            [
+              "surlier"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"iyar\", \"yair\", \"trussed\", \"inwritten\", \"kangla\", \"kalang\", \"dianetics\", \"indicates\", \"actinides\", \"andesitic\", \"cartons\", \"uglily\", \"scroyle\", \"restiform\", \"firestorm\", \"uncoils\"]\n",
+        "expected_answer": "[[\"actinides\", \"andesitic\", \"dianetics\", \"indicates\"], [\"cartons\"], [\"firestorm\", \"restiform\"], [\"inwritten\"], [\"iyar\", \"yair\"], [\"kalang\", \"kangla\"], [\"scroyle\"], [\"trussed\"], [\"uglily\"], [\"uncoils\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a strategy: For each word, I'll sort its letters alphabetically. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word's letters:\n   - iyar -> airy\n   - yair -> airy\n   - trussed -> dersstu\n   - inwritten -> eiinnrttw\n   - kangla -> aaglkn\n   - kalang -> aaglkn\n   - dianetics -> acdeinist\n   - indicates -> acdeinist\n   - actinides -> acdeinist\n   - andesitic -> acdeinist\n   - cartons -> acnorst\n   - uglily -> gilluy\n   - scroyle -> celorsy\n   - restiform -> efimorts\n   - firestorm -> efimorts\n   - uncoils -> cilnosu\n\n3) Now I can group words that have the same sorted letters:\n   - airy: \"iyar\", \"yair\"\n   - aaglkn: \"kangla\", \"kalang\"\n   - acdeinist: \"dianetics\", \"indicates\", \"actinides\", \"andesitic\"\n   - efimorts: \"restiform\", \"firestorm\"\n   \n4) Words that appear only once form their own groups:\n   - \"trussed\"\n   - \"inwritten\"\n   - \"cartons\"\n   - \"uglily\"\n   - \"scroyle\"\n   - \"uncoils\"\n</reasoning>\n<answer>[[\"iyar\", \"yair\"], [\"trussed\"], [\"inwritten\"], [\"kangla\", \"kalang\"], [\"dianetics\", \"indicates\", \"actinides\", \"andesitic\"], [\"cartons\"], [\"uglily\"], [\"scroyle\"], [\"restiform\", \"firestorm\"], [\"uncoils\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "iyar",
+            "yair",
+            "trussed",
+            "inwritten",
+            "kangla",
+            "kalang",
+            "dianetics",
+            "indicates",
+            "actinides",
+            "andesitic",
+            "cartons",
+            "uglily",
+            "scroyle",
+            "restiform",
+            "firestorm",
+            "uncoils"
+          ],
+          "solution": [
+            [
+              "actinides",
+              "andesitic",
+              "dianetics",
+              "indicates"
+            ],
+            [
+              "cartons"
+            ],
+            [
+              "firestorm",
+              "restiform"
+            ],
+            [
+              "inwritten"
+            ],
+            [
+              "iyar",
+              "yair"
+            ],
+            [
+              "kalang",
+              "kangla"
+            ],
+            [
+              "scroyle"
+            ],
+            [
+              "trussed"
+            ],
+            [
+              "uglily"
+            ],
+            [
+              "uncoils"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"monist\", \"omnist\", \"vibratos\", \"bovarist\", \"bughouse\", \"resown\", \"worsen\", \"owners\", \"rowens\", \"slitwork\", \"listwork\", \"bridelace\", \"aik\", \"kai\", \"borine\", \"bonier\", \"eroticism\", \"trioecism\", \"mutinado\"]\n",
+        "expected_answer": "[[\"aik\", \"kai\"], [\"bonier\", \"borine\"], [\"bovarist\", \"vibratos\"], [\"bridelace\"], [\"bughouse\"], [\"eroticism\", \"trioecism\"], [\"listwork\", \"slitwork\"], [\"monist\", \"omnist\"], [\"mutinado\"], [\"owners\", \"resown\", \"rowens\", \"worsen\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a method to identify anagrams:\n   - For each word, sort its letters alphabetically\n   - Words that produce the same sorted sequence are anagrams\n\n2) Let me sort each word's letters:\n   - monist, omnist \u2192 imnost\n   - vibratos, bovarist \u2192 abiorstv\n   - bughouse \u2192 beghousu\n   - resown, worsen, owners, rowens \u2192 enorsw\n   - slitwork, listwork \u2192 iklorstw\n   - bridelace \u2192 abcdeilr\n   - aik, kai \u2192 aik\n   - borine, bonier \u2192 beinor\n   - eroticism, trioecism \u2192 ceimorst\n   - mutinado \u2192 adimnotu\n\n3) Now group them based on their sorted letters:\n   - Group 1: [\"monist\", \"omnist\"]\n   - Group 2: [\"vibratos\", \"bovarist\"]\n   - Group 3: [\"bughouse\"]\n   - Group 4: [\"resown\", \"worsen\", \"owners\", \"rowens\"]\n   - Group 5: [\"slitwork\", \"listwork\"]\n   - Group 6: [\"bridelace\"]\n   - Group 7: [\"aik\", \"kai\"]\n   - Group 8: [\"borine\", \"bonier\"]\n   - Group 9: [\"eroticism\", \"trioecism\"]\n   - Group 10: [\"mutinado\"]\n</reasoning>\n<answer>[\n    [\"monist\", \"omnist\"],\n    [\"vibratos\", \"bovarist\"],\n    [\"bughouse\"],\n    [\"resown\", \"worsen\", \"owners\", \"rowens\"],\n    [\"slitwork\", \"listwork\"],\n    [\"bridelace\"],\n    [\"aik\", \"kai\"],\n    [\"borine\", \"bonier\"],\n    [\"eroticism\", \"trioecism\"],\n    [\"mutinado\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "monist",
+            "omnist",
+            "vibratos",
+            "bovarist",
+            "bughouse",
+            "resown",
+            "worsen",
+            "owners",
+            "rowens",
+            "slitwork",
+            "listwork",
+            "bridelace",
+            "aik",
+            "kai",
+            "borine",
+            "bonier",
+            "eroticism",
+            "trioecism",
+            "mutinado"
+          ],
+          "solution": [
+            [
+              "aik",
+              "kai"
+            ],
+            [
+              "bonier",
+              "borine"
+            ],
+            [
+              "bovarist",
+              "vibratos"
+            ],
+            [
+              "bridelace"
+            ],
+            [
+              "bughouse"
+            ],
+            [
+              "eroticism",
+              "trioecism"
+            ],
+            [
+              "listwork",
+              "slitwork"
+            ],
+            [
+              "monist",
+              "omnist"
+            ],
+            [
+              "mutinado"
+            ],
+            [
+              "owners",
+              "resown",
+              "rowens",
+              "worsen"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"canter\", \"recant\", \"nectar\", \"cranet\", \"creant\", \"anisopod\", \"isopodan\", \"loxotic\", \"leveraged\", \"daniele\", \"aubretias\", \"aubrietas\", \"scepterdom\", \"conversation\", \"notarial\", \"rotalian\", \"adenochondroma\", \"chondroadenoma\"]\n",
+        "expected_answer": "[[\"adenochondroma\", \"chondroadenoma\"], [\"anisopod\", \"isopodan\"], [\"aubretias\", \"aubrietas\"], [\"canter\", \"cranet\", \"creant\", \"nectar\", \"recant\"], [\"conversation\"], [\"daniele\"], [\"leveraged\"], [\"loxotic\"], [\"notarial\", \"rotalian\"], [\"scepterdom\"]]",
+        "model_answer": "<reasoning>\nTo solve this problem, I'll follow these steps:\n1. For each word, I'll sort its letters alphabetically to create a key\n2. Words that are anagrams will have the same key when their letters are sorted\n3. I'll use this key to group the words together\n\nLet's process each word:\n- canter -> 'acenrt' -> Group 1\n- recant -> 'acenrt' -> Group 1\n- nectar -> 'acenrt' -> Group 1\n- cranet -> 'acenrt' -> Group 1\n- creant -> 'acenrt' -> Group 1\n- anisopod -> 'adinops' -> Group 2\n- isopodan -> 'adinops' -> Group 2\n- loxotic -> 'cilootx' -> Group 3 (alone)\n- leveraged -> 'adeeglrv' -> Group 4 (alone)\n- daniele -> 'adeeiln' -> Group 5 (alone)\n- aubretias -> 'abeirstu' -> Group 6\n- aubrietas -> 'abeirstu' -> Group 6\n- scepterdom -> 'cdemoprst' -> Group 7 (alone)\n- conversation -> 'acinnorstv' -> Group 8 (alone)\n- notarial -> 'aailnort' -> Group 9\n- rotalian -> 'aailnort' -> Group 9\n- adenochondroma -> 'aacddehmnoonr' -> Group 10\n- chondroadenoma -> 'aacddehmnoonr' -> Group 10\n</reasoning>\n<answer>[\n    [\"canter\", \"recant\", \"nectar\", \"cranet\", \"creant\"],\n    [\"anisopod\", \"isopodan\"],\n    [\"loxotic\"],\n    [\"leveraged\"],\n    [\"daniele\"],\n    [\"aubretias\", \"aubrietas\"],\n    [\"scepterdom\"],\n    [\"conversation\"],\n    [\"notarial\", \"rotalian\"],\n    [\"adenochondroma\", \"chondroadenoma\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "canter",
+            "recant",
+            "nectar",
+            "cranet",
+            "creant",
+            "anisopod",
+            "isopodan",
+            "loxotic",
+            "leveraged",
+            "daniele",
+            "aubretias",
+            "aubrietas",
+            "scepterdom",
+            "conversation",
+            "notarial",
+            "rotalian",
+            "adenochondroma",
+            "chondroadenoma"
+          ],
+          "solution": [
+            [
+              "adenochondroma",
+              "chondroadenoma"
+            ],
+            [
+              "anisopod",
+              "isopodan"
+            ],
+            [
+              "aubretias",
+              "aubrietas"
+            ],
+            [
+              "canter",
+              "cranet",
+              "creant",
+              "nectar",
+              "recant"
+            ],
+            [
+              "conversation"
+            ],
+            [
+              "daniele"
+            ],
+            [
+              "leveraged"
+            ],
+            [
+              "loxotic"
+            ],
+            [
+              "notarial",
+              "rotalian"
+            ],
+            [
+              "scepterdom"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"cornerstone\", \"nonsecretor\", \"clupeoids\", \"infarction\", \"infraction\", \"draba\", \"chordal\", \"racers\", \"scarer\", \"carers\", \"sartoriad\", \"foiler\", \"farse\", \"fears\", \"fares\", \"safer\", \"frase\", \"sword\"]\n",
+        "expected_answer": "[[\"carers\", \"racers\", \"scarer\"], [\"chordal\"], [\"clupeoids\"], [\"cornerstone\", \"nonsecretor\"], [\"draba\"], [\"fares\", \"farse\", \"fears\", \"frase\", \"safer\"], [\"foiler\"], [\"infarction\", \"infraction\"], [\"sartoriad\"], [\"sword\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters alphabetically. Words that are anagrams will have the same sorted letters.\n\n2) Let me go through each word:\n   - \"cornerstone\", \"nonsecretor\" -> \"cennooprst\"\n   - \"clupeoids\" -> \"cdeilopsu\"\n   - \"infarction\", \"infraction\" -> \"acfiinnort\"\n   - \"draba\" -> \"aabdr\"\n   - \"chordal\" -> \"acdhlo\"\n   - \"racers\", \"scarer\", \"carers\" -> \"acerrs\"\n   - \"sartoriad\" -> \"aadiorst\"\n   - \"foiler\" -> \"efilor\"\n   - \"farse\", \"fears\", \"fares\", \"safer\", \"frase\" -> \"aefrs\"\n   - \"sword\" -> \"dorsw\"\n\n3) Now I can group words that share the same sorted letters together.\n\n4) Looking at the groups:\n   - \"cornerstone\" and \"nonsecretor\" are anagrams\n   - \"infarction\" and \"infraction\" are anagrams\n   - \"racers\", \"scarer\", and \"carers\" are anagrams\n   - \"farse\", \"fears\", \"fares\", \"safer\", and \"frase\" are anagrams\n   - The rest are single words with no anagrams in the list\n</reasoning>\n<answer>\n[\n    [\"cornerstone\", \"nonsecretor\"],\n    [\"clupeoids\"],\n    [\"infarction\", \"infraction\"],\n    [\"draba\"],\n    [\"chordal\"],\n    [\"racers\", \"scarer\", \"carers\"],\n    [\"sartoriad\"],\n    [\"foiler\"],\n    [\"farse\", \"fears\", \"fares\", \"safer\", \"frase\"],\n    [\"sword\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "cornerstone",
+            "nonsecretor",
+            "clupeoids",
+            "infarction",
+            "infraction",
+            "draba",
+            "chordal",
+            "racers",
+            "scarer",
+            "carers",
+            "sartoriad",
+            "foiler",
+            "farse",
+            "fears",
+            "fares",
+            "safer",
+            "frase",
+            "sword"
+          ],
+          "solution": [
+            [
+              "carers",
+              "racers",
+              "scarer"
+            ],
+            [
+              "chordal"
+            ],
+            [
+              "clupeoids"
+            ],
+            [
+              "cornerstone",
+              "nonsecretor"
+            ],
+            [
+              "draba"
+            ],
+            [
+              "fares",
+              "farse",
+              "fears",
+              "frase",
+              "safer"
+            ],
+            [
+              "foiler"
+            ],
+            [
+              "infarction",
+              "infraction"
+            ],
+            [
+              "sartoriad"
+            ],
+            [
+              "sword"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"gault\", \"brontides\", \"birdstone\", \"ochrolite\", \"horotelic\", \"lackers\", \"rarely\", \"unsheared\", \"ricey\", \"comfits\", \"pergamic\", \"crimpage\", \"unrip\", \"purin\"]\n",
+        "expected_answer": "[[\"birdstone\", \"brontides\"], [\"comfits\"], [\"crimpage\", \"pergamic\"], [\"gault\"], [\"horotelic\", \"ochrolite\"], [\"lackers\"], [\"purin\", \"unrip\"], [\"rarely\"], [\"ricey\"], [\"unsheared\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word:\n- gault -> agltu\n- brontides -> bdinorst\n- birdstone -> bdinorst\n- ochrolite -> cehilort\n- horotelic -> cehilort\n- lackers -> aceklrs\n- rarely -> aelrry\n- unsheared -> adehnrsu\n- ricey -> ceiry\n- comfits -> cfimos\n- pergamic -> acegimpr\n- crimpage -> acegimpr\n- unrip -> inpru\n- purin -> inpru\n\n3) Looking at the sorted versions:\n- brontides and birdstone share bdinorst\n- ochrolite and horotelic share cehilort\n- pergamic and crimpage share acegimpr\n- unrip and purin share inpru\n- The rest have unique sorted versions\n\n4) Therefore, these are the groupings.\n</reasoning>\n<answer>\n[\n    [\"gault\"],\n    [\"brontides\", \"birdstone\"],\n    [\"ochrolite\", \"horotelic\"],\n    [\"lackers\"],\n    [\"rarely\"],\n    [\"unsheared\"],\n    [\"ricey\"],\n    [\"comfits\"],\n    [\"pergamic\", \"crimpage\"],\n    [\"unrip\", \"purin\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "gault",
+            "brontides",
+            "birdstone",
+            "ochrolite",
+            "horotelic",
+            "lackers",
+            "rarely",
+            "unsheared",
+            "ricey",
+            "comfits",
+            "pergamic",
+            "crimpage",
+            "unrip",
+            "purin"
+          ],
+          "solution": [
+            [
+              "birdstone",
+              "brontides"
+            ],
+            [
+              "comfits"
+            ],
+            [
+              "crimpage",
+              "pergamic"
+            ],
+            [
+              "gault"
+            ],
+            [
+              "horotelic",
+              "ochrolite"
+            ],
+            [
+              "lackers"
+            ],
+            [
+              "purin",
+              "unrip"
+            ],
+            [
+              "rarely"
+            ],
+            [
+              "ricey"
+            ],
+            [
+              "unsheared"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"incontrovertible\", \"introconvertible\", \"bernard\", \"ambivert\", \"verbatim\", \"tinoceratid\", \"cateress\", \"cerastes\", \"tylosis\", \"naifly\", \"creosotic\", \"corticose\", \"crocoites\", \"wegotism\", \"twigsome\", \"melodize\", \"modelize\"]\n",
+        "expected_answer": "[[\"ambivert\", \"verbatim\"], [\"bernard\"], [\"cateress\", \"cerastes\"], [\"corticose\", \"creosotic\", \"crocoites\"], [\"incontrovertible\", \"introconvertible\"], [\"melodize\", \"modelize\"], [\"naifly\"], [\"tinoceratid\"], [\"twigsome\", \"wegotism\"], [\"tylosis\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each word, I'll sort its letters alphabetically to create a key. Words that are anagrams will have the same key.\n\n2) Let me create these keys:\n- incontrovertible -> bceilnnoorrttv\n- introconvertible -> bceilnnoorrttv\n- bernard -> abdenrr\n- ambivert -> abeimrtv\n- verbatim -> abeimrtv\n- tinoceratid -> acdeinnort\n- cateress -> aceersst\n- cerastes -> aceersst\n- tylosis -> ilossty\n- naifly -> afilny\n- creosotic -> cceioorst\n- corticose -> cceioorst\n- crocoites -> cceioorst\n- wegotism -> egimostw\n- twigsome -> egimostw\n- melodize -> deeilmoz\n- modelize -> deeilmoz\n\n3) Now grouping words with the same sorted letters:\n* bceilnnoorrttv: incontrovertible, introconvertible\n* abeimrtv: ambivert, verbatim\n* aceersst: cateress, cerastes\n* cceioorst: creosotic, corticose, crocoites\n* egimostw: wegotism, twigsome\n* deeilmoz: melodize, modelize\n* Others are single words (no anagrams): bernard, tinoceratid, tylosis, naifly\n</reasoning>\n<answer>\n[\n    [\"incontrovertible\", \"introconvertible\"],\n    [\"ambivert\", \"verbatim\"],\n    [\"cateress\", \"cerastes\"],\n    [\"creosotic\", \"corticose\", \"crocoites\"],\n    [\"wegotism\", \"twigsome\"],\n    [\"melodize\", \"modelize\"],\n    [\"bernard\"],\n    [\"tinoceratid\"],\n    [\"tylosis\"],\n    [\"naifly\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "incontrovertible",
+            "introconvertible",
+            "bernard",
+            "ambivert",
+            "verbatim",
+            "tinoceratid",
+            "cateress",
+            "cerastes",
+            "tylosis",
+            "naifly",
+            "creosotic",
+            "corticose",
+            "crocoites",
+            "wegotism",
+            "twigsome",
+            "melodize",
+            "modelize"
+          ],
+          "solution": [
+            [
+              "ambivert",
+              "verbatim"
+            ],
+            [
+              "bernard"
+            ],
+            [
+              "cateress",
+              "cerastes"
+            ],
+            [
+              "corticose",
+              "creosotic",
+              "crocoites"
+            ],
+            [
+              "incontrovertible",
+              "introconvertible"
+            ],
+            [
+              "melodize",
+              "modelize"
+            ],
+            [
+              "naifly"
+            ],
+            [
+              "tinoceratid"
+            ],
+            [
+              "twigsome",
+              "wegotism"
+            ],
+            [
+              "tylosis"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"eponge\", \"pistacite\", \"decommission\", \"unportrayed\", \"chanelled\", \"padfoot\", \"oman\", \"mano\", \"noma\", \"mona\", \"noam\", \"innodate\", \"striated\", \"tardiest\", \"distater\", \"pashka\", \"shapka\"]\n",
+        "expected_answer": "[[\"chanelled\"], [\"decommission\"], [\"distater\", \"striated\", \"tardiest\"], [\"eponge\"], [\"innodate\"], [\"mano\", \"mona\", \"noam\", \"noma\", \"oman\"], [\"padfoot\"], [\"pashka\", \"shapka\"], [\"pistacite\"], [\"unportrayed\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a method to identify anagrams:\n   - For each word, sort its letters alphabetically\n   - Words that produce the same sorted sequence are anagrams\n\n2) Let's sort each word's letters:\n   - \"eponge\" -> \"eegnop\"\n   - \"pistacite\" -> \"aceipstt\"\n   - \"decommission\" -> \"cdeimnoos\"\n   - \"unportrayed\" -> \"adenoprtu\"\n   - \"chanelled\" -> \"cdehllnn\"\n   - \"padfoot\" -> \"adfopt\"\n   - \"oman\" -> \"amno\"\n   - \"mano\" -> \"amno\"\n   - \"noma\" -> \"amno\"\n   - \"mona\" -> \"amno\"\n   - \"noam\" -> \"amno\"\n   - \"innodate\" -> \"adeinot\"\n   - \"striated\" -> \"adeirstt\"\n   - \"tardiest\" -> \"adeirstt\"\n   - \"distater\" -> \"adeirstt\"\n   - \"pashka\" -> \"aahkps\"\n   - \"shapka\" -> \"aahkps\"\n\n3) Now group words with the same sorted sequence:\n   - \"amno\": [\"oman\", \"mano\", \"noma\", \"mona\", \"noam\"]\n   - \"adeirstt\": [\"striated\", \"tardiest\", \"distater\"]\n   - \"aahkps\": [\"pashka\", \"shapka\"]\n   - All others are single groups\n</reasoning>\n<answer>\n[\n    [\"eponge\"],\n    [\"pistacite\"],\n    [\"decommission\"],\n    [\"unportrayed\"],\n    [\"chanelled\"],\n    [\"padfoot\"],\n    [\"oman\", \"mano\", \"noma\", \"mona\", \"noam\"],\n    [\"innodate\"],\n    [\"striated\", \"tardiest\", \"distater\"],\n    [\"pashka\", \"shapka\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "eponge",
+            "pistacite",
+            "decommission",
+            "unportrayed",
+            "chanelled",
+            "padfoot",
+            "oman",
+            "mano",
+            "noma",
+            "mona",
+            "noam",
+            "innodate",
+            "striated",
+            "tardiest",
+            "distater",
+            "pashka",
+            "shapka"
+          ],
+          "solution": [
+            [
+              "chanelled"
+            ],
+            [
+              "decommission"
+            ],
+            [
+              "distater",
+              "striated",
+              "tardiest"
+            ],
+            [
+              "eponge"
+            ],
+            [
+              "innodate"
+            ],
+            [
+              "mano",
+              "mona",
+              "noam",
+              "noma",
+              "oman"
+            ],
+            [
+              "padfoot"
+            ],
+            [
+              "pashka",
+              "shapka"
+            ],
+            [
+              "pistacite"
+            ],
+            [
+              "unportrayed"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"friends\", \"redfins\", \"finders\", \"spathal\", \"lemma\", \"melam\", \"kiver\", \"duali\", \"harpists\", \"wonton\", \"mohwa\", \"acoup\", \"bucrnia\", \"brucina\"]\n",
+        "expected_answer": "[[\"acoup\"], [\"brucina\", \"bucrnia\"], [\"duali\"], [\"finders\", \"friends\", \"redfins\"], [\"harpists\"], [\"kiver\"], [\"lemma\", \"melam\"], [\"mohwa\"], [\"spathal\"], [\"wonton\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) To find anagrams, I'll sort the letters of each word and use that as a key to group them. Words with the same sorted letters are anagrams.\n\n2) Let me sort each word's letters:\n- friends -> definnrs\n- redfins -> definnrs\n- finders -> definnrs\n- spathal -> aahlpst\n- lemma -> aelmm\n- melam -> aelmm\n- kiver -> eikrv\n- duali -> adilu\n- harpists -> ahiprst\n- wonton -> nnotow\n- mohwa -> ahmow\n- acoup -> acopu\n- bucrnia -> abcinru\n- brucina -> abcinru\n\n3) Grouping words with the same sorted letters:\n- definnrs: [\"friends\", \"redfins\", \"finders\"]\n- aahlpst: [\"spathal\"]\n- aelmm: [\"lemma\", \"melam\"]\n- eikrv: [\"kiver\"]\n- adilu: [\"duali\"]\n- ahiprst: [\"harpists\"]\n- nnotow: [\"wonton\"]\n- ahmow: [\"mohwa\"]\n- acopu: [\"acoup\"]\n- abcinru: [\"bucrnia\", \"brucina\"]\n</reasoning>\n<answer>[[\"friends\", \"redfins\", \"finders\"], [\"spathal\"], [\"lemma\", \"melam\"], [\"kiver\"], [\"duali\"], [\"harpists\"], [\"wonton\"], [\"mohwa\"], [\"acoup\"], [\"bucrnia\", \"brucina\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "friends",
+            "redfins",
+            "finders",
+            "spathal",
+            "lemma",
+            "melam",
+            "kiver",
+            "duali",
+            "harpists",
+            "wonton",
+            "mohwa",
+            "acoup",
+            "bucrnia",
+            "brucina"
+          ],
+          "solution": [
+            [
+              "acoup"
+            ],
+            [
+              "brucina",
+              "bucrnia"
+            ],
+            [
+              "duali"
+            ],
+            [
+              "finders",
+              "friends",
+              "redfins"
+            ],
+            [
+              "harpists"
+            ],
+            [
+              "kiver"
+            ],
+            [
+              "lemma",
+              "melam"
+            ],
+            [
+              "mohwa"
+            ],
+            [
+              "spathal"
+            ],
+            [
+              "wonton"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"inelegant\", \"legantine\", \"eglantine\", \"sycones\", \"coreigns\", \"coresign\", \"cosigner\", \"lugsome\", \"satanist\", \"scimetar\", \"camister\", \"camerist\", \"matrices\", \"mistrace\", \"poietic\", \"epiotic\", \"euros\", \"roues\", \"rouse\", \"hackwood\", \"woodhack\", \"impleader\"]\n",
+        "expected_answer": "[[\"camerist\", \"camister\", \"matrices\", \"mistrace\", \"scimetar\"], [\"coreigns\", \"coresign\", \"cosigner\"], [\"eglantine\", \"inelegant\", \"legantine\"], [\"epiotic\", \"poietic\"], [\"euros\", \"roues\", \"rouse\"], [\"hackwood\", \"woodhack\"], [\"impleader\"], [\"lugsome\"], [\"satanist\"], [\"sycones\"]]",
+        "model_answer": "<reasoning>\nTo solve this problem, I'll follow these steps:\n1. For each word, I'll sort its letters alphabetically to create a key\n2. Words that are anagrams will have the same key when their letters are sorted\n3. I'll use this key to group the words together\n\nLet's sort and group them:\n\n\"inelegant\", \"legantine\", \"eglantine\" -> \"aegilnnt\"\n\"sycones\", -> \"cenossy\"\n\"coreigns\", \"coresign\", \"cosigner\" -> \"cegnors\"\n\"lugsome\" -> \"glmosu\"\n\"satanist\" -> \"aainsst\"\n\"scimetar\", \"camister\", \"camerist\" -> \"aceimrst\"\n\"matrices\", \"mistrace\" -> \"aceimrst\"\n\"poietic\", \"epiotic\" -> \"ceiiopt\"\n\"euros\", \"roues\", \"rouse\" -> \"eorsu\"\n\"hackwood\", \"woodhack\" -> \"acdhkow\"\n\"impleader\" -> \"adeilmpr\"\n</reasoning>\n\n<answer>[\n    [\"inelegant\", \"legantine\", \"eglantine\"],\n    [\"sycones\"],\n    [\"coreigns\", \"coresign\", \"cosigner\"],\n    [\"lugsome\"],\n    [\"satanist\"],\n    [\"scimetar\", \"camister\", \"camerist\", \"matrices\", \"mistrace\"],\n    [\"poietic\", \"epiotic\"],\n    [\"euros\", \"roues\", \"rouse\"],\n    [\"hackwood\", \"woodhack\"],\n    [\"impleader\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "inelegant",
+            "legantine",
+            "eglantine",
+            "sycones",
+            "coreigns",
+            "coresign",
+            "cosigner",
+            "lugsome",
+            "satanist",
+            "scimetar",
+            "camister",
+            "camerist",
+            "matrices",
+            "mistrace",
+            "poietic",
+            "epiotic",
+            "euros",
+            "roues",
+            "rouse",
+            "hackwood",
+            "woodhack",
+            "impleader"
+          ],
+          "solution": [
+            [
+              "camerist",
+              "camister",
+              "matrices",
+              "mistrace",
+              "scimetar"
+            ],
+            [
+              "coreigns",
+              "coresign",
+              "cosigner"
+            ],
+            [
+              "eglantine",
+              "inelegant",
+              "legantine"
+            ],
+            [
+              "epiotic",
+              "poietic"
+            ],
+            [
+              "euros",
+              "roues",
+              "rouse"
+            ],
+            [
+              "hackwood",
+              "woodhack"
+            ],
+            [
+              "impleader"
+            ],
+            [
+              "lugsome"
+            ],
+            [
+              "satanist"
+            ],
+            [
+              "sycones"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"anamniota\", \"crouches\", \"ennobler\", \"increase\", \"cerasein\", \"resiance\", \"postact\", \"topcast\", \"epuration\", \"eupatorin\", \"commissariat\", \"tachiste\", \"slavistic\", \"sloppy\", \"polyps\"]\n",
+        "expected_answer": "[[\"anamniota\"], [\"cerasein\", \"increase\", \"resiance\"], [\"commissariat\"], [\"crouches\"], [\"ennobler\"], [\"epuration\", \"eupatorin\"], [\"polyps\", \"sloppy\"], [\"postact\", \"topcast\"], [\"slavistic\"], [\"tachiste\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need a way to identify anagrams. Two words are anagrams if they have the same sorted letters.\n\n2) Let me sort each word's letters alphabetically:\n   - anamniota \u2192 aaaimnot\n   - crouches \u2192 cehorssu\n   - ennobler \u2192 beelnnor\n   - increase \u2192 ceeinnrs\n   - cerasein \u2192 ceeinnrs\n   - resiance \u2192 ceeinnrs\n   - postact \u2192 acopstt\n   - topcast \u2192 acopstt\n   - epuration \u2192 aeinoptu\n   - eupatorin \u2192 aeinoptu\n   - commissariat \u2192 aciimmorsst\n   - tachiste \u2192 acehistt\n   - slavistic \u2192 acilsstv\n   - sloppy \u2192 loppsy\n   - polyps \u2192 loppsy\n\n3) Now I can group words that have the same sorted letters:\n   - [increase, cerasein, resiance] (sorted: ceeinnrs)\n   - [postact, topcast] (sorted: acopstt)\n   - [epuration, eupatorin] (sorted: aeinoptu)\n   - [sloppy, polyps] (sorted: loppsy)\n\n4) The remaining words have no anagrams in the list:\n   - anamniota\n   - crouches\n   - ennobler\n   - commissariat\n   - tachiste\n   - slavistic\n</reasoning>\n<answer>[[\"increase\", \"cerasein\", \"resiance\"], [\"postact\", \"topcast\"], [\"epuration\", \"eupatorin\"], [\"sloppy\", \"polyps\"], [\"anamniota\"], [\"crouches\"], [\"ennobler\"], [\"commissariat\"], [\"tachiste\"], [\"slavistic\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "anamniota",
+            "crouches",
+            "ennobler",
+            "increase",
+            "cerasein",
+            "resiance",
+            "postact",
+            "topcast",
+            "epuration",
+            "eupatorin",
+            "commissariat",
+            "tachiste",
+            "slavistic",
+            "sloppy",
+            "polyps"
+          ],
+          "solution": [
+            [
+              "anamniota"
+            ],
+            [
+              "cerasein",
+              "increase",
+              "resiance"
+            ],
+            [
+              "commissariat"
+            ],
+            [
+              "crouches"
+            ],
+            [
+              "ennobler"
+            ],
+            [
+              "epuration",
+              "eupatorin"
+            ],
+            [
+              "polyps",
+              "sloppy"
+            ],
+            [
+              "postact",
+              "topcast"
+            ],
+            [
+              "slavistic"
+            ],
+            [
+              "tachiste"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"anay\", \"yana\", \"asseour\", \"perv\", \"edwin\", \"dwine\", \"widen\", \"wined\", \"farmerish\", \"marshfire\", \"herman\", \"chous\", \"ironstone\", \"serotonin\", \"fielden\", \"endfile\", \"founder\", \"refound\"]\n",
+        "expected_answer": "[[\"anay\", \"yana\"], [\"asseour\"], [\"chous\"], [\"dwine\", \"edwin\", \"widen\", \"wined\"], [\"endfile\", \"fielden\"], [\"farmerish\", \"marshfire\"], [\"founder\", \"refound\"], [\"herman\"], [\"ironstone\", \"serotonin\"], [\"perv\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Going through each word:\n   - \"anay\", \"yana\" -> sorted: \"aany\"\n   - \"asseour\" -> sorted: \"aeorssu\"\n   - \"perv\" -> sorted: \"eprv\"\n   - \"edwin\", \"dwine\", \"widen\", \"wined\" -> sorted: \"deinw\"\n   - \"farmerish\", \"marshfire\" -> sorted: \"aefhimrrs\"\n   - \"herman\" -> sorted: \"aehmnr\"\n   - \"chous\" -> sorted: \"chosu\"\n   - \"ironstone\", \"serotonin\" -> sorted: \"einoorst\"\n   - \"fielden\", \"endfile\" -> sorted: \"deefiin\"\n   - \"founder\", \"refound\" -> sorted: \"defnoru\"\n\n3) Now I'll group words that have the same sorted letters together.\n</reasoning>\n<answer>[\n    [\"anay\", \"yana\"],\n    [\"asseour\"],\n    [\"perv\"],\n    [\"edwin\", \"dwine\", \"widen\", \"wined\"],\n    [\"farmerish\", \"marshfire\"],\n    [\"herman\"],\n    [\"chous\"],\n    [\"ironstone\", \"serotonin\"],\n    [\"fielden\", \"endfile\"],\n    [\"founder\", \"refound\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "anay",
+            "yana",
+            "asseour",
+            "perv",
+            "edwin",
+            "dwine",
+            "widen",
+            "wined",
+            "farmerish",
+            "marshfire",
+            "herman",
+            "chous",
+            "ironstone",
+            "serotonin",
+            "fielden",
+            "endfile",
+            "founder",
+            "refound"
+          ],
+          "solution": [
+            [
+              "anay",
+              "yana"
+            ],
+            [
+              "asseour"
+            ],
+            [
+              "chous"
+            ],
+            [
+              "dwine",
+              "edwin",
+              "widen",
+              "wined"
+            ],
+            [
+              "endfile",
+              "fielden"
+            ],
+            [
+              "farmerish",
+              "marshfire"
+            ],
+            [
+              "founder",
+              "refound"
+            ],
+            [
+              "herman"
+            ],
+            [
+              "ironstone",
+              "serotonin"
+            ],
+            [
+              "perv"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"petalling\", \"flax\", \"falx\", \"nomological\", \"monological\", \"replayed\", \"parleyed\", \"predelay\", \"restretch\", \"stretcher\", \"unlooped\", \"gein\", \"arginine\", \"makars\", \"karmas\", \"inhales\"]\n",
+        "expected_answer": "[[\"arginine\"], [\"falx\", \"flax\"], [\"gein\"], [\"inhales\"], [\"karmas\", \"makars\"], [\"monological\", \"nomological\"], [\"parleyed\", \"predelay\", \"replayed\"], [\"petalling\"], [\"restretch\", \"stretcher\"], [\"unlooped\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word:\n- petalling -> aegillnpt\n- flax -> aflx\n- falx -> aflx\n- nomological -> acgilmnloo\n- monological -> acgilmnloo\n- replayed -> adeelpry\n- parleyed -> adeelpry\n- predelay -> adeelpry\n- restretch -> cehrstet\n- stretcher -> cehrstet\n- unlooped -> deelnoop\n- gein -> egin\n- arginine -> aegiinnr\n- makars -> aakmrs\n- karmas -> aakmrs\n- inhales -> aehilns\n\n3) Now I can group words with the same sorted letters together:\n- aflx: flax, falx\n- acgilmnloo: nomological, monological\n- adeelpry: replayed, parleyed, predelay\n- cehrstet: restretch, stretcher\n- aakmrs: makars, karmas\n\n4) Words that appear only once will be in their own group:\n- aegillnpt: petalling\n- deelnoop: unlooped\n- egin: gein\n- aegiinnr: arginine\n- aehilns: inhales\n</reasoning>\n<answer>[[\"flax\", \"falx\"], [\"nomological\", \"monological\"], [\"replayed\", \"parleyed\", \"predelay\"], [\"restretch\", \"stretcher\"], [\"makars\", \"karmas\"], [\"petalling\"], [\"unlooped\"], [\"gein\"], [\"arginine\"], [\"inhales\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "petalling",
+            "flax",
+            "falx",
+            "nomological",
+            "monological",
+            "replayed",
+            "parleyed",
+            "predelay",
+            "restretch",
+            "stretcher",
+            "unlooped",
+            "gein",
+            "arginine",
+            "makars",
+            "karmas",
+            "inhales"
+          ],
+          "solution": [
+            [
+              "arginine"
+            ],
+            [
+              "falx",
+              "flax"
+            ],
+            [
+              "gein"
+            ],
+            [
+              "inhales"
+            ],
+            [
+              "karmas",
+              "makars"
+            ],
+            [
+              "monological",
+              "nomological"
+            ],
+            [
+              "parleyed",
+              "predelay",
+              "replayed"
+            ],
+            [
+              "petalling"
+            ],
+            [
+              "restretch",
+              "stretcher"
+            ],
+            [
+              "unlooped"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"schematise\", \"misteaches\", \"ganta\", \"tanga\", \"agnat\", \"atinkle\", \"psaloid\", \"salpoid\", \"befist\", \"befits\", \"deadmen\", \"kayoing\", \"defalk\", \"curdier\", \"curried\", \"wiste\", \"wites\"]\n",
+        "expected_answer": "[[\"agnat\", \"ganta\", \"tanga\"], [\"atinkle\"], [\"befist\", \"befits\"], [\"curdier\", \"curried\"], [\"deadmen\"], [\"defalk\"], [\"kayoing\"], [\"misteaches\", \"schematise\"], [\"psaloid\", \"salpoid\"], [\"wiste\", \"wites\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a method to identify anagrams:\n   - Sort the letters of each word\n   - Words that have the same sorted letters are anagrams\n\n2) Let me sort each word's letters:\n   - schematise -> aceehimst\n   - misteaches -> aceehimst\n   - ganta -> aagnt\n   - tanga -> aagnt\n   - agnat -> aagnt\n   - atinkle -> aeiklnt\n   - psaloid -> adilops\n   - salpoid -> adilops\n   - befist -> befist\n   - befits -> befist\n   - deadmen -> adeemn\n   - kayoing -> agikno\n   - defalk -> adefkl\n   - curdier -> cdeirru\n   - curried -> cdeirru\n   - wiste -> eistw\n   - wites -> eistw\n\n3) Now grouping words with the same sorted letters:\n   - aceehimst: \"schematise\", \"misteaches\"\n   - aagnt: \"ganta\", \"tanga\", \"agnat\"\n   - aeiklnt: \"atinkle\"\n   - adilops: \"psaloid\", \"salpoid\"\n   - befist: \"befist\", \"befits\"\n   - adeemn: \"deadmen\"\n   - agikno: \"kayoing\"\n   - adefkl: \"defalk\"\n   - cdeirru: \"curdier\", \"curried\"\n   - eistw: \"wiste\", \"wites\"\n</reasoning>\n\n<answer>[\n    [\"schematise\", \"misteaches\"],\n    [\"ganta\", \"tanga\", \"agnat\"],\n    [\"atinkle\"],\n    [\"psaloid\", \"salpoid\"],\n    [\"befist\", \"befits\"],\n    [\"deadmen\"],\n    [\"kayoing\"],\n    [\"defalk\"],\n    [\"curdier\", \"curried\"],\n    [\"wiste\", \"wites\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "schematise",
+            "misteaches",
+            "ganta",
+            "tanga",
+            "agnat",
+            "atinkle",
+            "psaloid",
+            "salpoid",
+            "befist",
+            "befits",
+            "deadmen",
+            "kayoing",
+            "defalk",
+            "curdier",
+            "curried",
+            "wiste",
+            "wites"
+          ],
+          "solution": [
+            [
+              "agnat",
+              "ganta",
+              "tanga"
+            ],
+            [
+              "atinkle"
+            ],
+            [
+              "befist",
+              "befits"
+            ],
+            [
+              "curdier",
+              "curried"
+            ],
+            [
+              "deadmen"
+            ],
+            [
+              "defalk"
+            ],
+            [
+              "kayoing"
+            ],
+            [
+              "misteaches",
+              "schematise"
+            ],
+            [
+              "psaloid",
+              "salpoid"
+            ],
+            [
+              "wiste",
+              "wites"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"unripened\", \"artemas\", \"astream\", \"decommission\", \"noegenesis\", \"neogenesis\", \"eveque\", \"reduit\", \"cautioning\", \"auctioning\", \"occurs\", \"archidome\", \"chromidae\", \"barbless\"]\n",
+        "expected_answer": "[[\"archidome\", \"chromidae\"], [\"artemas\", \"astream\"], [\"auctioning\", \"cautioning\"], [\"barbless\"], [\"decommission\"], [\"eveque\"], [\"neogenesis\", \"noegenesis\"], [\"occurs\"], [\"reduit\"], [\"unripened\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a strategy to identify anagrams:\n   - Sort the letters of each word alphabetically\n   - Words that produce the same sorted sequence are anagrams\n\n2) Let me sort each word's letters:\n   - unripened -> deinprnu\n   - artemas -> aamerst\n   - astream -> aamerst\n   - decommission -> cdeimnoos\n   - noegenesis -> eeginoss\n   - neogenesis -> eeginoss\n   - eveque -> eeequv\n   - reduit -> deirtu\n   - cautioning -> acgimnotu\n   - auctioning -> acgimnotu\n   - occurs -> corssu\n   - archidome -> acdehmoir\n   - chromidae -> acdehmoir\n   - barbless -> abbelrss\n\n3) Now grouping words with the same sorted letters:\n   - aamerst: [\"artemas\", \"astream\"]\n   - acdehmoir: [\"archidome\", \"chromidae\"]\n   - acgimnotu: [\"cautioning\", \"auctioning\"]\n   - eeginoss: [\"noegenesis\", \"neogenesis\"]\n\n4) The rest are unique (no anagrams):\n   - \"unripened\"\n   - \"eveque\"\n   - \"reduit\"\n   - \"occurs\"\n   - \"barbless\"\n</reasoning>\n<answer>[\n    [\"artemas\", \"astream\"],\n    [\"archidome\", \"chromidae\"],\n    [\"cautioning\", \"auctioning\"],\n    [\"noegenesis\", \"neogenesis\"],\n    [\"unripened\"],\n    [\"eveque\"],\n    [\"reduit\"],\n    [\"occurs\"],\n    [\"barbless\"]\n]</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "unripened",
+            "artemas",
+            "astream",
+            "decommission",
+            "noegenesis",
+            "neogenesis",
+            "eveque",
+            "reduit",
+            "cautioning",
+            "auctioning",
+            "occurs",
+            "archidome",
+            "chromidae",
+            "barbless"
+          ],
+          "solution": [
+            [
+              "archidome",
+              "chromidae"
+            ],
+            [
+              "artemas",
+              "astream"
+            ],
+            [
+              "auctioning",
+              "cautioning"
+            ],
+            [
+              "barbless"
+            ],
+            [
+              "decommission"
+            ],
+            [
+              "eveque"
+            ],
+            [
+              "neogenesis",
+              "noegenesis"
+            ],
+            [
+              "occurs"
+            ],
+            [
+              "reduit"
+            ],
+            [
+              "unripened"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"cruiser\", \"sucrier\", \"gynospore\", \"malellae\", \"proletariat\", \"reptatorial\", \"academes\", \"chomer\", \"chrome\", \"barcoo\", \"showering\", \"reshowing\", \"proclei\", \"brasiletto\"]\n",
+        "expected_answer": "[[\"academes\"], [\"barcoo\"], [\"brasiletto\"], [\"chomer\", \"chrome\"], [\"cruiser\", \"sucrier\"], [\"gynospore\"], [\"malellae\"], [\"proclei\"], [\"proletariat\", \"reptatorial\"], [\"reshowing\", \"showering\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a helper method to sort the letters of each word - anagrams will have the same sorted letters.\n\n2) Going through each word:\n- \"cruiser\", \"sucrier\" -> sorted: \"ceirsu\"\n- \"gynospore\" -> sorted: \"egnoprsy\"\n- \"malellae\" -> sorted: \"aeelllm\"\n- \"proletariat\", \"reptatorial\" -> sorted: \"aeiloprrt\"\n- \"academes\" -> sorted: \"aacdemst\"\n- \"chomer\", \"chrome\" -> sorted: \"cehmor\"\n- \"barcoo\" -> sorted: \"abcoor\"\n- \"showering\", \"reshowing\" -> sorted: \"eghinorsw\"\n- \"proclei\" -> sorted: \"ceilopr\"\n- \"brasiletto\" -> sorted: \"abeilostt\"\n\n3) Now grouping words that have the same sorted letters:\n- Group 1: \"cruiser\", \"sucrier\"\n- Group 2: \"gynospore\"\n- Group 3: \"malellae\"\n- Group 4: \"proletariat\", \"reptatorial\"\n- Group 5: \"academes\"\n- Group 6: \"chomer\", \"chrome\"\n- Group 7: \"barcoo\"\n- Group 8: \"showering\", \"reshowing\"\n- Group 9: \"proclei\"\n- Group 10: \"brasiletto\"\n</reasoning>\n<answer>\n[\n    [\"cruiser\", \"sucrier\"],\n    [\"gynospore\"],\n    [\"malellae\"],\n    [\"proletariat\", \"reptatorial\"],\n    [\"academes\"],\n    [\"chomer\", \"chrome\"],\n    [\"barcoo\"],\n    [\"showering\", \"reshowing\"],\n    [\"proclei\"],\n    [\"brasiletto\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "cruiser",
+            "sucrier",
+            "gynospore",
+            "malellae",
+            "proletariat",
+            "reptatorial",
+            "academes",
+            "chomer",
+            "chrome",
+            "barcoo",
+            "showering",
+            "reshowing",
+            "proclei",
+            "brasiletto"
+          ],
+          "solution": [
+            [
+              "academes"
+            ],
+            [
+              "barcoo"
+            ],
+            [
+              "brasiletto"
+            ],
+            [
+              "chomer",
+              "chrome"
+            ],
+            [
+              "cruiser",
+              "sucrier"
+            ],
+            [
+              "gynospore"
+            ],
+            [
+              "malellae"
+            ],
+            [
+              "proclei"
+            ],
+            [
+              "proletariat",
+              "reptatorial"
+            ],
+            [
+              "reshowing",
+              "showering"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"atm\", \"mat\", \"tam\", \"ponerid\", \"ionomers\", \"shipowner\", \"lomboy\", \"peered\", \"pyrena\", \"somatophyte\", \"mal\", \"lam\", \"diffuse\", \"duffies\"]\n",
+        "expected_answer": "[[\"atm\", \"mat\", \"tam\"], [\"diffuse\", \"duffies\"], [\"ionomers\"], [\"lam\", \"mal\"], [\"lomboy\"], [\"peered\"], [\"ponerid\"], [\"pyrena\"], [\"shipowner\"], [\"somatophyte\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters alphabetically. Words that are anagrams will have the same sorted letters.\n\n2) Going through each word:\n   - \"atm\", \"mat\", \"tam\" -> sorted: \"amt\"\n   - \"mal\", \"lam\" -> sorted: \"alm\"\n   - \"diffuse\", \"duffies\" -> sorted: \"deffisu\"\n   - \"ponerid\" -> sorted: \"deinopr\"\n   - \"ionomers\" -> sorted: \"eimnors\"\n   - \"shipowner\" -> sorted: \"ehinoprs\"\n   - \"lomboy\" -> sorted: \"blmooy\"\n   - \"peered\" -> sorted: \"deepr\"\n   - \"pyrena\" -> sorted: \"aenpry\"\n   - \"somatophyte\" -> sorted: \"aehmopsty\"\n\n3) Now grouping words with the same sorted letters:\n   - \"amt\": [\"atm\", \"mat\", \"tam\"]\n   - \"alm\": [\"mal\", \"lam\"]\n   - \"deffisu\": [\"diffuse\", \"duffies\"]\n   - All other words have no anagrams in the list\n</reasoning>\n<answer>\n[\n    [\"atm\", \"mat\", \"tam\"],\n    [\"mal\", \"lam\"],\n    [\"diffuse\", \"duffies\"],\n    [\"ponerid\"],\n    [\"ionomers\"],\n    [\"shipowner\"],\n    [\"lomboy\"],\n    [\"peered\"],\n    [\"pyrena\"],\n    [\"somatophyte\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "atm",
+            "mat",
+            "tam",
+            "ponerid",
+            "ionomers",
+            "shipowner",
+            "lomboy",
+            "peered",
+            "pyrena",
+            "somatophyte",
+            "mal",
+            "lam",
+            "diffuse",
+            "duffies"
+          ],
+          "solution": [
+            [
+              "atm",
+              "mat",
+              "tam"
+            ],
+            [
+              "diffuse",
+              "duffies"
+            ],
+            [
+              "ionomers"
+            ],
+            [
+              "lam",
+              "mal"
+            ],
+            [
+              "lomboy"
+            ],
+            [
+              "peered"
+            ],
+            [
+              "ponerid"
+            ],
+            [
+              "pyrena"
+            ],
+            [
+              "shipowner"
+            ],
+            [
+              "somatophyte"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"pathologicoclinical\", \"clinicopathological\", \"ashery\", \"hayers\", \"renegation\", \"generation\", \"overfly\", \"flyover\", \"tidies\", \"teiids\", \"bitore\", \"exacter\", \"excreta\", \"forescene\", \"conferees\", \"intercreedal\", \"amula\"]\n",
+        "expected_answer": "[[\"amula\"], [\"ashery\", \"hayers\"], [\"bitore\"], [\"clinicopathological\", \"pathologicoclinical\"], [\"conferees\", \"forescene\"], [\"exacter\", \"excreta\"], [\"flyover\", \"overfly\"], [\"generation\", \"renegation\"], [\"intercreedal\"], [\"teiids\", \"tidies\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a strategy to identify anagrams:\n   - For each word, sort its letters alphabetically. This will be the key.\n   - Words that produce the same sorted letters are anagrams.\n\n2) Let's sort each word's letters:\n   - pathologicoclinical -> aaccghiiillnoopt\n   - clinicopathological -> aaccghiiillnoopt\n   - ashery -> aehrsy\n   - hayers -> aehrsy\n   - renegation -> aeginnort\n   - generation -> aeginnort\n   - overfly -> eflorvy\n   - flyover -> eflorvy\n   - tidies -> deiist\n   - teiids -> deiist\n   - bitore -> beiort\n   - exacter -> aeertx\n   - excreta -> aeertx\n   - forescene -> ceeefnors\n   - conferees -> ceeefnors\n   - intercreedal -> (standalone)\n   - amula -> (standalone)\n\n3) Grouping words with the same sorted letters:\n   Group 1: [\"pathologicoclinical\", \"clinicopathological\"]\n   Group 2: [\"ashery\", \"hayers\"]\n   Group 3: [\"renegation\", \"generation\"]\n   Group 4: [\"overfly\", \"flyover\"]\n   Group 5: [\"tidies\", \"teiids\"]\n   Group 6: [\"exacter\", \"excreta\"]\n   Group 7: [\"forescene\", \"conferees\"]\n   Group 8: [\"intercreedal\"]\n   Group 9: [\"amula\"]\n   Group 10: [\"bitore\"]\n</reasoning>\n<answer>[[\"pathologicoclinical\", \"clinicopathological\"], [\"ashery\", \"hayers\"], [\"renegation\", \"generation\"], [\"overfly\", \"flyover\"], [\"tidies\", \"teiids\"], [\"exacter\", \"excreta\"], [\"forescene\", \"conferees\"], [\"intercreedal\"], [\"amula\"], [\"bitore\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "pathologicoclinical",
+            "clinicopathological",
+            "ashery",
+            "hayers",
+            "renegation",
+            "generation",
+            "overfly",
+            "flyover",
+            "tidies",
+            "teiids",
+            "bitore",
+            "exacter",
+            "excreta",
+            "forescene",
+            "conferees",
+            "intercreedal",
+            "amula"
+          ],
+          "solution": [
+            [
+              "amula"
+            ],
+            [
+              "ashery",
+              "hayers"
+            ],
+            [
+              "bitore"
+            ],
+            [
+              "clinicopathological",
+              "pathologicoclinical"
+            ],
+            [
+              "conferees",
+              "forescene"
+            ],
+            [
+              "exacter",
+              "excreta"
+            ],
+            [
+              "flyover",
+              "overfly"
+            ],
+            [
+              "generation",
+              "renegation"
+            ],
+            [
+              "intercreedal"
+            ],
+            [
+              "teiids",
+              "tidies"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"suits\", \"situs\", \"shakier\", \"khesari\", \"gnow\", \"gown\", \"spignel\", \"spingel\", \"ark\", \"cremona\", \"romance\", \"ebcasc\", \"spoored\", \"prosode\", \"corrida\", \"birks\"]\n",
+        "expected_answer": "[[\"ark\"], [\"birks\"], [\"corrida\"], [\"cremona\", \"romance\"], [\"ebcasc\"], [\"gnow\", \"gown\"], [\"khesari\", \"shakier\"], [\"prosode\", \"spoored\"], [\"situs\", \"suits\"], [\"spignel\", \"spingel\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Going through each word:\n   - suits, situs -> 'istu'\n   - shakier, khesari -> 'aehikrs'\n   - gnow, gown -> 'gnow'\n   - spignel, spingel -> 'egilnps'\n   - ark -> 'akr'\n   - cremona, romance -> 'acemnor'\n   - ebcasc -> 'abcces'\n   - spoored, prosode -> 'deooprs'\n   - corrida -> 'acdiorr'\n   - birks -> 'bikrs'\n\n3) Now grouping words that share the same sorted letters:\n   - 'istu': [\"suits\", \"situs\"]\n   - 'aehikrs': [\"shakier\", \"khesari\"]\n   - 'gnow': [\"gnow\", \"gown\"]\n   - 'egilnps': [\"spignel\", \"spingel\"]\n   - 'akr': [\"ark\"]\n   - 'acemnor': [\"cremona\", \"romance\"]\n   - 'abcces': [\"ebcasc\"]\n   - 'deooprs': [\"spoored\", \"prosode\"]\n   - 'acdiorr': [\"corrida\"]\n   - 'bikrs': [\"birks\"]\n</reasoning>\n<answer>\n[\n    [\"suits\", \"situs\"],\n    [\"shakier\", \"khesari\"],\n    [\"gnow\", \"gown\"],\n    [\"spignel\", \"spingel\"],\n    [\"ark\"],\n    [\"cremona\", \"romance\"],\n    [\"ebcasc\"],\n    [\"spoored\", \"prosode\"],\n    [\"corrida\"],\n    [\"birks\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "suits",
+            "situs",
+            "shakier",
+            "khesari",
+            "gnow",
+            "gown",
+            "spignel",
+            "spingel",
+            "ark",
+            "cremona",
+            "romance",
+            "ebcasc",
+            "spoored",
+            "prosode",
+            "corrida",
+            "birks"
+          ],
+          "solution": [
+            [
+              "ark"
+            ],
+            [
+              "birks"
+            ],
+            [
+              "corrida"
+            ],
+            [
+              "cremona",
+              "romance"
+            ],
+            [
+              "ebcasc"
+            ],
+            [
+              "gnow",
+              "gown"
+            ],
+            [
+              "khesari",
+              "shakier"
+            ],
+            [
+              "prosode",
+              "spoored"
+            ],
+            [
+              "situs",
+              "suits"
+            ],
+            [
+              "spignel",
+              "spingel"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"teaches\", \"escheat\", \"instruct\", \"unstrict\", \"sentine\", \"sennite\", \"intense\", \"markets\", \"estmark\", \"ourali\", \"sour\", \"rous\", \"ours\", \"petroleur\", \"ligure\", \"reguli\", \"microsthene\", \"surreal\"]\n",
+        "expected_answer": "[[\"escheat\", \"teaches\"], [\"estmark\", \"markets\"], [\"instruct\", \"unstrict\"], [\"intense\", \"sennite\", \"sentine\"], [\"ligure\", \"reguli\"], [\"microsthene\"], [\"ourali\"], [\"ours\", \"rous\", \"sour\"], [\"petroleur\"], [\"surreal\"]]",
+        "model_answer": "<reasoning>\nTo solve this, I'll follow these steps:\n1. For each word, I'll sort its letters alphabetically to create a key. Anagrams will have the same key.\n2. Use these keys to group the words together.\n\nLet's process each word:\n- \"teaches\" -> \"aceehst\" -> Group 1\n- \"escheat\" -> \"aceehst\" -> Group 1\n- \"instruct\" -> \"cinrstu\" -> Group 2\n- \"unstrict\" -> \"cinrstu\" -> Group 2\n- \"sentine\" -> \"eeinnst\" -> Group 3\n- \"sennite\" -> \"eeinnst\" -> Group 3\n- \"intense\" -> \"eeinnst\" -> Group 3\n- \"markets\" -> \"aekmrts\" -> Group 4\n- \"estmark\" -> \"aekmrts\" -> Group 4\n- \"ourali\" -> \"ailoru\" -> Group 5\n- \"sour\" -> \"orsu\" -> Group 6\n- \"rous\" -> \"orsu\" -> Group 6\n- \"ours\" -> \"orsu\" -> Group 6\n- \"petroleur\" -> \"eeloprtu\" -> Group 7\n- \"ligure\" -> \"egilru\" -> Group 8\n- \"reguli\" -> \"egilru\" -> Group 8\n- \"microsthene\" -> \"cehimnorst\" -> Group 9\n- \"surreal\" -> \"aelrrsu\" -> Group 10\n</reasoning>\n<answer>[\n    [\"teaches\", \"escheat\"],\n    [\"instruct\", \"unstrict\"],\n    [\"sentine\", \"sennite\", \"intense\"],\n    [\"markets\", \"estmark\"],\n    [\"ourali\"],\n    [\"sour\", \"rous\", \"ours\"],\n    [\"petroleur\"],\n    [\"ligure\", \"reguli\"],\n    [\"microsthene\"],\n    [\"surreal\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "teaches",
+            "escheat",
+            "instruct",
+            "unstrict",
+            "sentine",
+            "sennite",
+            "intense",
+            "markets",
+            "estmark",
+            "ourali",
+            "sour",
+            "rous",
+            "ours",
+            "petroleur",
+            "ligure",
+            "reguli",
+            "microsthene",
+            "surreal"
+          ],
+          "solution": [
+            [
+              "escheat",
+              "teaches"
+            ],
+            [
+              "estmark",
+              "markets"
+            ],
+            [
+              "instruct",
+              "unstrict"
+            ],
+            [
+              "intense",
+              "sennite",
+              "sentine"
+            ],
+            [
+              "ligure",
+              "reguli"
+            ],
+            [
+              "microsthene"
+            ],
+            [
+              "ourali"
+            ],
+            [
+              "ours",
+              "rous",
+              "sour"
+            ],
+            [
+              "petroleur"
+            ],
+            [
+              "surreal"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"unhard\", \"dhurna\", \"ext\", \"tex\", \"godding\", \"dodging\", \"breakup\", \"upbreak\", \"unmemoried\", \"unmemoired\", \"connected\", \"condecent\", \"logarithms\", \"electric\", \"salading\", \"catan\", \"tacan\"]\n",
+        "expected_answer": "[[\"breakup\", \"upbreak\"], [\"catan\", \"tacan\"], [\"condecent\", \"connected\"], [\"dhurna\", \"unhard\"], [\"dodging\", \"godding\"], [\"electric\"], [\"ext\", \"tex\"], [\"logarithms\"], [\"salading\"], [\"unmemoired\", \"unmemoried\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a helper function in my mind that sorts the letters of each word. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word's letters and group them:\n\n\"unhard\" -> \"adhnru\" -> matches with \"dhurna\"\n\"ext\" -> \"ext\" -> matches with \"tex\"\n\"godding\" -> \"dggino\" -> matches with \"dodging\"\n\"breakup\" -> \"abekpru\" -> matches with \"upbreak\"\n\"unmemoried\" -> \"deeimnoru\" -> matches with \"unmemoired\"\n\"connected\" -> \"ccdeennot\" -> matches with \"condecent\"\n\"logarithms\" -> \"aghilmors\" -> no matches\n\"electric\" -> \"ceeeilrt\" -> no matches\n\"salading\" -> \"aadgilns\" -> no matches\n\"catan\" -> \"aacnt\" -> matches with \"tacan\"\n\n3) Now I can group them together based on their sorted letters:\n- [\"unhard\", \"dhurna\"]\n- [\"ext\", \"tex\"]\n- [\"godding\", \"dodging\"]\n- [\"breakup\", \"upbreak\"]\n- [\"unmemoried\", \"unmemoired\"]\n- [\"connected\", \"condecent\"]\n- [\"logarithms\"]\n- [\"electric\"]\n- [\"salading\"]\n- [\"catan\", \"tacan\"]\n</reasoning>\n<answer>[[\"unhard\", \"dhurna\"], [\"ext\", \"tex\"], [\"godding\", \"dodging\"], [\"breakup\", \"upbreak\"], [\"unmemoried\", \"unmemoired\"], [\"connected\", \"condecent\"], [\"logarithms\"], [\"electric\"], [\"salading\"], [\"catan\", \"tacan\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "unhard",
+            "dhurna",
+            "ext",
+            "tex",
+            "godding",
+            "dodging",
+            "breakup",
+            "upbreak",
+            "unmemoried",
+            "unmemoired",
+            "connected",
+            "condecent",
+            "logarithms",
+            "electric",
+            "salading",
+            "catan",
+            "tacan"
+          ],
+          "solution": [
+            [
+              "breakup",
+              "upbreak"
+            ],
+            [
+              "catan",
+              "tacan"
+            ],
+            [
+              "condecent",
+              "connected"
+            ],
+            [
+              "dhurna",
+              "unhard"
+            ],
+            [
+              "dodging",
+              "godding"
+            ],
+            [
+              "electric"
+            ],
+            [
+              "ext",
+              "tex"
+            ],
+            [
+              "logarithms"
+            ],
+            [
+              "salading"
+            ],
+            [
+              "unmemoired",
+              "unmemoried"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"proofers\", \"chloracne\", \"uncoif\", \"bowers\", \"caval\", \"clava\", \"bookshop\", \"shopbook\", \"sliverer\", \"resilver\", \"silverer\", \"armor\", \"coluber\", \"finer\", \"infer\"]\n",
+        "expected_answer": "[[\"armor\"], [\"bookshop\", \"shopbook\"], [\"bowers\"], [\"caval\", \"clava\"], [\"chloracne\"], [\"coluber\"], [\"finer\", \"infer\"], [\"proofers\"], [\"resilver\", \"silverer\", \"sliverer\"], [\"uncoif\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a way to identify anagrams. Two words are anagrams if they have the same sorted letters.\n\n2) Let me sort each word's letters alphabetically:\n   - proofers \u2192 ooprrst\n   - chloracne \u2192 accehlnor\n   - uncoif \u2192 cfinout\n   - bowers \u2192 beorsw\n   - caval \u2192 aaclv\n   - clava \u2192 aaclv\n   - bookshop \u2192 bhkooops\n   - shopbook \u2192 bhkooops\n   - sliverer \u2192 eeilrrsv\n   - resilver \u2192 eeilrrsv\n   - silverer \u2192 eeilrrsv\n   - armor \u2192 amorr\n   - coluber \u2192 bceloru\n   - finer \u2192 efinr\n   - infer \u2192 efinr\n\n3) Now I can group words that have the same sorted letters:\n   - aaclv: [\"caval\", \"clava\"]\n   - bhkooops: [\"bookshop\", \"shopbook\"]\n   - eeilrrsv: [\"sliverer\", \"resilver\", \"silverer\"]\n   - efinr: [\"finer\", \"infer\"]\n\n4) Words that have no anagrams in the list:\n   - proofers\n   - chloracne\n   - uncoif\n   - bowers\n   - armor\n   - coluber\n</reasoning>\n<answer>[[\"proofers\"], [\"chloracne\"], [\"uncoif\"], [\"bowers\"], [\"caval\", \"clava\"], [\"bookshop\", \"shopbook\"], [\"sliverer\", \"resilver\", \"silverer\"], [\"armor\"], [\"coluber\"], [\"finer\", \"infer\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "proofers",
+            "chloracne",
+            "uncoif",
+            "bowers",
+            "caval",
+            "clava",
+            "bookshop",
+            "shopbook",
+            "sliverer",
+            "resilver",
+            "silverer",
+            "armor",
+            "coluber",
+            "finer",
+            "infer"
+          ],
+          "solution": [
+            [
+              "armor"
+            ],
+            [
+              "bookshop",
+              "shopbook"
+            ],
+            [
+              "bowers"
+            ],
+            [
+              "caval",
+              "clava"
+            ],
+            [
+              "chloracne"
+            ],
+            [
+              "coluber"
+            ],
+            [
+              "finer",
+              "infer"
+            ],
+            [
+              "proofers"
+            ],
+            [
+              "resilver",
+              "silverer",
+              "sliverer"
+            ],
+            [
+              "uncoif"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"redeify\", \"bluing\", \"unglib\", \"antproof\", \"tanproof\", \"converser\", \"sneaksman\", \"masskanne\", \"outlive\", \"stylate\", \"stately\", \"chee\", \"pandour\", \"enchasing\", \"encashing\"]\n",
+        "expected_answer": "[[\"antproof\", \"tanproof\"], [\"bluing\", \"unglib\"], [\"chee\"], [\"converser\"], [\"encashing\", \"enchasing\"], [\"masskanne\", \"sneaksman\"], [\"outlive\"], [\"pandour\"], [\"redeify\"], [\"stately\", \"stylate\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a way to identify anagrams. Two words are anagrams if they have the same sorted letters.\n   For example, \"eat\" and \"tea\" both become \"aet\" when sorted.\n\n2) Let me sort each word's letters and group them:\n\nredeify -> deeifry\nbluing -> bgilnu\nunglib -> bgilnu (matches with bluing)\nantproof -> afnooprt\ntanproof -> afnooprt (matches with antproof)\nconverser -> cenorrsv\nsneaksman -> aekmnss\nmasskanne -> aekmnss (matches with sneaksman)\noutlive -> eilotuv\nstylate -> aelstty\nstately -> aelstty (matches with stylate)\nchee -> cehe\npandour -> adnopr\nenchasing -> ceghinns\nencashing -> ceghinns (matches with enchasing)\n\n3) Now I can group the matches together:\n- \"bluing\" and \"unglib\"\n- \"antproof\" and \"tanproof\"\n- \"sneaksman\" and \"masskanne\"\n- \"stylate\" and \"stately\"\n- \"enchasing\" and \"encashing\"\n- The rest are standalone words\n</reasoning>\n<answer>[\n    [\"bluing\", \"unglib\"],\n    [\"antproof\", \"tanproof\"],\n    [\"sneaksman\", \"masskanne\"],\n    [\"stylate\", \"stately\"],\n    [\"enchasing\", \"encashing\"],\n    [\"redeify\"],\n    [\"converser\"],\n    [\"outlive\"],\n    [\"chee\"],\n    [\"pandour\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "redeify",
+            "bluing",
+            "unglib",
+            "antproof",
+            "tanproof",
+            "converser",
+            "sneaksman",
+            "masskanne",
+            "outlive",
+            "stylate",
+            "stately",
+            "chee",
+            "pandour",
+            "enchasing",
+            "encashing"
+          ],
+          "solution": [
+            [
+              "antproof",
+              "tanproof"
+            ],
+            [
+              "bluing",
+              "unglib"
+            ],
+            [
+              "chee"
+            ],
+            [
+              "converser"
+            ],
+            [
+              "encashing",
+              "enchasing"
+            ],
+            [
+              "masskanne",
+              "sneaksman"
+            ],
+            [
+              "outlive"
+            ],
+            [
+              "pandour"
+            ],
+            [
+              "redeify"
+            ],
+            [
+              "stately",
+              "stylate"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"bacis\", \"ensuing\", \"gunnies\", \"sepaled\", \"iridous\", \"isuroid\", \"etabelli\", \"beatille\", \"cavillation\", \"vacillation\", \"cephalomeningitis\", \"meningocephalitis\", \"opsy\", \"posy\", \"mortals\", \"stromal\", \"galtonia\"]\n",
+        "expected_answer": "[[\"bacis\"], [\"beatille\", \"etabelli\"], [\"cavillation\", \"vacillation\"], [\"cephalomeningitis\", \"meningocephalitis\"], [\"ensuing\", \"gunnies\"], [\"galtonia\"], [\"iridous\", \"isuroid\"], [\"mortals\", \"stromal\"], [\"opsy\", \"posy\"], [\"sepaled\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) To find anagrams, I'll sort the letters of each word alphabetically. Words that are anagrams will have the same sorted sequence.\n\n2) Let me sort each word's letters:\n   - bacis \u2192 abcis\n   - ensuing \u2192 eginnsu\n   - gunnies \u2192 eginnsu\n   - sepaled \u2192 adeelps\n   - iridous \u2192 diiorus\n   - isuroid \u2192 diiorus\n   - etabelli \u2192 abeeillt\n   - beatille \u2192 abeeillt\n   - cavillation \u2192 aacillnotv\n   - vacillation \u2192 aacillnotv\n   - cephalomeningitis \u2192 aceghiilmnnoepst\n   - meningocephalitis \u2192 aceghiilmnnoepst\n   - opsy \u2192 opsy\n   - posy \u2192 opsy\n   - mortals \u2192 almorst\n   - stromal \u2192 almorst\n   - galtonia \u2192 aagilnot\n\n3) Grouping words with the same sorted letters:\n   - [bacis]\n   - [ensuing, gunnies]\n   - [sepaled]\n   - [iridous, isuroid]\n   - [etabelli, beatille]\n   - [cavillation, vacillation]\n   - [cephalomeningitis, meningocephalitis]\n   - [opsy, posy]\n   - [mortals, stromal]\n   - [galtonia]\n</reasoning>\n<answer>\n[\n    [\"bacis\"], \n    [\"ensuing\", \"gunnies\"], \n    [\"sepaled\"], \n    [\"iridous\", \"isuroid\"], \n    [\"etabelli\", \"beatille\"], \n    [\"cavillation\", \"vacillation\"], \n    [\"cephalomeningitis\", \"meningocephalitis\"], \n    [\"opsy\", \"posy\"], \n    [\"mortals\", \"stromal\"], \n    [\"galtonia\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "bacis",
+            "ensuing",
+            "gunnies",
+            "sepaled",
+            "iridous",
+            "isuroid",
+            "etabelli",
+            "beatille",
+            "cavillation",
+            "vacillation",
+            "cephalomeningitis",
+            "meningocephalitis",
+            "opsy",
+            "posy",
+            "mortals",
+            "stromal",
+            "galtonia"
+          ],
+          "solution": [
+            [
+              "bacis"
+            ],
+            [
+              "beatille",
+              "etabelli"
+            ],
+            [
+              "cavillation",
+              "vacillation"
+            ],
+            [
+              "cephalomeningitis",
+              "meningocephalitis"
+            ],
+            [
+              "ensuing",
+              "gunnies"
+            ],
+            [
+              "galtonia"
+            ],
+            [
+              "iridous",
+              "isuroid"
+            ],
+            [
+              "mortals",
+              "stromal"
+            ],
+            [
+              "opsy",
+              "posy"
+            ],
+            [
+              "sepaled"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"contraire\", \"cinerator\", \"dopant\", \"pantod\", \"helistop\", \"isopleth\", \"unmeet\", \"nietzsche\", \"zechstein\", \"trisetum\", \"lignose\", \"esloign\", \"lingoes\", \"voided\", \"devoid\", \"despeed\", \"speeded\", \"mash\"]\n",
+        "expected_answer": "[[\"cinerator\", \"contraire\"], [\"despeed\", \"speeded\"], [\"devoid\", \"voided\"], [\"dopant\", \"pantod\"], [\"esloign\", \"lignose\", \"lingoes\"], [\"helistop\", \"isopleth\"], [\"mash\"], [\"nietzsche\", \"zechstein\"], [\"trisetum\"], [\"unmeet\"]]",
+        "model_answer": "<reasoning>\nTo solve this problem, I'll follow these steps:\n1. For each word, I'll sort its letters alphabetically to create a key\n2. Words that are anagrams will have the same key\n3. I'll use this key to group the words together\n\nLet's process each word:\n- contraire -> aceinorrt -> group1\n- cinerator -> aceinorrt -> group1\n- dopant -> adnopt -> group2\n- pantod -> adnopt -> group2\n- helistop -> ehilopst -> group3\n- isopleth -> ehilopst -> group3\n- unmeet -> eemntu -> standalone\n- nietzsche -> ceehintz -> group4\n- zechstein -> ceehintz -> group4\n- trisetum -> eimrstu -> standalone\n- lignose -> egilnos -> group5\n- esloign -> egilnos -> group5\n- lingoes -> egilnos -> group5\n- voided -> ddeivo -> group6\n- devoid -> ddeivo -> group6\n- despeed -> deeeps -> group7\n- speeded -> deeeps -> group7\n- mash -> ahms -> standalone\n</reasoning>\n<answer>[\n    [\"contraire\", \"cinerator\"],\n    [\"dopant\", \"pantod\"],\n    [\"helistop\", \"isopleth\"],\n    [\"unmeet\"],\n    [\"nietzsche\", \"zechstein\"],\n    [\"trisetum\"],\n    [\"lignose\", \"esloign\", \"lingoes\"],\n    [\"voided\", \"devoid\"],\n    [\"despeed\", \"speeded\"],\n    [\"mash\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "contraire",
+            "cinerator",
+            "dopant",
+            "pantod",
+            "helistop",
+            "isopleth",
+            "unmeet",
+            "nietzsche",
+            "zechstein",
+            "trisetum",
+            "lignose",
+            "esloign",
+            "lingoes",
+            "voided",
+            "devoid",
+            "despeed",
+            "speeded",
+            "mash"
+          ],
+          "solution": [
+            [
+              "cinerator",
+              "contraire"
+            ],
+            [
+              "despeed",
+              "speeded"
+            ],
+            [
+              "devoid",
+              "voided"
+            ],
+            [
+              "dopant",
+              "pantod"
+            ],
+            [
+              "esloign",
+              "lignose",
+              "lingoes"
+            ],
+            [
+              "helistop",
+              "isopleth"
+            ],
+            [
+              "mash"
+            ],
+            [
+              "nietzsche",
+              "zechstein"
+            ],
+            [
+              "trisetum"
+            ],
+            [
+              "unmeet"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"getup\", \"runniest\", \"sturnine\", \"set\", \"est\", \"endura\", \"dauner\", \"undear\", \"hotches\", \"shochet\", \"rehallow\", \"dissimilate\", \"halfungs\", \"tirelessness\", \"carid\", \"dirca\", \"daric\"]\n",
+        "expected_answer": "[[\"carid\", \"daric\", \"dirca\"], [\"dauner\", \"endura\", \"undear\"], [\"dissimilate\"], [\"est\", \"set\"], [\"getup\"], [\"halfungs\"], [\"hotches\", \"shochet\"], [\"rehallow\"], [\"runniest\", \"sturnine\"], [\"tirelessness\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) To find anagrams, I'll sort the letters of each word and use that as a key to group them:\n\n2) Let me sort each word:\n   - getup -> egptu\n   - runniest -> einrstu\n   - sturnine -> einrstu\n   - set -> est\n   - est -> est\n   - endura -> adenru\n   - dauner -> adenru\n   - undear -> adenru\n   - hotches -> cehhost\n   - shochet -> cehhost\n   - rehallow -> aehlorw\n   - dissimilate -> (stands alone)\n   - halfungs -> (stands alone)\n   - tirelessness -> (stands alone)\n   - carid -> acdir\n   - dirca -> acdir\n   - daric -> acdir\n\n3) Now grouping words with the same sorted letters:\n   - adenru: endura, dauner, undear\n   - acdir: carid, dirca, daric\n   - cehhost: hotches, shochet\n   - einrstu: runniest, sturnine\n   - est: set, est\n   - All others are single words\n</reasoning>\n<answer>[[\"endura\", \"dauner\", \"undear\"], [\"carid\", \"dirca\", \"daric\"], [\"hotches\", \"shochet\"], [\"runniest\", \"sturnine\"], [\"set\", \"est\"], [\"getup\"], [\"rehallow\"], [\"dissimilate\"], [\"halfungs\"], [\"tirelessness\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "getup",
+            "runniest",
+            "sturnine",
+            "set",
+            "est",
+            "endura",
+            "dauner",
+            "undear",
+            "hotches",
+            "shochet",
+            "rehallow",
+            "dissimilate",
+            "halfungs",
+            "tirelessness",
+            "carid",
+            "dirca",
+            "daric"
+          ],
+          "solution": [
+            [
+              "carid",
+              "daric",
+              "dirca"
+            ],
+            [
+              "dauner",
+              "endura",
+              "undear"
+            ],
+            [
+              "dissimilate"
+            ],
+            [
+              "est",
+              "set"
+            ],
+            [
+              "getup"
+            ],
+            [
+              "halfungs"
+            ],
+            [
+              "hotches",
+              "shochet"
+            ],
+            [
+              "rehallow"
+            ],
+            [
+              "runniest",
+              "sturnine"
+            ],
+            [
+              "tirelessness"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"babirusas\", \"babirussa\", \"shapy\", \"physa\", \"strift\", \"geront\", \"tonger\", \"groten\", \"counterreply\", \"treys\", \"resty\", \"strey\", \"realgars\", \"bismethyl\", \"pram\", \"ramp\", \"feedable\", \"befleaed\"]\n",
+        "expected_answer": "[[\"babirusas\", \"babirussa\"], [\"befleaed\", \"feedable\"], [\"bismethyl\"], [\"counterreply\"], [\"geront\", \"groten\", \"tonger\"], [\"physa\", \"shapy\"], [\"pram\", \"ramp\"], [\"realgars\"], [\"resty\", \"strey\", \"treys\"], [\"strift\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a method to identify anagrams:\n   - Sort the letters of each word alphabetically\n   - Words that have the same sorted letters are anagrams\n\n2) Let me sort each word's letters:\n   - babirusas \u2192 aabbirssu\n   - babirussa \u2192 aabbirssu\n   - shapy \u2192 ahpsy\n   - physa \u2192 ahpsy\n   - strift \u2192 firstt\n   - geront \u2192 egnort\n   - tonger \u2192 egnort\n   - groten \u2192 egnort\n   - counterreply \u2192 (unique)\n   - treys \u2192 ersty\n   - resty \u2192 ersty\n   - strey \u2192 ersty\n   - realgars \u2192 (unique)\n   - bismethyl \u2192 (unique)\n   - pram \u2192 ampr\n   - ramp \u2192 ampr\n   - feedable \u2192 (unique)\n   - befleaed \u2192 (unique)\n\n3) Now grouping words with the same sorted letters:\n   - [babirusas, babirussa]\n   - [shapy, physa]\n   - [geront, tonger, groten]\n   - [treys, resty, strey]\n   - [pram, ramp]\n   - [counterreply]\n   - [realgars]\n   - [bismethyl]\n   - [feedable]\n   - [befleaed]\n</reasoning>\n<answer>[[\"babirusas\", \"babirussa\"], [\"shapy\", \"physa\"], [\"geront\", \"tonger\", \"groten\"], [\"treys\", \"resty\", \"strey\"], [\"pram\", \"ramp\"], [\"counterreply\"], [\"realgars\"], [\"bismethyl\"], [\"feedable\"], [\"befleaed\"]]</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "babirusas",
+            "babirussa",
+            "shapy",
+            "physa",
+            "strift",
+            "geront",
+            "tonger",
+            "groten",
+            "counterreply",
+            "treys",
+            "resty",
+            "strey",
+            "realgars",
+            "bismethyl",
+            "pram",
+            "ramp",
+            "feedable",
+            "befleaed"
+          ],
+          "solution": [
+            [
+              "babirusas",
+              "babirussa"
+            ],
+            [
+              "befleaed",
+              "feedable"
+            ],
+            [
+              "bismethyl"
+            ],
+            [
+              "counterreply"
+            ],
+            [
+              "geront",
+              "groten",
+              "tonger"
+            ],
+            [
+              "physa",
+              "shapy"
+            ],
+            [
+              "pram",
+              "ramp"
+            ],
+            [
+              "realgars"
+            ],
+            [
+              "resty",
+              "strey",
+              "treys"
+            ],
+            [
+              "strift"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"ganymede\", \"sensa\", \"sidewalk\", \"evictors\", \"vortices\", \"ratan\", \"antar\", \"asta\", \"sata\", \"diopside\", \"ag\", \"lader\", \"daler\", \"alder\", \"readl\", \"solver\", \"lovers\"]\n",
+        "expected_answer": "[[\"ag\"], [\"alder\", \"daler\", \"lader\", \"readl\"], [\"antar\", \"ratan\"], [\"asta\", \"sata\"], [\"diopside\"], [\"evictors\", \"vortices\"], [\"ganymede\"], [\"lovers\", \"solver\"], [\"sensa\"], [\"sidewalk\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word's letters:\n   - ganymede -> adeegmny\n   - sensa -> aenss\n   - sidewalk -> adeiklsw\n   - evictors -> ceiorstv\n   - vortices -> ceiorsty\n   - ratan -> aanrt\n   - antar -> aanrt\n   - asta -> aast\n   - sata -> aast\n   - diopside -> deiiopsd\n   - ag -> ag\n   - lader -> adelr\n   - daler -> adelr\n   - alder -> adelr\n   - readl -> adelr\n   - solver -> elorsv\n   - lovers -> elorsv\n\n3) Now grouping words with the same sorted letters:\n   - aanrt: [\"ratan\", \"antar\"]\n   - aast: [\"asta\", \"sata\"]\n   - adelr: [\"lader\", \"daler\", \"alder\", \"readl\"]\n   - elorsv: [\"solver\", \"lovers\"]\n   \n4) Words that don't have anagrams in the list will be in their own groups:\n   - adeegmny: [\"ganymede\"]\n   - aenss: [\"sensa\"]\n   - adeiklsw: [\"sidewalk\"]\n   - ceiorsty: [\"evictors\"]\n   - ceiorsty: [\"vortices\"]\n   - deiiopsd: [\"diopside\"]\n   - ag: [\"ag\"]\n</reasoning>\n<answer>[[\"ganymede\"], [\"sensa\"], [\"sidewalk\"], [\"evictors\"], [\"vortices\"], [\"ratan\", \"antar\"], [\"asta\", \"sata\"], [\"diopside\"], [\"ag\"], [\"lader\", \"daler\", \"alder\", \"readl\"], [\"solver\", \"lovers\"]]</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "ganymede",
+            "sensa",
+            "sidewalk",
+            "evictors",
+            "vortices",
+            "ratan",
+            "antar",
+            "asta",
+            "sata",
+            "diopside",
+            "ag",
+            "lader",
+            "daler",
+            "alder",
+            "readl",
+            "solver",
+            "lovers"
+          ],
+          "solution": [
+            [
+              "ag"
+            ],
+            [
+              "alder",
+              "daler",
+              "lader",
+              "readl"
+            ],
+            [
+              "antar",
+              "ratan"
+            ],
+            [
+              "asta",
+              "sata"
+            ],
+            [
+              "diopside"
+            ],
+            [
+              "evictors",
+              "vortices"
+            ],
+            [
+              "ganymede"
+            ],
+            [
+              "lovers",
+              "solver"
+            ],
+            [
+              "sensa"
+            ],
+            [
+              "sidewalk"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"runouts\", \"cuttler\", \"clutter\", \"volute\", \"velout\", \"pyosepticemic\", \"septicopyemic\", \"agnate\", \"tanega\", \"freshet\", \"sensable\", \"blaeness\", \"gravures\", \"maquis\", \"creedalism\", \"declaimers\"]\n",
+        "expected_answer": "[[\"agnate\", \"tanega\"], [\"blaeness\", \"sensable\"], [\"clutter\", \"cuttler\"], [\"creedalism\", \"declaimers\"], [\"freshet\"], [\"gravures\"], [\"maquis\"], [\"pyosepticemic\", \"septicopyemic\"], [\"runouts\"], [\"velout\", \"volute\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a sorting function for each word to identify anagrams:\n   - Two words are anagrams if their sorted letters are identical\n   - For example, \"eat\" and \"tea\" both become \"aet\" when sorted\n\n2) I'll sort each word and use it as a key:\n   \"runouts\" -> \"norsstu\"\n   \"cuttler\" -> \"celrttu\"\n   \"clutter\" -> \"celrttu\"\n   \"volute\" -> \"elotu\"\n   \"velout\" -> \"elotu\"\n   \"pyosepticemic\" -> \"cceeimoopsty\"\n   \"septicopyemic\" -> \"cceeimoopsty\"\n   \"agnate\" -> \"aegnst\"\n   \"tanega\" -> \"aegnst\"\n   \"freshet\" -> \"efhrst\"\n   \"sensable\" -> \"abelns\"\n   \"blaeness\" -> \"abelns\"\n   \"gravures\" -> \"agrrssuv\"\n   \"maquis\" -> \"aimqsu\"\n   \"creedalism\" -> \"acdeilmrs\"\n   \"declaimers\" -> \"acdeilmrs\"\n\n3) Now I can group words with the same sorted pattern together\n</reasoning>\n<answer>\n[\n    [\"runouts\"],\n    [\"cuttler\", \"clutter\"],\n    [\"volute\", \"velout\"],\n    [\"pyosepticemic\", \"septicopyemic\"],\n    [\"agnate\", \"tanega\"],\n    [\"freshet\"],\n    [\"sensable\", \"blaeness\"],\n    [\"gravures\"],\n    [\"maquis\"],\n    [\"creedalism\", \"declaimers\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "runouts",
+            "cuttler",
+            "clutter",
+            "volute",
+            "velout",
+            "pyosepticemic",
+            "septicopyemic",
+            "agnate",
+            "tanega",
+            "freshet",
+            "sensable",
+            "blaeness",
+            "gravures",
+            "maquis",
+            "creedalism",
+            "declaimers"
+          ],
+          "solution": [
+            [
+              "agnate",
+              "tanega"
+            ],
+            [
+              "blaeness",
+              "sensable"
+            ],
+            [
+              "clutter",
+              "cuttler"
+            ],
+            [
+              "creedalism",
+              "declaimers"
+            ],
+            [
+              "freshet"
+            ],
+            [
+              "gravures"
+            ],
+            [
+              "maquis"
+            ],
+            [
+              "pyosepticemic",
+              "septicopyemic"
+            ],
+            [
+              "runouts"
+            ],
+            [
+              "velout",
+              "volute"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"brawlers\", \"warblers\", \"venta\", \"navet\", \"nevat\", \"knurly\", \"runkly\", \"roqueting\", \"rechain\", \"chainer\", \"archine\", \"enchair\", \"scrime\", \"ungrudged\", \"bondages\", \"canfuls\", \"cansful\", \"expectant\"]\n",
+        "expected_answer": "[[\"archine\", \"chainer\", \"enchair\", \"rechain\"], [\"bondages\"], [\"brawlers\", \"warblers\"], [\"canfuls\", \"cansful\"], [\"expectant\"], [\"knurly\", \"runkly\"], [\"navet\", \"nevat\", \"venta\"], [\"roqueting\"], [\"scrime\"], [\"ungrudged\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a strategy to identify anagrams:\n   - For each word, sort its letters alphabetically\n   - Words that produce the same sorted letters are anagrams\n\n2) Let me sort each word's letters:\n   - brawlers -> ablrrsw\n   - warblers -> ablrrsw\n   - venta -> aentv\n   - navet -> aentv\n   - nevat -> aentv\n   - knurly -> klnruy\n   - runkly -> klnruy\n   - roqueting -> eginqrtu\n   - rechain -> achinr\n   - chainer -> achinr\n   - archine -> achinr\n   - enchair -> achinr\n   - scrime -> ceimrs\n   - ungrudged -> ddegnruu\n   - bondages -> abdegnos\n   - canfuls -> acflnsu\n   - cansful -> acflnsu\n   - expectant -> acenptxt\n\n3) Now grouping words with the same sorted letters:\n   - [brawlers, warblers]\n   - [venta, navet, nevat]\n   - [knurly, runkly]\n   - [rechain, chainer, archine, enchair]\n   - [canfuls, cansful]\n   \n4) Words that have no anagrams in the list:\n   - [roqueting]\n   - [scrime]\n   - [ungrudged]\n   - [bondages]\n   - [expectant]\n</reasoning>\n<answer>[[\"brawlers\", \"warblers\"], [\"venta\", \"navet\", \"nevat\"], [\"knurly\", \"runkly\"], [\"rechain\", \"chainer\", \"archine\", \"enchair\"], [\"scrime\"], [\"roqueting\"], [\"ungrudged\"], [\"bondages\"], [\"canfuls\", \"cansful\"], [\"expectant\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "brawlers",
+            "warblers",
+            "venta",
+            "navet",
+            "nevat",
+            "knurly",
+            "runkly",
+            "roqueting",
+            "rechain",
+            "chainer",
+            "archine",
+            "enchair",
+            "scrime",
+            "ungrudged",
+            "bondages",
+            "canfuls",
+            "cansful",
+            "expectant"
+          ],
+          "solution": [
+            [
+              "archine",
+              "chainer",
+              "enchair",
+              "rechain"
+            ],
+            [
+              "bondages"
+            ],
+            [
+              "brawlers",
+              "warblers"
+            ],
+            [
+              "canfuls",
+              "cansful"
+            ],
+            [
+              "expectant"
+            ],
+            [
+              "knurly",
+              "runkly"
+            ],
+            [
+              "navet",
+              "nevat",
+              "venta"
+            ],
+            [
+              "roqueting"
+            ],
+            [
+              "scrime"
+            ],
+            [
+              "ungrudged"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"spironolactone\", \"preconsolation\", \"salpid\", \"aeroduct\", \"outraced\", \"rho\", \"routemen\", \"miscreate\", \"creamiest\", \"spiderman\", \"panderism\", \"esca\", \"aces\", \"aesc\", \"phenolion\", \"phelonion\", \"samir\", \"mairs\", \"simar\", \"amirs\"]\n",
+        "expected_answer": "[[\"aces\", \"aesc\", \"esca\"], [\"aeroduct\", \"outraced\"], [\"amirs\", \"mairs\", \"samir\", \"simar\"], [\"creamiest\", \"miscreate\"], [\"panderism\", \"spiderman\"], [\"phelonion\", \"phenolion\"], [\"preconsolation\", \"spironolactone\"], [\"rho\"], [\"routemen\"], [\"salpid\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to identify words that are anagrams of each other. Two words are anagrams if they have the same letters when sorted.\n\n2) Let me sort each word alphabetically and group them:\n\nspironolactone -> acdeilnoprst -> matches with \"preconsolation\"\nsalpid -> adilps\naeroduct -> acdeortu -> matches with \"outraced\"\nrho -> hor\nroutemen -> emnortu\nmiscreate -> aceeimrts -> matches with \"creamiest\"\nspiderman -> adeimnprs -> matches with \"panderism\"\nesca -> aces -> matches with \"aces\", \"aesc\"\nphenolion -> ehilnnop -> matches with \"phelonion\"\nsamir -> aimrs -> matches with \"mairs\", \"simar\", \"amirs\"\n\n3) Now I can group them together based on these sorted patterns.\n\n4) Looking at the groups:\n- spironolactone, preconsolation\n- salpid\n- aeroduct, outraced\n- rho\n- routemen\n- miscreate, creamiest\n- spiderman, panderism\n- esca, aces, aesc\n- phenolion, phelonion\n- samir, mairs, simar, amirs\n</reasoning>\n<answer>[\n    [\"spironolactone\", \"preconsolation\"],\n    [\"salpid\"],\n    [\"aeroduct\", \"outraced\"],\n    [\"rho\"],\n    [\"routemen\"],\n    [\"miscreate\", \"creamiest\"],\n    [\"spiderman\", \"panderism\"],\n    [\"esca\", \"aces\", \"aesc\"],\n    [\"phenolion\", \"phelonion\"],\n    [\"samir\", \"mairs\", \"simar\", \"amirs\"]\n]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "spironolactone",
+            "preconsolation",
+            "salpid",
+            "aeroduct",
+            "outraced",
+            "rho",
+            "routemen",
+            "miscreate",
+            "creamiest",
+            "spiderman",
+            "panderism",
+            "esca",
+            "aces",
+            "aesc",
+            "phenolion",
+            "phelonion",
+            "samir",
+            "mairs",
+            "simar",
+            "amirs"
+          ],
+          "solution": [
+            [
+              "aces",
+              "aesc",
+              "esca"
+            ],
+            [
+              "aeroduct",
+              "outraced"
+            ],
+            [
+              "amirs",
+              "mairs",
+              "samir",
+              "simar"
+            ],
+            [
+              "creamiest",
+              "miscreate"
+            ],
+            [
+              "panderism",
+              "spiderman"
+            ],
+            [
+              "phelonion",
+              "phenolion"
+            ],
+            [
+              "preconsolation",
+              "spironolactone"
+            ],
+            [
+              "rho"
+            ],
+            [
+              "routemen"
+            ],
+            [
+              "salpid"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"brackets\", \"backster\", \"volutae\", \"cabob\", \"stoutly\", \"tylotus\", \"ruinous\", \"recessed\", \"seceders\", \"hederin\", \"inhered\", \"endpaper\", \"appender\", \"clocker\", \"cockler\", \"pesage\"]\n",
+        "expected_answer": "[[\"appender\", \"endpaper\"], [\"backster\", \"brackets\"], [\"cabob\"], [\"clocker\", \"cockler\"], [\"hederin\", \"inhered\"], [\"pesage\"], [\"recessed\", \"seceders\"], [\"ruinous\"], [\"stoutly\", \"tylotus\"], [\"volutae\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters alphabetically. \n   Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word:\n   - brackets -> abckrst\n   - backster -> abckrst\n   - volutae -> aelotuv\n   - cabob -> abbco\n   - stoutly -> lostuy\n   - tylotus -> lostuy\n   - ruinous -> inorsu\n   - recessed -> cdeerss\n   - seceders -> cdeerss\n   - hederin -> dehinr\n   - inhered -> dehinr\n   - endpaper -> adeenpr\n   - appender -> adeenpr\n   - clocker -> ceklor\n   - cockler -> ceklor\n   - pesage -> aeegps\n\n3) Now I can group words with the same sorted letters together:\n   - abckrst: brackets, backster\n   - aelotuv: volutae\n   - abbco: cabob\n   - lostuy: stoutly, tylotus\n   - inorsu: ruinous\n   - cdeerss: recessed, seceders\n   - dehinr: hederin, inhered\n   - adeenpr: endpaper, appender\n   - ceklor: clocker, cockler\n   - aeegps: pesage\n</reasoning>\n<answer>\n[\n    [\"brackets\", \"backster\"],\n    [\"volutae\"],\n    [\"cabob\"],\n    [\"stoutly\", \"tylotus\"],\n    [\"ruinous\"],\n    [\"recessed\", \"seceders\"],\n    [\"hederin\", \"inhered\"],\n    [\"endpaper\", \"appender\"],\n    [\"clocker\", \"cockler\"],\n    [\"pesage\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "brackets",
+            "backster",
+            "volutae",
+            "cabob",
+            "stoutly",
+            "tylotus",
+            "ruinous",
+            "recessed",
+            "seceders",
+            "hederin",
+            "inhered",
+            "endpaper",
+            "appender",
+            "clocker",
+            "cockler",
+            "pesage"
+          ],
+          "solution": [
+            [
+              "appender",
+              "endpaper"
+            ],
+            [
+              "backster",
+              "brackets"
+            ],
+            [
+              "cabob"
+            ],
+            [
+              "clocker",
+              "cockler"
+            ],
+            [
+              "hederin",
+              "inhered"
+            ],
+            [
+              "pesage"
+            ],
+            [
+              "recessed",
+              "seceders"
+            ],
+            [
+              "ruinous"
+            ],
+            [
+              "stoutly",
+              "tylotus"
+            ],
+            [
+              "volutae"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"wonder\", \"bode\", \"dobe\", \"lathed\", \"underacted\", \"rebundle\", \"blendure\", \"latinos\", \"talions\", \"acider\", \"mugweed\", \"gumweed\", \"phaseouts\", \"muses\", \"smuse\"]\n",
+        "expected_answer": "[[\"acider\"], [\"blendure\", \"rebundle\"], [\"bode\", \"dobe\"], [\"gumweed\", \"mugweed\"], [\"lathed\"], [\"latinos\", \"talions\"], [\"muses\", \"smuse\"], [\"phaseouts\"], [\"underacted\"], [\"wonder\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll create a key for each word by sorting its letters. Words that are anagrams will have the same sorted letters.\n\n2) Let me sort each word:\n- wonder -> denorw\n- bode -> bdeo\n- dobe -> bdeo\n- lathed -> adehlst\n- underacted -> acdeenrstu\n- rebundle -> bdeelnru\n- blendure -> bdeelnru\n- latinos -> ailnost\n- talions -> ailnost\n- acider -> acdeir\n- mugweed -> deegmuw\n- gumweed -> deegmuw\n- phaseouts -> aehopsstu\n- muses -> emssu\n- smuse -> emssu\n\n3) Now grouping words with the same sorted letters:\n- bdeo: [\"bode\", \"dobe\"]\n- denorw: [\"wonder\"]\n- adehlst: [\"lathed\"]\n- acdeenrstu: [\"underacted\"]\n- bdeelnru: [\"rebundle\", \"blendure\"]\n- ailnost: [\"latinos\", \"talions\"]\n- acdeir: [\"acider\"]\n- deegmuw: [\"mugweed\", \"gumweed\"]\n- aehopsstu: [\"phaseouts\"]\n- emssu: [\"muses\", \"smuse\"]\n</reasoning>\n<answer>[[\"bode\", \"dobe\"], [\"wonder\"], [\"lathed\"], [\"underacted\"], [\"rebundle\", \"blendure\"], [\"latinos\", \"talions\"], [\"acider\"], [\"mugweed\", \"gumweed\"], [\"phaseouts\"], [\"muses\", \"smuse\"]]</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "wonder",
+            "bode",
+            "dobe",
+            "lathed",
+            "underacted",
+            "rebundle",
+            "blendure",
+            "latinos",
+            "talions",
+            "acider",
+            "mugweed",
+            "gumweed",
+            "phaseouts",
+            "muses",
+            "smuse"
+          ],
+          "solution": [
+            [
+              "acider"
+            ],
+            [
+              "blendure",
+              "rebundle"
+            ],
+            [
+              "bode",
+              "dobe"
+            ],
+            [
+              "gumweed",
+              "mugweed"
+            ],
+            [
+              "lathed"
+            ],
+            [
+              "latinos",
+              "talions"
+            ],
+            [
+              "muses",
+              "smuse"
+            ],
+            [
+              "phaseouts"
+            ],
+            [
+              "underacted"
+            ],
+            [
+              "wonder"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"rangeless\", \"angerless\", \"largeness\", \"regalness\", \"pettles\", \"ranks\", \"karns\", \"knars\", \"snark\", \"neoologist\", \"ontologies\", \"oenologist\", \"ontologise\", \"techne\", \"averil\", \"elvira\", \"sered\", \"redes\", \"drees\", \"servist\", \"mab\", \"bakshis\"]\n",
+        "expected_answer": "[[\"angerless\", \"largeness\", \"rangeless\", \"regalness\"], [\"averil\", \"elvira\"], [\"bakshis\"], [\"drees\", \"redes\", \"sered\"], [\"karns\", \"knars\", \"ranks\", \"snark\"], [\"mab\"], [\"neoologist\", \"oenologist\", \"ontologies\", \"ontologise\"], [\"pettles\"], [\"servist\"], [\"techne\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to find a way to identify anagrams. Two words are anagrams if they have the same letters when sorted.\n\n2) Let me sort each word and group them:\n   - rangeless -> aeglnrss -> group1\n   - angerless -> aeglnrss -> group1\n   - largeness -> aeglnrss -> group1\n   - regalness -> aeglnrss -> group1\n   \n   - pettles -> (alone)\n   \n   - ranks -> aknrs -> group2\n   - karns -> aknrs -> group2\n   - knars -> aknrs -> group2\n   - snark -> aknrs -> group2\n   \n   - neoologist -> egnoloost -> group3\n   - ontologies -> egnoloost -> group3\n   - oenologist -> egnoloost -> group3\n   - ontologise -> egnoloost -> group3\n   \n   - techne -> (alone)\n   \n   - averil -> aeilrv -> group4\n   - elvira -> aeilrv -> group4\n   \n   - sered -> deers -> group5\n   - redes -> deers -> group5\n   - drees -> deers -> group5\n   \n   - servist -> (alone)\n   - mab -> (alone)\n   - bakshis -> (alone)\n\n3) Now I can group the words that share the same sorted letters together.\n</reasoning>\n<answer>\n[\n    [\"rangeless\", \"angerless\", \"largeness\", \"regalness\"],\n    [\"ranks\", \"karns\", \"knars\", \"snark\"],\n    [\"neoologist\", \"ontologies\", \"oenologist\", \"ontologise\"],\n    [\"averil\", \"elvira\"],\n    [\"sered\", \"redes\", \"drees\"],\n    [\"pettles\"],\n    [\"techne\"],\n    [\"servist\"],\n    [\"mab\"],\n    [\"bakshis\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "rangeless",
+            "angerless",
+            "largeness",
+            "regalness",
+            "pettles",
+            "ranks",
+            "karns",
+            "knars",
+            "snark",
+            "neoologist",
+            "ontologies",
+            "oenologist",
+            "ontologise",
+            "techne",
+            "averil",
+            "elvira",
+            "sered",
+            "redes",
+            "drees",
+            "servist",
+            "mab",
+            "bakshis"
+          ],
+          "solution": [
+            [
+              "angerless",
+              "largeness",
+              "rangeless",
+              "regalness"
+            ],
+            [
+              "averil",
+              "elvira"
+            ],
+            [
+              "bakshis"
+            ],
+            [
+              "drees",
+              "redes",
+              "sered"
+            ],
+            [
+              "karns",
+              "knars",
+              "ranks",
+              "snark"
+            ],
+            [
+              "mab"
+            ],
+            [
+              "neoologist",
+              "oenologist",
+              "ontologies",
+              "ontologise"
+            ],
+            [
+              "pettles"
+            ],
+            [
+              "servist"
+            ],
+            [
+              "techne"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"rubin\", \"inrub\", \"burin\", \"rondelles\", \"norselled\", \"antimeric\", \"criminate\", \"metrician\", \"kloof\", \"stamnoi\", \"manitos\", \"incisure\", \"intenser\", \"corteise\", \"levering\", \"reveling\", \"tapsman\"]\n",
+        "expected_answer": "[[\"antimeric\", \"criminate\", \"metrician\"], [\"burin\", \"inrub\", \"rubin\"], [\"corteise\"], [\"incisure\"], [\"intenser\"], [\"kloof\"], [\"levering\", \"reveling\"], [\"manitos\", \"stamnoi\"], [\"norselled\", \"rondelles\"], [\"tapsman\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each word, I'll sort its letters alphabetically to create a key. Words that are anagrams will have the same key.\n\n2) Let me create these keys:\n- rubin, inrub, burin -> binru\n- rondelles, norselled -> delnors\n- antimeric, criminate, metrician -> aceeimnrt\n- kloof -> fkloo\n- stamnoi, manitos -> aimnost\n- incisure -> ceiinrsu\n- intenser -> einnrst\n- corteise -> ceeiorst\n- levering, reveling -> eegilnrv\n- tapsman -> aamnpst\n\n3) Now I can group words that share the same key together.\n\n4) Looking at the sorted keys:\n- binru: rubin, inrub, burin\n- delnors: rondelles, norselled\n- aceeimnrt: antimeric, criminate, metrician\n- fkloo: kloof\n- aimnost: stamnoi, manitos\n- ceiinrsu: incisure\n- einnrst: intenser\n- ceeiorst: corteise\n- eegilnrv: levering, reveling\n- aamnpst: tapsman\n</reasoning>\n\n<answer>\n[\n    [\"rubin\", \"inrub\", \"burin\"],\n    [\"rondelles\", \"norselled\"],\n    [\"antimeric\", \"criminate\", \"metrician\"],\n    [\"kloof\"],\n    [\"stamnoi\", \"manitos\"],\n    [\"incisure\"],\n    [\"intenser\"],\n    [\"corteise\"],\n    [\"levering\", \"reveling\"],\n    [\"tapsman\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "rubin",
+            "inrub",
+            "burin",
+            "rondelles",
+            "norselled",
+            "antimeric",
+            "criminate",
+            "metrician",
+            "kloof",
+            "stamnoi",
+            "manitos",
+            "incisure",
+            "intenser",
+            "corteise",
+            "levering",
+            "reveling",
+            "tapsman"
+          ],
+          "solution": [
+            [
+              "antimeric",
+              "criminate",
+              "metrician"
+            ],
+            [
+              "burin",
+              "inrub",
+              "rubin"
+            ],
+            [
+              "corteise"
+            ],
+            [
+              "incisure"
+            ],
+            [
+              "intenser"
+            ],
+            [
+              "kloof"
+            ],
+            [
+              "levering",
+              "reveling"
+            ],
+            [
+              "manitos",
+              "stamnoi"
+            ],
+            [
+              "norselled",
+              "rondelles"
+            ],
+            [
+              "tapsman"
+            ]
+          ]
+        }
+      },
+      {
+        "question": "An anagram is a word formed by rearranging the letters of a different word, using all the original letters exactly once.\n\nYour job is to group the anagrams together. You can return the answer in any order.\n\nExample:\nInput: [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nOutput: [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]\nExplanation:\n    - There is no string in the input that can be rearranged to form \"bat\".\n    - The strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\n\nGroup the following list of words into anagrams:\n[\"inlaid\", \"dialin\", \"dianil\", \"anilid\", \"omnitenent\", \"bergalith\", \"rightable\", \"missary\", \"syriasm\", \"slimer\", \"smiler\", \"milers\", \"brazas\", \"bazars\", \"ondogram\", \"naivetes\", \"sarcitis\", \"triassic\", \"poinder\"]\n",
+        "expected_answer": "[[\"anilid\", \"dialin\", \"dianil\", \"inlaid\"], [\"bazars\", \"brazas\"], [\"bergalith\", \"rightable\"], [\"milers\", \"slimer\", \"smiler\"], [\"missary\", \"syriasm\"], [\"naivetes\"], [\"omnitenent\"], [\"ondogram\"], [\"poinder\"], [\"sarcitis\", \"triassic\"]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to identify which words are anagrams of each other. The best way to do this is to sort the letters of each word alphabetically and use that as a key.\n\n2) Going through each word:\n- \"inlaid\", \"dialin\", \"dianil\", \"anilid\" -> sorted: \"adiln\"\n- \"omnitenent\" -> sorted: \"emnnot\"\n- \"bergalith\" -> sorted: \"abeghilrt\"\n- \"rightable\" -> sorted: \"abeghilrt\"\n- \"missary\" -> sorted: \"aimrssy\"\n- \"syriasm\" -> sorted: \"aimrssy\"\n- \"slimer\", \"smiler\", \"milers\" -> sorted: \"eilmrs\"\n- \"brazas\", \"bazars\" -> sorted: \"aabrsz\"\n- \"ondogram\" -> sorted: \"adgmnoor\"\n- \"naivetes\" -> sorted: \"aeeinstv\"\n- \"sarcitis\", \"triassic\" -> sorted: \"acirsst\"\n- \"poinder\" -> sorted: \"deinopr\"\n\n3) Now I can group them based on their sorted letters.\n</reasoning>\n\n<answer>\n[\n    [\"inlaid\", \"dialin\", \"dianil\", \"anilid\"],\n    [\"omnitenent\"],\n    [\"bergalith\", \"rightable\"],\n    [\"missary\", \"syriasm\"],\n    [\"slimer\", \"smiler\", \"milers\"],\n    [\"brazas\", \"bazars\"],\n    [\"ondogram\"],\n    [\"naivetes\"],\n    [\"sarcitis\", \"triassic\"],\n    [\"poinder\"]\n]\n</answer>",
+        "score": 1,
+        "metadata": {
+          "words": [
+            "inlaid",
+            "dialin",
+            "dianil",
+            "anilid",
+            "omnitenent",
+            "bergalith",
+            "rightable",
+            "missary",
+            "syriasm",
+            "slimer",
+            "smiler",
+            "milers",
+            "brazas",
+            "bazars",
+            "ondogram",
+            "naivetes",
+            "sarcitis",
+            "triassic",
+            "poinder"
+          ],
+          "solution": [
+            [
+              "anilid",
+              "dialin",
+              "dianil",
+              "inlaid"
+            ],
+            [
+              "bazars",
+              "brazas"
+            ],
+            [
+              "bergalith",
+              "rightable"
+            ],
+            [
+              "milers",
+              "slimer",
+              "smiler"
+            ],
+            [
+              "missary",
+              "syriasm"
+            ],
+            [
+              "naivetes"
+            ],
+            [
+              "omnitenent"
+            ],
+            [
+              "ondogram"
+            ],
+            [
+              "poinder"
+            ],
+            [
+              "sarcitis",
+              "triassic"
+            ]
+          ]
+        }
+      }
+    ]
+  }
+]

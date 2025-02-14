@@ -1,0 +1,668 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "base_conversion",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.6506000000000001,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T23:10:02.656338",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Convert the base-3 number 220020 to binary",
+        "expected_answer": "1010001110",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-3 number to decimal\n   In base-3, each digit is multiplied by powers of 3 from right to left:\n   2200203 = 2\u00d735 + 2\u00d734 + 0\u00d733 + 0\u00d732 + 2\u00d731 + 0\u00d730\n   = 2\u00d7243 + 2\u00d781 + 0\u00d727 + 0\u00d79 + 2\u00d73 + 0\u00d71\n   = 486 + 162 + 0 + 0 + 6 + 0\n   = 65410\n\n2) Now convert decimal to binary\n   654 \u00f7 2 = 327 remainder 0\n   327 \u00f7 2 = 163 remainder 1\n   163 \u00f7 2 = 81  remainder 1\n   81 \u00f7 2 = 40   remainder 1\n   40 \u00f7 2 = 20   remainder 0\n   20 \u00f7 2 = 10   remainder 0\n   10 \u00f7 2 = 5    remainder 0\n   5 \u00f7 2 = 2     remainder 1\n   2 \u00f7 2 = 1     remainder 0\n   1 \u00f7 2 = 0     remainder 1\n\nReading the remainders from bottom to top gives us the binary number.\n</reasoning>\n<answer>10100011102</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 654,
+          "source_base": 3,
+          "target_base": 2,
+          "source_repr": "220020",
+          "target_repr": "1010001110"
+        }
+      },
+      {
+        "question": "Convert the base-6 number 103 to base-13 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "30",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert 103 (base-6) to base-10 (decimal)\n   In base-6, each position represents a power of 6\n   1036 = 1\u00d762 + 0\u00d761 + 3\u00d760\n   = 1\u00d736 + 0\u00d76 + 3\u00d71\n   = 36 + 0 + 3\n   = 39 (decimal)\n\n2) Now convert decimal 39 to base-13\n   - Divide 39 by 13 repeatedly and track remainders:\n   39 \u00f7 13 = 3 remainder 0\n   3 \u00f7 13 = 0 remainder 3\n\n   Reading remainders from bottom to top:\n   39 in base-13 = 3013\n</reasoning>\n<answer>30</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 39,
+          "source_base": 6,
+          "target_base": 13,
+          "source_repr": "103",
+          "target_repr": "30"
+        }
+      },
+      {
+        "question": "Convert the base-10 number 418 to base-13 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "262",
+        "model_answer": "<reasoning>\nTo convert a number from base 10 to another base, I need to:\n1. Repeatedly divide by the target base (13)\n2. Keep track of remainders in reverse order\n\n418 \u00f7 13 = 32 remainder 2\n32 \u00f7 13 = 2 remainder 6\n2 \u00f7 13 = 0 remainder 2\n\nReading the remainders from bottom to top:\n2, 6, 2\n\nIn base-13, we use digits 0-9 and then a-c\nSince all remainders are less than 10, we don't need to use any letters in this case.\n</reasoning>\n<answer>26213</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 418,
+          "source_base": 10,
+          "target_base": 13,
+          "source_repr": "418",
+          "target_repr": "262"
+        }
+      },
+      {
+        "question": "Convert the base-8 number 426 to base-9",
+        "expected_answer": "338",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 426 (base-8) to base-10 (decimal)\n   In base-8, each digit is multiplied by a power of 8:\n   4268 = 4\u00d782 + 2\u00d781 + 6\u00d780\n   = 4\u00d764 + 2\u00d78 + 6\u00d71\n   = 256 + 16 + 6\n   = 27810\n\n2) Now that I have the decimal number 278, I need to convert it to base-9\n   I'll divide 278 by 9 repeatedly and keep track of remainders:\n\n   278 \u00f7 9 = 30 remainder 8\n   30 \u00f7 9 = 3 remainder 3\n   3 \u00f7 9 = 0 remainder 3\n\n3) Reading the remainders from bottom to top gives us the base-9 number:\n   27810 = 3389\n</reasoning>\n<answer>3389</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 278,
+          "source_base": 8,
+          "target_base": 9,
+          "source_repr": "426",
+          "target_repr": "338"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 1020200 to base-8",
+        "expected_answer": "1615",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-3 number to base-10 (decimal)\n   In base-3, each digit is multiplied by powers of 3 from right to left:\n   1020200 (base-3) \n   = 1\u00d73^6 + 0\u00d73^5 + 2\u00d73^4 + 0\u00d73^3 + 2\u00d73^2 + 0\u00d73^1 + 0\u00d73^0\n   = 1\u00d7729 + 0\u00d7243 + 2\u00d781 + 0\u00d727 + 2\u00d79 + 0\u00d73 + 0\u00d71\n   = 729 + 0 + 162 + 0 + 18 + 0 + 0\n   = 909 (base-10)\n\n2) Now convert decimal 909 to base-8\n   Divide 909 by 8 repeatedly and read remainders from bottom to top:\n   909 \u00f7 8 = 113 remainder 5\n   113 \u00f7 8 = 14  remainder 1\n   14 \u00f7 8 = 1    remainder 6\n   1 \u00f7 8 = 0     remainder 1\n\n   Reading remainders from bottom to top: 1615\n</reasoning>\n<answer>1615 (base-8)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 909,
+          "source_base": 3,
+          "target_base": 8,
+          "source_repr": "1020200",
+          "target_repr": "1615"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 111100 to base-8",
+        "expected_answer": "550",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll convert base-3 number to base-10 (decimal)\n   In base-3, each digit is multiplied by powers of 3 from right to left:\n   111100 (base-3) = 1\u00d73^5 + 1\u00d73^4 + 1\u00d73^3 + 1\u00d73^2 + 0\u00d73^1 + 0\u00d73^0\n   = 1\u00d7243 + 1\u00d781 + 1\u00d727 + 1\u00d79 + 0\u00d73 + 0\u00d71\n   = 243 + 81 + 27 + 9 + 0 + 0\n   = 360 (base-10)\n\n2) Now, I'll convert decimal 360 to base-8\n   Divide 360 by 8 repeatedly and read remainders from bottom to top:\n   360 \u00f7 8 = 45 remainder 0\n   45 \u00f7 8 = 5 remainder 5\n   5 \u00f7 8 = 0 remainder 5\n\n   Reading from bottom to top: 550\n</reasoning>\n<answer>550 (base-8)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 360,
+          "source_base": 3,
+          "target_base": 8,
+          "source_repr": "111100",
+          "target_repr": "550"
+        }
+      },
+      {
+        "question": "Convert the base-7 number 1431 to base-4",
+        "expected_answer": "20301",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 1431 (base-7) to base-10 (decimal)\n   In base-7, each digit is multiplied by a power of 7 and then summed:\n   14317 = 1\u00d773 + 4\u00d772 + 3\u00d771 + 1\u00d770\n   = 1\u00d7343 + 4\u00d749 + 3\u00d77 + 1\u00d71\n   = 343 + 196 + 21 + 1\n   = 561 (base-10)\n\n2) Now, let's convert 561 (base-10) to base-4\n   We divide 561 by 4 repeatedly and keep track of remainders:\n   561 \u00f7 4 = 140 remainder 1\n   140 \u00f7 4 = 35  remainder 0\n   35 \u00f7 4 = 8    remainder 3\n   8 \u00f7 4 = 2     remainder 0\n   2 \u00f7 4 = 0     remainder 2\n\n   Reading the remainders from bottom to top gives us the base-4 number.\n</reasoning>\n<answer>203014</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 561,
+          "source_base": 7,
+          "target_base": 4,
+          "source_repr": "1431",
+          "target_repr": "20301"
+        }
+      },
+      {
+        "question": "Convert the base-7 number 125 to base-8",
+        "expected_answer": "104",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 125 (base-7) to base-10 (decimal)\n   In base-7, each digit is multiplied by a power of 7, from right to left\n   125 (base-7) = 1\u00d772 + 2\u00d771 + 5\u00d770\n   = 1\u00d749 + 2\u00d77 + 5\u00d71\n   = 49 + 14 + 5\n   = 68 (base-10)\n\n2) Now that I have 68 in decimal, I need to convert it to base-8\n   To convert to base-8, divide by 8 repeatedly and keep track of remainders:\n   68 \u00f7 8 = 8 remainder 4\n   8 \u00f7 8 = 1 remainder 0\n   1 \u00f7 8 = 0 remainder 1\n\n3) Reading the remainders from bottom to top gives the base-8 number:\n   68 (base-10) = 104 (base-8)\n</reasoning>\n<answer>104 (base-8)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 68,
+          "source_base": 7,
+          "target_base": 8,
+          "source_repr": "125",
+          "target_repr": "104"
+        }
+      },
+      {
+        "question": "Convert the base-15 number 23e to base-6",
+        "expected_answer": "2205",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 23e (base-15) to decimal (base-10)\n   - In base-15, each digit is multiplied by powers of 15\n   - Going right to left: 'e' = 14, '3' = 3, '2' = 2\n   - So: 2\u00d7152 + 3\u00d7151 + 14\u00d7150\n   - = 2\u00d7225 + 3\u00d715 + 14\u00d71\n   - = 450 + 45 + 14\n   - = 509 (base-10)\n\n2) Now I need to convert 509 to base-6\n   - Divide by 6 repeatedly and keep track of remainders:\n   - 509 \u00f7 6 = 84 remainder 5\n   - 84 \u00f7 6 = 14 remainder 0\n   - 14 \u00f7 6 = 2 remainder 2\n   - 2 \u00f7 6 = 0 remainder 2\n   - Reading the remainders from bottom to top gives us the answer\n</reasoning>\n<answer>2205 (base-6)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 509,
+          "source_base": 15,
+          "target_base": 6,
+          "source_repr": "23e",
+          "target_repr": "2205"
+        }
+      },
+      {
+        "question": "Convert the base-15 number 119 to base-10",
+        "expected_answer": "249",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. In base-15, each digit represents a power of 15\n2. Working from right to left:\n   * 9 is in the ones place (150): 9 \u00d7 1 = 9\n   * 1 is in the fifteens place (151): 1 \u00d7 15 = 15\n   * 1 is in the two hundred twenty-fives place (152): 1 \u00d7 225 = 225\n3. Adding these values together:\n   225 + 15 + 9 = 249\n</reasoning>\n<answer>The base-15 number 119 is equal to 249 in base-10</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 249,
+          "source_base": 15,
+          "target_base": 10,
+          "source_repr": "119",
+          "target_repr": "249"
+        }
+      },
+      {
+        "question": "Convert the binary number 100010010 to hexadecimal (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "112",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll group the binary digits into sets of 4 from right to left\n   100010010 \u2192 1|0001|0010\n2. Convert each group of 4 bits to decimal:\n   0010 = 2\n   0001 = 1\n   1 = 1\n3. Now I have 112 in decimal (reading from left to right)\n4. Since all values are less than 9, no conversion to letters is needed\nTherefore, the hexadecimal number will be 112\n</reasoning>\n<answer>112</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 274,
+          "source_base": 2,
+          "target_base": 16,
+          "source_repr": "100010010",
+          "target_repr": "112"
+        }
+      },
+      {
+        "question": "Convert the base-15 number 2c1 to hexadecimal (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "277",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert base-15 number 2c1 to decimal\n   - In base-15, each position represents a power of 15\n   - Going from right to left:\n   - 1 \u00d7 150 = 1 \u00d7 1 = 1\n   - c \u00d7 151 = 12 \u00d7 15 = 180 (since c represents 12 in base-15)\n   - 2 \u00d7 152 = 2 \u00d7 225 = 450\n   - Total: 450 + 180 + 1 = 631 (decimal)\n\n2) Now convert decimal 631 to hexadecimal\n   - Divide by 16 repeatedly and collect remainders:\n   631 \u00f7 16 = 39 remainder 7\n   39 \u00f7 16 = 2 remainder 7\n   2 \u00f7 16 = 0 remainder 2\n   - Reading remainders bottom to top: 277\n</reasoning>\n<answer>277</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 631,
+          "source_base": 15,
+          "target_base": 16,
+          "source_repr": "2c1",
+          "target_repr": "277"
+        }
+      },
+      {
+        "question": "Convert the base-4 number 32213 to base-9",
+        "expected_answer": "1248",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-4 number to decimal (base-10)\n   In base-4, each digit is multiplied by powers of 4 from right to left\n   322134 = 3\u00d744 + 2\u00d743 + 2\u00d742 + 1\u00d741 + 3\u00d740\n   = 3\u00d7256 + 2\u00d764 + 2\u00d716 + 1\u00d74 + 3\u00d71\n   = 768 + 128 + 32 + 4 + 3\n   = 93510\n\n2) Now convert decimal 935 to base-9\n   Divide 935 by 9 repeatedly and read remainders from bottom to top:\n   935 \u00f7 9 = 103 remainder 8\n   103 \u00f7 9 = 11 remainder 4\n   11 \u00f7 9 = 1 remainder 2\n   1 \u00f7 9 = 0 remainder 1\n\nTherefore, reading remainders from bottom to top: 12489\n</reasoning>\n<answer>12489</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 935,
+          "source_base": 4,
+          "target_base": 9,
+          "source_repr": "32213",
+          "target_repr": "1248"
+        }
+      },
+      {
+        "question": "Convert the base-5 number 332 to base-4",
+        "expected_answer": "1130",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 332 (base-5) to base-10 (decimal)\n   In base-5, each digit is multiplied by a power of 5 from right to left:\n   3325 = 3\u00d752 + 3\u00d751 + 2\u00d750\n   = 3\u00d725 + 3\u00d75 + 2\u00d71\n   = 75 + 15 + 2\n   = 92 (decimal)\n\n2) Now, let's convert 92 (decimal) to base-4\n   We divide 92 by 4 repeatedly and read the remainders from bottom to top:\n\n   92 \u00f7 4 = 23 remainder 0\n   23 \u00f7 4 = 5  remainder 3\n   5 \u00f7 4 = 1   remainder 1\n   1 \u00f7 4 = 0   remainder 1\n\n   Reading remainders from bottom to top: 1130\n</reasoning>\n<answer>3325 = 11304</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 92,
+          "source_base": 5,
+          "target_base": 4,
+          "source_repr": "332",
+          "target_repr": "1130"
+        }
+      },
+      {
+        "question": "Convert the base-15 number 45e to base-10",
+        "expected_answer": "989",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. In base-15, each digit represents a power of 15, from right to left\n2. The digits in base-15 go from 0-9, then a-e (where a=10, b=11, c=12, d=13, e=14)\n3. So 45e (base-15) = 4\u00d7152 + 5\u00d7151 + 14\u00d7150\n4. Let's calculate:\n   * 4\u00d7152 = 4\u00d7225 = 900\n   * 5\u00d7151 = 5\u00d715 = 75\n   * 14\u00d7150 = 14\u00d71 = 14\n5. Adding these up: 900 + 75 + 14 = 989\n</reasoning>\n<answer>989</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 989,
+          "source_base": 15,
+          "target_base": 10,
+          "source_repr": "45e",
+          "target_repr": "989"
+        }
+      },
+      {
+        "question": "Convert the base-7 number 61 to base-11 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "3a",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1. First, convert base-7 number 61 to decimal (base-10)\n   In base-7, each digit is multiplied by a power of 7 from right to left\n   617 = 6\u00d771 + 1\u00d770\n   617 = 6\u00d77 + 1\u00d71\n   617 = 42 + 1\n   617 = 4310\n\n2. Now convert decimal 43 to base-11\n   Divide 43 by 11 repeatedly and read remainders from bottom to top\n   43 \u00f7 11 = 3 remainder 10 (which is 'a' in base-11)\n   3 \u00f7 11 = 0 remainder 3\n\n   Reading from bottom to top: 3a\n</reasoning>\n<answer>3a</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 43,
+          "source_base": 7,
+          "target_base": 11,
+          "source_repr": "61",
+          "target_repr": "3a"
+        }
+      },
+      {
+        "question": "Convert the base-5 number 4334 to base-13 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "369",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert 4334 (base 5) to decimal (base 10)\n   4334(5) = 4\u00d753 + 3\u00d752 + 3\u00d751 + 4\u00d750\n   = 4\u00d7125 + 3\u00d725 + 3\u00d75 + 4\u00d71\n   = 500 + 75 + 15 + 4\n   = 594 (base 10)\n\n2) Now, convert 594 (decimal) to base 13\n   594 \u00f7 13 = 45 remainder 9\n   45 \u00f7 13 = 3 remainder 6\n   3 \u00f7 13 = 0 remainder 3\n\n3) Reading remainders from bottom to top:\n   594(10) = 369(13)\n   (since all digits are less than 10, we don't need to use any letters)\n</reasoning>\n<answer>369</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 594,
+          "source_base": 5,
+          "target_base": 13,
+          "source_repr": "4334",
+          "target_repr": "369"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 22111 to hexadecimal (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "e5",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, convert base-3 to decimal:\n   22111 (base-3) = 2\u00d734 + 2\u00d733 + 1\u00d732 + 1\u00d731 + 1\u00d730\n                   = 2\u00d781 + 2\u00d727 + 1\u00d79 + 1\u00d73 + 1\u00d71\n                   = 162 + 54 + 9 + 3 + 1\n                   = 229 (decimal)\n\n2. Now convert decimal 229 to hexadecimal:\n   229 \u00f7 16 = 14 remainder 5\n   14 \u00f7 16 = 0 remainder 14 (which is 'e' in hex)\n\n3. Reading the remainders from bottom to top:\n   229 (decimal) = e5 (hexadecimal)\n</reasoning>\n<answer>e5</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 229,
+          "source_base": 3,
+          "target_base": 16,
+          "source_repr": "22111",
+          "target_repr": "e5"
+        }
+      },
+      {
+        "question": "Convert the base-6 number 1243 to base-11 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "267",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-6 number 12436 to decimal (base-10):\n   12436 = 1\u00d763 + 2\u00d762 + 4\u00d761 + 3\u00d760\n   = 1\u00d7216 + 2\u00d736 + 4\u00d76 + 3\u00d71\n   = 216 + 72 + 24 + 3\n   = 315 (decimal)\n\n2) Now convert 315 (decimal) to base-11:\n   - Divide 315 by 11 repeatedly and track remainders:\n   315 \u00f7 11 = 28 remainder 7\n   28 \u00f7 11 = 2 remainder 6\n   2 \u00f7 11 = 0 remainder 2\n\n3) Reading remainders from bottom to top:\n   31510 = 26711\n</reasoning>\n<answer>267</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 315,
+          "source_base": 6,
+          "target_base": 11,
+          "source_repr": "1243",
+          "target_repr": "267"
+        }
+      },
+      {
+        "question": "Convert the base-4 number 13322 to base-10",
+        "expected_answer": "506",
+        "model_answer": "<reasoning>\nLet me break this down position by position, from right to left, multiplying each digit by increasing powers of 4:\n\n2 in position 0: 2 \u00d7 40 = 2 \u00d7 1 = 2\n2 in position 1: 2 \u00d7 41 = 2 \u00d7 4 = 8\n3 in position 2: 3 \u00d7 42 = 3 \u00d7 16 = 48\n3 in position 3: 3 \u00d7 43 = 3 \u00d7 64 = 192\n1 in position 4: 1 \u00d7 44 = 1 \u00d7 256 = 256\n\nNow add all these values:\n2 + 8 + 48 + 192 + 256 = 506\n</reasoning>\n<answer>506</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 506,
+          "source_base": 4,
+          "target_base": 10,
+          "source_repr": "13322",
+          "target_repr": "506"
+        }
+      },
+      {
+        "question": "Convert the base-11 number 794 to base-4",
+        "expected_answer": "32312",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 794 (base-11) to decimal (base-10)\n   In base-11, each digit is multiplied by a power of 11 and then summed:\n   79411 = 7\u00d7112 + 9\u00d7111 + 4\u00d7110\n   = 7\u00d7121 + 9\u00d711 + 4\u00d71\n   = 847 + 99 + 4\n   = 95010\n\n2) Now, to convert 95010 to base-4, we divide by 4 repeatedly until we get a quotient of 0:\n   950 \u00f7 4 = 237 remainder 2\n   237 \u00f7 4 = 59  remainder 1\n   59 \u00f7 4 = 14   remainder 3\n   14 \u00f7 4 = 3    remainder 2\n   3 \u00f7 4 = 0     remainder 3\n\n3) Reading the remainders from bottom to up gives us the base-4 number:\n</reasoning>\n<answer>323124</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 950,
+          "source_base": 11,
+          "target_base": 4,
+          "source_repr": "794",
+          "target_repr": "32312"
+        }
+      },
+      {
+        "question": "Convert the base-9 number 555 to base-6",
+        "expected_answer": "2035",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 555 (base-9) to base-10 (decimal)\n   In base-9, each digit position represents a power of 9:\n   5559 = 5\u00d792 + 5\u00d791 + 5\u00d790\n   = 5\u00d781 + 5\u00d79 + 5\u00d71\n   = 405 + 45 + 5\n   = 45510\n\n2) Now, let's convert 45510 to base-6\n   We divide 455 by 6 repeatedly and read the remainders from bottom to top:\n\n   455 \u00f7 6 = 75 remainder 5\n   75 \u00f7 6 = 12 remainder 3\n   12 \u00f7 6 = 2 remainder 0\n   2 \u00f7 6 = 0 remainder 2\n\n3) Reading the remainders from bottom to top gives us: 20356\n</reasoning>\n<answer>20356</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 455,
+          "source_base": 9,
+          "target_base": 6,
+          "source_repr": "555",
+          "target_repr": "2035"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 200001 to base-12 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "347",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 200001(base-3) to base-10\n   * In base-3, each digit is multiplied by powers of 3 from right to left\n   * 200001(base-3) = 2\u00d73^5 + 0\u00d73^4 + 0\u00d73^3 + 0\u00d73^2 + 0\u00d73^1 + 1\u00d73^0\n   * = 2\u00d7243 + 0\u00d781 + 0\u00d727 + 0\u00d79 + 0\u00d73 + 1\u00d71\n   * = 486 + 0 + 0 + 0 + 0 + 1\n   * = 487 in base-10\n\n2) Now, let's convert 487(base-10) to base-12\n   * Divide 487 by 12 repeatedly and keep track of remainders:\n   * 487 \u00f7 12 = 40 remainder 7\n   * 40 \u00f7 12 = 3 remainder 4\n   * 3 \u00f7 12 = 0 remainder 3\n\n3) Reading the remainders from bottom to top:\n   * 347 in base-12\n   * Since no digits are above 9, we don't need to use any letters\n</reasoning>\n<answer>347</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 487,
+          "source_base": 3,
+          "target_base": 12,
+          "source_repr": "200001",
+          "target_repr": "347"
+        }
+      },
+      {
+        "question": "Convert the base-6 number 1544 to base-10",
+        "expected_answer": "424",
+        "model_answer": "<reasoning>\nLet me break this down position by position, going from right to left:\n\nIn base-6, each position represents a power of 6, like:\n4 in position 0: 4 \u00d7 60 = 4 \u00d7 1 = 4\n4 in position 1: 4 \u00d7 61 = 4 \u00d7 6 = 24\n5 in position 2: 5 \u00d7 62 = 5 \u00d7 36 = 180\n1 in position 3: 1 \u00d7 63 = 1 \u00d7 216 = 216\n\nNow, add all these values:\n216 + 180 + 24 + 4 = 424\n</reasoning>\n<answer>The base-6 number 1544 is equal to 424 in base-10</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 424,
+          "source_base": 6,
+          "target_base": 10,
+          "source_repr": "1544",
+          "target_repr": "424"
+        }
+      },
+      {
+        "question": "Convert the base-6 number 200 to base-8",
+        "expected_answer": "110",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, convert base-6 number to decimal (base-10)\n   In base-6: 2006 = 2\u00d762 + 0\u00d761 + 0\u00d760\n   = 2\u00d736 + 0\u00d76 + 0\u00d71\n   = 72 + 0 + 0\n   = 7210\n\n2. Now convert decimal 72 to base-8\n   To convert to base-8, divide by 8 repeatedly until quotient becomes 0:\n   72 \u00f7 8 = 9 remainder 0\n   9 \u00f7 8 = 1 remainder 1\n   1 \u00f7 8 = 0 remainder 1\n\n   Reading remainders from bottom to top: 110\n</reasoning>\n<answer>2006 = 1108</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 72,
+          "source_base": 6,
+          "target_base": 8,
+          "source_repr": "200",
+          "target_repr": "110"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 2211 to base-14 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "56",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-3 number 22113 to decimal (base-10)\n   In base-3, each digit is multiplied by a power of 3 from right to left:\n   22113 = 1\u00d730 + 1\u00d731 + 2\u00d732 + 2\u00d733\n   = 1\u00d71 + 1\u00d73 + 2\u00d79 + 2\u00d727\n   = 1 + 3 + 18 + 54\n   = 7610\n\n2) Now convert decimal 76 to base-14\n   Divide 76 by 14 repeatedly until quotient becomes 0:\n   76 \u00f7 14 = 5 remainder 6\n   5 \u00f7 14 = 0 remainder 5\n\n3) Reading remainders from bottom to top:\n   7610 = 5614\n   (Since both 5 and 6 are less than 10, we don't need to use letters)\n</reasoning>\n<answer>56</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 76,
+          "source_base": 3,
+          "target_base": 14,
+          "source_repr": "2211",
+          "target_repr": "56"
+        }
+      },
+      {
+        "question": "Convert the base-9 number 1033 to base-13 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "465",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert 1033(base 9) to base 10\n   In base 9: 1033 = 1\u00d793 + 0\u00d792 + 3\u00d791 + 3\u00d790\n   = 1\u00d7729 + 0\u00d781 + 3\u00d79 + 3\u00d71\n   = 729 + 0 + 27 + 3\n   = 759 (base 10)\n\n2) Now convert 759(base 10) to base 13\n   Divide 759 by 13 repeatedly and track remainders:\n   759 \u00f7 13 = 58 remainder 5\n   58 \u00f7 13 = 4 remainder 6\n   4 \u00f7 13 = 0 remainder 4\n\n3) Read remainders from bottom to top:\n   Therefore, 759(base 10) = 465(base 13)\n</reasoning>\n<answer>465</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 759,
+          "source_base": 9,
+          "target_base": 13,
+          "source_repr": "1033",
+          "target_repr": "465"
+        }
+      },
+      {
+        "question": "Convert the binary number 1010111100 to base-3",
+        "expected_answer": "221221",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert binary (base-2) to decimal (base-10)\n   1010111100 = 1\u00d72^9 + 0\u00d72^8 + 1\u00d72^7 + 0\u00d72^6 + 1\u00d72^5 + 1\u00d72^4 + 1\u00d72^3 + 1\u00d72^2 + 0\u00d72^1 + 0\u00d72^0\n   = 512 + 0 + 128 + 0 + 32 + 16 + 8 + 4 + 0 + 0\n   = 700 (decimal)\n\n2) Now convert decimal to base-3 by repeatedly dividing by 3 and keeping track of remainders:\n   700 \u00f7 3 = 233 remainder 1\n   233 \u00f7 3 = 77  remainder 2\n   77 \u00f7 3 = 25   remainder 2\n   25 \u00f7 3 = 8    remainder 1\n   8 \u00f7 3 = 2     remainder 2\n   2 \u00f7 3 = 0     remainder 2\n\n3) Reading remainders from bottom to top gives us the base-3 number\n</reasoning>\n<answer>221221 (base-3)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 700,
+          "source_base": 2,
+          "target_base": 3,
+          "source_repr": "1010111100",
+          "target_repr": "221221"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 1021111 to base-6",
+        "expected_answer": "4151",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 1021111 (base-3) to base-10 (decimal)\n   In base-3, each digit is multiplied by powers of 3 from right to left:\n   10211113 = 1\u00d736 + 0\u00d735 + 2\u00d734 + 1\u00d733 + 1\u00d732 + 1\u00d731 + 1\u00d730\n   = 1\u00d7729 + 0\u00d7243 + 2\u00d781 + 1\u00d727 + 1\u00d79 + 1\u00d73 + 1\u00d71\n   = 729 + 0 + 162 + 27 + 9 + 3 + 1\n   = 93110\n\n2) Now, I need to convert 931 (decimal) to base-6\n   To do this, I divide 931 by 6 repeatedly and read the remainders from bottom to top:\n\n   931 \u00f7 6 = 155 remainder 1\n   155 \u00f7 6 = 25  remainder 5\n   25 \u00f7 6 = 4    remainder 1\n   4 \u00f7 6 = 0     remainder 4\n\n   Reading from bottom to top: 41516\n</reasoning>\n<answer>41516</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 931,
+          "source_base": 3,
+          "target_base": 6,
+          "source_repr": "1021111",
+          "target_repr": "4151"
+        }
+      },
+      {
+        "question": "Convert the base-10 number 331 to base-11 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "281",
+        "model_answer": "<reasoning>\nTo convert a number from base 10 to another base, I need to:\n1. Divide the number repeatedly by the target base (11)\n2. Keep track of remainders in reverse order\n3. Convert remainders above 9 to letters (10 becomes 'a')\n\n331 \u00f7 11 = 30 remainder 1\n30 \u00f7 11 = 2 remainder 8\n2 \u00f7 11 = 0 remainder 2\n\nReading remainders bottom to top: 281\n</reasoning>\n<answer>281</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 331,
+          "source_base": 10,
+          "target_base": 11,
+          "source_repr": "331",
+          "target_repr": "281"
+        }
+      },
+      {
+        "question": "Convert the base-14 number 55 to base-11 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "69",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-14 number 55 to decimal (base-10)\n   In base-14, each digit is multiplied by powers of 14\n   5 \u00d7 141 + 5 \u00d7 140\n   = 5 \u00d7 14 + 5 \u00d7 1\n   = 70 + 5\n   = 75 (decimal)\n\n2) Now convert decimal 75 to base-11\n   Divide 75 by 11 repeatedly and collect remainders:\n   75 \u00f7 11 = 6 remainder 9\n   6 \u00f7 11 = 0 remainder 6\n\n3) Reading remainders from bottom to top:\n   75 (decimal) = 69 (base-11)\n</reasoning>\n<answer>69</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 75,
+          "source_base": 14,
+          "target_base": 11,
+          "source_repr": "55",
+          "target_repr": "69"
+        }
+      },
+      {
+        "question": "Convert the base-3 number 101121 to base-10",
+        "expected_answer": "286",
+        "model_answer": "<reasoning>\nLet me break this down position by position, going from right to left:\n1) In base-3, each position represents a power of 3\n2) From right to left, the positions are 30, 31, 32, 33, 34, 35\n\nSo 101121 (base-3) = \n1 \u00d7 30 = 1 \u00d7 1 = 1\n+ 2 \u00d7 31 = 2 \u00d7 3 = 6\n+ 1 \u00d7 32 = 1 \u00d7 9 = 9\n+ 1 \u00d7 33 = 1 \u00d7 27 = 27\n+ 0 \u00d7 34 = 0 \u00d7 81 = 0\n+ 1 \u00d7 35 = 1 \u00d7 243 = 243\n\nAdding these numbers:\n1 + 6 + 9 + 27 + 0 + 243 = 286\n</reasoning>\n<answer>286</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 286,
+          "source_base": 3,
+          "target_base": 10,
+          "source_repr": "101121",
+          "target_repr": "286"
+        }
+      },
+      {
+        "question": "Convert the base-11 number 730 to base-10",
+        "expected_answer": "880",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1) In base-11, each digit represents a power of 11, similar to how base-10 works with powers of 10\n2) The rightmost digit (0) is in the 11^0 position\n3) The middle digit (3) is in the 11^1 position\n4) The leftmost digit (7) is in the 11^2 position\n\nSo, let's calculate:\n* 7 \u00d7 112 = 7 \u00d7 121 = 847\n* 3 \u00d7 111 = 3 \u00d7 11 = 33\n* 0 \u00d7 110 = 0 \u00d7 1 = 0\n\nNow add them all together:\n847 + 33 + 0 = 880\n</reasoning>\n\n<answer>The base-11 number 730 is equal to 880 in base-10</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 880,
+          "source_base": 11,
+          "target_base": 10,
+          "source_repr": "730",
+          "target_repr": "880"
+        }
+      },
+      {
+        "question": "Convert the base-11 number 38a to base-8",
+        "expected_answer": "715",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-11 number 38a to base-10\n   In base-11, digits go from 0-9 and then 'a' represents 10\n   38a (base-11) = 3\u00d7112 + 8\u00d7111 + 10\u00d7110\n                 = 3\u00d7121 + 8\u00d711 + 10\u00d71\n                 = 363 + 88 + 10\n                 = 461 (base-10)\n\n2) Now convert 461 (base-10) to base-8\n   Divide 461 by 8 repeatedly and read remainders from bottom to top:\n   461 \u00f7 8 = 57 remainder 5\n   57 \u00f7 8 = 7 remainder 1\n   7 \u00f7 8 = 0 remainder 7\n\n   Therefore, reading from bottom to top, we get 7158\n</reasoning>\n<answer>7158</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 461,
+          "source_base": 11,
+          "target_base": 8,
+          "source_repr": "38a",
+          "target_repr": "715"
+        }
+      },
+      {
+        "question": "Convert the base-9 number 461 to base-8",
+        "expected_answer": "573",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 461 (base-9) to base-10 (decimal)\n   In base-9, each digit is multiplied by a power of 9 and then summed:\n   4619 = 4 \u00d7 92 + 6 \u00d7 91 + 1 \u00d7 90\n   = 4 \u00d7 81 + 6 \u00d7 9 + 1 \u00d7 1\n   = 324 + 54 + 1\n   = 37910\n\n2) Now that we have the decimal number 379, let's convert it to base-8\n   To convert to base-8, we divide by 8 repeatedly and keep track of remainders:\n\n   379 \u00f7 8 = 47 remainder 3\n   47 \u00f7 8 = 5 remainder 7\n   5 \u00f7 8 = 0 remainder 5\n\n3) Reading the remainders from bottom to top gives us the base-8 number\n</reasoning>\n<answer>5738</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 379,
+          "source_base": 9,
+          "target_base": 8,
+          "source_repr": "461",
+          "target_repr": "573"
+        }
+      },
+      {
+        "question": "Convert the base-6 number 3442 to base-7",
+        "expected_answer": "2246",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 3442 (base-6) to base-10 (decimal)\n   In base-6, each digit is multiplied by a power of 6 from right to left:\n   34426 = 2\u00d760 + 4\u00d761 + 4\u00d762 + 3\u00d763\n   = 2\u00d71 + 4\u00d76 + 4\u00d736 + 3\u00d7216\n   = 2 + 24 + 144 + 648\n   = 81810\n\n2) Now, I need to convert 81810 to base-7\n   I'll divide 818 by 7 repeatedly and look at the remainders:\n   818 \u00f7 7 = 116 remainder 6\n   116 \u00f7 7 = 16 remainder 4\n   16 \u00f7 7 = 2 remainder 2\n   2 \u00f7 7 = 0 remainder 2\n\n3) Reading the remainders from bottom to top gives the base-7 number:\n   81810 = 22467\n</reasoning>\n<answer>22467</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 818,
+          "source_base": 6,
+          "target_base": 7,
+          "source_repr": "3442",
+          "target_repr": "2246"
+        }
+      },
+      {
+        "question": "Convert the base-5 number 11314 to base-3",
+        "expected_answer": "1010220",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-5 number to decimal (base-10)\n   11314(base-5) = 1\u00d754 + 1\u00d753 + 3\u00d752 + 1\u00d751 + 4\u00d750\n   = 1\u00d7625 + 1\u00d7125 + 3\u00d725 + 1\u00d75 + 4\u00d71\n   = 625 + 125 + 75 + 5 + 4\n   = 834(decimal)\n\n2) Now convert decimal to base-3\n   To convert to base-3, divide by 3 repeatedly and read remainders from bottom to top:\n\n   834 \u00f7 3 = 278 remainder 0\n   278 \u00f7 3 = 92  remainder 2\n   92 \u00f7 3 = 30   remainder 2\n   30 \u00f7 3 = 10   remainder 0\n   10 \u00f7 3 = 3    remainder 1\n   3 \u00f7 3 = 1     remainder 0\n   1 \u00f7 3 = 0     remainder 1\n\n   Reading remainders from bottom to top: 1022020\n</reasoning>\n<answer>1022020(base-3)</answer>",
+        "score": 0.01,
+        "metadata": {
+          "decimal_value": 834,
+          "source_base": 5,
+          "target_base": 3,
+          "source_repr": "11314",
+          "target_repr": "1010220"
+        }
+      },
+      {
+        "question": "Convert the base-9 number 174 to base-7",
+        "expected_answer": "301",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 174 (base-9) to base-10 (decimal)\n   In base-9, each digit is multiplied by powers of 9:\n   1749 = 1\u00d792 + 7\u00d791 + 4\u00d790\n   = 1\u00d781 + 7\u00d79 + 4\u00d71\n   = 81 + 63 + 4\n   = 14810\n\n2) Now, to convert 14810 to base-7, we divide by 7 repeatedly and read the remainders from bottom to top:\n\n   148 \u00f7 7 = 21 remainder 1\n   21 \u00f7 7 = 3 remainder 0\n   3 \u00f7 7 = 0 remainder 3\n\n3) Reading remainders from bottom to top: 3017\n</reasoning>\n<answer>3017</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 148,
+          "source_base": 9,
+          "target_base": 7,
+          "source_repr": "174",
+          "target_repr": "301"
+        }
+      },
+      {
+        "question": "Convert the base-8 number 426 to base-10",
+        "expected_answer": "278",
+        "model_answer": "<reasoning>\nTo convert a number from base-8 to base-10, I need to:\n1. Break down the number by position (going right to left)\n2. Multiply each digit by the corresponding power of 8\n3. Add all the results\n\nFor 426 (base-8):\n- 6 is in the ones place (80): 6 \u00d7 80 = 6 \u00d7 1 = 6\n- 2 is in the eights place (81): 2 \u00d7 81 = 2 \u00d7 8 = 16\n- 4 is in the sixty-fours place (82): 4 \u00d7 82 = 4 \u00d7 64 = 256\n\nNow add: 256 + 16 + 6 = 278\n</reasoning>\n<answer>426 (base-8) = 278 (base-10)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 278,
+          "source_base": 8,
+          "target_base": 10,
+          "source_repr": "426",
+          "target_repr": "278"
+        }
+      },
+      {
+        "question": "Convert the base-15 number 248 to base-9",
+        "expected_answer": "635",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 248 (base-15) to base-10 (decimal)\n   In base-15, each digit is multiplied by a power of 15 and then summed:\n   248(base-15) = 2\u00d7152 + 4\u00d7151 + 8\u00d7150\n   = 2\u00d7225 + 4\u00d715 + 8\u00d71\n   = 450 + 60 + 8\n   = 518 (base-10)\n\n2) Now, I need to convert 518 (base-10) to base-9\n   To do this, I divide 518 by 9 repeatedly and keep track of remainders:\n   518 \u00f7 9 = 57 remainder 5\n   57 \u00f7 9 = 6 remainder 3\n   6 \u00f7 9 = 0 remainder 6\n\n3) Reading the remainders from bottom to top gives the base-9 number:\n   518(base-10) = 635(base-9)\n</reasoning>\n<answer>635 (base-9)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 518,
+          "source_base": 15,
+          "target_base": 9,
+          "source_repr": "248",
+          "target_repr": "635"
+        }
+      },
+      {
+        "question": "Convert the base-14 number a8 to base-9",
+        "expected_answer": "174",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert a8 (base-14) to decimal (base-10)\n   - In base-14, 'a' represents 10\n   - So a814 = (10 \u00d7 141) + (8 \u00d7 140)\n   - = (10 \u00d7 14) + (8 \u00d7 1)\n   - = 140 + 8\n   - = 148 in decimal\n\n2) Now, let's convert 148 (decimal) to base-9\n   - Divide 148 by 9 repeatedly and track remainders\n   - 148 \u00f7 9 = 16 remainder 4\n   - 16 \u00f7 9 = 1 remainder 7\n   - 1 \u00f7 9 = 0 remainder 1\n   \n3) Reading remainders from bottom to top gives us the base-9 number\n   - Therefore, a814 = 1749\n</reasoning>\n<answer>174 (base-9)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 148,
+          "source_base": 14,
+          "target_base": 9,
+          "source_repr": "a8",
+          "target_repr": "174"
+        }
+      },
+      {
+        "question": "Convert the base-15 number 23d to base-9",
+        "expected_answer": "624",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 23d (base-15) to decimal (base-10)\n   In base-15, each digit is multiplied by a power of 15 and then summed\n   'd' in base-15 is equivalent to 13 in decimal\n   23d(15) = 2\u00d7151 + 3\u00d7150 + 13\u00d715\u22121\n   = 2\u00d715 + 3\u00d71 + 13/15\n   = 30 + 3 + 13/15\n   = 33.866...\n\n2) Now, to convert this decimal number to base-9\n   - For the integer part (33):\n     33 \u00f7 9 = 3 remainder 6\n     3 \u00f7 9 = 0 remainder 3\n     Reading bottom-up: 36\n\n   - For the decimal part (0.866...):\n     0.866... \u00d7 9 = 7.8...\n     0.8... \u00d7 9 = 7.2...\n     0.2... \u00d7 9 = 1.8...\n     And so on...\n</reasoning>\n<answer>36.777... (base-9)</answer>",
+        "score": 0.01,
+        "metadata": {
+          "decimal_value": 508,
+          "source_base": 15,
+          "target_base": 9,
+          "source_repr": "23d",
+          "target_repr": "624"
+        }
+      },
+      {
+        "question": "Convert the base-6 number 3245 to hexadecimal (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "2ed",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert base-6 number to decimal:\n   3245 (base-6) = 3\u00d763 + 2\u00d762 + 4\u00d761 + 5\u00d760\n   = 3\u00d7216 + 2\u00d736 + 4\u00d76 + 5\u00d71\n   = 648 + 72 + 24 + 5\n   = 749 (decimal)\n\n2) Now convert decimal 749 to hexadecimal:\n   749 \u00f7 16 = 46 remainder 13 (d)\n   46 \u00f7 16 = 2 remainder 14 (e)\n   2 \u00f7 16 = 0 remainder 2\n\n3) Reading the remainders from bottom to top:\n   749 (decimal) = 2ed (hexadecimal)\n</reasoning>\n<answer>2ed</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 749,
+          "source_base": 6,
+          "target_base": 16,
+          "source_repr": "3245",
+          "target_repr": "2ed"
+        }
+      },
+      {
+        "question": "Convert the base-13 number 129 to base-11 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "176",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's convert 129 (base 13) to decimal (base 10)\n   In base 13, each digit is multiplied by a power of 13:\n   129(13) = 1\u00d7132 + 2\u00d7131 + 9\u00d7130\n   = 1\u00d7169 + 2\u00d713 + 9\u00d71\n   = 169 + 26 + 9\n   = 204 (base 10)\n\n2) Now, let's convert 204 (decimal) to base 11\n   To do this, divide 204 by 11 repeatedly and read remainders from bottom to top:\n\n   204 \u00f7 11 = 18 remainder 6\n   18 \u00f7 11 = 1 remainder 7\n   1 \u00f7 11 = 0 remainder 1\n\n3) Reading from bottom to top, we get: 176(11)\n</reasoning>\n<answer>176</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 204,
+          "source_base": 13,
+          "target_base": 11,
+          "source_repr": "129",
+          "target_repr": "176"
+        }
+      },
+      {
+        "question": "Convert the base-14 number 41c to binary",
+        "expected_answer": "1100101010",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, convert base-14 to decimal\n   - In base-14, each digit is multiplied by powers of 14\n   - 41c(base-14) = 4\u00d7142 + 1\u00d7141 + 12\u00d7140\n   - 4\u00d7196 + 1\u00d714 + 12\u00d71\n   - 784 + 14 + 12\n   - = 810 in decimal\n\n2. Now convert decimal to binary\n   - Divide by 2 repeatedly and track remainders:\n   810 \u00f7 2 = 405 remainder 0\n   405 \u00f7 2 = 202 remainder 1\n   202 \u00f7 2 = 101 remainder 0\n   101 \u00f7 2 = 50  remainder 1\n   50 \u00f7 2 = 25   remainder 0\n   25 \u00f7 2 = 12   remainder 1\n   12 \u00f7 2 = 6    remainder 0\n   6 \u00f7 2 = 3     remainder 0\n   3 \u00f7 2 = 1     remainder 1\n   1 \u00f7 2 = 0     remainder 1\n\n   Reading remainders from bottom to top gives us the binary number\n</reasoning>\n<answer>1100101010</answer>",
+        "score": 1.0,
+        "metadata": {
+          "decimal_value": 810,
+          "source_base": 14,
+          "target_base": 2,
+          "source_repr": "41c",
+          "target_repr": "1100101010"
+        }
+      },
+      {
+        "question": "Convert the base-13 number b6 to base-5",
+        "expected_answer": "1044",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert b6 (base-13) to decimal (base-10)\n   * In base-13, 'b' represents 11\n   * b6 in base-13 = (11 \u00d7 131) + (6 \u00d7 130)\n   * = (11 \u00d7 13) + 6\n   * = 143 + 6\n   * = 149 (base-10)\n\n2) Now, I need to convert 149 (base-10) to base-5\n   * Divide 149 by 5 repeatedly and read remainders from bottom to top:\n   * 149 \u00f7 5 = 29 remainder 4\n   * 29 \u00f7 5 = 5 remainder 4\n   * 5 \u00f7 5 = 1 remainder 0\n   * 1 \u00f7 5 = 0 remainder 1\n\n3) Reading remainders from bottom to top: 1044\n</reasoning>\n<answer>1044 (base-5)</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 149,
+          "source_base": 13,
+          "target_base": 5,
+          "source_repr": "b6",
+          "target_repr": "1044"
+        }
+      },
+      {
+        "question": "Convert the base-5 number 3112 to base-7",
+        "expected_answer": "1121",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, convert 3112 (base-5) to decimal (base-10)\n   * In base-5, each digit is multiplied by a power of 5 based on its position\n   * 31125 = 3\u00d753 + 1\u00d752 + 1\u00d751 + 2\u00d750\n   * = 3\u00d7125 + 1\u00d725 + 1\u00d75 + 2\u00d71\n   * = 375 + 25 + 5 + 2\n   * = 40710\n\n2) Now convert decimal 407 to base-7\n   * Divide 407 by 7 repeatedly until quotient becomes 0, read remainders from bottom to top\n   * 407 \u00f7 7 = 58 remainder 1\n   * 58 \u00f7 7 = 8 remainder 2\n   * 8 \u00f7 7 = 1 remainder 1\n   * 1 \u00f7 7 = 0 remainder 1\n\n3) Reading remainders from bottom to top: 11217\n</reasoning>\n<answer>11217</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 407,
+          "source_base": 5,
+          "target_base": 7,
+          "source_repr": "3112",
+          "target_repr": "1121"
+        }
+      },
+      {
+        "question": "Convert the base-14 number 5d to base-11 (use lowercase letters a-z for digits above 9)",
+        "expected_answer": "76",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, convert 5d (base-14) to decimal (base-10)\n   - In base-14, d represents 13\n   - 5d14 = 5\u00d7141 + 13\u00d7140\n   - 5d14 = 5\u00d714 + 13\u00d71\n   - 5d14 = 70 + 13\n   - 5d14 = 8310\n\n2. Now convert decimal 83 to base-11\n   - Divide 83 by 11 repeatedly and collect remainders in reverse order\n   - 83 \u00f7 11 = 7 remainder 6\n   - 7 \u00f7 11 = 0 remainder 7\n   - Reading remainders from bottom to top: 76\n</reasoning>\n<answer>7611</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 83,
+          "source_base": 14,
+          "target_base": 11,
+          "source_repr": "5d",
+          "target_repr": "76"
+        }
+      },
+      {
+        "question": "Convert the base-13 number 130 to base-3",
+        "expected_answer": "21201",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert 130 (base-13) to base-10 (decimal)\n   - In base-13, each digit is multiplied by a power of 13\n   - 130 (base-13) = 1\u00d7131 + 3\u00d7130\n   - = 1\u00d713 + 3\u00d71\n   - = 13 + 3\n   - = 16 (base-10)\n\n2) Now I need to convert 16 (base-10) to base-3\n   - Divide 16 by 3 repeatedly and track remainders:\n   16 \u00f7 3 = 5 remainder 1\n   5 \u00f7 3 = 1 remainder 2\n   1 \u00f7 3 = 0 remainder 1\n\n3) Reading remainders from bottom to top gives us the base-3 number:\n   121 (base-3)\n</reasoning>\n<answer>121 (base-3)</answer>",
+        "score": 0.01,
+        "metadata": {
+          "decimal_value": 208,
+          "source_base": 13,
+          "target_base": 3,
+          "source_repr": "130",
+          "target_repr": "21201"
+        }
+      },
+      {
+        "question": "Convert the base-11 number 78 to base-4",
+        "expected_answer": "1111",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to convert base-11 number 78 to decimal (base-10)\n   In base-11, each digit is multiplied by powers of 11 from right to left\n   7811 = 8 \u00d7 110 + 7 \u00d7 111\n   7811 = 8 \u00d7 1 + 7 \u00d7 11\n   7811 = 8 + 77\n   7811 = 8510\n\n2) Now that I have the decimal number 85, I need to convert it to base-4\n   To do this, I divide 85 by 4 repeatedly and keep track of remainders:\n\n   85 \u00f7 4 = 21 remainder 1\n   21 \u00f7 4 = 5  remainder 1\n   5 \u00f7 4 = 1   remainder 1\n   1 \u00f7 4 = 0   remainder 1\n\n3) Reading the remainders from bottom to top gives us the base-4 number:\n   8510 = 11114\n</reasoning>\n<answer>11114</answer>",
+        "score": 0.5,
+        "metadata": {
+          "decimal_value": 85,
+          "source_base": 11,
+          "target_base": 4,
+          "source_repr": "78",
+          "target_repr": "1111"
+        }
+      }
+    ]
+  }
+]

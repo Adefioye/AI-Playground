@@ -1,0 +1,718 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "isomorphic_strings",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.9406,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T23:50:55.435277",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nff pi\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's establish the rules for isomorphic strings:\n   * Each character in the first string must map to a unique character in the second string\n   * The mapping must be consistent throughout the string\n   * No two characters can map to the same character in the second string\n\n2) For the strings \"ff\" and \"pi\":\n   * Length check: both strings are 2 characters long \u2713\n   * First character mapping: 'f' maps to 'p'\n   * Second character mapping: 'f' maps to 'i'\n\n3) Here's the problem:\n   * The same character 'f' in the first string is trying to map to two different characters ('p' and 'i')\n   * This violates the rule that the mapping must be consistent\n   * Each occurrence of 'f' must map to the same character\n\n4) Therefore, these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ff",
+            "pi"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhbl jex\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's check if the strings have the same length:\n   'hbl' and 'jex' both have 3 characters, so we can proceed.\n\n2) Let's try to map characters from 'hbl' to 'jex':\n   - 'h' maps to 'j'\n   - 'b' maps to 'e'\n   - 'l' maps to 'x'\n\n3) Let's verify if this mapping is consistent:\n   - Each character in 'hbl' maps to a unique character in 'jex'\n   - No two characters in 'hbl' map to the same character in 'jex'\n\n4) Now let's verify the reverse mapping:\n   - 'j' maps to 'h'\n   - 'e' maps to 'b'\n   - 'x' maps to 'l'\n\n5) Both forward and reverse mappings are one-to-one and consistent.\n   Each character maps to exactly one other character, and there are no conflicts.\n\nTherefore, the strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "hbl",
+            "jex"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrkjmnmnkv xwgivivwr\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   \"rkjmnmnkv\" and \"xwgivivwr\" both have 9 characters.\n\n2) I'll try to map each character from the first string to the second string:\n   r -> x\n   k -> w\n   j -> g\n   m -> i\n   n -> v\n   m -> i (already mapped to 'i', this is fine as it's the same character)\n   n -> v (already mapped to 'v', this is fine as it's the same character)\n   k -> w (already mapped to 'w', this is fine as it's the same character)\n   v -> r\n\n3) Now, I'll check if any character in the second string is mapped to by multiple characters from the first string:\n   x is mapped to by r only\n   w is mapped to by k only\n   g is mapped to by j only\n   i is mapped to by m only\n   v is mapped to by n only\n   r is mapped to by v only\n\n4) Both conditions are satisfied:\n   - Each character from string 1 maps to exactly one character in string 2\n   - No two different characters from string 1 map to the same character in string 2\n   - The pattern of repeated characters is the same in both strings\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "rkjmnmnkv",
+            "xwgivivwr"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndsmanlsf hjxowaju\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1. First, let's understand what makes strings isomorphic:\n   * Each character in string 1 must map to exactly one character in string 2\n   * Different characters in string 1 cannot map to the same character in string 2\n   * The pattern of character repetition must be identical\n\n2. For strings \"dsmanlsf\" and \"hjxowaju\":\n   Let's map each character:\n   * d -> h\n   * s -> j\n   * m -> x\n   * a -> o\n   * n -> w\n   * l -> a\n   * s -> j (Here's a problem! 's' already mapped to 'j')\n   * f -> u\n\n3. We found an issue: the letter 's' appears twice in the first string (positions 2 and 7) but maps to 'j' and 'j', \n   while in the second string we have different characters ('j' and 'a') in those positions.\n\n4. This violates the isomorphic property because a character in the first string must consistently map to the same \n   character in the second string.\n</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "dsmanlsf",
+            "hjxowaju"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmxytpwml mlpsfmxh\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   - Each character in string1 must map to a unique character in string2\n   - The mapping must be consistent throughout the strings\n   - Two different characters can't map to the same character\n\n2) For \"mxytpwml\" and \"mlpsfmxh\":\n   Let's map each character:\n   - m \u2192 m (first position)\n   - x \u2192 l\n   - y \u2192 p\n   - t \u2192 s\n   - p \u2192 f\n   - w \u2192 m (This is where we have a problem!)\n   \n3) We've found the issue:\n   - 'w' needs to map to 'm'\n   - But 'm' was already mapped from the first 'm' in string1\n   - We can't have two different characters ('m' and 'w') mapping to the same character ('m')\n\n4) Since we found a violation of the isomorphic rules (two characters mapping to the same character), these strings are not isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "mxytpwml",
+            "mlpsfmxh"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwydqzlb yglwmsx\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   - Each character in first string must map to a unique character in second string\n   - The mapping must be consistent throughout the string\n   - No two characters can map to the same character\n\n2) Let's map the characters from wydqzlb to yglwmsx:\n   w -> y\n   y -> g\n   d -> l\n   q -> w\n   z -> m\n   l -> s\n   b -> x\n\n3) Let's verify if this mapping is consistent:\n   - Each character in first string maps to a unique character\n   - No character in second string is mapped to by multiple characters\n   - The length of both strings is the same (7 characters)\n   - When we apply the mapping:\n     wydqzlb -> yglwmsx (it matches perfectly)\n\n4) All conditions for isomorphic strings are satisfied:\n   - One-to-one mapping exists\n   - Order is preserved\n   - No conflicts in mapping\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "wydqzlb",
+            "yglwmsx"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwwsw vvte\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   - Each character in first string must map to a unique character in second string\n   - Each character in second string must map to a unique character in first string\n   - The pattern of character repetition must be same in both strings\n\n2) Let's analyze \"wwsw\" and \"vvte\":\n   First string: \"wwsw\"\n   Second string: \"vvte\"\n\n3) Let's try to map characters:\n   - First 'w' maps to 'v'\n   - Second 'w' maps to 'v' (consistent with first mapping)\n   - 's' maps to 't'\n   - Last 'w' maps to 'e'\n\n4) Problem found: \n   - The first two 'w' map to 'v' (which is fine)\n   - But the last 'w' tries to map to 'e'\n   - This violates the rule that all occurrences of a character must be replaced with the same character\n\n5) Since the same character 'w' is trying to map to different characters ('v' and 'e'), these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "wwsw",
+            "vvte"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nnvibvfp glmhljb\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   nvibvfp and glmhljb both have 7 characters, so we can proceed.\n\n2) I'll try to map each character from first string to second string:\n   n -> g\n   v -> l\n   i -> m\n   b -> h\n   v -> l (already mapped v to l, consistent)\n   f -> j\n   p -> b\n\n3) Now, I'll check if any character in the second string is mapped to by multiple characters:\n   g is mapped to by n\n   l is mapped to by v\n   m is mapped to by i\n   h is mapped to by b\n   j is mapped to by f\n   b is mapped to by p\n\n4) Key observations:\n   - Each character in first string maps to exactly one character in second string\n   - No two characters in first string map to the same character in second string\n   - The pattern of character repetition is preserved\n   - 'v' appears twice in first string and 'l' appears twice in second string at the same positions\n\nTherefore, these strings satisfy all the conditions for being isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "nvibvfp",
+            "glmhljb"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ncjaue reglp\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   \"cjaue\" and \"reglp\" both have 5 characters, so we can proceed.\n\n2) Let me try to map each character from the first string to the second string:\n   c \u2192 r\n   j \u2192 e\n   a \u2192 g\n   u \u2192 l\n   e \u2192 p\n\n3) Now, let me check if this mapping is consistent:\n   - 'c' appears once and maps to 'r' (once) \u2713\n   - 'j' appears once and maps to 'e' (once) \u2713\n   - 'a' appears once and maps to 'g' (once) \u2713\n   - 'u' appears once and maps to 'l' (once) \u2713\n   - 'e' appears once and maps to 'p' (once) \u2713\n\n4) Also need to verify no two characters from first string map to the same character in second string:\n   All characters in second string (r,e,g,l,p) are different, so this condition is satisfied \u2713\n\n5) Since:\n   - Each character maps to exactly one other character\n   - No two characters map to the same character\n   - The pattern is consistent throughout\n   - Both strings are of same length\n\nThe strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "cjaue",
+            "reglp"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwjwdwhwie ninynqnef\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic, we need to:\n   * Map each character from first string to a unique character in second string\n   * Ensure each character in second string is mapped to by at most one character from first string\n   * Maintain the pattern of character repetitions\n\n2) Let's analyze \"wjwdwhwie\" and \"ninynqnef\":\n\n   w -> n (first w)\n   j -> i (first j)\n   w -> n (second w matches first mapping)\n   d -> y (first d)\n   w -> n (third w matches first mapping)\n   h -> q (first h)\n   w -> n (fourth w matches first mapping)\n   i -> e (first i)\n   e -> f (first e)\n\n3) Going through the mappings:\n   * w maps to n (multiple times)\n   * j maps to i\n   * d maps to y\n   * h maps to q\n   * i maps to e\n   * e maps to f\n\n4) Checking if any character maps to multiple characters: No\n   Checking if any character is mapped to by multiple characters: No\n   Checking if pattern of repetitions is maintained: Yes\n\n5) All conditions are satisfied.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "wjwdwhwie",
+            "ninynqnef"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nff tj\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what we're checking:\n   * Each character in the first string must map to a unique character in the second string\n   * The mapping must be consistent throughout the string\n   * No two characters can map to the same character\n\n2) For \"ff\" and \"tj\":\n   * First 'f' would map to 't'\n   * Second 'f' would map to 'j'\n\n3) This violates the rule that all occurrences of a character must be replaced with the same character:\n   * 'f' is trying to map to both 't' and 'j'\n   * Each character must consistently map to the same character throughout\n\n4) Since we have 'f' mapping to two different characters ('t' and 'j'), these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ff",
+            "tj"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nihrri ztzzj\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   'ihrri' and 'ztzzj' both have 5 characters, so we can proceed.\n\n2) Let me map each character from first string to second string:\n   i -> z (first occurrence)\n   h -> t (first occurrence)\n   r -> z (first occurrence of r, but 'z' is already mapped to 'i')\n   r -> z (same issue)\n   i -> j (last 'i' needs to map to 'j', but 'i' was already mapped to 'z')\n\n3) The issue is:\n   - 'i' is trying to map to both 'z' and 'j'\n   - 'r' is trying to map to 'z', but 'z' is already mapped to 'i'\n\n4) This violates the rules because:\n   - Each character must consistently map to the same character\n   - No two characters can map to the same character\n\nTherefore, these strings are not isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ihrri",
+            "ztzzj"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhsha szyd\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   - Each character in string 1 must map to a unique character in string 2\n   - The mapping must be one-to-one (bijective)\n   - The pattern of character repetition must be identical\n\n2) For \"hsha\" and \"szyd\":\n   Let's map the characters:\n   h -> s (first occurrence)\n   s -> z (first occurrence)\n   h -> y (second occurrence of h, but maps to different character than first h)\n   a -> d (first occurrence)\n\n3) Problem identified:\n   - First 'h' maps to 's'\n   - Second 'h' maps to 'y'\n   - This violates the isomorphic property because the same character 'h' is mapping to two different characters ('s' and 'y')\n   - For strings to be isomorphic, all occurrences of 'h' should map to the same character\n\n4) Therefore, since 'h' maps to different characters, these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "hsha",
+            "szyd"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\npsfs ehah\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what we're checking:\n   - Each character in the first string must map to a unique character in the second string\n   - The mapping must be consistent throughout the string\n   - The strings must be of equal length\n\n2) Let's analyze the strings:\n   psfs\n   ehah\n\n3) Let's try to create the mapping:\n   - p \u2192 e (first characters)\n   - s \u2192 h (second characters)\n   - f \u2192 a (third characters)\n   - s \u2192 h (fourth characters)\n\n4) Checking consistency:\n   - 'p' maps to 'e' (unique and consistent)\n   - 's' maps to 'h' (both occurrences of 's' map to 'h', consistent)\n   - 'f' maps to 'a' (unique and consistent)\n   \n5) Also need to check reverse mapping to ensure no two source characters map to the same target:\n   - 'e' maps to 'p'\n   - 'h' maps to 's'\n   - 'a' maps to 'f'\n   - 'h' maps to 's'\n\n6) All mappings are consistent and bijective (one-to-one)\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "psfs",
+            "ehah"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmtsojcutdo zsbqxehslo\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   mtsojcutdo and zsbqxehslo are both 10 characters long, so we can proceed.\n\n2) I'll try to map each character from the first string to the second string:\n   m -> z\n   t -> s\n   s -> b\n   o -> q\n   j -> x\n   c -> e\n   u -> h\n   t -> s (already mapped to 's', still consistent)\n   d -> l\n   o -> o (but 'o' was already mapped to 'q', this is a contradiction!)\n\n3) The fact that 'o' needs to map to both 'q' and 'o' violates the rule that \"all occurrences of a character must be replaced with another character.\"\n\n4) When we see 'o' for the second time in the first string, it should map to 'q' (like the first occurrence), but instead, it maps to 'o'.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "mtsojcutdo",
+            "zsbqxehslo"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nj t\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   * Each character in string 1 must map to exactly one character in string 2\n   * No two characters in string 1 can map to the same character in string 2\n   * The pattern/structure must be maintained throughout\n\n2) For the input \"j\" and \"t\":\n   * String 1 has length 1: \"j\"\n   * String 2 has length 1: \"t\"\n   * We need to map 'j' \u2192 't'\n\n3) Check if this mapping works:\n   * We only have one character in each string\n   * 'j' can be mapped to 't'\n   * There are no other characters to create conflicts\n   * The mapping is one-to-one\n\n4) Since:\n   * The strings are of equal length\n   * There's only one character mapping needed\n   * No mapping conflicts exist\n   * The pattern is maintained\n\nTherefore, these strings are isomorphic.\n</reasoning>\n\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "j",
+            "t"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nfgggh rmgmw\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's try to map the characters from string1 to string2:\n   - f -> r\n   - g -> m\n   - g -> g (This is a conflict! 'g' was already mapped to 'm')\n   - g -> m\n   - h -> w\n\n2) We also need to check the reverse mapping to ensure no two characters map to the same character:\n   - r -> f\n   - m -> g\n   - g -> g\n   - m -> g (This is a conflict! 'm' was already mapped to 'g')\n   - w -> h\n\n3) Looking at the strings:\n   string1: \"fgggh\"\n   string2: \"rmgmw\"\n\n4) The key issue here is that in string1, 'g' appears three times, but in string2, those positions have different characters ('m', 'g', 'm').\n   - This violates the rule that all occurrences of a character must be replaced with the same character.\n\n5) Since we found that 'g' would need to map to both 'm' and 'g', these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "fgggh",
+            "rmgmw"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nmsmbmaal ueuruwwb\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what we're checking:\n   - String 1: msmbmaal\n   - String 2: ueuruwwb\n\n2) For strings to be isomorphic:\n   - Each character in string 1 must map to exactly one character in string 2\n   - Each character in string 2 must map to exactly one character in string 1\n   - The pattern of character repetition must be identical\n\n3) Let's map the characters:\n   m \u2192 u\n   s \u2192 e\n   m \u2192 u (already mapped)\n   b \u2192 r\n   m \u2192 u (already mapped)\n   a \u2192 w\n   a \u2192 w (already mapped)\n   l \u2192 b\n\n4) Checking if mapping is consistent:\n   msmbmaal \u2192 ueuruwwb\n   - 'm' always maps to 'u'\n   - 's' always maps to 'e'\n   - 'b' always maps to 'r'\n   - 'a' always maps to 'w'\n   - 'l' always maps to 'b'\n\n5) Checking reverse mapping:\n   - 'u' always maps to 'm'\n   - 'e' always maps to 's'\n   - 'r' always maps to 'b'\n   - 'w' always maps to 'a'\n   - 'b' always maps to 'l'\n\n6) The mapping is one-to-one and consistent both ways, and the pattern of repetition is preserved.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "msmbmaal",
+            "ueuruwwb"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndlh ptj\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   - Each character in string 1 must map to a unique character in string 2\n   - The mapping must be one-to-one (bijective)\n   - Character patterns must match\n\n2) For \"dlh\" and \"ptj\":\n   - 'd' maps to 'p'\n   - 'l' maps to 't'\n   - 'h' maps to 'j'\n\n3) Let's check the conditions:\n   - Each character in \"dlh\" maps to a different character in \"ptj\"\n   - No character in \"ptj\" is mapped to by more than one character in \"dlh\"\n   - The pattern/structure is maintained (three different characters mapping to three different characters)\n   - Both strings are of the same length\n\n4) All conditions are satisfied because:\n   - Each character maps uniquely\n   - The mapping is consistent throughout\n   - No character is used more than once in the mapping\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "dlh",
+            "ptj"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ngeelmcuhk qkketdyha\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   - Each character in string 1 must map to exactly one character in string 2\n   - Each character in string 2 must be mapped to by exactly one character in string 1\n   - The pattern of character repetition must be the same\n\n2) Let's map the characters from \"geelmcuhk\" to \"qkketdyha\":\n   g -> q\n   e -> k\n   e -> k (already mapped, consistent)\n   l -> t\n   m -> d\n   c -> y\n   u -> h\n   h -> a\n   k -> a\n\n3) Problem found:\n   - 'k' is trying to map to 'a'\n   - But 'h' is already mapped to 'a'\n   - This violates the rule that no two characters may map to the same character\n\n4) Since we found a violation where two source characters ('h' and 'k') \n   are trying to map to the same target character ('a'), these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "geelmcuhk",
+            "qkketdyha"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuuhb psgw\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   * Each character in first string must map to exactly one character in second string\n   * No two characters in first string can map to the same character in second string\n   * The length of both strings must be equal\n\n2) Let's analyze \"uuhb\" and \"psgw\":\n   * First, let's verify the lengths: both are 4 characters long \u2713\n   * Let's map the characters:\n     - u(1st) \u2192 p\n     - u(2nd) \u2192 s\n     STOP! We found a violation here.\n   \n3) The same character 'u' in the first string is mapping to two different characters ('p' and 's') in the second string.\n   This violates the isomorphic property, as each character must consistently map to the same character.\n\n4) We don't need to check further as we've already found a violation.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "uuhb",
+            "psgw"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndbqub zhqxh\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's map characters from 'dbqub' to 'zhqxh':\n   - d -> z\n   - b -> h\n   - q -> q\n   - u -> x\n   - b -> h (second occurrence)\n\n2) Checking the rules:\n   - Are all occurrences of the same character mapped to the same character?\n     * 'b' appears twice in first string and maps to 'h' both times \u2713\n   - Does any character map to multiple different characters?\n     * Each character in first string maps to exactly one character in second string \u2713\n   - Are there any two different characters mapping to the same character?\n     * 'b' maps to 'h'\n     * 'd' maps to 'z'\n     * 'q' maps to 'q'\n     * 'u' maps to 'x'\n     * No two characters map to the same character \u2713\n\n3) Going through the strings position by position:\n   dbqub -> zhqxh\n   d -> z\n   b -> h\n   q -> q\n   u -> x\n   b -> h\n\nAll rules are satisfied and we can create a consistent mapping that transforms the first string into the second string.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "dbqub",
+            "zhqxh"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwmdllvr facvvpq\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to check if both strings have the same length\n   - \"wmdllvr\" has 7 characters\n   - \"facvvpq\" has 7 characters\n   - \u2713 Same length, can proceed\n\n2) Let me try mapping each character:\n   w -> f\n   m -> a\n   d -> c\n   l -> v (first l)\n   l -> v (second l)\n   v -> p\n   r -> q\n\n3) Let me check if this mapping is consistent:\n   - 'w' only maps to 'f' \u2713\n   - 'm' only maps to 'a' \u2713\n   - 'd' only maps to 'c' \u2713\n   - 'l' maps to 'v' both times \u2713\n   - 'v' only maps to 'p' \u2713\n   - 'r' only maps to 'q' \u2713\n\n4) Also need to check reverse mapping to ensure no two characters map to the same character:\n   f -> w\n   a -> m\n   c -> d\n   v -> l (first v)\n   v -> l (second v)\n   p -> v\n   q -> r\n\n5) Checking reverse mapping consistency:\n   - Each character in the second string maps to only one character in the first string \u2713\n\n6) Since:\n   - Both strings are same length\n   - Each character maintains consistent mapping\n   - No two characters map to the same character\n   The strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "wmdllvr",
+            "facvvpq"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nihihw pzpzj\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   \"ihihw\" and \"pzpzj\" both have 5 characters, so we can proceed.\n\n2) I'll create a mapping from first string to second string:\n   i -> p (first occurrence)\n   h -> z (first occurrence)\n   i -> p (already mapped correctly)\n   h -> z (already mapped correctly)\n   w -> j (first occurrence)\n\n3) Let me verify if the mapping is consistent:\n   - 'i' always maps to 'p'\n   - 'h' always maps to 'z'\n   - 'w' maps to 'j'\n\n4) Now I'll check if any character in the second string is mapped to by multiple characters:\n   - 'p' is only mapped from 'i'\n   - 'z' is only mapped from 'h'\n   - 'j' is only mapped from 'w'\n\n5) Let's verify the transformation:\n   ihihw -> pzpzj\n\nSince:\n- Each character from the first string consistently maps to the same character in the second string\n- No two different characters from the first string map to the same character in the second string\n- The transformation produces exactly the second string\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ihihw",
+            "pzpzj"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\njhdnkil qkltzun\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll write out both strings:\n   s = \"jhdnkil\"\n   t = \"qkltzun\"\n\n2) For strings to be isomorphic:\n   - Each character in s must map to a unique character in t\n   - Each character in t must map to a unique character in s\n   - The pattern of character repetition must be the same\n\n3) Let's map each character:\n   j -> q\n   h -> k\n   d -> l\n   n -> t\n   k -> z\n   i -> u\n   l -> n\n\n4) Checking for violations:\n   - Each character in s maps to a unique character in t\n   - Each character in t is mapped to by only one character in s\n   - Looking at both strings, each character appears exactly once\n   - The length of both strings is the same (7 characters)\n   - No character needs to map to multiple characters\n\n5) Since all conditions are met (each character has a unique mapping and the pattern is preserved), these strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "jhdnkil",
+            "qkltzun"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhdozgxs wrticnx\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   \"hdozgxs\" and \"wrticnx\" both have 7 characters.\n\n2) Let me try to map each character:\n   h -> w\n   d -> r\n   o -> t\n   z -> i\n   g -> c\n   x -> n\n   s -> x\n\n3) Let me verify each mapping is unique:\n   - Each character in the first string maps to a unique character in the second string\n   - No two characters in the first string map to the same character in the second string\n\n4) Let me check if the mapping is consistent throughout:\n   hdozgxs -> wrticnx\n   h maps to w \u2713\n   d maps to r \u2713\n   o maps to t \u2713\n   z maps to i \u2713\n   g maps to c \u2713\n   x maps to n \u2713\n   s maps to x \u2713\n\n5) All characters map uniquely and consistently, and we don't have any character mapping to multiple characters.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "hdozgxs",
+            "wrticnx"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nnyodetwktx bptczxdfnq\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings are of the same length:\n   nyodetwktx and bptczxdfnq are both 10 characters long, so we can proceed.\n\n2) I'll try to map each character from the first string to the second string:\n   n -> b\n   y -> p\n   o -> t\n   d -> c\n   e -> z\n   t -> x\n   w -> d\n   k -> f\n   t -> n (STOP HERE!)\n\n3) We've found an issue: 't' in the first string was already mapped to 'x', but now it needs to map to 'n'.\n   According to the rules, each character must consistently map to the same character.\n\n4) Since we found a character ('t') that would need to map to two different characters ('x' and 'n'),\n   these strings cannot be isomorphic.\n\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "nyodetwktx",
+            "bptczxdfnq"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nluu nrg\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   * Each character in first string must map to a unique character in second string\n   * The mapping must be consistent throughout the string\n   * Both strings must be of same length\n\n2) Let's map the characters:\n   * 'l' -> 'n'\n   * 'u' -> 'r' (first 'u')\n   * 'u' -> 'g' (second 'u')\n\n3) We can see that 'u' is being mapped to two different characters ('r' and 'g')\n\n4) This violates the rule that \"No two characters may map to the same character\"\n\n5) Similar to Example 2 (foo->bar), where 'o' needed to map to both 'a' and 'r', here 'u' needs to map to both 'r' and 'g'\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "luu",
+            "nrg"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrhepbh yuxcve\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if the strings are the same length:\n   \"rhepbh\" and \"yuxcve\" both have 6 characters.\n\n2) Now, I'll try to map each character:\n   r -> y (first occurrence)\n   h -> u (first occurrence)\n   e -> x (first occurrence)\n   p -> c (first occurrence)\n   b -> v (first occurrence)\n   h -> e (second occurrence)\n\n3) Let me check if this mapping is consistent:\n   - When 'h' appears the second time in \"rhepbh\", it maps to 'e'\n   - But earlier, 'h' was mapped to 'u'\n   - This is inconsistent as the same character 'h' is being mapped to two different characters ('u' and 'e')\n\n4) According to the rules:\n   - Each character must consistently map to the same character\n   - The mapping for 'h' violates this rule\n\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "rhepbh",
+            "yuxcve"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nd u\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if the strings have the same length:\n   - String 1: \"d\" (length 1)\n   - String 2: \"u\" (length 1)\n   - They are the same length, so we can proceed.\n\n2) For these strings to be isomorphic:\n   - 'd' needs to map to 'u'\n   \n3) Checking the mapping rules:\n   - One character maps to only one other character \u2713\n   - All occurrences of a character must be replaced with the same character \u2713\n   - Each character in the second string can only be mapped to by one character from the first string \u2713\n\n4) Since:\n   - We only have one character in each string\n   - We can create a valid one-to-one mapping ('d' \u2192 'u')\n   - No rules are violated\n\nThe strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "d",
+            "u"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ncwc vbv\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   - Each character in the first string must map to a unique character in the second string\n   - Each character in the second string must map to a unique character in the first string\n   - The pattern of character repetition must be the same\n\n2) Let's analyze \"cwc\" and \"vbv\":\n   First string: \"cwc\"\n   Second string: \"vbv\"\n\n3) Let's map the characters:\n   - 'c' (first occurrence) \u2192 'v'\n   - 'w' \u2192 'b'\n   - 'c' (second occurrence) \u2192 'v'\n\n4) Checking conditions:\n   - Each 'c' maps to 'v'\n   - 'w' maps to 'b'\n   - Pattern is maintained: ABA \u2192 CDC (where A='c', B='w', C='v', D='b')\n   - No character maps to multiple different characters\n   - The mapping is one-to-one\n\n5) Since all conditions are met, the strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "cwc",
+            "vbv"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\naksuqihmo lyrtbanso\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length:\n   \"aksuqihmo\" and \"lyrtbanso\" both have 9 characters.\n\n2) I'll create a mapping going through each character:\n   a -> l\n   k -> y\n   s -> r\n   u -> t\n   q -> b\n   i -> a\n   h -> n\n   m -> s\n   o -> o\n\n3) Now let me verify if this mapping is valid:\n   - Each character in first string maps to exactly one character in second string\n   - Need to check if any character in second string is mapped to by multiple characters\n\n4) Looking at the second string (lyrtbanso):\n   l is mapped from a\n   y is mapped from k\n   r is mapped from s\n   t is mapped from u\n   b is mapped from q\n   a is mapped from i\n   n is mapped from h\n   s is mapped from m\n   o is mapped from o\n\n5) Each character in the second string is mapped to by exactly one character from the first string,\n   and each character in the first string maps to exactly one character in the second string.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "aksuqihmo",
+            "lyrtbanso"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nnnlkchihkk ggkaxldlka\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings are the same length:\n   \"nnlkchihkk\" and \"ggkaxldlka\" are both 10 characters long, so we can proceed.\n\n2) I'll create a mapping as I go through the strings:\n   n \u2192 g (first characters)\n   n \u2192 g (already mapped)\n   l \u2192 k\n   k \u2192 a\n   c \u2192 x\n   h \u2192 l\n   i \u2192 d\n   h \u2192 l (already mapped)\n   k \u2192 k (different mapping from before! k was mapped to 'a')\n   k \u2192 a (different mapping from before! k was mapped to 'k')\n\n3) I found an inconsistency:\n   - The letter 'k' in the first string is being mapped to different letters ('a', 'k', 'a')\n   - A character must consistently map to the same character throughout the string\n\n4) Since we found an inconsistency where 'k' maps to multiple different characters, these strings cannot be isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "nnlkchihkk",
+            "ggkaxldlka"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhfibbbr mqvtttd\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings are the same length:\n   \"hfibbbr\" and \"mqvtttd\" are both 7 characters long \u2713\n\n2) Let's try mapping each character:\n   h -> m\n   f -> q\n   i -> v\n   b -> t\n   b -> t (second b)\n   b -> t (third b)\n   r -> d\n\n3) Key checks:\n   - For h->m: occurs once in both strings \u2713\n   - For f->q: occurs once in both strings \u2713\n   - For i->v: occurs once in both strings \u2713\n   - For b->t: 'b' appears three times in first string, 't' appears three times in second string \u2713\n   - For r->d: occurs once in both strings \u2713\n\n4) Important checks:\n   - Each character in first string maps to exactly one character in second string \u2713\n   - Each character in second string is mapped to by exactly one character in first string \u2713\n   - The pattern of repetition is the same in both strings \u2713\n\nSince all checks pass and we can establish a consistent one-to-one mapping between characters while preserving the pattern, these strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "hfibbbr",
+            "mqvtttd"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ngxjsaus kygspws\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's check if the strings are the same length:\n   gxjsaus (7 characters)\n   kygspws (7 characters)\n   \u2713 Same length, we can proceed\n\n2) Let's try mapping each character:\n   g -> k (first position)\n   x -> y (second position)\n   j -> g (third position)\n   s -> s (fourth position)\n   a -> p (fifth position)\n   u -> w (sixth position)\n   s -> s (seventh position)\n\n3) Let's verify each mapping is consistent:\n   - 'g' appears once, maps to 'k' \u2713\n   - 'x' appears once, maps to 'y' \u2713\n   - 'j' appears once, maps to 'g' \u2713\n   - 's' appears twice, maps to 's' both times \u2713\n   - 'a' appears once, maps to 'p' \u2713\n   - 'u' appears once, maps to 'w' \u2713\n\n4) Also check reverse mapping (no two characters should map to same character):\n   - 'k' maps from 'g' only \u2713\n   - 'y' maps from 'x' only \u2713\n   - 'g' maps from 'j' only \u2713\n   - 's' maps from 's' only \u2713\n   - 'p' maps from 'a' only \u2713\n   - 'w' maps from 'u' only \u2713\n\n5) All conditions are satisfied:\n   - Each character maps to exactly one other character\n   - The mapping is consistent throughout\n   - No two different characters map to the same character\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "gxjsaus",
+            "kygspws"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nggnazpp ppgbifo\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   - Each character in string1 must map to a unique character in string2\n   - One character cannot map to multiple different characters\n   - The pattern of character repetition must be the same in both strings\n\n2) For \"ggnazpp\" and \"ppgbifo\":\n   Let's map each character:\n   - First 'g' \u2192 'p'\n   - Second 'g' \u2192 'p' (consistent with first mapping)\n   - 'n' \u2192 'g'\n   - 'a' \u2192 'b'\n   - 'z' \u2192 'i'\n   - First 'p' \u2192 'f'\n   - Second 'p' \u2192 'o'\n\n3) We can see that:\n   - The first 'p' maps to 'f'\n   - The second 'p' maps to 'o'\n   \n4) This violates the isomorphic property because the same character 'p' in the first string is being mapped to two different characters ('f' and 'o') in the second string.\n   \n5) Once we find such a violation, we can conclude the strings are not isomorphic.\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ggnazpp",
+            "ppgbifo"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nsff fim\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to understand the rules:\n   * Each character in first string must map to a unique character in second string\n   * The mapping must be consistent throughout the string\n   * No two characters can map to the same character\n\n2) Let's analyze \"sff\" and \"fim\":\n   * 's' needs to map to 'f'\n   * First 'f' needs to map to 'i'\n   * Second 'f' needs to map to 'm'\n\n3) Here's the problem:\n   * The letter 'f' appears twice in the first string\n   * But it maps to two different letters ('i' and 'm') in the second string\n   * This violates the rule that all occurrences of a character must be replaced with the same character\n\n4) This is similar to Example 2 (foo bar) where 'o' needed to map to both 'a' and 'r'\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "sff",
+            "fim"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nzjfaum nicuyk\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   * Each character in string1 must map to a unique character in string2\n   * The mapping must be consistent throughout the strings\n   * No two characters in string1 can map to the same character in string2\n\n2) Let's map the characters:\n   zjfaum \u2192 nicuyk\n   \n   z \u2192 n\n   j \u2192 i\n   f \u2192 c\n   a \u2192 u\n   u \u2192 y\n   m \u2192 k\n\n3) Checking if all mappings are unique:\n   * Each character from first string maps to a unique character in second string\n   * No character in second string is mapped to by multiple characters from first string\n\n4) Going through each position:\n   Position 0: z \u2192 n\n   Position 1: j \u2192 i\n   Position 2: f \u2192 c\n   Position 3: a \u2192 u\n   Position 4: u \u2192 y\n   Position 5: m \u2192 k\n\n5) Each character has a unique mapping and the order is preserved.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "zjfaum",
+            "nicuyk"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nrcwcmvjxj wjyjrzchc\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if both strings have the same length\n   - rcwcmvjxj and wjyjrzchc are both 9 characters long, so we can proceed\n\n2) I'll create a character mapping and verify the isomorphic property:\n   r -> w  (first characters)\n   c -> j  (second characters)\n   w -> y  (third characters)\n   c -> j  (fourth characters) - PROBLEM HERE!\n   \n   We've found an issue: 'c' is trying to map to 'j', but earlier we mapped 'c' to 'j'\n   These characters are in different positions (2nd and 4th), but they need to map to the same character.\n   \n   This violates the isomorphic property because the same character 'c' is trying to map to the same character 'j' in different positions.\n\n3) We don't need to check further because we've already found a violation of the isomorphic property.\n\n</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "rcwcmvjxj",
+            "wjyjrzchc"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\newkakhvms sdgonqeiz\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what we need to check:\n   * Each character in first string must map to exactly one character in second string\n   * No two characters in first string can map to the same character in second string\n   * The strings must be of same length\n\n2) Let's map the characters:\n   e -> s\n   w -> d\n   k -> g\n   a -> o\n   h -> n\n   v -> q\n   m -> e\n   s -> i\n   s -> z\n\n3) Problems found:\n   * The character 's' appears twice in first string (at end)\n   * In first occurrence, 's' maps to 'i'\n   * In second occurrence, 's' maps to 'z'\n   * This violates the rule that all occurrences of a character must map to the same character\n\n4) Since we found a violation where 's' maps to both 'i' and 'z', the strings cannot be isomorphic.\n\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ewkakhvms",
+            "sdgonqeiz"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nillkdvoy knneambg\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll check if the strings have the same length:\n   illkdvoy and knneambg both have 8 characters, so we can proceed.\n\n2) Now, I'll try to map each character:\n   i -> k\n   l -> n\n   l -> n (second 'l' maps to second 'n', consistent)\n   k -> e\n   d -> a\n   v -> m\n   o -> b\n   y -> g\n\n3) Let me verify the mapping:\n   - Each character in the first string maps to exactly one character in the second string\n   - i(k), l(n), l(n), k(e), d(a), v(m), o(b), y(g)\n\n4) I also need to check if any two different characters in the first string map to the same character in the second string:\n   - 'i' maps to 'k'\n   - 'l' maps to 'n'\n   - 'k' maps to 'e'\n   - 'd' maps to 'a'\n   - 'v' maps to 'm'\n   - 'o' maps to 'b'\n   - 'y' maps to 'g'\n\n5) Looking at this mapping:\n   - Each character in the first string maps to a unique character in the second string\n   - No two different characters map to the same character\n   - The mapping is consistent throughout the strings\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "illkdvoy",
+            "knneambg"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuqxgkuxo umviduva\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   - Each character in string 1 must map to exactly one character in string 2\n   - No two characters in string 1 can map to the same character in string 2\n   - The pattern of character repetition must be identical\n\n2) Let's map the characters from uqxgkuxo to umviduva:\n   u \u2192 u (first character)\n   q \u2192 m (second character)\n   x \u2192 v (third character)\n   g \u2192 i (fourth character)\n   k \u2192 d (fifth character)\n   u \u2192 u (sixth character, matches previous mapping)\n   x \u2192 v (seventh character, matches previous mapping)\n   o \u2192 a (eighth character)\n\n3) Let's verify each character mapping:\n   - u maps to u\n   - q maps to m\n   - x maps to v\n   - g maps to i\n   - k maps to d\n   - o maps to a\n\n4) Checking if any one character maps to multiple characters:\n   - Each character in string 1 maps to exactly one character in string 2\n   - No character in string 1 is trying to map to multiple characters in string 2\n\n5) Checking if multiple characters map to the same character:\n   - No two different characters in string 1 are mapping to the same character in string 2\n\n6) The pattern of repetition is preserved:\n   - 'u' appears twice in both strings at the same positions\n   - 'x' appears twice in first string and 'v' appears twice in second string at the same positions\n   - All other characters appear exactly once in both strings at corresponding positions\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "uqxgkuxo",
+            "umviduva"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\naa op\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1. First, let's understand what makes strings isomorphic:\n   * Each character in string 1 must map to exactly one character in string 2\n   * No two characters in string 1 can map to the same character in string 2\n   * The pattern/structure must be preserved\n\n2. For \"aa\" and \"op\":\n   * First letter 'a' would map to 'o'\n   * Second letter 'a' would also need to map to 'p'\n   \n3. This violates the rule that one character ('a') cannot map to two different characters ('o' and 'p')\n   * The same character 'a' is trying to map to both 'o' and 'p'\n   * This is not allowed in isomorphic strings\n\n4. Therefore, these strings cannot be isomorphic\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "aa",
+            "op"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nej az\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to check if both strings have the same length\n   - \"ej\" has length 2\n   - \"az\" has length 2\n   - They are the same length, so we can proceed\n\n2) Let me try to map characters:\n   - First characters: 'e' maps to 'a'\n   - Second characters: 'j' maps to 'z'\n\n3) Checking conditions:\n   - Each character in first string maps to a unique character in second string:\n     'e' \u2192 'a'\n     'j' \u2192 'z'\n     \u2713 Each mapping is unique\n\n   - Each character in second string is mapped to by at most one character:\n     'a' \u2190 'e'\n     'z' \u2190 'j'\n     \u2713 No character in second string is mapped to by multiple characters\n\n4) Since all conditions are satisfied:\n   - Each character maps to exactly one other character\n   - The mappings are consistent throughout\n   - No two characters map to the same character\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ej",
+            "az"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nww qg\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   - Each character in string 1 must map to exactly one character in string 2\n   - Each character in string 2 must map to exactly one character in string 1\n   - The pattern/structure must be preserved\n\n2) Let's analyze \"ww\" and \"qg\":\n   * First position: 'w' maps to 'q'\n   * Second position: 'w' maps to 'g'\n\n3) Problem detection:\n   - The same character 'w' is trying to map to two different characters ('q' and 'g')\n   - This violates the rule that \"all occurrences of a character must be replaced with another character\"\n   - One character cannot map to two different characters\n\n4) Similar to Example 2 (\"foo\" and \"bar\") where 'o' couldn't map to both 'a' and 'r', \n   here 'w' can't map to both 'q' and 'g'\n</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ww",
+            "qg"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nwdew xqfx\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic, they must:\n   - Be of same length\n   - Have a one-to-one mapping between characters\n   - Maintain character order\n\n2) Let's check the strings \"wdew\" and \"xqfx\":\n   Length of both strings = 4 (\u2713)\n\n3) Let's try mapping characters:\n   - w -> x (first occurrence)\n   - d -> q\n   - e -> f\n   - w -> x (second occurrence)\n\n4) Checking if mappings are consistent:\n   - First 'w' maps to 'x'\n   - 'd' maps to 'q'\n   - 'e' maps to 'f'\n   - Second 'w' maps to 'x'\n\n5) Verifying reverse mapping:\n   - x -> w\n   - q -> d\n   - f -> e\n   - x -> w\n\n6) All characters maintain consistent mapping in both directions:\n   - Each character in first string maps to exactly one character in second string\n   - Each character in second string maps to exactly one character in first string\n   - The mappings are consistent throughout the strings\n   - When we see a repeated character (w) in first string, it maps to the same character (x) in second string\n\nTherefore, these strings are isomorphic.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "wdew",
+            "xqfx"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\netim nocd\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For strings to be isomorphic:\n   - Each character in first string must map to a unique character in second string\n   - Each character in second string must be mapped to by only one character from first string\n   - The mapping must be consistent throughout the strings\n\n2) Let's map \"etim\" to \"nocd\":\n   - 'e' \u2192 'n'\n   - 't' \u2192 'o'\n   - 'i' \u2192 'c'\n   - 'm' \u2192 'd'\n\n3) Checking conditions:\n   - Each character in \"etim\" maps to a different character in \"nocd\"\n   - Each character in \"nocd\" is mapped to by only one character from \"etim\"\n   - The mapping is consistent (characters don't map to multiple different characters)\n   - Both strings are the same length\n\n4) All conditions are satisfied:\n   - Each character has a unique mapping\n   - The mapping is consistent throughout\n   - No character maps to multiple characters\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "etim",
+            "nocd"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\npuogr judgq\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to check if both strings have the same length:\n   'puogr' and 'judgq' both have 5 characters.\n\n2) I'll try to map characters from first string to second string:\n   p -> j\n   u -> u\n   o -> d\n   g -> g\n   r -> q\n\n3) Let me verify if each character maintains consistent mapping:\n   - 'p' appears once and maps to 'j'\n   - 'u' appears once and maps to 'u'\n   - 'o' appears once and maps to 'd'\n   - 'g' appears once and maps to 'g'\n   - 'r' appears once and maps to 'q'\n\n4) I also need to check if any two characters from the first string map to the same character in the second string:\n   j, u, d, g, q are all different characters\n\n5) All conditions are met:\n   - Each character has consistent mapping\n   - No two characters map to the same character\n   - The order is preserved\n   - Both strings are same length\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "puogr",
+            "judgq"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nay fl\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what we're checking:\n   * Each character in the first string must map to a unique character in the second string\n   * The mapped character must be consistent throughout the string\n   * The strings must be of equal length\n\n2) Let's analyze \"ay\" and \"fl\":\n   * Both strings have length 2, so that's good\n   * From the first string to the second:\n     - 'a' needs to map to 'f'\n     - 'y' needs to map to 'l'\n\n3) Checking the conditions:\n   * Each character in \"ay\" maps to a unique character in \"fl\"\n   * No character in \"ay\" needs to map to multiple characters\n   * Each character in \"fl\" is mapped to by only one character from \"ay\"\n\n4) The mapping is:\n   a \u2192 f\n   y \u2192 l\n\nThis is a valid one-to-one mapping with no conflicts.\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "ay",
+            "fl"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nbkh fdq\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's understand what makes strings isomorphic:\n   * Each character in first string must map to a unique character in second string\n   * The mapping must be consistent throughout the string\n   * No two characters can map to the same character\n\n2) For \"bkh\" and \"fdq\":\n   * 'b' -> 'f'\n   * 'k' -> 'd'\n   * 'h' -> 'q'\n\n3) Let's verify:\n   * Each character in \"bkh\" maps to a unique character in \"fdq\"\n   * No character in \"bkh\" maps to multiple characters in \"fdq\"\n   * No two characters in \"bkh\" map to the same character in \"fdq\"\n   * The mapping is consistent throughout\n   * Both strings are of same length (3 characters)\n\n4) All conditions are satisfied:\n   * 'b' only maps to 'f'\n   * 'k' only maps to 'd'\n   * 'h' only maps to 'q'\n   * Each mapping is unique and consistent\n</reasoning>\n<answer>True</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "bkh",
+            "fdq"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      }
+    ]
+  }
+]

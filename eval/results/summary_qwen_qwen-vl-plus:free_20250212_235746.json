@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "letter_jumble",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.01,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T23:57:46.629934",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

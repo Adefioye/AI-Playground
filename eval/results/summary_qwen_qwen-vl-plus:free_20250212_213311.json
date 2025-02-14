@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "intermediate_integration",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.11699999999999999,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T21:33:11.602625",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

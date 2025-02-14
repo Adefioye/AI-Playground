@@ -1,0 +1,376 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "letter_jumble",
+      "model": "qwen/qwen-vl-plus:free",
+      "size": 10,
+      "average_score": 0.01,
+      "total_examples": 10,
+      "timestamp": "2025-02-12T23:57:46.629934",
+      "config": {
+        "size": 10,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Unscramble these words: ew hsall eb ebla ot puodrce",
+        "expected_answer": "we shall be able to produce",
+        "model_answer": "<reasoning>The scrambled words are \"ew hsall eb ebla ot puodrce\". By rearranging the letters, we can see that they form the word \"elephant\".</reasoning>\n<answer>elephant</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 6,
+          "corruption_level": 0.12000860417813355,
+          "scrambled_words": [
+            "ew",
+            "hsall",
+            "eb",
+            "ebla",
+            "ot",
+            "puodrce"
+          ],
+          "original_words": [
+            "we",
+            "shall",
+            "be",
+            "able",
+            "to",
+            "produce"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ni oiurnalmsj Well Cahs",
+        "expected_answer": "in journalism Well Cash",
+        "model_answer": "<reasoning>To unscramble the words, we need to rearrange the letters to form meaningful words. The words are \"journalism\" and \"well cash\".</reasoning>\n<answer>journalism, well cash</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 4,
+          "corruption_level": 0.3288673442377109,
+          "scrambled_words": [
+            "ni",
+            "oiurnalmsj",
+            "Well",
+            "Cahs"
+          ],
+          "original_words": [
+            "in",
+            "journalism",
+            "Well",
+            "Cash"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: dear rchAdbali keep no nSice yrstyedae atnhks ot oyu rheet si a gain fo sucrbbisesr rM",
+        "expected_answer": "dear Archibald keep on Since yesterday thanks to you there is a gain of subscribers Mr",
+        "model_answer": "<reasoning>To unscramble the words, we need to rearrange the letters to form meaningful words. The scrambled words are: dear, rchAdbali, keep, no, nSice, yrstyedae, atnhks, ot, oyu, rheet, si, a, gain, fo, sucrbbisesr, rM. By rearranging the letters, we get: dear, rchAdbali, keep, no, nSice, yrstyedae, atnhks, ot, oyu, rheet, si, a, gain, fo, sucrbbisesr, rM. The unscrambled words are: dear, rchAdbali, keep, no, nSice, yrstyedae, atnhks, ot, oyu, rheet, si, a, gain, fo, sucrbbisesr, rM.</reasoning>\n<answer>dear, rchAdbali, keep, no, nSice, yrstyedae, atnhks, ot, oyu, rheet, si, a, gain, fo, sucrbbisesr, rM</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 16,
+          "corruption_level": 0.516016391169858,
+          "scrambled_words": [
+            "dear",
+            "rchAdbali",
+            "keep",
+            "no",
+            "nSice",
+            "yrstyedae",
+            "atnhks",
+            "ot",
+            "oyu",
+            "rheet",
+            "si",
+            "a",
+            "gain",
+            "fo",
+            "sucrbbisesr",
+            "rM"
+          ],
+          "original_words": [
+            "dear",
+            "Archibald",
+            "keep",
+            "on",
+            "Since",
+            "yesterday",
+            "thanks",
+            "to",
+            "you",
+            "there",
+            "is",
+            "a",
+            "gain",
+            "of",
+            "subscribers",
+            "Mr"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: asdenutrnds ohw a amn stduetai sa mSiht si msut eb tesbe",
+        "expected_answer": "understands how a man situated as Smith is must be beset",
+        "model_answer": "<reasoning>To unscramble these words, we need to rearrange the letters to form meaningful words. Let's start with the first word \"asdenutrnds\". By rearranging the letters, we can form the word \"undertand\". Similarly, we can unscramble the other words as follows: \"ohw\" -> \"how\", \"amn\" -> \"man\", \"stduetai\" -> \"stated\", \"sa\" -> \"as\", \"mSiht\" -> \"this\", \"si\" -> \"is\", \"msut\" -> \"must\", \"eb\" -> \"be\", \"tesbe\" -> \"best\".</reasoning>\n<answer>undertand, how, man, stated, as, this, is, must, be, best</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 11,
+          "corruption_level": 0.4341529517652285,
+          "scrambled_words": [
+            "asdenutrnds",
+            "ohw",
+            "a",
+            "amn",
+            "stduetai",
+            "sa",
+            "mSiht",
+            "si",
+            "msut",
+            "eb",
+            "tesbe"
+          ],
+          "original_words": [
+            "understands",
+            "how",
+            "a",
+            "man",
+            "situated",
+            "as",
+            "Smith",
+            "is",
+            "must",
+            "be",
+            "beset"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: ni eht nognimr a atelb",
+        "expected_answer": "in the morning a table",
+        "model_answer": "<reasoning>The scrambled words are \"ni eht nognimr a atelb\". To unscramble them, we need to rearrange the letters to form meaningful words. The word \"ni eht\" can be rearranged to form the word \"there\". The word \"nognimr\" can be rearranged to form the word \"mirror\". The word \"a atelb\" can be rearranged to form the word \"ball\". Therefore, the unscrambled words are \"there\", \"mirror\", and \"ball\".</reasoning>\n<answer>there, mirror, ball</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.41999551677681035,
+          "scrambled_words": [
+            "ni",
+            "eht",
+            "nognimr",
+            "a",
+            "atelb"
+          ],
+          "original_words": [
+            "in",
+            "the",
+            "morning",
+            "a",
+            "table"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: electconir wokr ro proug fo sorkw no tifferend temrs htan aer est rofth ni",
+        "expected_answer": "electronic work or group of works on different terms than are set forth in",
+        "model_answer": "<reasoning>To unscramble the words, we need to rearrange the letters to form meaningful words. The scrambled words are \"electconir\", \"wokr\", \"ro\", \"proug\", \"fo\", \"sorkw\", \"no\", \"tifferend\", \"temrs\", \"htan\", \"aer\", \"est\", \"rofth\", and \"ni\". By rearranging the letters, we can form the following words: \"electronic\", \"work\", \"pro\", \"four\", \"for\", \"sorrow\", \"no\", \"different\", \"terms\", \"than\", \"air\", \"rest\", \"through\", and \"nine\".</reasoning>\n<answer>electronic, work, pro, four, for, sorrow, no, different, terms, than, air, rest, through, nine</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 14,
+          "corruption_level": 0.15002014297357943,
+          "scrambled_words": [
+            "electconir",
+            "wokr",
+            "ro",
+            "proug",
+            "fo",
+            "sorkw",
+            "no",
+            "tifferend",
+            "temrs",
+            "htan",
+            "aer",
+            "est",
+            "rofth",
+            "ni"
+          ],
+          "original_words": [
+            "electronic",
+            "work",
+            "or",
+            "group",
+            "of",
+            "works",
+            "on",
+            "different",
+            "terms",
+            "than",
+            "are",
+            "set",
+            "forth",
+            "in"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: na eontnsixe craih nheT nouchigt a kbon eh hbtalsiseed tomumnicacion whti teh Clnrtae Concert Hall nhcwee ruo grtaeest sned tuo",
+        "expected_answer": "an extension chair Then touching a knob he established communication with the Central Concert Hall whence our greatest send out",
+        "model_answer": "<reasoning>To unscramble these words, we need to rearrange the letters to form meaningful words. The scrambled words are: na eontnsixe, craih, nheT, nouchigt, a kbon, eh hbtalsiseed, tomumnicacion, whti, teh, Clnrtae, Concert, Hall, nhcwee, ruo, grtaeest, sned, tuo. By rearranging the letters, we get: na eontnsixe -> \"in the\", craih -> \"in\", nheT -> \"the\", nouchigt -> \"of\", a kbon -> \"a\", eh hbtalsiseed -> \"of\", tomumnicacion -> \"communication\", whti -> \"with\", teh -> \"the\", Clnrtae -> \"the\", Concert -> \"concert\", Hall -> \"hall\", nhcwee -> \"new\", ruo -> \"of\", grtaeest -> \"greatest\", sned -> \"send\", tuo -> \"to\". So, the unscrambled words are: \"in the\", \"in\", \"the\", \"of\", \"a\", \"of\", \"communication\", \"with\", \"the\", \"the\", \"concert\", \"hall\", \"new\", \"of\", \"greatest\", \"send\", \"to\".</reasoning>\n<answer>in the, in, the, of, a, of, communication, with, the, the, concert, hall, new, of, greatest, send, to</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 20,
+          "corruption_level": 0.3523628898375718,
+          "scrambled_words": [
+            "na",
+            "eontnsixe",
+            "craih",
+            "nheT",
+            "nouchigt",
+            "a",
+            "kbon",
+            "eh",
+            "hbtalsiseed",
+            "tomumnicacion",
+            "whti",
+            "teh",
+            "Clnrtae",
+            "Concert",
+            "Hall",
+            "nhcwee",
+            "ruo",
+            "grtaeest",
+            "sned",
+            "tuo"
+          ],
+          "original_words": [
+            "an",
+            "extension",
+            "chair",
+            "Then",
+            "touching",
+            "a",
+            "knob",
+            "he",
+            "established",
+            "communication",
+            "with",
+            "the",
+            "Central",
+            "Concert",
+            "Hall",
+            "whence",
+            "our",
+            "greatest",
+            "send",
+            "out"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: fo noircalustji wrok wsa onw",
+        "expected_answer": "of journalistic work was now",
+        "model_answer": "<reasoning>To unscramble the words, we need to rearrange the letters to form meaningful words. The scrambled words are \"fo noircalustji wrok wsa onw\". By rearranging the letters, we can form the words \"in a world, work was done\".</reasoning>\n<answer>in a world, work was done</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 5,
+          "corruption_level": 0.37546391137387036,
+          "scrambled_words": [
+            "fo",
+            "noircalustji",
+            "wrok",
+            "wsa",
+            "onw"
+          ],
+          "original_words": [
+            "of",
+            "journalistic",
+            "work",
+            "was",
+            "now"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: yma seu hist koeoB orf elyanr any ppuoers chus sa oitrcean fo evrtaiidve roswk retsorp psmoenrracfe dan erchrase",
+        "expected_answer": "may use this eBook for nearly any purpose such as creation of derivative works reports performances and research",
+        "model_answer": "<reasoning>To unscramble these words, we need to rearrange the letters to form meaningful words. Let's start with the first word \"yma seu hist koeoB\". By rearranging the letters, we can form the word \"history\". Similarly, we can unscramble the other words as follows: \"orf elyanr\" -> \"orphan\", \"any ppuoers\" -> \"power\", \"chus sa oitrcean\" -> \"science\", \"fo evrtaiidve\" -> \"devoted\", \"roswk retsorp\" -> \"workshop\", \"psmoenrracfe\" -> \"research\", and \"dan erchrase\" -> \"and erase\".</reasoning>\n<answer>history, orphan, power, science, devoted, workshop, research, and erase</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 18,
+          "corruption_level": 0.7845563069949968,
+          "scrambled_words": [
+            "yma",
+            "seu",
+            "hist",
+            "koeoB",
+            "orf",
+            "elyanr",
+            "any",
+            "ppuoers",
+            "chus",
+            "sa",
+            "oitrcean",
+            "fo",
+            "evrtaiidve",
+            "roswk",
+            "retsorp",
+            "psmoenrracfe",
+            "dan",
+            "erchrase"
+          ],
+          "original_words": [
+            "may",
+            "use",
+            "this",
+            "eBook",
+            "for",
+            "nearly",
+            "any",
+            "purpose",
+            "such",
+            "as",
+            "creation",
+            "of",
+            "derivative",
+            "works",
+            "reports",
+            "performances",
+            "and",
+            "research"
+          ]
+        }
+      },
+      {
+        "question": "Unscramble these words: tkhin thne reeakdrm rM hSimt lsuyngim that fi one docul",
+        "expected_answer": "think then remarked Mr Smith musingly that if one could",
+        "model_answer": "<reasoning>To unscramble the words, we need to rearrange the letters to form meaningful words. The scrambled words are \"tkhin thne reeakdrm rM hSimt lsuyngim that fi one docul\". By rearranging the letters, we can form the words \"think\", \"there\", \"remark\", \"right\", \"using\", \"that\", \"find\", \"document\".</reasoning>\n<answer>think, there, remark, right, using, that, find, document</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_words": 10,
+          "corruption_level": 0.7707922786605893,
+          "scrambled_words": [
+            "tkhin",
+            "thne",
+            "reeakdrm",
+            "rM",
+            "hSimt",
+            "lsuyngim",
+            "that",
+            "fi",
+            "one",
+            "docul"
+          ],
+          "original_words": [
+            "think",
+            "then",
+            "remarked",
+            "Mr",
+            "Smith",
+            "musingly",
+            "that",
+            "if",
+            "one",
+            "could"
+          ]
+        }
+      }
+    ]
+  }
+]

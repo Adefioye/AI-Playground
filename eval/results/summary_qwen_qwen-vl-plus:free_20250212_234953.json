@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "isomorphic_strings",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.20800000000000002,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T23:49:53.619175",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

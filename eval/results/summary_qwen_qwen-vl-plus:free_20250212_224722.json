@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "simple_integration",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.21200000000000002,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T22:47:22.477531",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

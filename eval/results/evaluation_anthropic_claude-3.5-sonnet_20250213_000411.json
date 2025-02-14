@@ -1,0 +1,1296 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "number_sorting",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.01,
+      "total_examples": 50,
+      "timestamp": "2025-02-13T00:04:11.721948",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Sort these numbers in ascending order: 48, -51, -72, -80",
+        "expected_answer": "['-80', '-72', '-51', '48']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest (most positive).\n\nLet me identify the smallest number first:\n-80 is the smallest (most negative)\n-72 is the next largest\n-51 follows\n48 is the largest (only positive number)\n\nSo, ordering from smallest to largest:\n-80, -72, -51, 48\n</reasoning>\n<answer>-80, -72, -51, 48</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "48",
+            "-51",
+            "-72",
+            "-80"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-80",
+            "-72",
+            "-51",
+            "48"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 39.2, -71.2, -7.5",
+        "expected_answer": "['-71.2', '-7.5', '39.2']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from smallest (most negative) to largest (most positive).\n\n1. First, identify the most negative number: -71.2\n2. Then find the next larger number: -7.5\n3. Finally, the positive number 39.2 goes last\n\nSo the order from smallest to largest is: -71.2, -7.5, 39.2\n</reasoning>\n<answer>-71.2, -7.5, 39.2</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "39.2",
+            "-71.2",
+            "-7.5"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-71.2",
+            "-7.5",
+            "39.2"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 8.39, 72.41, -64.67, -54.97, -94.18, -76.67, -98.24, -68.66, 2.74",
+        "expected_answer": "['72.41', '8.39', '2.74', '-54.97', '-64.67', '-68.66', '-76.67', '-94.18', '-98.24']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest value. Let me first identify the largest number and work my way down:\n\n72.41 is the largest positive number\n8.39 is the second largest positive number\n2.74 is the third largest positive number\n-54.97 is the largest negative number\n-64.67 is the next negative number\n-68.66 follows\n-76.67 comes next\n-94.18 is second to last\n-98.24 is the smallest number\n\nNow I can write them in sequence from largest to smallest.\n</reasoning>\n<answer>\n72.41, 8.39, 2.74, -54.97, -64.67, -68.66, -76.67, -94.18, -98.24\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "8.39",
+            "72.41",
+            "-64.67",
+            "-54.97",
+            "-94.18",
+            "-76.67",
+            "-98.24",
+            "-68.66",
+            "2.74"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "72.41",
+            "8.39",
+            "2.74",
+            "-54.97",
+            "-64.67",
+            "-68.66",
+            "-76.67",
+            "-94.18",
+            "-98.24"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -2.4, -83.6, -32.3, -85.5, -97.8, -43.2, -76.5",
+        "expected_answer": "['-2.4', '-32.3', '-43.2', '-76.5', '-83.6', '-85.5', '-97.8']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (largest to smallest), I need to compare each number and arrange them from highest (closest to positive infinity) to lowest (closest to negative infinity). Let me arrange them:\n\n-2.4 (highest, closest to 0)\n-32.3\n-43.2\n-76.5\n-83.6\n-85.5\n-97.8 (lowest, furthest from 0)\n</reasoning>\n<answer>\n-2.4, -32.3, -43.2, -76.5, -83.6, -85.5, -97.8\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-2.4",
+            "-83.6",
+            "-32.3",
+            "-85.5",
+            "-97.8",
+            "-43.2",
+            "-76.5"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "-2.4",
+            "-32.3",
+            "-43.2",
+            "-76.5",
+            "-83.6",
+            "-85.5",
+            "-97.8"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -92.0, 17.4, 77.5, 26.9",
+        "expected_answer": "['-92.0', '17.4', '26.9', '77.5']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest value. Let me compare these numbers:\n\n1. First, -92.0 is negative, so it's definitely the smallest\n2. Among the positive numbers:\n   * 17.4 is smaller than 26.9\n   * 26.9 is smaller than 77.5\n   * 77.5 is the largest\n\nSo, arranging from smallest to largest:\n-92.0 \u2192 17.4 \u2192 26.9 \u2192 77.5\n</reasoning>\n<answer>-92.0, 17.4, 26.9, 77.5</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-92.0",
+            "17.4",
+            "77.5",
+            "26.9"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-92.0",
+            "17.4",
+            "26.9",
+            "77.5"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -14, -9, -31, 2, -22, -92, -16, -95",
+        "expected_answer": "['-95', '-92', '-31', '-22', '-16', '-14', '-9', '2']",
+        "model_answer": "<reasoning>\nLet me organize these numbers from the smallest (most negative) to the largest (positive):\n1. First, identify the most negative number: -95\n2. Then continue finding the next largest number:\n   -95, -92, -31, -22, -16, -14, -9, 2\n   \nI can verify this is correct because:\n- Each number is larger than the one before it\n- I've included all numbers from the original list\n- 2 is the only positive number, so it should be last\n</reasoning>\n<answer>-95, -92, -31, -22, -16, -14, -9, 2</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-14",
+            "-9",
+            "-31",
+            "2",
+            "-22",
+            "-92",
+            "-16",
+            "-95"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-95",
+            "-92",
+            "-31",
+            "-22",
+            "-16",
+            "-14",
+            "-9",
+            "2"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 11, 7, 59, 1, 43, -13, -69, 61",
+        "expected_answer": "['-69', '-13', '1', '7', '11', '43', '59', '61']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I will:\n1. First identify the smallest number (-69)\n2. Then find the next smallest number, and so on\n3. Moving through the list:\n   -69 (smallest)\n   -13 (next smallest)\n   1\n   7\n   11\n   43\n   59\n   61 (largest)\n</reasoning>\n<answer>-69, -13, 1, 7, 11, 43, 59, 61</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "11",
+            "7",
+            "59",
+            "1",
+            "43",
+            "-13",
+            "-69",
+            "61"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-69",
+            "-13",
+            "1",
+            "7",
+            "11",
+            "43",
+            "59",
+            "61"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -17.4, -77.9, 50.4, 2.3",
+        "expected_answer": "['-77.9', '-17.4', '2.3', '50.4']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest (most positive). Let me compare these numbers:\n\n-77.9 is the most negative, so it comes first\n-17.4 is the next negative number\n2.3 is the first positive number\n50.4 is the largest positive number\n\nSo the order from smallest to largest is: -77.9, -17.4, 2.3, 50.4\n</reasoning>\n<answer>-77.9, -17.4, 2.3, 50.4</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-17.4",
+            "-77.9",
+            "50.4",
+            "2.3"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-77.9",
+            "-17.4",
+            "2.3",
+            "50.4"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -27.2, 78.2, 38.5, 53.4, -34.0, 7.7, -55.1, 11.3, 86.1, -30.6",
+        "expected_answer": "['-55.1', '-34.0', '-30.6', '-27.2', '7.7', '11.3', '38.5', '53.4', '78.2', '86.1']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I'll:\n1. Identify the most negative number first (-55.1)\n2. Then move up through negative numbers (-34.0, -30.6, -27.2)\n3. Then move through positive numbers from smallest to largest\n4. Create final sequence by linking them all together\n\nOrganizing:\n-55.1 is lowest\n-34.0 comes next\n-30.6 follows\n-27.2 is the last negative\n7.7 is the first positive\n11.3 comes next\n38.5 follows\n53.4 after that\n78.2 is second to last\n86.1 is the highest\n</reasoning>\n<answer>-55.1, -34.0, -30.6, -27.2, 7.7, 11.3, 38.5, 53.4, 78.2, 86.1</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-27.2",
+            "78.2",
+            "38.5",
+            "53.4",
+            "-34.0",
+            "7.7",
+            "-55.1",
+            "11.3",
+            "86.1",
+            "-30.6"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-55.1",
+            "-34.0",
+            "-30.6",
+            "-27.2",
+            "7.7",
+            "11.3",
+            "38.5",
+            "53.4",
+            "78.2",
+            "86.1"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 10.46, -50.78, 98.72, 66.52, -48.83, 73.45",
+        "expected_answer": "['98.72', '73.45', '66.52', '10.46', '-48.83', '-50.78']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest.\nLet me identify the numbers first:\n* 98.72 is the largest\n* 73.45 is second largest\n* 66.52 is third\n* 10.46 is fourth\n* -48.83 is second to last\n* -50.78 is the smallest\n\nNow I can arrange them from largest to smallest.\n</reasoning>\n<answer>98.72, 73.45, 66.52, 10.46, -48.83, -50.78</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "10.46",
+            "-50.78",
+            "98.72",
+            "66.52",
+            "-48.83",
+            "73.45"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "98.72",
+            "73.45",
+            "66.52",
+            "10.46",
+            "-48.83",
+            "-50.78"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 76, 3, 71, -26, -93, -72, 96",
+        "expected_answer": "['96', '76', '71', '3', '-26', '-72', '-93']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest number.\n\n1. First, I'll identify the largest number: 96\n2. Then find the next largest: 76\n3. Continue with: 71\n4. Then: 3\n5. Then: -26\n6. Next: -72\n7. Finally, the smallest: -93\n\nSo, arranging them from largest to smallest...\n</reasoning>\n<answer>96, 76, 71, 3, -26, -72, -93</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "76",
+            "3",
+            "71",
+            "-26",
+            "-93",
+            "-72",
+            "96"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "96",
+            "76",
+            "71",
+            "3",
+            "-26",
+            "-72",
+            "-93"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 0.4, -3.5, 43.6, -27.9, -9.1, -93.8",
+        "expected_answer": "['-93.8', '-27.9', '-9.1', '-3.5', '0.4', '43.6']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest (most positive). Let me identify:\n\n1. First, find the smallest number: -93.8\n2. Next number up: -27.9\n3. Then: -9.1\n4. Then: -3.5\n5. Moving to positives: 0.4\n6. Finally, the largest: 43.6\n\nArranging these in order from smallest to largest gives me the sequence.\n</reasoning>\n\n<answer>\n-93.8, -27.9, -9.1, -3.5, 0.4, 43.6\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "0.4",
+            "-3.5",
+            "43.6",
+            "-27.9",
+            "-9.1",
+            "-93.8"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-93.8",
+            "-27.9",
+            "-9.1",
+            "-3.5",
+            "0.4",
+            "43.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 11.2, -3.4, 91.8, -23.9, -10.7",
+        "expected_answer": "['91.8', '11.2', '-3.4', '-10.7', '-23.9']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest value.\n1. First, let me identify the largest number: 91.8\n2. Then, the second largest: 11.2\n3. Next, looking at the negative numbers: -3.4, -10.7, -23.9\n4. So the complete order from largest to smallest would be:\n   91.8 > 11.2 > -3.4 > -10.7 > -23.9\n</reasoning>\n<answer>91.8, 11.2, -3.4, -10.7, -23.9</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "11.2",
+            "-3.4",
+            "91.8",
+            "-23.9",
+            "-10.7"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "91.8",
+            "11.2",
+            "-3.4",
+            "-10.7",
+            "-23.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -70, 48, 68, 49",
+        "expected_answer": "['68', '49', '48', '-70']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest:\n1. First, I identify the largest number: 68\n2. Then the second largest: 49\n3. Then the third largest: 48\n4. Finally, the smallest number: -70\n\nSo the order is: 68 > 49 > 48 > -70\n</reasoning>\n<answer>68, 49, 48, -70</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-70",
+            "48",
+            "68",
+            "49"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "68",
+            "49",
+            "48",
+            "-70"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 30.6, -39.8, 8.5",
+        "expected_answer": "['30.6', '8.5', '-39.8']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (highest to lowest), I need to:\n1. Compare all numbers: 30.6, -39.8, 8.5\n2. Find the highest number: 30.6 is the highest\n3. Find the second highest: 8.5 is next\n4. Find the lowest: -39.8 is the lowest\n5. Arrange them from highest to lowest: 30.6 > 8.5 > -39.8\n</reasoning>\n<answer>30.6, 8.5, -39.8</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "30.6",
+            "-39.8",
+            "8.5"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "30.6",
+            "8.5",
+            "-39.8"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 17.9, -96.1, 2.8",
+        "expected_answer": "['17.9', '2.8', '-96.1']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from largest to smallest:\n1. First, let me identify the largest number: 17.9 is the largest\n2. Then the middle number: 2.8 is the second largest\n3. Finally, -96.1 is the smallest number\nSo the order from largest to smallest is: 17.9, 2.8, -96.1\n</reasoning>\n<answer>17.9, 2.8, -96.1</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "17.9",
+            "-96.1",
+            "2.8"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "17.9",
+            "2.8",
+            "-96.1"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 48, 96, -60, -62, -19, 89",
+        "expected_answer": "['96', '89', '48', '-19', '-60', '-62']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest:\n1. First, identify the largest number: 96\n2. Then find the next largest: 89\n3. Continue with: 48\n4. Then: -19\n5. Then: -60\n6. Finally, the smallest number: -62\n</reasoning>\n<answer>96, 89, 48, -19, -60, -62</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "48",
+            "96",
+            "-60",
+            "-62",
+            "-19",
+            "89"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "96",
+            "89",
+            "48",
+            "-19",
+            "-60",
+            "-62"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 87, 89, -95, 69, 43, 36",
+        "expected_answer": "['-95', '36', '43', '69', '87', '89']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I need to:\n1. First identify the smallest number: -95 is negative, so it's the smallest\n2. Then arrange the remaining positive numbers from lowest to highest:\n   36 is the smallest\n   43 is next\n   69 follows\n   87 comes after\n   89 is the largest\n\nSo the order will be: -95, 36, 43, 69, 87, 89\n</reasoning>\n<answer>-95, 36, 43, 69, 87, 89</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "87",
+            "89",
+            "-95",
+            "69",
+            "43",
+            "36"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-95",
+            "36",
+            "43",
+            "69",
+            "87",
+            "89"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 15.6, -46.9, 61.6, -6.6, -33.5, 79.4, 58.5",
+        "expected_answer": "['-46.9', '-33.5', '-6.6', '15.6', '58.5', '61.6', '79.4']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. First identify the negative numbers: -46.9, -33.5, -6.6\n2. Then identify the positive numbers: 15.6, 58.5, 61.6, 79.4\n3. Arrange negative numbers from lowest to highest: -46.9, -33.5, -6.6\n4. Arrange positive numbers from lowest to highest: 15.6, 58.5, 61.6, 79.4\n5. Combine the two sequences, with negative numbers first\n</reasoning>\n<answer>-46.9, -33.5, -6.6, 15.6, 58.5, 61.6, 79.4</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "15.6",
+            "-46.9",
+            "61.6",
+            "-6.6",
+            "-33.5",
+            "79.4",
+            "58.5"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-46.9",
+            "-33.5",
+            "-6.6",
+            "15.6",
+            "58.5",
+            "61.6",
+            "79.4"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 11, 62, -36, -36, 39, -3, -28, -19, -34, -66",
+        "expected_answer": "['-66', '-36', '-36', '-34', '-28', '-19', '-3', '11', '39', '62']",
+        "model_answer": "<reasoning>\nLet me organize this step by step:\n1. First, I'll identify the smallest number: -66\n2. Then continue picking the next smallest number in sequence\n3. When I encounter duplicates (like -36), I'll include it multiple times\n4. Order will be: -66, -36, -36, -34, -28, -19, -3, 11, 39, 62\n</reasoning>\n<answer>\n-66, -36, -36, -34, -28, -19, -3, 11, 39, 62\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "11",
+            "62",
+            "-36",
+            "-36",
+            "39",
+            "-3",
+            "-28",
+            "-19",
+            "-34",
+            "-66"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-66",
+            "-36",
+            "-36",
+            "-34",
+            "-28",
+            "-19",
+            "-3",
+            "11",
+            "39",
+            "62"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 94, -52, -7, 80, -29",
+        "expected_answer": "['-52', '-29', '-7', '80', '94']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to:\n1. First identify the smallest number from the list\n2. Then find the next smallest, and so on\n3. Looking at the numbers:\n   * -52 is the smallest (most negative)\n   * -29 is the next smallest\n   * -7 follows\n   * Then 80\n   * Finally 94\n</reasoning>\n<answer>-52, -29, -7, 80, 94</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "94",
+            "-52",
+            "-7",
+            "80",
+            "-29"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-52",
+            "-29",
+            "-7",
+            "80",
+            "94"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -41.2, 81.9, -3.1, -82.6, 50.0, -84.9, -59.5, -85.2, 25.6, 68.5",
+        "expected_answer": "['-85.2', '-84.9', '-82.6', '-59.5', '-41.2', '-3.1', '25.6', '50.0', '68.5', '81.9']",
+        "model_answer": "<reasoning>\nTo sort these numbers in ascending order, I will:\n1. Look for the smallest (most negative) number: -85.2\n2. Then find the next smallest number: -84.9\n3. Continue this process until I've arranged all numbers from smallest to largest\n\n-85.2 (smallest)\n-84.9\n-82.6\n-59.5\n-41.2\n-3.1\n25.6\n50.0\n68.5\n81.9 (largest)\n</reasoning>\n<answer>\n-85.2, -84.9, -82.6, -59.5, -41.2, -3.1, 25.6, 50.0, 68.5, 81.9\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-41.2",
+            "81.9",
+            "-3.1",
+            "-82.6",
+            "50.0",
+            "-84.9",
+            "-59.5",
+            "-85.2",
+            "25.6",
+            "68.5"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-85.2",
+            "-84.9",
+            "-82.6",
+            "-59.5",
+            "-41.2",
+            "-3.1",
+            "25.6",
+            "50.0",
+            "68.5",
+            "81.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 26, -19, 84, -97, 98, 41, 61, 61, -60, 64",
+        "expected_answer": "['-97', '-60', '-19', '26', '41', '61', '61', '64', '84', '98']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to:\n1. First identify the smallest number: -97\n2. Then find the next smallest: -60\n3. Then -19\n4. Then positive numbers in order: 26, 41, 61 (appears twice), 64, 84, 98\n\nPutting them in sequence:\n-97 < -60 < -19 < 26 < 41 < 61 = 61 < 64 < 84 < 98\n</reasoning>\n<answer>-97, -60, -19, 26, 41, 61, 61, 64, 84, 98</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "26",
+            "-19",
+            "84",
+            "-97",
+            "98",
+            "41",
+            "61",
+            "61",
+            "-60",
+            "64"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-97",
+            "-60",
+            "-19",
+            "26",
+            "41",
+            "61",
+            "61",
+            "64",
+            "84",
+            "98"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -42.5, 68.9, -11.2, 5.7, 10.3, -32.2, 27.9, 80.0, -85.6",
+        "expected_answer": "['80.0', '68.9', '27.9', '10.3', '5.7', '-11.2', '-32.2', '-42.5', '-85.6']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest number. Let me first identify the largest number and continue down:\n\n1. First, I'll scan for the largest: 80.0 is the largest\n2. Next largest is 68.9\n3. Then 27.9\n4. Then 10.3\n5. Then 5.7\n6. Now starting negative numbers: -11.2\n7. Then -32.2\n8. Then -42.5\n9. Finally, -85.6 is the smallest\n\nPutting them in order from largest to smallest.\n</reasoning>\n<answer>\n80.0, 68.9, 27.9, 10.3, 5.7, -11.2, -32.2, -42.5, -85.6\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-42.5",
+            "68.9",
+            "-11.2",
+            "5.7",
+            "10.3",
+            "-32.2",
+            "27.9",
+            "80.0",
+            "-85.6"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "80.0",
+            "68.9",
+            "27.9",
+            "10.3",
+            "5.7",
+            "-11.2",
+            "-32.2",
+            "-42.5",
+            "-85.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -13.1, -50.8, -10.9, -48.8",
+        "expected_answer": "['-50.8', '-48.8', '-13.1', '-10.9']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from smallest (most negative) to largest (least negative).\nLet me compare these negative numbers:\n-50.8 is the most negative (smallest)\n-48.8 is the second most negative\n-13.1 is the third most negative\n-10.9 is the least negative (largest)\n\nSo arranging from smallest to largest:\n-50.8, -48.8, -13.1, -10.9\n</reasoning>\n<answer>-50.8, -48.8, -13.1, -10.9</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-13.1",
+            "-50.8",
+            "-10.9",
+            "-48.8"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-50.8",
+            "-48.8",
+            "-13.1",
+            "-10.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 53, 94, -17, 89",
+        "expected_answer": "['94', '89', '53', '-17']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest.\nLet me identify the largest number first: 94\nThen the next largest: 89\nThen: 53\nAnd finally the smallest: -17\n\nSo the order should be: 94, 89, 53, -17\n</reasoning>\n<answer>94, 89, 53, -17</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "53",
+            "94",
+            "-17",
+            "89"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "94",
+            "89",
+            "53",
+            "-17"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 49.48, 81.63, -77.80, 15.95, -13.63, -46.90, 72.08, -34.12, 94.73, -27.75",
+        "expected_answer": "['-77.80', '-46.90', '-34.12', '-27.75', '-13.63', '15.95', '49.48', '72.08', '81.63', '94.73']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from smallest (most negative) to largest (most positive).\n\nFirst, let me identify the negative numbers:\n-77.80, -46.90, -34.12, -27.75, -13.63\n\nThen the positive numbers:\n15.95, 49.48, 72.08, 81.63, 94.73\n\nNow I'll combine them in order from smallest to largest.\n</reasoning>\n<answer>\n-77.80, -46.90, -34.12, -27.75, -13.63, 15.95, 49.48, 72.08, 81.63, 94.73\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "49.48",
+            "81.63",
+            "-77.80",
+            "15.95",
+            "-13.63",
+            "-46.90",
+            "72.08",
+            "-34.12",
+            "94.73",
+            "-27.75"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-77.80",
+            "-46.90",
+            "-34.12",
+            "-27.75",
+            "-13.63",
+            "15.95",
+            "49.48",
+            "72.08",
+            "81.63",
+            "94.73"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 60, -87, -31",
+        "expected_answer": "['60', '-31', '-87']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest value.\n\n1. First, let me identify the largest number:\n   60 is positive, while -87 and -31 are negative\n   So 60 is the largest number\n\n2. Between -31 and -87:\n   -31 is closer to 0 than -87\n   Therefore, -31 is larger than -87\n\n3. So the order from largest to smallest is:\n   60 > -31 > -87\n</reasoning>\n<answer>60, -31, -87</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "60",
+            "-87",
+            "-31"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "60",
+            "-31",
+            "-87"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 40.6, -10.0, -35.6, -78.6",
+        "expected_answer": "['-78.6', '-35.6', '-10.0', '40.6']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest (most positive).\n\nLet me identify the smallest number first:\n-78.6 is the most negative, so it goes first\n-35.6 is the next most negative\n-10.0 follows\n40.6 is positive and the largest number\n\nSo arranging from smallest to largest:\n-78.6, -35.6, -10.0, 40.6\n</reasoning>\n\n<answer>-78.6, -35.6, -10.0, 40.6</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "40.6",
+            "-10.0",
+            "-35.6",
+            "-78.6"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-78.6",
+            "-35.6",
+            "-10.0",
+            "40.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 24.01, -98.30, 96.57, 64.43, 99.80, -47.33, -60.10, -89.05",
+        "expected_answer": "['-98.30', '-89.05', '-60.10', '-47.33', '24.01', '64.43', '96.57', '99.80']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest (most positive).\n\nLet me identify the negative numbers first:\n-98.30, -89.05, -60.10, -47.33\n\nThen the positive numbers:\n24.01, 64.43, 96.57, 99.80\n\nNow I'll combine them in order from smallest to largest:\n-98.30 (smallest)\n-89.05\n-60.10\n-47.33\n24.01\n64.43\n96.57\n99.80 (largest)\n</reasoning>\n\n<answer>-98.30, -89.05, -60.10, -47.33, 24.01, 64.43, 96.57, 99.80</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "24.01",
+            "-98.30",
+            "96.57",
+            "64.43",
+            "99.80",
+            "-47.33",
+            "-60.10",
+            "-89.05"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-98.30",
+            "-89.05",
+            "-60.10",
+            "-47.33",
+            "24.01",
+            "64.43",
+            "96.57",
+            "99.80"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 47.67, -62.75, 39.78, 23.96",
+        "expected_answer": "['47.67', '39.78', '23.96', '-62.75']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest value. Let me compare these numbers:\n\n47.67 is the largest number\n39.78 is the second largest\n23.96 is the third largest\n-62.75 is the smallest (negative numbers are less than positive numbers)\n\nSo, arranging from largest to smallest:\n47.67 > 39.78 > 23.96 > -62.75\n</reasoning>\n<answer>47.67, 39.78, 23.96, -62.75</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "47.67",
+            "-62.75",
+            "39.78",
+            "23.96"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "47.67",
+            "39.78",
+            "23.96",
+            "-62.75"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 0, 13, -8, 17, -3, 4, -60",
+        "expected_answer": "['-60', '-8', '-3', '0', '4', '13', '17']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to:\n1. First identify the smallest number: -60\n2. Then find the next smallest: -8\n3. Then the next: -3\n4. Continue with positive numbers: 0\n5. Then: 4\n6. Then: 13\n7. Finally, the largest: 17\n</reasoning>\n<answer>-60, -8, -3, 0, 4, 13, 17</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "0",
+            "13",
+            "-8",
+            "17",
+            "-3",
+            "4",
+            "-60"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-60",
+            "-8",
+            "-3",
+            "0",
+            "4",
+            "13",
+            "17"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -75.9, -38.2, 75.1, 86.7",
+        "expected_answer": "['86.7', '75.1', '-38.2', '-75.9']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest value. Let me compare these numbers:\n\n86.7 is the largest positive number\n75.1 is the second largest positive number\n-38.2 is the larger of the two negative numbers\n-75.9 is the smallest number (most negative)\n\nSo, arranging from largest to smallest:\n86.7 > 75.1 > -38.2 > -75.9\n</reasoning>\n\n<answer>86.7, 75.1, -38.2, -75.9</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-75.9",
+            "-38.2",
+            "75.1",
+            "86.7"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "86.7",
+            "75.1",
+            "-38.2",
+            "-75.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -12.68, -91.67, 53.53, 34.69, 34.17, -5.47, 34.55, 76.50, 38.40, -30.87",
+        "expected_answer": "['76.50', '53.53', '38.40', '34.69', '34.55', '34.17', '-5.47', '-12.68', '-30.87', '-91.67']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest (highest) to the smallest (lowest).\n\n1. First, let me identify the highest number: 76.50\n2. Then, the next highest: 53.53\n3. Then: 38.40\n4. The three numbers around 34: 34.69, 34.55, 34.17\n5. Next come the negative numbers, from closest to zero to furthest:\n   -5.47, -12.68, -30.87, -91.67\n\nLet me verify the order one more time to ensure accuracy.\n</reasoning>\n<answer>\n76.50, 53.53, 38.40, 34.69, 34.55, 34.17, -5.47, -12.68, -30.87, -91.67\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-12.68",
+            "-91.67",
+            "53.53",
+            "34.69",
+            "34.17",
+            "-5.47",
+            "34.55",
+            "76.50",
+            "38.40",
+            "-30.87"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "76.50",
+            "53.53",
+            "38.40",
+            "34.69",
+            "34.55",
+            "34.17",
+            "-5.47",
+            "-12.68",
+            "-30.87",
+            "-91.67"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 90.0, -60.0, -40.6, -16.4, -52.5, -39.7, 68.2, -2.1",
+        "expected_answer": "['-60.0', '-52.5', '-40.6', '-39.7', '-16.4', '-2.1', '68.2', '90.0']",
+        "model_answer": "<reasoning>\nLet me organize these numbers from smallest (most negative) to largest (most positive):\n\n1. First identify the most negative number: -60.0\n2. Then find the next largest negative number: -52.5\n3. Continue this process: -40.6\n4. Then: -39.7\n5. Next: -16.4\n6. The last negative number: -2.1\n7. Then move to positive numbers: 68.2\n8. Finally, the largest number: 90.0\n</reasoning>\n<answer>\n-60.0, -52.5, -40.6, -39.7, -16.4, -2.1, 68.2, 90.0\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "90.0",
+            "-60.0",
+            "-40.6",
+            "-16.4",
+            "-52.5",
+            "-39.7",
+            "68.2",
+            "-2.1"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-60.0",
+            "-52.5",
+            "-40.6",
+            "-39.7",
+            "-16.4",
+            "-2.1",
+            "68.2",
+            "90.0"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -60.5, -61.4, 87.9, -41.5, 90.6, 99.9, -52.4",
+        "expected_answer": "['-61.4', '-60.5', '-52.4', '-41.5', '87.9', '90.6', '99.9']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I'll:\n1. First identify that negative numbers come before positive numbers\n2. Among negative numbers, the smaller (more negative) comes first\n3. Among positive numbers, smaller numbers come first\n\nLooking at the numbers:\nNegative numbers: -61.4, -60.5, -52.4, -41.5\nPositive numbers: 87.9, 90.6, 99.9\n\nArranging them from smallest to largest:\n-61.4 (smallest negative)\n-60.5\n-52.4\n-41.5 (largest negative)\n87.9 (smallest positive)\n90.6\n99.9 (largest positive)\n</reasoning>\n\n<answer>-61.4, -60.5, -52.4, -41.5, 87.9, 90.6, 99.9</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-60.5",
+            "-61.4",
+            "87.9",
+            "-41.5",
+            "90.6",
+            "99.9",
+            "-52.4"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-61.4",
+            "-60.5",
+            "-52.4",
+            "-41.5",
+            "87.9",
+            "90.6",
+            "99.9"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -40, 33, 74, 49, 80, 31",
+        "expected_answer": "['80', '74', '49', '33', '31', '-40']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest number.\n1. First, I'll identify the largest number: 80\n2. Then the next largest: 74\n3. Then: 49\n4. Then: 33\n5. Then: 31\n6. Finally, the smallest: -40\n</reasoning>\n<answer>80, 74, 49, 33, 31, -40</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-40",
+            "33",
+            "74",
+            "49",
+            "80",
+            "31"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "80",
+            "74",
+            "49",
+            "33",
+            "31",
+            "-40"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -30.1, -67.4, -50.8, 38.5, -69.0",
+        "expected_answer": "['38.5', '-30.1', '-50.8', '-67.4', '-69.0']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (highest to lowest), I'll:\n1. First identify the highest number: 38.5 is the only positive number, so it goes first\n2. Then compare the negative numbers:\n-30.1 is closest to zero, so it's next\n-50.8 is next closest to zero\n-67.4 comes after\n-69.0 is the furthest from zero, so it's last\n\nSo ordering from highest to lowest:\n38.5 > -30.1 > -50.8 > -67.4 > -69.0\n</reasoning>\n<answer>38.5, -30.1, -50.8, -67.4, -69.0</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-30.1",
+            "-67.4",
+            "-50.8",
+            "38.5",
+            "-69.0"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "38.5",
+            "-30.1",
+            "-50.8",
+            "-67.4",
+            "-69.0"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 8.4, 41.6, 91.7, -26.2, 6.6, -25.1, 10.0",
+        "expected_answer": "['91.7', '41.6', '10.0', '8.4', '6.6', '-25.1', '-26.2']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest:\n1. First, identify the largest number: 91.7\n2. Then find the next largest: 41.6\n3. Continue with: 10.0\n4. Then: 8.4\n5. Next: 6.6\n6. For the last two negative numbers: -25.1 is greater than -26.2\n7. So -26.2 comes last\n\nThe final order from largest to smallest will be:\n91.7, 41.6, 10.0, 8.4, 6.6, -25.1, -26.2\n</reasoning>\n\n<answer>91.7, 41.6, 10.0, 8.4, 6.6, -25.1, -26.2</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "8.4",
+            "41.6",
+            "91.7",
+            "-26.2",
+            "6.6",
+            "-25.1",
+            "10.0"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "91.7",
+            "41.6",
+            "10.0",
+            "8.4",
+            "6.6",
+            "-25.1",
+            "-26.2"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 11.6, -23.2, 66.9, -68.1, -9.9, 52.6, 21.2, 81.2, -42.3, -28.4",
+        "expected_answer": "['81.2', '66.9', '52.6', '21.2', '11.6', '-9.9', '-23.2', '-28.4', '-42.3', '-68.1']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest.\nLet me first identify the largest number and work my way down:\n\n81.2 is the largest\n66.9 is next\n52.6 follows\n21.2 comes after\n11.6 is next\n-9.9 is the first negative number\n-23.2 follows\n-28.4 is next\n-42.3 comes after\n-68.1 is the smallest\n</reasoning>\n\n<answer>81.2, 66.9, 52.6, 21.2, 11.6, -9.9, -23.2, -28.4, -42.3, -68.1</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "11.6",
+            "-23.2",
+            "66.9",
+            "-68.1",
+            "-9.9",
+            "52.6",
+            "21.2",
+            "81.2",
+            "-42.3",
+            "-28.4"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "81.2",
+            "66.9",
+            "52.6",
+            "21.2",
+            "11.6",
+            "-9.9",
+            "-23.2",
+            "-28.4",
+            "-42.3",
+            "-68.1"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 96.7, -41.6, 64.9, -64.1, -66.6",
+        "expected_answer": "['96.7', '64.9', '-41.6', '-64.1', '-66.6']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest value.\n\nLet me compare these numbers:\n96.7 is the largest positive number\n64.9 is the second largest positive number\n-41.6 is the largest negative number\n-64.1 is the second largest negative number\n-66.6 is the smallest number\n\nSo arranging from largest to smallest:\n96.7 > 64.9 > -41.6 > -64.1 > -66.6\n</reasoning>\n<answer>96.7, 64.9, -41.6, -64.1, -66.6</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "96.7",
+            "-41.6",
+            "64.9",
+            "-64.1",
+            "-66.6"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "96.7",
+            "64.9",
+            "-41.6",
+            "-64.1",
+            "-66.6"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -82.3, -24.3, -90.2, 30.0, -62.2, -38.2, 63.7, -89.1, -69.3, -39.7",
+        "expected_answer": "['-90.2', '-89.1', '-82.3', '-69.3', '-62.2', '-39.7', '-38.2', '-24.3', '30.0', '63.7']",
+        "model_answer": "<reasoning>\nLet me arrange these numbers from smallest (most negative) to largest (most positive):\n1. First, I'll identify the most negative number: -90.2\n2. Then continue finding the next largest number:\n-90.2, -89.1, -82.3, -69.3, -62.2, -39.7, -38.2, -24.3, 30.0, 63.7\n\nI can verify this is correct because:\n- Each number is larger than the one before it\n- All negative numbers come before positive numbers\n- I've included all 10 numbers from the original list\n</reasoning>\n<answer>\n-90.2, -89.1, -82.3, -69.3, -62.2, -39.7, -38.2, -24.3, 30.0, 63.7\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-82.3",
+            "-24.3",
+            "-90.2",
+            "30.0",
+            "-62.2",
+            "-38.2",
+            "63.7",
+            "-89.1",
+            "-69.3",
+            "-39.7"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-90.2",
+            "-89.1",
+            "-82.3",
+            "-69.3",
+            "-62.2",
+            "-39.7",
+            "-38.2",
+            "-24.3",
+            "30.0",
+            "63.7"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -2, 4, 32, 67, -8, 71, 51",
+        "expected_answer": "['71', '67', '51', '32', '4', '-2', '-8']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order, I need to arrange them from the largest to the smallest:\n1. First, identify the largest number: 71\n2. Then find the next largest: 67\n3. Continue with: 51\n4. Then: 32\n5. Then: 4\n6. Then: -2\n7. Finally, the smallest: -8\n</reasoning>\n<answer>71, 67, 51, 32, 4, -2, -8</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-2",
+            "4",
+            "32",
+            "67",
+            "-8",
+            "71",
+            "51"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "71",
+            "67",
+            "51",
+            "32",
+            "4",
+            "-2",
+            "-8"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 23.01, -78.58, 81.04, -61.58, -7.76, 54.25",
+        "expected_answer": "['81.04', '54.25', '23.01', '-7.76', '-61.58', '-78.58']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (highest to lowest), I'll:\n1. First identify the highest number: 81.04\n2. Then look for the next highest: 54.25\n3. Then: 23.01\n4. Then: -7.76\n5. Then: -61.58\n6. Finally, the lowest: -78.58\n\nArranging them from highest to lowest...\n</reasoning>\n<answer>81.04, 54.25, 23.01, -7.76, -61.58, -78.58</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "23.01",
+            "-78.58",
+            "81.04",
+            "-61.58",
+            "-7.76",
+            "54.25"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "81.04",
+            "54.25",
+            "23.01",
+            "-7.76",
+            "-61.58",
+            "-78.58"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: 67.55, -36.50, -97.60",
+        "expected_answer": "['-97.60', '-36.50', '67.55']",
+        "model_answer": "<reasoning>\nTo sort numbers in ascending order, I need to arrange them from the smallest (most negative) to the largest (most positive).\n\nLet me identify the smallest number first:\n-97.60 is the most negative, so it comes first\n\nThen looking at the remaining numbers:\n-36.50 is the next largest (but still negative)\n\nFinally:\n67.55 is positive and the largest number\n\nSo the order from smallest to largest is: -97.60, -36.50, 67.55\n</reasoning>\n\n<answer>-97.60, -36.50, 67.55</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "67.55",
+            "-36.50",
+            "-97.60"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-97.60",
+            "-36.50",
+            "67.55"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -62.16, 67.82, 8.11, -43.83, -32.91",
+        "expected_answer": "['67.82', '8.11', '-32.91', '-43.83', '-62.16']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (largest to smallest), I will:\n1. First identify the largest number: 67.82\n2. Then find the next largest: 8.11\n3. Continue with -32.91\n4. Then -43.83\n5. Finally, the smallest is -62.16\n\nSo arranging from largest to smallest:\n67.82 > 8.11 > -32.91 > -43.83 > -62.16\n</reasoning>\n<answer>67.82, 8.11, -32.91, -43.83, -62.16</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-62.16",
+            "67.82",
+            "8.11",
+            "-43.83",
+            "-32.91"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "67.82",
+            "8.11",
+            "-32.91",
+            "-43.83",
+            "-62.16"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in ascending order: -33, -63, -97, 54, -98, -32, -7, -55, 90",
+        "expected_answer": "['-98', '-97', '-63', '-55', '-33', '-32', '-7', '54', '90']",
+        "model_answer": "<reasoning>\nLet me organize this step by step:\n1. First, let me identify the smallest number: -98\n2. Then continue finding the next smallest number each time:\n   -98, -97, -63, -55, -33, -32, -7, 54, 90\n\nThe process:\n- Found -98 as smallest\n- -97 comes next\n- -63 is next largest\n- -55 follows\n- -33 is next\n- -32 comes after\n- -7 is the last negative number\n- 54 is the smaller positive number\n- 90 is the largest number\n</reasoning>\n<answer>-98, -97, -63, -55, -33, -32, -7, 54, 90</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-33",
+            "-63",
+            "-97",
+            "54",
+            "-98",
+            "-32",
+            "-7",
+            "-55",
+            "90"
+          ],
+          "direction": "ascending",
+          "sorted_numbers": [
+            "-98",
+            "-97",
+            "-63",
+            "-55",
+            "-33",
+            "-32",
+            "-7",
+            "54",
+            "90"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: 40.65, -48.24, -31.14, -87.06",
+        "expected_answer": "['40.65', '-31.14', '-48.24', '-87.06']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (largest to smallest), I need to:\n1. Compare all numbers: 40.65, -48.24, -31.14, -87.06\n2. First find the largest: 40.65 is the only positive number, so it's the largest\n3. Then among the negatives:\n   -31.14 is closest to zero, so it's next\n   -48.24 is the second most negative\n   -87.06 is the most negative, so it goes last\n4. Arranging from largest to smallest\n</reasoning>\n<answer>40.65, -31.14, -48.24, -87.06</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "40.65",
+            "-48.24",
+            "-31.14",
+            "-87.06"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "40.65",
+            "-31.14",
+            "-48.24",
+            "-87.06"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -81.46, 31.90, 17.23, 26.88, -29.03, -9.75",
+        "expected_answer": "['31.90', '26.88', '17.23', '-9.75', '-29.03', '-81.46']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (highest to lowest), I'll:\n1. First identify the highest number: 31.90\n2. Then find the next highest: 26.88\n3. Then: 17.23\n4. Then: -9.75\n5. Then: -29.03\n6. Finally, the lowest: -81.46\n\nSo arranging from highest to lowest:\n31.90 > 26.88 > 17.23 > -9.75 > -29.03 > -81.46\n</reasoning>\n<answer>31.90, 26.88, 17.23, -9.75, -29.03, -81.46</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-81.46",
+            "31.90",
+            "17.23",
+            "26.88",
+            "-29.03",
+            "-9.75"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "31.90",
+            "26.88",
+            "17.23",
+            "-9.75",
+            "-29.03",
+            "-81.46"
+          ]
+        }
+      },
+      {
+        "question": "Sort these numbers in descending order: -65.53, 36.76, -67.73, 89.84",
+        "expected_answer": "['89.84', '36.76', '-65.53', '-67.73']",
+        "model_answer": "<reasoning>\nTo sort numbers in descending order (largest to smallest):\n1. First, let me identify the largest number: 89.84\n2. Then find the second largest: 36.76\n3. Then the third largest: -65.53\n4. Finally, the smallest number: -67.73\n\nSo arranging from largest to smallest:\n89.84 > 36.76 > -65.53 > -67.73\n</reasoning>\n<answer>89.84, 36.76, -65.53, -67.73</answer>",
+        "score": 0.01,
+        "metadata": {
+          "original_numbers": [
+            "-65.53",
+            "36.76",
+            "-67.73",
+            "89.84"
+          ],
+          "direction": "descending",
+          "sorted_numbers": [
+            "89.84",
+            "36.76",
+            "-65.53",
+            "-67.73"
+          ]
+        }
+      }
+    ]
+  }
+]

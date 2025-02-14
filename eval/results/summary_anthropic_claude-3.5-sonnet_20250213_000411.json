@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "number_sorting",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.01,
+    "total_examples": 50,
+    "timestamp": "2025-02-13T00:04:11.721948",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

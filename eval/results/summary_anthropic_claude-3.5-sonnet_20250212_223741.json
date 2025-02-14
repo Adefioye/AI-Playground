@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "polynomial_multiplication",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.9612,
+    "total_examples": 50,
+    "timestamp": "2025-02-12T22:37:41.916872",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

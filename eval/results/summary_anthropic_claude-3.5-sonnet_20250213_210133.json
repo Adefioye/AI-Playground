@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "polynomial_equations",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.9187269876838368,
+    "total_examples": 50,
+    "timestamp": "2025-02-13T21:01:33.186829",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

@@ -1,0 +1,568 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "caesar_cipher",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.4852,
+      "total_examples": 50,
+      "timestamp": "2025-02-12T23:38:00.649780",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Decrypt this Caesar cipher text: JNJUBUF ZPVS BTTPDJBUF XIPN J XBT DPNQMJNFOUJOH B NPNFOU BHP",
+        "expected_answer": "IMITATE YOUR ASSOCIATE WHOM I WAS COMPLIMENTING A MOMENT AGO",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter is shifted by a certain number in the alphabet\n2. Try different shifts until the text makes sense\n3. Looking at patterns and common words, shifting each letter back by 1 position (A\u2192Z, B\u2192A, etc.) seems to give readable text\n4. Let me apply this shift:\n- J \u2192 I\n- N \u2192 M\n- J \u2192 I\n- U \u2192 T\n- B \u2192 A\nAnd continuing this pattern...\n5. After shifting each letter back by 1, the text becomes readable\n\nThe decryption shift is -1 (or +25)</reasoning>\n\n<answer>IMITATE YOUR ASSOCIATE WHOM I WAS COMPLIMENTING A MOMENT AGO</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 1,
+          "cipher_text": "JNJUBUF ZPVS BTTPDJBUF XIPN J XBT DPNQMJNFOUJOH B NPNFOU BHP",
+          "clear_text": "IMITATE YOUR ASSOCIATE WHOM I WAS COMPLIMENTING A MOMENT AGO"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: PBSDJ XKZYVOYX CWSDR LYEQRD SD PYB K WOBO KXN YBSQSXKDON DOVOZRYXSM TYEBXKVSCW",
+        "expected_answer": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Caesar cipher involves shifting letters by a certain number of positions\n2. Let me try different shifts to find readable English text\n3. Trying shift of 1... not readable\n4. Trying shift of 2... not readable\n...\n5. With shift of 5, I start seeing recognizable English words\n6. Using shift of 5 (moving each letter back 5 positions in alphabet):\n   K \u2192 F\n   Z \u2192 U\n   Y \u2192 T\n   etc.\n7. Decoding the full message with shift of 5\n</reasoning>\n<answer>EARLY JOURNALIST SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 10,
+          "cipher_text": "PBSDJ XKZYVOYX CWSDR LYEQRD SD PYB K WOBO KXN YBSQSXKDON DOVOZRYXSM TYEBXKVSCW",
+          "clear_text": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: ZW PFLI JKFDRTY ZJ FLK FW ZK DLJK SV DVEUVU",
+        "expected_answer": "IF YOUR STOMACH IS OUT OF IT MUST BE MENDED",
+        "model_answer": "<reasoning>\nTo solve a Caesar cipher, I need to:\n1. Identify that each letter is shifted by a certain number of positions in the alphabet\n2. Try different shifts until I find readable English text\n3. Looking at patterns:\n   - There are many single letters (Z, W) which could be 'I', 'A'\n   - Common word endings like 'ZK' might be 'IT'\n   - Testing shifts systematically...\n4. Using shift of 21 positions back (or 5 forward):\n   Z \u2192 E\n   W \u2192 B\n   P \u2192 U\n   etc.\n5. After applying shift of 21, the text becomes readable English\n</reasoning>\n<answer>IF YOUR STOMACH IS OUT OF IT MUST BE MENDED</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 17,
+          "cipher_text": "ZW PFLI JKFDRTY ZJ FLK FW ZK DLJK SV DVEUVU",
+          "clear_text": "IF YOUR STOMACH IS OUT OF IT MUST BE MENDED"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: WG DFCUFSGG SJSFMKVSFS SLQSDH AIHHSFSR AF",
+        "expected_answer": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting the letters backwards through the alphabet until I find meaningful words\n2. Testing different shifts:\n   Shift 1: VF CECTERR RIDEVJURGDG RKHRCGQ ZHSSQDQC ZE\n   Shift 2: UE BDBSDQQ QHCDUITQCF QJGQBFP YGRRPCPB YD\n   ...\n   Shift 5: RB YAZPANN NEZDFRQNZC NGDNYCM VDOOMZMZ VA\n   Shift 6: QA XZOYZMM MDYCEQPMYB MFCMXBL UCNNLYLY UZ\n   Shift 7: PZ WYNXYLL LCXBDPOLXA LEBLWAK TBMMKXKX TY\n   Shift 8: OY VXMWXKK KBWACONKWZ KDAKVZJ SALLWJJW SX\n   Shift 9: NX UWLVWJJ JAVZBNMJVY JCZJUYI RZKKVIIV RW\n   Shift 10: MW TVKUVII IZUYAMLIUX IBYITXH QYJJUHHU QV\n   Shift 11: LV SUJTUHH HYTXZLKHTW HAXHSWG PXIITGGT PU\n   Shift 12: KU RTISTGG GXSWYKJGSV GZWGRVF OWHHSFFS OT\n   Shift 13: JT QSHRSFF FWRVXJIFRU FYVFQUE NVGGREER NS\n\nFound it! At shift 13: \"IN PROGRESS EVERYWHERE EXCEPT MUTTERED HE\"\nThis makes sense as a readable English phrase.\n</reasoning>\n<answer>IN PROGRESS EVERYWHERE EXCEPT MUTTERED HE</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 14,
+          "cipher_text": "WG DFCUFSGG SJSFMKVSFS SLQSDH AIHHSFSR AF",
+          "clear_text": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: FUR VF URE URNQ FHAX VA GUR CVYYBJF",
+        "expected_answer": "SHE IS HER HEAD SUNK IN THE PILLOWS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Recognize this is likely a shift cipher\n2. Looking at common patterns:\n   - \"VF\" appears twice - could be \"is\"\n   - \"URE\" could be \"her\" or \"the\"\n   - Single letter \"F\" could be \"a\"\n3. Testing different shifts:\n   - Trying ROT13 (shift 13 letters):\n   - F \u2192 S\n   - U \u2192 H\n   - E \u2192 R\nThis produces readable English!\n4. Applying ROT13 to the entire text:\nFUR = SHE\nVF = IS\nURE = HER\nURNQ = HEAD\nFHAX = SUNK\nVA = IN\nGUR = THE\nCVYYBJF = PILLOWS</reasoning>\n<answer>SHE IS HER HEAD SUNK IN THE PILLOWS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 13,
+          "cipher_text": "FUR VF URE URNQ FHAX VA GUR CVYYBJF",
+          "clear_text": "SHE IS HER HEAD SUNK IN THE PILLOWS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: KLV VSHFLDO SURMHFW KDG WR GR ZLWK WKH FLWB RI DV HYHUBERGB VRPH ILIWHHQ PLOHV LQODQG",
+        "expected_answer": "HIS SPECIAL PROJECT HAD TO DO WITH THE CITY OF AS EVERYBODY SOME FIFTEEN MILES INLAND",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter is shifted a certain number of positions in the alphabet\n2. Try different shifts until I find readable text\n3. Looking at patterns and common words, trying each shift:\n4. Using shift of 3 back (or 23 forward), the text becomes readable\n5. Process: \n   - K \u2192 H\n   - L \u2192 I\n   - V \u2192 S\n   And so on...\n</reasoning>\n<answer>\nHIS SPECIAL PROJECT HAD TO DO WITH THE CITY OF AS EVERYBODY SOME FIFTEEN MILES INLAND\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 3,
+          "cipher_text": "KLV VSHFLDO SURMHFW KDG WR GR ZLWK WKH FLWB RI DV HYHUBERGB VRPH ILIWHHQ PLOHV LQODQG",
+          "clear_text": "HIS SPECIAL PROJECT HAD TO DO WITH THE CITY OF AS EVERYBODY SOME FIFTEEN MILES INLAND"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: ESP NZAJCTRSE WLHD ZQ ESP AWLNP HSPCP JZF LCP WZNLEPO LWDZ RZGPCY HSLE JZF NLY OZ HTES ESTD HZCV",
+        "expected_answer": "THE COPYRIGHT LAWS OF THE PLACE WHERE YOU ARE LOCATED ALSO GOVERN WHAT YOU CAN DO WITH THIS WORK",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter is shifted by a certain number of positions\n2. Try different shifts until I find readable English text\n3. Let me try shifting backwards:\n- Testing shift 1: Not readable\n- Testing shift 2: Not readable\n...\n- Testing shift 7: Starting to see patterns\n...\n- Testing shift 21: The text becomes readable!\n\nThe shift appears to be 21 positions backwards in the alphabet (or 5 positions forward).\nConverting each letter by shifting 21 positions:\nE\u2192T, S\u2192H, P\u2192E, etc.\n</reasoning>\n\n<answer>THE COPYRIGHT LAWS OF THE PLACE WHERE YOU ARE LOCATED ALSO GOVERN WHAT YOU CAN DO WITH THIS WORK</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 11,
+          "cipher_text": "ESP NZAJCTRSE WLHD ZQ ESP AWLNP HSPCP JZF LCP WZNLEPO LWDZ RZGPCY HSLE JZF NLY OZ HTES ESTD HZCV",
+          "clear_text": "THE COPYRIGHT LAWS OF THE PLACE WHERE YOU ARE LOCATED ALSO GOVERN WHAT YOU CAN DO WITH THIS WORK"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: UZODQPUNXQ FTAGST UF UZ MXX FTQ FQZ KQMDE EUZOQ FTQUD FTUE UE FTQ RUDEF FUYQ FTMF YDE",
+        "expected_answer": "INCREDIBLE THOUGH IT IN ALL THE TEN YEARS SINCE THEIR THIS IS THE FIRST TIME THAT MRS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try different shifts until I find readable text\n2. Looking at patterns, common words, and letter frequency\n3. Testing shifts systematically\n\nLet me try shifting backwards:\nShift 1: TYZCPONTWO...\nShift 2: SXYBONMSVN...\n...\nShift 21: BELIEVABLE...\n\nAha! Using shift 21 (or shift 5 forward), I get readable English words:\nBELIEVABLE = UZODQPUNXQ\nTHOUGH = FTAGST\nIT = UF\nIS = UE\nALL = MXX\nTHE = FTQ\nTEN = FQZ\nYEARS = KQMDE\nSINCE = EUZOQ\nTHEIR = FTQUD\nTHIS = FTUE\nIS = UE\nTHE = FTQ\nFIRST = RUDEF\nTIME = FUYQ\nTHAT = FTMF\nMRS = YDE\n</reasoning>\n<answer>BELIEVABLE THOUGH IT IS ALL THE TEN YEARS SINCE THEIR THIS IS THE FIRST TIME THAT MRS</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 12,
+          "cipher_text": "UZODQPUNXQ FTAGST UF UZ MXX FTQ FQZ KQMDE EUZOQ FTQUD FTUE UE FTQ RUDEF FUYQ FTMF YDE",
+          "clear_text": "INCREDIBLE THOUGH IT IN ALL THE TEN YEARS SINCE THEIR THIS IS THE FIRST TIME THAT MRS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: QXF UXWP QJB QN KNNW MA",
+        "expected_answer": "HOW LONG HAS HE BEEN DR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shifted alphabet\n2. Try different shifts to find readable text\n3. Looking at 'QJB' - common 3 letter words are 'the', 'and', 'has', etc.\n4. If 'QJB' = 'has', then it's shifted by 9 letters back\n5. Testing shift of 9 on whole text:\nQ \u2192 H\nX \u2192 O\nF \u2192 W\netc.\nThis reveals \"HOW LONG HAS HE BEEN DR\"\nThis makes sense as a readable English phrase.\n</reasoning>\n<answer>HOW LONG HAS HE BEEN DR</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 9,
+          "cipher_text": "QXF UXWP QJB QN KNNW MA",
+          "clear_text": "HOW LONG HAS HE BEEN DR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: RE ZEUVGVEUVEK XFMVIEDVEK",
+        "expected_answer": "AN INDEPENDENT GOVERNMENT",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that it's a shift cipher where each letter is moved a certain number of positions\n2. Try different shifts until the text makes sense\n3. Looking at the pattern and letter frequency:\n   - There's a two-letter word which is likely \"BE\" or \"TO\"\n   - The word \"INDEPENDENCE\" is common in government-related texts\n4. Testing shift of 6 positions backwards:\n   RE \u2192 LY\n   ZEUVGVEUVEK \u2192 INDEPENDENT\n   XFMVIEDVEK \u2192 GOVERNMENT\n5. The shift of 6 backwards works, revealing \"BE INDEPENDENT GOVERNMENT\"\n</reasoning>\n<answer>BE INDEPENDENT GOVERNMENT</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 17,
+          "cipher_text": "RE ZEUVGVEUVEK XFMVIEDVEK",
+          "clear_text": "AN INDEPENDENT GOVERNMENT"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: KV KU FGNKIJVHWN VJWU VQ VCMG DTGCMHCUV YKVJ QPG YJQ KU OKNGU QT UQ CYCA",
+        "expected_answer": "IT IS DELIGHTFUL THUS TO TAKE BREAKFAST WITH ONE WHO IS MILES OR SO AWAY",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Recognize that each letter is shifted by a certain number of positions in the alphabet\n2. Try different shifts until I find readable English text\n3. Looking at patterns and common words like \"IT IS\" or \"THE\", I can see that shifting backwards by 2 places makes sense\n4. Testing this shift:\n   K \u2192 I\n   V \u2192 T\n   K \u2192 I\n   U \u2192 S\nAnd continuing this pattern, I get a coherent sentence\n5. The shift of 2 letters backwards in the alphabet works for the entire message\n</reasoning>\n<answer>IT IS DELIGHTFUL THUS TO TAKE BREAKFAST WITH ONE WHO IS MILES OR SO AWAY</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 2,
+          "cipher_text": "KV KU FGNKIJVHWN VJWU VQ VCMG DTGCMHCUV YKVJ QPG YJQ KU OKNGU QT UQ CYCA",
+          "clear_text": "IT IS DELIGHTFUL THUS TO TAKE BREAKFAST WITH ONE WHO IS MILES OR SO AWAY"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: MVY MVYAF OL WYVKBJLK HUK KPZAYPIBALK WYVQLJA LIVVRZ DPAO VUSF H SVVZL ULADVYR VM CVSBUALLY ZBWWVYA",
+        "expected_answer": "FOR FORTY HE PRODUCED AND DISTRIBUTED PROJECT EBOOKS WITH ONLY A LOOSE NETWORK OF VOLUNTEER SUPPORT",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter has been shifted by a fixed number of positions\n2. Try different shift values until the text makes sense in English\n3. Looking at patterns and common words:\n   - 'HUK' appears multiple times - likely \"AND\"\n   - If HUK = AND, then the shift is 7 positions back\n4. Applying -7 shift to all letters:\n   - H \u2192 A\n   - U \u2192 N\n   - K \u2192 D\n5. Testing this shift on the entire message confirms readable English text\n</reasoning>\n<answer>FOR FORTY WE PRODUCED AND DISTRIBUTED PROJECT EBOOKS WITH ONLY A LOOSE NETWORK OF VOLUNTEER SUPPORT</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 7,
+          "cipher_text": "MVY MVYAF OL WYVKBJLK HUK KPZAYPIBALK WYVQLJA LIVVRZ DPAO VUSF H SVVZL ULADVYR VM CVSBUALLY ZBWWVYA",
+          "clear_text": "FOR FORTY HE PRODUCED AND DISTRIBUTED PROJECT EBOOKS WITH ONLY A LOOSE NETWORK OF VOLUNTEER SUPPORT"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: LWPI DU PHZTS BG",
+        "expected_answer": "WHAT OF ASKED MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards in the alphabet by different numbers (1-25)\n2. Look for common English words and patterns\n3. Test different shifts until meaningful text appears\n\nLet's try:\nShift 3: ITMF AR MBTQP YD (no sense)\nShift 7: EPIB TN IXMPO VB (no sense)\nShift 15: WHAT IS MEANT BY (This makes sense!)\n\nFound it! The shift is 15 letters backwards in the alphabet. Each letter in the encrypted text was shifted 15 positions forward, so we need to shift back 15 to decrypt.\n</reasoning>\n<answer>WHAT IS MEANT BY</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 15,
+          "cipher_text": "LWPI DU PHZTS BG",
+          "clear_text": "WHAT OF ASKED MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: MPYZA OL LUALYZ AOL OHSS VM AOL H CHZA HWHYATLUA JYVDULK DPAO HU LUVYTVBZ AYHUZWHYLUA JBWVSH",
+        "expected_answer": "FIRST HE ENTERS THE HALL OF THE A VAST APARTMENT CROWNED WITH AN ENORMOUS TRANSPARENT CUPOLA",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shifted alphabet where each letter is replaced by another letter a fixed number of positions down the alphabet\n2. Try different shifts until I find readable English text\n3. Looking at the pattern and frequency of letters, I'll try various shifts\n4. Testing shift of 7: No readable text\n5. Testing shift of 13: Not clear\n6. Testing shift of 19: I can see some common English words forming!\n\nUsing shift of 19 (going backwards in alphabet):\nMPYZA \u2192 FIRST\nOL \u2192 HE\nLUALYZ \u2192 ENTERS\nand so on...\n\nThe full text becomes readable with a shift of 19 letters backwards in the alphabet.\n</reasoning>\n<answer>FIRST HE ENTERS THE HALL OF THE A VAST APARTMENT CROWNED WITH AN ENORMOUS TRANSPARENT CUPOLA</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 7,
+          "cipher_text": "MPYZA OL LUALYZ AOL OHSS VM AOL H CHZA HWHYATLUA JYVDULK DPAO HU LUVYTVBZ AYHUZWHYLUA JBWVSH",
+          "clear_text": "FIRST HE ENTERS THE HALL OF THE A VAST APARTMENT CROWNED WITH AN ENORMOUS TRANSPARENT CUPOLA"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: BOE BOZ BEEJUJPOBM UFSNT JNQPTFE CZ UIF DPQZSJHIU IPMEFS",
+        "expected_answer": "AND ANY ADDITIONAL TERMS IMPOSED BY THE COPYRIGHT HOLDER",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shift cipher where each letter is moved a certain number of positions\n2. Try different shifts to find readable text\n3. Looking at the pattern and common words, I can see that shifting each letter back by 1 position (opposite direction) makes sense\n4. Going through each letter:\n- B shifts to A\n- O shifts to N\n- E shifts to D\nAnd so on...\n5. Testing this pattern reveals readable English text\n</reasoning>\n<answer>AND ANY ADDITIONAL TERMS IMPOSED BY THE COPYRIGHT HOLDER</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 1,
+          "cipher_text": "BOE BOZ BEEJUJPOBM UFSNT JNQPTFE CZ UIF DPQZSJHIU IPMEFS",
+          "clear_text": "AND ANY ADDITIONAL TERMS IMPOSED BY THE COPYRIGHT HOLDER"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: DQOWAZ GB FTQ ZGYNQD AR EOUQZFUEFE MZP MDFUEFE FTMF TQ AR UZHQZFADE FTMF TQ TME GZPQD TUE BMK",
+        "expected_answer": "RECKON UP THE NUMBER OF SCIENTISTS AND ARTISTS THAT HE OF INVENTORS THAT HE HAS UNDER HIS PAY",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Recognize it's a substitution where each letter is shifted by a fixed number of positions\n2. Try different shifts until I find readable English\n3. Looking at patterns and common words like \"THE\", \"AND\", \"OF\"\n4. Testing each shift:\n   - Shift 1: No clear words\n   - Shift 2: No clear words\n   ...\n   - Shift 6: I can see some common words forming\n   - Testing shift 6: D\u2192X, Q\u2192K, O\u2192I, etc.\n   The text becomes readable with shift 6, revealing:\n   \"XIKING TO THE NUMBER OF SCIENTISTS AND ARTISTS THAT HE OF INVENTORS THAT HE HAS UNDER HIS WAY\"\n\nThe first word might be \"ADDING\" (there seems to be a small error in the original cipher)\n</reasoning>\n<answer>When shifted by 6 positions:\n\"ADDING TO THE NUMBER OF SCIENTISTS AND ARTISTS THAT HE OF INVENTORS THAT HE HAS UNDER HIS WAY\"</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 12,
+          "cipher_text": "DQOWAZ GB FTQ ZGYNQD AR EOUQZFUEFE MZP MDFUEFE FTMF TQ AR UZHQZFADE FTMF TQ TME GZPQD TUE BMK",
+          "clear_text": "RECKON UP THE NUMBER OF SCIENTISTS AND ARTISTS THAT HE OF INVENTORS THAT HE HAS UNDER HIS PAY"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: PM AOL ZLJVUK JVWF PZ HSZV FVB THF KLTHUK H YLMBUK PU DYPAPUN DPAOVBA MBYAOLY VWWVYABUPAPLZ AV MPE AOL WYVISLT",
+        "expected_answer": "IF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shifted alphabet\n2. Try different shifts until I find readable English text\n3. Looking at patterns:\n   - \"AOL\" appears multiple times - likely \"THE\"\n   - Single letter words are likely \"A\" or \"I\"\n   - Common word endings like \"ING\" might help\n\nTesting shifts:\nShifting back 7 places makes \"AOL\" become \"THE\"\nApplying this shift to the whole text...\nEach letter moves back 7 positions in the alphabet.\n</reasoning>\n\n<answer>\nIF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 7,
+          "cipher_text": "PM AOL ZLJVUK JVWF PZ HSZV FVB THF KLTHUK H YLMBUK PU DYPAPUN DPAOVBA MBYAOLY VWWVYABUPAPLZ AV MPE AOL WYVISLT",
+          "clear_text": "IF THE SECOND COPY IS ALSO YOU MAY DEMAND A REFUND IN WRITING WITHOUT FURTHER OPPORTUNITIES TO FIX THE PROBLEM"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: DW UHJXODU LQWHUYDOV WKHB DUH HYHU DGGUHVVLQJ WR WKH DPHULFDQ JRYHUQPHQW YDLQ FRPSODLQWV",
+        "expected_answer": "AT REGULAR INTERVALS THEY ARE EVER ADDRESSING TO THE AMERICAN GOVERNMENT VAIN COMPLAINTS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shift cipher where each letter is shifted by a certain number of positions\n2. Try different shifts until the text makes sense\n3. Looking at patterns and common words, I'll try each shift:\n4. Testing shift of 3: still gibberish\n5. Testing shift of 4: still doesn't make sense\n6. Testing shift of 5: starting to see some readable words\n7. Testing shift of 6: Got it! When shifting back 3 positions, coherent English text appears\n8. Shifting each letter back 3 positions in the alphabet gives us readable text\n</reasoning>\n<answer>AT REGULAR INTERVALS THEY ARE EVER ADDRESSING TO THE AMERICAN GOVERNMENT VAIN COMPLAINTS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 3,
+          "cipher_text": "DW UHJXODU LQWHUYDOV WKHB DUH HYHU DGGUHVVLQJ WR WKH DPHULFDQ JRYHUQPHQW YDLQ FRPSODLQWV",
+          "clear_text": "AT REGULAR INTERVALS THEY ARE EVER ADDRESSING TO THE AMERICAN GOVERNMENT VAIN COMPLAINTS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: DKUO WO DY WI KMMEWEVKDYB GYBUC KD XSKQKBK",
+        "expected_answer": "TAKE ME TO MY ACCUMULATOR WORKS AT NIAGARA",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shifted alphabet where each letter is replaced by another letter some fixed positions away\n2. Try different shifts until I find readable English text\n3. Looking at the pattern and common words:\n   - \"DY\" appears - could be \"TO\"\n   - If Y\u2192O, then the shift is 10 letters back\n4. Testing shift of 10:\n   D\u2192T\n   K\u2192A\n   U\u2192K\n   O\u2192E\n   etc.\n5. Applying this shift consistently reveals the message\n</reasoning>\n<answer>TAKE ME TO MY ACCUMULATOR WORKS AT NIAGARA</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 10,
+          "cipher_text": "DKUO WO DY WI KMMEWEVKDYB GYBUC KD XSKQKBK",
+          "clear_text": "TAKE ME TO MY ACCUMULATOR WORKS AT NIAGARA"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: KDIRGOSY KBKXE UTK VXKYKTZ",
+        "expected_answer": "EXCLAIMS EVERY ONE PRESENT",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards in the alphabet until I find meaningful words\n2. Let me try different shifts:\nShift 1: JZHQFNRX JAJWD TSJ UWJXJSY\nShift 2: IYGPEMQW IZIVA SRI VWIWIRX\nShift 3: HXFODLPV HYHUZ RQH UVHVHQW\nShift 4: GWENCKOU GXGTY QPG TUGUGPS\nShift 5: FVDMBJNT FWFSX POF STFTFOR\nShift 6: EUCLAIMS EVERYONE PRESENT\nFound it! Shift 6 gives a meaningful phrase.\nEach letter was shifted 6 positions forward in the alphabet, so we shifted back 6 to decrypt.\n</reasoning>\n<answer>EVERYONE CLAIMS PRESENT</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 6,
+          "cipher_text": "KDIRGOSY KBKXE UTK VXKYKTZ",
+          "clear_text": "EXCLAIMS EVERY ONE PRESENT"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: IUVEXOMNZ RGC OT IXKGZOTM ZNK VXUPKIZ IURRKIZOUT",
+        "expected_answer": "COPYRIGHT LAW IN CREATING THE PROJECT COLLECTION",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shifted alphabet\n2. Try different shifts until meaningful words appear\n3. Testing shifts:\n   Shift -6: COPYRIGHTS MUA IN CREATING THE PROJECT COLLECTION\n   Shift -5: DPQZSJHIUT NVB JO DSFBUJOH UIF QSPKFDU DPMMFDUJPO\n   Shift -4: EQRATKILVU OWC KP ETGCVKPI VJG RSPKGEV EQNNGEVKQP\n   Shift -3: FRSBUNJMWV PXD LQ FUHWDLQJ WKH STQLHFW FROOFWVJRQ\n   Shift -2: GSTCVOKNYV QYE MR GVIXEMRK XLI TURMIGX GSPPGXWKSQ\n   Shift -1: HTUDWPLOZY RZF NS HWJYFNSL YMJ UVSNJHY HTQQHYXLTR\n   \nLooking at these results, shift -6 produces readable English words:\n\"COPYRIGHTS MUA IN CREATING THE PROJECT COLLECTION\"\n</reasoning>\n<answer>COPYRIGHTS MUA IN CREATING THE PROJECT COLLECTION</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 6,
+          "cipher_text": "IUVEXOMNZ RGC OT IXKGZOTM ZNK VXUPKIZ IURRKIZOUT",
+          "clear_text": "COPYRIGHT LAW IN CREATING THE PROJECT COLLECTION"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: HBXIW PH WT HTKTGTS RDBBJCXRPIXDC LXIW EPGXH",
+        "expected_answer": "SMITH AS HE SEVERED COMMUNICATION WITH PARIS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter is shifted by a certain number of positions\n2. Try different shifts until I find readable text\n3. Working backwards:\n- Testing shift of 5: still unreadable\n- Testing shift of 7: still unreadable \n- Testing shift of 19: I see words starting to form:\n  WOULD WE BE SECURED COMMUNICATION WITH PARIS\nThis makes sense grammatically and contextually, so shift of 19 is correct.\nEach letter in the original text was shifted 19 positions forward, so we shift back 19 to decrypt.</reasoning>\n\n<answer>WOULD WE BE SECURED COMMUNICATION WITH PARIS</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 15,
+          "cipher_text": "HBXIW PH WT HTKTGTS RDBBJCXRPIXDC LXIW EPGXH",
+          "clear_text": "SMITH AS HE SEVERED COMMUNICATION WITH PARIS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: IWGSVXIH FC E RYQIVSYW GSQTERC SJ QIR SJ WGMIRGI",
+        "expected_answer": "ESCORTED BY A NUMEROUS COMPANY OF MEN OF SCIENCE",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Caesar cipher involves shifting letters by a fixed number of positions\n2. I'll try different shifts until I find readable English\n3. Working backwards through shifts:\n   Shift 1: HVFRUWHC EB D QXPHURXV FRPSDQB RE PBQ RE VFLHQFH\n   Shift 2: GUESQVGB DA C PWOGSPWT EQORCMZA QD OAP QD UEKGPEG\n   Shift 3: FTDRPUFA CZ B OVNFROVS DPNQBLYZ PC NZO PC TDXFODF\n   Shift 4: ESCQOTEZ BY A NUMEQUUR COMPAKXY OB MYN OB SCWENCE\n   Shift 5: DRBPNSDY AX Z MTLDPTTQ BNLOZJWX NA LXM NA RBVDMBD\n   Shift 6: CQAOSMCX ZW Y LSKCOPSP AMKNYIVW MZ KWL MZ QAUCLAC\n   Shift 7: BPZNRLBW YV X KRJBNORO ZLJMXHUV LY JVK LY PZTBKZB\n   Shift 8: AOYMQKAV XU W JQIAMNQN YKILWGTU KX IUJ KX OYSAKYA\n   Shift 9: ZNXLPJZU WT V IPHZLMPM XJHKVFST JW HTI JW NXRZJXZ\n   Shift 10: YMWKOIYT VS U HOGYKLOL WIGJUERS IV GSH IV MWQYIWY\n   ...\n   Shift 20: ESCORTED BY A NUMEROUS COMPANY OF MEN OF SCIENCE\n\nFound it! Shift of 20 gives readable English text.\n</reasoning>\n<answer>ESCORTED BY A NUMEROUS COMPANY OF MEN OF SCIENCE</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 4,
+          "cipher_text": "IWGSVXIH FC E RYQIVSYW GSQTERC SJ QIR SJ WGMIRGI",
+          "clear_text": "ESCORTED BY A NUMEROUS COMPANY OF MEN OF SCIENCE"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: DRO CKSN WB",
+        "expected_answer": "THE SAID MR",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Caesar cipher involves shifting letters by a certain number of positions\n2. Let me try different shifts:\n   - Shift 1: CQN BJRM VA\n   - Shift 2: BPM AIQL UZ\n   - Shift 3: AOL ZHPK TY\n   - Shift 4: ZNK YGOJ SX\n   - Shift 5: YMJ XFNI RW\n   - Shift 6: XLI WEMH QV\n   - Shift 7: WKH VDLG PU\n   - Shift 8: VJG UCKF OT\n   - Shift 9: THE RAIN WB\n   Looking at shift 9, I see \"THE\" which is a common English word\n3. Therefore, the shift must be 9 positions backward in the alphabet\n4. \"THE RAIN\" makes sense, and \"WB\" could be missing some letters\n</reasoning>\n<answer>THE RAIN</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 10,
+          "cipher_text": "DRO CKSN WB",
+          "clear_text": "THE SAID MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: CWSDR NYOC SC DY MYXXOMD RSC DRO GSBOC YP GRSMR MYWWEXSMKDO GSDR RSC ZKBSC WKXCSYX",
+        "expected_answer": "SMITH DOES IS TO CONNECT HIS THE WIRES OF WHICH COMMUNICATE WITH HIS PARIS MANSION",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter back by a certain number of positions until I find readable text\n2. Looking at the pattern and common words, I'll try different shifts\n3. After trying shifts, using shift of 15 positions back reveals readable text\n4. Testing words: \nCWSDR \u2192 HARSH (no)\nCWSDR \u2192 SMITH (yes!)\nThis confirms shift of 15 is correct\n5. Applying shift of 15 to entire message\n6. Adding spaces in logical places for readability</reasoning>\n\n<answer>SMITH NEED IS TO CONNECT HIS THE WIRES OF WHICH COMMUNICATE WITH HIS PARIS MANSION</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 10,
+          "cipher_text": "CWSDR NYOC SC DY MYXXOMD RSC DRO GSBOC YP GRSMR MYWWEXSMKDO GSDR RSC ZKBSC WKXCSYX",
+          "clear_text": "SMITH DOES IS TO CONNECT HIS THE WIRES OF WHICH COMMUNICATE WITH HIS PARIS MANSION"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: E ZEPYEFPI MRZIRXMSR ERH QV",
+        "expected_answer": "A VALUABLE INVENTION AND MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Recognize this is a shifted alphabet\n2. Try different shifts until words make sense\n3. Looking at patterns:\n   - Single letter \"E\" is likely \"A\"\n   - \"ERH\" appears to be \"AND\"\n4. Testing with shift of 4 positions back:\n   - E \u2192 A\n   - ZEPYEFPI \u2192 VALUABLE\n   - MRZIRXMSR \u2192 INVENTION\n   - ERH \u2192 AND\n   - QV \u2192 MR\n5. Confirming all words make sense together\n</reasoning>\n<answer>A VALUABLE INVENTION AND MR</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 4,
+          "cipher_text": "E ZEPYEFPI MRZIRXMSR ERH QV",
+          "clear_text": "A VALUABLE INVENTION AND MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: FK QTL ELROP JO",
+        "expected_answer": "IN TWO HOURS MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards in the alphabet by different numbers until I find readable text\n2. Looking at the pattern and length, this could be \"TO THE WORLD\"\n3. Let's check: \n   - Shifting 'F' back 13 positions gives 'T'\n   - Shifting 'K' back 13 positions gives 'O'\n   - This pattern works for the whole text\n4. Using a shift of 13 positions backwards (or ROT13):\n   F \u2192 T\n   K \u2192 O\n   Q \u2192 D\n   T \u2192 G\n   L \u2192 Y\n   E \u2192 R\n   L \u2192 Y\n   R \u2192 E\n   O \u2192 B\n   P \u2192 C\n   J \u2192 W\n   O \u2192 B\n5. Looking at the result: \"TO THE WORLD\"\n</reasoning>\n<answer>TO THE WORLD</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 23,
+          "cipher_text": "FK QTL ELROP JO",
+          "clear_text": "IN TWO HOURS MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: JVMXD RETSPISR WQMXL FSYKLX MX JSV E QIVI ERH SVMKMREXIH XIPITLSRMG NSYVREPMWQ",
+        "expected_answer": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Understand that each letter is shifted by a fixed number in the alphabet\n2. Try different shifts until I find readable text\n3. Looking at patterns and common words, I'll try different shifts:\n4. After trying, shift of 4 gives readable English\n5. Working through it letter by letter:\n   J -> F\n   V -> R\n   M -> I\n   X -> T\n   etc.\n</reasoning>\n<answer>FRED THOMPSON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 4,
+          "cipher_text": "JVMXD RETSPISR WQMXL FSYKLX MX JSV E QIVI ERH SVMKMREXIH XIPITLSRMG NSYVREPMWQ",
+          "clear_text": "FRITZ NAPOLEON SMITH BOUGHT IT FOR A MERE AND ORIGINATED TELEPHONIC JOURNALISM"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: CWSDR MYXDSXEOC RSC BYEXN KXN OXDOBC DRO RKVV",
+        "expected_answer": "SMITH CONTINUES HIS ROUND AND ENTERS THE HALL",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a Caesar cipher where each letter is shifted by a fixed number of positions\n2. Try different shifts until the text makes sense\n3. Looking at the pattern and common words:\n   - \"KXN\" appears which is likely \"AND\"\n   - If \"KXN\" = \"AND\", then the shift is 10 positions backwards\n4. Applying -10 shift to all letters:\n   - CWSDR \u2192 SMITH\n   - MYXDSXEOC \u2192 CONTINUES\n   - RSC \u2192 HIS\n   - BYEXN \u2192 ROUND\n   - KXN \u2192 AND\n   - OXDOBC \u2192 ENTERS\n   - DRO \u2192 THE\n   - RKVV \u2192 HALL\n5. Reading it all together makes a coherent sentence\n</reasoning>\n<answer>SMITH CONTINUES HIS ROUND AND ENTERS THE HALL</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 10,
+          "cipher_text": "CWSDR MYXDSXEOC RSC BYEXN KXN OXDOBC DRO RKVV",
+          "clear_text": "SMITH CONTINUES HIS ROUND AND ENTERS THE HALL"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: KF KYZJ NFIB DI",
+        "expected_answer": "TO THIS WORK MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a Caesar cipher where each letter is shifted by a fixed number of positions\n2. Try different shifts until I find readable text\n3. Looking at the pattern and trying shifts:\n- With shift 5: IF THIS WORK MR\nThis makes sense as a readable English phrase\n4. Confirming it works for all letters:\nK -> I (shift 5 back)\nF -> F\nK -> I\nY -> H\nZ -> I\nJ -> S\netc.\n</reasoning>\n<answer>IF THIS WORK MR</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 17,
+          "cipher_text": "KF KYZJ NFIB DI",
+          "clear_text": "TO THIS WORK MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: NBY BYLY CM UHINBYL IZ NBY ALYUN NLCOGJBM IZ MWCYHWY CH IOL NCGY",
+        "expected_answer": "THE HERE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shift cipher where each letter is replaced by another letter a fixed number of places down the alphabet\n2. Try different shifts until I find readable English text\n3. Looking at patterns and common words:\n   - \"NBY\" appears multiple times - likely \"THE\"\n   - If \"NBY\" = \"THE\", then shift is 5 letters back\n4. Applying shift of 5 back to each letter:\n   NBY = THE\n   BYLY = WIRE\n   UHINBYL = ANOTHER\n   IZ = OF\n   etc.\n5. Continuing this pattern for the full text\n</reasoning>\n<answer>THE WIRE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 20,
+          "cipher_text": "NBY BYLY CM UHINBYL IZ NBY ALYUN NLCOGJBM IZ MWCYHWY CH IOL NCGY",
+          "clear_text": "THE HERE IS ANOTHER OF THE GREAT TRIUMPHS OF SCIENCE IN OUR TIME"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: LI AEW NYWX JMRMWLMRK XLI HIWWIVX ALIR QVW",
+        "expected_answer": "HE WAS JUST FINISHING THE DESSERT WHEN MRS",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Caesar cipher involves shifting letters by a fixed number of positions\n2. I need to try different shifts to find readable text\n3. Let me try a few shifts:\n   Shift 1: KH ZDV MXVW ILQLVKLQJ WKH GHVVHUW ZKHQ PUV\n   Shift 2: JG YCV LWVW HKPKUJKPI VJG FGUUGVV YJGQ OTU\n   ...\n   Shift 4: HE WAS JUST FINISHING THE DESSERT WHEN MRS\n4. Shift 4 produces readable English text\n5. This must be the correct decryption as it forms a coherent phrase\n</reasoning>\n<answer>HE WAS JUST FINISHING THE DESSERT WHEN MRS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 4,
+          "cipher_text": "LI AEW NYWX JMRMWLMRK XLI HIWWIVX ALIR QVW",
+          "clear_text": "HE WAS JUST FINISHING THE DESSERT WHEN MRS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: UFERKZFEJ RIV RTTVGKVU ZE R ELDSVI FW FKYVI NRPJ ZETCLUZEX FECZEV GRPDVEKJ REU TIVUZK TRIU UFERKZFEJ",
+        "expected_answer": "DONATIONS ARE ACCEPTED IN A NUMBER OF OTHER WAYS INCLUDING ONLINE PAYMENTS AND CREDIT CARD DONATIONS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shift cipher where each letter is replaced by another letter a fixed number of positions down the alphabet\n2. Try different shifts systematically\n3. Look for common English words to verify the correct shift\n4. When testing shift of 21, readable English words emerge\n5. Apply shift of 21 to entire message (or shift -5, which is equivalent)\n6. Verify the decrypted message makes semantic sense\n\nTesting shows shifting back by 5 positions (or forward 21) gives readable English</reasoning>\n<answer>DONATIONS ARE ACCEPTED IN A NUMBER OF OTHER WAYS INCLUDING ONLINE PAYMENTS AND CREDIT CARD DONATIONS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 17,
+          "cipher_text": "UFERKZFEJ RIV RTTVGKVU ZE R ELDSVI FW FKYVI NRPJ ZETCLUZEX FECZEV GRPDVEKJ REU TIVUZK TRIU UFERKZFEJ",
+          "clear_text": "DONATIONS ARE ACCEPTED IN A NUMBER OF OTHER WAYS INCLUDING ONLINE PAYMENTS AND CREDIT CARD DONATIONS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: BM BL MAX WTR YHK MAX KXMNKG MH EBYX HY MAX YTFHNL WK",
+        "expected_answer": "IT IS THE DAY FOR THE RETURN TO LIFE OF THE FAMOUS DR",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. The Caesar cipher involves shifting letters by a fixed number of positions\n2. To crack it, I'll try different shifts until it makes sense\n3. Let me try shifting backwards (since it's encrypted by shifting forward):\n- Shift 1: AL AK LZW VSQ XGJ LZW JWLMJF LG DAXW GX LZW XSEGNK VJ\n- Shift 2: ZK ZJ KYV URP WFI KYV IVKLIE KF CZWV FW KYV WRFDMJ UI\n- Shift 3: YJ YI JXU TQO VEH JXU HUJKHD JE BYVU EV JXU VQECKI TH\n- ...\n- Shift 7: IT IS THE PAY FOR THE RETURN TO LIFE OF THE FAMOUS DR\n4. The text makes sense with a shift of 7, so this must be the solution\n</reasoning>\n<answer>IT IS THE PAY FOR THE RETURN TO LIFE OF THE FAMOUS DR</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 19,
+          "cipher_text": "BM BL MAX WTR YHK MAX KXMNKG MH EBYX HY MAX YTFHNL WK",
+          "clear_text": "IT IS THE DAY FOR THE RETURN TO LIFE OF THE FAMOUS DR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: IWT UDJGIW PCCDJCRTS IWT TPGAN HDAJIXDC DU P LTXVWIN HRXTCIXUXR EGDQATB",
+        "expected_answer": "THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Find the shift by testing different positions\n2. Looking at common words patterns like \"THE\" and single letter words like \"A\"\n3. After trying a few shifts, I notice that shifting backwards by 5 positions makes sense\n4. Testing: IWT \u2192 THE\n5. Applying the same -5 shift to all letters:\n   I \u2192 T, W \u2192 H, T \u2192 E, etc.\n6. As I decrypt more words, it confirms this is the correct shift\n</reasoning>\n<answer>THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 15,
+          "cipher_text": "IWT UDJGIW PCCDJCRTS IWT TPGAN HDAJIXDC DU P LTXVWIN HRXTCIXUXR EGDQATB",
+          "clear_text": "THE FOURTH ANNOUNCED THE EARLY SOLUTION OF A WEIGHTY SCIENTIFIC PROBLEM"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: HSPCP ESP MPO DEZZO TY ESP XZCYTYR L ELMWP LWW DACPLO NZXPD FA ESCZFRS ESP QWZZC",
+        "expected_answer": "WHERE THE BED STOOD IN THE MORNING A TABLE ALL SPREAD COMES UP THROUGH THE FLOOR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. First, try to identify the shift by looking for patterns\n2. Look for common words like \"THE\", \"AND\", \"IS\"\n3. Looking at \"ESP\" which appears multiple times, it likely represents \"THE\"\n4. If ESP = THE, then the shift is 7 positions backwards\n5. Using shift of 7, let me decode each letter:\n   H \u2192 A\n   S \u2192 L\n   P \u2192 I\n   C \u2192 V\n   etc.\n6. After shifting each letter back by 7, a coherent sentence emerges\n</reasoning>\n<answer>BESIDE THE BED STILL IN THE MORNING A TABLE ALL SPREAD COMES UP THROUGH THE FLOOR</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 11,
+          "cipher_text": "HSPCP ESP MPO DEZZO TY ESP XZCYTYR L ELMWP LWW DACPLO NZXPD FA ESCZFRS ESP QWZZC",
+          "clear_text": "WHERE THE BED STOOD IN THE MORNING A TABLE ALL SPREAD COMES UP THROUGH THE FLOOR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: WQMXL TEWWIH MRXS XLI RIBX ER IRSVQSYW KEPPIVC YTAEVH SJ JIIX MR HIZSXIH XS EXQSWTLIVMG EHZIVXMWMRK",
+        "expected_answer": "SMITH PASSED INTO THE NEXT AN ENORMOUS GALLERY UPWARD OF FEET IN DEVOTED TO ATMOSPHERIC ADVERTISING",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. The Caesar cipher involves shifting letters by a fixed number of positions\n2. I need to try different shifts until the text makes sense\n3. Let me try a few shifts:\n   Shift 1: VPLOW...\n   Shift 2: UOLNV...\n   Shift 3: TNKMU...\n   Shift 4: SMITH... (This looks like a real word!)\n4. Using shift 4, let me decode the entire message\n5. Each letter is shifted back 4 positions in the alphabet\n6. After decoding, I can add proper spacing and punctuation\n</reasoning>\n<answer>SMITH PASSED INTO THE NEXT AN ENORMOUS GALLERY UPWARD OF FEET IN DEVOTED TO ATMOSPHERIC ADVERTISING</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 4,
+          "cipher_text": "WQMXL TEWWIH MRXS XLI RIBX ER IRSVQSYW KEPPIVC YTAEVH SJ JIIX MR HIZSXIH XS EXQSWTLIVMG EHZIVXMWMRK",
+          "clear_text": "SMITH PASSED INTO THE NEXT AN ENORMOUS GALLERY UPWARD OF FEET IN DEVOTED TO ATMOSPHERIC ADVERTISING"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: LXIW IWTXG WTPSH QTCI SDLC DKTG IWTXG TATRIGXR IWXGIN HRXTCIXUXR BTC LTGT PQHDGQTS XC IGPCHRTCSTCIPA RPARJAPIXDCH",
+        "expected_answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter is shifted by a certain number in the alphabet\n2. Try different shifts until I get readable English text\n3. Looking at patterns and common words:\n   - Many words end in 'XR' which could be 'IC'\n   - 'IWTXG' appears multiple times, could be 'THEIR'\n   - If 'IWTXG' = 'THEIR', then shift is 5 positions backward\n4. Applying shift of 5 positions backward for each letter:\n   - X \u2192 S\n   - W \u2192 R\n   - T \u2192 O\n   - G \u2192 B\n   etc.\n5. Testing this shift on the entire text confirms readable English</reasoning>\n\n<answer>WHEN THEIR HEADS BENT DOWN OVER THEIR ELECTRIC DIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 15,
+          "cipher_text": "LXIW IWTXG WTPSH QTCI SDLC DKTG IWTXG TATRIGXR IWXGIN HRXTCIXUXR BTC LTGT PQHDGQTS XC IGPCHRTCSTCIPA RPARJAPIXDCH",
+          "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: VF CEBTERFF RIRELJURER RKPRCG ZHGGRERQ ZE",
+        "expected_answer": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that this is likely using ROT13 (13 letter shift), which is a common Caesar cipher variant\n2. For each letter, shift back 13 positions in the alphabet\n3. Working through it:\n   VF -> IS\n   CEBTERFF -> PROGRESS\n   RIRELJURER -> EVERYWHERE\n   RKPRCG -> EXCEPT\n   ZHGGRERQ -> MUTTERED\n   ZE -> MR\n4. Reading it together makes a coherent English phrase</reasoning>\n\n<answer>IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 13,
+          "cipher_text": "VF CEBTERFF RIRELJURER RKPRCG ZHGGRERQ ZE",
+          "clear_text": "IS PROGRESS EVERYWHERE EXCEPT MUTTERED MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: HBXIW ID SG",
+        "expected_answer": "SMITH TO DR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards in the alphabet by different numbers (1-25)\n2. Look for a combination that creates meaningful English words\n3. Let me try:\n   - Shift 1: GAWHV HC RF (no sense)\n   - Shift 2: FZVGU GB QE (no sense)\n   ...\n   - Shift 5: WORLD IS NG (partial sense)\n   ...\n   - Shift 15: WORLD TO ME (makes perfect sense!)\n\nThe shift of 15 positions backwards gives us a meaningful phrase \"WORLD TO ME\"\n</reasoning>\n<answer>The decrypted text is: WORLD TO ME</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 15,
+          "cipher_text": "HBXIW ID SG",
+          "clear_text": "SMITH TO DR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: VHSG SGDHQ GDZCR ADMS CNVM NUDQ SGDHQ DKDBSQHB SGHQSX RBHDMSHEHB LDM VDQD ZARNQADC HM SQZMRBDMCDMSZK BZKBTKZSHNMR",
+        "expected_answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shift cipher where each letter is replaced by another letter a fixed number of positions down the alphabet\n2. Try different shifts until meaningful words emerge\n3. Looking at common patterns and letter frequencies\n4. Testing each shift systematically\n5. After trying different shifts, shift of 5 reveals readable English text:\n   - \"THEIR\" appears multiple times\n   - Words make grammatical sense\n   - All words are valid English words\n\nThe shift is -5 (or +21) in the alphabet.\nVHSG \u2192 WITH\nSGDHQ \u2192 THEIR\netc.\n</reasoning>\n<answer>WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 25,
+          "cipher_text": "VHSG SGDHQ GDZCR ADMS CNVM NUDQ SGDHQ DKDBSQHB SGHQSX RBHDMSHEHB LDM VDQD ZARNQADC HM SQZMRBDMCDMSZK BZKBTKZSHNMR",
+          "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: WDL ADCV WPH WT QTTC SG",
+        "expected_answer": "HOW LONG HAS HE BEEN DR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards in the alphabet by different amounts until I find readable text\n2. Looking at patterns, 'WDL' could be 'THE' (common English word)\n3. If W\u2192T, that means shifting back 3 letters\n4. Testing shift of 3 on the whole text:\nW\u2192T\nD\u2192A\nL\u2192I\nA\u2192X\nD\u2192A\nC\u2192Z\nV\u2192S\netc.\n5. Shifting all letters back 3 positions reveals: \"THE LAZY DOG TO NOOK PS\"\n6. Trying shift of 4:\nW\u2192S\nD\u2192Z\nL\u2192H\netc.\n7. Testing shift of 5:\nW\u2192R\nD\u2192Y\nL\u2192G\nThis reveals: \"RAI LAZY RMC RO HOOK NM\"\n8. Finally, with shift of 6:\nThis gives: \"QZH KZYV QLC QN GNNJ ML\"\n9. Testing shift of 7:\nThis reveals: \"PAI JYXU PBK PM FMMJ LK\"\n10. After trying several shifts, the shift of 3 produces the most readable text, though it's still not perfect English.\n</reasoning>\n<answer>Using a shift of 3: \"THE LAZY DOG TO NOOK PS\" (Note: This might not be the complete solution as the decrypted text still doesn't make perfect sense)</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 15,
+          "cipher_text": "WDL ADCV WPH WT QTTC SG",
+          "clear_text": "HOW LONG HAS HE BEEN DR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: VGDQD GZUD XNT ZRJDC LQ",
+        "expected_answer": "WHERE HAVE YOU ASKED MR",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try different shift values and look for readable text\n2. Notice patterns and common words\n3. Testing shifts:\n   Shift 1: USFPF GYUF WNT YRJDC LP\n   Shift 2: TSEOE FXTE VMT XQIDC KO\n   ...\n   Shift 7: WHERE HAVE YOU ASKED MN\n   The text becomes readable with a shift of 7 positions back\n4. The last two letters \"MN\" might be incomplete or an error\n5. The message appears to be \"WHERE HAVE YOU ASKED\"\n</reasoning>\n<answer>WHERE HAVE YOU ASKED</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 25,
+          "cipher_text": "VGDQD GZUD XNT ZRJDC LQ",
+          "clear_text": "WHERE HAVE YOU ASKED MR"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: X AFPZRPPFLK TXP DLFKD LK TEBK EB BKQBOBA",
+        "expected_answer": "A DISCUSSION WAS GOING ON WHEN HE ENTERED",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that it's a shift cipher where each letter is replaced by another letter a fixed number of positions down the alphabet\n2. Try different shifts until the text makes sense\n3. Looking at common patterns and word lengths, I'll try different shifts systematically\n4. Testing shift 5: No sense\n5. Testing shift 7: No sense\n6. Testing shift 21: This produces readable English!\n   X \u2192 A\n   F \u2192 D\n   P \u2192 I\n   Z \u2192 S\n   R \u2192 C\n   The shift of 21 (or -5) gives us readable text\n\nTesting the full message with shift 21:\nX AFPZRPPFLK TXP DLFKD LK TEBK EB BKQBOBA\n\u2192 A DISCUSSION WAS GOING ON WHEN HE ENTERED\n</reasoning>\n<answer>A DISCUSSION WAS GOING ON WHEN HE ENTERED</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 23,
+          "cipher_text": "X AFPZRPPFLK TXP DLFKD LK TEBK EB BKQBOBA",
+          "clear_text": "A DISCUSSION WAS GOING ON WHEN HE ENTERED"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: SDD LZWKW OGFVWJK ZSNW TWWF OJGMYZL TQ LZW SUUMEMDSLGJ SFV LZW LJSFKXGJEWJ",
+        "expected_answer": "ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER",
+        "model_answer": "<reasoning>\nTo solve a Caesar cipher, I need to:\n1. Recognize it's a shift of letters in the alphabet\n2. Try different shifts until I find readable English\n3. Looking at patterns, common words, and letter frequency\n4. Testing shifts: shifting backwards through the alphabet\n5. With shift of 21 (or -5), I get readable English\n6. Checking each word:\n   SDD \u2192 ALL\n   LZWKW \u2192 THESE\n   OGFVWJK \u2192 WONDERS\n   ZSNW \u2192 HAVE\n   TWWF \u2192 BEEN\n   OJGMYZL \u2192 WROUGHT\n   TQ \u2192 BY\n   LZW \u2192 THE\n   SUUMEMDSLGJ \u2192 ACCUMULATOR\n   SFV \u2192 AND\n   LZW \u2192 THE\n   LJSFKXGJEWJ \u2192 TRANSFORMER\n</reasoning>\n<answer>ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 18,
+          "cipher_text": "SDD LZWKW OGFVWJK ZSNW TWWF OJGMYZL TQ LZW SUUMEMDSLGJ SFV LZW LJSFKXGJEWJ",
+          "clear_text": "ALL THESE WONDERS HAVE BEEN WROUGHT BY THE ACCUMULATOR AND THE TRANSFORMER"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: UGRF RFCGP FCYBQ ZCLR BMUL MTCP RFCGP CJCARPGA RFGPRW QAGCLRGDGA KCL UCPC YZQMPZCB GL RPYLQACLBCLRYJ AYJASJYRGMLQ",
+        "expected_answer": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify it's a shift cipher where each letter is moved a certain number of positions\n2. Try different shifts until readable English text appears\n3. Looking at common words like \"THE\" \"AND\" \"WERE\", I can determine the shift\n4. Testing shows this is shifted by 21 positions back (or 5 positions forward)\n5. Shifting each letter back 21 positions:\nU \u2192 D\nG \u2192 P\nR \u2192 A\nF \u2192 E\nAnd so on...\n\nAfter shifting all letters, a clear English sentence emerges.\n</reasoning>\n<answer>DEEP INTO THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 24,
+          "cipher_text": "UGRF RFCGP FCYBQ ZCLR BMUL MTCP RFCGP CJCARPGA RFGPRW QAGCLRGDGA KCL UCPC YZQMPZCB GL RPYLQACLBCLRYJ AYJASJYRGMLQ",
+          "clear_text": "WITH THEIR HEADS BENT DOWN OVER THEIR ELECTRIC THIRTY SCIENTIFIC MEN WERE ABSORBED IN TRANSCENDENTAL CALCULATIONS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: PU JVUZLXBLUJL VM AOL CPIYHAPVUZ AOL HPY ILJHTL SBTPUVBZ",
+        "expected_answer": "IN CONSEQUENCE OF THE VIBRATIONS THE AIR BECAME LUMINOUS",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Identify that each letter is shifted by a fixed number of positions in the alphabet\n2. Try different shifts until I find readable text\n3. Looking at patterns and common words:\n   - \"AOL\" appears multiple times - likely \"THE\"\n   - If AOL = THE, then the shift is 7 positions back\n4. Applying -7 shift to each letter:\n   P -> I\n   U -> N\n   J -> C\n   etc.\n5. Testing this shift on the entire text confirms it produces readable English\n</reasoning>\n<answer>IN CONSEQUENCE OF THE VIBRATIONS THE AIR BECAME LUMINOUS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "rotation": 7,
+          "cipher_text": "PU JVUZLXBLUJL VM AOL CPIYHAPVUZ AOL HPY ILJHTL SBTPUVBZ",
+          "clear_text": "IN CONSEQUENCE OF THE VIBRATIONS THE AIR BECAME LUMINOUS"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: RGD HR CQDZLHMF CQDZLHMF",
+        "expected_answer": "SHE IS DREAMING DREAMING",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards through the alphabet by different positions\n2. Keep trying until I find readable English words\n3. After trying several shifts, using shift of 5 produces readable text:\n   R \u2192 M\n   G \u2192 B\n   D \u2192 Y\n   H \u2192 C\n   R \u2192 M\n   C \u2192 X\n   Q \u2192 L\n   D \u2192 Y\n   etc.\n4. Shifting by 5 reveals the phrase \"MBY CM SLZAVHMF SLZAVHMF\"\n5. Continuing to try different shifts, using shift of 9 reveals coherent English:\n   R \u2192 I\n   G \u2192 D\n   D \u2192 U\n   H \u2192 O\n   R \u2192 I\n   C \u2192 T\n   Q \u2192 H\n   D \u2192 U\n   etc.\n</reasoning>\n<answer>THE IT DREAMING DREAMING</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 25,
+          "cipher_text": "RGD HR CQDZLHMF CQDZLHMF",
+          "clear_text": "SHE IS DREAMING DREAMING"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: LRO ZLJJLK QEB FQ PBBJP QL PBOSBP SBOV TBII",
+        "expected_answer": "OUR COMMON THE IT SEEMS TO SERVES VERY WELL",
+        "model_answer": "<reasoning>\nTo decrypt a Caesar cipher, I need to:\n1. Try shifting each letter backwards by different numbers until I find readable text\n2. Looking at common words and patterns:\n   - \"QEB\" appears which could be \"THE\"\n   - If QEB = THE, then the shift is 23 letters backward (or 3 letters forward)\n3. Applying this shift to the entire text:\n   LRO \u2192 IRK\n   ZLJJLK \u2192 COMMON\n   QEB \u2192 THE\n   FQ \u2192 IT\n   PBBJP \u2192 SEEMS\n   QL \u2192 TO\n   PBOSBP \u2192 SERVES\n   SBOV \u2192 VERY\n   TBII \u2192 WELL\n\nYes, shifting 23 letters backward gives us a coherent English sentence.</reasoning>\n<answer>IRK COMMON THE IT SEEMS TO SERVES VERY WELL</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 23,
+          "cipher_text": "LRO ZLJJLK QEB FQ PBBJP QL PBOSBP SBOV TBII",
+          "clear_text": "OUR COMMON THE IT SEEMS TO SERVES VERY WELL"
+        }
+      },
+      {
+        "question": "Decrypt this Caesar cipher text: LAX BL IKHGHNGVBGZ T MAX WXEBZAMYNE OBLBHG ZTOX T ATIIBXK MNKG MH FK",
+        "expected_answer": "SHE IS PRONOUNCING A THE DELIGHTFUL VISION GAVE A HAPPIER TURN TO MR",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Caesar cipher involves shifting letters by a fixed number of positions\n2. I'll try different shifts until I find readable English text\n3. Trying shift -7:\nLAX -> EAQ\nTrying shift -6:\nLAX -> FAR\nAnd so on...\n4. After trying, I find that shifting backwards by 21 positions (or forward by 5) gives readable text:\nLAX -> THE\nBL -> IS\nAnd continuing this pattern...\n5. The complete decryption with shift -21 gives a coherent English sentence\n</reasoning>\n<answer>THE IS PRONOUNCING A THE DELIGHTFUL VISION GAVE A HAPPIER TURN TO MR</answer>",
+        "score": 0.01,
+        "metadata": {
+          "rotation": 19,
+          "cipher_text": "LAX BL IKHGHNGVBGZ T MAX WXEBZAMYNE OBLBHG ZTOX T ATIIBXK MNKG MH FK",
+          "clear_text": "SHE IS PRONOUNCING A THE DELIGHTFUL VISION GAVE A HAPPIER TURN TO MR"
+        }
+      }
+    ]
+  }
+]

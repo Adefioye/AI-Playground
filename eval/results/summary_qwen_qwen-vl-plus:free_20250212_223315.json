@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "polynomial_multiplication",
+    "model": "qwen/qwen-vl-plus:free",
+    "average_score": 0.23199999999999998,
+    "total_examples": 10,
+    "timestamp": "2025-02-12T22:33:15.271413",
+    "config": {
+      "size": 10,
+      "seed": 42
+    }
+  }
+]

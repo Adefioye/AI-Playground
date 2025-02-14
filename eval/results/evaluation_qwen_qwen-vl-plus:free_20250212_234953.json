@@ -1,0 +1,158 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "isomorphic_strings",
+      "model": "qwen/qwen-vl-plus:free",
+      "size": 10,
+      "average_score": 0.20800000000000002,
+      "total_examples": 10,
+      "timestamp": "2025-02-12T23:49:53.619175",
+      "config": {
+        "size": 10,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nkk zw\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced with a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. If the same character appears in both dictionaries, it means that the same character in the first string is mapped to two different characters in the second string, which violates the isomorphic condition. If the dictionaries are equal, it means that each character in the first string is mapped to a unique character in the second string, and vice versa, which satisfies the isomorphic condition. In this case, we can see that 'k' maps to 'z' and 'w' maps to 'w', which satisfies the isomorphic condition. Therefore, the answer is True.</reasoning>\n<answer>True</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "kk",
+            "zw"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nfay qbu\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced with a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "fay",
+            "qbu"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\njgihuhugs ucxwswscj\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string while preserving the order of characters. We also need to ensure that no two characters in the first string map to the same character in the second string. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. We then iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, we return False. If it is, we add the character to the dictionary with its corresponding character in the second string. If we finish iterating through the first string and all characters are correctly mapped, we return True. If we reach the end of the first string and any character in the second string is not in the dictionary, we return False.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "jgihuhugs",
+            "ucxwswscj"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ncphvuypk equhcgqn\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced with a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "cphvuypk",
+            "equhcgqn"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nhrqmnxhy rtzdkruv\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "hrqmnxhy",
+            "rtzdkruv"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxqctoya pxtcrdh\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "xqctoya",
+            "pxtcrdh"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxxpx sslb\n",
+        "expected_answer": "False",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 1.0,
+        "metadata": {
+          "words": [
+            "xxpx",
+            "sslb"
+          ],
+          "solution": false,
+          "solvable": false
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nuswaskn xtretqa\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "uswaskn",
+            "xtretqa"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\ndivel jbxtz\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "divel",
+            "jbxtz"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      },
+      {
+        "question": "Two strings are isomorphic if the characters in one string can be replaced to get the second string.\n\nAll occurrences of a character must be replaced with another character while preserving the order of characters.\n\nNo two characters may map to the same character, but a character may map to itself.\n\nExample 1:\nInput: egg add\nOutput: True\nExplanation: The strings s and t can be made identical by:\n    - Mapping 'e' to 'a'.\n    - Mapping 'g' to 'd'.\n\nExample 2:\nInput: foo bar\nOutput: False\nExplanation:\n    - The strings cannot be made identical as 'o' needs to be mapped to both 'a' and 'r'.\n\nReturn True if the following two strings are isomorphic, or False otherwise:\nxixcxfxwl vwvpvyvbk\n",
+        "expected_answer": "True",
+        "model_answer": "<reasoning>To determine if two strings are isomorphic, we need to check if each character in the first string can be replaced by a character in the second string such that the order of characters is preserved and no two characters map to the same character. We can do this by creating two dictionaries, one for each string, where the keys are the characters in the first string and the values are the corresponding characters in the second string. Then, we iterate through the characters in the first string and check if the corresponding character in the second string is already in the dictionary. If it is, we check if the value in the dictionary is the same as the character in the second string. If it is not, the strings are not isomorphic. If the character in the second string is not in the dictionary, we add it to the dictionary with the corresponding character from the first string as the value. If we finish iterating through the first string and all characters are correctly mapped, the strings are isomorphic.</reasoning>\n<answer>False</answer>",
+        "score": 0.01,
+        "metadata": {
+          "words": [
+            "xixcxfxwl",
+            "vwvpvyvbk"
+          ],
+          "solution": true,
+          "solvable": true
+        }
+      }
+    ]
+  }
+]

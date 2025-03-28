@@ -1,0 +1,234 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "spiral_matrix",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 3,
+      "average_score": 0.6699999999999999,
+      "total_examples": 3,
+      "timestamp": "2025-02-17T01:52:19.589766",
+      "config": {
+        "size": 3,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Given a matrix, your job is to generate a list of elements in spiral order, starting from the top-left element.\n\nExample:\n- Input: For the matrix below, what is the list of elements in spiral order?\n1 2 3\n4 5 6\n7 8 9\n- Output: 1 2 3 6 9 8 7 4 5\n- Explanation:\n    - We start from the top-left element (1) and move right until we reach the end of the row: 1 2 3\n    - Then, we move down until we reach the last column: 1 2 3 6 9\n    - Next, we move left until we reach the first column: 1 2 3 6 9 8 7\n    - Then, we move up until we reach the second row (i.e. one below the previously traversed row): 1 2 3 6 9 8 7 4\n    - Finally, we move right until we reach the second to last column: 1 2 3 6 9 8 7 4 5\n    - The output format is a space-separated list of elements in spiral order (as opposed to a python list)\n\nFor the matrix below, what is the list of elements in spiral order?\n3 1 3\n2 4 9\n1 0 8\n",
+        "expected_answer": "3 1 3 9 8 0 1 2 4",
+        "model_answer": "<reasoning>\nLet me solve this by following the spiral pattern:\n\n1. Start at top-left (3) and move right along first row:\n   3 -> 1 -> 3\n\n2. Move down along last column:\n   3,1,3 -> 9 -> 8\n\n3. Move left along bottom row:\n   3,1,3,9,8 -> 0 -> 1\n\n4. Move up along first column:\n   3,1,3,9,8,0,1 -> 2\n\n5. Finally, move right to the remaining center element:\n   3,1,3,9,8,0,1,2 -> 4\n\nTherefore, the spiral order traversal is: 3 1 3 9 8 0 1 2 4\n</reasoning>\n<answer>3 1 3 9 8 0 1 2 4</answer>",
+        "score": 1.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              1,
+              3
+            ],
+            [
+              2,
+              4,
+              9
+            ],
+            [
+              1,
+              0,
+              8
+            ]
+          ],
+          "solution": [
+            3,
+            1,
+            3,
+            9,
+            8,
+            0,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      {
+        "question": "Given a matrix, your job is to generate a list of elements in spiral order, starting from the top-left element.\n\nExample:\n- Input: For the matrix below, what is the list of elements in spiral order?\n1 2 3\n4 5 6\n7 8 9\n- Output: 1 2 3 6 9 8 7 4 5\n- Explanation:\n    - We start from the top-left element (1) and move right until we reach the end of the row: 1 2 3\n    - Then, we move down until we reach the last column: 1 2 3 6 9\n    - Next, we move left until we reach the first column: 1 2 3 6 9 8 7\n    - Then, we move up until we reach the second row (i.e. one below the previously traversed row): 1 2 3 6 9 8 7 4\n    - Finally, we move right until we reach the second to last column: 1 2 3 6 9 8 7 4 5\n    - The output format is a space-separated list of elements in spiral order (as opposed to a python list)\n\nFor the matrix below, what is the list of elements in spiral order?\n5 7\n2 4\n",
+        "expected_answer": "5 7 4 2",
+        "model_answer": "<reasoning>\nLet me solve this step by step following the spiral order pattern:\n\n1. Start from top-left (5) and move right:\n   - First elements: 5 7\n\n2. Move down along the rightmost column:\n   - Add: 4\n\n3. Move left along the bottom row:\n   - Add: 2\n\nTherefore, the spiral order traversal will be: 5 7 4 2\n</reasoning>\n<answer>5 7 4 2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "solution": [
+            5,
+            7,
+            4,
+            2
+          ]
+        }
+      },
+      {
+        "question": "Given a matrix, your job is to generate a list of elements in spiral order, starting from the top-left element.\n\nExample:\n- Input: For the matrix below, what is the list of elements in spiral order?\n1 2 3\n4 5 6\n7 8 9\n- Output: 1 2 3 6 9 8 7 4 5\n- Explanation:\n    - We start from the top-left element (1) and move right until we reach the end of the row: 1 2 3\n    - Then, we move down until we reach the last column: 1 2 3 6 9\n    - Next, we move left until we reach the first column: 1 2 3 6 9 8 7\n    - Then, we move up until we reach the second row (i.e. one below the previously traversed row): 1 2 3 6 9 8 7 4\n    - Finally, we move right until we reach the second to last column: 1 2 3 6 9 8 7 4 5\n    - The output format is a space-separated list of elements in spiral order (as opposed to a python list)\n\nFor the matrix below, what is the list of elements in spiral order?\n1 9 9 5 2 9 7 3\n1 1 5 0 7 0 4 9\n3 5 4 7 8 4 3 4\n6 5 3 3 2 7 1 9\n6 7 7 0 1 4 1 8\n8 2 5 9 0 1 4 0\n2 1 5 5 6 4 0 3\n1 6 6 0 2 8 8 5\n",
+        "expected_answer": "1 9 9 5 2 9 7 3 9 4 9 8 0 3 5 8 8 2 0 6 6 1 2 8 6 6 3 1 1 5 0 7 0 4 3 1 1 4 0 4 6 5 5 1 2 7 5 5 4 7 8 4 7 4 1 0 9 5 7 3 3 2 1 0",
+        "model_answer": "<reasoning>\nLet me solve this step by step following the spiral pattern:\n\n1. First row (left to right): 1 9 9 5 2 9 7 3\n\n2. Last column (top to bottom): 9 4 4 9 8 0 3 5\n\n3. Last row (right to left): 8 8 4 6 5 5 1 2\n\n4. First column (bottom to top): 8 2 6 6 3 1\n\n5. Second row (left to right): 1 5 0 7 0 4\n\n6. Second last column (top to bottom): 4 7 4 1\n\n7. Second last row (right to left): 1 0 4 1\n\n8. Second column (bottom to top): 2 7 5\n\n9. Third row (left to right): 4 7 8\n\n10. Third last column (top to bottom): 3\n\n11. Third last row (right to left): 2\n\n12. Finally: 1\n\nFollowing these steps gives us the complete spiral traversal.\n</reasoning>\n<answer>1 9 9 5 2 9 7 3 9 4 4 9 8 0 3 5 8 8 4 6 5 5 1 2 8 2 6 6 3 1 1 5 0 7 0 4 4 7 4 1 1 0 4 1 2 7 5 4 7 8 3 2 1</answer>",
+        "score": 0.01,
+        "metadata": {
+          "matrix": [
+            [
+              1,
+              9,
+              9,
+              5,
+              2,
+              9,
+              7,
+              3
+            ],
+            [
+              1,
+              1,
+              5,
+              0,
+              7,
+              0,
+              4,
+              9
+            ],
+            [
+              3,
+              5,
+              4,
+              7,
+              8,
+              4,
+              3,
+              4
+            ],
+            [
+              6,
+              5,
+              3,
+              3,
+              2,
+              7,
+              1,
+              9
+            ],
+            [
+              6,
+              7,
+              7,
+              0,
+              1,
+              4,
+              1,
+              8
+            ],
+            [
+              8,
+              2,
+              5,
+              9,
+              0,
+              1,
+              4,
+              0
+            ],
+            [
+              2,
+              1,
+              5,
+              5,
+              6,
+              4,
+              0,
+              3
+            ],
+            [
+              1,
+              6,
+              6,
+              0,
+              2,
+              8,
+              8,
+              5
+            ]
+          ],
+          "solution": [
+            1,
+            9,
+            9,
+            5,
+            2,
+            9,
+            7,
+            3,
+            9,
+            4,
+            9,
+            8,
+            0,
+            3,
+            5,
+            8,
+            8,
+            2,
+            0,
+            6,
+            6,
+            1,
+            2,
+            8,
+            6,
+            6,
+            3,
+            1,
+            1,
+            5,
+            0,
+            7,
+            0,
+            4,
+            3,
+            1,
+            1,
+            4,
+            0,
+            4,
+            6,
+            5,
+            5,
+            1,
+            2,
+            7,
+            5,
+            5,
+            4,
+            7,
+            8,
+            4,
+            7,
+            4,
+            1,
+            0,
+            9,
+            5,
+            7,
+            3,
+            3,
+            2,
+            1,
+            0
+          ]
+        }
+      }
+    ]
+  }
+]

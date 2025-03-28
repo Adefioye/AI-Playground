@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "word_ladder",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.006666666666666667,
+    "total_examples": 3,
+    "timestamp": "2025-02-17T02:05:26.414572",
+    "config": {
+      "size": 3,
+      "seed": 42
+    }
+  }
+]

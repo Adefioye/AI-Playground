@@ -1,7 +1,7 @@
 [
   {
-    "name": "number_sorting",
-    "size": 3,
+    "name": "chain_sum",
+    "size": 50,
     "seed": 42
   }
 ]

@@ -1,0 +1,618 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "game_of_life",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.010000000000000004,
+      "total_examples": 50,
+      "timestamp": "2025-02-17T00:14:06.834924",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,1,1,0,0,0,1,0],\n [1,0,0,1,0,1,1,1,1,1],\n [0,0,1,1,1,1,1,1,1,0],\n [1,1,1,1,0,0,0,0,1,1],\n [1,1,1,1,0,0,1,0,1,1],\n [1,1,0,1,1,0,1,1,0,1],\n [1,0,0,1,1,0,0,0,0,1],\n [1,1,1,0,0,1,1,0,1,1],\n [1,1,1,1,1,0,0,1,0,1],\n [0,1,1,1,0,1,1,0,1,0]].",
+        "expected_answer": "[[0,1,0,0,0,0,0,0,0,0],[1,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,0,0,0],[0,0,0,0,0,0,1,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me simulate this step by step following Conway's Game of Life rules:\n1. Any live cell with fewer than two live neighbors dies (underpopulation)\n2. Any live cell with two or three live neighbors survives\n3. Any live cell with more than three live neighbors dies (overpopulation)\n4. Any dead cell with exactly three live neighbors becomes alive (reproduction)\n\nI'll check each cell's neighbors (including diagonals) and apply these rules.\n\nGoing through each cell systematically:\n- For edge cells, I'll consider only the existing neighbors\n- For each cell, I'll count live neighbors and apply the rules\n- A cell's value in the next generation depends only on the sum of its neighbors in the current generation and its current state\n\nThis is a 10x10 grid, so I need to evaluate 100 cells total.\n</reasoning>\n<answer>\n[\n[0,0,1,1,1,1,1,1,1,1],\n[0,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,0,1,1,1,1],\n[1,1,1,1,1,0,0,1,1,1],\n[1,1,1,1,1,0,0,0,1,1],\n[1,1,1,1,1,1,1,0,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,0,1,1],\n[1,1,1,1,1,1,1,1,1,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,1,1,1,0,1,1,1],\n [0,0,1,1,1,1,1,1,1,1],\n [0,1,0,0,0,0,0,1,1,1],\n [1,0,0,1,1,1,1,0,0,1],\n [0,1,0,1,1,0,0,1,1,0],\n [1,1,1,1,0,1,1,0,1,1],\n [0,1,1,0,1,1,1,0,0,1],\n [0,0,1,0,1,1,0,0,1,1],\n [0,1,1,0,1,0,1,0,1,1],\n [1,1,1,0,1,1,1,0,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,1,0,1,0,1,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me work through this step by step:\n\n1) In Conway's Game of Life, each cell's next state is determined by these rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n2) For each cell, I need to:\n   - Count its live neighbors (including diagonals)\n   - Apply the rules above\n\n3) I'll check each position systematically:\n   - For edge cells, I'll treat out-of-bounds positions as dead cells\n   - For each cell, count the 8 surrounding positions if they exist\n   - Apply the rules to determine the new state\n\n4) Important patterns to watch for:\n   - Overcrowded areas (>3 neighbors) will die\n   - Isolated cells (<2 neighbors) will die\n   - Dead cells with exactly 3 neighbors will spring to life\n\n5) After processing each cell according to these rules, I'll have the new state.\n</reasoning>\n<answer>\n[[0,1,1,1,1,1,1,1,1,1],\n [0,1,1,1,1,1,1,1,1,1],\n [0,0,1,1,1,1,1,1,1,1],\n [0,1,0,1,1,1,1,1,1,0],\n [1,1,1,1,0,0,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [0,1,1,1,1,1,1,0,1,1],\n [0,1,1,1,1,1,1,1,1,1],\n [1,1,1,0,1,1,1,0,1,1],\n [1,1,1,0,1,1,1,0,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,1,1,1,1,0,0,1],\n [0,1,0,0,1,1,1,0,1,1],\n [0,1,1,1,1,0,1,0,1,0],\n [1,0,0,1,1,0,1,1,1,1],\n [1,1,1,0,0,1,1,0,1,1],\n [0,1,0,0,1,1,0,1,0,1],\n [0,1,1,0,0,0,1,0,1,1],\n [0,1,1,0,1,1,1,1,0,1],\n [1,1,1,1,1,1,0,1,1,0],\n [1,1,1,0,0,1,1,0,1,0]].",
+        "expected_answer": "[[0,0,0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,1,1],[0,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Then apply the Game of Life rules:\n   - A live cell (1) survives if it has 2 or 3 live neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 live neighbors\n   - In all other cases, cells die or stay dead\n\n3) Going through each cell and checking their neighbors:\n   - Need to consider edges where some neighbors don't exist\n   - For each cell, count 8 surrounding positions if they exist\n   - Apply rules based on neighbor count\n\n4) Let me simulate this carefully...\n   For example, for position [0,0]:\n   - It's currently dead (0)\n   - Has neighbors: 1,1,0 (from first row)\n   - And 0,1,1 (from second row)\n   - Total live neighbors = 4\n   - Therefore stays dead as it needs exactly 3 to become alive\n\n5) Continuing this process for each cell...\n</reasoning>\n<answer>\n[[0,1,0,1,1,1,1,0,1,1],\n [0,1,1,1,1,1,1,1,1,1],\n [0,1,0,1,1,0,1,1,1,1],\n [1,1,1,1,0,0,1,1,1,1],\n [1,1,1,0,0,0,1,1,1,1],\n [1,1,1,0,0,1,1,1,1,1],\n [0,1,1,0,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,0],\n [1,1,1,1,1,1,1,1,1,0],\n [1,1,1,1,1,1,1,1,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,1,0,0,1,1,0,1],\n [1,1,1,0,1,0,1,1,1,1],\n [1,1,0,1,1,0,1,0,1,1],\n [1,0,0,0,0,0,1,1,1,0],\n [1,1,1,0,0,1,1,1,0,1],\n [1,0,1,1,1,1,0,1,0,1],\n [1,1,0,1,1,0,1,1,1,1],\n [0,0,0,1,1,0,1,0,1,1],\n [0,0,0,0,0,0,1,0,1,1],\n [1,1,0,1,1,1,1,0,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,0,1,1,1,0,1,0,0,0],[0,0,1,0,0,0,1,0,0,0],[0,1,0,1,1,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me work through this step by step:\n\n1) For each cell in the grid, I need to:\n   - Count the number of living neighbors (including diagonals)\n   - Apply the Game of Life rules:\n     * Live cell with < 2 neighbors dies (underpopulation)\n     * Live cell with 2 or 3 neighbors survives\n     * Live cell with > 3 neighbors dies (overpopulation)\n     * Dead cell with exactly 3 neighbors becomes alive\n\n2) Going through each cell and its neighbors:\n   - For border cells, I'll consider out-of-bounds cells as dead (0)\n   - I'll need to check all 8 neighboring positions for each cell\n\n3) After checking the rules for each cell:\n   - Most dense areas will thin out due to overpopulation\n   - Isolated cells will die due to underpopulation\n   - Some dead cells with exactly 3 neighbors will come to life\n\n4) This particular grid has several patterns that will change:\n   - Groups of 4 or more connected live cells will have deaths in the middle\n   - Isolated cells or pairs will disappear\n   - Some empty spaces surrounded by exactly 3 live cells will become alive\n</reasoning>\n<answer>\n[[1,1,1,1,0,1,1,1,1,1],\n [1,0,0,1,1,0,1,0,1,1],\n [1,0,0,0,1,1,1,0,1,0],\n [1,1,0,0,0,1,1,1,1,0],\n [1,1,1,1,1,1,0,1,1,1],\n [1,0,0,1,1,1,0,1,1,1],\n [1,1,0,1,1,0,1,1,1,1],\n [0,0,0,1,1,1,1,0,1,1],\n [0,0,0,1,1,1,1,0,1,1],\n [1,1,0,1,1,1,1,0,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,1,0,1,1,0,1,1],\n [1,1,1,0,1,1,1,1,0,1],\n [1,0,1,1,1,1,1,0,1,0],\n [1,1,0,0,1,1,0,0,0,1],\n [0,1,1,0,1,1,1,1,1,1],\n [0,1,1,0,1,0,0,0,1,1],\n [1,1,1,0,1,1,0,1,1,1],\n [0,0,0,0,1,0,1,1,1,1],\n [1,1,1,0,0,1,0,1,0,1],\n [1,1,1,1,0,1,0,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,0,1,0,1,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI need to:\n1. For each cell, count its 8 neighbors (horizontally, vertically, diagonally)\n2. Apply the rules based on the neighbor count and current state\n3. Build the new grid\n\nLet me calculate this methodically for each position, paying special attention to:\n- Corner cases (which have fewer neighbors)\n- Edge cases (which also have fewer neighbors)\n- Central cells (which have all 8 potential neighbors)\n\nAfter reviewing the board and applying the rules, for one step of simulation...\n</reasoning>\n<answer>\n[[1,1,1,1,1,1,1,1,1,1],\n [1,0,1,0,1,1,1,0,1,1],\n [1,1,1,0,0,0,1,0,0,1],\n [1,1,1,0,0,0,0,1,0,1],\n [1,1,1,0,1,0,0,0,1,1],\n [1,1,1,0,1,1,0,1,1,1],\n [1,1,0,0,1,1,1,1,1,1],\n [1,1,1,0,1,1,1,1,1,1],\n [1,1,1,0,1,1,1,1,1,1],\n [1,1,1,0,0,1,0,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,0,1,1,1,0,0,1],\n [0,1,0,1,0,1,1,1,1,0],\n [0,1,1,0,0,1,0,0,1,1],\n [1,0,0,1,0,1,0,1,0,1],\n [1,1,0,1,0,0,0,1,1,1],\n [1,1,0,0,1,0,1,1,1,1],\n [0,1,0,0,0,0,1,1,1,1],\n [1,0,0,1,1,1,1,0,1,1],\n [0,1,1,0,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,1,0,1,0,0,0,0,0,0],[0,1,0,1,0,1,0,0,0,0],[0,0,0,1,0,0,0,1,0,0],[0,0,0,1,0,1,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,1,1,1,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll go through each cell and count its neighbors to determine its next state:\n1. For each cell, count the sum of its 8 neighboring cells\n2. Apply the rules based on current state and neighbor count\n3. Store the result in a new grid\n\nLooking at a few example cells:\n- Top left [0][0]: Has 2 live neighbors, stays dead\n- Position [0][1]: Has 1 live neighbor, dies\n- Bottom right corner: Has 3 live neighbors, stays alive\n\nThe pattern will generally:\n- Thin out dense areas (due to overpopulation)\n- Fill some gaps where there are exactly 3 neighbors\n- Keep stable configurations with 2-3 neighbors</reasoning>\n<answer>[[0,0,0,1,1,1,1,1,0,0],\n[0,1,1,0,1,1,1,1,1,1],\n[1,1,1,1,0,1,1,1,1,1],\n[1,1,1,1,0,0,0,1,1,1],\n[1,1,1,1,1,0,1,1,1,1],\n[1,1,1,0,0,0,1,1,1,1],\n[1,1,0,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1]]</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,0,0,1,0,1,0,1],\n [1,0,1,1,0,0,1,1,0,1],\n [1,1,1,1,0,1,0,1,1,0],\n [1,0,1,1,0,0,0,0,1,1],\n [1,0,1,0,1,1,0,1,0,1],\n [1,1,0,1,0,1,1,1,0,0],\n [1,1,1,1,1,1,1,1,1,1],\n [0,1,1,1,0,1,0,0,1,1],\n [1,0,0,1,1,1,0,0,1,0],\n [0,1,0,0,1,0,1,0,0,1]].",
+        "expected_answer": "[[0,0,0,0,1,1,0,1,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,0,0,0,1,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,1,1,0],[0,0,0,0,0,0,1,1,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Game of Life rules:\n   - Living cell (1) with 2 or 3 neighbors survives\n   - Dead cell (0) with exactly 3 neighbors becomes alive\n   - All other cells die or stay dead\n\nLet me check each row, carefully counting neighbors for each position...\n\nFor example, for position [0,0]:\n- Current value: 1\n- Neighbors: [0,1], [1,0], [1,1] = 1 + 1 + 0 = 2 neighbors\n- With 2 neighbors, this living cell survives\n\nGoing through the entire grid, applying these rules to each cell...\n</reasoning>\n<answer>\n[[1,1,1,1,0,0,1,1,1,1],\n[1,0,0,1,1,1,1,1,1,0],\n[1,0,0,0,0,0,0,1,1,1],\n[1,0,0,0,1,0,0,1,1,1],\n[1,0,0,0,1,1,0,0,0,0],\n[1,1,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,0,0,1,1],\n[0,1,1,1,1,1,1,0,0,0],\n[0,0,0,1,1,1,0,0,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,0,1,1,1,0,1,0],\n [0,1,0,1,0,1,1,1,0,1],\n [1,0,0,0,1,1,0,1,0,1],\n [1,1,1,0,0,1,1,1,1,1],\n [0,1,0,1,1,1,0,1,1,1],\n [1,1,1,0,1,0,0,0,1,1],\n [1,1,1,0,1,1,0,0,1,1],\n [0,1,1,1,1,0,1,1,0,1],\n [1,1,1,1,1,0,1,0,1,0],\n [1,1,1,1,1,1,1,1,1,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,1,1,1,0,0,0,0,0,1],[0,0,0,1,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Game of Life rules:\n   - Live cell with 2 or 3 neighbors survives\n   - Dead cell with exactly 3 neighbors becomes alive\n   - All other cells die or stay dead\n\nLet me process each cell:\n- Looking at key patterns:\n  - Dense areas with many live cells tend to thin out\n  - Isolated cells tend to die\n  - Groups of 3-4 cells often form stable patterns or oscillators\n\nGoing through the grid:\n- Dense bottom area will thin out significantly\n- Isolated cells will disappear\n- Considering edge cases (cells at the borders)\n</reasoning>\n\n<answer>\n[\n[0,1,0,1,1,1,1,1,1,1],\n[1,1,0,1,0,0,0,1,1,1],\n[1,1,1,0,1,1,1,1,1,1],\n[1,1,1,1,1,1,0,0,1,1],\n[1,1,1,1,1,0,0,1,1,1],\n[1,0,1,1,1,1,0,1,1,1],\n[1,0,1,1,1,1,0,1,1,1],\n[1,1,1,1,1,1,1,1,1,0],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,0,1,1,0,0,1,1],\n [0,1,1,1,0,1,1,0,1,0],\n [1,0,0,0,1,1,1,0,0,1],\n [1,1,0,1,1,1,0,1,0,1],\n [0,0,1,1,0,1,1,1,0,1],\n [1,0,0,1,0,1,0,0,0,1],\n [1,1,0,1,1,1,1,1,1,0],\n [0,1,1,0,1,1,1,0,0,1],\n [1,1,1,1,1,0,1,1,1,1],\n [0,1,0,1,0,1,1,1,0,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Game of Life rules:\n   - Live cell with fewer than 2 live neighbors dies (underpopulation)\n   - Live cell with 2 or 3 live neighbors survives\n   - Live cell with more than 3 live neighbors dies (overpopulation)\n   - Dead cell with exactly 3 live neighbors becomes alive (reproduction)\n\n3) I need to check each cell and apply these rules simultaneously\n4) For edge cases, cells outside the grid are considered dead\n\nLet me go through each cell, count its neighbors, and apply the rules...\n\nAfter checking the neighbors for each cell and applying the rules, I can determine the next state.\n</reasoning>\n<answer>\n[\n[0,1,1,1,1,1,1,0,1,1],\n[1,1,0,1,0,1,1,1,1,1],\n[1,1,0,1,1,1,1,1,0,1],\n[1,1,1,1,0,1,1,1,0,1],\n[0,1,1,1,0,1,0,1,1,1],\n[1,1,1,1,0,1,1,1,0,1],\n[1,1,1,1,1,1,0,1,1,1],\n[1,1,1,1,1,0,1,1,1,1],\n[1,1,1,1,1,0,1,1,1,0],\n[1,1,1,1,1,1,1,1,1,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,0,1,1,0,1,0,0],\n [1,0,0,0,1,0,0,1,1,0],\n [0,1,1,0,0,1,1,0,1,0],\n [1,0,0,1,0,1,1,1,1,0],\n [1,1,1,1,0,0,0,1,1,1],\n [1,0,0,0,1,0,1,1,0,0],\n [1,0,1,0,1,1,1,0,1,0],\n [1,1,1,1,0,0,1,1,1,1],\n [1,1,1,0,1,1,0,1,1,0],\n [1,1,1,0,1,1,0,1,1,1]].",
+        "expected_answer": "[[0,0,1,0,0,0,0,0,0,0],[1,0,1,1,1,0,0,0,1,1],[1,1,1,1,0,0,0,0,0,0],[0,0,0,1,0,1,0,0,0,0],[0,0,1,1,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,1,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me break this down using Conway's Game of Life rules:\n1. Any live cell with 2 or 3 live neighbors survives\n2. Any dead cell with exactly 3 live neighbors becomes alive\n3. All other cells die or stay dead\n\nI'll check each cell's neighbors (including diagonals) and apply these rules:\n- For live cells (1): They survive if they have 2 or 3 neighbors\n- For dead cells (0): They become alive if they have exactly 3 neighbors\n\nGoing through each cell systematically, counting its neighbors and applying the rules...\n\nSome key patterns I notice:\n- Dense clusters will thin out\n- Isolated cells will die\n- Cells with proper neighbor counts will survive\n- New cells will appear where exactly 3 live neighbors exist\n\nAfter calculating each cell's fate based on its current neighbors...\n</reasoning>\n<answer>\n[[1,0,0,0,1,1,1,1,1,0],\n[1,1,0,0,1,0,1,1,1,0],\n[1,1,1,0,1,1,1,1,1,0],\n[1,0,0,1,0,0,0,0,1,1],\n[1,1,0,1,1,0,0,0,1,0],\n[1,0,1,0,1,1,1,1,1,0],\n[1,0,1,1,1,1,1,0,1,1],\n[0,0,0,1,0,0,0,0,1,1],\n[0,0,0,0,1,1,0,0,1,1],\n[1,1,1,0,1,1,0,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,1,1,1,0,0,1,1],\n [0,0,1,1,0,1,0,0,1,0],\n [1,1,1,1,1,1,1,1,1,1],\n [0,1,0,1,1,1,0,0,1,1],\n [1,1,0,1,0,1,0,0,1,1],\n [0,0,1,0,0,1,1,0,1,0],\n [1,1,0,0,0,0,0,1,1,1],\n [1,1,1,1,1,0,0,1,0,1],\n [1,0,1,1,1,0,1,1,0,0],\n [0,0,0,0,0,0,1,0,0,1]].",
+        "expected_answer": "[[1,1,0,0,0,1,1,1,1,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,1,0,0,0,0,0,0],[0,0,1,0,1,1,1,0,0,0],[0,0,0,0,1,1,0,0,0,0],[0,0,0,0,1,1,0,0,0,0],[0,0,0,0,1,0,1,1,0,0],[0,0,0,0,0,0,1,0,0,1]]",
+        "model_answer": "<reasoning>\nLet me work through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Game of Life rules:\n   - Living cell (1) with < 2 neighbors dies (underpopulation)\n   - Living cell with 2 or 3 neighbors survives\n   - Living cell with > 3 neighbors dies (overpopulation)\n   - Dead cell (0) with exactly 3 neighbors becomes alive\n\n3) I'll go through each cell systematically, counting neighbors and applying rules\n4) For edge cases, cells outside the grid are considered dead (0)\n5) Each cell's new state only depends on the previous state, so I can calculate them all at once\n\nLet me calculate a few key points to verify:\n- Top left (0,0) has 2 living neighbors \u2192 stays dead\n- (0,1) has 3 living neighbors \u2192 stays alive\n- Middle cells generally have high neighbor counts due to the dense pattern\n- Bottom row will mostly die due to underpopulation\n\nAfter a full systematic check...\n</reasoning>\n<answer>\n[[0,1,1,1,1,1,0,1,1,1],\n [1,0,1,1,1,1,1,1,1,1],\n [1,1,0,1,1,1,0,1,1,1],\n [1,1,0,1,0,1,1,1,1,1],\n [0,1,1,0,0,1,1,1,1,1],\n [1,1,1,0,0,0,1,1,1,1],\n [1,1,1,1,0,0,1,1,1,1],\n [1,1,1,1,1,0,1,1,0,0],\n [1,1,1,1,0,0,1,1,0,0],\n [0,1,1,1,0,0,0,1,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,1,0,1,1,1,1,0],\n [1,0,0,0,0,0,1,0,0,0],\n [0,1,1,1,1,1,0,0,1,0],\n [0,0,1,1,1,0,1,1,1,0],\n [0,0,1,1,1,0,1,0,0,0],\n [1,1,1,1,1,0,0,1,1,1],\n [1,1,1,1,0,0,1,1,1,0],\n [0,1,1,1,0,1,1,0,1,1],\n [1,0,1,0,0,1,1,1,1,1],\n [1,1,1,1,1,1,0,1,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,1,0],[1,0,0,0,0,0,0,0,1,0],[0,1,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,1,0,1,0],[1,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with 2 or 3 live neighbors survives\n2. Any dead cell with exactly 3 live neighbors becomes alive\n3. All other cells die or stay dead\n\nI'll check each cell by counting its 8 neighbors (horizontal, vertical, diagonal) and apply the rules.\n\nFor example, let's look at position [0,0]:\n- Current state: 1 (alive)\n- Neighbors: [0,1]:0, [1,0]:1, [1,1]:0\n- Total live neighbors: 1\n- Since it has only 1 neighbor and is alive, it dies\n\nI'll continue this process for each cell in the grid, keeping track of which cells live, die, or become alive.\n</reasoning>\n<answer>\n[[1,0,0,1,0,1,1,1,1,0],\n [1,1,1,1,1,1,1,1,1,0],\n [0,1,1,1,1,1,1,1,1,0],\n [0,1,1,0,1,1,1,1,1,0],\n [0,1,1,0,1,0,1,1,1,1],\n [1,1,0,0,1,0,1,1,1,1],\n [1,0,0,0,0,0,1,1,1,1],\n [1,1,1,1,1,1,1,0,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,1,0,1,0,1,0,0],\n [1,0,1,0,1,0,0,1,0,1],\n [0,0,0,1,1,0,1,1,1,0],\n [1,1,1,1,1,1,0,1,1,1],\n [1,1,0,0,0,1,0,1,1,1],\n [1,1,0,0,1,1,1,1,1,0],\n [1,0,1,1,1,1,1,1,1,1],\n [0,1,1,0,1,1,0,1,1,1],\n [1,0,1,1,1,1,1,1,1,0],\n [1,1,0,0,0,0,1,0,0,0]].",
+        "expected_answer": "[[0,0,0,1,1,1,0,1,1,0],[1,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply Conway's Game of Life rules:\n   - A living cell (1) survives if it has 2 or 3 living neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\n2) For each cell, I'll check its neighbors and apply these rules:\n   - For border cells, I'll count only existing neighbors\n   - For each position, sum up all eight surrounding positions (if they exist)\n   - Apply the survival/birth rules based on the neighbor count\n\n3) Going through each position and applying rules:\n   - Many cells will die due to overpopulation (>3 neighbors)\n   - Some dead cells will come to life with exactly 3 neighbors\n   - The dense patterns will thin out due to overpopulation\n   - Edge cells will tend to die due to underpopulation\n\n4) After calculating each position, the result will be a new grid showing the next generation\n</reasoning>\n<answer>\n[[1,1,1,0,0,0,0,0,0,0],\n[1,0,1,0,1,0,0,1,1,0],\n[1,0,0,0,1,0,1,1,1,1],\n[1,0,0,0,0,0,0,1,0,1],\n[1,1,0,0,0,1,0,0,1,1],\n[1,0,0,0,1,1,0,0,1,1],\n[0,0,1,0,0,1,0,0,1,1],\n[0,1,1,0,0,1,0,0,1,1],\n[1,0,1,1,0,0,1,1,0,0],\n[1,1,1,0,0,0,0,0,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,0,1,1,0,1,0,0,0],\n [1,0,1,1,1,0,1,1,1,1],\n [1,0,1,0,1,0,1,0,0,1],\n [1,0,1,1,1,1,0,1,0,0],\n [1,1,1,1,0,1,0,0,1,0],\n [1,1,0,1,0,1,1,1,1,0],\n [1,1,1,1,1,1,0,1,1,0],\n [0,0,0,1,0,1,0,1,1,0],\n [1,1,1,1,1,0,1,1,1,0],\n [0,0,1,1,1,0,0,1,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,0,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me walk through the Game of Life rules:\n1. Any live cell with 2 or 3 live neighbors survives\n2. Any dead cell with exactly 3 live neighbors becomes alive\n3. All other cells die or stay dead\n\nI'll check each cell's neighbors (including diagonals) and apply these rules.\n\nFor example, let's look at a few cells:\n- Position [0,0] has 3 neighbors (right, bottom, bottom-right) = survives\n- Position [9,9] has 1 neighbor (left) = dies\n- Position [4,4] has 6 neighbors = dies (too many)\n\nI'll systematically go through each position and count neighbors to determine the next state.</reasoning>\n\n<answer>[[1,1,1,1,1,0,1,1,0,0],\n[1,0,1,1,1,1,1,1,1,0],\n[1,0,1,0,1,1,1,1,1,0],\n[1,0,1,0,0,1,0,1,1,0],\n[1,1,1,1,0,1,1,1,1,0],\n[1,1,0,1,0,1,1,1,1,0],\n[1,1,0,1,1,1,0,1,1,0],\n[0,0,0,1,1,1,0,1,1,0],\n[0,0,1,1,1,0,1,1,1,0],\n[0,1,1,1,1,0,0,1,1,0]]</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,0,1,0,1,0,1,1],\n [1,0,0,1,1,1,1,0,1,0],\n [1,1,1,0,0,0,1,0,1,1],\n [1,1,1,1,1,0,1,0,1,0],\n [0,1,1,1,0,0,0,1,1,1],\n [0,0,1,0,1,0,1,1,1,0],\n [0,1,1,1,0,1,1,0,0,1],\n [1,0,1,0,1,1,0,0,1,0],\n [1,1,1,1,1,0,0,1,0,1],\n [0,1,1,1,1,1,1,1,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,1,0,0,0],[0,0,0,0,0,0,1,0,1,0],[0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me go through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll calculate the number of live neighbors for each cell and apply these rules.\nFor each cell, I need to check its 8 neighboring cells (horizontal, vertical, and diagonal).\nFor border cells, I'll consider cells outside the grid as dead (0).\n\nLet me process each cell:\n1. Going through each row and column\n2. Counting live neighbors for each cell\n3. Applying the rules to determine the next state\n\nGiven the size of the grid (10x10) and the complex pattern, many cells will change state due to the rules.\n</reasoning>\n<answer>\n[\n[1,0,0,1,1,1,1,0,1,1],\n[1,1,1,1,1,1,1,1,1,0],\n[1,1,1,1,1,0,1,1,1,1],\n[1,1,0,0,1,0,0,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[0,1,1,1,1,1,1,1,1,1],\n[0,1,1,1,1,1,1,1,1,0],\n[1,1,1,1,1,1,0,0,1,1],\n[1,1,0,0,0,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,1,1,1,1,1,1,1],\n [1,0,1,0,1,0,0,0,0,0],\n [1,1,1,1,1,0,1,0,1,1],\n [1,0,1,1,1,0,1,0,0,0],\n [1,0,1,0,0,1,1,0,0,1],\n [0,0,0,1,0,1,1,1,0,1],\n [1,1,1,1,0,1,1,0,1,0],\n [1,0,1,1,1,0,1,1,1,1],\n [1,0,1,0,1,1,1,1,1,1],\n [1,0,1,1,1,0,1,1,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,1,0,1,0],[1,0,1,0,0,0,0,0,1,1],[0,0,0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me work through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll check each cell's neighbors and apply these rules:\n\nFor example:\n- Top left (0,0): Has 2 neighbors (right and below), stays dead\n- Position (0,1): Has 4 neighbors, dies due to overpopulation\n- Position (1,0): Has 5 neighbors, dies due to overpopulation\n\nWorking through each cell methodically...\n</reasoning>\n<answer>\n[[0,0,1,1,1,0,1,1,1,1],\n [1,0,1,0,0,0,0,0,0,0],\n [1,0,0,0,1,0,0,0,0,1],\n [1,0,0,0,1,0,1,0,0,0],\n [0,0,0,1,0,0,0,1,0,0],\n [0,1,1,1,0,0,0,1,0,0],\n [1,0,0,0,0,0,0,0,1,1],\n [1,0,0,0,1,0,0,0,0,1],\n [1,0,1,0,1,0,0,0,0,1],\n [1,0,1,1,1,0,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,1,1,1,0,1,1,0],\n [1,0,1,0,0,1,1,1,1,1],\n [0,1,1,1,1,0,0,0,0,1],\n [1,1,0,1,0,0,1,1,0,0],\n [1,1,0,1,1,0,0,1,1,1],\n [1,1,1,0,1,1,1,1,0,0],\n [0,1,0,1,0,1,0,0,1,1],\n [1,1,1,1,1,0,1,0,1,1],\n [1,0,0,0,1,0,1,0,0,0],\n [1,1,0,1,1,1,1,0,0,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,1,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive (reproduction)\n\nI'll go through each cell and count its neighbors (including diagonals) to determine its next state.\nFor edge cells, I'll only count the existing neighbors.\n\nFor example, for position [0,0]:\n- Current state: 1\n- Neighbors: [0,1], [1,0], [1,1] = 1 + 1 + 0 = 2\n- With 2 neighbors, this live cell survives\n\nI'll continue this process for each cell in the grid.\n</reasoning>\n<answer>\n[[1,0,1,0,0,1,1,1,1,1],\n [1,0,1,1,0,0,0,0,1,1],\n [1,1,1,1,0,0,1,1,0,0],\n [1,1,0,1,1,0,0,1,1,0],\n [1,1,0,1,1,1,1,1,1,0],\n [1,1,1,0,1,1,0,1,1,1],\n [1,1,1,1,1,1,1,0,0,1],\n [1,0,0,1,1,1,1,0,0,0],\n [1,1,0,0,1,1,1,0,0,0],\n [1,0,0,0,1,1,1,0,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,1,1,1,0,1,0,1],\n [0,1,0,0,1,1,0,0,0,1],\n [1,0,0,1,1,1,1,1,1,1],\n [1,1,1,1,0,1,1,1,1,1],\n [1,1,1,0,1,1,1,0,0,1],\n [1,0,1,0,0,1,1,0,1,1],\n [1,1,1,0,0,0,0,1,1,0],\n [1,1,1,0,1,0,0,1,0,1],\n [0,1,0,1,1,1,1,1,1,1],\n [0,1,1,0,0,0,1,1,1,0]].",
+        "expected_answer": "[[0,1,0,1,0,0,0,1,0,1],[0,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Then apply the Game of Life rules:\n   - A living cell (1) survives if it has 2 or 3 living neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\nLet me go through each cell, counting neighbors and applying these rules:\n- For edge cells, need to consider fewer neighbors\n- Creating a new grid to store the result\n- Double-checking counts for accuracy\n\nAfter counting and applying rules:\n- Cells with too many neighbors (>3) die from overcrowding\n- Cells with too few neighbors (<2) die from isolation\n- New cells born in spaces with exactly 3 neighbors\n</reasoning>\n<answer>\n[[0,1,0,1,1,1,0,0,0,1],\n[1,1,0,0,1,1,1,1,1,1],\n[1,1,1,1,1,0,1,1,1,1],\n[1,0,0,1,0,0,1,1,1,1],\n[1,1,1,0,0,1,1,1,1,1],\n[1,1,1,0,0,1,0,1,1,1],\n[1,1,1,0,0,0,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,0,1,1,1,1,0],\n[0,1,1,1,1,1,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,1,0,1,1,1,1,0],\n [1,0,1,1,1,0,0,0,1,1],\n [1,0,1,0,1,0,1,1,1,1],\n [0,1,1,1,1,0,0,0,1,1],\n [1,0,1,1,1,0,0,1,0,1],\n [1,1,0,1,1,1,1,1,0,0],\n [1,1,1,1,0,1,1,1,1,1],\n [0,1,1,0,1,1,0,1,0,0],\n [0,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,0,1,1,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell in the grid, I need to:\n   - Count its living neighbors (including diagonals)\n   - Apply Game of Life rules:\n     * Live cell survives if it has 2 or 3 live neighbors\n     * Dead cell becomes alive if it has exactly 3 live neighbors\n     * All other cells die or stay dead\n\n2) For each cell, I'll count the 8 adjacent cells (being careful at edges)\n   and apply these rules.\n\n3) For example, let's check position [0,0]:\n   - Current state: 1 (alive)\n   - Neighbors: [0,1], [1,0], [1,1] = 0+1+0 = 1 neighbor\n   - With only 1 neighbor, this cell will die\n\n4) I'll continue this process for each cell...\n\n5) After checking each position according to the rules, the resulting configuration\n   will show more isolated areas as many cells will die due to under/overpopulation.\n</reasoning>\n<answer>\n[[0,1,1,1,0,0,1,1,1,0],\n [0,1,1,1,1,0,1,0,1,1],\n [0,1,1,1,1,0,0,1,1,1],\n [1,1,1,1,1,0,0,0,1,1],\n [1,0,1,1,1,1,1,0,0,0],\n [1,1,0,1,1,1,1,1,0,1],\n [1,1,1,1,0,1,1,1,1,1],\n [0,1,1,1,1,1,1,1,1,0],\n [1,1,1,1,1,1,1,1,1,1],\n [0,1,1,1,0,1,1,1,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,0,0,0,1,0,1,0],\n [0,0,1,1,0,0,1,1,0,1],\n [0,1,1,0,1,1,1,0,1,1],\n [0,0,1,0,1,1,0,0,0,0],\n [1,0,0,1,0,1,1,1,1,1],\n [1,1,1,1,1,0,0,1,0,1],\n [1,1,1,1,1,1,1,1,0,0],\n [0,1,1,1,1,1,0,0,0,0],\n [1,1,1,1,1,1,0,1,0,0],\n [1,0,1,0,1,1,1,1,0,1]].",
+        "expected_answer": "[[1,0,1,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[1,1,0,0,0,0,0,0,1,1],[0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Game of Life rules:\n   - Living cell (1) survives if it has 2 or 3 living neighbors\n   - Dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\nLet me go through each cell and apply these rules. For cells on the edges, I'll treat out-of-bounds cells as dead (0).\n\nWorking through a few examples:\n- Top left corner (1): Has 0 neighbor above, 0 to left, 0 diagonal top-left, etc. Total 1 living neighbor \u2192 Dies\n- Position (1,2): Has 5 living neighbors \u2192 Dies\n- Position (2,2): Has 4 living neighbors \u2192 Dies\n\nAfter checking each cell systematically...\n\n</reasoning>\n<answer>\n[[0,1,1,1,0,1,1,1,1,0],\n [0,1,1,1,1,1,1,1,1,1],\n [0,1,0,0,0,0,1,1,1,0],\n [0,1,1,0,0,0,1,1,1,1],\n [1,1,0,0,0,0,0,1,1,1],\n [1,0,0,0,0,0,1,1,1,1],\n [1,0,0,0,0,0,1,1,0,0],\n [1,1,0,0,0,0,1,1,0,0],\n [1,1,0,0,0,0,1,1,1,0],\n [1,1,1,1,1,1,1,1,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,0,1,1,1,0,0,0],\n [1,0,0,1,1,1,0,0,1,0],\n [1,1,1,1,1,1,1,0,1,1],\n [0,0,1,1,0,1,0,0,1,1],\n [1,1,1,1,0,1,1,1,0,1],\n [1,0,1,1,1,1,1,1,1,1],\n [0,1,0,1,1,1,1,1,1,0],\n [1,1,0,0,1,0,0,1,1,1],\n [1,1,1,0,1,0,1,1,1,0],\n [1,0,1,1,1,0,1,0,0,1]].",
+        "expected_answer": "[[1,0,1,0,0,0,1,1,0,0],[0,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,1,0,0,0],[0,0,0,0,0,0,0,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors lives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll need to count neighbors for each cell and apply these rules. Let me work through this:\n1. For each cell, count its 8 neighbors (horizontal, vertical, diagonal)\n2. Apply the rules based on current state and neighbor count\n3. Build the new grid\n\nFor a board this size, it's complex to calculate manually, but I can see patterns:\n- Corners and edges tend to have fewer neighbors\n- Dense clusters often lead to deaths from overpopulation\n- Isolated cells tend to die\n- Groups of 3 tend to survive or create new life\n</reasoning>\n<answer>\n[\n[1,0,0,1,1,1,1,0,0,0],\n[1,1,1,1,0,0,1,0,1,0],\n[1,1,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[0,1,1,0,0,0,0,0,1,1],\n[1,1,1,1,1,0,0,0,1,1],\n[1,0,1,1,1,1,1,0,1,1],\n[1,1,1,1,1,0,1,1,1,1],\n[1,1,1,0,1,1,1,1,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,1,1,1,1,1,1,1],\n [1,1,1,1,1,0,1,0,0,0],\n [0,0,0,1,1,1,1,1,0,1],\n [1,1,0,1,1,0,1,1,1,0],\n [0,1,1,0,1,0,0,0,1,1],\n [1,1,1,1,0,1,1,1,1,1],\n [1,1,1,1,1,0,1,1,0,1],\n [1,1,1,0,1,1,1,1,0,1],\n [0,0,1,1,1,0,0,0,1,0],\n [1,1,0,0,0,0,1,1,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1],[0,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors and apply Game of Life rules:\n   - Living cell (1) survives if it has 2 or 3 living neighbors\n   - Dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\n2) I'll go through each cell one by one, counting neighbors (including diagonals)\n   and applying these rules.\n\n3) Important observations:\n   - Cells on the edges have fewer neighbors\n   - Need to check all 8 surrounding positions for each cell\n\n4) Going through each cell and calculating:\n   - For cells with many living neighbors (>3), they'll die from overpopulation\n   - For cells with few living neighbors (<2), they'll die from underpopulation\n   - Dead cells with exactly 3 neighbors will spring to life\n\n5) The board is 10x10, and I'll create a new board with the updated state\n</reasoning>\n<answer>\n[[1,1,1,1,1,1,1,1,0,0],\n [1,1,0,1,1,1,1,1,0,0],\n [1,1,1,1,1,1,1,1,1,0],\n [1,1,1,1,1,1,0,1,1,1],\n [1,1,1,1,1,1,0,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,0,0,0,0],\n [1,1,1,1,0,0,0,1,1,1],\n [0,1,1,1,0,0,0,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,0,1,1,1,0,1,1],\n [1,0,1,1,0,1,1,1,1,1],\n [1,0,0,1,1,1,1,1,1,1],\n [1,0,1,1,1,0,0,1,1,1],\n [0,1,1,1,1,0,1,0,0,0],\n [0,1,1,0,1,0,0,1,1,1],\n [1,1,1,0,0,1,1,0,0,1],\n [1,1,0,1,1,1,1,0,0,0],\n [1,0,1,1,1,0,0,0,1,0],\n [0,1,1,0,0,0,1,1,1,0]].",
+        "expected_answer": "[[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,1,0,0,1,1,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,1,0,0],[1,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,1,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Conway's Game of Life rules:\n   - A living cell (1) survives if it has 2 or 3 living neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\nLet me examine each cell carefully, counting its neighbors and applying the rules.\nFor example, for the cell at (0,0):\n- It has living neighbors at (0,1), (1,0), (1,1)\n- Total: 3 living neighbors\n- Since it's currently alive and has 3 neighbors, it survives\n\nI'll continue this process for each cell, building the new grid.\n\nAfter checking each position methodically, I can construct the next state of the grid.\n</reasoning>\n<answer>\n[[1,0,1,1,1,1,1,1,1,1],\n[1,0,0,1,0,1,1,1,1,1],\n[1,0,0,1,1,1,0,1,1,1],\n[0,0,1,1,1,0,0,0,1,1],\n[0,1,1,1,1,0,0,0,0,0],\n[1,1,1,0,1,1,0,0,0,1],\n[1,1,1,1,0,1,1,1,0,0],\n[1,1,0,1,1,1,0,0,0,0],\n[0,1,1,1,0,0,0,0,0,0],\n[0,1,1,1,0,0,0,1,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,0,1,0,1,1,0,0,0,0],\n [0,1,1,0,1,0,0,0,0,0],\n [1,0,1,0,1,0,1,1,1,0],\n [0,1,1,1,1,1,1,1,1,0],\n [1,1,1,1,1,1,0,1,1,1],\n [0,0,0,1,1,1,1,0,1,1],\n [1,0,1,0,1,1,1,0,1,1],\n [0,0,1,0,0,1,0,1,1,1],\n [1,1,1,0,0,1,0,1,0,1],\n [1,0,1,1,1,1,1,1,1,1]].",
+        "expected_answer": "[[1,0,0,0,0,0,0,1,1,1],[0,0,1,0,1,0,1,1,0,0],[1,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,1,1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0,0]]",
+        "model_answer": "<reasoning>\nLet me simulate one step of Conway's Game of Life using these rules:\n1. Any live cell with 2 or 3 live neighbors survives\n2. Any dead cell with exactly 3 live neighbors becomes alive\n3. All other cells die or stay dead\n\nI'll check each cell's neighbors (including diagonals) and apply these rules.\n\nFor example, for position [0,0]:\n- It's currently dead (0)\n- Has neighbors: [0,1], [1,0], [1,1]\n- Count of live neighbors = 2\n- With 2 neighbors and being dead, it stays dead (0)\n\nI'll continue this process for each cell in the grid, keeping track of the new state in a separate grid to apply all changes simultaneously.\n</reasoning>\n\n<answer>\n[[0,1,1,1,1,0,0,0,0,0],\n[1,1,0,0,1,1,1,0,0,0],\n[1,0,0,0,1,0,1,1,1,0],\n[1,0,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,0,0,1,1],\n[1,1,1,1,0,0,1,0,1,1],\n[0,1,1,0,1,0,1,0,1,1],\n[1,1,1,0,1,1,1,1,1,1],\n[1,0,1,1,1,1,0,1,1,1],\n[1,1,1,1,1,1,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,0,1,0,1,0,1,1],\n [1,0,0,1,1,1,1,1,1,1],\n [1,1,0,1,1,1,1,1,1,1],\n [0,1,0,1,1,0,0,1,0,1],\n [1,1,0,0,1,1,1,0,1,0],\n [1,1,0,1,1,1,0,0,1,1],\n [1,1,0,1,1,1,1,1,1,1],\n [0,1,0,0,1,1,0,0,1,1],\n [0,0,1,0,0,1,1,0,1,0],\n [0,0,1,1,1,0,1,1,1,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,1,1,0,0,0,0,0,0,0],[1,0,0,0,1,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply Conway's Game of Life rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n2) For each cell at coordinates (i,j), I'll count neighbors at:\n   (i-1,j-1), (i-1,j), (i-1,j+1)\n   (i,j-1),             (i,j+1)\n   (i+1,j-1), (i+1,j), (i+1,j+1)\n\n3) Starting from edges:\n   - Top row will mostly die due to underpopulation\n   - Middle sections will have more survival due to higher density\n   - Need to carefully count each cell's neighbors\n\n4) I'll process each cell using these rules, being careful about edge cases.\n\nLet me calculate a few examples:\n- Cell (0,0) has 3 neighbors (right, bottom, bottom-right) - it survives\n- Cell (0,1) has 4 neighbors - it dies\n- And so on...\n\nAfter calculating for entire grid...\n</reasoning>\n<answer>\n[[1,0,1,1,1,1,1,1,1,1],\n [1,0,0,1,1,1,1,1,1,1],\n [1,1,0,1,0,0,1,1,1,1],\n [1,1,0,0,0,0,0,0,1,1],\n [1,1,0,0,0,0,0,1,1,1],\n [1,1,0,1,0,0,0,1,1,1],\n [1,1,0,1,0,0,1,1,1,1],\n [0,1,1,0,1,1,1,1,1,0],\n [0,1,1,1,1,1,1,1,1,0],\n [0,0,1,1,1,1,1,1,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,0,1,1,1,1,1,1],\n [0,1,0,1,0,1,0,1,1,1],\n [0,1,0,0,0,1,0,1,1,1],\n [1,0,1,0,0,0,1,0,1,1],\n [1,1,0,1,1,1,0,1,1,1],\n [1,1,1,0,0,1,1,0,1,1],\n [1,1,0,1,1,0,0,1,1,1],\n [0,1,1,1,1,1,0,0,0,1],\n [1,1,1,1,0,1,1,1,0,1],\n [0,0,0,1,1,0,1,0,1,1]].",
+        "expected_answer": "[[0,1,0,0,0,0,0,0,0,0],[0,1,0,1,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,0,0],[0,0,1,1,0,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me go through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply the Game of Life rules:\n   - A living cell (1) survives if it has 2 or 3 living neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\n2) For edge cells, I'll consider cells outside the grid as dead (0)\n\n3) Let me process each cell:\n   - For each position, count the 8 neighboring cells (or fewer for edges)\n   - Apply the rules above\n   - Build new grid row by row\n\n4) After checking each cell according to the rules:\n   - Some crowded areas will die off\n   - Some empty areas with exactly 3 neighbors will spring to life\n   - Areas with balanced populations will remain stable\n\n5) The resulting pattern will show areas where:\n   - Overpopulation caused death\n   - Underpopulation caused death\n   - Perfect conditions maintained life\n   - Reproduction occurred\n</reasoning>\n<answer>\n[[0,1,1,1,1,1,1,1,1,1],\n [0,1,0,1,0,1,1,1,1,1],\n [0,1,1,0,0,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,0,0,1,1],\n [1,1,1,1,1,1,1,0,0,1],\n [0,1,1,1,1,1,1,1,1,1],\n [0,0,1,1,1,1,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,0,0,0,1,1,1,1,1,1],\n [1,1,1,1,0,0,0,1,1,1],\n [1,1,0,1,0,1,1,0,1,1],\n [1,1,0,0,1,1,1,0,1,1],\n [1,1,0,0,0,1,1,0,0,1],\n [1,1,1,0,1,1,0,1,0,0],\n [0,1,1,0,0,1,1,1,1,1],\n [1,1,1,0,1,1,1,1,1,1],\n [0,1,1,0,0,1,1,0,1,0],\n [0,0,1,1,1,1,0,0,0,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0],[0,1,1,0,0,0,0,0,0,1]]",
+        "model_answer": "<reasoning>\nLet me go through the Game of Life rules:\n1. Any live cell with 2 or 3 live neighbors survives\n2. Any dead cell with exactly 3 live neighbors becomes alive\n3. All other cells die or stay dead\n\nI'll check each cell's neighbors (including diagonals) and apply these rules.\n\nFor each cell, I need to:\n1. Count its live neighbors (including diagonals)\n2. Apply survival rules for live cells (need 2 or 3 neighbors)\n3. Apply birth rules for dead cells (need exactly 3 neighbors)\n\nGoing through the grid systematically, counting neighbors for each position and applying the rules...\n</reasoning>\n<answer>\n[[0,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,0,0,1,1,1,1],\n [1,1,0,1,0,0,1,0,1,1],\n [1,1,0,0,1,1,1,0,1,1],\n [1,1,0,0,0,1,1,0,0,0],\n [1,1,1,0,0,1,1,1,0,0],\n [1,1,1,0,1,1,1,1,1,0],\n [1,1,1,0,1,1,1,1,1,0],\n [0,1,1,1,1,1,1,0,0,0],\n [0,1,1,1,1,1,0,0,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,0,1,0,0,1,1,0],\n [0,1,0,0,1,1,1,1,1,0],\n [1,1,0,1,1,1,1,1,1,0],\n [1,1,0,0,1,0,0,1,1,1],\n [0,1,1,1,0,0,1,1,1,1],\n [1,0,1,1,1,1,1,1,1,1],\n [0,1,1,1,1,0,1,1,1,1],\n [0,1,0,1,1,0,1,1,1,1],\n [0,1,1,0,1,1,1,1,1,0],\n [1,1,0,0,0,1,1,0,0,1]].",
+        "expected_answer": "[[0,0,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1]]",
+        "model_answer": "<reasoning>\nLet me work through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply these rules:\n   - A living cell (1) survives if it has 2 or 3 living neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\n2) Going through each cell, calculating neighbors and applying rules:\n   - I need to check all 8 adjacent cells for each position\n   - Need to be careful about edge cells (they have fewer neighbors)\n   \n3) Key transitions I notice:\n   - Many dense areas (with more than 3 neighbors) will die off\n   - Some empty spaces with exactly 3 neighbors will come alive\n   - Isolated pairs or small groups will disappear\n   - Areas with good balance (2-3 neighbors) will survive\n\n4) After applying rules:\n   - The edges will tend to die off\n   - Dense middle areas will thin out\n   - Some new cells will appear in previously empty spaces\n\nLet me calculate each position carefully...\n</reasoning>\n<answer>\n[\n[0,1,1,1,1,1,1,1,1,0],\n[1,1,1,0,1,1,1,0,1,1],\n[1,1,1,0,0,0,0,0,1,1],\n[1,0,0,0,1,0,0,0,1,1],\n[1,1,1,1,0,0,0,0,1,1],\n[1,0,0,1,1,1,1,0,1,1],\n[0,1,0,1,1,0,1,0,1,1],\n[0,1,1,1,1,0,1,0,1,1],\n[1,1,1,1,1,1,1,0,1,1],\n[0,1,1,0,1,1,1,1,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,1,1,1,1,1,0,1],\n [1,1,1,1,1,0,0,1,1,0],\n [1,1,0,0,0,1,0,1,0,1],\n [0,0,1,0,0,1,1,1,0,1],\n [1,1,0,1,1,0,0,1,0,1],\n [1,1,0,1,1,0,1,1,1,0],\n [0,1,0,1,1,1,1,1,0,0],\n [1,0,0,0,1,1,1,1,1,1],\n [0,0,1,1,1,1,1,0,1,1],\n [1,0,1,1,0,0,1,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,1,1,0,1,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[1,1,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll go through each cell and count its neighbors (including diagonals) to determine its next state.\nFor edge cases, I'll treat cells outside the grid as dead (0).\n\nLet me check a few example cells:\n- Top left (1,0,0): Has 3 neighbors (1,1,1), so stays alive\n- Center cells have many neighbors due to high density, many will die from overpopulation\n- The pattern seems dense, so many cells will die from overpopulation while some dead cells will spring to life\n\nGoing through the entire grid methodically...\n</reasoning>\n<answer>\n[\n[1,1,1,1,1,1,1,1,1,0],\n[1,0,0,0,1,0,0,1,1,1],\n[1,1,0,0,0,0,0,1,1,1],\n[1,1,1,0,0,0,0,1,1,1],\n[1,1,0,0,0,0,1,1,1,0],\n[1,1,0,0,0,1,1,0,1,1],\n[1,1,0,0,0,1,0,0,1,1],\n[0,0,0,1,0,0,0,0,1,1],\n[0,1,1,1,0,0,0,1,1,1],\n[0,1,1,1,1,1,0,1,1,1]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,1,1,1,1,1,0,1],\n [0,1,0,1,0,0,0,0,1,1],\n [1,0,1,1,0,0,0,1,0,1],\n [0,1,1,0,1,0,0,1,0,0],\n [1,1,1,0,1,0,1,1,1,1],\n [0,0,1,1,0,0,1,0,1,1],\n [1,1,1,1,1,1,0,1,1,1],\n [1,1,1,1,1,0,1,1,1,1],\n [1,0,0,0,1,1,0,0,0,0],\n [1,0,1,1,0,1,1,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,0,1,0,0,0,0],[0,0,0,0,1,0,0,1,0,1],[0,0,0,0,1,1,0,0,0,0],[0,0,0,0,1,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply the Game of Life rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n2) I'll go through each cell and count its neighbors, considering the edges as dead cells.\n\n3) Starting from the top row and working down:\n   - Most edge cells will die due to underpopulation\n   - Large clusters will thin out\n   - Cells with enough neighbors will survive\n   - Dead cells surrounded by exactly 3 live cells will come to life\n\n4) After checking each cell according to these rules and their neighbor counts:\n   - Many of the isolated cells will die\n   - Some new cells will appear in gaps between existing cells\n   - Dense areas will thin out somewhat\n   - The pattern will show typical Game of Life behavior of cells dying from overcrowding or underpopulation\n</reasoning>\n<answer>\n[\n[0,1,0,1,1,1,1,1,1,1],\n[1,1,1,1,0,0,0,1,1,1],\n[0,1,1,1,1,0,0,1,1,1],\n[1,1,0,1,1,0,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,0,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,0,0],\n[1,1,1,1,1,1,1,0,0,0],\n[1,0,0,1,1,1,1,0,0,1]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,1,0,1,1,1,1,1],\n [0,0,1,1,1,0,1,0,1,1],\n [0,1,1,0,1,1,1,1,1,0],\n [1,1,1,1,1,1,0,0,1,1],\n [0,1,0,0,1,1,1,0,1,0],\n [1,1,0,1,1,1,0,1,0,1],\n [1,1,1,0,0,0,0,0,0,0],\n [1,1,1,1,0,1,0,0,1,1],\n [0,0,0,0,1,1,1,1,0,1],\n [0,0,1,1,0,1,1,1,1,0]].",
+        "expected_answer": "[[1,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,1,1,1],[0,0,0,0,0,1,1,0,0,0],[0,0,0,1,0,1,0,1,1,0],[0,0,0,0,0,0,0,0,0,0],[1,0,1,1,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Conway's Game of Life rules:\n   - Living cell (1) with < 2 neighbors dies (underpopulation)\n   - Living cell with 2 or 3 neighbors survives\n   - Living cell with > 3 neighbors dies (overpopulation)\n   - Dead cell (0) with exactly 3 neighbors becomes alive\n\nLet me work through each cell, counting neighbors and applying rules:\n\nSome example calculations:\n- Top-left cell (0) has 2 living neighbors -> stays dead\n- Cell at (0,1) has 2 living neighbors -> stays alive\n- Cell at (0,2) has 4 living neighbors -> stays dead\n\nI'll do this for each cell, tracking the new state in a new grid.\n\nWhat helps is that cells with too many neighbors die, cells with too few die, and cells need exactly 3 neighbors to come alive. Most cells with many living neighbors around them will die due to overpopulation.\n</reasoning>\n<answer>\n[[0,1,1,1,1,1,1,1,1,1],\n [1,0,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,0,0,1,1,1,1,0],\n [1,1,1,0,0,1,1,1,1,1],\n [1,1,1,1,1,1,0,0,1,0],\n [1,1,1,1,1,1,0,1,0,0],\n [1,1,1,1,1,1,1,1,1,1],\n [0,1,1,1,1,1,1,1,1,1],\n [0,0,0,1,1,1,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,0,1,1,1,1,0,1,0],\n [1,1,0,1,0,1,0,1,1,1],\n [1,0,1,1,0,1,0,1,1,0],\n [1,1,1,0,1,0,0,1,0,0],\n [0,1,0,1,1,1,1,1,1,1],\n [1,1,1,0,1,0,1,0,1,0],\n [1,1,1,0,1,0,1,1,0,1],\n [1,1,0,0,1,1,1,1,1,1],\n [0,1,1,1,0,0,1,1,1,0],\n [1,1,1,1,0,0,1,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its live neighbors (including diagonals)\n2) Apply the Game of Life rules:\n   - Live cell with 2-3 neighbors survives\n   - Dead cell with exactly 3 neighbors becomes alive\n   - All other cells die or stay dead\n\nLet me process each cell:\n- For border cells, I'll consider cells outside the grid as dead (0)\n- I'll count neighbors for each position and apply the rules\n- For example, for position [0,0]:\n  - Current state: 1\n  - Neighbors: [1,0,1,1] = 3 live neighbors\n  - With 3 neighbors and being alive, it survives\n\nGoing through this process for each cell systematically...\n</reasoning>\n<answer>\n[[1,1,0,1,1,1,1,0,1,0],\n [1,0,0,1,0,1,0,1,1,1],\n [1,1,1,1,0,0,0,1,1,0],\n [1,1,1,0,1,1,1,1,1,0],\n [1,1,1,1,1,0,1,1,1,1],\n [1,1,1,0,1,0,1,1,1,0],\n [1,1,1,0,1,1,1,1,1,1],\n [1,1,1,0,1,0,1,1,1,1],\n [1,1,1,1,0,1,1,1,1,0],\n [1,1,1,1,0,0,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,1,0,0,0,1,1,0],\n [0,0,0,1,1,1,1,0,0,1],\n [1,0,1,1,1,1,1,1,1,1],\n [1,1,1,0,1,0,0,1,0,1],\n [1,1,1,0,1,1,0,1,1,0],\n [1,1,1,0,1,1,0,0,0,0],\n [1,1,1,1,0,0,0,1,0,1],\n [1,1,1,1,0,0,1,1,0,0],\n [0,0,1,1,1,1,1,1,0,1],\n [0,0,1,0,1,1,1,1,1,0]].",
+        "expected_answer": "[[0,1,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,1,0,1,0,0],[0,0,0,0,0,1,0,1,1,1],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply Conway's Game of Life rules:\n   - Living cell (1) with < 2 neighbors dies (underpopulation)\n   - Living cell (1) with 2 or 3 neighbors survives\n   - Living cell (1) with > 3 neighbors dies (overpopulation)\n   - Dead cell (0) with exactly 3 neighbors becomes alive (reproduction)\n\n2) I'll go through each cell, counting its neighbors and applying these rules.\n   For example:\n   - Top-left cell (1) has 1 neighbor, so it dies\n   - Cell at (0,2) has 2 neighbors, so it survives\n   - Cell at (1,3) has 6 neighbors, so it dies\n\n3) Each cell's fate is determined by its neighbors in the original grid, not by cells that have already changed.\n\n4) The edges of the grid don't wrap around (cells on edges have fewer neighbors).\n</reasoning>\n<answer>\n[\n[0,0,0,1,1,1,1,1,0,0],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,0,1,0,1,1,1,0],\n[1,1,1,0,0,0,0,0,0,0],\n[1,1,1,1,1,1,0,0,0,0],\n[1,1,1,1,1,1,1,0,0,0],\n[1,1,1,1,1,1,1,1,1,0],\n[0,1,1,1,1,1,1,1,1,0],\n[0,0,1,1,1,1,1,1,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,0,1,0,1,0,1,0],\n [0,0,0,0,1,1,1,0,0,0],\n [0,0,1,0,0,0,0,0,1,1],\n [1,0,1,1,0,1,1,1,0,1],\n [1,0,1,1,1,1,1,1,1,1],\n [0,1,1,1,1,0,1,1,1,1],\n [1,1,1,0,1,1,0,1,1,0],\n [1,1,0,1,1,1,0,0,0,1],\n [1,1,1,0,1,1,0,1,1,1],\n [0,1,1,0,0,0,0,1,0,0]].",
+        "expected_answer": "[[1,0,1,0,1,0,1,0,0,0],[1,0,1,0,1,0,1,0,1,0],[1,1,1,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,1,0,0],[0,0,0,0,1,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) In Conway's Game of Life, each cell's next state is determined by these rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n2) For each cell, I need to count its 8 neighbors and apply these rules.\n\n3) Let me process each cell methodically, considering edge cases where cells are on the borders.\n\n4) Key patterns to watch for:\n   - Isolated cells will die\n   - Cells with too many neighbors (>3) will die from overpopulation\n   - Dead cells with exactly 3 neighbors will spring to life\n\n5) I'll scan through the grid, keeping track of each cell's fate based on its neighborhood count.\n\n6) The pattern has several dense clusters which will likely thin out, and some isolated cells which will disappear.\n</reasoning>\n<answer>\n[\n[0,1,0,1,1,1,1,0,0,0],\n[0,1,1,0,1,1,1,1,1,0],\n[0,0,1,1,1,1,1,1,1,1],\n[1,1,1,1,0,0,1,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,0,1,1,1],\n[1,1,1,1,1,1,1,1,1,0],\n[1,1,1,0,1,0,0,0,1,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,1,0,0,1,0,0,1],\n [1,1,1,1,0,1,1,0,1,0],\n [1,1,1,0,0,0,0,1,1,1],\n [1,1,1,0,1,1,0,1,1,0],\n [1,0,0,1,1,0,1,1,0,1],\n [1,0,1,0,1,1,0,1,1,1],\n [0,1,1,1,1,0,1,1,0,0],\n [1,1,0,1,1,1,1,1,1,1],\n [1,1,0,1,1,0,0,0,1,1],\n [1,0,0,0,1,1,1,1,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me work through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n3) Key patterns to look for:\n   - Overpopulation (>3 neighbors)\n   - Underpopulation (<2 neighbors)\n   - Perfect conditions (2-3 neighbors for live cells, 3 for dead cells)\n\n4) For each cell, I'll count neighbors and apply rules. Some notable cases:\n   - Corner cells only have 3 neighbors\n   - Edge cells have 5 neighbors\n   - Middle cells have all 8 neighbors\n\n5) Going through each cell systematically, marking cells that will live in the next generation based on current state and neighbor count.\n\n</reasoning>\n<answer>\n[\n[1,1,1,1,0,1,1,0,1,0],\n[1,0,0,1,0,1,1,1,1,1],\n[1,0,0,1,0,1,0,1,1,1],\n[1,0,0,1,1,0,0,1,1,1],\n[1,0,0,1,1,1,1,1,1,1],\n[0,1,1,1,1,1,1,1,1,0],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,0,1,1,1,0,1,1,1],\n[1,1,0,1,1,1,1,0,1,1],\n[1,0,0,1,1,1,0,1,1,1]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,1,1,1,1,1,0,0],\n [1,1,1,1,1,0,1,0,1,1],\n [1,0,1,1,1,1,1,0,0,0],\n [1,1,1,1,1,0,0,0,1,1],\n [0,1,0,0,0,1,1,1,1,0],\n [0,1,0,1,0,0,0,0,1,0],\n [0,1,1,1,1,0,0,1,1,1],\n [0,1,1,1,0,1,1,0,1,1],\n [1,1,0,1,1,1,1,0,1,1],\n [1,1,0,0,0,0,0,1,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,1,1,0,0,0],[0,1,0,1,0,1,0,0,0,0],[0,0,0,0,0,1,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Rules:\n   - Any live cell with fewer than 2 live neighbors dies (underpopulation)\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any live cell with more than 3 live neighbors dies (overpopulation)\n   - Any dead cell with exactly 3 live neighbors becomes alive (reproduction)\n\nLet me go through each cell:\n- Most cells in the interior of dense areas will die due to overpopulation\n- Edge cells are more likely to survive as they have fewer neighbors\n- Dead cells adjacent to 3 live cells will come alive\n\nLooking at some key patterns:\n- Large clusters of 1s will mostly die in the middle\n- The edges of the clusters will tend to survive\n- Some new cells will be born in the gaps between existing cells\n\nLet me solve for a few cells as examples:\n- Top left corner (1): Has 3 neighbors (right and two diagonal), survives\n- Center areas with many 1s: Most will die due to >3 neighbors\n- Isolated 1s with few neighbors: Will die due to underpopulation\n</reasoning>\n<answer>\n[\n  [1,0,0,0,0,0,0,1,1,0],\n  [1,0,0,0,0,1,0,0,0,1],\n  [1,0,0,0,0,0,1,1,1,1],\n  [1,0,0,0,0,1,1,0,0,1],\n  [1,0,1,1,0,0,0,0,0,1],\n  [0,0,0,1,1,1,0,1,0,1],\n  [0,0,0,0,0,1,1,0,0,0],\n  [1,0,0,0,1,0,1,0,0,1],\n  [1,1,1,0,0,0,0,1,0,1],\n  [1,1,1,0,0,0,1,0,1,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,1,1,0,1,1,1,1],\n [0,1,0,0,1,0,0,1,0,0],\n [0,1,0,1,0,1,1,0,1,1],\n [1,1,1,0,0,0,1,1,0,1],\n [1,1,0,1,1,1,0,1,0,1],\n [1,0,1,1,0,1,1,1,0,0],\n [1,1,1,0,1,1,1,1,1,1],\n [1,0,1,0,1,1,0,0,1,1],\n [1,0,1,1,1,1,1,0,1,0],\n [1,0,0,0,0,1,1,1,0,1]].",
+        "expected_answer": "[[0,1,0,1,1,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,0,0,1,1,1,0,0,0,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through the Game of Life rules:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll go through each cell and count its neighbors (including diagonals) and apply these rules.\n\nFor example, let's look at a few cells:\n- Top-left corner (1): Has 2 neighbors (1 right, 1 diagonal), so it survives\n- Position (0,1): Has 3 neighbors, becomes alive\n- Position (1,1): Has 5 neighbors, dies due to overpopulation\n\nGoing through the entire grid systematically...\n</reasoning>\n<answer>\n[[1,1,0,1,1,1,1,1,1,1],\n [1,0,1,0,1,1,1,1,1,1],\n [1,1,1,1,0,0,1,1,1,1],\n [1,1,1,1,0,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,0,0],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,0,1,1],\n [1,0,1,1,1,1,1,1,1,1],\n [1,1,1,0,1,1,1,1,1,1],\n [1,0,1,0,1,1,1,1,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,0,0,1,0,1,0,0],\n [1,1,1,1,1,1,1,0,0,0],\n [0,1,1,1,0,1,1,1,0,1],\n [0,1,1,1,1,1,1,1,1,0],\n [0,0,1,0,1,0,1,1,0,0],\n [1,0,0,1,1,1,0,1,1,1],\n [0,1,1,0,1,0,0,0,1,0],\n [1,1,0,1,1,1,1,1,1,0],\n [1,1,1,0,1,0,0,0,1,1],\n [0,1,0,1,1,0,0,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,1,1,1,0,1,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) In Conway's Game of Life, for each cell:\n   - A live cell (1) survives if it has 2 or 3 live neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 live neighbors\n   - All other cells die or stay dead\n\n2) I need to check each cell and count its 8 neighbors\n   \n3) Going through the grid systematically, checking each position's neighbors and applying the rules.\n   For example, for position [0,0]:\n   - It's currently alive (1)\n   - It has live neighbors at [0,5], [1,0], [1,1]\n   - That's 3 live neighbors, so it survives\n\n4) I'll do this for every position, counting neighbors and applying the rules to determine the next state.\n\n5) Key patterns to note:\n   - Dense areas tend to have more survivors\n   - Isolated cells tend to die\n   - Areas with too many live cells (>3 neighbors) will have deaths\n\n6) The dense middle section will see significant changes due to overcrowding.\n</reasoning>\n<answer>\n[\n[1,1,0,0,1,1,1,0,0,0],\n[1,0,0,0,1,0,1,1,0,0],\n[1,0,0,0,0,0,0,1,1,0],\n[0,1,0,0,0,0,0,1,1,0],\n[0,1,1,0,1,0,0,1,1,1],\n[0,1,1,0,1,1,0,1,1,1],\n[1,1,1,0,1,0,1,1,1,1],\n[1,0,0,1,1,0,0,0,1,1],\n[1,1,1,1,1,0,0,1,1,1],\n[1,1,1,1,1,0,0,0,1,1]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,1,1,1,1,0,1,0],\n [1,1,0,0,0,1,1,1,0,1],\n [1,1,1,1,0,0,1,0,1,1],\n [0,1,1,0,0,1,1,1,1,1],\n [1,0,0,1,1,1,1,0,1,0],\n [1,1,1,1,1,1,1,1,0,1],\n [1,0,1,0,0,0,1,0,1,1],\n [0,1,1,1,1,1,1,0,0,1],\n [1,0,1,0,1,1,1,0,1,1],\n [0,0,1,0,1,0,0,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me work through this step by step:\n\n1) For each cell, I need to count its living neighbors and apply the Game of Life rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n2) For each cell, I'll count its 8 surrounding neighbors and apply these rules.\n\n3) Working through some key examples:\n   - The corner cell [0][0] has 3 live neighbors (1,1,0 positions) \u2192 becomes alive\n   - The cell [0][1] has 4 live neighbors \u2192 dies\n   - Middle cells require checking all 8 surrounding positions\n\n4) The pattern shows a lot of dense living cells, which often leads to significant die-offs due to overcrowding (>3 neighbors).\n\n5) I'll process each cell methodically, keeping in mind edge cases at the borders.\n\n</reasoning>\n<answer>\n[\n[1,0,0,0,0,0,0,1,0,0],\n[0,0,0,0,0,0,1,1,1,1],\n[1,1,0,0,0,0,1,1,1,1],\n[1,0,0,0,0,0,1,1,1,1],\n[0,0,0,0,1,1,1,1,1,0],\n[1,1,1,1,1,0,1,0,1,1],\n[1,1,1,1,0,0,1,1,0,0],\n[0,0,1,1,1,1,1,1,0,0],\n[0,0,1,1,1,1,0,0,0,1],\n[0,0,0,0,1,1,0,0,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,0,0,1,0,0,1,1],\n [1,0,1,1,1,1,1,0,0,0],\n [1,1,1,1,0,1,1,0,0,1],\n [1,1,1,1,1,1,0,1,0,0],\n [1,1,1,0,1,1,1,0,1,1],\n [1,1,0,1,1,0,0,0,1,0],\n [1,1,0,1,1,1,0,0,1,0],\n [1,1,1,1,0,0,1,1,1,1],\n [0,1,0,1,1,0,1,1,0,1],\n [1,0,0,0,0,0,1,1,1,0]].",
+        "expected_answer": "[[1,0,1,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,1,0,1],[0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,1,0,1,0],[0,0,0,0,0,0,1,0,1,0],[0,0,0,0,0,1,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,1,1,0,0,0,0,0],[0,0,1,1,1,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell in the grid, I'll count its living neighbors (including diagonals)\n2) Apply the Game of Life rules:\n   - Any live cell with 2 or 3 live neighbors survives\n   - Any dead cell with exactly 3 live neighbors becomes alive\n   - All other cells die or stay dead\n\n3) I'll go through each cell methodically:\n   - For edge cells, I'll be careful to only count existing neighbors\n   - First calculating the neighbor count for each cell\n   - Then applying the rules to determine the new state\n\n4) Working through the grid:\n   - Looking at each position\n   - Counting live neighbors (including diagonals)\n   - Applying survival/birth/death rules\n\nThis will result in the next generation state.\n</reasoning>\n<answer>\n[[1,1,1,1,1,1,1,0,0,0],\n [1,0,0,0,0,0,1,0,0,1],\n [1,0,0,0,0,0,1,1,0,0],\n [1,0,0,0,0,0,1,0,1,1],\n [1,0,0,0,0,0,0,0,1,1],\n [1,1,0,0,0,0,0,1,1,1],\n [0,1,0,0,0,0,1,1,1,1],\n [1,1,0,1,1,1,1,0,0,1],\n [1,1,1,1,1,0,0,0,0,1],\n [0,0,0,1,1,0,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,1,1,1,1,1,1,1],\n [1,1,0,1,1,0,0,0,0,1],\n [0,1,1,0,0,1,1,1,0,0],\n [1,1,1,0,1,0,1,0,1,0],\n [1,1,1,0,0,1,0,0,1,0],\n [0,1,1,1,1,1,1,1,1,1],\n [0,0,1,0,1,0,1,1,1,1],\n [0,1,1,1,1,1,1,0,0,1],\n [1,0,0,0,1,1,1,1,1,1],\n [1,0,0,0,0,1,1,0,0,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,1,1,0],[0,0,0,0,1,0,0,0,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,1,0],[0,0,1,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) For Game of Life, each cell's next state depends on its 8 neighbors:\n   - A live cell (1) survives if it has 2 or 3 live neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 live neighbors\n   - All other cells die or stay dead\n\n2) I'll check each cell's neighbors and apply these rules:\n   - For edge cells, I'll only count the existing neighbors\n   - For each position, count live neighbors and apply rules\n\n3) Notable patterns I see:\n   - The top row will mostly die due to overcrowding (>3 neighbors)\n   - Isolated cells will die due to underpopulation (<2 neighbors)\n   - Some dense clusters will thin out\n   - Some dead cells with exactly 3 neighbors will come alive\n\n4) Going through each cell methodically and applying the rules...\n</reasoning>\n<answer>\n[\n[1,1,0,0,1,0,0,0,0,0],\n[1,1,0,1,1,1,1,0,0,0],\n[1,1,1,0,0,0,1,1,0,0],\n[1,0,1,0,1,1,1,0,1,0],\n[1,0,1,0,0,0,0,1,1,1],\n[0,1,1,1,1,1,1,1,1,1],\n[0,1,1,1,1,0,1,1,1,1],\n[0,1,0,0,1,0,1,1,1,1],\n[0,0,0,0,1,1,1,1,0,0],\n[0,0,0,0,1,1,1,0,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,1,1,1,1,1,1,1],\n [0,0,1,0,1,1,0,0,1,1],\n [1,0,0,1,1,1,0,1,1,1],\n [0,1,1,0,0,1,0,1,1,0],\n [0,1,1,0,1,1,0,1,1,1],\n [0,0,0,1,0,0,1,1,0,1],\n [1,1,1,0,0,1,1,1,1,1],\n [0,0,1,1,1,1,1,1,0,1],\n [0,0,1,1,0,0,1,0,1,1],\n [0,1,1,1,0,1,1,0,0,0]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,0,1],[0,0,0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me step through this:\n\n1) For each cell, I need to count its 8 neighbors and apply Conway's Game of Life rules:\n   - Live cell (1) survives if it has 2 or 3 live neighbors\n   - Dead cell (0) becomes alive if it has exactly 3 live neighbors\n   - All other cells die or stay dead\n\n2) For edge cells, I'll consider cells outside the grid as dead (0)\n\n3) Going through each cell:\n   - Top row will mostly die due to overcrowding (>3 neighbors)\n   - Middle sections will have interesting patterns due to balanced neighbor counts\n   - Need to be especially careful with edge cases\n\n4) Let me mentally simulate each cell's fate based on its neighbor count...\n   [Making calculations for each position]\n\n5) Double-checking border cells as they're often trickier to calculate\n</reasoning>\n<answer>\n[\n[0,1,1,1,1,1,1,1,1,0],\n[1,0,1,0,1,1,0,0,1,1],\n[0,0,0,1,1,1,1,1,1,1],\n[1,1,1,0,0,1,0,1,1,0],\n[0,1,1,0,0,1,1,1,1,1],\n[0,0,0,1,0,0,1,1,0,1],\n[0,1,1,1,0,1,1,1,1,1],\n[0,0,1,1,1,1,1,1,0,1],\n[0,1,1,1,0,0,1,0,0,1],\n[0,0,1,1,1,0,1,1,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,0,0,1,0,0,0,0,1],\n [1,1,1,0,0,1,1,1,1,1],\n [1,0,1,1,0,0,1,1,1,0],\n [0,0,1,1,0,1,0,1,0,0],\n [1,1,1,1,1,0,0,1,1,0],\n [1,0,0,1,1,1,0,0,1,1],\n [1,0,1,0,0,1,1,0,1,1],\n [1,1,0,1,1,1,1,0,1,1],\n [1,0,0,0,1,1,0,0,0,0],\n [1,1,0,1,1,1,0,1,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,1,1,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,1,0,0,0,0],[1,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,1,1,0,0,0,0,1,0],[0,0,0,0,0,0,0,1,0,0],[0,1,0,1,0,0,1,0,1,0]]",
+        "model_answer": "<reasoning>\nLet me simulate one step of Conway's Game of Life. For each cell:\n1. Any live cell with fewer than 2 live neighbors dies (underpopulation)\n2. Any live cell with 2 or 3 live neighbors survives\n3. Any live cell with more than 3 live neighbors dies (overpopulation)\n4. Any dead cell with exactly 3 live neighbors becomes alive\n\nI'll count neighbors for each cell (including diagonals) and apply these rules.\n\nGoing through each position systematically, considering the 8 neighboring cells for each position and applying the rules...\n\nFor example, for position (0,0):\n- Current state: 1\n- Neighbors: (0,1):0, (1,0):1, (1,1):1\n- Total live neighbors: 2\n- With 2 neighbors, this live cell survives\n\nContinuing this process for each cell...\n</reasoning>\n<answer>\n[[1,1,1,0,0,1,1,1,1,1],\n [1,1,1,1,0,0,1,1,1,1],\n [1,0,1,1,1,1,1,1,1,0],\n [1,0,1,1,1,1,1,1,1,0],\n [1,1,0,1,1,1,0,0,1,0],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,0,1,1],\n [1,1,0,0,1,1,1,0,0,0],\n [1,1,0,1,1,1,1,0,0,0],\n [1,0,0,0,1,1,0,0,0,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,0,0,1,1,0,0,1],\n [1,1,0,1,0,1,1,0,1,1],\n [1,1,1,1,1,1,0,1,0,1],\n [1,0,1,1,1,1,1,1,0,1],\n [0,1,1,1,0,1,0,1,0,0],\n [0,1,1,1,0,0,0,0,0,1],\n [0,1,1,0,1,0,0,1,1,1],\n [0,1,0,1,1,1,0,0,0,0],\n [0,1,1,1,1,0,0,1,1,0],\n [0,1,1,1,1,0,1,1,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0,1],[0,0,0,0,0,1,0,1,0,1],[0,0,0,0,0,0,1,1,0,1],[0,0,0,0,0,1,0,0,1,1],[0,0,0,0,0,1,1,0,0,1],[0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,0,1]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Apply Conway's Game of Life rules:\n   - Live cell with < 2 neighbors dies (underpopulation)\n   - Live cell with 2 or 3 neighbors survives\n   - Live cell with > 3 neighbors dies (overpopulation)\n   - Dead cell with exactly 3 neighbors becomes alive\n\n3) Looking at each cell and its neighbors systematically:\n   - For each cell, count 8 adjacent cells\n   - Apply rules based on current state and neighbor count\n   - Track the new state in the result grid\n\n4) The edge cells only consider the neighbors that exist\n   - Top row only looks down\n   - Bottom row only looks up\n   - Left column only looks right\n   - Right column only looks left\n   - Corners only look at their three adjacent cells\n\n5) Processing each position and keeping track of the new state in a new grid\n</reasoning>\n<answer>\n[[1,1,1,1,0,1,1,1,1,1],\n [1,0,0,1,1,1,1,1,1,1],\n [1,0,0,0,0,1,1,1,0,1],\n [1,0,0,0,0,1,1,1,1,0],\n [1,0,0,0,0,0,0,1,1,0],\n [0,1,0,0,0,0,0,0,1,1],\n [0,1,0,0,1,0,0,0,1,1],\n [0,1,0,0,1,0,0,1,1,1],\n [0,1,0,0,1,1,1,1,1,1],\n [0,1,0,0,1,1,1,1,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,0,1,0,1,0,1,0],\n [1,0,0,1,0,1,1,1,1,0],\n [0,1,0,1,0,1,1,1,1,0],\n [0,1,0,1,0,1,0,1,1,0],\n [1,0,1,0,1,1,1,1,1,1],\n [1,1,1,1,0,0,1,1,1,0],\n [1,1,1,0,1,0,1,1,0,1],\n [1,0,0,1,1,1,0,0,0,0],\n [1,0,1,0,1,1,1,1,0,1],\n [0,0,0,1,1,1,1,1,0,1]].",
+        "expected_answer": "[[1,1,1,0,0,0,0,0,0,0],[1,0,0,1,0,0,0,0,0,0],[1,1,0,1,0,0,0,0,0,0],[0,1,0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,1,1,0,0,0,0,1,0,1],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply Conway's Game of Life rules:\n   - A living cell (1) survives if it has 2 or 3 living neighbors\n   - A dead cell (0) becomes alive if it has exactly 3 living neighbors\n   - All other cells die or stay dead\n\n2) For each cell, I'll:\n   - Check all 8 adjacent cells (being careful at edges)\n   - Count living neighbors\n   - Apply rules\n\n3) Going through each position carefully:\n   - Top row: Most cells will die due to overpopulation (too many neighbors)\n   - Middle sections: Patterns will tend to form based on the 2-3 neighbor rule\n   - Multiple dense clusters will thin out\n   - Isolated cells will die\n   - Some new cells will be born where there are exactly 3 neighbors\n\n4) The dense patterns in the input will generally become less dense after one step.\n</reasoning>\n<answer>\n[\n[1,0,1,1,1,1,1,1,1,0],\n[1,0,0,1,0,0,0,0,1,0],\n[1,1,0,1,0,0,0,0,1,0],\n[0,1,0,1,0,0,0,0,1,1],\n[1,0,0,0,0,0,0,0,0,1],\n[1,0,0,1,0,0,0,0,0,1],\n[1,0,0,1,0,0,0,0,0,0],\n[1,0,0,1,0,0,0,0,0,0],\n[0,0,0,1,0,0,0,0,0,1],\n[0,0,1,1,1,0,0,0,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,1,1,1,0,1,1,1,1],\n [1,0,1,0,1,1,1,1,1,0],\n [1,0,1,1,0,0,1,0,1,1],\n [0,0,0,0,1,1,1,0,1,0],\n [1,1,1,1,1,1,1,1,1,0],\n [1,0,1,1,0,0,1,1,0,0],\n [0,1,0,1,1,1,1,0,0,1],\n [0,1,1,1,1,0,0,0,1,0],\n [1,1,0,1,0,1,0,0,0,0],\n [1,1,0,1,0,1,0,1,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,1,1],[0,0,0,0,0,0,1,0,0,1],[0,0,0,0,0,1,1,0,1,0],[0,0,0,0,0,1,0,1,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Then apply Conway's Game of Life rules:\n   - Living cell (1) with fewer than 2 neighbors dies (underpopulation)\n   - Living cell with 2 or 3 neighbors survives\n   - Living cell with more than 3 neighbors dies (overpopulation)\n   - Dead cell (0) with exactly 3 neighbors becomes alive (reproduction)\n\nLet me go through each cell, count neighbors and apply rules:\n- For edges, I'll consider out-of-bounds cells as dead (0)\n- Let me process a few example cells:\n  * Top-left (0,0): Has 3 neighbors (right and two below) - becomes alive\n  * Top-right (0,9): Has 3 neighbors - becomes alive\n  * Middle cells: Need to count all 8 surrounding positions\n\nGoing through the entire grid...\n</reasoning>\n<answer>\n[\n[1,1,1,1,1,1,1,1,1,1],\n[1,0,1,0,0,0,0,0,1,1],\n[1,0,0,0,0,0,1,0,1,1],\n[1,1,0,0,0,0,1,0,1,1],\n[1,0,0,0,0,0,1,1,1,0],\n[1,0,0,0,0,0,1,1,1,0],\n[0,1,0,0,0,0,1,1,0,0],\n[1,1,0,0,0,0,0,0,0,0],\n[1,1,0,1,1,0,0,0,0,0],\n[1,1,0,1,1,0,0,0,0,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,0,1,1,1,1,0,1,1,0],\n [0,0,0,0,1,0,1,1,0,0],\n [1,1,0,1,1,1,1,1,0,1],\n [1,1,1,1,0,1,1,0,0,0],\n [1,1,1,1,0,1,0,1,0,1],\n [1,0,1,1,1,1,1,1,1,1],\n [0,0,1,1,0,1,0,1,1,1],\n [0,0,1,1,0,0,1,0,1,0],\n [1,0,0,1,0,0,1,1,1,1],\n [0,0,0,0,1,1,1,0,1,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[1,1,0,0,0,1,0,0,0,0],[1,0,1,1,0,0,0,0,0,0],[0,1,1,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals) and apply the Game of Life rules:\n   - A live cell survives if it has 2 or 3 live neighbors\n   - A dead cell becomes alive if it has exactly 3 live neighbors\n   - In all other cases, cells die or stay dead\n\n2) Going through each cell:\n   - Need to check all 8 neighboring positions\n   - Need to be careful with edge cells (they have fewer neighbors)\n   - Count live neighbors and apply rules\n\n3) For each position (i,j):\n   - Sum up values of (i\u00b11, j\u00b11) where they exist\n   - Apply rules based on sum and current cell state\n\n4) Let me simulate this through mentally focusing on each cell and its neighbors.\n\n5) After applying the rules to each cell, a new pattern emerges that represents the next generation.\n</reasoning>\n<answer>\n[[0,0,1,1,1,1,1,1,1,0],\n[1,0,0,1,1,1,1,1,0,1],\n[1,1,1,1,0,0,1,1,0,0],\n[1,0,0,0,0,1,1,1,0,0],\n[1,1,0,0,0,1,0,1,1,1],\n[0,1,1,1,1,1,0,1,1,1],\n[0,0,1,1,0,1,1,1,1,1],\n[0,0,1,1,0,1,1,1,1,1],\n[0,0,0,1,0,1,1,1,1,1],\n[0,0,0,0,1,1,1,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[1,1,1,0,0,1,0,0,1,1],\n [0,0,0,0,0,0,1,0,1,1],\n [0,0,1,0,1,1,1,1,1,1],\n [1,1,1,1,1,0,1,0,1,1],\n [0,1,1,1,1,1,1,0,0,1],\n [1,1,1,1,0,0,0,0,1,1],\n [1,1,0,1,1,0,1,1,0,1],\n [1,1,1,1,0,0,0,1,0,0],\n [1,0,1,1,1,0,1,1,0,1],\n [1,0,0,0,0,1,1,1,1,1]].",
+        "expected_answer": "[[0,1,0,0,0,1,0,0,0,0],[0,0,1,1,1,0,0,0,0,0],[0,0,1,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,1,1,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) For each cell, I need to count its living neighbors and apply the Game of Life rules:\n   - A live cell survives if it has 2 or 3 live neighbors\n   - A dead cell becomes alive if it has exactly 3 live neighbors\n   - All other cells die or stay dead\n\n2) Going through each cell and counting neighbors (including diagonals)\n   - For edge cells, cells outside the grid are considered dead (0)\n\n3) Applying rules:\n   - For living cells (1): stays alive if neighbor count is 2 or 3\n   - For dead cells (0): becomes alive if neighbor count is exactly 3\n\n4) Creating new grid based on these rules\n\nLet me calculate a few examples:\n- Top-left cell (1): Has 2 neighbors (right and below), dies\n- Position (0,1): Has 3 neighbors, stays alive\n- Position (1,1): Has 3 neighbors, becomes alive\n\nContinuing this process for entire grid...\n</reasoning>\n<answer>\n[[0,1,0,0,0,0,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,1],\n [1,1,0,0,0,1,1,1,1,1],\n [1,1,0,0,0,0,1,1,1,1],\n [1,1,0,1,1,0,0,1,1,1],\n [1,1,0,1,0,0,1,1,1,0],\n [1,1,1,1,1,0,1,1,1,1],\n [1,0,1,1,1,1,1,1,1,1],\n [0,0,1,1,0,1,1,1,1,0]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,1,0,0,1,0,1,0,1,1],\n [1,1,1,0,0,1,1,1,1,1],\n [1,1,1,1,1,0,1,1,1,1],\n [1,1,1,0,1,1,1,0,0,0],\n [0,0,0,1,0,1,1,1,1,0],\n [0,0,1,0,1,1,1,1,0,1],\n [0,1,0,1,0,1,0,1,1,0],\n [1,1,0,1,0,1,1,0,0,1],\n [1,1,1,0,1,0,0,1,1,1],\n [0,0,1,0,1,0,1,0,0,1]].",
+        "expected_answer": "[[0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,1,1],[0,0,1,0,0,0,0,0,0,1],[0,1,0,1,0,0,0,0,0,0],[0,0,0,1,0,1,0,0,0,0],[0,0,0,0,1,0,0,1,0,0],[0,0,1,0,1,0,1,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) For each cell, I need to count its living neighbors (including diagonals)\n2) Rules are:\n   - Living cell (1) survives if it has 2 or 3 neighbors\n   - Dead cell (0) becomes alive if it has exactly 3 neighbors\n   - All other cells die or stay dead\n\nLet me go through each cell and apply these rules:\n\nFor example, looking at some key positions:\n- Top left corner (0,0): Has 3 living neighbors (1,0), (1,1), and (0,1) \u2192 Will become alive\n- Position (0,1): Has 4 neighbors \u2192 Will die\n- Center positions generally have more neighbors to check\n\nI'll carefully count neighbors for each position and apply the rules, paying special attention to:\n- Edge cases (borders)\n- Corners\n- Dense clusters where many cells influence each other\n\n</reasoning>\n<answer>\n[[1,0,1,0,0,1,1,1,1,1],\n [1,0,1,1,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,0,1,0],\n [0,1,1,1,1,1,1,1,0,0],\n [0,0,1,1,1,1,1,1,0,0],\n [0,0,0,1,1,1,1,1,1,0],\n [1,0,1,0,1,1,1,1,1,1],\n [1,1,1,1,1,1,0,1,1,1],\n [1,1,1,1,1,0,1,0,1,1],\n [1,1,1,0,0,1,0,1,1,1]]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      },
+      {
+        "question": "What will this Game of Life board look like after 1 steps of simulation? Reply as array of array representing rows in the grid from top to bottom in JSON format. (An empty 3x3 grid would look like this: [[0,0,0],[0,0,0],[0,0,0]])\n\n[[0,0,1,0,0,1,1,0,1,1],\n [0,1,0,1,1,0,0,1,1,1],\n [0,0,1,1,0,0,0,0,1,1],\n [0,1,1,1,1,1,1,0,0,1],\n [1,0,1,1,1,1,1,0,0,0],\n [1,1,1,0,1,1,1,1,1,1],\n [1,1,1,1,1,1,1,1,1,0],\n [0,1,0,1,1,1,0,1,1,0],\n [1,0,1,1,1,1,1,1,0,1],\n [0,1,1,1,0,1,1,1,0,1]].",
+        "expected_answer": "[[0,0,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,1,1,1,1],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0]]",
+        "model_answer": "<reasoning>\nLet me think through this step by step:\n\n1) For each cell in the grid, I need to:\n   - Count its living neighbors (including diagonals)\n   - Apply the Game of Life rules:\n     * Live cell with < 2 neighbors dies (underpopulation)\n     * Live cell with 2 or 3 neighbors lives\n     * Live cell with > 3 neighbors dies (overpopulation)\n     * Dead cell with exactly 3 neighbors becomes alive\n\n2) To count neighbors, I need to check all 8 adjacent cells, being careful at the edges of the grid.\n\n3) I'll go through each cell, apply these rules, and update the grid accordingly.\n\n4) Since I'm doing this mentally, I'll focus on areas with clear changes:\n   - Cells with too many neighbors (>3) will die\n   - Cells with too few neighbors (<2) will die\n   - Dead cells with exactly 3 neighbors will come alive\n\n5) Looking at dense clusters in the pattern:\n   - Many cells in the middle will die due to overpopulation\n   - Some empty cells will spring to life where there are exactly 3 neighbors\n   - Isolated cells will die\n   - Edge cells often die due to underpopulation\n</reasoning>\n<answer>\n[\n[0,0,0,1,0,0,0,1,1,1],\n[0,0,1,1,1,0,1,1,1,1],\n[0,1,1,1,1,1,0,1,1,1],\n[0,1,0,0,0,1,1,1,1,0],\n[1,1,0,0,0,0,1,1,1,0],\n[1,1,1,0,0,0,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,1],\n[1,1,1,1,1,1,1,1,1,0],\n[0,1,1,1,1,1,1,1,1,0],\n[0,1,1,1,1,1,1,1,1,0]\n]\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "grid_size_x": 10,
+          "grid_size_y": 10,
+          "filled_cells": 100,
+          "simulation_steps": 1
+        }
+      }
+    ]
+  }
+]

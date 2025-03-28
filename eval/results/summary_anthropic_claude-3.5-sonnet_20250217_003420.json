@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "graph_color",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.6699999999999999,
+    "total_examples": 3,
+    "timestamp": "2025-02-17T00:34:20.267595",
+    "config": {
+      "size": 3,
+      "seed": 42
+    }
+  }
+]

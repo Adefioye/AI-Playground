@@ -1,0 +1,3991 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "pool_matrix",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.0,
+      "total_examples": 50,
+      "timestamp": "2025-02-17T01:17:52.143728",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n6 3\n7 4\n6 9\n",
+        "expected_answer": "9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, and given that the input matrix is 3x2, we can only fit one 3x3 window over the matrix.\n\n2) Since we can only fit one window, the output will be a single value.\n\n3) Looking at all numbers in the matrix:\n   6 3\n   7 4\n   6 9\n\n4) The maximum value among these numbers is 9.\n\nTherefore, the output will be a single number: 9\n</reasoning>\n<answer>9</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n4 0 1 5 0 3\n1 2 7 0 3 2\n",
+        "expected_answer": "2.5 2.17",
+        "model_answer": "<reasoning>\nLet me break this down:\n1. The kernel size is 3, so we'll divide the matrix into 3x3 regions\n2. Since the matrix is 2x6, and we're using a 3x3 kernel, we need to check if we can perform the operation\n3. Since there are only 2 rows, we don't have enough data for a complete 3x3 kernel\n4. Therefore, we won't be able to perform the pooling operation on this matrix with a 3x3 kernel\n\nThe reason is:\n- Average pooling requires complete kernel-sized regions\n- A 3x3 kernel needs 3 rows and 3 columns to operate\n- The input matrix only has 2 rows, which is insufficient for a 3x3 kernel\n</reasoning>\n\n<answer>\nThis operation cannot be performed because the input matrix (2x6) is too small for a 3x3 kernel. The matrix needs at least 3 rows to accommodate a 3x3 kernel.\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              4,
+              0,
+              1,
+              5,
+              0,
+              3
+            ],
+            [
+              1,
+              2,
+              7,
+              0,
+              3,
+              2
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              2.5,
+              2.1666666666666665
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n4 3 1 3 0 4 3 8 7 7\n6 9 3 7 3 3 6 5 4 5\n9 1 8 7 4 5 3 0 4 9\n2 8 8 6 2 0 3 4 8 3\n2 2 1 2 2 9 8 1 8 9\n4 2 4 6 7 5 5 6 2 5\n1 8 9 1 8 0 9 3 5 9\n5 0 8 0 4 2 9 7 6 6\n",
+        "expected_answer": "4.89 4.0 4.44 7.0\n3.67 4.33 5.0 5.67\n5.17 2.5 6.5 7.5",
+        "model_answer": "<reasoning>\nFor average pooling with a kernel size of 3:\n1. The input matrix is 8x10\n2. With kernel size 3 and non-overlapping regions:\n   - We'll get \u230a8/3\u230b = 2 rows in output\n   - We'll get \u230a10/3\u230b = 3 columns in output\n3. For each 3x3 region:\n   - Calculate sum of all 9 numbers\n   - Divide by 9 to get average\n\nLet's process each region:\nTop-left region (4+3+1+6+9+3+9+1+8)/9 = 44/9 \u2248 4.89\nTop-middle region (3+0+4+7+3+3+7+4+5)/9 = 36/9 = 4\nTop-right region (3+8+7+6+5+4+3+0+4)/9 = 40/9 \u2248 4.44\n\nBottom-left region (2+8+8+2+2+1+4+2+4)/9 = 33/9 \u2248 3.67\nBottom-middle region (6+2+0+2+2+9+6+7+5)/9 = 39/9 = 4.33\nBottom-right region (3+4+8+8+1+8+5+6+2)/9 = 45/9 = 5\n</reasoning>\n<answer>\n4.89 4.00 4.44\n3.67 4.33 5.00\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              4,
+              3,
+              1,
+              3,
+              0,
+              4,
+              3,
+              8,
+              7,
+              7
+            ],
+            [
+              6,
+              9,
+              3,
+              7,
+              3,
+              3,
+              6,
+              5,
+              4,
+              5
+            ],
+            [
+              9,
+              1,
+              8,
+              7,
+              4,
+              5,
+              3,
+              0,
+              4,
+              9
+            ],
+            [
+              2,
+              8,
+              8,
+              6,
+              2,
+              0,
+              3,
+              4,
+              8,
+              3
+            ],
+            [
+              2,
+              2,
+              1,
+              2,
+              2,
+              9,
+              8,
+              1,
+              8,
+              9
+            ],
+            [
+              4,
+              2,
+              4,
+              6,
+              7,
+              5,
+              5,
+              6,
+              2,
+              5
+            ],
+            [
+              1,
+              8,
+              9,
+              1,
+              8,
+              0,
+              9,
+              3,
+              5,
+              9
+            ],
+            [
+              5,
+              0,
+              8,
+              0,
+              4,
+              2,
+              9,
+              7,
+              6,
+              6
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              4.888888888888889,
+              4.0,
+              4.444444444444445,
+              7.0
+            ],
+            [
+              3.6666666666666665,
+              4.333333333333333,
+              5.0,
+              5.666666666666667
+            ],
+            [
+              5.166666666666667,
+              2.5,
+              6.5,
+              7.5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n3 0 5 3 4 9 8 1\n5 9 6 8 7 8 5 2\n8 1 6 4 8 4 6 4\n9 1 6 8 8 1 6 0\n4 9 8 0 9 2 6 7\n0 0 2 9 2 6 0 9\n",
+        "expected_answer": "9 8 9 8\n9 8 8 6\n9 9 9 9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 non-overlapping regions.\n\n2) For max pooling, I need to find the maximum value in each 2x2 region.\n\n3) Let's process each 2x2 block:\n   First row of output:\n   - Block 1: max(3,0,5,9) = 9\n   - Block 2: max(5,3,6,8) = 8\n   - Block 3: max(4,9,7,8) = 9\n   - Block 4: max(8,1,5,2) = 8\n\n   Second row of output:\n   - Block 1: max(8,1,9,1) = 9\n   - Block 2: max(6,4,6,8) = 8\n   - Block 3: max(8,4,8,1) = 8\n   - Block 4: max(6,4,6,0) = 6\n\n   Third row of output:\n   - Block 1: max(4,9,0,0) = 9\n   - Block 2: max(8,0,2,9) = 9\n   - Block 3: max(9,2,2,6) = 9\n   - Block 4: max(6,7,0,9) = 9\n</reasoning>\n<answer>\n9 8 9 8\n9 8 8 6\n9 9 9 9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              0,
+              5,
+              3,
+              4,
+              9,
+              8,
+              1
+            ],
+            [
+              5,
+              9,
+              6,
+              8,
+              7,
+              8,
+              5,
+              2
+            ],
+            [
+              8,
+              1,
+              6,
+              4,
+              8,
+              4,
+              6,
+              4
+            ],
+            [
+              9,
+              1,
+              6,
+              8,
+              8,
+              1,
+              6,
+              0
+            ],
+            [
+              4,
+              9,
+              8,
+              0,
+              9,
+              2,
+              6,
+              7
+            ],
+            [
+              0,
+              0,
+              2,
+              9,
+              2,
+              6,
+              0,
+              9
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              9,
+              8,
+              9,
+              8
+            ],
+            [
+              9,
+              8,
+              8,
+              6
+            ],
+            [
+              9,
+              9,
+              9,
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 1:\n5 8 4 3 2 0 2 8\n0 7 6 2 2 2 2 6\n7 8 8 6 0 2 4 8\n",
+        "expected_answer": "5.0 8.0 4.0 3.0 2.0 0.0 2.0 8.0\n0.0 7.0 6.0 2.0 2.0 2.0 2.0 6.0\n7.0 8.0 8.0 6.0 0.0 2.0 4.0 8.0",
+        "model_answer": "<reasoning>\nFor average pooling with kernel size 1, since the kernel size equals the stride:\n1. The kernel size of 1 means each pooling operation considers only one element\n2. Since stride equals kernel size (1), we process each element without overlap\n3. In this case, with kernel size 1, the output matrix will be exactly the same as the input matrix because:\n   - Each pooling operation takes one number\n   - The average of a single number is the number itself\n4. Therefore, the output matrix will be identical to the input matrix\n</reasoning>\n\n<answer>\n5 8 4 3 2 0 2 8\n0 7 6 2 2 2 2 6\n7 8 8 6 0 2 4 8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              8,
+              4,
+              3,
+              2,
+              0,
+              2,
+              8
+            ],
+            [
+              0,
+              7,
+              6,
+              2,
+              2,
+              2,
+              2,
+              6
+            ],
+            [
+              7,
+              8,
+              8,
+              6,
+              0,
+              2,
+              4,
+              8
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 1,
+          "solution": [
+            [
+              5.0,
+              8.0,
+              4.0,
+              3.0,
+              2.0,
+              0.0,
+              2.0,
+              8.0
+            ],
+            [
+              0.0,
+              7.0,
+              6.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              6.0
+            ],
+            [
+              7.0,
+              8.0,
+              8.0,
+              6.0,
+              0.0,
+              2.0,
+              4.0,
+              8.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n7 6 7\n8 8 3\n0 7 0\n7 7 1\n7 2 2\n1 7 4\n8 9 2\n",
+        "expected_answer": "8 7\n7 1\n7 4\n9 2",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 regions (where possible). Since the stride equals the kernel size, there's no overlap.\n\n2) Starting from the top-left corner, I'll find the max value in each 2x2 region:\n\nFirst 2x2 region:\n7 6\n8 8\nMax = 8\n\nSecond 2x2 region:\n7\n3\nMax = 7\n\nThird 2x2 region:\n0 7\n7 7\nMax = 7\n\nFourth 2x2 region:\n0\n1\nMax = 1\n\nFifth 2x2 region:\n7 2\n1 7\nMax = 7\n\nSixth 2x2 region:\n2\n4\nMax = 4\n\nNote: The last row element (2) is left out as it doesn't form a complete 2x2 region.\n\n3) Arranging these maximum values in the same relative positions:\n8 7\n7 1\n7 4\n</reasoning>\n<answer>\n8 7\n7 1\n7 4\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              7,
+              6,
+              7
+            ],
+            [
+              8,
+              8,
+              3
+            ],
+            [
+              0,
+              7,
+              0
+            ],
+            [
+              7,
+              7,
+              1
+            ],
+            [
+              7,
+              2,
+              2
+            ],
+            [
+              1,
+              7,
+              4
+            ],
+            [
+              8,
+              9,
+              2
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              8,
+              7
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              9,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 1:\n0 3 1 4 0 0 6\n6 2 0 6 6 0 7\n8 2 2 5 2 5 9\n2 6 2 1 5 6 0\n5 2 6 6 5 6 2\n2 5 4 7 3 2 0\n3 3 6 0 2 1 6\n9 3 9 1 7 4 2\n1 6 3 5 0 7 4\n2 1 9 3 0 3 0\n",
+        "expected_answer": "0 3 1 4 0 0 6\n6 2 0 6 6 0 7\n8 2 2 5 2 5 9\n2 6 2 1 5 6 0\n5 2 6 6 5 6 2\n2 5 4 7 3 2 0\n3 3 6 0 2 1 6\n9 3 9 1 7 4 2\n1 6 3 5 0 7 4\n2 1 9 3 0 3 0",
+        "model_answer": "<reasoning>\n1. For max pooling with kernel size 1, I need to understand that:\n   - The kernel size being 1 means each element will be considered individually\n   - Since stride equals kernel size (1), there will be no overlap\n   - In this case, max pooling with kernel size 1 will actually return the same matrix\n   - This is because each 1x1 region contains only one number, and the max of one number is itself\n\n2. Therefore, the output matrix will be identical to the input matrix.\n\n3. Double-checking:\n   - Each element remains in its position\n   - No combining or comparing of elements is needed\n   - The dimensions remain the same\n</reasoning>\n<answer>\n0 3 1 4 0 0 6\n6 2 0 6 6 0 7\n8 2 2 5 2 5 9\n2 6 2 1 5 6 0\n5 2 6 6 5 6 2\n2 5 4 7 3 2 0\n3 3 6 0 2 1 6\n9 3 9 1 7 4 2\n1 6 3 5 0 7 4\n2 1 9 3 0 3 0\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              0,
+              3,
+              1,
+              4,
+              0,
+              0,
+              6
+            ],
+            [
+              6,
+              2,
+              0,
+              6,
+              6,
+              0,
+              7
+            ],
+            [
+              8,
+              2,
+              2,
+              5,
+              2,
+              5,
+              9
+            ],
+            [
+              2,
+              6,
+              2,
+              1,
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              2,
+              6,
+              6,
+              5,
+              6,
+              2
+            ],
+            [
+              2,
+              5,
+              4,
+              7,
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              6,
+              0,
+              2,
+              1,
+              6
+            ],
+            [
+              9,
+              3,
+              9,
+              1,
+              7,
+              4,
+              2
+            ],
+            [
+              1,
+              6,
+              3,
+              5,
+              0,
+              7,
+              4
+            ],
+            [
+              2,
+              1,
+              9,
+              3,
+              0,
+              3,
+              0
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 1,
+          "solution": [
+            [
+              0,
+              3,
+              1,
+              4,
+              0,
+              0,
+              6
+            ],
+            [
+              6,
+              2,
+              0,
+              6,
+              6,
+              0,
+              7
+            ],
+            [
+              8,
+              2,
+              2,
+              5,
+              2,
+              5,
+              9
+            ],
+            [
+              2,
+              6,
+              2,
+              1,
+              5,
+              6,
+              0
+            ],
+            [
+              5,
+              2,
+              6,
+              6,
+              5,
+              6,
+              2
+            ],
+            [
+              2,
+              5,
+              4,
+              7,
+              3,
+              2,
+              0
+            ],
+            [
+              3,
+              3,
+              6,
+              0,
+              2,
+              1,
+              6
+            ],
+            [
+              9,
+              3,
+              9,
+              1,
+              7,
+              4,
+              2
+            ],
+            [
+              1,
+              6,
+              3,
+              5,
+              0,
+              7,
+              4
+            ],
+            [
+              2,
+              1,
+              9,
+              3,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n8 5 6 4 2 5 5\n1 2 4 0 2 3 6\n1 6 4 8 3 8 9\n",
+        "expected_answer": "4.0 3.5 3.0 5.5\n3.5 6.0 5.5 9.0",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2:\n   - We'll process 2x2 regions at a time\n   - The stride is also 2, so we move 2 steps each time\n   - We'll calculate the average of each 2x2 region\n\n2) Let's break down the matrix into 2x2 regions:\n   First row of output:\n   - Region 1: [8 5; 1 2] = (8+5+1+2)/4 = 16/4 = 4\n   - Region 2: [6 4; 4 0] = (6+4+4+0)/4 = 14/4 = 3.5\n   - Region 3: [2 5; 2 3] = (2+5+2+3)/4 = 12/4 = 3\n   \n   Second row of output:\n   - Region 4: [1 6; 1 6] = (1+6+1+6)/4 = 14/4 = 3.5\n   - Region 5: [4 8; 4 8] = (4+8+4+8)/4 = 24/4 = 6\n   - Region 6: [3 8; 3 9] = (3+8+3+9)/4 = 23/4 = 5.75\n\nNote: The last column of the original matrix (5,6,9) won't be included in the output as it can't form a complete 2x2 region.\n</reasoning>\n<answer>\n4 3.5 3\n3.5 6 5.75\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              8,
+              5,
+              6,
+              4,
+              2,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              4,
+              0,
+              2,
+              3,
+              6
+            ],
+            [
+              1,
+              6,
+              4,
+              8,
+              3,
+              8,
+              9
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              4.0,
+              3.5,
+              3.0,
+              5.5
+            ],
+            [
+              3.5,
+              6.0,
+              5.5,
+              9.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n0 0 1 4 6 5\n6 6 5 2 7 4\n3 6 4 1 5 9\n0 6 3 2 9 3\n3 3 2 0 3 2\n0 3 0 0 7 3\n8 7 4 4 0 0\n3 3 1 9 4 5\n7 0 3 5 6 1\n",
+        "expected_answer": "3.0 3.0 5.5\n3.75 2.5 6.5\n2.25 0.5 3.75\n5.25 4.5 2.25\n3.5 4.0 3.5",
+        "model_answer": "<reasoning>\n1. Given a 9x6 matrix and kernel size of 2, the output will be a 4x3 matrix (since 9/2=4.5 rounds down to 4 rows, and 6/2=3 columns)\n2. For average pooling, I need to:\n   - Take each 2x2 block\n   - Calculate the average of the 4 numbers in each block\n   - Place the result in the corresponding position in the output matrix\n\nLet's process each 2x2 block:\n\nFirst row:\n[(0+0+6+6)/4 = 3] [(1+4+5+2)/4 = 3] [(6+5+7+4)/4 = 5.5]\n\nSecond row:\n[(3+6+0+6)/4 = 3.75] [(4+1+3+2)/4 = 2.5] [(5+9+9+3)/4 = 6.5]\n\nThird row:\n[(3+3+0+3)/4 = 2.25] [(2+0+0+0)/4 = 0.5] [(3+2+7+3)/4 = 3.75]\n\nFourth row:\n[(8+7+3+3)/4 = 5.25] [(4+4+1+9)/4 = 4.5] [(0+0+4+5)/4 = 2.25]\n</reasoning>\n<answer>\n3 3 5.5\n3.75 2.5 6.5\n2.25 0.5 3.75\n5.25 4.5 2.25\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              0,
+              0,
+              1,
+              4,
+              6,
+              5
+            ],
+            [
+              6,
+              6,
+              5,
+              2,
+              7,
+              4
+            ],
+            [
+              3,
+              6,
+              4,
+              1,
+              5,
+              9
+            ],
+            [
+              0,
+              6,
+              3,
+              2,
+              9,
+              3
+            ],
+            [
+              3,
+              3,
+              2,
+              0,
+              3,
+              2
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              7,
+              3
+            ],
+            [
+              8,
+              7,
+              4,
+              4,
+              0,
+              0
+            ],
+            [
+              3,
+              3,
+              1,
+              9,
+              4,
+              5
+            ],
+            [
+              7,
+              0,
+              3,
+              5,
+              6,
+              1
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              3.0,
+              3.0,
+              5.5
+            ],
+            [
+              3.75,
+              2.5,
+              6.5
+            ],
+            [
+              2.25,
+              0.5,
+              3.75
+            ],
+            [
+              5.25,
+              4.5,
+              2.25
+            ],
+            [
+              3.5,
+              4.0,
+              3.5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n9 5 0 9 5 0 5 4 9 5\n5 4 4 3 6 4 6 9 1 4\n7 0 8 8 6 4 5 9 2 3\n7 7 3 8 2 5 7 1 3 5\n8 9 6 5 7 5 1 4 1 1\n",
+        "expected_answer": "4.67 5.0 5.56 4.0\n6.67 5.33 2.83 3.0",
+        "model_answer": "<reasoning>\n1. Given a 5x10 matrix and kernel size of 3, I need to:\n   * Divide the matrix into 3x3 non-overlapping regions\n   * Calculate the average of each region\n   * The resulting matrix will be smaller\n\n2. Since we have 10 columns and kernel size 3:\n   * We can fit 3 complete kernels horizontally (3\u00d73 = 9 columns used)\n   * The last column won't be used as it's incomplete\n\n3. Since we have 5 rows and kernel size 3:\n   * We can fit 1 complete kernel vertically (3 rows used)\n   * The last 2 rows won't be used as they're incomplete\n\n4. Let's calculate averages for each 3x3 region:\n   Region 1 (left): (9+5+0+5+4+4+7+0+8)/9 = 42/9 = 4.67\n   Region 2 (middle): (9+5+0+3+6+4+8+6+4)/9 = 45/9 = 5\n   Region 3 (right): (5+4+9+6+9+1+5+9+2)/9 = 50/9 = 5.56\n</reasoning>\n<answer>\n4.67 5.00 5.56\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              9,
+              5,
+              0,
+              9,
+              5,
+              0,
+              5,
+              4,
+              9,
+              5
+            ],
+            [
+              5,
+              4,
+              4,
+              3,
+              6,
+              4,
+              6,
+              9,
+              1,
+              4
+            ],
+            [
+              7,
+              0,
+              8,
+              8,
+              6,
+              4,
+              5,
+              9,
+              2,
+              3
+            ],
+            [
+              7,
+              7,
+              3,
+              8,
+              2,
+              5,
+              7,
+              1,
+              3,
+              5
+            ],
+            [
+              8,
+              9,
+              6,
+              5,
+              7,
+              5,
+              1,
+              4,
+              1,
+              1
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              4.666666666666667,
+              5.0,
+              5.555555555555555,
+              4.0
+            ],
+            [
+              6.666666666666667,
+              5.333333333333333,
+              2.8333333333333335,
+              3.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n5 7\n6 7\n0 5\n3 3\n1 3\n1 5\n",
+        "expected_answer": "7\n5",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, I need to divide the matrix into 3x3 regions (if possible).\n   Given that the matrix is 6x2, I can fit one complete 3x2 region at the top and one at the bottom.\n\n2) First 3x2 region (top):\n   5 7\n   6 7\n   0 5\n   The maximum value in this region is 7\n\n3) Second 3x2 region (bottom):\n   3 3\n   1 3\n   1 5\n   The maximum value in this region is 5\n\n4) Therefore, the result will be a 2x1 matrix (since we fit two 3x2 regions vertically)\n</reasoning>\n<answer>\n7\n5\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              7
+            ],
+            [
+              5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n9 5 5 6 4 0 8 9 5\n2 9 4 3 6 7 9 9 7\n3 6 0 6 2 0 3 5 0\n5 5 5 0 7 9 6 6 4\n8 8 1 8 2 0 2 6 1\n",
+        "expected_answer": "9 7 9\n8 9 6",
+        "model_answer": "<reasoning>\n1) For max pooling with kernel size 3:\n   - The matrix will be divided into non-overlapping 3x3 regions\n   - For each region, we select the maximum value\n   - Given a 5x9 matrix, with kernel size 3, we'll get a 1x3 output matrix\n   (since 5/3=1 complete rows and 9/3=3 complete columns)\n\n2) Let's divide the matrix into 3x3 regions and find max in each:\n\nRegion 1 (left):\n9 5 5\n2 9 4\n3 6 0\nMax = 9\n\nRegion 2 (middle):\n6 4 0\n3 6 7\n6 2 0\nMax = 7\n\nRegion 3 (right):\n8 9 5\n9 9 7\n3 5 0\nMax = 9\n</reasoning>\n<answer>9 7 9</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              9,
+              5,
+              5,
+              6,
+              4,
+              0,
+              8,
+              9,
+              5
+            ],
+            [
+              2,
+              9,
+              4,
+              3,
+              6,
+              7,
+              9,
+              9,
+              7
+            ],
+            [
+              3,
+              6,
+              0,
+              6,
+              2,
+              0,
+              3,
+              5,
+              0
+            ],
+            [
+              5,
+              5,
+              5,
+              0,
+              7,
+              9,
+              6,
+              6,
+              4
+            ],
+            [
+              8,
+              8,
+              1,
+              8,
+              2,
+              0,
+              2,
+              6,
+              1
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              9,
+              7,
+              9
+            ],
+            [
+              8,
+              9,
+              6
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n5 2 7 1 0 8 7 1 9\n6 9 7 4 4 4 6 4 0\n6 8 9 7 3 2 1 2 6\n9 8 1 7 7 2 7 7 8\n",
+        "expected_answer": "9 8 9\n9 7 8",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, I need to divide the matrix into 3x3 non-overlapping regions\n   (since stride = kernel size = 3)\n\n2) The input matrix will be divided into 3x3 regions like this:\n   Region 1:      Region 2:      Region 3:\n   5 2 7          1 0 8          7 1 9\n   6 9 7          4 4 4          6 4 0\n   6 8 9          7 3 2          1 2 6\n\n   Region 4:\n   9 8 1\n   7 7 2\n   7 7 8\n\n3) For max pooling, I need to find the maximum value in each 3x3 region:\n   Region 1: max(5,2,7,6,9,7,6,8,9) = 9\n   Region 2: max(1,0,8,4,4,4,7,3,2) = 8\n   Region 3: max(7,1,9,6,4,0,1,2,6) = 9\n   Region 4: max(9,8,1,7,7,2,7,7,8) = 9\n\n4) The result will be a 2x2 matrix (since the original 9x4 matrix is divided into four 3x3 regions)\n</reasoning>\n<answer>\n9 8 9\n9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              2,
+              7,
+              1,
+              0,
+              8,
+              7,
+              1,
+              9
+            ],
+            [
+              6,
+              9,
+              7,
+              4,
+              4,
+              4,
+              6,
+              4,
+              0
+            ],
+            [
+              6,
+              8,
+              9,
+              7,
+              3,
+              2,
+              1,
+              2,
+              6
+            ],
+            [
+              9,
+              8,
+              1,
+              7,
+              7,
+              2,
+              7,
+              7,
+              8
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              9,
+              8,
+              9
+            ],
+            [
+              9,
+              7,
+              8
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 1:\n7 8 5 7 5\n1 6 0 3 8\n7 1 5 7 8\n",
+        "expected_answer": "7 8 5 7 5\n1 6 0 3 8\n7 1 5 7 8",
+        "model_answer": "<reasoning>\nWith a kernel size of 1:\n1. Each element will be considered individually since the kernel is 1x1\n2. In max pooling, we take the maximum value within each kernel region\n3. Since the kernel size is 1, each element will be its own region\n4. Therefore, the output matrix will be exactly the same as the input matrix\n5. No pooling effect will actually occur because we're looking at single elements at a time\n</reasoning>\n\n<answer>\n7 8 5 7 5\n1 6 0 3 8\n7 1 5 7 8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              7,
+              8,
+              5,
+              7,
+              5
+            ],
+            [
+              1,
+              6,
+              0,
+              3,
+              8
+            ],
+            [
+              7,
+              1,
+              5,
+              7,
+              8
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 1,
+          "solution": [
+            [
+              7,
+              8,
+              5,
+              7,
+              5
+            ],
+            [
+              1,
+              6,
+              0,
+              3,
+              8
+            ],
+            [
+              7,
+              1,
+              5,
+              7,
+              8
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n5 4\n0 2\n9 7\n6 4\n9 7\n1 8\n2 0\n5 6\n1 9\n5 5\n",
+        "expected_answer": "5\n9\n9\n6\n9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 sections (when possible) and find the maximum value in each section.\n\n2) Given the matrix dimensions (10x2) and kernel size of 2, I'll process it as follows:\n   First 2x2 section:   Second 2x2 section:\n   5 4                  9 7\n   0 2                  6 4\n   Max = 5             Max = 9\n\n   Third 2x2 section:   Fourth 2x2 section:\n   9 7                  2 0\n   1 8                  5 6\n   Max = 9             Max = 6\n\n   Fifth 2x2 section:\n   1 9\n   5 5\n   Max = 9\n\n3) The resulting matrix will have 5 rows and 1 column, as each 2x2 section reduces to a single maximum value.\n</reasoning>\n\n<answer>\n5\n9\n9\n6\n9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              5
+            ],
+            [
+              9
+            ],
+            [
+              9
+            ],
+            [
+              6
+            ],
+            [
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n6 5 6 8 2 8 8\n1 7 9 5 8 8 1\n",
+        "expected_answer": "5.67 6.5 4.5",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I note that with a kernel size of 3:\n   - We'll move the 3x3 window across the matrix\n   - Since stride equals kernel size (3), there won't be any overlap\n   - The input matrix is 2x7, which means we won't have complete 3x3 windows\n   - We can only use complete windows for pooling\n\n2) Looking at the matrix horizontally:\n   - With a width of 7, we can only use the first 6 elements in each row (as 7 is not divisible by 3)\n   - This gives us two 3x3 sections horizontally\n\n3) Looking at the matrix vertically:\n   - With a height of 2, we don't have enough rows for a 3x3 window\n   - We'll have to discard this pooling operation\n\n4) Therefore, we can't perform valid average pooling with a 3x3 kernel on this 2x7 matrix, as we don't have enough rows to form complete 3x3 windows.\n</reasoning>\n\n<answer>\nThis operation cannot be performed as the input matrix doesn't have enough rows for a 3x3 kernel. The matrix has only 2 rows, but we need at least 3 rows to perform average pooling with a 3x3 kernel.\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              5,
+              6,
+              8,
+              2,
+              8,
+              8
+            ],
+            [
+              1,
+              7,
+              9,
+              5,
+              8,
+              8,
+              1
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              5.666666666666667,
+              6.5,
+              4.5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n3 0 7 9 5\n3 4 9 1 5\n0 6 4 4 2\n0 3 3 4 8\n1 1 6 0 3\n",
+        "expected_answer": "4.0 4.33\n2.33 3.75",
+        "model_answer": "<reasoning>\nFor average pooling with a kernel size of 3:\n1. I need to divide the matrix into 3x3 non-overlapping regions\n2. Since the matrix is 5x5 and kernel size is 3, we can only have one complete 3x3 region (starting from top-left)\n3. For the first (and only) complete 3x3 region:\n   3 0 7\n   3 4 9\n   0 6 4\n   Average = (3+0+7+3+4+9+0+6+4)/9 = 36/9 = 4\n\n4. The other regions are incomplete, so we won't include them in the output according to the stride and kernel size rules.\n</reasoning>\n<answer>\n4\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              0,
+              7,
+              9,
+              5
+            ],
+            [
+              3,
+              4,
+              9,
+              1,
+              5
+            ],
+            [
+              0,
+              6,
+              4,
+              4,
+              2
+            ],
+            [
+              0,
+              3,
+              3,
+              4,
+              8
+            ],
+            [
+              1,
+              1,
+              6,
+              0,
+              3
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              4.0,
+              4.333333333333333
+            ],
+            [
+              2.3333333333333335,
+              3.75
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n1 7 5\n9 0 3\n0 3 7\n9 0 9\n4 5 2\n",
+        "expected_answer": "9\n9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3 and given 5x3 matrix, we need to:\n   - Look at 3x3 regions at a time\n   - Take the maximum value in each region\n   - Move the kernel by 3 (stride=3)\n\n2) Given the matrix dimensions (5x3) and kernel size (3x3):\n   - We can fit only one complete 3x3 region vertically\n   - We can fit only one complete 3x3 region horizontally\n\n3) Looking at the first (and only) complete 3x3 region:\n   1 7 5\n   9 0 3\n   0 3 7\n\n   The maximum value in this region is 9.\n\n4) Since the kernel size is 3 and there's no overlap (stride=3), we can only get one output value.\n\n5) The remaining rows don't form a complete 3x3 region, so they are not considered in the output.\n</reasoning>\n<answer>\n9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              1,
+              7,
+              5
+            ],
+            [
+              9,
+              0,
+              3
+            ],
+            [
+              0,
+              3,
+              7
+            ],
+            [
+              9,
+              0,
+              9
+            ],
+            [
+              4,
+              5,
+              2
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              9
+            ],
+            [
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n1 6 3 8 9 1\n2 1 7 8 5 2\n8 6 3 2 5 0\n3 4 0 6 6 9\n5 7 0 2 5 8\n7 9 4 0 7 0\n",
+        "expected_answer": "4.11 4.44\n4.33 4.78",
+        "model_answer": "<reasoning>\nFor average pooling with a kernel size of 3:\n1. The 6x6 matrix will be divided into four 3x3 regions (non-overlapping because stride = kernel size)\n2. For each 3x3 region, calculate the average of all 9 numbers\n\nTop-left region (1,6,3, 2,1,7, 8,6,3):\n(1+6+3+2+1+7+8+6+3)/9 = 37/9 \u2248 4.11\n\nTop-right region (8,9,1, 8,5,2, 2,5,0):\n(8+9+1+8+5+2+2+5+0)/9 = 40/9 \u2248 4.44\n\nBottom-left region (3,4,0, 5,7,0, 7,9,4):\n(3+4+0+5+7+0+7+9+4)/9 = 39/9 \u2248 4.33\n\nBottom-right region (6,6,9, 2,5,8, 0,7,0):\n(6+6+9+2+5+8+0+7+0)/9 = 43/9 \u2248 4.78\n</reasoning>\n\n<answer>\n4.11 4.44\n4.33 4.78\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              1,
+              6,
+              3,
+              8,
+              9,
+              1
+            ],
+            [
+              2,
+              1,
+              7,
+              8,
+              5,
+              2
+            ],
+            [
+              8,
+              6,
+              3,
+              2,
+              5,
+              0
+            ],
+            [
+              3,
+              4,
+              0,
+              6,
+              6,
+              9
+            ],
+            [
+              5,
+              7,
+              0,
+              2,
+              5,
+              8
+            ],
+            [
+              7,
+              9,
+              4,
+              0,
+              7,
+              0
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              4.111111111111111,
+              4.444444444444445
+            ],
+            [
+              4.333333333333333,
+              4.777777777777778
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n3 2 2 0\n2 1 7 5\n3 7 0 9\n3 4 6 2\n3 5 8 2\n6 3 2 9\n1 1 6 5\n0 2 6 2\n2 9 4 5\n",
+        "expected_answer": "3.0 4.67\n4.44 4.33\n3.44 4.0",
+        "model_answer": "<reasoning>\nFor average pooling with kernel size 3:\n1. The matrix is 9x4, and we'll use a 3x3 kernel\n2. Since stride = kernel size (3), there will be no overlap\n3. The output matrix will be 3x1 (since we can fit three 3x3 blocks vertically and only one horizontally)\n4. For each 3x3 block:\n   - Top block: (3+2+2+2+1+7+3+7+0)/9\n   - Middle block: (3+4+6+3+5+8+6+3+2)/9\n   - Bottom block: (1+1+6+0+2+6+2+9+4)/9\n\nLet's calculate:\nTop block: (3+2+2+2+1+7+3+7+0)/9 = 27/9 = 3\nMiddle block: (3+4+6+3+5+8+6+3+2)/9 = 40/9 \u2248 4.44\nBottom block: (1+1+6+0+2+6+2+9+4)/9 = 31/9 \u2248 3.44\n</reasoning>\n<answer>\n3.00\n4.44\n3.44\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              1,
+              7,
+              5
+            ],
+            [
+              3,
+              7,
+              0,
+              9
+            ],
+            [
+              3,
+              4,
+              6,
+              2
+            ],
+            [
+              3,
+              5,
+              8,
+              2
+            ],
+            [
+              6,
+              3,
+              2,
+              9
+            ],
+            [
+              1,
+              1,
+              6,
+              5
+            ],
+            [
+              0,
+              2,
+              6,
+              2
+            ],
+            [
+              2,
+              9,
+              4,
+              5
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              3.0,
+              4.666666666666667
+            ],
+            [
+              4.444444444444445,
+              4.333333333333333
+            ],
+            [
+              3.4444444444444446,
+              4.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 1:\n2 8 1\n9 3 5\n1 4 5\n1 9 8\n",
+        "expected_answer": "2 8 1\n9 3 5\n1 4 5\n1 9 8",
+        "model_answer": "<reasoning>\nLet me think about this:\n1. With a kernel size of 1, each element will be considered individually\n2. Since stride equals kernel size (1), there will be no overlap\n3. In max pooling, we take the maximum value in each kernel region\n4. With kernel size 1, each element is its own region\n5. Therefore, the output matrix will be exactly the same as the input matrix, as we're taking the max of single elements\n\nSince kernel size is 1, the pooling operation doesn't actually change the matrix at all.\n</reasoning>\n\n<answer>\n2 8 1\n9 3 5\n1 4 5\n1 9 8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              2,
+              8,
+              1
+            ],
+            [
+              9,
+              3,
+              5
+            ],
+            [
+              1,
+              4,
+              5
+            ],
+            [
+              1,
+              9,
+              8
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 1,
+          "solution": [
+            [
+              2,
+              8,
+              1
+            ],
+            [
+              9,
+              3,
+              5
+            ],
+            [
+              1,
+              4,
+              5
+            ],
+            [
+              1,
+              9,
+              8
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n4 7 2 0 1 0 2 6 3\n5 8 6 8 5 8 0 9 3\n9 7 5 9 4 6 4 8 5\n2 1 2 4 3 2 0 0 9\n3 6 6 5 6 9 8 2 1\n6 4 3 0 7 0 2 0 9\n8 9 0 3 2 8 0 0 0\n6 7 8 5 7 9 3 6 3\n8 8 8 1 6 1 1 4 9\n",
+        "expected_answer": "8 8 8 9 3\n9 9 6 8 9\n6 6 9 8 9\n9 8 9 6 3\n8 8 6 4 9",
+        "model_answer": "<reasoning>\nFor max pooling with a kernel size of 2:\n1. I'll divide the matrix into 2x2 non-overlapping regions\n2. For each region, I'll find the maximum value\n3. The output matrix will be smaller, with dimensions (input_size/kernel_size)\n\nLet's process each 2x2 region:\n\nTop-left quadrant:\n[4 7|2 0|1 0|2 6|3]\n[5 8|6 8|5 8|0 9|3]\nMax values: 8, 8, 8, 9, (3 - incomplete)\n\nSecond row of quadrants:\n[9 7|5 9|4 6|4 8|5]\n[2 1|2 4|3 2|0 0|9]\nMax values: 9, 9, 6, 8, (9 - incomplete)\n\nThird row of quadrants:\n[3 6|6 5|6 9|8 2|1]\n[6 4|3 0|7 0|2 0|9]\nMax values: 6, 6, 9, 8, (9 - incomplete)\n\nFourth row of quadrants:\n[8 9|0 3|2 8|0 0|0]\n[6 7|8 5|7 9|3 6|3]\nMax values: 9, 8, 8, 6, (3 - incomplete)\n\nLast row: (incomplete - ignore)\n[8 8|8 1|6 1|1 4|9]\n\nArranging these values in a matrix:\n</reasoning>\n<answer>\n8 8 8 9 3\n9 9 6 8 9\n6 6 9 8 9\n9 8 8 6 3\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              4,
+              7,
+              2,
+              0,
+              1,
+              0,
+              2,
+              6,
+              3
+            ],
+            [
+              5,
+              8,
+              6,
+              8,
+              5,
+              8,
+              0,
+              9,
+              3
+            ],
+            [
+              9,
+              7,
+              5,
+              9,
+              4,
+              6,
+              4,
+              8,
+              5
+            ],
+            [
+              2,
+              1,
+              2,
+              4,
+              3,
+              2,
+              0,
+              0,
+              9
+            ],
+            [
+              3,
+              6,
+              6,
+              5,
+              6,
+              9,
+              8,
+              2,
+              1
+            ],
+            [
+              6,
+              4,
+              3,
+              0,
+              7,
+              0,
+              2,
+              0,
+              9
+            ],
+            [
+              8,
+              9,
+              0,
+              3,
+              2,
+              8,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              7,
+              8,
+              5,
+              7,
+              9,
+              3,
+              6,
+              3
+            ],
+            [
+              8,
+              8,
+              8,
+              1,
+              6,
+              1,
+              1,
+              4,
+              9
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              8,
+              8,
+              8,
+              9,
+              3
+            ],
+            [
+              9,
+              9,
+              6,
+              8,
+              9
+            ],
+            [
+              6,
+              6,
+              9,
+              8,
+              9
+            ],
+            [
+              9,
+              8,
+              9,
+              6,
+              3
+            ],
+            [
+              8,
+              8,
+              6,
+              4,
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n4 6 7\n6 6 1\n4 3 5\n0 8 6\n8 2 0\n1 4 2\n6 4 5\n0 5 9\n6 2 6\n",
+        "expected_answer": "7\n8\n9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, we'll divide the 9x3 matrix into 3x3 sub-matrices.\n   Given that stride = kernel size, there will be no overlap.\n\n2) The 9x3 matrix will be divided into 3 complete 3x3 regions:\n   Region 1:\n   4 6 7\n   6 6 1\n   4 3 5\n\n   Region 2:\n   0 8 6\n   8 2 0\n   1 4 2\n\n   Region 3:\n   6 4 5\n   0 5 9\n   6 2 6\n\n3) For max pooling, we need to find the maximum value in each 3x3 region:\n   Region 1: max(4,6,7,6,6,1,4,3,5) = 7\n   Region 2: max(0,8,6,8,2,0,1,4,2) = 8\n   Region 3: max(6,4,5,0,5,9,6,2,6) = 9\n\n4) The result will be a 3x1 matrix with these maximum values.\n</reasoning>\n<answer>\n7\n8\n9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              4,
+              6,
+              7
+            ],
+            [
+              6,
+              6,
+              1
+            ],
+            [
+              4,
+              3,
+              5
+            ],
+            [
+              0,
+              8,
+              6
+            ],
+            [
+              8,
+              2,
+              0
+            ],
+            [
+              1,
+              4,
+              2
+            ],
+            [
+              6,
+              4,
+              5
+            ],
+            [
+              0,
+              5,
+              9
+            ],
+            [
+              6,
+              2,
+              6
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              7
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n5 8 5 7 8 6\n6 1 8 5 1 8\n9 1 7 6 8 3\n8 4 0 2 3 1\n6 5 0 6 3 6\n1 7 7 2 4 5\n8 7 2 9 0 4\n2 0 4 4 8 4\n",
+        "expected_answer": "5.0 6.25 5.75\n5.5 3.75 3.75\n4.75 3.75 4.5\n4.25 4.75 4.0",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 non-overlapping regions.\n\n2) For each 2x2 region, I need to calculate the average of the four numbers.\n\n3) Let's process each region:\n   Top left region (5,8,6,1): (5+8+6+1)/4 = 20/4 = 5\n   Top middle region (5,7,8,5): (5+7+8+5)/4 = 25/4 = 6.25\n   Top right region (8,6,1,8): (8+6+1+8)/4 = 23/4 = 5.75\n\n   Middle top region (9,1,8,4): (9+1+8+4)/4 = 22/4 = 5.5\n   Middle middle region (7,6,0,2): (7+6+0+2)/4 = 15/4 = 3.75\n   Middle right region (8,3,3,1): (8+3+3+1)/4 = 15/4 = 3.75\n\n   Bottom left region (6,5,8,7): (6+5+8+7)/4 = 26/4 = 6.5\n   Bottom middle region (0,6,2,9): (0+6+2+9)/4 = 17/4 = 4.25\n   Bottom right region (3,6,0,4): (3+6+0+4)/4 = 13/4 = 3.25\n\n4) The result will be a 3x3 matrix containing these averages.\n</reasoning>\n<answer>\n5.00 6.25 5.75\n5.50 3.75 3.75\n6.50 4.25 3.25\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              8,
+              5,
+              7,
+              8,
+              6
+            ],
+            [
+              6,
+              1,
+              8,
+              5,
+              1,
+              8
+            ],
+            [
+              9,
+              1,
+              7,
+              6,
+              8,
+              3
+            ],
+            [
+              8,
+              4,
+              0,
+              2,
+              3,
+              1
+            ],
+            [
+              6,
+              5,
+              0,
+              6,
+              3,
+              6
+            ],
+            [
+              1,
+              7,
+              7,
+              2,
+              4,
+              5
+            ],
+            [
+              8,
+              7,
+              2,
+              9,
+              0,
+              4
+            ],
+            [
+              2,
+              0,
+              4,
+              4,
+              8,
+              4
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              5.0,
+              6.25,
+              5.75
+            ],
+            [
+              5.5,
+              3.75,
+              3.75
+            ],
+            [
+              4.75,
+              3.75,
+              4.5
+            ],
+            [
+              4.25,
+              4.75,
+              4.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n4 7 3 5 3 0\n7 6 0 2 2 2\n6 0 8 8 9 9\n",
+        "expected_answer": "6.0 2.5 1.75\n3.0 8.0 9.0",
+        "model_answer": "<reasoning>\nFor average pooling with a kernel size of 2:\n1. I'll divide the matrix into 2x2 non-overlapping regions\n2. For each region, I'll calculate the average of all elements\n\nFirst row of output (first two 2x2 regions):\n- Region 1: (4+7+7+6)/4 = 24/4 = 6\n- Region 2: (3+5+0+2)/4 = 10/4 = 2.5\n- Region 3: (3+0+2+2)/4 = 7/4 = 1.75\n\nSecond row of output (remaining 2x2 regions):\n- Region 1: (6+0+0+8)/4 = 14/4 = 3.5\n- Region 2: (8+8+9+9)/4 = 34/4 = 8.5\n\nThe average pooling will reduce the size of the matrix by half in both dimensions.\n</reasoning>\n<answer>\n6 2.5 1.75\n3.5 8.5\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              4,
+              7,
+              3,
+              5,
+              3,
+              0
+            ],
+            [
+              7,
+              6,
+              0,
+              2,
+              2,
+              2
+            ],
+            [
+              6,
+              0,
+              8,
+              8,
+              9,
+              9
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              6.0,
+              2.5,
+              1.75
+            ],
+            [
+              3.0,
+              8.0,
+              9.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n3 5 5\n7 9 9\n3 6 9\n",
+        "expected_answer": "9 9\n6 9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2 and no overlap (stride = 2), I need to divide the matrix into 2x2 regions.\n   However, since the input is 3x3, not all elements will be used in the pooling operation.\n\n2) Let's identify the regions that can be processed with a 2x2 kernel:\n   Region 1 (top-left):    Region 2 (top-right):\n   3 5                     [not enough elements]\n   7 9                     \n\n   Since we can only fit one complete 2x2 region, our output will be a 1x1 matrix.\n\n3) For max pooling, I need to find the maximum value in each region:\n   Region 1: max(3, 5, 7, 9) = 9\n\n</reasoning>\n<answer>\n9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              5,
+              5
+            ],
+            [
+              7,
+              9,
+              9
+            ],
+            [
+              3,
+              6,
+              9
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              9,
+              9
+            ],
+            [
+              6,
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 1:\n2 7 4 0 8 7 4 6 3 3\n8 5 1 9 8 6 1 4 5 0\n7 3 5 4 7 3 7 2 5 2\n9 8 0 9 0 5 7 2 9 4\n4 2 2 7 7 6 0 9 1 1\n0 4 3 4 7 2 5 2 6 3\n4 3 4 3 8 9 2 9 6 9\n4 4 9 8 7 3 2 7 2 6\n3 6 5 4 8 8 7 0 5 4\n",
+        "expected_answer": "2.0 7.0 4.0 0.0 8.0 7.0 4.0 6.0 3.0 3.0\n8.0 5.0 1.0 9.0 8.0 6.0 1.0 4.0 5.0 0.0\n7.0 3.0 5.0 4.0 7.0 3.0 7.0 2.0 5.0 2.0\n9.0 8.0 0.0 9.0 0.0 5.0 7.0 2.0 9.0 4.0\n4.0 2.0 2.0 7.0 7.0 6.0 0.0 9.0 1.0 1.0\n0.0 4.0 3.0 4.0 7.0 2.0 5.0 2.0 6.0 3.0\n4.0 3.0 4.0 3.0 8.0 9.0 2.0 9.0 6.0 9.0\n4.0 4.0 9.0 8.0 7.0 3.0 2.0 7.0 2.0 6.0\n3.0 6.0 5.0 4.0 8.0 8.0 7.0 0.0 5.0 4.0",
+        "model_answer": "<reasoning>\nFor average pooling with kernel size 1:\n1. Since the kernel size is 1, each element will be averaged with itself only\n2. This means the output will be exactly the same as the input matrix\n3. The stride equals the kernel size (1), so we move one position at a time\n4. In this case, average pooling with kernel size 1 is essentially an identity operation\n\nTherefore, the output matrix will be identical to the input matrix.\n</reasoning>\n<answer>\n2 7 4 0 8 7 4 6 3 3\n8 5 1 9 8 6 1 4 5 0\n7 3 5 4 7 3 7 2 5 2\n9 8 0 9 0 5 7 2 9 4\n4 2 2 7 7 6 0 9 1 1\n0 4 3 4 7 2 5 2 6 3\n4 3 4 3 8 9 2 9 6 9\n4 4 9 8 7 3 2 7 2 6\n3 6 5 4 8 8 7 0 5 4\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              2,
+              7,
+              4,
+              0,
+              8,
+              7,
+              4,
+              6,
+              3,
+              3
+            ],
+            [
+              8,
+              5,
+              1,
+              9,
+              8,
+              6,
+              1,
+              4,
+              5,
+              0
+            ],
+            [
+              7,
+              3,
+              5,
+              4,
+              7,
+              3,
+              7,
+              2,
+              5,
+              2
+            ],
+            [
+              9,
+              8,
+              0,
+              9,
+              0,
+              5,
+              7,
+              2,
+              9,
+              4
+            ],
+            [
+              4,
+              2,
+              2,
+              7,
+              7,
+              6,
+              0,
+              9,
+              1,
+              1
+            ],
+            [
+              0,
+              4,
+              3,
+              4,
+              7,
+              2,
+              5,
+              2,
+              6,
+              3
+            ],
+            [
+              4,
+              3,
+              4,
+              3,
+              8,
+              9,
+              2,
+              9,
+              6,
+              9
+            ],
+            [
+              4,
+              4,
+              9,
+              8,
+              7,
+              3,
+              2,
+              7,
+              2,
+              6
+            ],
+            [
+              3,
+              6,
+              5,
+              4,
+              8,
+              8,
+              7,
+              0,
+              5,
+              4
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 1,
+          "solution": [
+            [
+              2.0,
+              7.0,
+              4.0,
+              0.0,
+              8.0,
+              7.0,
+              4.0,
+              6.0,
+              3.0,
+              3.0
+            ],
+            [
+              8.0,
+              5.0,
+              1.0,
+              9.0,
+              8.0,
+              6.0,
+              1.0,
+              4.0,
+              5.0,
+              0.0
+            ],
+            [
+              7.0,
+              3.0,
+              5.0,
+              4.0,
+              7.0,
+              3.0,
+              7.0,
+              2.0,
+              5.0,
+              2.0
+            ],
+            [
+              9.0,
+              8.0,
+              0.0,
+              9.0,
+              0.0,
+              5.0,
+              7.0,
+              2.0,
+              9.0,
+              4.0
+            ],
+            [
+              4.0,
+              2.0,
+              2.0,
+              7.0,
+              7.0,
+              6.0,
+              0.0,
+              9.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              4.0,
+              3.0,
+              4.0,
+              7.0,
+              2.0,
+              5.0,
+              2.0,
+              6.0,
+              3.0
+            ],
+            [
+              4.0,
+              3.0,
+              4.0,
+              3.0,
+              8.0,
+              9.0,
+              2.0,
+              9.0,
+              6.0,
+              9.0
+            ],
+            [
+              4.0,
+              4.0,
+              9.0,
+              8.0,
+              7.0,
+              3.0,
+              2.0,
+              7.0,
+              2.0,
+              6.0
+            ],
+            [
+              3.0,
+              6.0,
+              5.0,
+              4.0,
+              8.0,
+              8.0,
+              7.0,
+              0.0,
+              5.0,
+              4.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 1:\n6 9 7\n4 1 6\n",
+        "expected_answer": "6.0 9.0 7.0\n4.0 1.0 6.0",
+        "model_answer": "<reasoning>\nFor average pooling with a kernel size of 1:\n1. Since the kernel size is 1, each element will be considered its own region\n2. When performing average pooling on a 1x1 region, we just take the value itself as there's nothing to average\n3. Therefore, the output matrix will be exactly the same as the input matrix\n4. This is because a 1x1 kernel essentially means no pooling operation is performed\n</reasoning>\n<answer>\n6 9 7\n4 1 6\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              9,
+              7
+            ],
+            [
+              4,
+              1,
+              6
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 1,
+          "solution": [
+            [
+              6.0,
+              9.0,
+              7.0
+            ],
+            [
+              4.0,
+              1.0,
+              6.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n6 2 8 0 4 5\n5 5 4 7 8 0\n7 4 1 4 2 6\n",
+        "expected_answer": "8 8",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, we'll divide the matrix into 3x3 regions (where possible).\n   Given the input matrix is 3x6, we can fit two 3x3 regions horizontally.\n\n2) The first 3x3 region contains:\n   6 2 8\n   5 5 4\n   7 4 1\n   The maximum value in this region is 8.\n\n3) The second 3x3 region contains:\n   0 4 5\n   7 8 0\n   4 2 6\n   The maximum value in this region is 8.\n\n4) Since the stride equals the kernel size (3), there is no overlap between regions.\n   And since our original matrix is 3x6, we'll get a 1x2 output matrix \n   (3 rows \u2192 1 row after pooling, 6 columns \u2192 2 columns after pooling).\n</reasoning>\n<answer>8 8</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              2,
+              8,
+              0,
+              4,
+              5
+            ],
+            [
+              5,
+              5,
+              4,
+              7,
+              8,
+              0
+            ],
+            [
+              7,
+              4,
+              1,
+              4,
+              2,
+              6
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              8,
+              8
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n7 8 8 2 1 0 6 1 3 9\n0 8 0 8 1 0 5 0 2 1\n6 2 6 7 2 1 6 6 3 0\n0 1 0 8 0 7 8 0 5 8\n2 3 4 9 6 0 3 2 3 0\n2 0 0 5 7 3 3 3 3 7\n6 8 9 1 6 5 4 8 3 7\n",
+        "expected_answer": "5.0 2.44 3.56 3.33\n1.33 5.0 3.33 5.0\n7.67 4.0 5.0 7.0",
+        "model_answer": "<reasoning>\n1) For average pooling with kernel size 3:\n   - We need to divide the matrix into 3x3 non-overlapping regions\n   - For each region, calculate the average of all 9 numbers\n   - Since kernel size is 3, we'll move 3 steps each time\n   - The input matrix is 7x10, so we'll get a 2x3 output matrix\n   (since 7\u00f73=2 rows with remainder, 10\u00f73=3 columns with remainder)\n\n2) Let's calculate each region:\n   First row:\n   - Region 1: (7+8+8+0+8+0+6+2+6)/9 = 5\n   - Region 2: (2+1+0+8+1+0+7+2+1)/9 = 2.44\n   - Region 3: (6+1+3+5+0+2+6+6+3)/9 = 3.56\n\n   Second row:\n   - Region 1: (0+1+0+2+3+4+2+0+0)/9 = 1.33\n   - Region 2: (8+0+7+9+6+0+5+7+3)/9 = 5\n   - Region 3: (8+0+5+3+2+3+3+3+3)/9 = 3.33\n</reasoning>\n<answer>\n5.00 2.44 3.56\n1.33 5.00 3.33\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              7,
+              8,
+              8,
+              2,
+              1,
+              0,
+              6,
+              1,
+              3,
+              9
+            ],
+            [
+              0,
+              8,
+              0,
+              8,
+              1,
+              0,
+              5,
+              0,
+              2,
+              1
+            ],
+            [
+              6,
+              2,
+              6,
+              7,
+              2,
+              1,
+              6,
+              6,
+              3,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              8,
+              0,
+              7,
+              8,
+              0,
+              5,
+              8
+            ],
+            [
+              2,
+              3,
+              4,
+              9,
+              6,
+              0,
+              3,
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              5,
+              7,
+              3,
+              3,
+              3,
+              3,
+              7
+            ],
+            [
+              6,
+              8,
+              9,
+              1,
+              6,
+              5,
+              4,
+              8,
+              3,
+              7
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              5.0,
+              2.4444444444444446,
+              3.5555555555555554,
+              3.3333333333333335
+            ],
+            [
+              1.3333333333333333,
+              5.0,
+              3.3333333333333335,
+              5.0
+            ],
+            [
+              7.666666666666667,
+              4.0,
+              5.0,
+              7.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n8 3 5 5\n7 5 8 0\n8 5 1 0\n",
+        "expected_answer": "8 8\n8 1",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 regions (where possible).\n   Since the original matrix is 3x4, we'll only be able to make complete 2x2 regions in the first two rows.\n\n2) Let's divide the matrix into regions:\n   Region 1: [8 3]\n            [7 5]\n   \n   Region 2: [5 5]\n            [8 0]\n\n3) For max pooling, I need to find the maximum value in each region:\n   Region 1: max(8,3,7,5) = 8\n   Region 2: max(5,5,8,0) = 8\n\n4) The result will be a 1x2 matrix containing these maximum values.\n\nNote: The last row (8 5 1 0) won't be included in the result because we can't form complete 2x2 regions with it.\n</reasoning>\n<answer>\n8 8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              8,
+              3,
+              5,
+              5
+            ],
+            [
+              7,
+              5,
+              8,
+              0
+            ],
+            [
+              8,
+              5,
+              1,
+              0
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              8,
+              8
+            ],
+            [
+              8,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n6 2 0\n8 3 1\n6 7 1\n4 5 7\n7 4 9\n5 3 2\n",
+        "expected_answer": "8\n9",
+        "model_answer": "<reasoning>\nFor max pooling with a kernel size of 3:\n1. Since the kernel size is 3, I need to divide the matrix into 3x3 regions (where possible)\n2. With a 6x3 matrix and kernel size 3:\n   - Horizontally: We can fit 1 kernel (as 3 columns)\n   - Vertically: We can fit 2 kernels (as we have 6 rows, which allows for two 3x3 regions)\n3. For each 3x3 region:\n   - First region (top):\n     6 2 0\n     8 3 1\n     6 7 1\n     Maximum value is 8\n   - Second region (bottom):\n     4 5 7\n     7 4 9\n     5 3 2\n     Maximum value is 9\n\n4. The result will be a 2x1 matrix (2 rows, 1 column)\n</reasoning>\n<answer>\n8\n9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              8,
+              3,
+              1
+            ],
+            [
+              6,
+              7,
+              1
+            ],
+            [
+              4,
+              5,
+              7
+            ],
+            [
+              7,
+              4,
+              9
+            ],
+            [
+              5,
+              3,
+              2
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              8
+            ],
+            [
+              9
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n9 9 4\n9 5 9\n3 3 8\n5 5 2\n3 3 7\n5 1 4\n4 2 9\n6 7 6\n7 9 9\n3 6 9\n",
+        "expected_answer": "8.0 6.5\n4.0 5.0\n3.0 5.5\n4.75 7.5\n6.25 9.0",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 non-overlapping sections.\n   Due to kernel size = stride, there's no overlap between sections.\n\n2) For a 10x3 input matrix, with kernel size 2, the output will be 5x1 matrix\n   (Since we can only fit 5 complete 2x2 sections vertically)\n\n3) Let me process each 2x2 section and calculate the average:\n\n   First section:\n   9 9    \u2192 (9 + 9 + 9 + 5) / 4 = 8\n   9 5\n\n   Second section:\n   3 3    \u2192 (3 + 3 + 5 + 5) / 4 = 4\n   5 5\n\n   Third section:\n   3 3    \u2192 (3 + 3 + 5 + 1) / 4 = 3\n   5 1\n\n   Fourth section:\n   4 2    \u2192 (4 + 2 + 6 + 7) / 4 = 4.75\n   6 7\n\n   Fifth section:\n   7 9    \u2192 (7 + 9 + 3 + 6) / 4 = 6.25\n   3 6\n\nNote: The last rows will not be included in the output as they don't form complete 2x2 sections.\n</reasoning>\n<answer>\n8\n4\n3\n4.75\n6.25\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              9,
+              9,
+              4
+            ],
+            [
+              9,
+              5,
+              9
+            ],
+            [
+              3,
+              3,
+              8
+            ],
+            [
+              5,
+              5,
+              2
+            ],
+            [
+              3,
+              3,
+              7
+            ],
+            [
+              5,
+              1,
+              4
+            ],
+            [
+              4,
+              2,
+              9
+            ],
+            [
+              6,
+              7,
+              6
+            ],
+            [
+              7,
+              9,
+              9
+            ],
+            [
+              3,
+              6,
+              9
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              8.0,
+              6.5
+            ],
+            [
+              4.0,
+              5.0
+            ],
+            [
+              3.0,
+              5.5
+            ],
+            [
+              4.75,
+              7.5
+            ],
+            [
+              6.25,
+              9.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n8 0 3 1 8 0 6 2\n1 0 7 7 6 3 9 6\n4 4 0 0 0 4 0 1\n3 9 6 3 9 6 0 9\n1 8 0 7 8 1 6 1\n9 7 0 7 5 0 9 4\n9 3 6 7 1 4 6 1\n3 4 4 8 4 5 2 5\n9 4 4 5 0 0 0 5\n",
+        "expected_answer": "2.25 4.5 4.25 5.75\n5.0 2.25 4.75 2.5\n6.25 3.5 3.5 5.0\n4.75 6.25 3.5 3.5\n6.5 4.5 0.0 2.5",
+        "model_answer": "<reasoning>\n1. With a kernel size of 2 and no overlap (stride = 2), I'll divide the matrix into 2x2 blocks.\n2. For each 2x2 block, I need to calculate the average (sum of all elements divided by 4).\n3. Going through each block:\n\nFirst row of output:\n- Block 1: (8+0+1+0)/4 = 2.25\n- Block 2: (3+1+7+7)/4 = 4.5\n- Block 3: (8+0+6+3)/4 = 4.25\n- Block 4: (6+2+9+6)/4 = 5.75\n\nSecond row of output:\n- Block 1: (4+4+3+9)/4 = 5\n- Block 2: (0+0+6+3)/4 = 2.25\n- Block 3: (0+4+9+6)/4 = 4.75\n- Block 4: (0+1+0+9)/4 = 2.5\n\nThird row of output:\n- Block 1: (1+8+9+7)/4 = 6.25\n- Block 2: (0+7+0+7)/4 = 3.5\n- Block 3: (8+1+5+0)/4 = 3.5\n- Block 4: (6+1+9+4)/4 = 5\n\nFourth row of output:\n- Block 1: (9+3+3+4)/4 = 4.75\n- Block 2: (6+7+4+8)/4 = 6.25\n- Block 3: (1+4+4+5)/4 = 3.5\n- Block 4: (6+1+2+5)/4 = 3.5\n</reasoning>\n<answer>\n2.25 4.5 4.25 5.75\n5 2.25 4.75 2.5\n6.25 3.5 3.5 5\n4.75 6.25 3.5 3.5\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              8,
+              0,
+              3,
+              1,
+              8,
+              0,
+              6,
+              2
+            ],
+            [
+              1,
+              0,
+              7,
+              7,
+              6,
+              3,
+              9,
+              6
+            ],
+            [
+              4,
+              4,
+              0,
+              0,
+              0,
+              4,
+              0,
+              1
+            ],
+            [
+              3,
+              9,
+              6,
+              3,
+              9,
+              6,
+              0,
+              9
+            ],
+            [
+              1,
+              8,
+              0,
+              7,
+              8,
+              1,
+              6,
+              1
+            ],
+            [
+              9,
+              7,
+              0,
+              7,
+              5,
+              0,
+              9,
+              4
+            ],
+            [
+              9,
+              3,
+              6,
+              7,
+              1,
+              4,
+              6,
+              1
+            ],
+            [
+              3,
+              4,
+              4,
+              8,
+              4,
+              5,
+              2,
+              5
+            ],
+            [
+              9,
+              4,
+              4,
+              5,
+              0,
+              0,
+              0,
+              5
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              2.25,
+              4.5,
+              4.25,
+              5.75
+            ],
+            [
+              5.0,
+              2.25,
+              4.75,
+              2.5
+            ],
+            [
+              6.25,
+              3.5,
+              3.5,
+              5.0
+            ],
+            [
+              4.75,
+              6.25,
+              3.5,
+              3.5
+            ],
+            [
+              6.5,
+              4.5,
+              0.0,
+              2.5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n1 7 7 0 1 2 8 7 2\n8 4 5 0 3 1 4 1 2\n3 6 5 2 4 5 8 6 0\n4 6 4 2 3 4 8 8 8\n4 9 9 9 8 5 8 6 9\n4 8 7 8 7 8 3 9 8\n7 2 5 5 9 0 4 4 2\n",
+        "expected_answer": "5.0 3.0 1.75 5.0 2.0\n4.75 3.25 4.0 7.5 4.0\n6.25 8.25 7.0 6.5 8.5\n4.5 5.0 4.5 4.0 2.0",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 blocks.\n   Note: Since the matrix is 7x9, some elements on the right and bottom will be left out.\n\n2) For average pooling, I need to calculate the mean of each 2x2 block.\n\n3) Let's process each 2x2 block:\n   First row of output:\n   - Block 1: (1+7+8+4)/4 = 5\n   - Block 2: (7+0+5+0)/4 = 3\n   - Block 3: (1+2+3+1)/4 = 1.75\n   - Block 4: (8+7+4+1)/4 = 5\n\n   Second row of output:\n   - Block 1: (3+6+4+6)/4 = 4.75\n   - Block 2: (5+2+4+2)/4 = 3.25\n   - Block 3: (4+5+3+4)/4 = 4\n   - Block 4: (8+6+8+8)/4 = 7.5\n\n   Third row of output:\n   - Block 1: (4+9+4+8)/4 = 6.25\n   - Block 2: (9+9+7+8)/4 = 8.25\n   - Block 3: (8+5+7+8)/4 = 7\n   - Block 4: (8+6+3+9)/4 = 6.5\n\n4) Since we can only process complete 2x2 blocks, the last row and last column of the original matrix won't be used.\n</reasoning>\n\n<answer>\n5.00 3.00 1.75 5.00\n4.75 3.25 4.00 7.50\n6.25 8.25 7.00 6.50\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              1,
+              7,
+              7,
+              0,
+              1,
+              2,
+              8,
+              7,
+              2
+            ],
+            [
+              8,
+              4,
+              5,
+              0,
+              3,
+              1,
+              4,
+              1,
+              2
+            ],
+            [
+              3,
+              6,
+              5,
+              2,
+              4,
+              5,
+              8,
+              6,
+              0
+            ],
+            [
+              4,
+              6,
+              4,
+              2,
+              3,
+              4,
+              8,
+              8,
+              8
+            ],
+            [
+              4,
+              9,
+              9,
+              9,
+              8,
+              5,
+              8,
+              6,
+              9
+            ],
+            [
+              4,
+              8,
+              7,
+              8,
+              7,
+              8,
+              3,
+              9,
+              8
+            ],
+            [
+              7,
+              2,
+              5,
+              5,
+              9,
+              0,
+              4,
+              4,
+              2
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              5.0,
+              3.0,
+              1.75,
+              5.0,
+              2.0
+            ],
+            [
+              4.75,
+              3.25,
+              4.0,
+              7.5,
+              4.0
+            ],
+            [
+              6.25,
+              8.25,
+              7.0,
+              6.5,
+              8.5
+            ],
+            [
+              4.5,
+              5.0,
+              4.5,
+              4.0,
+              2.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 1:\n7 4 4 5 8 0 9\n7 5 3 0 6 4 6\n4 5 7 3 1 1 9\n6 4 5 8 1 8 1\n6 3 4 3 9 0 8\n9 5 3 2 4 4 5\n",
+        "expected_answer": "7.0 4.0 4.0 5.0 8.0 0.0 9.0\n7.0 5.0 3.0 0.0 6.0 4.0 6.0\n4.0 5.0 7.0 3.0 1.0 1.0 9.0\n6.0 4.0 5.0 8.0 1.0 8.0 1.0\n6.0 3.0 4.0 3.0 9.0 0.0 8.0\n9.0 5.0 3.0 2.0 4.0 4.0 5.0",
+        "model_answer": "<reasoning>\n1. Since the kernel size is 1, and stride equals kernel size, this means:\n   - Each element will be averaged with itself only\n   - No actual pooling will occur\n   - The output matrix will be identical to the input matrix\n\n2. When performing average pooling with a 1x1 kernel:\n   - Each number is divided by 1 (the area of the kernel)\n   - Therefore, each number remains unchanged\n\n3. In this case, the output matrix will be exactly the same as the input matrix because:\n   - Kernel size of 1 means we're looking at one number at a time\n   - Average of a single number is the number itself\n</reasoning>\n\n<answer>\n7 4 4 5 8 0 9\n7 5 3 0 6 4 6\n4 5 7 3 1 1 9\n6 4 5 8 1 8 1\n6 3 4 3 9 0 8\n9 5 3 2 4 4 5\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              7,
+              4,
+              4,
+              5,
+              8,
+              0,
+              9
+            ],
+            [
+              7,
+              5,
+              3,
+              0,
+              6,
+              4,
+              6
+            ],
+            [
+              4,
+              5,
+              7,
+              3,
+              1,
+              1,
+              9
+            ],
+            [
+              6,
+              4,
+              5,
+              8,
+              1,
+              8,
+              1
+            ],
+            [
+              6,
+              3,
+              4,
+              3,
+              9,
+              0,
+              8
+            ],
+            [
+              9,
+              5,
+              3,
+              2,
+              4,
+              4,
+              5
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 1,
+          "solution": [
+            [
+              7.0,
+              4.0,
+              4.0,
+              5.0,
+              8.0,
+              0.0,
+              9.0
+            ],
+            [
+              7.0,
+              5.0,
+              3.0,
+              0.0,
+              6.0,
+              4.0,
+              6.0
+            ],
+            [
+              4.0,
+              5.0,
+              7.0,
+              3.0,
+              1.0,
+              1.0,
+              9.0
+            ],
+            [
+              6.0,
+              4.0,
+              5.0,
+              8.0,
+              1.0,
+              8.0,
+              1.0
+            ],
+            [
+              6.0,
+              3.0,
+              4.0,
+              3.0,
+              9.0,
+              0.0,
+              8.0
+            ],
+            [
+              9.0,
+              5.0,
+              3.0,
+              2.0,
+              4.0,
+              4.0,
+              5.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n5 6 7\n8 9 6\n8 4 4\n3 3 8\n4 4 6\n",
+        "expected_answer": "9 7\n8 8\n4 6",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I need to divide the matrix into 2x2 regions (since kernel size is 2)\n   Note that since the original matrix is 5x3, some elements on the right and bottom might not be included.\n\n2) Let's group the matrix into 2x2 regions:\n   Region 1:   Region 2:\n   5 6         7\n   8 9         6\n\n   Region 3:   Region 4:\n   8 4         4\n   3 3         8\n\n   Region 5:   Region 6:\n   4 4         6\n   (incomplete) (incomplete)\n\n3) For max pooling, I need to find the maximum value in each complete 2x2 region:\n   Region 1: max(5,6,8,9) = 9\n   Region 2: Incomplete (not enough elements for a 2x2 kernel)\n   Region 3: max(8,4,3,3) = 8\n   Region 4: Incomplete (not enough elements for a 2x2 kernel)\n   Region 5 & 6: Incomplete (not enough elements for a 2x2 kernel)\n\n4) The result will be:\n   9\n   8\n\n</reasoning>\n<answer>\n9\n8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              5,
+              6,
+              7
+            ],
+            [
+              8,
+              9,
+              6
+            ],
+            [
+              8,
+              4,
+              4
+            ],
+            [
+              3,
+              3,
+              8
+            ],
+            [
+              4,
+              4,
+              6
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              9,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              4,
+              6
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n7 3 4 8 2 8 1 7 1\n7 2 9 4 2 6 4 3 6\n0 6 3 3 0 6 2 9 4\n2 0 4 5 0 4 6 6 4\n",
+        "expected_answer": "4.75 6.25 4.5 3.75 3.5\n2.0 3.75 2.5 5.75 4.0",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 non-overlapping regions\n   (Note: The rightmost column with size 1 will be ignored as it can't form a 2x2 region)\n\n2) Let me split the matrix into 2x2 blocks and calculate the average for each:\n\n   First row of blocks:\n   [7 3] [4 8] [2 8] [1 7]\n   [7 2] [9 4] [2 6] [4 3]\n   \n   Average of first block = (7+3+7+2)/4 = 19/4 = 4.75\n   Average of second block = (4+8+9+4)/4 = 25/4 = 6.25\n   Average of third block = (2+8+2+6)/4 = 18/4 = 4.5\n   Average of fourth block = (1+7+4+3)/4 = 15/4 = 3.75\n\n   Second row of blocks:\n   [0 6] [3 3] [0 6] [2 9]\n   [2 0] [4 5] [0 4] [6 6]\n   \n   Average of first block = (0+6+2+0)/4 = 8/4 = 2\n   Average of second block = (3+3+4+5)/4 = 15/4 = 3.75\n   Average of third block = (0+6+0+4)/4 = 10/4 = 2.5\n   Average of fourth block = (2+9+6+6)/4 = 23/4 = 5.75\n\n</reasoning>\n<answer>\n4.75 6.25 4.5 3.75\n2 3.75 2.5 5.75\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              7,
+              3,
+              4,
+              8,
+              2,
+              8,
+              1,
+              7,
+              1
+            ],
+            [
+              7,
+              2,
+              9,
+              4,
+              2,
+              6,
+              4,
+              3,
+              6
+            ],
+            [
+              0,
+              6,
+              3,
+              3,
+              0,
+              6,
+              2,
+              9,
+              4
+            ],
+            [
+              2,
+              0,
+              4,
+              5,
+              0,
+              4,
+              6,
+              6,
+              4
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              4.75,
+              6.25,
+              4.5,
+              3.75,
+              3.5
+            ],
+            [
+              2.0,
+              3.75,
+              2.5,
+              5.75,
+              4.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n6 3 2 3 6 7 7 3\n1 5 2 4 0 9 9 4\n3 2 3 9 8 7 5 0\n8 3 7 3 2 0 2 2\n9 8 6 8 1 8 1 6\n1 6 7 9 0 9 4 8\n",
+        "expected_answer": "6 9 9\n9 9 8",
+        "model_answer": "<reasoning>\n1. For max pooling with kernel size 3:\n   - We need to divide the matrix into 3x3 non-overlapping regions\n   - For each region, select the maximum value\n   - Since the matrix is 6x8, and we're using kernel size 3:\n     * We'll get 2 complete regions horizontally (as 6/3 = 2)\n     * We'll get 2 complete regions vertically (as 8/3 = 2 remainder 2)\n     * The rightmost and bottom elements won't be used since they don't form complete 3x3 regions\n\n2. Let's find max values for each 3x3 region:\n   Top-left region (first 3x3):\n   6 3 2\n   1 5 2    \u2192 max = 8\n   3 2 3\n\n   Top-right region (second 3x3):\n   6 7 7\n   0 9 9    \u2192 max = 9\n   8 7 5\n\n   Bottom-left region (third 3x3):\n   8 3 7\n   9 8 6    \u2192 max = 9\n   1 6 7\n\n   Bottom-right region (fourth 3x3):\n   2 0 2\n   1 8 1    \u2192 max = 9\n   0 9 4\n</reasoning>\n<answer>\n8 9\n9 9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              3,
+              2,
+              3,
+              6,
+              7,
+              7,
+              3
+            ],
+            [
+              1,
+              5,
+              2,
+              4,
+              0,
+              9,
+              9,
+              4
+            ],
+            [
+              3,
+              2,
+              3,
+              9,
+              8,
+              7,
+              5,
+              0
+            ],
+            [
+              8,
+              3,
+              7,
+              3,
+              2,
+              0,
+              2,
+              2
+            ],
+            [
+              9,
+              8,
+              6,
+              8,
+              1,
+              8,
+              1,
+              6
+            ],
+            [
+              1,
+              6,
+              7,
+              9,
+              0,
+              9,
+              4,
+              8
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              6,
+              9,
+              9
+            ],
+            [
+              9,
+              9,
+              8
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n3 1 8 3 1 1 1 3 9\n4 3 8 4 1 0 5 4 1\n2 4 1 3 3 1 0 9 1\n6 3 6 9 1 5 2 6 9\n1 0 0 4 5 5 6 1 3\n2 9 3 8 4 4 6 9 9\n5 2 6 0 1 4 4 4 2\n9 2 7 8 1 0 1 2 6\n5 1 9 7 0 0 5 8 6\n4 8 1 1 0 1 7 6 3\n",
+        "expected_answer": "4 8 1 5 9\n6 9 5 9 9\n9 8 5 9 9\n9 8 4 4 6\n8 9 1 8 6",
+        "model_answer": "<reasoning>\nTo perform max pooling with a kernel size of 2 (and stride of 2):\n1. I'll divide the matrix into 2x2 non-overlapping blocks\n2. For each block, I'll find the maximum value\n3. The resulting matrix will be 5x5 (since 10\u00f72=5 rows and 9\u00f72\u22485 columns)\n\nLet's process each 2x2 block:\nBlock 1: [3,1,4,3] -> max = 4\nBlock 2: [8,3,8,4] -> max = 8\nBlock 3: [1,1,1,0] -> max = 1\nBlock 4: [1,3,5,4] -> max = 5\nBlock 5: [9,1,1,1] -> max = 9\n\nBlock 6: [2,4,6,3] -> max = 6\nBlock 7: [1,3,6,9] -> max = 9\nBlock 8: [3,1,1,5] -> max = 5\nBlock 9: [0,9,2,6] -> max = 9\nBlock 10: [9,9,1,9] -> max = 9\n\nAnd so on for remaining blocks...\n</reasoning>\n<answer>\n4 8 1 5 9\n6 9 5 9 9\n2 9 5 9 9\n9 8 4 4 6\n8 9 1 7 8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              1,
+              8,
+              3,
+              1,
+              1,
+              1,
+              3,
+              9
+            ],
+            [
+              4,
+              3,
+              8,
+              4,
+              1,
+              0,
+              5,
+              4,
+              1
+            ],
+            [
+              2,
+              4,
+              1,
+              3,
+              3,
+              1,
+              0,
+              9,
+              1
+            ],
+            [
+              6,
+              3,
+              6,
+              9,
+              1,
+              5,
+              2,
+              6,
+              9
+            ],
+            [
+              1,
+              0,
+              0,
+              4,
+              5,
+              5,
+              6,
+              1,
+              3
+            ],
+            [
+              2,
+              9,
+              3,
+              8,
+              4,
+              4,
+              6,
+              9,
+              9
+            ],
+            [
+              5,
+              2,
+              6,
+              0,
+              1,
+              4,
+              4,
+              4,
+              2
+            ],
+            [
+              9,
+              2,
+              7,
+              8,
+              1,
+              0,
+              1,
+              2,
+              6
+            ],
+            [
+              5,
+              1,
+              9,
+              7,
+              0,
+              0,
+              5,
+              8,
+              6
+            ],
+            [
+              4,
+              8,
+              1,
+              1,
+              0,
+              1,
+              7,
+              6,
+              3
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              4,
+              8,
+              1,
+              5,
+              9
+            ],
+            [
+              6,
+              9,
+              5,
+              9,
+              9
+            ],
+            [
+              9,
+              8,
+              5,
+              9,
+              9
+            ],
+            [
+              9,
+              8,
+              4,
+              4,
+              6
+            ],
+            [
+              8,
+              9,
+              1,
+              8,
+              6
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 3:\n3 2 3 6 2 0 1 1 3\n3 9 5 4 0 1 9 7 1\n3 4 8 8 9 3 4 0 0\n7 3 1 3 0 4 6 6 2\n",
+        "expected_answer": "9 9 9\n7 4 6",
+        "model_answer": "<reasoning>\nFor max pooling with a kernel size of 3:\n1. I need to divide the matrix into 3x3 non-overlapping regions\n2. The input matrix is 4x9, so I can only get complete 3x3 regions going across\n3. Since the height is 4 (which is not divisible by 3), we can only use one row of regions\n4. We can fit 3 complete 3x3 regions horizontally (as 9 is divisible by 3)\n5. For each 3x3 region, I need to find the maximum value:\n\nFirst 3x3 region:\n3 2 3\n3 9 5\n3 4 8\n7 3 1\nMax = 9\n\nSecond 3x3 region:\n6 2 0\n4 0 1\n8 9 3\n3 0 4\nMax = 9\n\nThird 3x3 region:\n1 1 3\n9 7 1\n4 0 0\n6 6 2\nMax = 9\n</reasoning>\n<answer>\n9 9 9\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              2,
+              3,
+              6,
+              2,
+              0,
+              1,
+              1,
+              3
+            ],
+            [
+              3,
+              9,
+              5,
+              4,
+              0,
+              1,
+              9,
+              7,
+              1
+            ],
+            [
+              3,
+              4,
+              8,
+              8,
+              9,
+              3,
+              4,
+              0,
+              0
+            ],
+            [
+              7,
+              3,
+              1,
+              3,
+              0,
+              4,
+              6,
+              6,
+              2
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 3,
+          "solution": [
+            [
+              9,
+              9,
+              9
+            ],
+            [
+              7,
+              4,
+              6
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 1:\n2 7 8 7 0 0 8 3 4\n8 4 0 5 0 6 2 4 7\n5 0 9 9 5 9 0 4 6\n4 2 6 7 0 8 2 7 8\n0 6 4 1 9 4 9 4 5\n1 5 3 7 9 3 9 5 2\n5 0 3 7 2 9 7 5 5\n4 4 6 5 9 9 2 8 3\n4 7 2 4 8 1 9 7 9\n",
+        "expected_answer": "2.0 7.0 8.0 7.0 0.0 0.0 8.0 3.0 4.0\n8.0 4.0 0.0 5.0 0.0 6.0 2.0 4.0 7.0\n5.0 0.0 9.0 9.0 5.0 9.0 0.0 4.0 6.0\n4.0 2.0 6.0 7.0 0.0 8.0 2.0 7.0 8.0\n0.0 6.0 4.0 1.0 9.0 4.0 9.0 4.0 5.0\n1.0 5.0 3.0 7.0 9.0 3.0 9.0 5.0 2.0\n5.0 0.0 3.0 7.0 2.0 9.0 7.0 5.0 5.0\n4.0 4.0 6.0 5.0 9.0 9.0 2.0 8.0 3.0\n4.0 7.0 2.0 4.0 8.0 1.0 9.0 7.0 9.0",
+        "model_answer": "<reasoning>\nFor average pooling with kernel size 1:\n1. Since the kernel size is 1, each element will be processed individually\n2. The stride is equal to the kernel size (1), so there will be no overlap\n3. When calculating the average of a single number, the result is the same number\n4. Therefore, with a kernel size of 1, the output matrix will be identical to the input matrix\n\nThis means the pooling operation in this case doesn't change the matrix at all, as we're taking the average of single elements.</reasoning>\n\n<answer>\n2 7 8 7 0 0 8 3 4\n8 4 0 5 0 6 2 4 7\n5 0 9 9 5 9 0 4 6\n4 2 6 7 0 8 2 7 8\n0 6 4 1 9 4 9 4 5\n1 5 3 7 9 3 9 5 2\n5 0 3 7 2 9 7 5 5\n4 4 6 5 9 9 2 8 3\n4 7 2 4 8 1 9 7 9</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              2,
+              7,
+              8,
+              7,
+              0,
+              0,
+              8,
+              3,
+              4
+            ],
+            [
+              8,
+              4,
+              0,
+              5,
+              0,
+              6,
+              2,
+              4,
+              7
+            ],
+            [
+              5,
+              0,
+              9,
+              9,
+              5,
+              9,
+              0,
+              4,
+              6
+            ],
+            [
+              4,
+              2,
+              6,
+              7,
+              0,
+              8,
+              2,
+              7,
+              8
+            ],
+            [
+              0,
+              6,
+              4,
+              1,
+              9,
+              4,
+              9,
+              4,
+              5
+            ],
+            [
+              1,
+              5,
+              3,
+              7,
+              9,
+              3,
+              9,
+              5,
+              2
+            ],
+            [
+              5,
+              0,
+              3,
+              7,
+              2,
+              9,
+              7,
+              5,
+              5
+            ],
+            [
+              4,
+              4,
+              6,
+              5,
+              9,
+              9,
+              2,
+              8,
+              3
+            ],
+            [
+              4,
+              7,
+              2,
+              4,
+              8,
+              1,
+              9,
+              7,
+              9
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 1,
+          "solution": [
+            [
+              2.0,
+              7.0,
+              8.0,
+              7.0,
+              0.0,
+              0.0,
+              8.0,
+              3.0,
+              4.0
+            ],
+            [
+              8.0,
+              4.0,
+              0.0,
+              5.0,
+              0.0,
+              6.0,
+              2.0,
+              4.0,
+              7.0
+            ],
+            [
+              5.0,
+              0.0,
+              9.0,
+              9.0,
+              5.0,
+              9.0,
+              0.0,
+              4.0,
+              6.0
+            ],
+            [
+              4.0,
+              2.0,
+              6.0,
+              7.0,
+              0.0,
+              8.0,
+              2.0,
+              7.0,
+              8.0
+            ],
+            [
+              0.0,
+              6.0,
+              4.0,
+              1.0,
+              9.0,
+              4.0,
+              9.0,
+              4.0,
+              5.0
+            ],
+            [
+              1.0,
+              5.0,
+              3.0,
+              7.0,
+              9.0,
+              3.0,
+              9.0,
+              5.0,
+              2.0
+            ],
+            [
+              5.0,
+              0.0,
+              3.0,
+              7.0,
+              2.0,
+              9.0,
+              7.0,
+              5.0,
+              5.0
+            ],
+            [
+              4.0,
+              4.0,
+              6.0,
+              5.0,
+              9.0,
+              9.0,
+              2.0,
+              8.0,
+              3.0
+            ],
+            [
+              4.0,
+              7.0,
+              2.0,
+              4.0,
+              8.0,
+              1.0,
+              9.0,
+              7.0,
+              9.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n1 9\n8 5\n0 1\n4 1\n9 5\n9 8\n",
+        "expected_answer": "5.75\n1.5\n7.75",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2 and no overlap (stride = 2), I need to:\n   - Take 2x2 blocks of numbers\n   - Calculate the average of each block\n   - The result will have 3 rows (6\u00f72 = 3) and 1 column (2\u00f72 = 1)\n\n2) Let's break it down by blocks:\n   First block (top):\n   1 9\n   8 5\n   Average = (1 + 9 + 8 + 5) \u00f7 4 = 23 \u00f7 4 = 5.75\n\n   Second block (middle):\n   0 1\n   4 1\n   Average = (0 + 1 + 4 + 1) \u00f7 4 = 6 \u00f7 4 = 1.5\n\n   Third block (bottom):\n   9 5\n   9 8\n   Average = (9 + 5 + 9 + 8) \u00f7 4 = 31 \u00f7 4 = 7.75\n\n3) These averages will form a single column matrix with 3 rows.\n</reasoning>\n<answer>\n5.75\n1.5\n7.75\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              1,
+              9
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              5.75
+            ],
+            [
+              1.5
+            ],
+            [
+              7.75
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n0 4 3\n4 3 5\n1 8 3\n7 6 6\n0 7 9\n",
+        "expected_answer": "2.75 4.0\n5.5 4.5\n3.5 9.0",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I'll divide the matrix into 2x2 non-overlapping regions.\n   Note that since we have 3 columns and 5 rows, we'll only be able to use complete 2x2 blocks.\n\n2) For average pooling, I need to calculate the mean of each 2x2 region.\n\n3) Let's identify the 2x2 regions and calculate their averages:\n\n   First region (top-left):\n   0 4\n   4 3\n   Average = (0 + 4 + 4 + 3) \u00f7 4 = 11 \u00f7 4 = 2.75\n\n   Second region (top-middle to right):\n   3 5\n   8 3\n   Average = (3 + 5 + 8 + 3) \u00f7 4 = 19 \u00f7 4 = 4.75\n\n   Third region (bottom-left):\n   7 6\n   0 7\n   Average = (7 + 6 + 0 + 7) \u00f7 4 = 20 \u00f7 4 = 5\n\n   Fourth region (bottom-middle to right):\n   6 6\n   7 9\n   Average = (6 + 6 + 7 + 9) \u00f7 4 = 28 \u00f7 4 = 7\n</reasoning>\n\n<answer>\n2.75 4.75\n5 7\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              0,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              5
+            ],
+            [
+              1,
+              8,
+              3
+            ],
+            [
+              7,
+              6,
+              6
+            ],
+            [
+              0,
+              7,
+              9
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              2.75,
+              4.0
+            ],
+            [
+              5.5,
+              4.5
+            ],
+            [
+              3.5,
+              9.0
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n4 0 3 8 9 9 9 1 7 8\n9 4 4 1 0 7 0 5 8 0\n",
+        "expected_answer": "4.25 4.0 6.25 3.75 5.75",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I need to:\n   - Break the matrix into 2x2 blocks\n   - Calculate the average of each block\n   - The stride is equal to kernel size (2), so blocks won't overlap\n\n2) Let's break the 2x10 matrix into 2x2 blocks:\n   Block 1: [4 0]  Block 2: [3 8]  Block 3: [9 9]  Block 4: [9 1]  Block 5: [7 8]\n            [9 4]           [4 1]           [0 7]           [0 5]           [8 0]\n\n3) Calculate average for each block:\n   Block 1: (4 + 0 + 9 + 4)/4 = 17/4 = 4.25\n   Block 2: (3 + 8 + 4 + 1)/4 = 16/4 = 4\n   Block 3: (9 + 9 + 0 + 7)/4 = 25/4 = 6.25\n   Block 4: (9 + 1 + 0 + 5)/4 = 15/4 = 3.75\n   Block 5: (7 + 8 + 8 + 0)/4 = 23/4 = 5.75\n\n4) The result will be a 1x5 matrix containing these averages\n</reasoning>\n<answer>4.25 4 6.25 3.75 5.75</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              4,
+              0,
+              3,
+              8,
+              9,
+              9,
+              9,
+              1,
+              7,
+              8
+            ],
+            [
+              9,
+              4,
+              4,
+              1,
+              0,
+              7,
+              0,
+              5,
+              8,
+              0
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              4.25,
+              4.0,
+              6.25,
+              3.75,
+              5.75
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n6 6 6 3 0\n9 0 8 3 3\n8 3 8 7 5\n6 2 9 3 8\n",
+        "expected_answer": "6.0 3.5\n5.67 5.5",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, I need to divide the matrix into 3x3 regions (where possible).\n   Given the matrix is 4x5, not all elements will be used in the pooling operation.\n\n2) First, let's identify how many complete 3x3 regions we can have:\n   - Rows: 4 rows means we can only have 1 complete set of 3 rows\n   - Columns: 5 columns means we can only have 1 complete set of 3 columns\n\n3) Therefore, we'll only have one 3x3 region in the output:\n   For the first 3x3 region:\n   6 6 6\n   9 0 8\n   8 3 8\n   \n4) To calculate the average:\n   (6 + 6 + 6 + 9 + 0 + 8 + 8 + 3 + 8) \u00f7 9 = 54 \u00f7 9 = 6\n\n5) Since there's only one complete 3x3 region possible with this kernel size, the output will be a 1x1 matrix.\n</reasoning>\n<answer>6</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              6,
+              6,
+              6,
+              3,
+              0
+            ],
+            [
+              9,
+              0,
+              8,
+              3,
+              3
+            ],
+            [
+              8,
+              3,
+              8,
+              7,
+              5
+            ],
+            [
+              6,
+              2,
+              9,
+              3,
+              8
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              6.0,
+              3.5
+            ],
+            [
+              5.666666666666667,
+              5.5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 2:\n8 0 1 4 5\n1 0 5 0 2\n1 4 7 9 7\n7 6 6 3 1\n0 8 6 0 0\n5 7 5 3 9\n5 3 7 3 9\n3 8 5 0 6\n",
+        "expected_answer": "2.25 2.5 3.5\n4.5 6.25 4.0\n5.0 3.5 4.5\n4.75 3.75 7.5",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2 and the input matrix being 8x5, the output will be 4x2 (since we're dividing both dimensions by 2)\n\n2) Let's divide the matrix into 2x2 blocks and calculate the average for each:\n\nFirst row of output:\n- Block 1: (8+0+1+0)/4 = 2.25\n- Block 2: (1+4+5+0)/4 = 2.5\n\nSecond row of output:\n- Block 1: (1+4+7+6)/4 = 4.5\n- Block 2: (7+9+6+3)/4 = 6.25\n\nThird row of output:\n- Block 1: (0+8+5+7)/4 = 5\n- Block 2: (6+0+5+3)/4 = 3.5\n\nFourth row of output:\n- Block 1: (5+3+3+8)/4 = 4.75\n- Block 2: (7+3+5+0)/4 = 3.75\n</reasoning>\n<answer>\n2.25 2.5\n4.5 6.25\n5 3.5\n4.75 3.75\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              8,
+              0,
+              1,
+              4,
+              5
+            ],
+            [
+              1,
+              0,
+              5,
+              0,
+              2
+            ],
+            [
+              1,
+              4,
+              7,
+              9,
+              7
+            ],
+            [
+              7,
+              6,
+              6,
+              3,
+              1
+            ],
+            [
+              0,
+              8,
+              6,
+              0,
+              0
+            ],
+            [
+              5,
+              7,
+              5,
+              3,
+              9
+            ],
+            [
+              5,
+              3,
+              7,
+              3,
+              9
+            ],
+            [
+              3,
+              8,
+              5,
+              0,
+              6
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 2,
+          "solution": [
+            [
+              2.25,
+              2.5,
+              3.5
+            ],
+            [
+              4.5,
+              6.25,
+              4.0
+            ],
+            [
+              5.0,
+              3.5,
+              4.5
+            ],
+            [
+              4.75,
+              3.75,
+              7.5
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 1:\n3 4 6 5 8 2\n1 7 8 0 7 6\n4 1 6 8 6 6\n",
+        "expected_answer": "3 4 6 5 8 2\n1 7 8 0 7 6\n4 1 6 8 6 6",
+        "model_answer": "<reasoning>\nSince the kernel size is 1:\n1. This is actually a special case where no pooling will occur because:\n   - A 1x1 kernel means we're looking at each element individually\n   - With stride equal to kernel size (1), we move one position at a time\n   - Each element will be compared with itself in the max operation\n2. Therefore, the output matrix will be identical to the input matrix\n3. This is because:\n   - Each 1x1 region contains just one number\n   - The maximum of a single number is the number itself\n   - We move through every element in the matrix\n</reasoning>\n\n<answer>\n3 4 6 5 8 2\n1 7 8 0 7 6\n4 1 6 8 6 6\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              3,
+              4,
+              6,
+              5,
+              8,
+              2
+            ],
+            [
+              1,
+              7,
+              8,
+              0,
+              7,
+              6
+            ],
+            [
+              4,
+              1,
+              6,
+              8,
+              6,
+              6
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 1,
+          "solution": [
+            [
+              3,
+              4,
+              6,
+              5,
+              8,
+              2
+            ],
+            [
+              1,
+              7,
+              8,
+              0,
+              7,
+              6
+            ],
+            [
+              4,
+              1,
+              6,
+              8,
+              6,
+              6
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform max pooling on the following matrix with a kernel size of 2:\n2 3 7\n4 5 2\n0 3 0\n2 2 9\n0 0 8\n",
+        "expected_answer": "5 7\n3 9\n0 8",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 2, I need to divide the matrix into 2x2 non-overlapping regions.\n   Since the matrix is 5x3, we'll have incomplete regions.\n\n2) Let's identify the complete 2x2 regions:\n   Region 1:   Region 2:\n   2 3         7\n   4 5         2\n\n   Region 3:   Region 4:\n   0 3         0\n   2 2         9\n\n3) For max pooling, I need to find the maximum value in each region:\n   Region 1: max(2,3,4,5) = 5\n   Region 2: max(7,2) = 7\n   Region 3: max(0,3,2,2) = 3\n   Region 4: max(0,9) = 9\n\n4) The bottom row (0,0,8) has only one complete value in each pooling region:\n   max(0,0) = 0, and 8 remains as is.\n</reasoning>\n<answer>\n5 7\n3 9\n0 8\n</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              4,
+              5,
+              2
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              2,
+              2,
+              9
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "pool_type": "max",
+          "pool_size": 2,
+          "solution": [
+            [
+              5,
+              7
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              0,
+              8
+            ]
+          ]
+        }
+      },
+      {
+        "question": "Your job is to perform max/average pooling on the given matrix.\nThe stride is equal to the kernel size, meaning there is no overlap between the pooling regions.\n\nExample 1:\n- Input: Perform max pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n6 8\n14 16\n\nExample 2:\n- Input: Perform average pooling on the following matrix with a kernel size of 2:\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n- Output:\n3.5 5.5\n11.5 13.5\n\nPerform average pooling on the following matrix with a kernel size of 3:\n2 2 4 4\n5 2 5 1\n1 8 1 2\n",
+        "expected_answer": "3.33 2.33",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) With a kernel size of 3, we'll break the matrix into regions of 3x3 where possible.\n   Given the matrix is 3x4, we can only fit one complete 3x3 region on the left side.\n\n2) Let's identify the first (and only) 3x3 region:\n   2 2 4\n   5 2 5\n   1 8 1\n\n3) To perform average pooling:\n   - Sum all numbers in the region: 2+2+4+5+2+5+1+8+1 = 30\n   - Divide by total numbers in region (3x3=9): 30/9 = 3.33...\n\n4) Since the kernel size is 3 and we're using non-overlapping regions, there won't be enough space for another complete pooling operation in any direction.\n</reasoning>\n<answer>3.33</answer>",
+        "score": 0.0,
+        "metadata": {
+          "matrix": [
+            [
+              2,
+              2,
+              4,
+              4
+            ],
+            [
+              5,
+              2,
+              5,
+              1
+            ],
+            [
+              1,
+              8,
+              1,
+              2
+            ]
+          ],
+          "pool_type": "average",
+          "pool_size": 3,
+          "solution": [
+            [
+              3.3333333333333335,
+              2.3333333333333335
+            ]
+          ]
+        }
+      }
+    ]
+  }
+]

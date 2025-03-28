@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "manipulate_matrix",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 1.0,
+    "total_examples": 3,
+    "timestamp": "2025-02-17T00:53:52.916127",
+    "config": {
+      "size": 3,
+      "seed": 42
+    }
+  }
+]

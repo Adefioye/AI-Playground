@@ -1,0 +1,568 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "basic_arithmetic",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.7228000000000001,
+      "total_examples": 50,
+      "timestamp": "2025-02-17T02:42:19.406270",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Calculate -5 * -6",
+        "expected_answer": "30",
+        "model_answer": "<reasoning>\nWhen multiplying two negative numbers:\n1. Remember the rule: negative \u00d7 negative = positive\n2. So -5 \u00d7 -6 will give a positive result\n3. Multiply the absolute values: 5 \u00d7 6 = 30\n4. Since it's negative \u00d7 negative, the result is positive: 30\n</reasoning>\n<answer>30</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 1,
+          "expression": "-5 * -6"
+        }
+      },
+      {
+        "question": "Calculate 965 / 5",
+        "expected_answer": "193",
+        "model_answer": "<reasoning>\nTo divide 965 by 5:\n1. First, I'll break this down step by step:\n2. 900 \u00f7 5 = 180\n3. 60 \u00f7 5 = 12\n4. 5 \u00f7 5 = 1\n5. Adding these together: 180 + 12 + 1 = 193\n</reasoning>\n<answer>193</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "965 / 5"
+        }
+      },
+      {
+        "question": "Calculate 0 + -2 + -4 * 0 * 3",
+        "expected_answer": "-2",
+        "model_answer": "<reasoning>\nLet me solve this step by step using order of operations (PEMDAS):\n1. First, handle multiplication: -4 * 0 * 3\n   * -4 * 0 = 0\n   * 0 * 3 = 0\n2. Now the expression is: 0 + -2 + 0\n3. Add from left to right:\n   * 0 + -2 = -2\n   * -2 + 0 = -2\n</reasoning>\n<answer>-2</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 1,
+          "expression": "0 + -2 + -4 * 0 * 3"
+        }
+      },
+      {
+        "question": "Calculate -65 - -9292 + 5869 + -6236",
+        "expected_answer": "8860",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll handle the negative numbers:\n   -65 and -9292: subtracting a negative is the same as adding\n   So -65 - -9292 becomes -65 + 9292\n2. Now I have:\n   -65 + 9292 + 5869 + -6236\n3. Let me add from left to right:\n   -65 + 9292 = 9227\n   9227 + 5869 = 15096\n   15096 + -6236 = 8860\n</reasoning>\n<answer>8860</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 4,
+          "expression": "-65 - -9292 + 5869 + -6236"
+        }
+      },
+      {
+        "question": "Calculate 9288 - 9128",
+        "expected_answer": "160",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, align the numbers vertically:\n   9288\n  -9128\n2. Starting from right to left:\n   - 8-8 = 0\n   - 8-2 = 6\n   - 2-1 = 1\n   - 9-9 = 0\n3. So going from left to right, that gives us 160\n</reasoning>\n<answer>160</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 4,
+          "expression": "9288 - 9128"
+        }
+      },
+      {
+        "question": "Calculate -( ( 4 + -9 * 8 ) + 9 )",
+        "expected_answer": "59",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, solve what's inside the innermost parentheses: -9 * 8\n   -9 * 8 = -72\n\n2. Now solve inside the first set of parentheses: (4 + -72)\n   4 + -72 = -68\n\n3. Add 9 to the result: (-68 + 9)\n   -68 + 9 = -59\n\n4. Finally, apply the negative sign to the entire expression: -(-59)\n   -(-59) = 59\n</reasoning>\n<answer>59</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 1,
+          "expression": "-( ( 4 + -9 * 8 ) + 9 )"
+        }
+      },
+      {
+        "question": "Calculate -( 463 / 1 ) - 10 - 562 - -849 - -869",
+        "expected_answer": "683",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's simplify 463/1\n   * 463/1 = 463\n\n2. Now we have: -(463) - 10 - 562 - -849 - -869\n\n3. Simplify the negative in front of 463\n   * -(463) = -463\n\n4. When subtracting a negative number, it becomes addition\n   * -463 - 10 - 562 - (-849) - (-869)\n   * -463 - 10 - 562 + 849 + 869\n\n5. Now just add/subtract from left to right\n   * -463 - 10 = -473\n   * -473 - 562 = -1,035\n   * -1,035 + 849 = -186\n   * -186 + 869 = 683\n</reasoning>\n<answer>683</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 3,
+          "expression": "-( 463 / 1 ) - 10 - 562 - -849 - -869"
+        }
+      },
+      {
+        "question": "Calculate ( 393 + -683 )",
+        "expected_answer": "-290",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. When adding a negative number, it's the same as subtracting its positive value\n2. So, 393 + (-683) is the same as 393 - 683\n3. To subtract:\n   683 is larger than 393\n   683 - 393 = 290\n   Since we're subtracting from the smaller number, the result will be negative\n4. Therefore, 393 + (-683) = -290\n</reasoning>\n<answer>-290</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "( 393 + -683 )"
+        }
+      },
+      {
+        "question": "Calculate ( ( 141 + 906 ) - 691 ) + -612 + 992",
+        "expected_answer": "736",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, solve what's in the innermost parentheses: 141 + 906 = 1047\n2. Now we have: (1047 - 691) + -612 + 992\n3. Solve the remaining parentheses: 1047 - 691 = 356\n4. Now we have: 356 + -612 + 992\n5. Moving left to right:\n   * 356 + -612 = -256\n   * -256 + 992 = 736\n</reasoning>\n<answer>736</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 3,
+          "expression": "( ( 141 + 906 ) - 691 ) + -612 + 992"
+        }
+      },
+      {
+        "question": "Calculate -40 * ( ( -98 + -92 ) )",
+        "expected_answer": "7600",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, solve what's inside the parentheses\n   (-98 + -92)\n   = -98 - 92 (combining negative numbers)\n   = -190\n\n2. Now multiply -40 by -190\n   -40 * -190\n   When multiplying two negative numbers, the result is positive\n   = 7,600\n</reasoning>\n<answer>7,600</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 2,
+          "expression": "-40 * ( ( -98 + -92 ) )"
+        }
+      },
+      {
+        "question": "Calculate ( -5 - -( ( -2 + -4 ) ) - -2 )",
+        "expected_answer": "-9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the innermost parentheses (-2 + -4)\n   * -2 + -4 = -6\n2. Now we have: (-5 - -(-6) - -2)\n3. The double negative in front of -6 makes it positive\n   * So now we have: (-5 - 6 - -2)\n4. Let's solve from left to right:\n   * -5 - 6 = -11\n   * -11 - -2\n   * Subtracting a negative is the same as adding a positive\n   * -11 + 2 = -9\n</reasoning>\n<answer>-9</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 1,
+          "expression": "( -5 - -( ( -2 + -4 ) ) - -2 )"
+        }
+      },
+      {
+        "question": "Calculate ( -( -56 * -33 + -87 ) * 13 ) - -67 - 30",
+        "expected_answer": "-22856",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First solve what's inside the innermost parentheses: -56 * -33\n   * When multiplying two negative numbers, the result is positive\n   * -56 * -33 = 1,848\n\n2. Now add -87 to this result:\n   * 1,848 + -87 = 1,761\n\n3. The expression is now: (-1,761 * 13) - -67 - 30\n   * Multiply -1,761 by 13\n   * -1,761 * 13 = -22,893\n\n4. Now we have: -22,893 - -67 - 30\n   * When subtracting a negative number (-67), it's the same as adding its positive value\n   * -22,893 + 67 - 30\n   * -22,826 - 30\n   * -22,856\n</reasoning>\n<answer>-22,856</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 2,
+          "expression": "( -( -56 * -33 + -87 ) * 13 ) - -67 - 30"
+        }
+      },
+      {
+        "question": "Calculate 5976 - -2823 - 816",
+        "expected_answer": "7983",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, when we subtract a negative number (-2823), it's the same as adding its positive value\n   5976 - (-2823) = 5976 + 2823\n2. So now we have: 5976 + 2823 - 816\n3. Let's solve from left to right:\n   * 5976 + 2823 = 8799\n   * 8799 - 816 = 7983\n</reasoning>\n<answer>7983</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 4,
+          "expression": "5976 - -2823 - 816"
+        }
+      },
+      {
+        "question": "Calculate 90 * 92",
+        "expected_answer": "8280",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1) We can break down 92 as 90 + 2 to make the calculation easier\n2) So, 90 * 92 = 90 * (90 + 2)\n3) Using distributive property: = (90 * 90) + (90 * 2)\n4) 90 * 90 = 8,100\n5) 90 * 2 = 180\n6) 8,100 + 180 = 8,280\n</reasoning>\n<answer>8,280</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 2,
+          "expression": "90 * 92"
+        }
+      },
+      {
+        "question": "Calculate ( ( 1 * 9 + -8 * 8 ) ) - -( ( 8 - -4 ) )",
+        "expected_answer": "-43",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's solve the innermost parentheses (8 - -4)\n   * 8 - -4 = 8 + 4 = 12\n   \n2) Now we have: ((1 * 9 + -8 * 8)) - -(12)\n   * Note: --(12) = 12 (negative of a negative is positive)\n   \n3) Let's solve the operations within the remaining parentheses (1 * 9 + -8 * 8)\n   * First, multiplication: \n     * 1 * 9 = 9\n     * -8 * 8 = -64\n   * Now we have: 9 + -64\n   * 9 + -64 = -55\n\n4) Our expression is now: -55 - 12\n\n5) Finally: -55 - 12 = -67\n</reasoning>\n<answer>-67</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 1,
+          "expression": "( ( 1 * 9 + -8 * 8 ) ) - -( ( 8 - -4 ) )"
+        }
+      },
+      {
+        "question": "Calculate -539 * -405",
+        "expected_answer": "218295",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. When multiplying two negative numbers, the result is positive\n2. So I can remove the negative signs and multiply 539 * 405\n3. Let me break this down:\n   * 539 * 400 = 215,600\n   * 539 * 5 = 2,695\n4. Adding these together:\n   215,600 + 2,695 = 218,295\n\nTherefore, -539 * -405 = 218,295\n</reasoning>\n<answer>218,295</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "-539 * -405"
+        }
+      },
+      {
+        "question": "Calculate -( -89 - 4 ) * ( ( -96 / 48 ) / 1 ) / 2",
+        "expected_answer": "-93",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's solve what's inside (-89 - 4):\n   * -89 - 4 = -93\n\n2) Now we have: -(-93) * ((-96/48)/1) / 2\n\n3) Let's solve -(-93):\n   * -(-93) = 93\n\n4) Let's solve (-96/48):\n   * -96 \u00f7 48 = -2\n\n5) So now we have: 93 * (-2/1) / 2\n\n6) Simplify (-2/1):\n   * -2/1 = -2\n\n7) Now we have: 93 * -2 / 2\n\n8) Solve multiplication first:\n   * 93 * -2 = -186\n\n9) Finally, divide by 2:\n   * -186 \u00f7 2 = -93\n</reasoning>\n<answer>-93</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 2,
+          "expression": "-( -89 - 4 ) * ( ( -96 / 48 ) / 1 ) / 2"
+        }
+      },
+      {
+        "question": "Calculate ( -( 6 / 3 ) * 9 )",
+        "expected_answer": "-18",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, solve what's inside the parentheses (6 / 3)\n   6 / 3 = 2\n2. Now we have: -(2 * 9)\n3. Multiply: 2 * 9 = 18\n4. Finally, apply the negative sign: -18\n</reasoning>\n<answer>-18</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 1,
+          "expression": "( -( 6 / 3 ) * 9 )"
+        }
+      },
+      {
+        "question": "Calculate 655 - -43 * 623 + -684",
+        "expected_answer": "26760",
+        "model_answer": "<reasoning>\nLet me solve this step by step following order of operations (PEMDAS):\n1. First, handle the multiplication: -43 * 623\n   * -43 * 623 = -26,789\n\n2. Now the expression is: 655 - (-26,789) + -684\n3. When subtracting a negative number, it becomes addition:\n   * 655 + 26,789 + -684\n\n4. Now simply add from left to right:\n   * 655 + 26,789 = 27,444\n   * 27,444 + -684 = 26,760\n</reasoning>\n<answer>26,760</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 3,
+          "expression": "655 - -43 * 623 + -684"
+        }
+      },
+      {
+        "question": "Calculate -17 - -17 * -92 - -8 - -83",
+        "expected_answer": "-1490",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's focus on the multiplication inside the expression:\n   -17 * -92 = 1,564 (negative times negative equals positive)\n\n2) Now we have:\n   -17 - 1,564 - -8 - -83\n\n3) When subtracting a negative number, it's the same as adding its positive counterpart:\n   * -17 - 1,564 + 8 + 83\n\n4) Now we can simply perform the arithmetic from left to right:\n   * -17 - 1,564 = -1,581\n   * -1,581 + 8 = -1,573\n   * -1,573 + 83 = -1,490\n</reasoning>\n<answer>-1,490</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 2,
+          "expression": "-17 - -17 * -92 - -8 - -83"
+        }
+      },
+      {
+        "question": "Calculate -39 / 1 + ( -98 - 64 + -68 ) + 21",
+        "expected_answer": "-248",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the parentheses: (-98 - 64 + -68)\n   * -98 - 64 = -162\n   * -162 + -68 = -230\n\n2. Now our expression looks like: -39 / 1 + (-230) + 21\n\n3. Let's solve -39 / 1\n   * -39 / 1 = -39\n\n4. Now we have: -39 + (-230) + 21\n\n5. Let's solve from left to right:\n   * -39 + (-230) = -269\n   * -269 + 21 = -248\n</reasoning>\n<answer>-248</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 2,
+          "expression": "-39 / 1 + ( -98 - 64 + -68 ) + 21"
+        }
+      },
+      {
+        "question": "Calculate ( -7426 + -3364 - -7577 ) * -2710 - -2305",
+        "expected_answer": "8709535",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, let's solve what's inside the parentheses: -7426 + -3364 - -7577\n   * -7426 + -3364 = -10790 (adding two negative numbers)\n   * -10790 - -7577 = -10790 + 7577 (subtracting a negative is the same as adding)\n   * -10790 + 7577 = -3213\n\n2) Now we have: (-3213) * -2710 - -2305\n\n3) Let's multiply: -3213 * -2710\n   * When multiplying two negative numbers, the result is positive\n   * -3213 * -2710 = 8707230\n\n4) Finally: 8707230 - -2305\n   * Subtracting a negative is the same as adding\n   * 8707230 + 2305 = 8709535\n</reasoning>\n<answer>8709535</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 4,
+          "expression": "( -7426 + -3364 - -7577 ) * -2710 - -2305"
+        }
+      },
+      {
+        "question": "Calculate -9 + -1 * -3 * -5 + 4",
+        "expected_answer": "-20",
+        "model_answer": "<reasoning>\nLet me solve this step by step using order of operations (PEMDAS):\n1. First, multiply the terms with * from left to right:\n   -1 * -3 = 3\n   3 * -5 = -15\n2. Now the expression becomes:\n   -9 + -15 + 4\n3. Now add from left to right:\n   -9 + -15 = -24\n   -24 + 4 = -20\n</reasoning>\n<answer>-20</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 1,
+          "expression": "-9 + -1 * -3 * -5 + 4"
+        }
+      },
+      {
+        "question": "Calculate ( -( ( -852 / 3 ) ) - 277 ) + 83 * 759",
+        "expected_answer": "63004",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1. First, let's solve what's inside the innermost parentheses\n   -852 / 3 = -284\n\n2. Now we have: (-(-284) - 277) + 83 * 759\n\n3. The negative of a negative is positive, so -(-284) = 284\n   Now we have: (284 - 277) + 83 * 759\n\n4. Let's solve the multiplication 83 * 759 first (according to order of operations)\n   83 * 759 = 62,997\n\n5. Now we have: (284 - 277) + 62,997\n\n6. Solve what's in parentheses:\n   284 - 277 = 7\n\n7. Finally:\n   7 + 62,997 = 63,004\n</reasoning>\n<answer>63,004</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 3,
+          "expression": "( -( ( -852 / 3 ) ) - 277 ) + 83 * 759"
+        }
+      },
+      {
+        "question": "Calculate -( 765 * -805 )",
+        "expected_answer": "615825",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I need to multiply 765 and -805\n   * When multiplying a positive and negative number, the result is negative\n   * 765 \u00d7 805 = 616,025\n   * So, 765 \u00d7 (-805) = -616,025\n\n2. Now, I need to apply the negative sign in front of this result\n   * When we put a negative sign in front of a negative number, it becomes positive\n   * -(-616,025) = 616,025\n</reasoning>\n<answer>616,025</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "-( 765 * -805 )"
+        }
+      },
+      {
+        "question": "Calculate ( -1 + -8 )",
+        "expected_answer": "-9",
+        "model_answer": "<reasoning>\nTo add two negative numbers:\n1. Keep the negative sign\n2. Add the absolute values of the numbers (1 + 8 = 9)\n3. Put the negative sign in front of the result\nSo, -1 + -8 = -(1 + 8) = -9\n</reasoning>\n<answer>-9</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 1,
+          "expression": "( -1 + -8 )"
+        }
+      },
+      {
+        "question": "Calculate ( -( ( -8 / 1 ) * -7 ) - -3 + 5 )",
+        "expected_answer": "-48",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the innermost parentheses: -8 / 1 = -8\n2. Now we have: (-(-8 * -7) - -3 + 5)\n3. Let's solve the multiplication: -8 * -7 = 56 (negative times negative is positive)\n4. Now we have: (-(56) - -3 + 5)\n5. The negative sign in front of 56 makes it -56\n6. Now we have: (-56 - -3 + 5)\n7. Subtracting a negative (-3) is the same as adding: -56 + 3 + 5\n8. Now we can simply add from left to right:\n   -56 + 3 = -53\n   -53 + 5 = -48\n</reasoning>\n<answer>-48</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 1,
+          "expression": "( -( ( -8 / 1 ) * -7 ) - -3 + 5 )"
+        }
+      },
+      {
+        "question": "Calculate -7 * 8",
+        "expected_answer": "-56",
+        "model_answer": "<reasoning>\nTo multiply a negative number by a positive number:\n1. First multiply the absolute values: 7 \u00d7 8 = 56\n2. Since one number is negative (-7) and one is positive (8), the result will be negative\n3. Therefore, -7 \u00d7 8 = -56\n</reasoning>\n<answer>-56</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 1,
+          "expression": "-7 * 8"
+        }
+      },
+      {
+        "question": "Calculate -340 + -683",
+        "expected_answer": "-1023",
+        "model_answer": "<reasoning>\nTo add negative numbers, I will:\n1. Keep the negative signs\n2. Add the absolute values: 340 + 683 = 1023\n3. Put the negative sign in front of the result since both numbers are negative\nSo: -340 + -683 = -1023\n</reasoning>\n<answer>-1023</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "-340 + -683"
+        }
+      },
+      {
+        "question": "Calculate -( -1 + 7 + 7 ) + 5",
+        "expected_answer": "-8",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the parentheses: (-1 + 7 + 7)\n   * -1 + 7 = 6\n   * 6 + 7 = 13\n2. Now we have: -(13) + 5\n3. The negative sign before the parentheses means we multiply by -1\n   * -(13) = -13\n4. Finally, we add 5\n   * -13 + 5 = -8\n</reasoning>\n<answer>-8</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 1,
+          "expression": "-( -1 + 7 + 7 ) + 5"
+        }
+      },
+      {
+        "question": "Calculate -( -( 80 * -2 ) )",
+        "expected_answer": "-160",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the innermost parentheses: 80 * -2\n   * 80 * -2 = -160\n2. Now we have: -(-160)\n3. When we negate a negative number, it becomes positive\n   * -(-160) = 160\n</reasoning>\n<answer>160</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 2,
+          "expression": "-( -( 80 * -2 ) )"
+        }
+      },
+      {
+        "question": "Calculate ( 6 / 3 + 5 + -1 )",
+        "expected_answer": "6",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. According to order of operations (PEMDAS), I need to do division first\n   6 / 3 = 2\n2. Now the expression becomes: 2 + 5 + -1\n3. Moving from left to right:\n   2 + 5 = 7\n   7 + -1 = 6\n</reasoning>\n<answer>6</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 1,
+          "expression": "( 6 / 3 + 5 + -1 )"
+        }
+      },
+      {
+        "question": "Calculate 0 + -3 - -6 / ( 1 * 7 + -6 )",
+        "expected_answer": "3",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1. First, let's solve what's inside the parentheses: 1 * 7 + -6\n   * 1 * 7 = 7\n   * 7 + -6 = 1\n\n2. Now our expression is: 0 + -3 - -6 / 1\n\n3. Following order of operations (PEMDAS):\n   * Division: -6 / 1 = -6\n   * Addition/Subtraction from left to right:\n     * 0 + -3 = -3\n     * -3 - -6 = -3 + 6 = 3\n\nTherefore, 0 + -3 - -6 / (1 * 7 + -6) = 3\n</reasoning>\n<answer>3</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 1,
+          "expression": "0 + -3 - -6 / ( 1 * 7 + -6 )"
+        }
+      },
+      {
+        "question": "Calculate 6845 * 5489 * 1327 + 388 + -1002",
+        "expected_answer": "49858315421",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, I'll multiply the three numbers:\n   6845 \u00d7 5489 = 37,570,405\n   37,570,405 \u00d7 1327 = 49,855,827,435\n\n2. Now I need to add 388 and subtract 1002:\n   49,855,827,435 + 388 - 1002\n   = 49,855,827,435 + (388 - 1002)\n   = 49,855,827,435 - 614\n   = 49,855,826,821\n</reasoning>\n<answer>49,855,826,821</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 4,
+          "expression": "6845 * 5489 * 1327 + 388 + -1002"
+        }
+      },
+      {
+        "question": "Calculate -268 + 3701 + -771 - 4359",
+        "expected_answer": "-1697",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, let's group the positive and negative numbers:\n   Positive: 3701\n   Negative: -268, -771, -4359\n\n2. Let's add all negative numbers first:\n   -268 + (-771) + (-4359) = -5398\n\n3. Now we can add this result to the positive number:\n   -5398 + 3701 = -1697\n</reasoning>\n<answer>-1697</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 4,
+          "expression": "-268 + 3701 + -771 - 4359"
+        }
+      },
+      {
+        "question": "Calculate 685 + -401 / 1 + -702",
+        "expected_answer": "-418",
+        "model_answer": "<reasoning>\nLet me solve this step by step following order of operations (PEMDAS):\n1. First, division: -401 / 1 = -401\n2. Now we have: 685 + (-401) + (-702)\n3. Adding from left to right:\n   * 685 + (-401) = 284\n   * 284 + (-702) = -418\n</reasoning>\n<answer>-418</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 3,
+          "expression": "685 + -401 / 1 + -702"
+        }
+      },
+      {
+        "question": "Calculate -( -( 3 - 3 ) ) + -4",
+        "expected_answer": "-4",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the innermost parentheses: (3 - 3)\n   * 3 - 3 = 0\n2. Now we have: -(-0) + -4\n3. The negative of a negative is positive, so -(-0) = 0\n4. Now we have: 0 + -4\n5. Adding a negative number is the same as subtracting a positive number\n   * 0 + -4 = -4\n</reasoning>\n<answer>-4</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 1,
+          "expression": "-( -( 3 - 3 ) ) + -4"
+        }
+      },
+      {
+        "question": "Calculate ( 1499 + -3428 ) + 128",
+        "expected_answer": "-1801",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's handle what's in the parentheses (1499 + -3428)\n   * Adding a positive and negative number is the same as subtraction\n   * 1499 + -3428 = 1499 - 3428 = -1929\n\n2. Now we add 128 to our result\n   * -1929 + 128\n   * Moving from negative to positive, we're reducing the negative value\n   * -1929 + 128 = -1801\n</reasoning>\n<answer>-1801</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 4,
+          "expression": "( 1499 + -3428 ) + 128"
+        }
+      },
+      {
+        "question": "Calculate 7459 - 2279 + 8026 - -2790",
+        "expected_answer": "15996",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n1. First, let's understand that subtracting a negative number (-2790) is the same as adding its positive value (+2790)\n2. Now I can solve from left to right:\n   * 7459 - 2279 = 5180\n   * 5180 + 8026 = 13206\n   * 13206 + 2790 = 15996 (because subtracting -2790 is the same as adding 2790)\n</reasoning>\n<answer>15996</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 4,
+          "expression": "7459 - 2279 + 8026 - -2790"
+        }
+      },
+      {
+        "question": "Calculate ( -4776 - -( 393 * -2738 ) ) * -7531 + 6841 - 9001",
+        "expected_answer": "8139577950",
+        "model_answer": "<reasoning>\nLet me break this down step by step:\n\n1. First, let's solve what's inside the innermost parentheses:\n   393 * -2738 = -1,076,034\n\n2. Now, we have: (-4776 - -(-1,076,034)) * -7531 + 6841 - 9001\n\n3. The double negative in front of -1,076,034 makes it positive:\n   (-4776 - 1,076,034) * -7531 + 6841 - 9001\n\n4. Let's solve what's in parentheses:\n   -4776 - 1,076,034 = -1,080,810\n\n5. Now we have:\n   -1,080,810 * -7531 + 6841 - 9001\n\n6. Multiply -1,080,810 by -7531:\n   -1,080,810 * -7531 = 8,139,780,111\n\n7. Finally, add and subtract the remaining numbers:\n   8,139,780,111 + 6841 - 9001\n   = 8,139,780,111 + 6841 - 9001\n   = 8,139,777,951\n</reasoning>\n<answer>8,139,777,951</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 6,
+          "num_digits": 4,
+          "expression": "( -4776 - -( 393 * -2738 ) ) * -7531 + 6841 - 9001"
+        }
+      },
+      {
+        "question": "Calculate -4114 + -1459 + -8906",
+        "expected_answer": "-14479",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add the first two numbers:\n   -4114 + -1459 = -5573\n\n2. Then, I'll add the third number to this result:\n   -5573 + -8906\n\n3. When adding negative numbers, we sum their absolute values and keep the negative sign:\n   5573 + 8906 = 14479\n   Therefore, -4114 + -1459 + -8906 = -14479\n</reasoning>\n<answer>-14479</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 4,
+          "expression": "-4114 + -1459 + -8906"
+        }
+      },
+      {
+        "question": "Calculate -5802 / 6 + -8389 - -4303 * -8210",
+        "expected_answer": "-35336986",
+        "model_answer": "<reasoning>\nLet me solve this step by step using order of operations (PEMDAS):\n\n1. First, let's solve the multiplication: -4303 * -8210\n   * When multiplying two negative numbers, the result is positive\n   * -4303 * -8210 = 35,327,630\n\n2. Next, let's solve the division: -5802 / 6\n   * -5802 \u00f7 6 = -967\n\n3. Now we can perform the additions and subtractions from left to right:\n   * -967 + -8389 - 35,327,630\n   * First: -967 + -8389 = -9356\n   * Then: -9356 - 35,327,630 = -35,336,986\n</reasoning>\n<answer>-35,336,986</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 4,
+          "expression": "-5802 / 6 + -8389 - -4303 * -8210"
+        }
+      },
+      {
+        "question": "Calculate 1 + 5 - 8 * 2",
+        "expected_answer": "-10",
+        "model_answer": "<reasoning>\nLet me solve this step by step following the order of operations (PEMDAS):\n1. First, handle multiplication: 8 * 2 = 16\n2. Then, perform addition and subtraction from left to right:\n   1 + 5 = 6\n   6 - 16 = -10\n</reasoning>\n<answer>-10</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 4,
+          "num_digits": 1,
+          "expression": "1 + 5 - 8 * 2"
+        }
+      },
+      {
+        "question": "Calculate ( -( -( 9 / 3 ) ) ) / 1",
+        "expected_answer": "3",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the innermost parentheses: 9 / 3 = 3\n2. Now we have: -(-3)\n3. The negative of a negative is positive, so -(-3) = 3\n4. Now we have: 3 / 1\n5. Any number divided by 1 equals itself, so 3/1 = 3\n</reasoning>\n<answer>3</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 1,
+          "expression": "( -( -( 9 / 3 ) ) ) / 1"
+        }
+      },
+      {
+        "question": "Calculate 575 + 683",
+        "expected_answer": "1258",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll align the numbers by place value:\n   575\n   683\n   ---\n2. Starting from the right (ones place):\n   5 + 3 = 8\n3. Moving to the tens place:\n   7 + 8 = 15, write down 5, carry 1\n4. Finally, the hundreds place:\n   5 + 6 + 1 (carried) = 12\n5. Therefore:\n   575\n   683\n   ---\n   1258\n</reasoning>\n<answer>1258</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "575 + 683"
+        }
+      },
+      {
+        "question": "Calculate 94 - 66 * 81",
+        "expected_answer": "-5252",
+        "model_answer": "<reasoning>\nLet me solve this step by step using the order of operations (PEMDAS):\n1. First, multiplication: 66 * 81\n   66 * 81 = 5,346\n2. Then, subtraction: 94 - 5,346\n   94 - 5,346 = -5,252\n</reasoning>\n<answer>-5,252</answer>",
+        "score": 0.01,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 2,
+          "expression": "94 - 66 * 81"
+        }
+      },
+      {
+        "question": "Calculate -( ( ( 77 - 14 ) / 3 ) ) / 21 + -21",
+        "expected_answer": "-22",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First solve what's inside the innermost parentheses: 77 - 14 = 63\n2. Now solve the division inside the middle parentheses: 63 / 3 = 21\n3. The negative sign in front of the first set of parentheses: -(21)\n4. This gives us: -21 / 21 + -21\n5. Solve -21 / 21 = -1\n6. Finally: -1 + -21 = -22\n</reasoning>\n<answer>-22</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 5,
+          "num_digits": 2,
+          "expression": "-( ( ( 77 - 14 ) / 3 ) ) / 21 + -21"
+        }
+      },
+      {
+        "question": "Calculate -294 + 735",
+        "expected_answer": "441",
+        "model_answer": "<reasoning>\nTo add these numbers:\n1. First, I note that one is negative (-294) and one is positive (735)\n2. Since 735 is larger than 294, the result will be positive\n3. To find the exact number: 735 - 294 = 441\n   (When adding a negative number, it's the same as subtracting its positive value)\n</reasoning>\n<answer>441</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 3,
+          "expression": "-294 + 735"
+        }
+      },
+      {
+        "question": "Calculate -( -( -1 - -7 ) ) - 3",
+        "expected_answer": "3",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve what's inside the innermost parentheses: -1 - -7\n   * When subtracting a negative number (-7), it's the same as adding its positive: -1 + 7 = 6\n2. Now we have: -(-6) - 3\n3. The negative of a negative number is positive, so -(-6) = 6\n4. Finally: 6 - 3 = 3\n</reasoning>\n<answer>3</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 3,
+          "num_digits": 1,
+          "expression": "-( -( -1 - -7 ) ) - 3"
+        }
+      },
+      {
+        "question": "Calculate 3 / 3",
+        "expected_answer": "1",
+        "model_answer": "<reasoning>\nTo divide 3 by 3:\n1. Division is the process of determining how many times one number (divisor) goes into another number (dividend)\n2. In this case, 3 goes into 3 exactly one time\n3. 3 \u00f7 3 = 1\n4. We can verify this by multiplying: 1 \u00d7 3 = 3\n</reasoning>\n<answer>1</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_terms": 2,
+          "num_digits": 2,
+          "expression": "3 / 3"
+        }
+      }
+    ]
+  }
+]

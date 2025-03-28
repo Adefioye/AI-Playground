@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "count_primes",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.029800000000000004,
+    "total_examples": 50,
+    "timestamp": "2025-02-16T23:50:21.154457",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

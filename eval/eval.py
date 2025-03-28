@@ -8,6 +8,7 @@ from typing import Any, Dict, List
 from dotenv import load_dotenv
 from json import JSONEncoder
 import sympy
+import re
 
 from openai import AsyncOpenAI
 from tqdm.asyncio import tqdm_asyncio
@@ -35,52 +36,58 @@ class AsyncOpenRouterEvaluator:
         self.max_concurrent = max_concurrent
         self.semaphore = asyncio.Semaphore(max_concurrent)
 
-    async def extract_xml_answer(self, text: str) -> str:
+    # async def extract_xml_answer(self, text: str) -> str:
+    #     try:
+    #         answer = text.split("<answer>")[-1].split("</answer>")[0].strip()
+    #         return answer
+    #     except IndexError:
+    #         return ""
+        
+    async def extract_xml_answer(self, response: str) -> str:
+        """Gather the final answer between the <answer> and </answer> tags."""  
         try:
-            answer = text.split("<answer>")[-1].split("</answer>")[0].strip()
-            return answer
-        except IndexError:
-            return ""
+            match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
+            return match.group(1).strip() if match else response
+        except Exception as e:
+            print(f"Error extracting XML answer: {str(e)}")
+            return response if response else ""
 
     async def get_model_response(self, prompt: str) -> str:
         """Get response from the model via OpenRouter API with rate limiting."""
         R1_STYLE_SYSTEM_PROMPT = """A conversation between User and Assistant. The user asks a question, and the Assistant solves it.
-            The assistant first thinks about the reasoning process in the mind and then provides the user
-            with the answer. The reasoning process and answer are enclosed within <reasoning> </reasoning> and
-            <answer> </answer> tags, respectively, i.e., <reasoning> reasoning process here </reasoning>
-            <answer> answer here </answer>.
-            """
+The assistant first thinks about the reasoning process in the mind and then provides the user
+with the answer. The reasoning process and answer are enclosed within <reasoning> </reasoning> and
+<answer> </answer> tags, respectively, i.e., <reasoning> reasoning process here </reasoning>
+<answer> answer here </answer>.
+"""
         messages = [
             {"role": "system", "content": R1_STYLE_SYSTEM_PROMPT},
             {"role": "user", "content": "What is 2 + 2?"},
             {'role': 'assistant', 'content': "<reasoning>To calculate 2+2, we simply add the numbers together: 2 + 2 = 4.</reasoning>\n<answer>4</answer>"},
             {"role": "user", "content": prompt}
         ]
-        max_retries = 3
         async with self.semaphore:
-            for trial in range(max_retries):
-                try:
-                    completion = await self.client.chat.completions.create(
+            try:
+                completion = await self.client.chat.completions.create(
                         extra_headers=self.extra_headers, model=self.model, messages=messages
                     )
                     # This help to prevent " 'NoneType' object is not subscriptable " error
                     # if completion.choices is not None:
+                if completion.choices:
                     return completion.choices[0].message.content
-                except Exception as e:
-                    print(f"Error calling OpenRouter API: {str(e)}")
-                    time.sleep(trial * trial) # Quadratic backoff
-                    raise
+            except Exception as e:
+                print(f"Error calling OpenRouter API: {str(e)}")
+                raise
 
     async def process_single_question(self, entry: Dict, dataset) -> Dict:
         """Process a single question and return the result."""
         response = await self.get_model_response(entry["question"])
-        print(f"Response: {response}")
         extracted_answer = await self.extract_xml_answer(response)
-        print(f"Quesion: {entry['question']}\n")
+        print(f"Question: {entry['question']}\n")
         print(f"Response: {response}\n")
         print(f"Expected Answer: {entry['answer']}\n")
         print(f"Extracted Answer: {extracted_answer}\n")
-        print(f"Metadata: {entry["metadata"]}\n")
+        print(f"Metadata: {entry['metadata']}\n")
         score = dataset.score_answer(answer=extracted_answer, entry=entry)
 
         return {

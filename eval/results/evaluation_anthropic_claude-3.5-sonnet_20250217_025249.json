@@ -1,0 +1,668 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "chain_sum",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.9208,
+      "total_examples": 50,
+      "timestamp": "2025-02-17T02:52:49.396828",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "State the final answer to the following arithmetic problem: 4 + 3 =",
+        "expected_answer": "7",
+        "model_answer": "<reasoning>\nTo solve 4 + 3, I need to:\n1. Take the first number (4)\n2. Add the second number (3)\n4 plus 3 equals 7\n</reasoning>\n<answer>7</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 1
+          },
+          "expression": "4 + 3"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 812 + 880 =",
+        "expected_answer": "1692",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll align the numbers:\n   812\n   880\n   ---\n2. Starting from the right:\n   - 2 + 0 = 2 (ones place)\n   - 1 + 8 = 9 (tens place)\n   - 8 + 8 = 16 (hundreds place)\n3. Writing out the whole sum:\n   - Put down 2 in ones place\n   - Put down 9 in tens place\n   - Put down 16 in hundreds place (carrying the 1 to thousands)\n4. Final result: 1,692\n</reasoning>\n<answer>1,692</answer>",
+        "score": 0.01,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "812 + 880"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 2 + 6 + 3 + 4 + 0 =",
+        "expected_answer": "15",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll start with 2 + 6 = 8\n2. Then add 3: 8 + 3 = 11\n3. Next add 4: 11 + 4 = 15\n4. Finally add 0: 15 + 0 = 15 (adding zero doesn't change the value)\n</reasoning>\n<answer>15</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 1
+          },
+          "expression": "2 + 6 + 3 + 4 + 0"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 8995 - 5221 + 2341 + 5967 =",
+        "expected_answer": "12082",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll do 8995 - 5221\n   8995 - 5221 = 3774\n\n2. Then add 2341 to this result\n   3774 + 2341 = 6115\n\n3. Finally, add 5967\n   6115 + 5967 = 12082\n</reasoning>\n<answer>12082</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 4
+          },
+          "expression": "8995 - 5221 + 2341 + 5967"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 1654 + 4744 =",
+        "expected_answer": "6398",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll align the numbers:\n   1654\n  +4744\n\n2. Starting from the right:\n   - 4+4 = 8 (ones place)\n   - 5+4 = 9 (tens place)\n   - 6+7 = 13, write down 3, carry 1 (hundreds place)\n   - 1+1+4 = 6 (thousands place)\n\n3. Putting it all together:\n   1654 + 4744 = 6398\n</reasoning>\n<answer>6398</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 4
+          },
+          "expression": "1654 + 4744"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 6 - 8 - 7 - 9 =",
+        "expected_answer": "-18",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Start with 6\n2. Subtract 8: 6 - 8 = -2\n3. Subtract 7: -2 - 7 = -9\n4. Subtract 9: -9 - 9 = -18\n</reasoning>\n<answer>-18</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 1
+          },
+          "expression": "6 - 8 - 7 - 9"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 235 + 670 - 828 + 647 + 409 + 912 =",
+        "expected_answer": "2045",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add 235 + 670 = 905\n2. Then subtract 828 from 905: 905 - 828 = 77\n3. Add 647 to 77: 77 + 647 = 724\n4. Add 409 to 724: 724 + 409 = 1133\n5. Finally, add 912 to 1133: 1133 + 912 = 2045\n</reasoning>\n<answer>2045</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 3
+          },
+          "expression": "235 + 670 - 828 + 647 + 409 + 912"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 523 - 213 =",
+        "expected_answer": "310",
+        "model_answer": "<reasoning>\nTo solve 523 - 213:\n1. First, I'll subtract the ones: 3 - 3 = 0\n2. Then, subtract the tens: 20 - 10 = 10\n3. Finally, subtract the hundreds: 500 - 200 = 300\n4. Adding the results: 300 + 10 + 0 = 310\n</reasoning>\n<answer>310</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "523 - 213"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 472 - 752 + 348 - 809 + 584 =",
+        "expected_answer": "-157",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 472 - 752 = -280\n2. Then, -280 + 348 = 68\n3. Next, 68 - 809 = -741\n4. Finally, -741 + 584 = -157\n\nThe calculation follows the order from left to right since all operations are addition and subtraction with equal precedence.\n</reasoning>\n<answer>-157</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 3
+          },
+          "expression": "472 - 752 + 348 - 809 + 584"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 41 - 39 - 80 =",
+        "expected_answer": "-78",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll subtract 39 from 41\n   41 - 39 = 2\n2. Then, I'll subtract 80 from that result\n   2 - 80 = -78\n\nSo, 41 - 39 - 80 = -78\n</reasoning>\n<answer>-78</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 2
+          },
+          "expression": "41 - 39 - 80"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 8 + 7 + 5 + 6 =",
+        "expected_answer": "26",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add 8 + 7\n   8 + 7 = 15\n2. Then add 5 to 15\n   15 + 5 = 20\n3. Finally, add 6 to 20\n   20 + 6 = 26\n</reasoning>\n<answer>26</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 1
+          },
+          "expression": "8 + 7 + 5 + 6"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 68 + 74 + 71 + 76 - 56 + 68 =",
+        "expected_answer": "301",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add all the positive numbers:\n   68 + 74 + 71 + 76 + 68 = 357\n2. Then subtract 56:\n   357 - 56 = 301\nThis gives us our final answer.\n</reasoning>\n<answer>301</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 2
+          },
+          "expression": "68 + 74 + 71 + 76 - 56 + 68"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 5881 - 8913 + 8987 =",
+        "expected_answer": "5955",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's do 5881 - 8913\n   * 5881 - 8913 = -3032\n2. Then add 8987 to -3032\n   * -3032 + 8987 = 5955\n</reasoning>\n<answer>5955</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 4
+          },
+          "expression": "5881 - 8913 + 8987"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 29 + 48 =",
+        "expected_answer": "77",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll line up the numbers:\n   29\n   48\n2. Starting from the right (ones column):\n   - 9 + 8 = 17\n   - Write down 7, carry the 1\n3. Moving to the tens column:\n   - Carried 1 + 2 + 4 = 7\n4. So the complete answer is 77\n</reasoning>\n<answer>77</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 2
+          },
+          "expression": "29 + 48"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 7 + 8 - 4 + 8 - 6 - 3 =",
+        "expected_answer": "10",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 7 + 8 = 15\n2. Then 15 - 4 = 11\n3. Next, 11 + 8 = 19\n4. Then 19 - 6 = 13\n5. Finally, 13 - 3 = 10\n</reasoning>\n<answer>10</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 1
+          },
+          "expression": "7 + 8 - 4 + 8 - 6 - 3"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 703 + 719 =",
+        "expected_answer": "1422",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1) First, I'll align the numbers:\n   703\n   719\n   ---\n2) Starting from the rightmost column (ones):\n   3 + 9 = 12, write down 2, carry 1\n3) Moving to the tens column:\n   Carried 1 + 0 + 1 = 2\n4) Moving to the hundreds column:\n   7 + 7 = 14\n5) The final result is 1422\n</reasoning>\n<answer>1422</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "703 + 719"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 36 - 92 - 35 - 15 - 34 - 67 =",
+        "expected_answer": "-207",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 36 - 92 = -56 (starting from left)\n2. -56 - 35 = -91\n3. -91 - 15 = -106\n4. -106 - 34 = -140\n5. -140 - 67 = -207\n\nEach step involves subtracting the next number from the running total, making sure to maintain the correct sign when working with negative numbers.\n</reasoning>\n<answer>-207</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 2
+          },
+          "expression": "36 - 92 - 35 - 15 - 34 - 67"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 7 - 0 + 2 =",
+        "expected_answer": "9",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, we have 7 - 0\n2. Subtracting 0 from any number leaves the number unchanged, so 7 - 0 = 7\n3. Then we add 2 to 7\n4. 7 + 2 = 9\n</reasoning>\n<answer>9</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 1
+          },
+          "expression": "7 - 0 + 2"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 691 - 257 - 371 - 335 =",
+        "expected_answer": "-272",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll subtract 257 from 691\n   691 - 257 = 434\n2. Next, subtract 371 from 434\n   434 - 371 = 63\n3. Finally, subtract 335 from 63\n   63 - 335 = -272\n</reasoning>\n<answer>-272</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 3
+          },
+          "expression": "691 - 257 - 371 - 335"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 81 + 37 - 51 - 47 - 51 =",
+        "expected_answer": "-31",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 81 + 37 = 118\n2. Then, 118 - 51 = 67\n3. Next, 67 - 47 = 20\n4. Finally, 20 - 51 = -31\n\nThe calculation follows the order from left to right since all operations are addition and subtraction with equal precedence.\n</reasoning>\n<answer>-31</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 2
+          },
+          "expression": "81 + 37 - 51 - 47 - 51"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 18 + 40 + 69 + 49 + 95 - 55 =",
+        "expected_answer": "216",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add all the positive numbers:\n   18 + 40 = 58\n   58 + 69 = 127\n   127 + 49 = 176\n   176 + 95 = 271\n\n2. Then subtract 55 from the sum:\n   271 - 55 = 216\n</reasoning>\n<answer>216</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 2
+          },
+          "expression": "18 + 40 + 69 + 49 + 95 - 55"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 5818 + 5144 + 8934 + 2426 - 7335 =",
+        "expected_answer": "14987",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let me add all the positive numbers:\n   5818 + 5144 = 10962\n   10962 + 8934 = 19896\n   19896 + 2426 = 22322\n\n2. Now subtract 7335 from this sum:\n   22322 - 7335 = 14987\n</reasoning>\n<answer>14987</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 4
+          },
+          "expression": "5818 + 5144 + 8934 + 2426 - 7335"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 9 - 6 + 8 + 0 + 3 =",
+        "expected_answer": "14",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Start with 9 - 6 = 3\n2. Then add 8: 3 + 8 = 11\n3. Add 0: 11 + 0 = 11 (adding zero doesn't change the value)\n4. Finally add 3: 11 + 3 = 14\n</reasoning>\n<answer>14</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 1
+          },
+          "expression": "9 - 6 + 8 + 0 + 3"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 394 - 626 - 964 - 325 - 554 =",
+        "expected_answer": "-2075",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 394 - 626 = -232\n2. Then, -232 - 964 = -1,196\n3. Next, -1,196 - 325 = -1,521\n4. Finally, -1,521 - 554 = -2,075\n</reasoning>\n<answer>-2,075</answer>",
+        "score": 0.01,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 3
+          },
+          "expression": "394 - 626 - 964 - 325 - 554"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 545 - 352 =",
+        "expected_answer": "193",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's line up the numbers:\n   545\n  -352\n2. Starting from the right:\n   - 5 - 2 = 3\n   - 4 - 5 = we need to borrow 1 from 5, so it becomes 14 - 5 = 9\n   - The 5 in hundreds place becomes 4, and 4 - 3 = 1\n3. Reading from left to right: 193\n</reasoning>\n<answer>193</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "545 - 352"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 6 - 7 =",
+        "expected_answer": "-1",
+        "model_answer": "<reasoning>\nTo solve 6 - 7:\n1. We are subtracting a larger number (7) from a smaller number (6)\n2. When we do this, the result will be negative\n3. 6 minus 7 means we start at 6 and count down 7 numbers\n4. 6 \u2192 5 \u2192 4 \u2192 3 \u2192 2 \u2192 1 \u2192 0 \u2192 -1\n5. Therefore, 6 - 7 = -1\n</reasoning>\n<answer>-1</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 1
+          },
+          "expression": "6 - 7"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 9 - 9 - 3 - 6 - 7 =",
+        "expected_answer": "-16",
+        "model_answer": "<reasoning>\nLet me solve this step by step from left to right:\n1. First: 9 - 9 = 0\n2. Then: 0 - 3 = -3\n3. Next: -3 - 6 = -9\n4. Finally: -9 - 7 = -16\n</reasoning>\n<answer>-16</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 1
+          },
+          "expression": "9 - 9 - 3 - 6 - 7"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 2 - 1 =",
+        "expected_answer": "1",
+        "model_answer": "<reasoning>\nTo solve this subtraction problem:\n1. We start with 2\n2. We need to subtract 1 from it\n3. When we take away 1 from 2, we are left with 1\nThis is a basic subtraction fact that most people memorize early on.\n</reasoning>\n<answer>1</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 1
+          },
+          "expression": "2 - 1"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 819 - 570 =",
+        "expected_answer": "249",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll align the numbers:\n   819\n  -570\n\n2. Starting from the ones place:\n   9 - 0 = 9\n\n3. Moving to the tens place:\n   1 - 7\n   Since 1 is smaller than 7, I need to borrow from the hundreds\n   Now it's 11 - 7 = 4\n\n4. Finally, the hundreds place:\n   8 becomes 7 after borrowing\n   7 - 5 = 2\n\n5. Putting it all together:\n   249\n</reasoning>\n<answer>249</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "819 - 570"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 4 + 2 + 3 + 4 =",
+        "expected_answer": "13",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add 4 + 2 = 6\n2. Then add 3 to that result: 6 + 3 = 9\n3. Finally, add 4 to 9: 9 + 4 = 13\n</reasoning>\n<answer>13</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 1
+          },
+          "expression": "4 + 2 + 3 + 4"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 54 - 99 =",
+        "expected_answer": "-45",
+        "model_answer": "<reasoning>\nTo subtract 99 from 54:\n1. First, I notice that 99 is larger than 54, so the result will be negative\n2. 99 - 54 = 45\n3. Since we're subtracting 99 from 54 (not 54 from 99), the answer will be negative\n4. Therefore, 54 - 99 = -45\n</reasoning>\n<answer>-45</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 2
+          },
+          "expression": "54 - 99"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 8 - 7 - 9 + 2 =",
+        "expected_answer": "-6",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Following order of operations (left to right for addition/subtraction):\n2. First: 8 - 7 = 1\n3. Then: 1 - 9 = -8\n4. Finally: -8 + 2 = -6\n</reasoning>\n<answer>-6</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 1
+          },
+          "expression": "8 - 7 - 9 + 2"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 5 + 1 - 4 - 2 - 3 - 5 =",
+        "expected_answer": "-8",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 5 + 1 = 6\n2. Then, 6 - 4 = 2\n3. Next, 2 - 2 = 0\n4. Then, 0 - 3 = -3\n5. Finally, -3 - 5 = -8\n</reasoning>\n<answer>-8</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 1
+          },
+          "expression": "5 + 1 - 4 - 2 - 3 - 5"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 8444 + 1682 - 9422 + 8744 - 6663 =",
+        "expected_answer": "2785",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, 8444 + 1682 = 10,126\n2. 10,126 - 9422 = 704\n3. 704 + 8744 = 9,448\n4. Finally, 9,448 - 6663 = 2,785\n</reasoning>\n<answer>2,785</answer>",
+        "score": 0.01,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 4
+          },
+          "expression": "8444 + 1682 - 9422 + 8744 - 6663"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 7383 - 4277 + 5865 - 1864 =",
+        "expected_answer": "7107",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's do 7383 - 4277\n   7383 - 4277 = 3106\n2. Then add 5865 to that result\n   3106 + 5865 = 8971\n3. Finally, subtract 1864\n   8971 - 1864 = 7107\n</reasoning>\n<answer>7107</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 4
+          },
+          "expression": "7383 - 4277 + 5865 - 1864"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 302 + 346 - 297 - 942 =",
+        "expected_answer": "-591",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's add 302 + 346\n   302 + 346 = 648\n2. Next, subtract 297 from 648\n   648 - 297 = 351\n3. Finally, subtract 942 from 351\n   351 - 942 = -591\n</reasoning>\n<answer>-591</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 3
+          },
+          "expression": "302 + 346 - 297 - 942"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 4 + 4 + 6 =",
+        "expected_answer": "14",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add 4 + 4\n   4 + 4 = 8\n2. Then, I'll add 6 to that result\n   8 + 6 = 14\n</reasoning>\n<answer>14</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 1
+          },
+          "expression": "4 + 4 + 6"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 6726 + 3669 - 4947 =",
+        "expected_answer": "5448",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add 6726 and 3669\n   6726 + 3669 = 10395\n2. Then, I'll subtract 4947 from the result\n   10395 - 4947 = 5448\n</reasoning>\n<answer>5448</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 4
+          },
+          "expression": "6726 + 3669 - 4947"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 9878 - 7894 - 7046 + 6982 =",
+        "expected_answer": "1920",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's solve 9878 - 7894\n   9878 - 7894 = 1984\n2. Then subtract 7046 from the result\n   1984 - 7046 = -5062\n3. Finally, add 6982\n   -5062 + 6982 = 1920\n</reasoning>\n<answer>1920</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 4
+          },
+          "expression": "9878 - 7894 - 7046 + 6982"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 6539 + 9708 - 7295 + 8846 - 1284 - 3611 =",
+        "expected_answer": "12903",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, add 6539 + 9708 = 16,247\n2. Subtract 7295: 16,247 - 7295 = 8,952\n3. Add 8846: 8,952 + 8,846 = 17,798\n4. Subtract 1284: 17,798 - 1,284 = 16,514\n5. Finally, subtract 3611: 16,514 - 3,611 = 12,903\n</reasoning>\n<answer>12,903</answer>",
+        "score": 0.01,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 6,
+            "num_digits": 4
+          },
+          "expression": "6539 + 9708 - 7295 + 8846 - 1284 - 3611"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 9275 + 5786 - 3942 =",
+        "expected_answer": "11119",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, add 9275 and 5786\n   9275 + 5786 = 15061\n\n2. Then subtract 3942 from 15061\n   15061 - 3942 = 11119\n</reasoning>\n<answer>11119</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 4
+          },
+          "expression": "9275 + 5786 - 3942"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 2453 + 3098 + 7200 + 1563 - 1805 =",
+        "expected_answer": "12509",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll add all the positive numbers:\n   2453 + 3098 = 5551\n   5551 + 7200 = 12751\n   12751 + 1563 = 14314\n\n2. Then subtract 1805 from this sum:\n   14314 - 1805 = 12509\n</reasoning>\n<answer>12509</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 4
+          },
+          "expression": "2453 + 3098 + 7200 + 1563 - 1805"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 7 + 0 - 8 - 5 =",
+        "expected_answer": "-6",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Start with 7\n2. Add 0: 7 + 0 = 7 (adding zero doesn't change the value)\n3. Subtract 8: 7 - 8 = -1\n4. Subtract 5: -1 - 5 = -6\n</reasoning>\n<answer>-6</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 4,
+            "num_digits": 1
+          },
+          "expression": "7 + 0 - 8 - 5"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 5 - 3 - 3 =",
+        "expected_answer": "-1",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. Start with 5\n2. Subtract 3: 5 - 3 = 2\n3. Subtract another 3: 2 - 3 = -1\n\nSince we're performing these operations from left to right, and subtraction is not commutative, we need to follow this order.\n</reasoning>\n<answer>-1</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 1
+          },
+          "expression": "5 - 3 - 3"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 860 + 112 =",
+        "expected_answer": "972",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1) First, I'll align the numbers:\n   860\n   112\n   \n2) Starting from the ones column: 0 + 2 = 2\n\n3) Moving to the tens column: 6 + 1 = 7\n\n4) Finally, the hundreds column: 8 + 1 = 9\n\n5) Putting it all together: 972\n</reasoning>\n<answer>972</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "860 + 112"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 79 - 23 - 45 =",
+        "expected_answer": "11",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll subtract 23 from 79\n   79 - 23 = 56\n2. Then, I'll subtract 45 from the result\n   56 - 45 = 11\n</reasoning>\n<answer>11</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 2
+          },
+          "expression": "79 - 23 - 45"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 52 + 33 - 90 - 11 + 77 =",
+        "expected_answer": "61",
+        "model_answer": "<reasoning>Let me solve this step by step:\n1. First, I'll go from left to right: 52 + 33 = 85\n2. Then 85 - 90 = -5\n3. Then -5 - 11 = -16\n4. Finally, -16 + 77 = 61</reasoning>\n<answer>61</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 5,
+            "num_digits": 2
+          },
+          "expression": "52 + 33 - 90 - 11 + 77"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 243 + 452 =",
+        "expected_answer": "695",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll align the numbers:\n   243\n   452\n   ---\n2. Starting from the right (ones column):\n   3 + 2 = 5\n3. Moving to the tens column:\n   4 + 5 = 9\n4. Finally, the hundreds column:\n   2 + 4 = 6\n5. Putting it all together: 695\n</reasoning>\n<answer>695</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 3
+          },
+          "expression": "243 + 452"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 7 - 9 - 9 =",
+        "expected_answer": "-11",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, I'll subtract 9 from 7: 7 - 9 = -2\n2. Then, I'll subtract another 9 from -2: -2 - 9 = -11\n\nThe problem follows normal left-to-right arithmetic operations since there are no parentheses or other operators that would change the order of operations.\n</reasoning>\n<answer>-11</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 3,
+            "num_digits": 1
+          },
+          "expression": "7 - 9 - 9"
+        }
+      },
+      {
+        "question": "State the final answer to the following arithmetic problem: 97 + 96 =",
+        "expected_answer": "193",
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n1. First, let's line up the numbers:\n   97\n  +96\n2. Starting from the ones place:\n   7 + 6 = 13, write down 3, carry the 1\n3. Moving to the tens place:\n   1 (carried) + 9 + 9 = 19\n4. Therefore, 97 + 96 = 193\n</reasoning>\n<answer>193</answer>",
+        "score": 1.0,
+        "metadata": {
+          "difficulty": {
+            "num_terms": 2,
+            "num_digits": 2
+          },
+          "expression": "97 + 96"
+        }
+      }
+    ]
+  }
+]

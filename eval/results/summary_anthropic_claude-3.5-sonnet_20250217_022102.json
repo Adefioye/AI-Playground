@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "arc_1d",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.44645788423153726,
+    "total_examples": 50,
+    "timestamp": "2025-02-17T02:21:02.016148",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

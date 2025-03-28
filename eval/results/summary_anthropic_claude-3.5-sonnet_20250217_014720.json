@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "spell_backward",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.981,
+    "total_examples": 50,
+    "timestamp": "2025-02-17T01:47:20.250518",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "calendar_arithmetic",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.9280000000000002,
+    "total_examples": 50,
+    "timestamp": "2025-02-17T02:50:26.724026",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

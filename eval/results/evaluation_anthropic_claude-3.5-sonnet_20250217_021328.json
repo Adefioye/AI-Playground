@@ -1,0 +1,820 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "word_sequence_reversal",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 1.0,
+      "total_examples": 50,
+      "timestamp": "2025-02-17T02:13:28.459195",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Reverse this list of words: bed, if, problem, but, Well, an, transmission, nutritive",
+        "expected_answer": "nutritive, transmission, an, Well, but, problem, if, bed",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll start from the last word and work my way to the first word:\n1. nutritive (last word)\n2. transmission\n3. an\n4. Well\n5. but\n6. problem\n7. if\n8. bed (first word)\n</reasoning>\n<answer>nutritive, transmission, an, Well, but, problem, if, bed</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 8,
+          "words": [
+            "bed",
+            "if",
+            "problem",
+            "but",
+            "Well",
+            "an",
+            "transmission",
+            "nutritive"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: it, pleasure, Gutenberg",
+        "expected_answer": "Gutenberg, pleasure, it",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"it\", \"pleasure\", \"Gutenberg\"\n2. Write them in reverse order: \"Gutenberg\", \"pleasure\", \"it\"\n3. Ensure proper formatting by separating with commas\n</reasoning>\n<answer>Gutenberg, pleasure, it</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "it",
+            "pleasure",
+            "Gutenberg"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: readable, to, he, that, to, possession",
+        "expected_answer": "possession, to, that, he, to, readable",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll take each word starting from the end and write them in reverse order:\n1. possession (last word)\n2. to\n3. that\n4. he\n5. to\n6. readable (first word)\n</reasoning>\n<answer>possession, to, that, he, to, readable</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "readable",
+            "to",
+            "he",
+            "that",
+            "to",
+            "possession"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: does, IS, by, in, should",
+        "expected_answer": "should, in, by, IS, does",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"does\", \"IS\", \"by\", \"in\", \"should\"\n2. Start from the last word and work backwards\n3. Write them in reverse order: should, in, by, IS, does\n4. Maintain any capitalization as given in the original list\n</reasoning>\n<answer>should, in, by, IS, does</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "does",
+            "IS",
+            "by",
+            "in",
+            "should"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: keeping, others, the",
+        "expected_answer": "the, others, keeping",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"keeping\", \"others\", \"the\"\n2. Write them in reverse order, starting from the last word\n3. The reversed order will be: \"the\", \"others\", \"keeping\"\n</reasoning>\n<answer>the, others, keeping</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "keeping",
+            "others",
+            "the"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: years, Project, not, another, ages",
+        "expected_answer": "ages, another, not, Project, years",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll start from the last word and work backwards:\n1. ages (last word)\n2. another (second to last)\n3. not (middle word)\n4. Project (second word)\n5. years (first word)\n</reasoning>\n<answer>ages, another, not, Project, years</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "years",
+            "Project",
+            "not",
+            "another",
+            "ages"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: me, you, of, being, the, map, a",
+        "expected_answer": "a, map, the, being, of, you, me",
+        "model_answer": "<reasoning>\nTo reverse the list, I need to:\n1. Identify all words: \"me, you, of, being, the, map, a\"\n2. Start from the last word and work backwards\n3. Maintain the same format with commas and spaces\n4. The reversed order will be: a, map, the, being, of, you, me\n</reasoning>\n<answer>a, map, the, being, of, you, me</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "me",
+            "you",
+            "of",
+            "being",
+            "the",
+            "map",
+            "a"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: said, give, And",
+        "expected_answer": "And, give, said",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"said\", \"give\", \"And\"\n2. Write them in reverse order\n3. Start from the last word and work backwards:\n   - \"And\" becomes first\n   - \"give\" becomes second\n   - \"said\" becomes last\n</reasoning>\n<answer>And, give, said</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "said",
+            "give",
+            "And"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: these, electronic, kitchen, costs, upward, all",
+        "expected_answer": "all, upward, costs, kitchen, electronic, these",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll start from the last word and work backwards:\n- Starting list: these, electronic, kitchen, costs, upward, all\n- Working backwards:\n1. all (last word)\n2. upward\n3. costs\n4. kitchen\n5. electronic\n6. these (first word)\n</reasoning>\n<answer>all, upward, costs, kitchen, electronic, these</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "these",
+            "electronic",
+            "kitchen",
+            "costs",
+            "upward",
+            "all"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: computers, That, race, his",
+        "expected_answer": "his, race, That, computers",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll take the words in the opposite order from how they appear:\n1. his (last word becomes first)\n2. race (third word becomes second)\n3. That (second word becomes third)\n4. computers (first word becomes last)\n</reasoning>\n<answer>his, race, That, computers</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "computers",
+            "That",
+            "race",
+            "his"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: to, number, it, Redistribution, than",
+        "expected_answer": "than, Redistribution, it, number, to",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll take each word and write them in opposite order:\n1. Start with \"than\"\n2. Add \"Redistribution\"\n3. Add \"it\"\n4. Add \"number\"\n5. Add \"to\"\n</reasoning>\n<answer>than, Redistribution, it, number, to</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "to",
+            "number",
+            "it",
+            "Redistribution",
+            "than"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: Though, provide, widest, a, equipment, copyright, user",
+        "expected_answer": "user, copyright, equipment, a, widest, provide, Though",
+        "model_answer": "<reasoning>\nTo reverse this list of words, I'll start from the last word and work backwards:\n1. user (last word)\n2. copyright\n3. equipment\n4. a\n5. widest\n6. provide\n7. Though (first word)\n</reasoning>\n<answer>user, copyright, equipment, a, widest, provide, Though</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "Though",
+            "provide",
+            "widest",
+            "a",
+            "equipment",
+            "copyright",
+            "user"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: obtaining, having, of, 3",
+        "expected_answer": "3, of, having, obtaining",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"obtaining\", \"having\", \"of\", \"3\"\n2. Write them in reverse order, going from last to first\n3. Join them with commas and spaces\n</reasoning>\n<answer>3, of, having, obtaining</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "obtaining",
+            "having",
+            "of",
+            "3"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: Madrid, Smith, it",
+        "expected_answer": "it, Smith, Madrid",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"Madrid\", \"Smith\", \"it\"\n2. Write them in reverse order: \"it\", \"Smith\", \"Madrid\"\n3. Maintain the same format with commas and spaces separating the words\n</reasoning>\n<answer>it, Smith, Madrid</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "Madrid",
+            "Smith",
+            "it"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: the, THAT, requirements, condition, phrase, the, to",
+        "expected_answer": "to, the, phrase, condition, requirements, THAT, the",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll:\n1. Identify all words: \"the, THAT, requirements, condition, phrase, the, to\"\n2. Start from the last word and work backwards:\n- to\n- the\n- phrase\n- condition\n- requirements\n- THAT\n- the\n</reasoning>\n\n<answer>to, the, phrase, condition, requirements, THAT, the</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "the",
+            "THAT",
+            "requirements",
+            "condition",
+            "phrase",
+            "the",
+            "to"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: trademark, in, ask",
+        "expected_answer": "ask, in, trademark",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"trademark\", \"in\", \"ask\"\n2. Write them in reverse order: \"ask\", \"in\", \"trademark\"\n3. Keep the same format with commas and spaces\n</reasoning>\n<answer>ask, in, trademark</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "trademark",
+            "in",
+            "ask"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: France, True, and, invented, I, to, work",
+        "expected_answer": "work, to, I, invented, and, True, France",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll:\n1. Identify all words: \"France, True, and, invented, I, to, work\"\n2. Start from the last word and work backwards\n3. Maintain the same format with commas and spaces\n4. The reversed order will be: work \u2192 to \u2192 I \u2192 invented \u2192 and \u2192 True \u2192 France\n</reasoning>\n<answer>work, to, I, invented, and, True, France</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "France",
+            "True",
+            "and",
+            "invented",
+            "I",
+            "to",
+            "work"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: him, of, time, during",
+        "expected_answer": "during, time, of, him",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"him\", \"of\", \"time\", \"during\"\n2. Write them in reverse order, starting from the last word\n3. Maintain the same format with commas and spaces\n4. The reverse order will be: during, time, of, him\n</reasoning>\n<answer>during, time, of, him</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "him",
+            "of",
+            "time",
+            "during"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: idea, you, to, Nothing, electronically",
+        "expected_answer": "electronically, Nothing, to, you, idea",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"idea\", \"you\", \"to\", \"Nothing\", \"electronically\"\n2. Start from the last word and work backwards\n3. The reversed order will be:\nelectronically \u2192 Nothing \u2192 to \u2192 you \u2192 idea\n</reasoning>\n\n<answer>electronically, Nothing, to, you, idea</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "idea",
+            "you",
+            "to",
+            "Nothing",
+            "electronically"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: simply, has, Yes, them, coming, years",
+        "expected_answer": "years, coming, them, Yes, has, simply",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: simply, has, Yes, them, coming, years\n2. Start from the last word and work backwards\n3. Write them in reverse order:\n   - Last word: years\n   - Second to last: coming\n   - Third to last: them\n   - Fourth to last: Yes\n   - Fifth to last: has\n   - First word: simply\n</reasoning>\n<answer>years, coming, them, Yes, has, simply</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "simply",
+            "has",
+            "Yes",
+            "them",
+            "coming",
+            "years"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: the, the, have, do, opening, history, 294",
+        "expected_answer": "294, history, opening, do, have, the, the",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll start from the last element and work backwards:\n1. Original list: the, the, have, do, opening, history, 294\n2. Starting from the end: take 294, then history, then opening, etc.\n3. Writing them in reverse order: 294, history, opening, do, have, the, the\n</reasoning>\n<answer>294, history, opening, do, have, the, the</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "the",
+            "the",
+            "have",
+            "do",
+            "opening",
+            "history",
+            "294"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: electronic, a, you, you, is, this",
+        "expected_answer": "this, is, you, you, a, electronic",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll:\n1. Identify all words: \"electronic\", \"a\", \"you\", \"you\", \"is\", \"this\"\n2. Start from the last word and work backwards\n3. Maintain the same format with commas and spaces\n4. The reversed order will be: this, is, you, you, a, electronic\n</reasoning>\n<answer>this, is, you, you, a, electronic</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "electronic",
+            "a",
+            "you",
+            "you",
+            "is",
+            "this"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: are, of, loose, comprehend, one, nasal",
+        "expected_answer": "nasal, one, comprehend, loose, of, are",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: are, of, loose, comprehend, one, nasal\n2. Write them in reverse order, starting from the last word and moving to the first:\n   - Last word: nasal\n   - Fifth word: one\n   - Fourth word: comprehend\n   - Third word: loose\n   - Second word: of\n   - First word: are\n</reasoning>\n<answer>nasal, one, comprehend, loose, of, are</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "are",
+            "of",
+            "loose",
+            "comprehend",
+            "one",
+            "nasal"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: are, are, state, that, or, reported",
+        "expected_answer": "reported, or, that, state, are, are",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll:\n1. Identify all words: [are, are, state, that, or, reported]\n2. Start from the end and work backwards:\n- reported (last word)\n- or (second to last)\n- that\n- state\n- are\n- are (first word)\n</reasoning>\n<answer>reported, or, that, state, are, are</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "are",
+            "are",
+            "state",
+            "that",
+            "or",
+            "reported"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: Good, any, Mr",
+        "expected_answer": "Mr, any, Good",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"Good\", \"any\", \"Mr\"\n2. Write them in reverse order, maintaining the same format with commas and spaces\n3. Start from the last word \"Mr\" and work backwards to \"Good\"\n</reasoning>\n<answer>Mr, any, Good</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "Good",
+            "any",
+            "Mr"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: waiting, or, inaccurate",
+        "expected_answer": "inaccurate, or, waiting",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"waiting\", \"or\", \"inaccurate\"\n2. Write them in reverse order\n3. Keep the same format with commas and spaces\nStarting from the last word: \"inaccurate\", then \"or\", and finally \"waiting\"\n</reasoning>\n<answer>inaccurate, or, waiting</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "waiting",
+            "or",
+            "inaccurate"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: electronic, the, light, network, sentence, codes, were, having",
+        "expected_answer": "having, were, codes, sentence, network, light, the, electronic",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: electronic, the, light, network, sentence, codes, were, having\n2. Start from the last word and work backwards\n3. List them in reverse order: having, were, codes, sentence, network, light, the, electronic\n</reasoning>\n<answer>having, were, codes, sentence, network, light, the, electronic</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 8,
+          "words": [
+            "electronic",
+            "the",
+            "light",
+            "network",
+            "sentence",
+            "codes",
+            "were",
+            "having"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: inventors, 25th, no, interesting, certainly, I, at, copyright",
+        "expected_answer": "copyright, at, I, certainly, interesting, no, 25th, inventors",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll:\n1. Identify all words: inventors, 25th, no, interesting, certainly, I, at, copyright\n2. Start from the last word and work backwards to create the reversed list\n3. Double check by reading in reverse order to ensure all words are included\n</reasoning>\n<answer>copyright, at, I, certainly, interesting, no, 25th, inventors</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 8,
+          "words": [
+            "inventors",
+            "25th",
+            "no",
+            "interesting",
+            "certainly",
+            "I",
+            "at",
+            "copyright"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: a, terms, marked",
+        "expected_answer": "marked, terms, a",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"a\", \"terms\", \"marked\"\n2. Write them in reverse order: \"marked\", \"terms\", \"a\"\n3. Keep the same comma and space formatting as the original\n</reasoning>\n<answer>marked, terms, a</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "a",
+            "terms",
+            "marked"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: can, IN, Smith, and, extensive",
+        "expected_answer": "extensive, and, Smith, IN, can",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll take the words in the original order:\ncan, IN, Smith, and, extensive\n\nand write them in reverse order:\nextensive, and, Smith, IN, can\n</reasoning>\n\n<answer>extensive, and, Smith, IN, can</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "can",
+            "IN",
+            "Smith",
+            "and",
+            "extensive"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: to, case, way",
+        "expected_answer": "way, case, to",
+        "model_answer": "<reasoning>\nTo reverse a list of words, I need to:\n1. Identify all words: \"to\", \"case\", \"way\"\n2. Write them in reverse order, starting from the last word and moving to the first:\n   - Last word: \"way\"\n   - Middle word: \"case\"\n   - First word: \"to\"\n3. Put them together in the new order\n</reasoning>\n<answer>way, case, to</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "to",
+            "case",
+            "way"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: you, of, to, what, Gutenberg",
+        "expected_answer": "Gutenberg, what, to, of, you",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"you\", \"of\", \"to\", \"what\", \"Gutenberg\"\n2. Write them in reverse order, starting from the last word and moving to the first\n3. Maintain the same format with commas and spaces\n</reasoning>\n<answer>Gutenberg, what, to, of, you</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "you",
+            "of",
+            "to",
+            "what",
+            "Gutenberg"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: City, writers, alone, am, was, to, below",
+        "expected_answer": "below, to, was, am, alone, writers, City",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"City, writers, alone, am, was, to, below\"\n2. Start from the last word and work backwards\n3. Maintain the same formatting with commas and spaces\n4. The reversed order will be: below \u2192 to \u2192 was \u2192 am \u2192 alone \u2192 writers \u2192 City\n</reasoning>\n<answer>below, to, was, am, alone, writers, City</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "City",
+            "writers",
+            "alone",
+            "am",
+            "was",
+            "to",
+            "below"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: the, must, still, laws, agreement, scientific",
+        "expected_answer": "scientific, agreement, laws, still, must, the",
+        "model_answer": "<reasoning>\nTo reverse the list, I'll start from the last word and work backwards:\n- scientific (last word)\n- agreement (second to last)\n- laws (third to last)\n- still (fourth to last)\n- must (second word)\n- the (first word)\n</reasoning>\n<answer>scientific, agreement, laws, still, must, the</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "the",
+            "must",
+            "still",
+            "laws",
+            "agreement",
+            "scientific"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: the, follow, Celestial, again, of",
+        "expected_answer": "of, again, Celestial, follow, the",
+        "model_answer": "<reasoning>\nTo reverse a list of words, I need to:\n1. Identify all words: \"the\", \"follow\", \"Celestial\", \"again\", \"of\"\n2. Start from the last word and work backwards\n3. List them in reverse order: of \u2192 again \u2192 Celestial \u2192 follow \u2192 the\n</reasoning>\n<answer>of, again, Celestial, follow, the</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "the",
+            "follow",
+            "Celestial",
+            "again",
+            "of"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: of, to, Progress, North, recount",
+        "expected_answer": "recount, North, Progress, to, of",
+        "model_answer": "<reasoning>\nTo reverse the list, I'll start from the last word and work backwards:\n1. recount (last word)\n2. North (second to last)\n3. Progress\n4. to\n5. of (first word)\n</reasoning>\n<answer>recount, North, Progress, to, of</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "of",
+            "to",
+            "Progress",
+            "North",
+            "recount"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: present, he, For, of",
+        "expected_answer": "of, For, he, present",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"present\", \"he\", \"For\", \"of\"\n2. Write them in reverse order\n3. Keep the same formatting with commas and spaces\n4. The last word shouldn't have a comma after it\nStarting from the last word: \"of\", \"For\", \"he\", \"present\"\n</reasoning>\n<answer>of, For, he, present</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "present",
+            "he",
+            "For",
+            "of"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: at, into, least, as",
+        "expected_answer": "as, least, into, at",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"at\", \"into\", \"least\", \"as\"\n2. Write them in reverse order, starting from the last word and moving to the first\n3. Maintain the same formatting with commas and spaces\n4. So the order will be: \"as\" first, then \"least\", then \"into\", and finally \"at\"\n</reasoning>\n<answer>as, least, into, at</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "at",
+            "into",
+            "least",
+            "as"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: law, subscribe, with, performances, may",
+        "expected_answer": "may, performances, with, subscribe, law",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: law, subscribe, with, performances, may\n2. Write them in reverse order, starting from the last word\n3. Keep the same format with commas and spaces\n4. The reversed order will be: may, performances, with, subscribe, law\n</reasoning>\n<answer>may, performances, with, subscribe, law</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 5,
+          "words": [
+            "law",
+            "subscribe",
+            "with",
+            "performances",
+            "may"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: of, telephone, donation, forth, receiving, fairer, the",
+        "expected_answer": "the, fairer, receiving, forth, donation, telephone, of",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: of, telephone, donation, forth, receiving, fairer, the\n2. Start from the last word and work backwards\n3. List them in reverse order:\n- the (last word)\n- fairer\n- receiving\n- forth\n- donation\n- telephone\n- of (first word becomes last)\n</reasoning>\n<answer>the, fairer, receiving, forth, donation, telephone, of</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 7,
+          "words": [
+            "of",
+            "telephone",
+            "donation",
+            "forth",
+            "receiving",
+            "fairer",
+            "the"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: allow, goals, think, Mr",
+        "expected_answer": "Mr, think, goals, allow",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll take the words from end to beginning:\n1. Mr (last word)\n2. think (second to last)\n3. goals (third to last)\n4. allow (first word)\n</reasoning>\n<answer>Mr, think, goals, allow</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "allow",
+            "goals",
+            "think",
+            "Mr"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: Project, freed, must, accept, ago, them",
+        "expected_answer": "them, ago, accept, must, freed, Project",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: Project, freed, must, accept, ago, them\n2. Start from the last word and work backwards to create the new order:\n- Last word: them\n- Second to last: ago\n- Third to last: accept\n- Fourth to last: must\n- Fifth to last: freed\n- First word: Project\n3. Now arrange them in reverse order\n</reasoning>\n<answer>them, ago, accept, must, freed, Project</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "Project",
+            "freed",
+            "must",
+            "accept",
+            "ago",
+            "them"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: an, inventors, MERCHANTABILITY, located, with, pleased, of, If",
+        "expected_answer": "If, of, pleased, with, located, MERCHANTABILITY, inventors, an",
+        "model_answer": "<reasoning>\nTo reverse this list of words, I need to:\n1. Identify all words: \"an\", \"inventors\", \"MERCHANTABILITY\", \"located\", \"with\", \"pleased\", \"of\", \"If\"\n2. Start from the last word and work backwards\n3. Maintain the same format with commas and spaces\n4. The reversed order will be: If, of, pleased, with, located, MERCHANTABILITY, inventors, an\n</reasoning>\n<answer>If, of, pleased, with, located, MERCHANTABILITY, inventors, an</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 8,
+          "words": [
+            "an",
+            "inventors",
+            "MERCHANTABILITY",
+            "located",
+            "with",
+            "pleased",
+            "of",
+            "If"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: preceding, you, was, what",
+        "expected_answer": "what, was, you, preceding",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify each word: \"preceding\", \"you\", \"was\", \"what\"\n2. Write them in reverse order, starting from the last word and moving backwards\n3. Adding commas and spaces between words for proper formatting\n</reasoning>\n<answer>what, was, you, preceding</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "preceding",
+            "you",
+            "was",
+            "what"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: was, any, copies",
+        "expected_answer": "copies, any, was",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"was\", \"any\", \"copies\"\n2. Write them in reverse order, starting from the last word\n3. Keep the same format with commas and spaces\nSo: \"copies\" will be first, \"any\" second, and \"was\" last\n</reasoning>\n<answer>copies, any, was</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "was",
+            "any",
+            "copies"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: he, including, science, advanced",
+        "expected_answer": "advanced, science, including, he",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"he\", \"including\", \"science\", \"advanced\"\n2. Write them in reverse order, keeping the same formatting with commas and spaces\n3. Start from the last word and work backwards to the first word:\n   - advanced \u2192 first\n   - science \u2192 second\n   - including \u2192 third\n   - he \u2192 last\n</reasoning>\n<answer>advanced, science, including, he</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "he",
+            "including",
+            "science",
+            "advanced"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: chamber, in, the, with, org, GUTENBERG",
+        "expected_answer": "GUTENBERG, org, with, the, in, chamber",
+        "model_answer": "<reasoning>\nTo reverse this list, I'll take each word and write them in the opposite order, starting from the last word and moving to the first:\n1. GUTENBERG (last word)\n2. org\n3. with\n4. the\n5. in\n6. chamber (first word)\n</reasoning>\n<answer>GUTENBERG, org, with, the, in, chamber</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 6,
+          "words": [
+            "chamber",
+            "in",
+            "the",
+            "with",
+            "org",
+            "GUTENBERG"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: His, narrative, reporter",
+        "expected_answer": "reporter, narrative, His",
+        "model_answer": "<reasoning>\nTo reverse this list, I need to:\n1. Identify all words: \"His\", \"narrative\", \"reporter\"\n2. Start from the last word and work backwards\n3. Maintain the same format with commas and spaces\n4. The reverse order would be: reporter, narrative, His\n</reasoning>\n<answer>reporter, narrative, His</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "His",
+            "narrative",
+            "reporter"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: to, a, a, the",
+        "expected_answer": "the, a, a, to",
+        "model_answer": "<reasoning>\nTo reverse a list of words, I need to:\n1. Identify all words: \"to\", \"a\", \"a\", \"the\"\n2. Write them in reverse order: \"the\", \"a\", \"a\", \"to\"\n3. Join them with commas and spaces between words\n</reasoning>\n<answer>the, a, a, to</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 4,
+          "words": [
+            "to",
+            "a",
+            "a",
+            "the"
+          ]
+        }
+      },
+      {
+        "question": "Reverse this list of words: the, telescopes, you",
+        "expected_answer": "you, telescopes, the",
+        "model_answer": "<reasoning>\nTo reverse a list of words, I need to:\n1. Identify all words: \"the\", \"telescopes\", \"you\"\n2. Write them in reverse order, starting from the last word and moving to the first\n3. So, \"you\" comes first, then \"telescopes\", and finally \"the\"\n</reasoning>\n<answer>you, telescopes, the</answer>",
+        "score": 1.0,
+        "metadata": {
+          "num_words": 3,
+          "words": [
+            "the",
+            "telescopes",
+            "you"
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,367 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "graph_color",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 3,
+      "average_score": 0.6699999999999999,
+      "total_examples": 3,
+      "timestamp": "2025-02-17T00:34:20.267595",
+      "config": {
+        "size": 3,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Please provide a coloring for this graph such that every vertex is not connected to a vertex of the same color. The graph has these properties:\n\nVertices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nEdges: [(0, 2), (0, 3), (0, 4), (0, 8), (1, 2), (1, 3), (1, 5), (1, 6), (1, 9), (2, 5), (2, 8), (2, 9), (3, 5), (3, 6), (3, 7), (4, 9), (6, 9), (7, 8), (7, 9), (8, 9)]\nPossible colors: [1, 2, 3, 4]\n\nReturn your solution as a JSON map of verteces to colors. (For example: {0: 1, 1: 2, 2: 3})\n",
+        "expected_answer": null,
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) I'll use a greedy coloring algorithm:\n   - Take each vertex in order\n   - Look at all its neighbors\n   - Assign the smallest available color that's not used by any neighbor\n\n2) Working through each vertex:\n\n0: No colored neighbors yet -> Color 1\n1: No colored neighbors yet -> Color 1\n2: Connected to 0(1), 1(1) -> Color 2\n3: Connected to 0(1), 1(1) -> Color 2\n4: Connected to 0(1) -> Color 2\n5: Connected to 1(1), 2(2), 3(2) -> Color 3\n6: Connected to 1(1), 3(2) -> Color 3\n7: Connected to 3(2) -> Color 1\n8: Connected to 0(1), 2(2), 7(1) -> Color 3\n9: Connected to 1(1), 2(2), 4(2), 6(3), 7(1), 8(3) -> Color 4\n\n3) Checking the solution:\n   - Each vertex is only connected to vertices of different colors\n   - We used colors 1, 2, 3, and 4\n   - All edges are satisfied (no adjacent vertices have same color)\n</reasoning>\n<answer>\n{\n    \"0\": 1,\n    \"1\": 1,\n    \"2\": 2,\n    \"3\": 2,\n    \"4\": 2,\n    \"5\": 3,\n    \"6\": 3,\n    \"7\": 1,\n    \"8\": 3,\n    \"9\": 4\n}\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "possible_answer": {
+            "0": 1,
+            "1": 1,
+            "2": 2,
+            "3": 2,
+            "4": 2,
+            "5": 3,
+            "6": 3,
+            "7": 1,
+            "8": 3,
+            "9": 4
+          },
+          "puzzle": {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "edges": [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                8
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                1,
+                6
+              ],
+              [
+                1,
+                9
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                2,
+                9
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                3,
+                6
+              ],
+              [
+                3,
+                7
+              ],
+              [
+                4,
+                9
+              ],
+              [
+                6,
+                9
+              ],
+              [
+                7,
+                8
+              ],
+              [
+                7,
+                9
+              ],
+              [
+                8,
+                9
+              ]
+            ],
+            "num_colors": 4,
+            "color_options": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "question": "Please provide a coloring for this graph such that every vertex is not connected to a vertex of the same color. The graph has these properties:\n\nVertices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nEdges: [(0, 1), (0, 3), (0, 9), (1, 3), (1, 8), (2, 4), (2, 5), (3, 6), (3, 7), (3, 8), (4, 6), (4, 9), (6, 7), (7, 9)]\nPossible colors: [1, 2, 3, 4]\n\nReturn your solution as a JSON map of verteces to colors. (For example: {0: 1, 1: 2, 2: 3})\n",
+        "expected_answer": null,
+        "model_answer": "<reasoning>\nLet me solve this step by step using a greedy coloring approach:\n\n1) Start with vertex 0:\n   * No conflicts yet, assign color 1\n\n2) Vertex 1 is connected to 0:\n   * Can't use color 1\n   * Assign color 2\n\n3) Vertex 2:\n   * Not connected to 0 or 1\n   * Can use color 1\n\n4) Vertex 3 is connected to 0, 1:\n   * Can't use colors 1 or 2\n   * Assign color 3\n\n5) Vertex 4 is connected to 2:\n   * Can't use color 1\n   * Assign color 2\n\n6) Vertex 5 is connected to 2:\n   * Can't use color 1\n   * Can use color 2\n\n7) Vertex 6 is connected to 3, 4:\n   * Can't use colors 2 or 3\n   * Assign color 1\n\n8) Vertex 7 is connected to 3, 6:\n   * Can't use colors 1 or 3\n   * Assign color 2\n\n9) Vertex 8 is connected to 1, 3:\n   * Can't use colors 2 or 3\n   * Assign color 1\n\n10) Vertex 9 is connected to 0, 4, 7:\n   * Can't use colors 1 or 2\n   * Assign color 3\n\nLet me verify all edges have different colors on their endpoints... Yes, this works!\n</reasoning>\n<answer>\n{\n    \"0\": 1,\n    \"1\": 2,\n    \"2\": 1,\n    \"3\": 3,\n    \"4\": 2,\n    \"5\": 2,\n    \"6\": 1,\n    \"7\": 2,\n    \"8\": 1,\n    \"9\": 3\n}\n</answer>",
+        "score": 1.0,
+        "metadata": {
+          "possible_answer": {
+            "0": 1,
+            "1": 2,
+            "2": 1,
+            "3": 3,
+            "4": 2,
+            "5": 2,
+            "6": 1,
+            "7": 2,
+            "8": 1,
+            "9": 3
+          },
+          "puzzle": {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                9
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                3,
+                6
+              ],
+              [
+                3,
+                7
+              ],
+              [
+                3,
+                8
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                4,
+                9
+              ],
+              [
+                6,
+                7
+              ],
+              [
+                7,
+                9
+              ]
+            ],
+            "num_colors": 4,
+            "color_options": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "question": "Please provide a coloring for this graph such that every vertex is not connected to a vertex of the same color. The graph has these properties:\n\nVertices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nEdges: [(0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (1, 5), (1, 8), (1, 9), (2, 5), (2, 6), (2, 7), (2, 9), (3, 6), (3, 7), (4, 5), (4, 6), (4, 7), (4, 8), (5, 8), (6, 9)]\nPossible colors: [1, 2, 3, 4]\n\nReturn your solution as a JSON map of verteces to colors. (For example: {0: 1, 1: 2, 2: 3})\n",
+        "expected_answer": null,
+        "model_answer": "<reasoning>\nLet me solve this step by step:\n\n1) First, I'll analyze which vertices have the most connections (degree), as these are typically harder to color:\n   - Vertex 0: connected to 4,5,6,7,8,9 (6 connections)\n   - Vertex 4: connected to 0,5,6,7,8 (5 connections)\n   - Vertex 5: connected to 0,1,2,4,8 (5 connections)\n   - Others have fewer connections\n\n2) Starting with vertex 0 (most connections), let's assign it color 1\n\n3) Its neighbors (4,5,6,7,8,9) must have different colors, so:\n   - 4 can be color 2\n   - 5 can be color 3\n   - 6 can be color 4\n   - 7 can be color 2 (not connected to 4)\n   - 8 can be color 4 (only needs to differ from 0,1,4,5)\n   - 9 can be color 2 (only needs to differ from 0,1,2,6)\n\n4) For the remaining vertices (1,2,3):\n   - 1 is connected to 5,8,9 (colored 3,4,2), so 1 can be color 1\n   - 2 is connected to 5,6,7,9 (colored 3,4,2,2), so 2 can be color 1\n   - 3 is connected to 6,7 (colored 4,2), so 3 can be color 1\n\n5) Verifying all edges don't connect same colors...confirmed!\n</reasoning>\n<answer>\n{\n    \"0\": 1,\n    \"1\": 1,\n    \"2\": 1,\n    \"3\": 1,\n    \"4\": 2,\n    \"5\": 3,\n    \"6\": 4,\n    \"7\": 2,\n    \"8\": 4,\n    \"9\": 2\n}\n</answer>",
+        "score": 0.01,
+        "metadata": {
+          "possible_answer": {
+            "0": 1,
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 2,
+            "5": 3,
+            "6": 3,
+            "7": 3,
+            "8": 4,
+            "9": 2
+          },
+          "puzzle": {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "edges": [
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                0,
+                6
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                0,
+                8
+              ],
+              [
+                0,
+                9
+              ],
+              [
+                1,
+                5
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                1,
+                9
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                2,
+                7
+              ],
+              [
+                2,
+                9
+              ],
+              [
+                3,
+                6
+              ],
+              [
+                3,
+                7
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                4,
+                8
+              ],
+              [
+                5,
+                8
+              ],
+              [
+                6,
+                9
+              ]
+            ],
+            "num_colors": 4,
+            "color_options": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

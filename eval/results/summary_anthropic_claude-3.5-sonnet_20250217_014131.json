@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "sentence_reordering",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.2648655462184876,
+    "total_examples": 50,
+    "timestamp": "2025-02-17T01:41:31.554805",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

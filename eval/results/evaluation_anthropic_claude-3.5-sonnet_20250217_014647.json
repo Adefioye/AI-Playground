@@ -1,0 +1,48 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "spell_backward",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 3,
+      "average_score": 1.0,
+      "total_examples": 3,
+      "timestamp": "2025-02-17T01:46:47.667408",
+      "config": {
+        "size": 3,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Spell this word backward (example: sun -> nus): Project",
+        "expected_answer": "tcejorP",
+        "model_answer": "<reasoning>\nTo spell \"Project\" backward, I'll take each letter from right to left:\nt -> first letter\nc -> second letter\ne -> third letter\nj -> fourth letter\no -> fifth letter\nr -> sixth letter\np -> seventh letter\n\nPutting these letters together from first to last: tcejorP\n</reasoning>\n\n<answer>tcejorP</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "Project",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): Would",
+        "expected_answer": "dluoW",
+        "model_answer": "<reasoning>\nTo spell \"Would\" backward, I'll start from the last letter and work my way to the first:\nd -> l -> u -> o -> W\nPutting these letters together in this order gives me \"dluoW\"\n</reasoning>\n<answer>dluoW</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "Would",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): One",
+        "expected_answer": "enO",
+        "model_answer": "<reasoning>\nTo spell \"One\" backward, I need to:\n1. Identify each letter from left to right: O, n, e\n2. Write these letters in reverse order: e, n, O\n</reasoning>\n<answer>enO</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "One",
+          "word_len": 3
+        }
+      }
+    ]
+  }
+]

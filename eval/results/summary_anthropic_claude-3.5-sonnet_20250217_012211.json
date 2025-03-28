@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "pool_matrix",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.0,
+    "total_examples": 3,
+    "timestamp": "2025-02-17T01:22:11.235564",
+    "config": {
+      "size": 3,
+      "seed": 42
+    }
+  }
+]

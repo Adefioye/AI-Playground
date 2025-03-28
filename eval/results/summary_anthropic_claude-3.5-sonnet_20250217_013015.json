@@ -1,0 +1,13 @@
+[
+  {
+    "dataset_name": "ransom_note",
+    "model": "anthropic/claude-3.5-sonnet",
+    "average_score": 0.9207999999999998,
+    "total_examples": 50,
+    "timestamp": "2025-02-17T01:30:15.036227",
+    "config": {
+      "size": 50,
+      "seed": 42
+    }
+  }
+]

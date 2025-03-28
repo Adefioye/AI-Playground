@@ -1,0 +1,518 @@
+[
+  {
+    "metrics": {
+      "dataset_name": "spell_backward",
+      "model": "anthropic/claude-3.5-sonnet",
+      "size": 50,
+      "average_score": 0.981,
+      "total_examples": 50,
+      "timestamp": "2025-02-17T01:47:20.250518",
+      "config": {
+        "size": 50,
+        "seed": 42
+      }
+    },
+    "results": [
+      {
+        "question": "Spell this word backward (example: sun -> nus): Project",
+        "expected_answer": "tcejorP",
+        "model_answer": "<reasoning>\nTo spell \"Project\" backward, I need to write each letter starting from the end:\n- Start with 't' (last letter)\n- Then 'c'\n- Then 'e'\n- Then 'j'\n- Then 'o'\n- Then 'r'\n- Finally 'P'\nPutting these letters together gives: tcejorP\n</reasoning>\n<answer>tcejorP</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "Project",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): Would",
+        "expected_answer": "dluoW",
+        "model_answer": "<reasoning>\nTo spell \"Would\" backward, I'll start from the last letter and work my way to the first:\n- Last letter: d\n- Second to last: l\n- Third to last: u\n- Fourth to last: o\n- Fifth to last: W\n\nPutting these letters together in reverse order: d-l-u-o-W\n</reasoning>\n<answer>dluoW</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "Would",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): One",
+        "expected_answer": "enO",
+        "model_answer": "<reasoning>\nTo spell \"One\" backward, I'll take each letter from right to left:\n- Starting with 'e'\n- Then 'n'\n- Finally 'o'\nPutting these letters together in reverse order gives: eno\n</reasoning>\n<answer>eno</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "One",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): seconds",
+        "expected_answer": "sdnoces",
+        "model_answer": "<reasoning>\nTo spell \"seconds\" backward, I'll take each letter from right to left:\ns -> s\nd -> d\nn -> n\no -> o\nc -> c\ne -> e\ns -> s\nPutting them together: sdnoces\n</reasoning>\n<answer>sdnoces</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "seconds",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): winter",
+        "expected_answer": "retniw",
+        "model_answer": "<reasoning>\nTo spell \"winter\" backward, I need to identify all letters and write them in reverse order:\n- The word has 6 letters: w-i-n-t-e-r\n- Starting from the end and moving to the beginning:\nr -> e -> t -> n -> i -> w\n</reasoning>\n<answer>retniw</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "winter",
+          "word_len": 6
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): the",
+        "expected_answer": "eht",
+        "model_answer": "<reasoning>\nTo spell \"the\" backward:\n1. Identify the letters: t, h, e\n2. Reverse the order: start from the last letter and work backwards\n3. Last letter (e) becomes first\n4. Middle letter (h) stays in middle position\n5. First letter (t) becomes last\nSo: e, h, t\n</reasoning>\n<answer>eht</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "the",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): will",
+        "expected_answer": "lliw",
+        "model_answer": "<reasoning>\nTo spell \"will\" backward, I'll take each letter from right to left:\n- Last letter: l\n- Third letter: l\n- Second letter: i\n- First letter: w\n\nPutting these together from right to left: lliw\n</reasoning>\n<answer>lliw</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "will",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): too",
+        "expected_answer": "oot",
+        "model_answer": "<reasoning>\nTo spell \"too\" backward:\n1. Identify each letter from left to right: t, o, o\n2. Write these letters in reverse order: o, o, t\n3. Combine the letters: oot\n</reasoning>\n<answer>oot</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "too",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): looking",
+        "expected_answer": "gnikool",
+        "model_answer": "<reasoning>\nTo spell \"looking\" backward, I'll start from the last letter and work my way to the first:\n- Start with: looking\n- Last letter: g\n- Second to last: n\n- Third to last: i\n- Fourth to last: k\n- Fifth to last: o\n- Sixth to last: o\n- Last (first) letter: l\nPutting them together: gnikool\n</reasoning>\n<answer>gnikool</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "looking",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): gentlemen",
+        "expected_answer": "nemeltneg",
+        "model_answer": "<reasoning>\nTo spell \"gentlemen\" backward, I'll start from the last letter and work my way to the first:\nn -> e -> m -> e -> l -> t -> n -> e -> g\n\nGoing through each letter in reverse order will give me the backward spelling.\n</reasoning>\n<answer>nemeltneg</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "gentlemen",
+          "word_len": 9
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): settled",
+        "expected_answer": "delttes",
+        "model_answer": "<reasoning>\nTo spell \"settled\" backwards, I need to take each letter from right to left:\n- Start with \"settled\"\n- Read the letters in reverse order:\nd -> e -> l -> t -> t -> e -> s\n\nPutting these letters together forms \"delttes\"\n</reasoning>\n<answer>delttes</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "settled",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): long",
+        "expected_answer": "gnol",
+        "model_answer": "<reasoning>\nTo spell \"long\" backwards, I will write each letter from right to left:\n- Start with 'g'\n- Then 'n'\n- Then 'o'\n- Finally 'l'\nPutting these letters together gives: gno + l = gnol\n</reasoning>\n<answer>gnol</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "long",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): have",
+        "expected_answer": "evah",
+        "model_answer": "<reasoning>\nTo spell \"have\" backwards, I'll take each letter from right to left:\n- Last letter: e\n- Second to last: v\n- Third to last: a\n- First letter: h\n\nPutting them together in reverse order: e-v-a-h\n</reasoning>\n<answer>evah</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "have",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): his",
+        "expected_answer": "sih",
+        "model_answer": "<reasoning>\nTo spell \"his\" backward:\n1. Identify the letters from left to right: h, i, s\n2. Write them in reverse order: s, i, h\n</reasoning>\n<answer>sih</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "his",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): 2889",
+        "expected_answer": "9882",
+        "model_answer": "<reasoning>\nTo spell 2889 backward, I'll write each digit from right to left:\n- Starting from the right: 9\n- Then: 8\n- Then: 8\n- Finally: 2\nSo 9882 is 2889 spelled backward.\n</reasoning>\n<answer>9882</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "2889",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): but",
+        "expected_answer": "tub",
+        "model_answer": "<reasoning>\nTo spell \"but\" backward, I need to:\n1. Identify each letter: b, u, t\n2. Read them in reverse order: t, u, b\n3. Combine them to form the backward spelling: tub\n</reasoning>\n<answer>tub</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "but",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): PROJECT",
+        "expected_answer": "TCEJORP",
+        "model_answer": "<reasoning>\nTo spell \"PROJECT\" backward, I'll start from the last letter and work my way to the first:\nT is the last letter\nC is second to last\nE is third to last\nJ is fourth to last\nO is fifth to last\nR is sixth to last\nP is the first letter\n\nPutting these letters together in reverse order: T-C-E-J-O-R-P\n</reasoning>\n<answer>TCEJORP</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "PROJECT",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): withal",
+        "expected_answer": "lahtiw",
+        "model_answer": "<reasoning>\nTo spell \"withal\" backward, I'll take each letter from right to left:\nl -> a -> h -> t -> i -> w\nWhen combined, these letters spell \"lahtw\"\n</reasoning>\n<answer>lahtw</answer>",
+        "score": 0.05,
+        "metadata": {
+          "word": "withal",
+          "word_len": 6
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): only",
+        "expected_answer": "ylno",
+        "model_answer": "<reasoning>\nTo spell \"only\" backwards, I'll take each letter from right to left:\n- Starting with 'y'\n- Then 'l'\n- Then 'n'\n- Finally 'o'\nPutting these letters together in reverse order gets: \"ylno\"\n</reasoning>\n<answer>ylno</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "only",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): supplied",
+        "expected_answer": "deilppus",
+        "model_answer": "<reasoning>\nTo spell \"supplied\" backward, I will write each letter from right to left:\n- Start with \"supplied\"\n- Going from right to left: d-e-i-l-p-p-u-s\n</reasoning>\n<answer>deilppus</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "supplied",
+          "word_len": 8
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): purpose",
+        "expected_answer": "esoprup",
+        "model_answer": "<reasoning>\nTo spell \"purpose\" backward, I'll write each letter from right to left:\n- Starting word: purpose\n- Last letter: e\n- Second to last: s\n- Then: o\n- Then: p\n- Then: r\n- Then: u\n- Then: p\nPutting it all together: esoprup\n</reasoning>\n<answer>esoprup</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "purpose",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): His",
+        "expected_answer": "siH",
+        "model_answer": "<reasoning>\nTo spell \"His\" backward, I need to write each letter in reverse order:\n- Last letter: s\n- Middle letter: i\n- First letter: h\nPutting them together: sih\n</reasoning>\n<answer>sih</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "His",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): that",
+        "expected_answer": "taht",
+        "model_answer": "<reasoning>\nTo spell \"that\" backward, I'll start from the last letter and work my way to the first:\n- Last letter: t\n- Third letter: a\n- Second letter: h\n- First letter: t\nPutting these letters together in reverse order: taht\n</reasoning>\n<answer>taht</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "that",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): every",
+        "expected_answer": "yreve",
+        "model_answer": "<reasoning>\nTo spell \"every\" backward, I'll start from the last letter and work my way to the first:\n- Last letter: y\n- Fourth letter: r\n- Third letter: e\n- Second letter: v\n- First letter: e\n\nPutting these letters together in reverse order: y-r-e-v-e\n</reasoning>\n<answer>yreve</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "every",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): electricity",
+        "expected_answer": "yticirtcele",
+        "model_answer": "<reasoning>\nTo spell \"electricity\" backward, I'll start from the last letter and work my way to the first:\ny -> t -> i -> c -> i -> r -> t -> c -> e -> l -> e\nPutting these letters together gives: yticirtcele\n</reasoning>\n<answer>yticirtcele</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "electricity",
+          "word_len": 11
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): power",
+        "expected_answer": "rewop",
+        "model_answer": "<reasoning>\nTo spell \"power\" backward, I'll take each letter from right to left:\n- Starting from the end: r\n- Then: e\n- Then: w\n- Then: o\n- Finally: p\nPutting these letters together gives: rewop\n</reasoning>\n<answer>rewop</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "power",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): received",
+        "expected_answer": "deviecer",
+        "model_answer": "<reasoning>\nTo spell \"received\" backward, I'll work through it letter by letter from right to left:\nd-e-v-i-e-c-e-r\nChecking: The original word is \"received\", and spelling it backward gives me \"deviecer\".</reasoning>\n<answer>deviecer</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "received",
+          "word_len": 8
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): access",
+        "expected_answer": "ssecca",
+        "model_answer": "<reasoning>\nTo spell \"access\" backward, I'll start from the last letter and work my way to the first:\n- Last letter: s\n- Second to last: s\n- Third to last: e\n- Fourth to last: c\n- Fifth to last: c\n- First letter: a\n\nPutting these letters together in reverse order: ssecca\n</reasoning>\n<answer>ssecca</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "access",
+          "word_len": 6
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): 000",
+        "expected_answer": "000",
+        "model_answer": "<reasoning>\nTo spell \"000\" backward, I will:\n1. Write each character from right to left\n2. The sequence is three zeros: 0, 0, 0\n3. Reading from right to left, it's still: 0, 0, 0\nSince all characters are zeros, the word spelled backward will be identical to the original.\n</reasoning>\n<answer>000</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "000",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): the",
+        "expected_answer": "eht",
+        "model_answer": "<reasoning>\nTo spell \"the\" backward, I'll take each letter from right to left:\n- Start with 'e'\n- Then 'h'\n- Finally 't'\nPutting these letters together gives: eht\n</reasoning>\n<answer>eht</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "the",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): the",
+        "expected_answer": "eht",
+        "model_answer": "<reasoning>\nTo spell \"the\" backward:\n1. Break down the letters: t-h-e\n2. Reverse their order: e-h-t\n</reasoning>\n<answer>eht</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "the",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): clouds",
+        "expected_answer": "sduolc",
+        "model_answer": "<reasoning>\nTo spell \"clouds\" backward, I'll take each letter from right to left:\ns -> s\nd -> ds\nu -> uds\no -> ouds\nl -> louds\nc -> clouds\n\nSo reading from right to left: s-d-u-o-l-c\n</reasoning>\n<answer>sduolc</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "clouds",
+          "word_len": 6
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): compilation",
+        "expected_answer": "noitalipmoc",
+        "model_answer": "<reasoning>\nTo spell \"compilation\" backward, I'll write each letter from right to left:\nn-o-i-t-a-l-i-p-m-o-c\n\nStarting with:\n- Last letter: n\n- Second to last: o\n- Continue until reaching 'c'\n</reasoning>\n<answer>noitalipmoc</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "compilation",
+          "word_len": 11
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): and",
+        "expected_answer": "dna",
+        "model_answer": "<reasoning>\nTo spell \"and\" backward, I need to write each letter in reverse order:\n- Last letter: d\n- Middle letter: n\n- First letter: a\nPutting them together: dna\n</reasoning>\n<answer>dna</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "and",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): takes",
+        "expected_answer": "sekat",
+        "model_answer": "<reasoning>\nTo spell \"takes\" backward, I need to write each letter starting from the end:\n- Start with the last letter: s\n- Then the second to last: e\n- Then: k\n- Then: a\n- Finally: t\nPutting them all together: sekat\n</reasoning>\n<answer>sekat</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "takes",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): depends",
+        "expected_answer": "sdneped",
+        "model_answer": "<reasoning>\nTo spell \"depends\" backward, I'll start from the last letter and work my way to the first:\n- Last letter: s\n- Second to last: d\n- Third to last: n\n- Fourth to last: e\n- Fifth to last: p\n- Sixth to last: e\n- First letter: d\n\nPutting them together: sdneped\n</reasoning>\n\n<answer>sdneped</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "depends",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): met",
+        "expected_answer": "tem",
+        "model_answer": "<reasoning>\nTo spell \"met\" backward:\n1. Identify each letter from left to right: m, e, t\n2. Write these letters in reverse order: t, e, m\n3. Combine the letters to form the backward word: tem\n</reasoning>\n<answer>tem</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "met",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): life",
+        "expected_answer": "efil",
+        "model_answer": "<reasoning>\nTo spell \"life\" backward, I need to:\n1. Identify each letter from left to right: l-i-f-e\n2. Write these letters in reverse order:\n- Start with last letter (e)\n- Then f\n- Then i \n- End with first letter (l)\n</reasoning>\n<answer>efil</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "life",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): days",
+        "expected_answer": "syad",
+        "model_answer": "<reasoning>\nTo spell \"days\" backward, I need to write each letter starting from the end:\n- Starting with the last letter: s\n- Then the second to last: y\n- Then a\n- And finally d\nPutting these letters together in reverse order: s-y-a-d\n</reasoning>\n<answer>syad</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "days",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): Smith",
+        "expected_answer": "htimS",
+        "model_answer": "<reasoning>\nTo spell \"Smith\" backward, I'll write each letter from right to left:\n- Start with \"h\"\n- Then \"t\"\n- Then \"i\"\n- Then \"m\"\n- End with \"s\"\nPutting it all together: htimS\n</reasoning>\n<answer>htimS</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "Smith",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): considerations",
+        "expected_answer": "snoitaredisnoc",
+        "model_answer": "<reasoning>\nTo spell \"considerations\" backward, I'll take each letter from right to left:\ns-n-o-i-t-a-r-e-d-i-s-n-o-c\n</reasoning>\n<answer>snoitaredisnoc</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "considerations",
+          "word_len": 14
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): with",
+        "expected_answer": "htiw",
+        "model_answer": "<reasoning>\nTo spell \"with\" backward, I'll take each letter from right to left:\n- Starting with \"h\"\n- Then \"t\"\n- Then \"i\"\n- Finally \"w\"\nPutting these letters together in reverse order gives us: \"htiw\"\n</reasoning>\n<answer>htiw</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "with",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): YOU",
+        "expected_answer": "UOY",
+        "model_answer": "<reasoning>\nTo spell \"YOU\" backward, I need to:\n1. Identify each letter: Y, O, U\n2. Write them in reverse order: U, O, Y\n3. Put them together to form the backward spelling\n</reasoning>\n<answer>UOY</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "YOU",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): hundred",
+        "expected_answer": "derdnuh",
+        "model_answer": "<reasoning>\nTo spell \"hundred\" backward, I'll start from the last letter and work my way to the first:\n- Start with \"hundred\"\n- Last letter: d\n- Second to last: e\n- Third to last: r\n- Fourth to last: d\n- Fifth to last: n\n- Last letter: u\n- First letter: h\n\nPutting it all together: derdnuh\n</reasoning>\n<answer>derdnuh</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "hundred",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): Archive",
+        "expected_answer": "evihcrA",
+        "model_answer": "<reasoning>\nTo spell \"Archive\" backward, I'll take each letter from right to left:\n- Starting from the end: 'e'\n- Then: 'v'\n- Then: 'i'\n- Then: 'h'\n- Then: 'c'\n- Then: 'r'\n- Finally: 'a'\nPutting these letters together gives: evihcra\n</reasoning>\n<answer>evihcra</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "Archive",
+          "word_len": 7
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): His",
+        "expected_answer": "siH",
+        "model_answer": "<reasoning>\nTo spell \"His\" backward:\n1. Identify each letter from left to right: H, i, s\n2. Write these letters in reverse order: s, i, H\n</reasoning>\n<answer>siH</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "His",
+          "word_len": 3
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): certainly",
+        "expected_answer": "ylniatrec",
+        "model_answer": "<reasoning>\nTo spell \"certainly\" backward, I will:\n1. Identify all letters: c-e-r-t-a-i-n-l-y\n2. Reverse the order by starting from the last letter and working backward:\ny -> l -> n -> i -> a -> t -> r -> e -> c\n</reasoning>\n<answer>ylniatrec</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "certainly",
+          "word_len": 9
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): light",
+        "expected_answer": "thgil",
+        "model_answer": "<reasoning>\nTo spell \"light\" backward, I need to write each letter starting from the end:\n- Last letter: t\n- Second to last: h\n- Third to last: g\n- Fourth to last: i\n- First letter: l\n\nPutting them together: thgil\n</reasoning>\n<answer>thgil</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "light",
+          "word_len": 5
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): them",
+        "expected_answer": "meht",
+        "model_answer": "<reasoning>\nTo spell \"them\" backwards, I'll take each letter from right to left:\n- Starting with 'm'\n- Then 'e'\n- Then 'h'\n- Then 't'\nPutting these letters together in reverse order gives: meht\n</reasoning>\n<answer>meht</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "them",
+          "word_len": 4
+        }
+      },
+      {
+        "question": "Spell this word backward (example: sun -> nus): been",
+        "expected_answer": "neeb",
+        "model_answer": "<reasoning>\nTo spell \"been\" backward, I'll take each letter from right to left:\n- Starting letter: n\n- Second letter: e\n- Third letter: e\n- Last letter: b\nPutting these together gives: neeb\n</reasoning>\n<answer>neeb</answer>",
+        "score": 1.0,
+        "metadata": {
+          "word": "been",
+          "word_len": 4
+        }
+      }
+    ]
+  }
+]

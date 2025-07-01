@@ -5,3 +5,6 @@ __pycache__/
 
 # Models
 */models/
+
+faiss/sim_sentences/
+faiss/sentences.txt

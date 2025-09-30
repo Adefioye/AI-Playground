@@ -5,6 +5,9 @@ __pycache__/
 
 # Models
 */models/
+random_experiment/shared-subspaces/
+random_experiment/SubspaceDecoder_*/
+random_experiment/.hf_repos/
 
 faiss/sim_sentences/
 faiss/sentences.txt

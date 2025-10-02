@@ -8,6 +8,8 @@ __pycache__/
 random_experiment/shared-subspaces/
 random_experiment/SubspaceDecoder_*/
 random_experiment/.hf_repos/
+random_experiment/outputs/
+random_experiment/results/
 
 faiss/sim_sentences/
 faiss/sentences.txt
